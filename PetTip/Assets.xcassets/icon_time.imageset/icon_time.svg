@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="icon_time" transform="translate(-51.838 -51.838)">
+    <circle id="타원_1047" data-name="타원 1047" cx="10" cy="10" r="10" transform="translate(51.838 51.838)" fill="#f94b65"/>
+    <circle id="타원_1048" data-name="타원 1048" cx="8" cy="8" r="8" transform="translate(53.838 53.838)" fill="#fff"/>
+    <path id="사각형_29512" data-name="사각형 29512" d="M.5,0h0A.5.5,0,0,1,1,.5v1A.5.5,0,0,1,.5,2h0A.5.5,0,0,1,0,1.5V.5A.5.5,0,0,1,.5,0Z" transform="translate(61.499 54.375)" fill="#39393b"/>
+    <rect id="사각형_29513" data-name="사각형 29513" width="1" height="2" rx="0.5" transform="translate(54.374 62.239) rotate(-90)" fill="#39393b"/>
+    <rect id="사각형_29514" data-name="사각형 29514" width="1" height="2" rx="0.5" transform="translate(62.499 69.301) rotate(180)" fill="#39393b"/>
+    <rect id="사각형_29515" data-name="사각형 29515" width="1" height="2" rx="0.5" transform="translate(69.301 61.24) rotate(90)" fill="#39393b"/>
+    <path id="패스_19969" data-name="패스 19969" d="M243.3,146.074v-4.737c0-.145.224-.263.5-.263s.5.118.5.263v4.737Z" transform="translate(-181.798 -83.839)" fill="#ff583e" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    <path id="사각형_29516" data-name="사각형 29516" d="M0,0H2.854a.571.571,0,0,1,.571.571v0a.571.571,0,0,1-.571.571H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(61.838 61.239)" fill="#ff583e" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+    <circle id="타원_1049" data-name="타원 1049" cx="1.247" cy="1.247" r="1.247" transform="translate(60.838 60.838)" fill="#ff583e" stroke="rgba(0,0,0,0)" stroke-width="1"/>
+  </g>
+</svg>

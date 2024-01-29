@@ -1,0 +1,79 @@
+PODS:
+  - Alamofire (5.8.1)
+  - AlamofireImage (4.3.0):
+    - Alamofire (~> 5.8)
+  - DGCharts (5.0.0):
+    - DGCharts/Core (= 5.0.0)
+  - DGCharts/Core (5.0.0)
+  - DropDown (2.3.13)
+  - FSPagerView (0.8.3)
+  - KeychainAccess (4.1.0)
+  - NMapsGeometry (1.0.1)
+  - NMapsMap (3.17.0):
+    - NMapsGeometry
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - Pageboy (4.0.2)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - Tabman (3.0.2):
+    - Pageboy (~> 4.0.2)
+  - Toaster (2.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage (~> 4.3)
+  - DGCharts
+  - DropDown
+  - FSPagerView
+  - KeychainAccess (= 4.1.0)
+  - NMapsMap
+  - NVActivityIndicatorView
+  - RxCocoa (~> 6.5.0)
+  - RxSwift (~> 6.5.0)
+  - Tabman (~> 3.0)
+  - Toaster
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - DGCharts
+    - DropDown
+    - FSPagerView
+    - KeychainAccess
+    - NMapsGeometry
+    - NMapsMap
+    - NVActivityIndicatorView
+    - Pageboy
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - Tabman
+    - Toaster
+
+SPEC CHECKSUMS:
+  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  AlamofireImage: 843953fa97bee5f561cf05d83abd759e590b068d
+  DGCharts: 6e0cf2644e8f81ad13f04caa8bc18502870a1c54
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  KeychainAccess: 445e28864fe6d3458b41fa211bcdc39890e8bd5a
+  NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
+  NMapsMap: a5b909a31b6f3d27a670f6eb2ddc913c38975474
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  Pageboy: 34ff11e8d1041b81769d5bcde9b19a0cb7218bd9
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  Tabman: 6326ec3a792da1c2a6e79c7eddb56af7b591c9d6
+  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
+
+PODFILE CHECKSUM: 7899bb441ff66c6805c64984d55af9575a05abe2
+
+COCOAPODS: 1.14.3
