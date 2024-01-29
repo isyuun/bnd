@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <g id="icon_comment" transform="translate(-292 -1081)">
+    <rect id="area" width="14" height="14" transform="translate(292 1081)" fill="none"/>
+    <g id="그룹_151" data-name="그룹 151" transform="translate(292 1081.875)">
+      <path id="합치기_1" data-name="합치기 1" d="M0,7.875V1.75A1.811,1.811,0,0,1,1.867,0H12.134A1.811,1.811,0,0,1,14,1.75V7.875a1.811,1.811,0,0,1-1.867,1.75H3.025L0,12.649Z" transform="translate(0 0)" fill="#fff"/>
+      <circle id="타원_838" data-name="타원 838" cx="0.875" cy="0.875" r="0.875" transform="translate(2.625 4.075)" fill="#737980"/>
+      <circle id="타원_839" data-name="타원 839" cx="0.875" cy="0.875" r="0.875" transform="translate(6.125 4.075)" fill="#737980"/>
+      <circle id="타원_840" data-name="타원 840" cx="0.875" cy="0.875" r="0.875" transform="translate(9.625 4.075)" fill="#737980"/>
+    </g>
+  </g>
+</svg>

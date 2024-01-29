@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="icon_registration" transform="translate(-161 -192)">
+    <rect id="area" width="32" height="32" transform="translate(161 192)" fill="none"/>
+    <g id="그룹_53786" data-name="그룹 53786" transform="translate(87.926 92.926)">
+      <path id="패스_20303" data-name="패스 20303" d="M91.93,100H76.8a1.8,1.8,0,0,0-1.8,1.8v26.554a1.8,1.8,0,0,0,1.8,1.8H97.322a1.8,1.8,0,0,0,1.8-1.8V107.189Z" fill="#fff"/>
+      <path id="패스_20304" data-name="패스 20304" d="M524.231,105.392a1.8,1.8,0,0,0,1.8,1.8h5.392L524.231,100Z" transform="translate(-432.301)" fill="#dbdfe0"/>
+      <g id="그룹_53784" data-name="그룹 53784" transform="translate(79.348 105.508)">
+        <rect id="사각형_29598" data-name="사각형 29598" width="9.508" height="1.507" fill="#dbdfe0"/>
+        <rect id="사각형_29599" data-name="사각형 29599" width="15.422" height="1.507" transform="translate(0 4.406)" fill="#dbdfe0"/>
+        <rect id="사각형_29600" data-name="사각형 29600" width="15.422" height="1.507" transform="translate(0 8.813)" fill="#dbdfe0"/>
+        <rect id="사각형_29601" data-name="사각형 29601" width="15.422" height="1.507" transform="translate(0 13.219)" fill="#dbdfe0"/>
+        <rect id="사각형_29602" data-name="사각형 29602" width="10.676" height="1.507" transform="translate(0 17.626)" fill="#dbdfe0"/>
+      </g>
+      <g id="그룹_53785" data-name="그룹 53785" transform="translate(87.477 108.764)">
+        <rect id="사각형_29603" data-name="사각형 29603" width="1.243" height="14.197" transform="translate(11.728 1.304) rotate(44.986)" fill="#41b3e2"/>
+        <rect id="사각형_29604" data-name="사각형 29604" width="1.243" height="14.197" transform="translate(12.607 2.182) rotate(44.986)" fill="#379fc8"/>
+        <rect id="사각형_29605" data-name="사각형 29605" width="1.243" height="14.197" transform="matrix(0.707, 0.707, -0.707, 0.707, 13.486, 3.061)" fill="#2e89ac"/>
+        <path id="패스_20305" data-name="패스 20305" d="M459.185,697.337a.487.487,0,0,0,.645.644l1.282-.58-1.346-1.346Z" transform="translate(-459.14 -682.357)" fill="#445c6c"/>
+        <path id="패스_20306" data-name="패스 20306" d="M476.784,633.551l-1.066,2.356,1.346,1.346,2.356-1.066Z" transform="translate(-475.094 -622.208)" fill="#fbd984"/>
+        <path id="패스_20307" data-name="패스 20307" d="M774.153,334.5l-1.763-1.762a.618.618,0,0,0-.874,0l-1.125,1.125,2.637,2.635,1.125-1.125A.617.617,0,0,0,774.153,334.5Z" transform="translate(-758.662 -332.552)" fill="#f0b972"/>
+        <rect id="사각형_29606" data-name="사각형 29606" width="3.728" height="0.483" transform="translate(12.071 0.964) rotate(44.988)" fill="#e39a61"/>
+      </g>
+    </g>
+  </g>
+</svg>

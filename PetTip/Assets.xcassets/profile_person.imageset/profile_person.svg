@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="타원_1081" data-name="타원 1081" cx="20" cy="20" r="20" transform="translate(46 114)" fill="#bdc5ce"/>
+    </clipPath>
+  </defs>
+  <g id="profile_person" transform="translate(-46 -114)">
+    <circle id="타원_1080" data-name="타원 1080" cx="20" cy="20" r="20" transform="translate(46 114)" fill="#bdc5ce"/>
+    <g id="마스크_그룹_11" data-name="마스크 그룹 11" clip-path="url(#clip-path)">
+      <g id="그룹_53772" data-name="그룹 53772" transform="translate(-184.628 -378.678)">
+        <path id="패스_20292" data-name="패스 20292" d="M237.47,1107.492a11.379,11.379,0,0,1,10.832-8.006h4.652a11.379,11.379,0,0,1,10.832,8.006q-.487.581-1.029,1.124a17.152,17.152,0,0,1-24.258,0q-.542-.542-1.029-1.124Z" transform="translate(0 -579.549)" fill="#d9e0e8" fill-rule="evenodd"/>
+        <path id="패스_20293" data-name="패스 20293" d="M448.107,503.264a7.477,7.477,0,1,1-7.477,7.477,7.477,7.477,0,0,1,7.477-7.477Z" transform="translate(-197.479 -1)" fill="#d9e0e8" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>
