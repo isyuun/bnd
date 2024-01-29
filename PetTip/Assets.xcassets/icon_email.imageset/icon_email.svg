@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18.045" height="18" viewBox="0 0 18.045 18">
-  <g id="icon_email" transform="translate(0.045)">
-    <rect id="area" width="18" height="18" fill="none"/>
-    <g id="Icon_feather-mail" data-name="Icon feather-mail" transform="translate(1 3)">
-      <path id="패스_19941" data-name="패스 19941" d="M4.5,6h12A1.5,1.5,0,0,1,18,7.5v9A1.5,1.5,0,0,1,16.5,18H4.5A1.5,1.5,0,0,1,3,16.5v-9A1.5,1.5,0,0,1,4.5,6Z" transform="translate(-3 -6)" fill="none" stroke="#737980" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-      <path id="패스_19942" data-name="패스 19942" d="M18,9l-7.5,5.25L3,9" transform="translate(-3 -7.5)" fill="none" stroke="#737980" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
