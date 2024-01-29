@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-  <g id="home" transform="translate(-91 -770)">
-    <rect id="area" width="25" height="25" transform="translate(91 770)" fill="none"/>
-    <g id="Icon_feather-home" data-name="Icon feather-home" transform="translate(90.212 769.735)">
-      <path id="패스_85" data-name="패스 85" d="M4.5,9.835,13.288,3l8.788,6.835V20.576a1.953,1.953,0,0,1-1.953,1.953H6.453A1.953,1.953,0,0,1,4.5,20.576Z" fill="none" stroke="#8c949c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-      <path id="패스_86" data-name="패스 86" d="M13.5,27.765V18h5.859v9.765" transform="translate(-3.141 -5.235)" fill="none" stroke="#8c949c" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>

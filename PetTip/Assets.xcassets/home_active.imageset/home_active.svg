@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
-  <g id="home_active" transform="translate(-91 -770)">
-    <rect id="area" width="25" height="25" transform="translate(91 770)" fill="none"/>
-    <g id="Icon_feather-home" data-name="Icon feather-home" transform="translate(90.212 769.735)">
-      <path id="빼기_1" data-name="빼기 1" d="M-1511.924-577.205h-3.335a1.955,1.955,0,0,1-1.953-1.953V-589.9l8.788-6.836,8.789,6.836v10.741a1.955,1.955,0,0,1-1.953,1.953h-3.335v-8.265a1,1,0,0,0-1-1h-5a1,1,0,0,0-1,1v8.265Z" transform="translate(1521.712 599.735)" fill="#4783f5" stroke="#4783f5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
-    </g>
-  </g>
-</svg>
