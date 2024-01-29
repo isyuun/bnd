@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="community_active" transform="translate(-91 -770)">
+    <rect id="area" width="25" height="25" transform="translate(91 770)" fill="none"/>
+    <g id="그룹_81" data-name="그룹 81" transform="translate(-0.5)">
+      <path id="Icon_material-chat-bubble" data-name="Icon material-chat-bubble" d="M19.876,4h-15A1.881,1.881,0,0,0,3,5.875V21.751L6.75,18H19.876a1.881,1.881,0,0,0,1.875-1.875V5.875A1.881,1.881,0,0,0,19.876,4Z" transform="translate(91.625 770.125)" fill="#4783f5" stroke="#4783f5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <circle id="타원_8" data-name="타원 8" cx="1" cy="1" r="1" transform="translate(99 780)" fill="#fff"/>
+      <circle id="타원_9" data-name="타원 9" cx="1" cy="1" r="1" transform="translate(103 780)" fill="#fff"/>
+      <circle id="타원_10" data-name="타원 10" cx="1" cy="1" r="1" transform="translate(107 780)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
