@@ -14,7 +14,7 @@ class MyAuthenticator: Authenticator {
     func apply(_ credential: Credential, to urlRequest: inout URLRequest) {
 //        urlRequest.headers.add(.authorization(bearerToken: credential.accessToken))
         urlRequest.headers.add(.authorization(credential.accessToken))
-        urlRequest.addValue(credential.refreshToken, forHTTPHeaderField: "refresh-token")
+//        urlRequest.addValue(credential.refreshToken, forHTTPHeaderField: "refresh-token")
     }
 
     func didRequest(_ urlRequest: URLRequest, with response: HTTPURLResponse, failDueToAuthenticationError error: Error) -> Bool {
@@ -28,9 +28,6 @@ class MyAuthenticator: Authenticator {
     }
 
     func refresh(_ credential: Credential, for session: Session, completion: @escaping (Result<Credential, Error>) -> Void) {
-        
-        
-        
         let request = RefreshTokenRequest(refreshToken: UserDefaults.standard.value(forKey: "refreshToken")! as! String)
         MemberAPI.refreshToken(request: request) { refreshToken, error in
             if let refreshToken = refreshToken {
