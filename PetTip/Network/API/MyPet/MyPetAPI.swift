@@ -45,8 +45,8 @@ struct MyPetAPI {
             multipartFormData.append(request.stdgCtpvCd.data(using: .utf8)!, withName: "stdgCtpvCd")
             multipartFormData.append("\(request.wghtVl)".data(using: .utf8)!, withName: "wghtVl")
 
-        }, to: "http://carepet.hopto.org:8020/api/v1/mypet/create",
-                           usingThreshold: UInt64.init(), 
+        }, to: String("\(Global.BASE_URI)/mypet/create"),
+                           usingThreshold: UInt64.init(),
                            method: .post,
                            headers: header,
                            interceptor: myAuthencitationInterceptor)
@@ -121,7 +121,7 @@ struct MyPetAPI {
             multipartFormData.append(request.petMngrYn.data(using: .utf8)!, withName: "petMngrYn")
             multipartFormData.append(request.stdgCtpvCd.data(using: .utf8)!, withName: "stdgCtpvCd")
 
-        }, to: "http://carepet.hopto.org:8020/api/v1/mypet/update",
+        }, to: String("\(Global.BASE_URI)/mypet/update"),
                            usingThreshold: UInt64.init(),
                            method: .post,
                            headers: header,

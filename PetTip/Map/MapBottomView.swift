@@ -24,7 +24,7 @@ class MapBottomView : UIView {
     }
     
     func initialize() {
-        walkInfoBGView.layer.cornerRadius = 15
+        walkInfoBGView.layer.cornerRadius = 20
         walkInfoBGView.layer.masksToBounds = true
     }
     

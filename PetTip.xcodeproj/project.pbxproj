@@ -75,6 +75,8 @@
 		0251FD6E2B1871F400F35EF8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FD6D2B1871F400F35EF8 /* UIView.swift */; };
 		0251FD702B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FD6F2B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift */; };
 		0251FD742B1909BA00F35EF8 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FD732B1909BA00F35EF8 /* UIImage.swift */; };
+		0265B9EA2B75F59D00B27221 /* LocationFileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265B9E92B75F59D00B27221 /* LocationFileRequest.swift */; };
+		0265B9EC2B75F5BB00B27221 /* LocationFileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265B9EB2B75F5BB00B27221 /* LocationFileResponse.swift */; };
 		027F76502B4E7C8B00429AC5 /* NoticeListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F764F2B4E7C8B00429AC5 /* NoticeListItemView.swift */; };
 		027F76522B4E7C9800429AC5 /* NoticeListItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 027F76512B4E7C9800429AC5 /* NoticeListItemView.xib */; };
 		027F76542B4E81F000429AC5 /* NoticeListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F76532B4E81F000429AC5 /* NoticeListRequest.swift */; };
@@ -258,6 +260,17 @@
 		02DB38202B663B3A007D19A1 /* MyPetUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB381F2B663B3A007D19A1 /* MyPetUpdateResponse.swift */; };
 		02DB38222B664EB1007D19A1 /* MyPetDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38212B664EB1007D19A1 /* MyPetDeleteRequest.swift */; };
 		02DB38242B664EBC007D19A1 /* MyPetDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38232B664EBC007D19A1 /* MyPetDeleteResponse.swift */; };
+		02DB38282B68CA09007D19A1 /* SNSJoinViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */; };
+		02DB382C2B6B5953007D19A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02DB382B2B6B5953007D19A1 /* GoogleService-Info.plist */; };
+		02DB382E2B6CE6E7007D19A1 /* SelectWalkPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB382D2B6CE6E7007D19A1 /* SelectWalkPetView.swift */; };
+		02DB38302B6CE6FF007D19A1 /* SelectWalkPetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DB382F2B6CE6FF007D19A1 /* SelectWalkPetView.xib */; };
+		02DB38322B6DC4DD007D19A1 /* SelectWalkPetItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38312B6DC4DD007D19A1 /* SelectWalkPetItemView.swift */; };
+		02DB38342B6DC4FA007D19A1 /* SelectWalkPetItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DB38332B6DC4FA007D19A1 /* SelectWalkPetItemView.xib */; };
+		02DB38362B6E2B59007D19A1 /* SelectWalkMarkPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38352B6E2B59007D19A1 /* SelectWalkMarkPetView.swift */; };
+		02DB38382B6E2B99007D19A1 /* SelectWalkMarkPetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DB38372B6E2B99007D19A1 /* SelectWalkMarkPetView.xib */; };
+		02DB383A2B6E73F3007D19A1 /* SelectWalkMarkPetItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38392B6E73F3007D19A1 /* SelectWalkMarkPetItemView.swift */; };
+		02DB383C2B6E73FF007D19A1 /* SelectWalkMarkPetItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DB383B2B6E73FF007D19A1 /* SelectWalkMarkPetItemView.xib */; };
+		02DB383E2B731F31007D19A1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02DB383D2B731F31007D19A1 /* Map.storyboard */; };
 		02E00AF12B58E2E20092C909 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00AF02B58E2E20092C909 /* LogoutRequest.swift */; };
 		02E00AF32B58E2EE0092C909 /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00AF22B58E2EE0092C909 /* LogoutResponse.swift */; };
 		02E00AF52B591E8A0092C909 /* LifeCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E00AF42B591E8A0092C909 /* LifeCreateRequest.swift */; };
@@ -380,6 +393,8 @@
 		0251FD6D2B1871F400F35EF8 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0251FD6F2B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
 		0251FD732B1909BA00F35EF8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0265B9E92B75F59D00B27221 /* LocationFileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFileRequest.swift; sourceTree = "<group>"; };
+		0265B9EB2B75F5BB00B27221 /* LocationFileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFileResponse.swift; sourceTree = "<group>"; };
 		027F764F2B4E7C8B00429AC5 /* NoticeListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListItemView.swift; sourceTree = "<group>"; };
 		027F76512B4E7C9800429AC5 /* NoticeListItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeListItemView.xib; sourceTree = "<group>"; };
 		027F76532B4E81F000429AC5 /* NoticeListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListRequest.swift; sourceTree = "<group>"; };
@@ -563,6 +578,18 @@
 		02DB381F2B663B3A007D19A1 /* MyPetUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetUpdateResponse.swift; sourceTree = "<group>"; };
 		02DB38212B664EB1007D19A1 /* MyPetDeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetDeleteRequest.swift; sourceTree = "<group>"; };
 		02DB38232B664EBC007D19A1 /* MyPetDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetDeleteResponse.swift; sourceTree = "<group>"; };
+		02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller.swift; sourceTree = "<group>"; };
+		02DB382A2B6A8A38007D19A1 /* PetTip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PetTip.entitlements; sourceTree = "<group>"; };
+		02DB382B2B6B5953007D19A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		02DB382D2B6CE6E7007D19A1 /* SelectWalkPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalkPetView.swift; sourceTree = "<group>"; };
+		02DB382F2B6CE6FF007D19A1 /* SelectWalkPetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWalkPetView.xib; sourceTree = "<group>"; };
+		02DB38312B6DC4DD007D19A1 /* SelectWalkPetItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalkPetItemView.swift; sourceTree = "<group>"; };
+		02DB38332B6DC4FA007D19A1 /* SelectWalkPetItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWalkPetItemView.xib; sourceTree = "<group>"; };
+		02DB38352B6E2B59007D19A1 /* SelectWalkMarkPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalkMarkPetView.swift; sourceTree = "<group>"; };
+		02DB38372B6E2B99007D19A1 /* SelectWalkMarkPetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWalkMarkPetView.xib; sourceTree = "<group>"; };
+		02DB38392B6E73F3007D19A1 /* SelectWalkMarkPetItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalkMarkPetItemView.swift; sourceTree = "<group>"; };
+		02DB383B2B6E73FF007D19A1 /* SelectWalkMarkPetItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectWalkMarkPetItemView.xib; sourceTree = "<group>"; };
+		02DB383D2B731F31007D19A1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		02E00AF02B58E2E20092C909 /* LogoutRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		02E00AF22B58E2EE0092C909 /* LogoutResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
 		02E00AF42B591E8A0092C909 /* LifeCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCreateRequest.swift; sourceTree = "<group>"; };
@@ -830,6 +857,7 @@
 				022B41822B1A29770057323E /* MapBottomView.swift */,
 				022B41842B1A29A80057323E /* MapBottomView.xib */,
 				022B41862B1ABC1C0057323E /* PostViewController.swift */,
+				02DB383D2B731F31007D19A1 /* Map.storyboard */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -888,6 +916,14 @@
 				02A05B5B2B47914300E8ABFA /* SelectInvitePetView.xib */,
 				02DB38032B64955A007D19A1 /* PetWeightView.swift */,
 				02DB38052B64957E007D19A1 /* PetWeightView.xib */,
+				02DB382D2B6CE6E7007D19A1 /* SelectWalkPetView.swift */,
+				02DB382F2B6CE6FF007D19A1 /* SelectWalkPetView.xib */,
+				02DB38312B6DC4DD007D19A1 /* SelectWalkPetItemView.swift */,
+				02DB38332B6DC4FA007D19A1 /* SelectWalkPetItemView.xib */,
+				02DB38352B6E2B59007D19A1 /* SelectWalkMarkPetView.swift */,
+				02DB38372B6E2B99007D19A1 /* SelectWalkMarkPetView.xib */,
+				02DB38392B6E73F3007D19A1 /* SelectWalkMarkPetItemView.swift */,
+				02DB383B2B6E73FF007D19A1 /* SelectWalkMarkPetItemView.xib */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -968,6 +1004,7 @@
 				02A7AAE62B54FC20002F0C03 /* FindIdViewController.swift */,
 				02A7AAE82B54FC2D002F0C03 /* FindPwViewController.swift */,
 				02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */,
+				02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */,
 				02A7AAE22B54F895002F0C03 /* Member.storyboard */,
 			);
 			path = Member;
@@ -1144,6 +1181,8 @@
 				02E00AF62B595D240092C909 /* LifeCreateResponse.swift */,
 				02C1140C2B5CF31F00A14F77 /* LifeUploadRequest.swift */,
 				02C1140E2B5CF33200A14F77 /* LifeUploadResponse.swift */,
+				0265B9E92B75F59D00B27221 /* LocationFileRequest.swift */,
+				0265B9EB2B75F5BB00B27221 /* LocationFileResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1210,6 +1249,8 @@
 		02EB97FE2B0CFF03007428AD /* PetTip */ = {
 			isa = PBXGroup;
 			children = (
+				02DB382B2B6B5953007D19A1 /* GoogleService-Info.plist */,
+				02DB382A2B6A8A38007D19A1 /* PetTip.entitlements */,
 				02A05AC82B3C233F00E8ABFA /* Popup */,
 				02E3FC7B2B257CB700A1CE62 /* Keychain */,
 				02E3FC552B25457C00A1CE62 /* Network */,
@@ -1315,6 +1356,7 @@
 			files = (
 				02A05B5C2B47914300E8ABFA /* SelectInvitePetView.xib in Resources */,
 				022B41852B1A29A80057323E /* MapBottomView.xib in Resources */,
+				02DB383E2B731F31007D19A1 /* Map.storyboard in Resources */,
 				02A7AAA02B4FB627002F0C03 /* QnAListItemView.xib in Resources */,
 				0251FD662B1707A000F35EF8 /* MapTipView.xib in Resources */,
 				02EB980C2B0CFF05007428AD /* LaunchScreen.storyboard in Resources */,
@@ -1326,17 +1368,21 @@
 				0251FD642B17002100F35EF8 /* MapNavView.xib in Resources */,
 				022B41AD2B1E05CF0057323E /* LogoTitleBarView.xib in Resources */,
 				02E3FC482B229E5500A1CE62 /* CompPetListView.xib in Resources */,
+				02DB38382B6E2B99007D19A1 /* SelectWalkMarkPetView.xib in Resources */,
 				02A05AE42B3DD8A900E8ABFA /* ReportView.xib in Resources */,
 				020B79632B2A033300C0AB2D /* WalkHistoryWeekListItemView.xib in Resources */,
 				02DB38162B64FCE6007D19A1 /* PetProfileMemberItemView.xib in Resources */,
 				02E3FC502B237CFA00A1CE62 /* SelectPetView.xib in Resources */,
+				02DB382C2B6B5953007D19A1 /* GoogleService-Info.plist in Resources */,
 				02A05B3C2B4133FA00E8ABFA /* MyPageCompPetListItemView.xib in Resources */,
 				02A05B322B40608A00E8ABFA /* AncmntListItemView.xib in Resources */,
 				028625152B49058F0055E62F /* Pet.storyboard in Resources */,
 				020B79832B2E8A9D00C0AB2D /* Community.storyboard in Resources */,
 				020B79692B2B377500C0AB2D /* BackTitleBarView.xib in Resources */,
 				02A05ADA2B3D4AAF00E8ABFA /* CommentModifyView.xib in Resources */,
+				02DB38342B6DC4FA007D19A1 /* SelectWalkPetItemView.xib in Resources */,
 				02A05AD02B3C296700E8ABFA /* CommonConfirmView.xib in Resources */,
+				02DB383C2B6E73FF007D19A1 /* SelectWalkMarkPetItemView.xib in Resources */,
 				02E3FC4C2B229F4000A1CE62 /* CompPetListItemView.xib in Resources */,
 				02A05B562B46A90400E8ABFA /* DatePickerView.xib in Resources */,
 				028625332B4D9BD20055E62F /* CustomerCenter.storyboard in Resources */,
@@ -1348,6 +1394,7 @@
 				020B797B2B2D5C4600C0AB2D /* WalkHistoryMonthView.xib in Resources */,
 				020B79732B2C37DA00C0AB2D /* CommonDetailImageItemView.xib in Resources */,
 				022B41B22B1E33740057323E /* PetProfItemView.xib in Resources */,
+				02DB38302B6CE6FF007D19A1 /* SelectWalkPetView.xib in Resources */,
 				020B795D2B2990A800C0AB2D /* WalkHistoryItemView.xib in Resources */,
 				02A05B402B41427000E8ABFA /* MyPageCompPetListIEmptytemView.xib in Resources */,
 				02EB98072B0CFF03007428AD /* Main.storyboard in Resources */,
@@ -1444,6 +1491,7 @@
 				02A05AE72B3E4F5500E8ABFA /* CommonAPI.swift in Sources */,
 				02A05B3E2B41426600E8ABFA /* MyPageCompPetListIEmptytemView.swift in Sources */,
 				028625192B4994140055E62F /* CmmPetListRequest.swift in Sources */,
+				02DB383A2B6E73F3007D19A1 /* SelectWalkMarkPetItemView.swift in Sources */,
 				0286250D2B485FE20055E62F /* NoPasteUITextField.swift in Sources */,
 				02A05B282B404F1B00E8ABFA /* AncmntWinnerListViewController.swift in Sources */,
 				0251FD702B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift in Sources */,
@@ -1503,8 +1551,10 @@
 				02DB380C2B64DBDF007D19A1 /* MyPetWeightDeleteRequest.swift in Sources */,
 				028625212B4A727A0055E62F /* Sido.swift in Sources */,
 				022B41932B1B67390057323E /* CustomTabBar.swift in Sources */,
+				0265B9EC2B75F5BB00B27221 /* LocationFileResponse.swift in Sources */,
 				02A05B142B3F991300E8ABFA /* EventList.swift in Sources */,
 				02E3FC432B229CC000A1CE62 /* TestViewController.swift in Sources */,
+				02DB382E2B6CE6E7007D19A1 /* SelectWalkPetView.swift in Sources */,
 				02A05AB12B3805DF00E8ABFA /* CmntCreateResponse.swift in Sources */,
 				020B79852B2EC84600C0AB2D /* CommnunityContainerViewController.swift in Sources */,
 				02E3FC7F2B257CE700A1CE62 /* KeychainService.swift in Sources */,
@@ -1547,6 +1597,7 @@
 				02A05B462B43144600E8ABFA /* ChkNcknmRequest.swift in Sources */,
 				02E3FC782B257A7500A1CE62 /* RefreshToken.swift in Sources */,
 				02A05B2E2B404FC300E8ABFA /* AncmntWinnerDetailViewController.swift in Sources */,
+				02DB38282B68CA09007D19A1 /* SNSJoinViewcontroller.swift in Sources */,
 				02E3FC972B25A81000A1CE62 /* MyPetTarget.swift in Sources */,
 				020B797D2B2D70A800C0AB2D /* MonthRecordRequest.swift in Sources */,
 				02A7AADC2B522A97002F0C03 /* QnAUpdateResponse.swift in Sources */,
@@ -1576,6 +1627,7 @@
 				0286251B2B49941F0055E62F /* CmmPetListResponse.swift in Sources */,
 				0286252D2B4BBFCC0055E62F /* MyPetCreateResponse.swift in Sources */,
 				028625392B4DA0FF0055E62F /* QnAViewController.swift in Sources */,
+				02DB38362B6E2B59007D19A1 /* SelectWalkMarkPetView.swift in Sources */,
 				020B79472B28772400C0AB2D /* RealTimeListResponse.swift in Sources */,
 				027F76582B4E89A700429AC5 /* NoticeDetailViewController.swift in Sources */,
 				020B794D2B28797E00C0AB2D /* RealTimeList.swift in Sources */,
@@ -1626,9 +1678,11 @@
 				020B79812B2D723900C0AB2D /* MonthRecord.swift in Sources */,
 				02A7AAD82B522909002F0C03 /* QnAModifyViewController.swift in Sources */,
 				02A05AAF2B38057400E8ABFA /* CmntCreateRequest.swift in Sources */,
+				02DB38322B6DC4DD007D19A1 /* SelectWalkPetItemView.swift in Sources */,
 				02A7AAD02B5215F6002F0C03 /* QnAAtchUploadRequest.swift in Sources */,
 				02A05AE02B3D6CD500E8ABFA /* CmntUpdate.swift in Sources */,
 				02C114072B5A8B0B00A14F77 /* StoryAddViewController.swift in Sources */,
+				0265B9EA2B75F59D00B27221 /* LocationFileRequest.swift in Sources */,
 				02A05AAC2B36658600E8ABFA /* CommunityCommentView.swift in Sources */,
 				02E3FC4A2B229F1A00A1CE62 /* CompPetListItemView.swift in Sources */,
 				022B419E2B1C45370057323E /* MyPageViewController.swift in Sources */,
@@ -1819,6 +1873,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = PetTip/PetTip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H7W45DFCJU;
@@ -1826,9 +1882,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetTip/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "산책을 위한 위치정보 취득이 필요";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "산책을 위한 위치정보 취득이 필요";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "산책을 위한 위치정보 취득이 필요";
+				INFOPLIST_KEY_NSCameraUsageDescription = "산책 중 사진 촬영을 위해 카메라 권한 필요";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "산책 위치 확인를 위해 위치정보 취득 필요";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "산책 위치 확인를 위해 위치정보 취득 필요";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "산책 위치 확인를 위해 위치정보 취득 필요";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need date and location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -1845,6 +1902,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pettip.PetTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1861,6 +1919,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = PetTip/PetTip.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H7W45DFCJU;
@@ -1868,9 +1928,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PetTip/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "산책을 위한 위치정보 취득이 필요";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "산책을 위한 위치정보 취득이 필요";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "산책을 위한 위치정보 취득이 필요";
+				INFOPLIST_KEY_NSCameraUsageDescription = "산책 중 사진 촬영을 위해 카메라 권한 필요";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "산책 위치 확인를 위해 위치정보 취득 필요";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "산책 위치 확인를 위해 위치정보 취득 필요";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "산책 위치 확인를 위해 위치정보 취득 필요";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need date and location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -1887,6 +1948,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pettip.PetTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

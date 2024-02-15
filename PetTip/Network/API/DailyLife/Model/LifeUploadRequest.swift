@@ -9,4 +9,5 @@ import UIKit
 
 struct LifeUploadRequest {
     let arrFile: [UIImage]
+    var gpxFileData: Data?
 }

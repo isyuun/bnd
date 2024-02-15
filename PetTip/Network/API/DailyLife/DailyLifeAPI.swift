@@ -372,13 +372,20 @@ struct DailyLifeAPI {
         ]
         
         API.session.upload(multipartFormData: { multipartFormData in
+            if let gpxFileData = request.gpxFileData {
+                multipartFormData.append(gpxFileData,
+                                         withName: "files",
+                                         fileName: "data.GPX",
+                                         mimeType: "application/xml")
+            }
+            
             for i in 0..<request.arrFile.count {
                 multipartFormData.append(request.arrFile[i].jpegData(compressionQuality: 0.7)!,
                                          withName: "files",
                                          fileName: "image\(i).jpg",
                                          mimeType: "image/*")
             }
-        }, to: "http://carepet.hopto.org:8020/api/v1/daily-life/upload",
+        }, to: String("\(Global.BASE_URI)/daily-life/upload"),
                            usingThreshold: UInt64.init(),
                            method: .post,
                            headers: header,
@@ -395,5 +402,37 @@ struct DailyLifeAPI {
                 completion(nil, myError)
             }
         })
+    }
+    
+    static func locationFile(request: LocationFileRequest, completion: @escaping (_ succeed: LocationFileResponse?, _ failed: MyError?) -> Void) {
+        if UserDefaults.standard.value(forKey: "accessToken") == nil
+            || UserDefaults.standard.value(forKey: "refreshToken") == nil  {
+            return
+        }
+        
+        let authenticator = MyAuthenticator()
+        let credential = MyAuthenticationCredential(accessToken: UserDefaults.standard.value(forKey: "accessToken") as! String,
+                                                    refreshToken: UserDefaults.standard.value(forKey: "refreshToken") as! String)
+        let myAuthencitationInterceptor = AuthenticationInterceptor(authenticator: authenticator,
+                                                                        credential: credential)
+        
+        API.session.request(DailyLifeTarget.locationFile(request), interceptor: myAuthencitationInterceptor)
+            .response { data in
+                if data.response?.statusCode == 200 {
+                    if let _data = data.data {
+                        completion(LocationFileResponse(data: _data, statusCode: data.response?.statusCode), nil)
+                        
+                    } else {
+                        let myError = MyError()
+                        myError.resCode = data.response?.statusCode
+                        completion(nil, myError)
+                    }
+                    
+                } else {
+                    let myError = MyError()
+                    myError.resCode = data.response?.statusCode
+                    completion(nil, myError)
+                }
+            }
     }
 }

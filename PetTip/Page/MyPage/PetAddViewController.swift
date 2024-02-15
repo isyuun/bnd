@@ -169,6 +169,9 @@ class PetAddViewController: CommonViewController {
             btn_petTypeDog.isSelected = false
             btn_petTypeCat.isSelected = true
         }
+        
+        selectedPetKind = nil
+        lb_petKind.text = "사이즈 / 품종 선택"
     }
     
     @IBAction func onBirth(_ sender: Any) {
@@ -289,7 +292,7 @@ class PetAddViewController: CommonViewController {
             showToast(msg: "펫 종류를 선택해주세요")
             return false
             
-        } else if let addr = lb_addr.text, addr.count == 0 {
+        } else if selectedSido == nil || selectedSigungu == nil {
             showToast(msg: "주소를 입력해주세요")
             return false
             
@@ -454,7 +457,7 @@ class PetAddViewController: CommonViewController {
         
         startLoading()
         
-        let request = CreateUserRequest(appKey: Global.appKey, appOs: "002", appTypNm: Util.getModel(), ncknm: memberData.nick, snsLogin: "EMAIL", userID: memberData.id, userName: memberData.nick, userPW: memberData.pw)
+        let request = CreateUserRequest(appKey: Global.appKey, appOs: "002", appTypNm: Util.getModel(), ncknm: memberData.nick, snsLogin: memberData.method, userID: memberData.id, userName: memberData.nick, userPW: memberData.pw)
         MemberAPI.createUser(request: request) { response, error in
             self.stopLoading()
             

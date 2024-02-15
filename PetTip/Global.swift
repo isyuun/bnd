@@ -10,6 +10,9 @@ import RxSwift
 import RxRelay
 
 struct Global {
+    static var BASE_URI = "http://carepet.hopto.org:8020/api/v1"
+//    static var BASE_URI = "http://dev.pettip.net:8020/api/v1"
+    
     static var appKey: String = ""
     
     static var toSchUnqNo: Int = 0

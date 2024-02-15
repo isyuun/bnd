@@ -22,12 +22,13 @@ enum DailyLifeTarget {
     case weekRecord(WeekRecordRequest)
     case monthRecord(MonthRecordRequest)
     case view(LifeViewRequest)
+    case locationFile(LocationFileRequest)
 }
 
 extension DailyLifeTarget: TargetType {
 
     var baseURL: String {
-        return "http://carepet.hopto.org:8020/api/v1/daily-life"
+        return String("\(Global.BASE_URI)/daily-life")
     }
 
     var method: HTTPMethod {
@@ -45,6 +46,7 @@ extension DailyLifeTarget: TargetType {
         case .weekRecord: return .post
         case .monthRecord: return .post
         case .view: return .post
+        case .locationFile: return .post
         }
     }
 
@@ -63,6 +65,7 @@ extension DailyLifeTarget: TargetType {
         case .weekRecord: return "/week/recode"
         case .monthRecord: return "/month/recode"
         case .view: return "/view"
+        case .locationFile: return "/location/file"
         }
     }
 
@@ -81,6 +84,7 @@ extension DailyLifeTarget: TargetType {
         case .weekRecord(let request): return .body(request)
         case .monthRecord(let request): return .body(request)
         case .view(let request): return .body(request)
+        case .locationFile(let request): return .body(request)
         }
     }
 }

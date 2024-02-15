@@ -156,7 +156,7 @@ class JoinViewController: CommonViewController {
         }
         
         let petAddViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetAddViewController") as PetAddViewController
-        petAddViewController.memberData = MemberJoinData(id: tf_id.text!, pw: tf_pw.text!, nick: tf_nickNm.text!)
+        petAddViewController.memberData = MemberJoinData(id: tf_id.text!, pw: tf_pw.text!, nick: tf_nickNm.text!, method: "EMAIL")
         self.navigationController?.pushViewController(petAddViewController, animated: true)
     }
     
@@ -230,5 +230,6 @@ struct MemberJoinData {
     let id: String
     let pw: String
     let nick: String
+    let method: String
 }
 

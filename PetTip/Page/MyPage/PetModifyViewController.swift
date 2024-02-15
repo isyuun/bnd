@@ -267,6 +267,9 @@ class PetModifyViewController: CommonViewController {
             btn_petTypeDog.isSelected = false
             btn_petTypeCat.isSelected = true
         }
+        
+        selectedPetKind = nil
+        lb_petKind.text = "사이즈 / 품종 선택"
     }
     
     @IBAction func onBirth(_ sender: Any) {

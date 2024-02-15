@@ -16,7 +16,7 @@ enum StoryTarget {
 extension StoryTarget: TargetType {
 
     var baseURL: String {
-        return "http://carepet.hopto.org:8020/api/v1/story"
+        return String("\(Global.BASE_URI)/story")
     }
 
     var method: HTTPMethod {

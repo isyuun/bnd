@@ -95,7 +95,7 @@ class QnADetailViewController: CommonViewController{
                     self.arrFile = files
                     
                     let layout = self.cv_attachFile.collectionViewLayout as! UICollectionViewFlowLayout
-                    layout.minimumLineSpacing = 10
+                    layout.minimumLineSpacing = 5
                     layout.scrollDirection = .horizontal
                     self.cv_attachFile.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
                   

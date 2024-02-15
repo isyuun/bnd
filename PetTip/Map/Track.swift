@@ -11,6 +11,7 @@ import CoreLocation
 class Track {
     var location : CLLocation?
     var event : Event?
+    var pet: Pet?
 }
 
 enum Event : Int {

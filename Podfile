@@ -19,5 +19,10 @@ target 'PetTip' do
   pod 'Tabman', '~> 3.0'
   pod 'DropDown'
   pod 'DGCharts'
-
+  pod 'KakaoSDKUser'
+  pod 'KakaoSDKAuth'
+  pod 'naveridlogin-sdk-ios'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+  
 end

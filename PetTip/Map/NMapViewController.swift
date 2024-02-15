@@ -7,8 +7,12 @@
 
 import UIKit
 import NMapsMap
+import AVKit
 
 class NMapViewController : LocationViewController, MapBottomViewProtocol {
+    
+    public var dailyLifePets: PetList?
+    private var selectedPets = [Pet]()
     
     @IBOutlet weak var naverMapView: NMFNaverMapView!
     var mapView: NMFMapView {
@@ -28,8 +32,27 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
     var mapSnapImg : UIImage? = nil
     
     @IBOutlet weak var btnWalk: UIButton!
+    
     @IBAction func onBtnWalk(_ sender: Any) {
         if (bWalkingState == true) {
+            if (endMarker == nil) {
+                endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), text: "도착", forceShow: false)
+                endMarker.mapView = self.naverMapView.mapView
+                
+                let track = Track()
+                track.location = CLLocation(coordinate: arrTrack.last!.location!.coordinate,
+                                            altitude: arrTrack.last!.location!.altitude,
+                                            horizontalAccuracy: arrTrack.last!.location!.horizontalAccuracy,
+                                            verticalAccuracy: arrTrack.last!.location!.verticalAccuracy,
+                                            course: arrTrack.last!.location!.course,
+                                            courseAccuracy: arrTrack.last!.location!.courseAccuracy,
+                                            speed: arrTrack.last!.location!.speed,
+                                            speedAccuracy: arrTrack.last!.location!.speedAccuracy,
+                                            timestamp: Date())
+                track.event = .non
+                arrTrack.append(track)
+            }
+            
             showTrackSummaryMap()
             
             naverMapView.takeSnapshot(withShowControls: false, complete: {[weak self] (image) in
@@ -48,7 +71,38 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
             self.present(bottomSheetVC, animated: false, completion: nil)
             
         } else {
-            startWalkingProcess()
+            guard let dailyLifePets = dailyLifePets else {
+                self.showToast(msg: "등록된 펫이 없습니다")
+                return
+            }
+            
+            if dailyLifePets.pets.count > 1 {
+                showSelectPetList()
+                
+            } else {
+                selectedPets = [Pet]()
+                selectedPets.append(dailyLifePets.pets.last!)
+                
+                startWalkingProcess()
+            }
+        }
+    }
+    
+    private func showSelectPetList() {
+        
+        if let v = UINib(nibName: "SelectWalkPetView", bundle: nil).instantiate(withOwner: self).first as? SelectWalkPetView {
+            v.initialize()
+            v.setData(dailyLifePets?.pets as Any)
+            v.isSingleSelectMode = false
+            v.didTapOK = { selectedPets in
+                self.didTapPopupOK()
+                
+                self.selectedPets = selectedPets
+                
+                self.startWalkingProcess()
+            }
+            
+            self.popupShow(contentView: v, wSideMargin: 0, type: .bottom)
         }
     }
     
@@ -97,59 +151,67 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         refreshMoveInfoStop(isSafeStop: false)
     }
     
-    @IBOutlet weak var btnCamera: UIButton!
-    @IBAction func onBtnCamera(_ sender: Any) {
-    }
-    
     @IBOutlet weak var btnList: UIButton!
     @IBAction func onBtnList(_ sender: Any) {
     }
     
     @IBOutlet weak var btnPee: UIButton!
     @IBAction func onBtnPee(_ sender: Any) {
-        if (arrTrack != nil && arrTrack.last != nil && arrTrack.last?.location != nil) {
-            let eventMarker = getEventMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), event: .PEE)
-            eventMarker.mapView = self.mapView
-            
-            let track = Track()
-            track.location = arrTrack.last?.location
-            track.event = .pee
-            arrTrack.append(track)
-            
-            if (arrEventMarker == nil) {
-                arrEventMarker = Array<NMFMarker>()
-            }
-            arrEventMarker?.append(eventMarker)
-        }
+        selectEventMarkPet(mark: .PEE)
     }
+    
     
     @IBOutlet weak var btnPoo: UIButton!
     @IBAction func onBtnPoo(_ sender: Any) {
-        if (arrTrack != nil && arrTrack.last != nil && arrTrack.last?.location != nil) {
-            let eventMarker = getEventMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), event: .POO)
-            eventMarker.mapView = self.mapView
-            
-            let track = Track()
-            track.location = arrTrack.last?.location
-            track.event = .poo
-            arrTrack.append(track)
-            
-            if (arrEventMarker == nil) {
-                arrEventMarker = Array<NMFMarker>()
-            }
-            arrEventMarker?.append(eventMarker)
-        }
+        selectEventMarkPet(mark: .POO)
     }
     
     @IBOutlet weak var btnMrk: UIButton!
     @IBAction func onBtnMrk(_ sender: Any) {
+        selectEventMarkPet(mark: .MRK)
+    }
+    
+    private func selectEventMarkPet(mark: NMapViewController.EventMark) {
+        if selectedPets.count == 0 {
+            return
+            
+        } else if selectedPets.count == 1 {
+            addEventMark(mark: mark, pet: selectedPets.last!)
+            
+        } else if selectedPets.count > 1 {
+            if let v = UINib(nibName: "SelectWalkMarkPetView", bundle: nil).instantiate(withOwner: self).first as? SelectWalkMarkPetView {
+                v.initialize(pets: selectedPets, mark: mark)
+                v.didSelect = { selectIndex in
+                    self.didTapPopupOK()
+                    
+                    self.addEventMark(mark: mark, pet: self.selectedPets[selectIndex])
+                }
+                v.didCancel = {
+                    self.didTapPopupCancel()
+                }
+                
+                self.popupShow(contentView: v, wSideMargin: 0, type: .bottom)
+            }
+        }
+    }
+    
+    private func addEventMark(mark: NMapViewController.EventMark, pet: Pet) {
         if (arrTrack != nil && arrTrack.last != nil && arrTrack.last?.location != nil) {
-            let eventMarker = getEventMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), event: .MRK)
+            let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), event: mark)
             eventMarker.mapView = self.mapView
             
             let track = Track()
-            track.location = arrTrack.last?.location
-            track.event = .mrk
+            track.location = CLLocation(coordinate: arrTrack.last!.location!.coordinate,
+                                        altitude: arrTrack.last!.location!.altitude,
+                                        horizontalAccuracy: arrTrack.last!.location!.horizontalAccuracy,
+                                        verticalAccuracy: arrTrack.last!.location!.verticalAccuracy,
+                                        course: arrTrack.last!.location!.course,
+                                        courseAccuracy: arrTrack.last!.location!.courseAccuracy,
+                                        speed: arrTrack.last!.location!.speed,
+                                        speedAccuracy: arrTrack.last!.location!.speedAccuracy,
+                                        timestamp: Date())
+            track.event = mark == .PEE ? .pee : mark == .POO ? .poo : .mrk
+            track.pet = pet
             arrTrack.append(track)
             
             if (arrEventMarker == nil) {
@@ -158,6 +220,10 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
             arrEventMarker?.append(eventMarker)
         }
     }
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -169,7 +235,7 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         mapView.positionMode = .direction
         mapView.zoomLevel = 17
         mapView.minZoomLevel = 5.0
-        mapView.maxZoomLevel = 18.0
+//        mapView.maxZoomLevel = 18.0
         
 //        mapView.locationOverlay.icon = NMFOverlayImage(name: "currentLocation")
 //        mapView.locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
@@ -220,6 +286,7 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         btnList.setImage(UIImage(named: "icon_list"), for:.normal)
         btnList.setTitle("", for: .normal)
         btnList.showShadowLight()
+        btnList.isHidden = true
         
         btnPee.layer.cornerRadius = btnPee.layer.bounds.width / 2
         btnPee.layer.borderColor = UIColor.init(hexCode: "e3e9f2").cgColor
@@ -308,8 +375,10 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
             
         } else if (locationReqType == 2) {
             if (startMarker == nil) {
-                startMarker = getTextMarker(loc: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), text: "출발", forceShow: false)
+                startMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), text: "출발", forceShow: false)
                 startMarker.mapView = self.naverMapView.mapView
+            } else {
+                
             }
             
             let track = Track()
@@ -353,7 +422,7 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
 //                    mapView.moveCamera(cameraUpdate)
     }
     
-    func getTextMarker(loc : NMGLatLng, text : String, forceShow : Bool) -> NMFMarker {
+    static func getTextMarker(loc : NMGLatLng, text : String, forceShow : Bool) -> NMFMarker {
         let marker = NMFMarker()
         marker.captionText = text
         marker.captionOffset = -39
@@ -383,10 +452,13 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
     var movedSec : Double = 0
     var movedDist : Double = 0
     
-    override func viewDidDisappear(_ animated: Bool) {
-        refreshMoveInfoStop(isSafeStop: false)
+    override func endAppearanceTransition() {
+        if isBeingDismissed {
+            refreshMoveInfoStop(isSafeStop: false)
+        }
+        super.endAppearanceTransition()
     }
-
+    
     var statusViewTimer : Timer?
     
     func refreshMoveInfoStart() {
@@ -455,8 +527,7 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         self.mapTopView.mapNavView?.distLabel.text = String(format: "%.2f km", distKm)
         
         if (mapBottomView != nil) {
-            mapBottomView.timeLabel.text = String(strMovedTime)
-            mapBottomView.distLabel.text = String(format: "%.2f km", distKm)
+            mapBottomView.refresh(time: strMovedTime, dist: String(format: "%.2f km", distKm))
         }
     }
     
@@ -474,29 +545,29 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         case MRK
     }
     
-    var markerPeeImg : UIImage? = nil
-    var markerpooImg : UIImage? = nil
-    var markerMrkImg : UIImage? = nil
+    static var markerPeeImg : UIImage? = nil
+    static var markerpooImg : UIImage? = nil
+    static var markerMrkImg : UIImage? = nil
     
-    func getEventMarker(loc : NMGLatLng, event : EventMark) -> NMFMarker {
+    static func getEventMarker(loc : NMGLatLng, event : EventMark) -> NMFMarker {
         var markerImg : UIImage? = nil
         if (event == .PEE) {
             if (markerPeeImg == nil) {
-                markerPeeImg = getEventMarkerImg(event: event)
+                markerPeeImg = NMapViewController.getEventMarkerImg(event: event)
                 markerImg = markerPeeImg
             } else {
                 markerImg = markerPeeImg
             }
         } else if (event == .POO) {
             if (markerpooImg == nil) {
-                markerpooImg = getEventMarkerImg(event: event)
+                markerpooImg = NMapViewController.getEventMarkerImg(event: event)
                 markerImg = markerpooImg
             } else {
                 markerImg = markerpooImg
             }
         } else if (event == .MRK) {
             if (markerMrkImg == nil) {
-                markerMrkImg = getEventMarkerImg(event: event)
+                markerMrkImg = NMapViewController.getEventMarkerImg(event: event)
                 markerImg = markerMrkImg
             } else {
                 markerImg = markerMrkImg
@@ -513,7 +584,7 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         return marker
     }
     
-    func getEventMarkerImg(event : EventMark) -> UIImage? {
+    static func getEventMarkerImg(event : EventMark) -> UIImage? {
         var bgColor : UIColor? = nil
         var innerImg : UIImage? = nil
         if (event == .PEE) {
@@ -573,15 +644,118 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
     
     
     
+    // MARK: - CAMERA
+    
+    @IBOutlet weak var btnCamera: UIButton!
+    
+    private var arrImageFromCamera = [UIImage]()
+    
+    @IBAction func onBtnCamera(_ sender: Any) {
+        #if targetEnvironment(simulator)
+        //fatalError()
+        self.showToast(msg: "Simulator에서는 카메라가 동작하지 않아요")
+        return
+        #endif
+        
+        if arrImageFromCamera.count >= 5 {
+            showToast(msg: "사진은 최대 5장까지만 가능해요")
+            return
+        }
+        
+        AVCaptureDevice.requestAccess(for: .video) { [weak self] isAuthorized in
+            guard isAuthorized else {
+                self?.showAlertGoToSetting()
+                return
+            }
+        }
+        
+        DispatchQueue.main.async {
+            let pickerController = UIImagePickerController() // must be used from main thread only
+            pickerController.sourceType = .camera
+            pickerController.allowsEditing = false
+            pickerController.mediaTypes = ["public.image"]
+            // 만약 비디오가 필요한 경우,
+      //      imagePicker.mediaTypes = ["public.movie"]
+      //      imagePicker.videoQuality = .typeHigh
+            pickerController.delegate = self
+            self.present(pickerController, animated: true)
+          }
+    }
+    
+    func showAlertGoToSetting() {
+        let alertController = UIAlertController(
+          title: "현재 카메라 사용에 대한 접근 권한이 없습니다.",
+          message: "설정 > {앱 이름}탭에서 접근을 활성화 할 수 있습니다.",
+          preferredStyle: .alert
+        )
+        let cancelAlert = UIAlertAction(
+          title: "취소",
+          style: .cancel
+        ) { _ in
+            alertController.dismiss(animated: true, completion: nil)
+          }
+        let goToSettingAlert = UIAlertAction(
+          title: "설정으로 이동하기",
+          style: .default) { _ in
+            guard
+              let settingURL = URL(string: UIApplication.openSettingsURLString),
+              UIApplication.shared.canOpenURL(settingURL)
+            else { return }
+            UIApplication.shared.open(settingURL, options: [:])
+          }
+        [cancelAlert, goToSettingAlert]
+          .forEach(alertController.addAction(_:))
+        DispatchQueue.main.async {
+          self.present(alertController, animated: true) // must be used from main thread only
+        }
+      }
+    
+    
+    
+    
+    
     // MARK: - NEXT PAGE
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showPost") {
             let dest = segue.destination
             guard let vc = dest as? PostViewController else { return }
-            if let _mapSnapImg = mapSnapImg {
-                vc.mapSnapImg = _mapSnapImg
-            }
+//            vc.mapSnapImg = _mapSnapImg
+            vc.arrTrack = arrTrack
+            vc.arrImageFromCamera = arrImageFromCamera
+            vc.movedSec = movedSec
+            vc.movedDist = movedDist
+            vc.selectedPets = selectedPets
         }
     }
+}
+
+
+
+
+
+extension NMapViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+  func imagePickerController(
+    _ picker: UIImagePickerController,
+    didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+  ) {
+    guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+      picker.dismiss(animated: true)
+      return
+    }
+      arrImageFromCamera.append(image)
+      
+      let track = Track()
+      track.location = arrTrack.last?.location
+      track.event = .img
+      arrTrack.append(track)
+      
+      picker.dismiss(animated: true, completion: nil)
+    // 비디오인 경우 - url로 받는 형태
+//    guard let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL else {
+//      picker.dismiss(animated: true, completion: nil)
+//      return
+//    }
+//    let video = AVAsset(url: url)
+  }
 }

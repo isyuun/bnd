@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectWalkMarkPetView" customModule="PetTip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plX-gK-hTD">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-6t-lIc">
+                            <rect key="frame" x="0.0" y="150" width="393" height="554"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G06-nK-FZd">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="554"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" priority="250" constant="554" id="wdZ-PJ-FeT"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="G06-nK-FZd" firstAttribute="leading" secondItem="bTy-cn-GqD" secondAttribute="leading" id="AV3-ix-Zip"/>
+                                <constraint firstItem="G06-nK-FZd" firstAttribute="top" secondItem="bTy-cn-GqD" secondAttribute="top" id="HJE-G3-1lz"/>
+                                <constraint firstItem="G06-nK-FZd" firstAttribute="trailing" secondItem="bTy-cn-GqD" secondAttribute="trailing" id="IHM-vv-nD0"/>
+                                <constraint firstItem="G06-nK-FZd" firstAttribute="width" secondItem="6cZ-IM-P6v" secondAttribute="width" id="Liw-JD-LTq"/>
+                                <constraint firstItem="G06-nK-FZd" firstAttribute="bottom" secondItem="bTy-cn-GqD" secondAttribute="bottom" id="jmK-OS-1gZ"/>
+                            </constraints>
+                            <viewLayoutGuide key="contentLayoutGuide" id="bTy-cn-GqD"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="6cZ-IM-P6v"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="852" id="Inz-yD-pfK"/>
+                        <constraint firstItem="cO6-6t-lIc" firstAttribute="top" secondItem="plX-gK-hTD" secondAttribute="top" constant="150" id="JEk-BX-oYr"/>
+                        <constraint firstItem="cO6-6t-lIc" firstAttribute="leading" secondItem="plX-gK-hTD" secondAttribute="leading" id="KeA-oj-1Cq"/>
+                        <constraint firstAttribute="bottom" secondItem="cO6-6t-lIc" secondAttribute="bottom" constant="148" id="KvX-g2-zFa"/>
+                        <constraint firstAttribute="trailing" secondItem="cO6-6t-lIc" secondAttribute="trailing" id="Xec-Il-HIZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="plX-gK-hTD" secondAttribute="bottom" id="Ubk-SM-EaG"/>
+                <constraint firstItem="plX-gK-hTD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="in0-qz-0uB"/>
+                <constraint firstItem="plX-gK-hTD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ols-3D-oXU"/>
+                <constraint firstAttribute="trailing" secondItem="plX-gK-hTD" secondAttribute="trailing" id="xd4-4y-30D"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cr_baseViewHeight" destination="Inz-yD-pfK" id="rVX-aM-vWf"/>
+                <outlet property="cr_contentViewHeight" destination="wdZ-PJ-FeT" id="Cz6-JK-BLf"/>
+                <outlet property="cr_scrollViewBottomMargin" destination="KvX-g2-zFa" id="p8h-la-aI3"/>
+                <outlet property="cr_scrollViewTopMargin" destination="JEk-BX-oYr" id="a0T-35-Py5"/>
+                <outlet property="vw_area" destination="G06-nK-FZd" id="26K-L5-EUB"/>
+            </connections>
+            <point key="canvasLocation" x="38.931297709923662" y="-12.67605633802817"/>
+        </view>
+    </objects>
+</document>

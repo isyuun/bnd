@@ -67,10 +67,10 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zU-4E-4Qu">
-                                    <rect key="frame" x="321" y="12" width="60" height="18"/>
+                                    <rect key="frame" x="321" y="12" width="60" height="28"/>
                                     <color key="backgroundColor" red="0.29161345960000001" green="0.49964249129999999" blue="0.96083015199999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="18" id="Ch0-Zv-b5G"/>
+                                        <constraint firstAttribute="height" constant="28" id="Ch0-Zv-b5G"/>
                                         <constraint firstAttribute="width" constant="60" id="uuM-cT-ZDY"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>

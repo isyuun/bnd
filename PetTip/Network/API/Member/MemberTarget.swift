@@ -22,7 +22,7 @@ enum MemberTarget {
 extension MemberTarget: TargetType {
     
     var baseURL: String {
-        return "http://carepet.hopto.org:8020/api/v1/member"
+        return String("\(Global.BASE_URI)/member")
     }
 
     var method: HTTPMethod {

@@ -307,7 +307,7 @@ struct BBSAPI {
                                          fileName: "image\(i).jpg",
                                          mimeType: "image/*")
             }
-        }, to: "http://carepet.hopto.org:8020/api/v1/bbs/qna/atch/upload",
+        }, to: String("\(Global.BASE_URI)/bbs/qna/atch/upload"),
                            usingThreshold: UInt64.init(),
                            method: .post,
                            headers: header,

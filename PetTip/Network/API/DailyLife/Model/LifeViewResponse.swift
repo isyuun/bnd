@@ -32,6 +32,7 @@ struct LifeViewData: Codable {
     let walkEndDt: String?
     let totDstnc, totCLR: Int
     let totMvmnPathFile: String?
+    let totMvmnPathFileSn: String?
     let dailyLifePetList: [DailyLifePetList]?
     let dailyLifeSchSEList: [DailyLifeSchSEList]
     let dailyLifeFileList: [DailyLifeFileList]?
@@ -51,7 +52,7 @@ struct LifeViewData: Codable {
         case rgtrIPAddr = "rgtrIpAddr"
         case delYn, walkDptreDt, walkEndDt, totDstnc
         case totCLR = "totClr"
-        case totMvmnPathFile, dailyLifePetList
+        case totMvmnPathFile, totMvmnPathFileSn, dailyLifePetList
         case dailyLifeSchSEList = "dailyLifeSchSeList"
         case dailyLifeFileList, dailyLifeSchHashTagList, cmntList, atchPath, runTime, runDstnc
         case runCLR = "runClr"

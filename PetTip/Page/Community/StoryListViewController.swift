@@ -159,7 +159,6 @@ class StoryListViewController : CommonViewController {
     }
     
     private func requestStoryList(_ isMore: Bool) {
-        
         var delay = 0.0
         if (isMore) {
             delay = 0.0
@@ -241,7 +240,6 @@ extension StoryListViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 10
         return arrStoryList.count
     }
     
@@ -282,7 +280,16 @@ extension StoryListViewController: UICollectionViewDataSource, UICollectionViewD
         } else {
             self.performSegue(withIdentifier: "segueStoryListToDetail", sender: arrStoryList[indexPath.row].schUnqNo)
         }
-        
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if collectionView.numberOfItems(inSection: section) == 1 {
+            let layout = storyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+            let singleItemRightInset = StoryItemView.getCalcSize(Int(collectionView.bounds.width), Int(layout.minimumLineSpacing)).width + layout.minimumLineSpacing
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: singleItemRightInset)
+            
+        } else {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
     }
 }

@@ -24,7 +24,7 @@ enum MyPetTarget {
 extension MyPetTarget: TargetType {
 
     var baseURL: String {
-        return "http://carepet.hopto.org:8020/api/v1/mypet"
+        return String("\(Global.BASE_URI)/mypet")
     }
 
     var method: HTTPMethod {

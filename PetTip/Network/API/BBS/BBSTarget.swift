@@ -26,7 +26,7 @@ enum BBSTarget {
 extension BBSTarget: TargetType {
 
     var baseURL: String {
-        return "http://carepet.hopto.org:8020/api/v1/bbs"
+        return String("\(Global.BASE_URI)/bbs")
     }
 
     var method: HTTPMethod {

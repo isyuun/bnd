@@ -56,7 +56,11 @@ class CommonViewController : LoadingIndicatorViewController {
                 }
             }
             
-            self.showSimpleAlert(title: "Network fail", msg: error.description)
+            if let description = error.description {
+                self.showSimpleAlert(title: "Network fail", msg: description)
+            } else {
+                self.showSimpleAlert(title: "Network fail", msg: "통신 중 오류가 발생했어요. [\(String(describing: error.resCode))]")
+            }
         }
     }
     

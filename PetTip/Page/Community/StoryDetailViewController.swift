@@ -39,10 +39,13 @@ class StoryDetailViewController : CommonDetailViewController {
     @IBOutlet weak var vw_msgArea : UIView!
     @IBOutlet weak var lb_msg : UILabel!
     
+    @IBOutlet weak var cr_tagAreaHeight : NSLayoutConstraint!
+    @IBOutlet weak var vw_tagArea : UIView!
     @IBOutlet weak var lb_tag: UILabel!
     
     @IBOutlet weak var lb_CmtCnt2: UILabel!
     
+    @IBOutlet weak var cr_commentAreaHeight : NSLayoutConstraint!
     @IBOutlet weak var vw_commentArea : UIStackView!
     
     @IBOutlet weak var tv_comment: UITextView!
@@ -525,7 +528,7 @@ class StoryDetailViewController : CommonDetailViewController {
                                 
                                 if self.vw_commentArea.subviews.count == 0 {
 //                                    self.cr_msgAreaHeight.isActive = false
-                                    self.cr_msgAreaHeight.priority = .defaultLow
+                                    self.cr_commentAreaHeight.priority = .defaultLow
                                 }
                                 
                                 if let view = UINib(nibName: "CommunityCommentView", bundle: nil).instantiate(withOwner: self).first as? CommunityCommentView
@@ -724,10 +727,13 @@ class StoryDetailViewController : CommonDetailViewController {
                                 let formatter = DateFormatter()
                                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                                 let searchDay = formatter.date(from: walkDtStr)
-                                
-                                let formatter2 = DateFormatter()
-                                formatter2.dateFormat = "yyyy.MM.dd"
-                                self.lb_walkDt.text = formatter2.string(from: searchDay!)
+                                if searchDay != nil {
+                                    let formatter2 = DateFormatter()
+                                    formatter2.dateFormat = "yyyy.MM.dd"
+                                    self.lb_walkDt.text = formatter2.string(from: searchDay!)
+                                } else {
+                                    self.lb_walkDt.text = "0000.00.00"
+                                }
                             }
                             
                             self.lb_walkTime.text = lifeView.lifeViewData.runTime
@@ -744,20 +750,38 @@ class StoryDetailViewController : CommonDetailViewController {
                         self.lb_msg.text = lifeView.lifeViewData.schCN
                         self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
                         self.vw_msgArea.isHidden = false
-                        self.cr_msgAreaHeight.priority = .defaultLow
+                        self.vw_msgArea.heightAnchor.constraint(equalToConstant: 37).isActive = true
                         
                     } else {
                         self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
                         self.vw_msgArea.isHidden = true
-                        self.cr_msgAreaHeight.constant = 0
-                        self.cr_msgAreaHeight.priority = UILayoutPriority.init(1000)
+                        self.vw_msgArea.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+                    }
+                    
+                    if let dailyLifeSchHashTagList = lifeView.lifeViewData.dailyLifeSchHashTagList {
+                        var str = ""
+                        for i in 0..<dailyLifeSchHashTagList.count {
+                            if str != "" {
+                                str += " "
+                            }
+                            str += String("#\(dailyLifeSchHashTagList[i].hashTagNm)")
+                        }
+                        self.lb_tag.preferredMaxLayoutWidth = self.lb_tag.frame.size.width;
+                        self.lb_tag.text = str
+                        self.vw_tagArea.translatesAutoresizingMaskIntoConstraints = false
+                        self.vw_tagArea.isHidden = false
+                        self.vw_tagArea.heightAnchor.constraint(equalToConstant: 37).isActive = true
+                        
+                    } else {
+                        self.vw_tagArea.translatesAutoresizingMaskIntoConstraints = false
+                        self.vw_tagArea.isHidden = true
+                        self.vw_tagArea.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
                     }
                     
                     self.vw_commentArea.subviews.forEach({ $0.removeFromSuperview()})
                     
                     if lifeView.lifeViewData.cmntCnt > 0 {
-//                        self.cr_msgAreaHeight.isActive = false
-                        self.cr_msgAreaHeight.priority = .defaultLow
+                        self.cr_commentAreaHeight.priority = .defaultLow
                         
                         if let _cmntList = lifeView.lifeViewData.cmntList {
                             self.arrComment = [CommentData]()
@@ -804,8 +828,8 @@ class StoryDetailViewController : CommonDetailViewController {
                         }
                         
                     } else {
-                        self.cr_msgAreaHeight.constant = 0
-                        self.cr_msgAreaHeight.priority = UILayoutPriority.init(1000)
+                        self.cr_commentAreaHeight.constant = 0
+                        self.cr_commentAreaHeight.priority = UILayoutPriority.init(1000)
                     }
                 }
                 

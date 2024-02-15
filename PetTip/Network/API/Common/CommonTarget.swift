@@ -18,7 +18,7 @@ enum CommonTarget {
 extension CommonTarget: TargetType {
 
     var baseURL: String {
-        return "http://carepet.hopto.org:8020/api/v1/cmm"
+        return String("\(Global.BASE_URI)/cmm")
     }
 
     var method: HTTPMethod {

@@ -3,4 +3,69 @@
    uuid = "C6337935-8E50-408E-B9B4-FA46B33AF1C4"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51BEE1D8-153D-4B42-B37A-0D6716C4C603"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PetTip/Map/PostViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "699"
+            endingLineNumber = "699"
+            landmarkName = "getGPXData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "51BEE1D8-153D-4B42-B37A-0D6716C4C603 - 3a5e9daea763b5c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PetTip.PostViewController.getGPXData() -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "PetTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carebiz/Documents/dev/iOS/pettip/PetTip/PetTip/Map/PostViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "700"
+                  endingLineNumber = "700"
+                  offsetFromSymbolStart = "5111">
+               </Location>
+               <Location
+                  uuid = "51BEE1D8-153D-4B42-B37A-0D6716C4C603 - 3a5e9daea763b5e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PetTip.PostViewController.getGPXData() -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "PetTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carebiz/Documents/dev/iOS/pettip/PetTip/PetTip/Map/PostViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "699"
+                  endingLineNumber = "699"
+                  offsetFromSymbolStart = "5628">
+               </Location>
+               <Location
+                  uuid = "51BEE1D8-153D-4B42-B37A-0D6716C4C603 - 3a5e9daea763b5e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PetTip.PostViewController.getGPXData() -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "PetTip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/carebiz/Documents/dev/iOS/pettip/PetTip/PetTip/Map/PostViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "699"
+                  endingLineNumber = "699"
+                  offsetFromSymbolStart = "6922">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
