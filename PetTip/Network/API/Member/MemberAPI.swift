@@ -184,4 +184,30 @@ struct MemberAPI {
                 }
             }
     }
+    
+    static func trmnlMng(request: TrmnlMngRequest, completion: @escaping (_ succeed: TrmnlMngResponse?, _ failed: MyError?) -> Void) {
+        if UserDefaults.standard.value(forKey: "accessToken") == nil
+            || UserDefaults.standard.value(forKey: "refreshToken") == nil  {
+            return
+        }
+        
+        let authenticator = MyAuthenticator()
+        let credential = MyAuthenticationCredential(accessToken: UserDefaults.standard.value(forKey: "accessToken") as! String,
+                                                    refreshToken: UserDefaults.standard.value(forKey: "refreshToken") as! String)
+        let myAuthencitationInterceptor = AuthenticationInterceptor(authenticator: authenticator,
+                                                                        credential: credential)
+        
+        API.session.request(MemberTarget.trmnlMng(request), interceptor: myAuthencitationInterceptor)
+            .responseDecodable { (response: AFDataResponse<TrmnlMngResponse>) in
+                switch response.result {
+                case .success(let response):
+                    completion(response, nil)
+                case .failure(let error):
+                    let myError = MyError()
+                    myError.description = error.localizedDescription
+                    myError.resCode = response.response?.statusCode
+                    completion(nil, myError)
+                }
+            }
+    }
 }

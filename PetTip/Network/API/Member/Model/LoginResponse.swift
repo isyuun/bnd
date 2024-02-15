@@ -57,6 +57,6 @@ class JSONNull: Codable, Hashable {
 
 extension LoginResponse {
     var toDomain: Login {
-        return Login(userId: data.userID, nckNm: data.nckNm, email: data.email, accessToken: data.accessToken, refreshToken: data.refreshToken)
+        return Login(userId: data.userID, nckNm: data.nckNm, email: data.email, accessToken: data.accessToken, refreshToken: data.refreshToken, appKeyVl: data.appKeyVl)
     }
 }

@@ -120,6 +120,8 @@
 		0293C6282B0E3BD80004F19D /* UTCTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C6272B0E3BD80004F19D /* UTCTimeService.swift */; };
 		0293C62A2B0E43280004F19D /* UTCTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C6292B0E43280004F19D /* UTCTimeViewModel.swift */; };
 		0293C62C2B0E60710004F19D /* UTCTimeViewModelRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0293C62B2B0E60710004F19D /* UTCTimeViewModelRx.swift */; };
+		029851102B7DD10A00A0A056 /* TrmnlMngRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0298510F2B7DD10A00A0A056 /* TrmnlMngRequest.swift */; };
+		029851122B7DD11600A0A056 /* TrmnlMngResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029851112B7DD11600A0A056 /* TrmnlMngResponse.swift */; };
 		02A05A7C2B318C8700E8ABFA /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A05A7B2B318C8700E8ABFA /* StoryDetailViewController.swift */; };
 		02A05A7E2B31A27900E8ABFA /* CommonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A05A7D2B31A27900E8ABFA /* CommonDetailViewController.swift */; };
 		02A05AAC2B36658600E8ABFA /* CommunityCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A05AAA2B36658600E8ABFA /* CommunityCommentView.swift */; };
@@ -438,6 +440,8 @@
 		0293C6272B0E3BD80004F19D /* UTCTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTCTimeService.swift; sourceTree = "<group>"; };
 		0293C6292B0E43280004F19D /* UTCTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTCTimeViewModel.swift; sourceTree = "<group>"; };
 		0293C62B2B0E60710004F19D /* UTCTimeViewModelRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTCTimeViewModelRx.swift; sourceTree = "<group>"; };
+		0298510F2B7DD10A00A0A056 /* TrmnlMngRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrmnlMngRequest.swift; sourceTree = "<group>"; };
+		029851112B7DD11600A0A056 /* TrmnlMngResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrmnlMngResponse.swift; sourceTree = "<group>"; };
 		02A05A7B2B318C8700E8ABFA /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		02A05A7D2B31A27900E8ABFA /* CommonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDetailViewController.swift; sourceTree = "<group>"; };
 		02A05AAA2B36658600E8ABFA /* CommunityCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityCommentView.swift; sourceTree = "<group>"; };
@@ -1116,6 +1120,8 @@
 				02A05B4F2B45B28600E8ABFA /* WithdrawRequest.swift */,
 				02A7AAEC2B58A6F1002F0C03 /* CreateUserRequest.swift */,
 				02A7AAEE2B58A6FE002F0C03 /* CreateUserResponse.swift */,
+				0298510F2B7DD10A00A0A056 /* TrmnlMngRequest.swift */,
+				029851112B7DD11600A0A056 /* TrmnlMngResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1514,6 +1520,7 @@
 				02DB38102B64E6DA007D19A1 /* MyPetDetailRequest.swift in Sources */,
 				02A05AB52B3A673700E8ABFA /* CmntRcmdtnRequest.swift in Sources */,
 				027F76602B4E918800429AC5 /* FaqListResponse.swift in Sources */,
+				029851122B7DD11600A0A056 /* TrmnlMngResponse.swift in Sources */,
 				027F765A2B4E8D4F00429AC5 /* NoticeDtlListRequest.swift in Sources */,
 				028625132B4905540055E62F /* PetAddViewController.swift in Sources */,
 				0286251D2B4996E50055E62F /* PetTypeSelectViewController.swift in Sources */,
@@ -1611,6 +1618,7 @@
 				02E3FC5D2B25472500A1CE62 /* MemberAPI.swift in Sources */,
 				02A7AACE2B51387E002F0C03 /* QnAAddAttachFileItemView.swift in Sources */,
 				020B79572B28A8A300C0AB2D /* WeatherTarget.swift in Sources */,
+				029851102B7DD10A00A0A056 /* TrmnlMngRequest.swift in Sources */,
 				02A05B3A2B4133EC00E8ABFA /* MyPageCompPetListItemView.swift in Sources */,
 				02A05AD62B3C4B7500E8ABFA /* CmntDelete.swift in Sources */,
 				02A05B242B404A8900E8ABFA /* AncmntWinnerListRequest.swift in Sources */,

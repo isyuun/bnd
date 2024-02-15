@@ -151,10 +151,25 @@ class LoginViewController : CommonViewController {
 //                KeychainServiceImpl.shared.accessToken = login.accessToken
 //                KeychainServiceImpl.shared.refreshToken = login.refreshToken
                 
-                self.performSegue(withIdentifier: "segueLoginToMain", sender: self)
+                self.trmnlMng(appKeyVl: login.appKeyVl)
             }
             
             self.processNetworkError(error)
+        }
+    }
+    
+    private func trmnlMng(appKeyVl: String?) {
+        if (appKeyVl == nil || appKeyVl == "") || appKeyVl != Global.appKey {
+            
+            let request = TrmnlMngRequest(appKey: Global.appKey, appOs: "002", appTypNm: Util.getModel())
+            MemberAPI.trmnlMng(request: request) { login, error in
+                self.stopLoading()
+                
+                self.performSegue(withIdentifier: "segueLoginToMain", sender: self)
+            }
+            
+        } else {
+            self.performSegue(withIdentifier: "segueLoginToMain", sender: self)
         }
     }
     
@@ -205,7 +220,7 @@ class LoginViewController : CommonViewController {
 //                KeychainServiceImpl.shared.accessToken = login.accessToken
 //                KeychainServiceImpl.shared.refreshToken = login.refreshToken
                 
-                self.performSegue(withIdentifier: "segueLoginToMain", sender: self)
+                self.trmnlMng(appKeyVl: login.appKeyVl)
                 
             } else {
                 let snsJoinViewcontroller = UIStoryboard(name: "Member", bundle: nil).instantiateViewController(identifier: "SNSJoinViewcontroller") as SNSJoinViewcontroller

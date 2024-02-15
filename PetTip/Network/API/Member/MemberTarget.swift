@@ -17,6 +17,7 @@ enum MemberTarget {
     case resetNcknm(ResetNcknmRequest)
     case resetPassword(ResetPasswordRequest)
     case withdraw(WithdrawRequest)
+    case trmnlMng(TrmnlMngRequest)
 }
 
 extension MemberTarget: TargetType {
@@ -35,6 +36,7 @@ extension MemberTarget: TargetType {
         case .resetNcknm: return .post
         case .resetPassword: return .post
         case .withdraw: return .post
+        case .trmnlMng: return .post
         }
     }
 
@@ -48,6 +50,7 @@ extension MemberTarget: TargetType {
         case .resetNcknm: return "/reset-ncknm"
         case .resetPassword: return "/reset-password"
         case .withdraw: return "/withdraw"
+        case .trmnlMng: return "/trmnlMng"
         }
     }
 
@@ -61,6 +64,7 @@ extension MemberTarget: TargetType {
         case .resetNcknm(let request): return .body(request)
         case .resetPassword(let request): return .body(request)
         case .withdraw(let request): return .body(request)
+        case .trmnlMng(let request): return .body(request)
         }
     }
 }

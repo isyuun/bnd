@@ -12,4 +12,5 @@ struct Login {
     let nckNm: String
     let email: String
     let accessToken, refreshToken: String
+    let appKeyVl: String?
 }
