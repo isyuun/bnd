@@ -1141,16 +1141,47 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-Qh-hAi">
                                 <rect key="frame" x="0.0" y="119" width="393" height="248"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 산책기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8O-97-dOn">
-                                        <rect key="frame" x="20" y="20" width="126" height="24"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-Lk-Znk">
+                                        <rect key="frame" x="5" y="20" width="215.66666666666666" height="24"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhA-xL-req">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="IHY-MX-cEy"/>
+                                                    <constraint firstAttribute="width" constant="45" id="pv0-f3-kkw"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="calendar_prev"/>
+                                                <connections>
+                                                    <action selector="onWeekPrev:" destination="AJp-Uc-hoh" eventType="touchUpInside" id="wPB-ha-dOS"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번주 산책기록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8O-97-dOn">
+                                                <rect key="frame" x="45.000000000000007" y="0.0" width="125.66666666666669" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="u5y-35-aFE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F20-xA-1Yx">
+                                                <rect key="frame" x="170.66666666666666" y="0.0" width="45" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="Bua-rd-cbp"/>
+                                                    <constraint firstAttribute="width" constant="45" id="Xil-y0-nv9"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="calendar_next"/>
+                                                <connections>
+                                                    <action selector="onWeekNext:" destination="AJp-Uc-hoh" eventType="touchUpInside" id="dza-cq-Vur"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="126" id="L89-t0-Mjy"/>
-                                            <constraint firstAttribute="height" constant="24" id="u5y-35-aFE"/>
+                                            <constraint firstAttribute="height" constant="24" id="U1N-6M-cDQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ozx-AR-xSO">
                                         <rect key="frame" x="20" y="60" width="353" height="46"/>
                                         <subviews>
@@ -1349,21 +1380,21 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.33538335559999999" green="0.50926822419999995" blue="0.92945450539999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="j8O-97-dOn" firstAttribute="leading" secondItem="Cxf-Qh-hAi" secondAttribute="leading" constant="20" id="2lL-VW-QLw"/>
                                     <constraint firstItem="PbR-hS-FmB" firstAttribute="centerX" secondItem="Cxf-Qh-hAi" secondAttribute="centerX" id="6df-HL-5MJ"/>
                                     <constraint firstItem="qYv-Bu-qWH" firstAttribute="centerX" secondItem="Cxf-Qh-hAi" secondAttribute="centerX" id="7zD-jB-xO3"/>
                                     <constraint firstAttribute="height" constant="248" id="8y4-yN-S30"/>
+                                    <constraint firstItem="ydW-Lk-Znk" firstAttribute="top" secondItem="Cxf-Qh-hAi" secondAttribute="top" constant="20" id="AYA-AG-qdz"/>
+                                    <constraint firstItem="Ozx-AR-xSO" firstAttribute="top" secondItem="ydW-Lk-Znk" secondAttribute="bottom" constant="16" id="F9R-Ap-vag"/>
                                     <constraint firstAttribute="trailing" secondItem="Ozx-AR-xSO" secondAttribute="trailing" constant="20" id="HnR-Js-swA"/>
+                                    <constraint firstItem="ydW-Lk-Znk" firstAttribute="leading" secondItem="Cxf-Qh-hAi" secondAttribute="leading" constant="5" id="Jel-iI-lnc"/>
                                     <constraint firstAttribute="bottom" secondItem="TcL-ab-Na0" secondAttribute="bottom" constant="48" id="Olq-wD-BSJ"/>
                                     <constraint firstItem="TcL-ab-Na0" firstAttribute="leading" secondItem="Cxf-Qh-hAi" secondAttribute="leading" id="SGJ-uY-Igm"/>
                                     <constraint firstAttribute="trailing" secondItem="TcL-ab-Na0" secondAttribute="trailing" id="VuR-CW-06p"/>
                                     <constraint firstItem="vfx-Pz-Sba" firstAttribute="leading" secondItem="Cxf-Qh-hAi" secondAttribute="leading" constant="15" id="X6Q-sg-SbB"/>
                                     <constraint firstAttribute="trailing" secondItem="vfx-Pz-Sba" secondAttribute="trailing" constant="15" id="Ynp-Bl-jMK"/>
                                     <constraint firstItem="vfx-Pz-Sba" firstAttribute="top" secondItem="Ozx-AR-xSO" secondAttribute="bottom" constant="15" id="at7-0R-rvG"/>
-                                    <constraint firstItem="Ozx-AR-xSO" firstAttribute="top" secondItem="j8O-97-dOn" secondAttribute="bottom" constant="16" id="dBg-4h-FhG"/>
                                     <constraint firstAttribute="bottom" secondItem="qYv-Bu-qWH" secondAttribute="bottom" constant="16" id="mnf-Dh-Eba"/>
                                     <constraint firstItem="Ozx-AR-xSO" firstAttribute="leading" secondItem="Cxf-Qh-hAi" secondAttribute="leading" constant="20" id="qJL-u6-8kg"/>
-                                    <constraint firstItem="j8O-97-dOn" firstAttribute="top" secondItem="Cxf-Qh-hAi" secondAttribute="top" constant="20" id="s2v-2D-1io"/>
                                     <constraint firstAttribute="bottom" secondItem="PbR-hS-FmB" secondAttribute="bottom" id="y5O-dy-Z39"/>
                                 </constraints>
                             </view>
@@ -1403,10 +1434,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="mGc-vY-EeF"/>
                     <connections>
+                        <outlet property="btn_weekNext" destination="F20-xA-1Yx" id="PWc-Ra-lKu"/>
+                        <outlet property="btn_weekPrev" destination="GhA-xL-req" id="luR-mi-1GU"/>
                         <outlet property="constraintTop_monthlyHistory" destination="hsb-WU-9Bk" id="5Pd-TS-xJV"/>
                         <outlet property="lb_showMonthlyHistory" destination="qYv-Bu-qWH" id="lg7-jB-euH"/>
                         <outlet property="lb_walkDist" destination="p5v-I9-yuS" id="wW0-Z7-5SB"/>
                         <outlet property="lb_walkTime" destination="B4p-S0-Ecf" id="xj8-gD-Kmj"/>
+                        <outlet property="lb_week" destination="j8O-97-dOn" id="c9p-OG-pB9"/>
                         <outlet property="tb_history" destination="Dcl-Ua-cPC" id="ChM-1e-2hd"/>
                         <outlet property="titleBarView" destination="ssa-Tf-Hxq" id="EZ4-gc-Awq"/>
                         <outlet property="vw_historyItem_Fri" destination="Dmi-k5-ZeC" id="C4c-qu-qRM"/>
@@ -2775,6 +2809,8 @@
         <segue reference="8xf-V6-Ark"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="calendar_next" width="10.298999786376953" height="18"/>
+        <image name="calendar_prev" width="10.298999786376953" height="18"/>
         <image name="character" width="220" height="180"/>
         <image name="icon_age" width="18" height="18"/>
         <image name="icon_calendar" width="16" height="16"/>

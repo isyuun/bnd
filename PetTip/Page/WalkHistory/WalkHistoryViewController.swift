@@ -10,20 +10,12 @@ import RxSwift
 import RxCocoa
 import AlamofireImage
 
+// 산책기록 (주간) 화면
+
 class WalkHistoryViewController : CommonViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        print("WalkHistoryWeekViewController viewDidLoad !!")
-//        
-//        if let navController = tabBarController?.viewControllers?[0] as? UINavigationController {
-//            if let vc = navController.children.first as? MainViewController {
-//                print("WalkHistoryWeekViewController first is MainVC")
-//            }
-//        }
-//
-//        print("WalkHistoryWeekViewController viewDidLoad !!")
         
         customBottomTabBar()
         
@@ -32,6 +24,8 @@ class WalkHistoryViewController : CommonViewController {
         showCommonUI()
         
         initRx()
+        
+        initControlWeek()
     }
     
     
@@ -48,6 +42,10 @@ class WalkHistoryViewController : CommonViewController {
     @IBOutlet weak var vw_historyItem_Fri : UIView!
     @IBOutlet weak var vw_historyItem_Sat : UIView!
     @IBOutlet weak var vw_historyItem_Sun : UIView!
+    
+    @IBOutlet weak var btn_weekPrev : UIButton!
+    @IBOutlet weak var btn_weekNext : UIButton!
+    @IBOutlet weak var lb_week : UILabel!
     
     @IBOutlet weak var lb_walkTime : UILabel!
     @IBOutlet weak var lb_walkDist : UILabel!
@@ -68,6 +66,55 @@ class WalkHistoryViewController : CommonViewController {
         tb_history.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 00)
         
         constraintTop_monthlyHistory.constant = -(vw_monthlyHistory.frame.size.height + 200)
+    }
+    
+    
+    
+    
+    
+    // MARK: - CONTROL WEEK
+    
+    var selectedDate = Date()
+    
+    private func initControlWeek() {
+        selectedDate = Date()
+        btn_weekNext.isHidden = true
+    }
+    
+    private func showControlWeek() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        if formatter.string(from: selectedDate) == formatter.string(from: Date()) {
+            lb_week.text = "이번주 산책기록"
+            btn_weekNext.isHidden = true
+        } else {
+            let month = Calendar.current.component(.month, from: selectedDate)
+            let weekOfMonth = Calendar.current.component(.weekOfMonth, from: selectedDate)
+            
+            lb_week.text = String("\(month)월\(weekOfMonth)주차 산책기록")
+            btn_weekNext.isHidden = false
+        }
+    }
+    
+    @IBAction func onWeekPrev(_ sender: Any) {
+        selectedDate = Calendar.current.date(byAdding: .day, value: -7, to: selectedDate)!
+        
+        if let petList = self.dailyLifePets {
+            self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
+        }
+        
+        showControlWeek()
+    }
+    
+    @IBAction func onWeekNext(_ sender: Any) {
+        selectedDate = Calendar.current.date(byAdding: .day, value: 7, to: selectedDate)!
+        
+        if let petList = self.dailyLifePets {
+            self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
+        }
+        
+        showControlWeek()
     }
     
     
@@ -194,7 +241,7 @@ class WalkHistoryViewController : CommonViewController {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        let searchDay = formatter.string(from: Date())
+        let searchDay = formatter.string(from: selectedDate)
         
         let request = WeekRecordRequest(ownrPetUnqNo: ownrPetUnqNo, searchDay: searchDay)
 //        let request = WeekRecordRequest(ownrPetUnqNo: "P20230908000005", searchDay: searchDay)
