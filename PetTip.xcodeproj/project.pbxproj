@@ -75,6 +75,8 @@
 		0251FD6E2B1871F400F35EF8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FD6D2B1871F400F35EF8 /* UIView.swift */; };
 		0251FD702B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FD6F2B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift */; };
 		0251FD742B1909BA00F35EF8 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FD732B1909BA00F35EF8 /* UIImage.swift */; };
+		025B7CD22B7F4F44004E85D1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025B7CD12B7F4F44004E85D1 /* ImageViewController.swift */; };
+		025B7CD62B7F4FA6004E85D1 /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025B7CD52B7F4FA6004E85D1 /* Common.storyboard */; };
 		0265B9EA2B75F59D00B27221 /* LocationFileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265B9E92B75F59D00B27221 /* LocationFileRequest.swift */; };
 		0265B9EC2B75F5BB00B27221 /* LocationFileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265B9EB2B75F5BB00B27221 /* LocationFileResponse.swift */; };
 		027F76502B4E7C8B00429AC5 /* NoticeListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F764F2B4E7C8B00429AC5 /* NoticeListItemView.swift */; };
@@ -395,6 +397,8 @@
 		0251FD6D2B1871F400F35EF8 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		0251FD6F2B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorViewController.swift; sourceTree = "<group>"; };
 		0251FD732B1909BA00F35EF8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		025B7CD12B7F4F44004E85D1 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		025B7CD52B7F4FA6004E85D1 /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
 		0265B9E92B75F59D00B27221 /* LocationFileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFileRequest.swift; sourceTree = "<group>"; };
 		0265B9EB2B75F5BB00B27221 /* LocationFileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFileResponse.swift; sourceTree = "<group>"; };
 		027F764F2B4E7C8B00429AC5 /* NoticeListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListItemView.swift; sourceTree = "<group>"; };
@@ -816,6 +820,8 @@
 				022B41AC2B1E05CF0057323E /* LogoTitleBarView.xib */,
 				020B79662B2B376700C0AB2D /* BackTitleBarView.swift */,
 				020B79682B2B377500C0AB2D /* BackTitleBarView.xib */,
+				025B7CD12B7F4F44004E85D1 /* ImageViewController.swift */,
+				025B7CD52B7F4FA6004E85D1 /* Common.storyboard */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1386,6 +1392,7 @@
 				020B79832B2E8A9D00C0AB2D /* Community.storyboard in Resources */,
 				020B79692B2B377500C0AB2D /* BackTitleBarView.xib in Resources */,
 				02A05ADA2B3D4AAF00E8ABFA /* CommentModifyView.xib in Resources */,
+				025B7CD62B7F4FA6004E85D1 /* Common.storyboard in Resources */,
 				02DB38342B6DC4FA007D19A1 /* SelectWalkPetItemView.xib in Resources */,
 				02A05AD02B3C296700E8ABFA /* CommonConfirmView.xib in Resources */,
 				02DB383C2B6E73FF007D19A1 /* SelectWalkMarkPetItemView.xib in Resources */,
@@ -1511,6 +1518,7 @@
 				028625072B47CD250055E62F /* MyPetInvttCreateResponse.swift in Sources */,
 				02A05B582B47886B00E8ABFA /* CommonPopupView.swift in Sources */,
 				022B41912B1B649D0057323E /* CALayer.swift in Sources */,
+				025B7CD22B7F4F44004E85D1 /* ImageViewController.swift in Sources */,
 				02A7AAD62B521C54002F0C03 /* QnACreateResponse.swift in Sources */,
 				022B418F2B1B22660057323E /* MainViewController.swift in Sources */,
 				02E3FC9B2B2613D100A1CE62 /* MyError.swift in Sources */,

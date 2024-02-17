@@ -19,12 +19,24 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fs-k1-u3N">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="240"/>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCj-Eb-AFB">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="240"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title=" "/>
+                            <connections>
+                                <action selector="onTapImage:" destination="iN0-l3-epB" eventType="touchUpInside" id="NAW-tL-dEq"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="eCj-Eb-AFB" firstAttribute="leading" secondItem="Xs8-5a-Pkq" secondAttribute="leading" id="2vz-Ev-9rZ"/>
                         <constraint firstItem="3Fs-k1-u3N" firstAttribute="top" secondItem="Xs8-5a-Pkq" secondAttribute="top" id="6jF-bK-fAi"/>
                         <constraint firstAttribute="trailing" secondItem="3Fs-k1-u3N" secondAttribute="trailing" id="Eu8-vW-z8o"/>
                         <constraint firstAttribute="bottom" secondItem="3Fs-k1-u3N" secondAttribute="bottom" id="GDF-mz-Z3d"/>
+                        <constraint firstAttribute="trailing" secondItem="eCj-Eb-AFB" secondAttribute="trailing" id="Gxv-WS-hde"/>
+                        <constraint firstItem="eCj-Eb-AFB" firstAttribute="top" secondItem="Xs8-5a-Pkq" secondAttribute="top" id="HbI-gN-weD"/>
                         <constraint firstAttribute="height" constant="240" id="JJb-1K-56v"/>
+                        <constraint firstAttribute="bottom" secondItem="eCj-Eb-AFB" secondAttribute="bottom" id="TdY-VZ-sx5"/>
                         <constraint firstItem="3Fs-k1-u3N" firstAttribute="leading" secondItem="Xs8-5a-Pkq" secondAttribute="leading" id="WWF-4j-FUs"/>
                     </constraints>
                 </view>

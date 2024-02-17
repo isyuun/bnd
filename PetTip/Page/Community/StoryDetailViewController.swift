@@ -700,6 +700,11 @@ class StoryDetailViewController : CommonDetailViewController {
                                 slide.iv_img.af.setImage(
                                     withURL: URL(string: String("\(lifeView.lifeViewData.atchPath)\(fileList[i].filePathNm)\(fileList[i].atchFileNm)"))!
                                 )
+                                slide.didTapImage = {
+                                    let vc = UIStoryboard.init(name: "Common", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+                                    vc.initialize(image: nil, strUrl: String("\(lifeView.lifeViewData.atchPath)\(fileList[i].filePathNm)\(fileList[i].atchFileNm)"))
+                                    self.navigationController?.pushViewController(vc, animated: true)
+                                }
                                 
                                 self.slides[i] = slide
                                 self.sv_img.addSubview(self.slides[i])
