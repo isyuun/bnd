@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 class SNSJoinViewcontroller: CommonViewController {
     
@@ -33,21 +34,21 @@ class SNSJoinViewcontroller: CommonViewController {
     @IBOutlet weak var btn_chkAgreeTerm1: UIButton!
     @IBOutlet weak var iv_chkAgreeTerm1: UIImageView!
     @IBOutlet weak var btn_expandAgreeTerm1: UIButton!
-    @IBOutlet weak var lb_agreeTerm1Detail: UILabel!
+    @IBOutlet weak var wv_agreeTerm1Detail: WKWebView!
     @IBOutlet weak var iv_agreeTerm1Detail: UIImageView!
     @IBOutlet weak var cr_agreeTerm1DetailAreaHeight: NSLayoutConstraint!
     
     @IBOutlet weak var btn_chkAgreeTerm2: UIButton!
     @IBOutlet weak var iv_chkAgreeTerm2: UIImageView!
     @IBOutlet weak var btn_expandAgreeTerm2: UIButton!
-    @IBOutlet weak var lb_agreeTerm2Detail: UILabel!
+    @IBOutlet weak var wv_agreeTerm2Detail: WKWebView!
     @IBOutlet weak var iv_agreeTerm2Detail: UIImageView!
     @IBOutlet weak var cr_agreeTerm2DetailAreaHeight: NSLayoutConstraint!
     
     @IBOutlet weak var btn_chkAgreeTerm3: UIButton!
     @IBOutlet weak var iv_chkAgreeTerm3: UIImageView!
     @IBOutlet weak var btn_expandAgreeTerm3: UIButton!
-    @IBOutlet weak var lb_agreeTerm3Detail: UILabel!
+    @IBOutlet weak var wv_agreeTerm3Detail: WKWebView!
     @IBOutlet weak var iv_agreeTerm3Detail: UIImageView!
     @IBOutlet weak var cr_agreeTerm3DetailAreaHeight: NSLayoutConstraint!
     
@@ -69,29 +70,29 @@ class SNSJoinViewcontroller: CommonViewController {
         iv_chkAgreeTerm1.image = UIImage.init(named: "checkbox_white")!.withTintColor(UIColor.init(hex: "#FFB5B9BE")!, renderingMode: .alwaysOriginal)
         btn_chkAgreeTerm1.isSelected = false
         cr_agreeTerm1DetailAreaHeight.isActive = false
-        let constraint1 = NSLayoutConstraint(item: lb_agreeTerm1Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+        let constraint1 = NSLayoutConstraint(item: wv_agreeTerm1Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
         cr_agreeTerm1DetailAreaHeight = constraint1
-        lb_agreeTerm1Detail.addConstraint(constraint1)
+        wv_agreeTerm1Detail.addConstraint(constraint1)
         iv_agreeTerm1Detail.image = UIImage(systemName: "chevron.down")
-//        lb_agreeTerm1Detail.text = ""
+        wv_agreeTerm1Detail.load(URLRequest(url: URL(string: Global.URL_TERMS_1)!))
         
         iv_chkAgreeTerm2.image = UIImage.init(named: "checkbox_white")!.withTintColor(UIColor.init(hex: "#FFB5B9BE")!, renderingMode: .alwaysOriginal)
         btn_chkAgreeTerm2.isSelected = false
         cr_agreeTerm2DetailAreaHeight.isActive = false
-        let constraint2 = NSLayoutConstraint(item: lb_agreeTerm2Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+        let constraint2 = NSLayoutConstraint(item: wv_agreeTerm2Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
         cr_agreeTerm2DetailAreaHeight = constraint2
-        lb_agreeTerm2Detail.addConstraint(constraint2)
+        wv_agreeTerm2Detail.addConstraint(constraint2)
         iv_agreeTerm2Detail.image = UIImage(systemName: "chevron.down")
-//        lb_agreeTerm2Detail.text = ""
+        wv_agreeTerm2Detail.load(URLRequest(url: URL(string: Global.URL_TERMS_2)!))
 
         iv_chkAgreeTerm3.image = UIImage.init(named: "checkbox_white")!.withTintColor(UIColor.init(hex: "#FFB5B9BE")!, renderingMode: .alwaysOriginal)
         btn_chkAgreeTerm3.isSelected = false
         cr_agreeTerm3DetailAreaHeight.isActive = false
-        let constraint3 = NSLayoutConstraint(item: lb_agreeTerm3Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+        let constraint3 = NSLayoutConstraint(item: wv_agreeTerm3Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
         cr_agreeTerm3DetailAreaHeight = constraint3
-        lb_agreeTerm3Detail.addConstraint(constraint3)
+        wv_agreeTerm3Detail.addConstraint(constraint3)
         iv_agreeTerm3Detail.image = UIImage(systemName: "chevron.down")
-//        lb_agreeTerm3Detail.text = ""
+        wv_agreeTerm3Detail.load(URLRequest(url: URL(string: Global.URL_TERMS_3)!))
 
         tf_nickNm.delegate = self
         inputTextNormalUI(view: vw_nickNmBg)
@@ -189,9 +190,9 @@ class SNSJoinViewcontroller: CommonViewController {
                 iv_agreeTerm1Detail.image = UIImage(systemName: "chevron.up")
                 UIView.animate(withDuration: 0.25) {
                     self.cr_agreeTerm1DetailAreaHeight.isActive = false
-                    let constraint = NSLayoutConstraint(item: self.lb_agreeTerm1Detail as Any, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+                    let constraint = NSLayoutConstraint(item: self.wv_agreeTerm1Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 200)
                     self.cr_agreeTerm1DetailAreaHeight = constraint
-                    self.lb_agreeTerm1Detail.addConstraint(constraint)
+                    self.wv_agreeTerm1Detail.addConstraint(constraint)
                     self.view.layoutIfNeeded()
                 } completion: { Bool in }
                 
@@ -199,9 +200,9 @@ class SNSJoinViewcontroller: CommonViewController {
                 iv_agreeTerm1Detail.image = UIImage(systemName: "chevron.down")
                 UIView.animate(withDuration: 0.25) {
                     self.cr_agreeTerm1DetailAreaHeight.isActive = false
-                    let constraint = NSLayoutConstraint(item: self.lb_agreeTerm1Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+                    let constraint = NSLayoutConstraint(item: self.wv_agreeTerm1Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
                     self.cr_agreeTerm1DetailAreaHeight = constraint
-                    self.lb_agreeTerm1Detail.addConstraint(constraint)
+                    self.wv_agreeTerm1Detail.addConstraint(constraint)
                     self.view.layoutIfNeeded()
                 } completion: { Bool in }
             }
@@ -213,9 +214,9 @@ class SNSJoinViewcontroller: CommonViewController {
                 iv_agreeTerm2Detail.image = UIImage(systemName: "chevron.up")
                 UIView.animate(withDuration: 0.25) {
                     self.cr_agreeTerm2DetailAreaHeight.isActive = false
-                    let constraint = NSLayoutConstraint(item: self.lb_agreeTerm2Detail as Any, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+                    let constraint = NSLayoutConstraint(item: self.wv_agreeTerm2Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 200)
                     self.cr_agreeTerm2DetailAreaHeight = constraint
-                    self.lb_agreeTerm2Detail.addConstraint(constraint)
+                    self.wv_agreeTerm2Detail.addConstraint(constraint)
                     self.view.layoutIfNeeded()
                 } completion: { Bool in }
                 
@@ -223,9 +224,9 @@ class SNSJoinViewcontroller: CommonViewController {
                 iv_agreeTerm2Detail.image = UIImage(systemName: "chevron.down")
                 UIView.animate(withDuration: 0.25) {
                     self.cr_agreeTerm2DetailAreaHeight.isActive = false
-                    let constraint = NSLayoutConstraint(item: self.lb_agreeTerm2Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+                    let constraint = NSLayoutConstraint(item: self.wv_agreeTerm2Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
                     self.cr_agreeTerm2DetailAreaHeight = constraint
-                    self.lb_agreeTerm2Detail.addConstraint(constraint)
+                    self.wv_agreeTerm2Detail.addConstraint(constraint)
                     self.view.layoutIfNeeded()
                 } completion: { Bool in }
             }
@@ -237,9 +238,9 @@ class SNSJoinViewcontroller: CommonViewController {
                 iv_agreeTerm3Detail.image = UIImage(systemName: "chevron.up")
                 UIView.animate(withDuration: 0.25) {
                     self.cr_agreeTerm3DetailAreaHeight.isActive = false
-                    let constraint = NSLayoutConstraint(item: self.lb_agreeTerm3Detail as Any, attribute: .height, relatedBy: .greaterThanOrEqual, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+                    let constraint = NSLayoutConstraint(item: self.wv_agreeTerm3Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 200)
                     self.cr_agreeTerm3DetailAreaHeight = constraint
-                    self.lb_agreeTerm3Detail.addConstraint(constraint)
+                    self.wv_agreeTerm3Detail.addConstraint(constraint)
                     self.view.layoutIfNeeded()
                 } completion: { Bool in }
                 
@@ -247,9 +248,9 @@ class SNSJoinViewcontroller: CommonViewController {
                 iv_agreeTerm3Detail.image = UIImage(systemName: "chevron.down")
                 UIView.animate(withDuration: 0.25) {
                     self.cr_agreeTerm3DetailAreaHeight.isActive = false
-                    let constraint = NSLayoutConstraint(item: self.lb_agreeTerm3Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
+                    let constraint = NSLayoutConstraint(item: self.wv_agreeTerm3Detail as Any, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0)
                     self.cr_agreeTerm3DetailAreaHeight = constraint
-                    self.lb_agreeTerm3Detail.addConstraint(constraint)
+                    self.wv_agreeTerm3Detail.addConstraint(constraint)
                     self.view.layoutIfNeeded()
                 } completion: { Bool in }
             }

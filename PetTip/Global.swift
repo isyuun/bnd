@@ -10,8 +10,14 @@ import RxSwift
 import RxRelay
 
 struct Global {
-    static var BASE_URI = "http://carepet.hopto.org:8020/api/v1"
-//    static var BASE_URI = "http://dev.pettip.net:8020/api/v1"
+//    static var DOMAIN = "http://carepet.hopto.org:8020"
+    static var DOMAIN = "http://dev.pettip.net:8020"
+    
+    static var BASE_URI = DOMAIN + "/api/v1"
+
+    static var URL_TERMS_1 = DOMAIN + "/terms"
+    static var URL_TERMS_2 = DOMAIN + "/privacy_policy"
+    static var URL_TERMS_3 = DOMAIN + "/"
     
     static var appKey: String = ""
     

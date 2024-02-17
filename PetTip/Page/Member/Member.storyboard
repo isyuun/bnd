@@ -516,15 +516,17 @@
                                                             <constraint firstItem="G5R-wf-4bN" firstAttribute="top" secondItem="T9J-MH-Oxm" secondAttribute="top" constant="12" id="uNU-wQ-NVz"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwc-0V-rYO">
+                                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ABK-84-6sR">
                                                         <rect key="frame" x="39" y="42" width="314" height="14"/>
+                                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="14" id="x8y-FJ-s1m"/>
+                                                            <constraint firstAttribute="height" constant="14" id="wED-e7-ORB"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <wkWebViewConfiguration key="configuration">
+                                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                            <wkPreferences key="preferences"/>
+                                                        </wkWebViewConfiguration>
+                                                    </wkWebView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fD3-dc-tuV">
                                                         <rect key="frame" x="0.0" y="70" width="353" height="1"/>
                                                         <color key="backgroundColor" red="0.8945003748" green="0.9130991101" blue="0.945102632" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -536,14 +538,14 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="fD3-dc-tuV" secondAttribute="trailing" id="9Wn-ZJ-9QI"/>
-                                                    <constraint firstItem="Fwc-0V-rYO" firstAttribute="top" secondItem="T9J-MH-Oxm" secondAttribute="bottom" id="DmC-3r-8hR"/>
                                                     <constraint firstAttribute="bottom" secondItem="fD3-dc-tuV" secondAttribute="bottom" id="I2a-e4-HIW"/>
                                                     <constraint firstAttribute="trailing" secondItem="T9J-MH-Oxm" secondAttribute="trailing" id="Kos-46-30G"/>
-                                                    <constraint firstItem="Fwc-0V-rYO" firstAttribute="leading" secondItem="o5k-CL-8yH" secondAttribute="leading" constant="39" id="OO7-F3-RSE"/>
+                                                    <constraint firstItem="ABK-84-6sR" firstAttribute="leading" secondItem="o5k-CL-8yH" secondAttribute="leading" constant="39" id="LC7-iz-R7f"/>
                                                     <constraint firstItem="fD3-dc-tuV" firstAttribute="leading" secondItem="o5k-CL-8yH" secondAttribute="leading" id="QAE-eL-T6i"/>
                                                     <constraint firstItem="T9J-MH-Oxm" firstAttribute="top" secondItem="o5k-CL-8yH" secondAttribute="top" constant="4" id="QwU-ka-lmr"/>
-                                                    <constraint firstItem="fD3-dc-tuV" firstAttribute="top" secondItem="Fwc-0V-rYO" secondAttribute="bottom" constant="14" id="RoI-9f-gSm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Fwc-0V-rYO" secondAttribute="trailing" id="bcI-ra-rdB"/>
+                                                    <constraint firstItem="fD3-dc-tuV" firstAttribute="top" secondItem="ABK-84-6sR" secondAttribute="bottom" constant="14" id="Spr-7c-gdc"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ABK-84-6sR" secondAttribute="trailing" id="Xwn-xa-npJ"/>
+                                                    <constraint firstItem="ABK-84-6sR" firstAttribute="top" secondItem="T9J-MH-Oxm" secondAttribute="bottom" id="dQb-Qf-Tjr"/>
                                                     <constraint firstItem="T9J-MH-Oxm" firstAttribute="leading" secondItem="o5k-CL-8yH" secondAttribute="leading" id="ngo-ZF-IEH"/>
                                                 </constraints>
                                             </view>
@@ -641,15 +643,17 @@
                                                             <constraint firstItem="Yie-MW-yve" firstAttribute="top" secondItem="f3y-gj-wBC" secondAttribute="top" constant="15" id="viV-2c-CD2"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaB-H0-Gpq">
+                                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E74-g5-Y5l">
                                                         <rect key="frame" x="39" y="42" width="314" height="14"/>
+                                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="14" id="I2w-Gd-wLw"/>
+                                                            <constraint firstAttribute="height" constant="14" id="IFC-ia-MyU"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <wkWebViewConfiguration key="configuration">
+                                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                            <wkPreferences key="preferences"/>
+                                                        </wkWebViewConfiguration>
+                                                    </wkWebView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0cJ-bx-58P">
                                                         <rect key="frame" x="0.0" y="70" width="353" height="1"/>
                                                         <color key="backgroundColor" red="0.8945003748" green="0.9130991101" blue="0.945102632" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -661,15 +665,15 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="0cJ-bx-58P" secondAttribute="bottom" id="01W-3E-5FU"/>
+                                                    <constraint firstItem="E74-g5-Y5l" firstAttribute="top" secondItem="f3y-gj-wBC" secondAttribute="bottom" id="2mS-up-egg"/>
                                                     <constraint firstAttribute="trailing" secondItem="f3y-gj-wBC" secondAttribute="trailing" id="8Wm-JM-YEu"/>
-                                                    <constraint firstItem="uaB-H0-Gpq" firstAttribute="leading" secondItem="NR3-db-QFY" secondAttribute="leading" constant="39" id="ArI-ng-aaY"/>
+                                                    <constraint firstItem="0cJ-bx-58P" firstAttribute="top" secondItem="E74-g5-Y5l" secondAttribute="bottom" constant="14" id="BT2-yl-Qh8"/>
                                                     <constraint firstItem="0cJ-bx-58P" firstAttribute="leading" secondItem="NR3-db-QFY" secondAttribute="leading" id="EBb-at-4wW"/>
-                                                    <constraint firstItem="0cJ-bx-58P" firstAttribute="top" secondItem="uaB-H0-Gpq" secondAttribute="bottom" constant="14" id="EE0-aC-mes"/>
                                                     <constraint firstItem="f3y-gj-wBC" firstAttribute="leading" secondItem="NR3-db-QFY" secondAttribute="leading" id="Ez8-Lf-bvq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="E74-g5-Y5l" secondAttribute="trailing" id="GJb-jx-Evk"/>
+                                                    <constraint firstItem="E74-g5-Y5l" firstAttribute="leading" secondItem="NR3-db-QFY" secondAttribute="leading" constant="39" id="IKJ-Xw-tKJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="0cJ-bx-58P" secondAttribute="trailing" id="KkJ-Mx-bN7"/>
                                                     <constraint firstItem="f3y-gj-wBC" firstAttribute="top" secondItem="NR3-db-QFY" secondAttribute="top" constant="4" id="QiH-f0-9AP"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uaB-H0-Gpq" secondAttribute="trailing" id="YAo-dX-am3"/>
-                                                    <constraint firstItem="uaB-H0-Gpq" firstAttribute="top" secondItem="f3y-gj-wBC" secondAttribute="bottom" id="a73-Xz-hDz"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvd-eW-wPR">
@@ -766,15 +770,17 @@
                                                             <constraint firstItem="VqQ-dD-eqZ" firstAttribute="leading" secondItem="Ytw-GR-tj6" secondAttribute="leading" id="zN1-wD-22D"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용 마케팅수신동의 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mok-ip-Awv">
+                                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ux8-NM-aEC">
                                                         <rect key="frame" x="39" y="42" width="314" height="14"/>
+                                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="14" id="UU9-Ox-pcB"/>
+                                                            <constraint firstAttribute="height" constant="14" id="XWd-8a-j8t"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <wkWebViewConfiguration key="configuration">
+                                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                            <wkPreferences key="preferences"/>
+                                                        </wkWebViewConfiguration>
+                                                    </wkWebView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEs-XG-DuZ">
                                                         <rect key="frame" x="0.0" y="70" width="353" height="1"/>
                                                         <color key="backgroundColor" red="0.8945003748" green="0.9130991101" blue="0.945102632" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -785,16 +791,16 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="Ux8-NM-aEC" firstAttribute="top" secondItem="Ytw-GR-tj6" secondAttribute="bottom" id="3le-j4-qV7"/>
                                                     <constraint firstAttribute="bottom" secondItem="QEs-XG-DuZ" secondAttribute="bottom" id="ADb-rA-HYU"/>
-                                                    <constraint firstItem="QEs-XG-DuZ" firstAttribute="top" secondItem="mok-ip-Awv" secondAttribute="bottom" constant="14" id="GdL-KD-LRz"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ytw-GR-tj6" secondAttribute="trailing" id="Mle-z9-uTO"/>
-                                                    <constraint firstItem="mok-ip-Awv" firstAttribute="leading" secondItem="cvd-eW-wPR" secondAttribute="leading" constant="39" id="NKj-Fd-pVa"/>
                                                     <constraint firstAttribute="trailing" secondItem="QEs-XG-DuZ" secondAttribute="trailing" id="PR9-NG-Thn"/>
                                                     <constraint firstItem="Ytw-GR-tj6" firstAttribute="leading" secondItem="cvd-eW-wPR" secondAttribute="leading" id="Whz-ov-ZNb"/>
-                                                    <constraint firstAttribute="trailing" secondItem="mok-ip-Awv" secondAttribute="trailing" id="av4-3a-jkG"/>
-                                                    <constraint firstItem="mok-ip-Awv" firstAttribute="top" secondItem="Ytw-GR-tj6" secondAttribute="bottom" id="bSY-W1-rG5"/>
                                                     <constraint firstItem="Ytw-GR-tj6" firstAttribute="top" secondItem="cvd-eW-wPR" secondAttribute="top" constant="4" id="hVW-we-NVE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ux8-NM-aEC" secondAttribute="trailing" id="hyM-v3-3aM"/>
                                                     <constraint firstItem="QEs-XG-DuZ" firstAttribute="leading" secondItem="cvd-eW-wPR" secondAttribute="leading" id="tGp-Xh-4h9"/>
+                                                    <constraint firstItem="QEs-XG-DuZ" firstAttribute="top" secondItem="Ux8-NM-aEC" secondAttribute="bottom" constant="14" id="tkl-HH-Nq7"/>
+                                                    <constraint firstItem="Ux8-NM-aEC" firstAttribute="leading" secondItem="cvd-eW-wPR" secondAttribute="leading" constant="39" id="x23-vI-2ov"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny0-TW-a5B" userLabel="닉네임*">
@@ -960,9 +966,9 @@
                         <outlet property="btn_expandAgreeTerm2" destination="6Ez-vV-cvD" id="1SK-YB-gh5"/>
                         <outlet property="btn_expandAgreeTerm3" destination="9ds-d3-5cf" id="MHH-Qg-bNx"/>
                         <outlet property="btn_nickDupChk" destination="bt1-e8-tHN" id="hXD-VS-95q"/>
-                        <outlet property="cr_agreeTerm1DetailAreaHeight" destination="x8y-FJ-s1m" id="cSf-U5-U3q"/>
-                        <outlet property="cr_agreeTerm2DetailAreaHeight" destination="I2w-Gd-wLw" id="FAE-ki-o3o"/>
-                        <outlet property="cr_agreeTerm3DetailAreaHeight" destination="UU9-Ox-pcB" id="Tbd-6s-XgX"/>
+                        <outlet property="cr_agreeTerm1DetailAreaHeight" destination="wED-e7-ORB" id="AGW-tM-V1m"/>
+                        <outlet property="cr_agreeTerm2DetailAreaHeight" destination="IFC-ia-MyU" id="9vz-uX-H9g"/>
+                        <outlet property="cr_agreeTerm3DetailAreaHeight" destination="XWd-8a-j8t" id="pGb-pS-bhE"/>
                         <outlet property="iv_agreeTerm1Detail" destination="3Ki-4V-wb0" id="QXN-N4-v1O"/>
                         <outlet property="iv_agreeTerm2Detail" destination="gpZ-CG-tAk" id="pOz-dU-78z"/>
                         <outlet property="iv_agreeTerm3Detail" destination="I58-9C-QIi" id="k5u-7f-fy1"/>
@@ -970,15 +976,15 @@
                         <outlet property="iv_chkAgreeTerm1" destination="ubV-L7-vbK" id="1F7-0h-l9K"/>
                         <outlet property="iv_chkAgreeTerm2" destination="Jzr-ng-0fe" id="mgh-tM-mZg"/>
                         <outlet property="iv_chkAgreeTerm3" destination="KCd-Of-nXz" id="Ojv-Xz-wri"/>
-                        <outlet property="lb_agreeTerm1Detail" destination="Fwc-0V-rYO" id="hgT-Aa-GuY"/>
-                        <outlet property="lb_agreeTerm2Detail" destination="uaB-H0-Gpq" id="klA-XC-eiv"/>
-                        <outlet property="lb_agreeTerm3Detail" destination="mok-ip-Awv" id="MxD-f3-okG"/>
                         <outlet property="lb_chkAgreeAll" destination="ee8-1s-TpF" id="q8Y-xs-DNF"/>
                         <outlet property="tf_nickNm" destination="1Yw-lv-92I" id="GnZ-d8-9cV"/>
                         <outlet property="titleBarView" destination="3q4-bd-0pT" id="ehR-at-3H5"/>
                         <outlet property="vw_chkAgreeAll" destination="Y69-5X-wmw" id="JvE-f8-YeH"/>
                         <outlet property="vw_chkAgreeAllBg" destination="teT-aE-Wio" id="uL9-oz-d99"/>
                         <outlet property="vw_nickNmBg" destination="njG-s7-CZ8" id="Wfx-Hm-JPh"/>
+                        <outlet property="wv_agreeTerm1Detail" destination="ABK-84-6sR" id="7Dh-Fc-hC3"/>
+                        <outlet property="wv_agreeTerm2Detail" destination="E74-g5-Y5l" id="f74-rX-Qni"/>
+                        <outlet property="wv_agreeTerm3Detail" destination="Ux8-NM-aEC" id="b4u-Hs-9aO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pbw-Fs-keF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1331,28 +1337,28 @@
     </scenes>
     <designables>
         <designable name="089-lF-PSh">
-            <size key="intrinsicContentSize" width="129.33333333333334" height="17"/>
+            <size key="intrinsicContentSize" width="159.33333333333334" height="17"/>
         </designable>
         <designable name="6Js-al-E47">
-            <size key="intrinsicContentSize" width="76.666666666666671" height="17"/>
+            <size key="intrinsicContentSize" width="106.66666666666667" height="17"/>
         </designable>
         <designable name="Dn8-Pu-WGL">
-            <size key="intrinsicContentSize" width="64.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="94.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="J7L-Ad-cgS">
-            <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="117.66666666666667" height="18.666666666666668"/>
         </designable>
         <designable name="QIH-Uu-cm5">
-            <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="117.66666666666667" height="18.666666666666668"/>
         </designable>
         <designable name="RoP-I7-cle">
-            <size key="intrinsicContentSize" width="76.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="106.66666666666667" height="18.666666666666668"/>
         </designable>
         <designable name="hsv-6W-asx">
-            <size key="intrinsicContentSize" width="128.66666666666666" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="158.66666666666666" height="18.666666666666668"/>
         </designable>
         <designable name="nOC-18-Uhb">
-            <size key="intrinsicContentSize" width="76.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="106.66666666666667" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>
