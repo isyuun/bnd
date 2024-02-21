@@ -77,6 +77,7 @@
 		0251FD742B1909BA00F35EF8 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251FD732B1909BA00F35EF8 /* UIImage.swift */; };
 		025B7CD22B7F4F44004E85D1 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025B7CD12B7F4F44004E85D1 /* ImageViewController.swift */; };
 		025B7CD62B7F4FA6004E85D1 /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025B7CD52B7F4FA6004E85D1 /* Common.storyboard */; };
+		025B7CD82B85875F004E85D1 /* PermissionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025B7CD72B85875F004E85D1 /* PermissionInfoViewController.swift */; };
 		0265B9EA2B75F59D00B27221 /* LocationFileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265B9E92B75F59D00B27221 /* LocationFileRequest.swift */; };
 		0265B9EC2B75F5BB00B27221 /* LocationFileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265B9EB2B75F5BB00B27221 /* LocationFileResponse.swift */; };
 		027F76502B4E7C8B00429AC5 /* NoticeListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F764F2B4E7C8B00429AC5 /* NoticeListItemView.swift */; };
@@ -399,6 +400,7 @@
 		0251FD732B1909BA00F35EF8 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		025B7CD12B7F4F44004E85D1 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		025B7CD52B7F4FA6004E85D1 /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
+		025B7CD72B85875F004E85D1 /* PermissionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionInfoViewController.swift; sourceTree = "<group>"; };
 		0265B9E92B75F59D00B27221 /* LocationFileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFileRequest.swift; sourceTree = "<group>"; };
 		0265B9EB2B75F5BB00B27221 /* LocationFileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFileResponse.swift; sourceTree = "<group>"; };
 		027F764F2B4E7C8B00429AC5 /* NoticeListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeListItemView.swift; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 			children = (
 				02A7AADF2B54F7F2002F0C03 /* Member */,
 				022B41A72B1D7A270057323E /* IntroViewController.swift */,
+				025B7CD72B85875F004E85D1 /* PermissionInfoViewController.swift */,
 				022B41942B1B910F0057323E /* LoginViewController.swift */,
 				022B418E2B1B22660057323E /* MainViewController.swift */,
 				022B41A92B1E05510057323E /* Common */,
@@ -1624,6 +1627,7 @@
 				02EB98002B0CFF03007428AD /* AppDelegate.swift in Sources */,
 				020B79512B28A87900C0AB2D /* WeatherRequest.swift in Sources */,
 				02E3FC5D2B25472500A1CE62 /* MemberAPI.swift in Sources */,
+				025B7CD82B85875F004E85D1 /* PermissionInfoViewController.swift in Sources */,
 				02A7AACE2B51387E002F0C03 /* QnAAddAttachFileItemView.swift in Sources */,
 				020B79572B28A8A300C0AB2D /* WeatherTarget.swift in Sources */,
 				029851102B7DD10A00A0A056 /* TrmnlMngRequest.swift in Sources */,

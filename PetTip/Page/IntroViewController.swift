@@ -11,12 +11,27 @@ class IntroViewController : CommonViewController {
     
     override func viewDidLoad() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-            if UserDefaults.standard.value(forKey: "accessToken") != nil {
-                self.performSegue(withIdentifier: "segueIntroToMain", sender: self)
+            if UserDefaults.standard.value(forKey: "permissionAgree") != nil {
+                if UserDefaults.standard.value(forKey: "accessToken") != nil {
+                    self.performSegue(withIdentifier: "segueIntroToMain", sender: self)
+                    
+                } else {
+                    self.performSegue(withIdentifier: "segueIntroToLogin", sender: self)
+                }
                 
             } else {
-                self.performSegue(withIdentifier: "segueIntroToLogin", sender: self)
+                self.performSegue(withIdentifier: "segueIntroToPermissionInfo", sender: self)
             }
         })
+        
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//            if UserDefaults.standard.value(forKey: "accessToken") != nil {
+//                self.performSegue(withIdentifier: "segueIntroToMain", sender: self)
+//                
+//            } else {
+//                self.performSegue(withIdentifier: "segueIntroToLogin", sender: self)
+//            }
+//        })
     }
 }
