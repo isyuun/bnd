@@ -94,6 +94,7 @@ class SNSJoinViewcontroller: CommonViewController {
         iv_agreeTerm3Detail.image = UIImage(systemName: "chevron.down")
         wv_agreeTerm3Detail.load(URLRequest(url: URL(string: Global.URL_TERMS_3)!))
 
+        tf_nickNm.text = memberData?.nick
         tf_nickNm.delegate = self
         inputTextNormalUI(view: vw_nickNmBg)
         btn_nickDupChk.isHidden = true
