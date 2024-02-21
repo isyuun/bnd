@@ -247,6 +247,9 @@ class WalkHistoryDetailViewController : CommonDetailViewController {
                     
                 } else if arrTrack[i].event! == .mrk {
                     event = .MRK
+                    
+                } else if arrTrack[i].event! == .img {
+                    event = .IMG
                 }
                 
                 let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), event: event)
@@ -364,6 +367,9 @@ extension WalkHistoryDetailViewController: XMLParserDelegate {
                     break
                 case "MRK":
                     track.event = .mrk
+                    break
+                case "IMG":
+                    track.event = .img
                     break
                 default:
                     break

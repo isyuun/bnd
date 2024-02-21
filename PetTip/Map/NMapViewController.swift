@@ -210,7 +210,7 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
                                         speed: arrTrack.last!.location!.speed,
                                         speedAccuracy: arrTrack.last!.location!.speedAccuracy,
                                         timestamp: Date())
-            track.event = mark == .PEE ? .pee : mark == .POO ? .poo : .mrk
+            track.event = mark == .PEE ? .pee : mark == .POO ? .poo : mark == .MRK ? .mrk : .img
             track.pet = pet
             arrTrack.append(track)
             
@@ -543,11 +543,13 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         case PEE
         case POO
         case MRK
+        case IMG
     }
     
     static var markerPeeImg : UIImage? = nil
     static var markerpooImg : UIImage? = nil
     static var markerMrkImg : UIImage? = nil
+    static var markerPicImg : UIImage? = nil
     
     static func getEventMarker(loc : NMGLatLng, event : EventMark) -> NMFMarker {
         var markerImg : UIImage? = nil
@@ -571,6 +573,13 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
                 markerImg = markerMrkImg
             } else {
                 markerImg = markerMrkImg
+            }
+        } else if (event == .IMG) {
+            if (markerPicImg == nil) {
+                markerPicImg = NMapViewController.getEventMarkerImg(event: event)
+                markerImg = markerPicImg
+            } else {
+                markerImg = markerPicImg
             }
         }
         
@@ -596,6 +605,9 @@ class NMapViewController : LocationViewController, MapBottomViewProtocol {
         } else if (event == .MRK) {
             bgColor = UIColor(hex: "#FF4AB0F5")
             innerImg = UIImage(named: "marker_marking")
+        } else if (event == .IMG) {
+            bgColor = UIColor(hex: "#FFFFFFFF")
+            innerImg = UIImage(named: "icon_camera")
         }
         
         if (innerImg != nil)
@@ -745,10 +757,7 @@ extension NMapViewController: UINavigationControllerDelegate, UIImagePickerContr
     }
       arrImageFromCamera.append(image)
       
-      let track = Track()
-      track.location = arrTrack.last?.location
-      track.event = .img
-      arrTrack.append(track)
+      selectEventMarkPet(mark: .IMG)
       
       picker.dismiss(animated: true, completion: nil)
     // 비디오인 경우 - url로 받는 형태
