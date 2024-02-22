@@ -11,7 +11,8 @@ import RxRelay
 
 struct Global {
 //    static var DOMAIN = "http://carepet.hopto.org:8020"
-    static var DOMAIN = "http://dev.pettip.net:8020"
+//    static var DOMAIN = "http://dev.pettip.net:8020"
+    static var DOMAIN = "https://pettip.net"
     
     static var BASE_URI = DOMAIN + "/api/v1"
 
