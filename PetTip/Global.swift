@@ -17,7 +17,7 @@ struct Global {
 
     static var URL_TERMS_1 = DOMAIN + "/terms"
     static var URL_TERMS_2 = DOMAIN + "/privacy_policy"
-    static var URL_TERMS_3 = DOMAIN + "/"
+    static var URL_TERMS_3 = DOMAIN + "/marketing"
     
     static var appKey: String = ""
     
