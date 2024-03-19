@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pet Modify View Controller-->
+        <!--Pet Mod View Controller-->
         <scene sceneID="Sxe-pZ-OUS">
             <objects>
-                <viewController storyboardIdentifier="PetModifyViewController" id="sS9-VA-T1B" customClass="PetModifyViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetModViewController" id="sS9-VA-T1B" customClass="PetModViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3GY-0o-bgw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,13 +75,25 @@
                                                     <constraint firstItem="02R-ND-YZR" firstAttribute="top" secondItem="hce-r3-vHe" secondAttribute="top" id="qWv-ND-nou"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3n-6q-QtL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3n-6q-QtL">
                                                 <rect key="frame" x="20" y="176" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="yIP-tX-7yI"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="반려동물">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEw-eJ-WqW">
@@ -108,13 +120,47 @@
                                                     <action selector="onPetType:" destination="sS9-VA-T1B" eventType="touchUpInside" id="KYl-9q-MTA"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사이즈 / 품종 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-qu-Zba">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-qu-Zba">
                                                 <rect key="frame" x="20" y="267" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="Gxu-bL-llR"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="사이즈">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" / ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="품종">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="선택">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NS4-KL-5P2">
@@ -214,13 +260,25 @@
                                                     <constraint firstAttribute="bottom" secondItem="EtI-5R-qcm" secondAttribute="bottom" constant="17" id="yWN-ad-cN2"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kg-Yn-4N8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kg-Yn-4N8">
                                                 <rect key="frame" x="20" y="449" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="Edk-rr-Jaq"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="이름">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="me2-95-HPu" customClass="TextField" customModule="PetTip" customModuleProvider="target">
@@ -236,13 +294,27 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g79-hd-fWO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g79-hd-fWO">
                                                 <rect key="frame" x="20" y="540" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="nFC-bm-zKB"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="생일">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생일을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mm3-A5-agI" customClass="TextField" customModule="PetTip" customModuleProvider="target">
@@ -321,13 +393,26 @@
                                                     <action selector="onBirth:" destination="sS9-VA-T1B" eventType="touchUpInside" id="eLf-VI-rdZ"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwM-8T-BOj">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwM-8T-BOj">
                                                 <rect key="frame" x="20" y="631" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="FC4-u6-S7I"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="성별">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbv-84-Sna">
@@ -389,13 +474,27 @@
                                                     <constraint firstItem="aXw-VY-9rP" firstAttribute="top" secondItem="kbv-84-Sna" secondAttribute="top" id="umN-VS-Y62"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중성화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-qq-ar3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-qq-ar3">
                                                 <rect key="frame" x="20" y="722" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="f7H-kS-lMh"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="중성화">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s27-S1-dfK">
@@ -756,13 +855,25 @@
                                                     <constraint firstAttribute="height" constant="140" id="mEw-1i-nlP"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반려동물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWV-13-h0L">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWV-13-h0L">
                                                 <rect key="frame" x="20" y="176" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="wz8-Qa-NVO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="반려동물">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" size="16" name="SFMono-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-5h-Rwd">
@@ -789,13 +900,47 @@
                                                     <action selector="onPetType:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qcc-Hk-BlV"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사이즈 / 품종 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tah-wy-JiW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tah-wy-JiW">
                                                 <rect key="frame" x="20" y="267" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="HM0-Qg-t4y"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="사이즈">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" / ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="품종">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" ">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="선택">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CxL-YD-SFX">
@@ -895,13 +1040,25 @@
                                                     <constraint firstItem="B0g-hb-vI8" firstAttribute="leading" secondItem="mxN-P2-n54" secondAttribute="leading" constant="16" id="xub-Y5-5YJ"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab1-ef-OyN">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ab1-ef-OyN">
                                                 <rect key="frame" x="20" y="449" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="z7J-By-xyc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="이름">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wt-k4-7QA" customClass="TextField" customModule="PetTip" customModuleProvider="target">
@@ -917,13 +1074,27 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgw-tk-eHB">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgw-tk-eHB">
                                                 <rect key="frame" x="20" y="540" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="kGW-Dt-yPe"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="생일">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생일을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Yh-lb-zHi" customClass="TextField" customModule="PetTip" customModuleProvider="target">
@@ -994,13 +1165,25 @@
                                                     <constraint firstItem="bf4-ux-c1W" firstAttribute="centerY" secondItem="Vkb-zZ-e0O" secondAttribute="centerY" id="qMT-wT-yg5"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몸무게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-Bf-zNy">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuF-Bf-zNy">
                                                 <rect key="frame" x="20" y="631" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="Huz-IM-RXR"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="몸무게">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게를 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-pf-pe8" customClass="TextField" customModule="PetTip" customModuleProvider="target">
@@ -1043,13 +1226,25 @@
                                                 <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnX-GJ-8rJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnX-GJ-8rJ">
                                                 <rect key="frame" x="20" y="742" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="GC7-5C-qCp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="성별">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-b4-zcs">
@@ -1111,13 +1306,27 @@
                                                     <constraint firstItem="CE2-Ly-Xof" firstAttribute="width" secondItem="0y8-sN-aOQ" secondAttribute="width" id="vi6-NM-41g"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중성화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBV-tF-zO6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBV-tF-zO6">
                                                 <rect key="frame" x="20" y="833" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="w1g-8n-xl6"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="중성화">
+                                                        <attributes>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="*">
+                                                        <attributes>
+                                                            <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQa-6z-ngd">
@@ -1275,7 +1484,7 @@
                                             <constraint firstItem="L9J-uG-wYe" firstAttribute="leading" secondItem="zti-LE-6TR" secondAttribute="leading" constant="20" id="M8h-LV-rMl"/>
                                             <constraint firstItem="bv0-wv-lOc" firstAttribute="top" secondItem="JWV-13-h0L" secondAttribute="bottom" constant="8" id="Nfc-rE-bDh"/>
                                             <constraint firstItem="tXt-wt-yt4" firstAttribute="top" secondItem="kgw-tk-eHB" secondAttribute="bottom" constant="8" symbolic="YES" id="O9X-MG-GxI"/>
-                                            <constraint firstItem="7XY-5t-TxT" firstAttribute="top" secondItem="zti-LE-6TR" secondAttribute="top" id="OtX-5q-hsk"/>
+                                            <constraint firstItem="7XY-5t-TxT" firstAttribute="top" secondItem="zti-LE-6TR" secondAttribute="top" placeholder="YES" id="OtX-5q-hsk"/>
                                             <constraint firstAttribute="trailing" secondItem="Vkb-zZ-e0O" secondAttribute="trailing" constant="20" id="Pp9-ES-pbT"/>
                                             <constraint firstItem="uBV-tF-zO6" firstAttribute="top" secondItem="pe4-b4-zcs" secondAttribute="bottom" constant="16" id="Q2S-5U-qeq"/>
                                             <constraint firstItem="7wt-k4-7QA" firstAttribute="top" secondItem="ab1-ef-OyN" secondAttribute="bottom" constant="8" id="QHA-wl-89s"/>
@@ -2215,27 +2424,27 @@
     </scenes>
     <designables>
         <designable name="3ix-pf-pe8">
-            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="155" height="18.666666666666668"/>
         </designable>
         <designable name="5Yh-lb-zHi">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="7wt-k4-7QA">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="LlK-Ii-v7s">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
         <designable name="me2-95-HPu">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="mm3-A5-agI">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Vsv-0H-5D3"/>
-        <segue reference="V2Q-hP-A8g"/>
+        <segue reference="DHX-XS-apO"/>
+        <segue reference="Cay-Et-CIm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_move" width="9.4139995574951172" height="14.597999572753906"/>

@@ -291,15 +291,12 @@ class PetAddViewController: CommonViewController {
         if selectedPetKind == nil {
             showToast(msg: "펫 종류를 선택해주세요")
             return false
-            
-        } else if selectedSido == nil || selectedSigungu == nil {
-            showToast(msg: "주소를 입력해주세요")
-            return false
-            
+        // } else if selectedSido == nil || selectedSigungu == nil {
+        //     showToast(msg: "주소를 입력해주세요")
+        //     return false
         } else if let name = tf_name.text, name.count == 0 {
             showToast(msg: "이름을 입력해주세요")
             return false
-            
         } else if btn_birth_unkown.isSelected == false, let birth = tf_birth.text, birth.count == 0 {
             showToast(msg: "생일을 입력해주세요")
             return false
@@ -308,7 +305,6 @@ class PetAddViewController: CommonViewController {
             showToast(msg: "몸무게를 입력해주세요")
             return false
         }
-        
         return true
     }
     
@@ -344,16 +340,16 @@ class PetAddViewController: CommonViewController {
         let petRelCd = "001"
         let petNm = tf_name.text!
         let petRegNo = "Y"
-        let stdgSggCd = selectedSigungu!.sggCD
+        let stdgSggCd = selectedSigungu == nil ? "" : selectedSigungu!.sggCD        //isyuun
         let petInfoUnqNo = String(selectedPetKind!.petInfoUnqNo)
         let petBrthYmd = getBirthData()
-        let stdgUmdCd = selectedUpmeondong == nil ? "1" : selectedUpmeondong!.umdCD
+        let stdgUmdCd = selectedUpmeondong == nil ? "1" : selectedUpmeondong!.umdCD //isyuun
         let delYn = "N"
         let ntrTypCd = btn_neuter_yes.isSelected ? "001" : btn_neuter_no.isSelected ? "002" : "003"
         let petRprsYn = "Y"
         let sexTypCd = btn_sex_female.isSelected ? "001" : btn_sex_male.isSelected ? "002" : "003"
         let petMngrYn = "Y"
-        let stdgCtpvCd = String(selectedSido!.cdld)
+        let stdgCtpvCd = selectedSido == nil ? "" : String(selectedSido!.cdld)     //isyuun
         let wghtVl = Float(tf_weight.text!)!
         
         startLoading()
@@ -391,7 +387,6 @@ class PetAddViewController: CommonViewController {
                 }
                 else if response.statusCode == 406 {
                     self.showAlertPopup(title: response.resultMessage, msg: response.detailMessage!)
-                    
                 } else {
                     self.showAlertPopup(title: "에러", msg: "통신 에러가 발생했어요")
                     //self.showAlertPopup(title: response.resultMessage, msg: response.detailMessage!)

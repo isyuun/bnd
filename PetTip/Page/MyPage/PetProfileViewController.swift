@@ -101,10 +101,10 @@ class PetProfileViewController: CommonViewController {
     }
     
     @IBAction func onModifyPetInfo(_ sender: Any) {
-        let petModifyViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetModifyViewController") as PetModifyViewController
-        petModifyViewController.petProfileViewController = self
-        petModifyViewController.petDetailInfo = self.petDetailInfo
-        self.navigationController?.pushViewController(petModifyViewController, animated: true)
+        let petModViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetModViewController") as PetModViewController
+        petModViewController.petProfileViewController = self
+        petModViewController.petDetailInfo = self.petDetailInfo
+        self.navigationController?.pushViewController(petModViewController, animated: true)
     }
     
     

@@ -1,5 +1,5 @@
 //
-//  PetModifyViewController.swift
+//  PetModViewController.swift
 //  PetTip
 //
 //  Created by carebiz on 1/28/24.
@@ -433,16 +433,16 @@ class PetModViewController: CommonViewController {
         let petRelCd = petDetailInfo.petRelCD
         let petNm = tf_name.text!
         let petRegNo = petDetailInfo.petRegNo
-        let stdgSggCd = selectedSigungu!.sggCD
+        let stdgSggCd = selectedSigungu == nil ? "" : selectedSigungu!.sggCD        //isyuun
         let petInfoUnqNo = String(selectedPetKind!.petInfoUnqNo)
         let petBrthYmd = getBirthData()
-        let stdgUmdCd = selectedUpmeondong == nil ? "1" : selectedUpmeondong!.umdCD
+        let stdgUmdCd = selectedUpmeondong == nil ? "1" : selectedUpmeondong!.umdCD //isyuun
         let delYn = "N"
         let ntrTypCd = btn_neuter_yes.isSelected ? "001" : btn_neuter_no.isSelected ? "002" : "003"
         let petRprsYn = petDetailInfo.petRprsYn
         let sexTypCd = btn_sex_female.isSelected ? "001" : btn_sex_male.isSelected ? "002" : "003"
         let petMngrYn = petDetailInfo.petMngrYn
-        let stdgCtpvCd = String(selectedSido!.cdld)
+        let stdgCtpvCd = selectedSido == nil ? "" : String(selectedSido!.cdld)     //isyuun
         
         startLoading()
         
@@ -477,7 +477,6 @@ class PetModViewController: CommonViewController {
                 }
                 else if response.statusCode == 406 {
                     self.showAlertPopup(title: response.resultMessage, msg: response.detailMessage!)
-                    
                 } else {
                     self.showAlertPopup(title: "에러", msg: "통신 에러가 발생했어요")
                     //self.showAlertPopup(title: response.resultMessage, msg: response.detailMessage!)
