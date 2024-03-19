@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class PetModifyViewController: CommonViewController {
+class PetModViewController: CommonViewController {
     
     public var petProfileViewController: PetProfileViewController?
     public var petDetailInfo: MyPetDetailData?
@@ -389,11 +389,9 @@ class PetModifyViewController: CommonViewController {
         if selectedPetKind == nil {
             showToast(msg: "펫 종류를 선택해주세요")
             return false
-            
-        } else if let addr = lb_addr.text, addr.count == 0 {
-            showToast(msg: "주소를 입력해주세요")
-            return false
-            
+        // } else if let addr = lb_addr.text, addr.count == 0 {
+        //     showToast(msg: "주소를 입력해주세요")
+        //     return false
         } else if let name = tf_name.text, name.count == 0 {
             showToast(msg: "이름을 입력해주세요")
             return false
@@ -401,9 +399,7 @@ class PetModifyViewController: CommonViewController {
         } else if btn_birth_unkown.isSelected == false, let birth = tf_birth.text, birth.count == 0 {
             showToast(msg: "생일을 입력해주세요")
             return false
-            
         }
-        
         return true
     }
     
@@ -682,7 +678,7 @@ class PetModifyViewController: CommonViewController {
 
 
 
-extension PetModifyViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension PetModViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             picker.dismiss(animated: true, completion: nil)
             guard let image = info[.originalImage] as? UIImage else {
@@ -698,7 +694,7 @@ extension PetModifyViewController: UIImagePickerControllerDelegate, UINavigation
 
 
 
-extension PetModifyViewController: BackTitleBarViewProtocol {
+extension PetModViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
@@ -709,7 +705,7 @@ extension PetModifyViewController: BackTitleBarViewProtocol {
 
 
 
-extension PetModifyViewController: PetTypeSelectViewControllerDelegate {
+extension PetModViewController: PetTypeSelectViewControllerDelegate {
     func selectComplete(pet: CmmPetListData) {
         self.selectedPetKind = pet
         self.lb_petKind.text = self.selectedPetKind?.petNm
@@ -720,7 +716,7 @@ extension PetModifyViewController: PetTypeSelectViewControllerDelegate {
 
 
 
-extension PetModifyViewController: AddressSelectViewControllerDelegate {
+extension PetModViewController: AddressSelectViewControllerDelegate {
     func selectComplete(selectedSido: Sido?, selectedSigungu: SggListData?, selectedUpmeondong: UmdListData?) {
         self.selectedSido = selectedSido
         self.selectedSigungu = selectedSigungu
@@ -744,7 +740,7 @@ extension PetModifyViewController: AddressSelectViewControllerDelegate {
 
 
 
-extension PetModifyViewController: UITextFieldDelegate {
+extension PetModViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tfSelectedUI(view: textField)
