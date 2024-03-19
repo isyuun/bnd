@@ -260,7 +260,7 @@
 		02DB38162B64FCE6007D19A1 /* PetProfileMemberItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DB38152B64FCE6007D19A1 /* PetProfileMemberItemView.xib */; };
 		02DB38182B65E009007D19A1 /* MyPetRelCloseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38172B65E008007D19A1 /* MyPetRelCloseRequest.swift */; };
 		02DB381A2B65E016007D19A1 /* MyPetRelCloseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38192B65E016007D19A1 /* MyPetRelCloseResponse.swift */; };
-		02DB381C2B65F225007D19A1 /* PetModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB381B2B65F225007D19A1 /* PetModifyViewController.swift */; };
+		02DB381C2B65F225007D19A1 /* PetModViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB381B2B65F225007D19A1 /* PetModViewController.swift */; };
 		02DB381E2B663ACE007D19A1 /* MyPetUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB381D2B663ACE007D19A1 /* MyPetUpdateRequest.swift */; };
 		02DB38202B663B3A007D19A1 /* MyPetUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB381F2B663B3A007D19A1 /* MyPetUpdateResponse.swift */; };
 		02DB38222B664EB1007D19A1 /* MyPetDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38212B664EB1007D19A1 /* MyPetDeleteRequest.swift */; };
@@ -583,7 +583,7 @@
 		02DB38152B64FCE6007D19A1 /* PetProfileMemberItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetProfileMemberItemView.xib; sourceTree = "<group>"; };
 		02DB38172B65E008007D19A1 /* MyPetRelCloseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetRelCloseRequest.swift; sourceTree = "<group>"; };
 		02DB38192B65E016007D19A1 /* MyPetRelCloseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetRelCloseResponse.swift; sourceTree = "<group>"; };
-		02DB381B2B65F225007D19A1 /* PetModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModifyViewController.swift; sourceTree = "<group>"; };
+		02DB381B2B65F225007D19A1 /* PetModViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModViewController.swift; sourceTree = "<group>"; };
 		02DB381D2B663ACE007D19A1 /* MyPetUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetUpdateRequest.swift; sourceTree = "<group>"; };
 		02DB381F2B663B3A007D19A1 /* MyPetUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetUpdateResponse.swift; sourceTree = "<group>"; };
 		02DB38212B664EB1007D19A1 /* MyPetDeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetDeleteRequest.swift; sourceTree = "<group>"; };
@@ -781,6 +781,7 @@
 				028625082B47E8D90055E62F /* InviteCreateViewController.swift */,
 				0286250A2B47E8FC0055E62F /* InviteSetKeyViewController.swift */,
 				028625122B4905540055E62F /* PetAddViewController.swift */,
+				02DB381B2B65F225007D19A1 /* PetModViewController.swift */,
 				0286251C2B4996E50055E62F /* PetTypeSelectViewController.swift */,
 				0286251E2B4A61880055E62F /* AddressSelectViewController.swift */,
 				0286252E2B4D9AE10055E62F /* CustomerCenterViewController.swift */,
@@ -804,7 +805,6 @@
 				02DB37F42B6340D6007D19A1 /* PetProfileViewController.swift */,
 				02DB38132B64FCD9007D19A1 /* PetProfileMemberItemView.swift */,
 				02DB38152B64FCE6007D19A1 /* PetProfileMemberItemView.xib */,
-				02DB381B2B65F225007D19A1 /* PetModifyViewController.swift */,
 				02A05B372B40F99200E8ABFA /* MyPage.storyboard */,
 				028625142B49058F0055E62F /* Pet.storyboard */,
 				028625322B4D9BD20055E62F /* CustomerCenter.storyboard */,
@@ -1719,7 +1719,7 @@
 				02A05B4A2B433A4900E8ABFA /* String.swift in Sources */,
 				02DB37F52B6340D6007D19A1 /* PetProfileViewController.swift in Sources */,
 				02DB38222B664EB1007D19A1 /* MyPetDeleteRequest.swift in Sources */,
-				02DB381C2B65F225007D19A1 /* PetModifyViewController.swift in Sources */,
+				02DB381C2B65F225007D19A1 /* PetModViewController.swift in Sources */,
 				02A05B4E2B446D9200E8ABFA /* ResetPasswordRequest.swift in Sources */,
 				02A05A7E2B31A27900E8ABFA /* CommonDetailViewController.swift in Sources */,
 				022B41982B1C44180057323E /* WalkHistoryViewController.swift in Sources */,
@@ -1896,7 +1896,7 @@
 				CODE_SIGN_ENTITLEMENTS = PetTip/PetTip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H7W45DFCJU;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1921,13 +1921,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pettip.PetTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1944,7 +1945,7 @@
 				CODE_SIGN_ENTITLEMENTS = PetTip/PetTip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = H7W45DFCJU;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1969,13 +1970,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pettip.PetTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
