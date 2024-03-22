@@ -40,7 +40,6 @@ class CommonViewController: LoadingIndicatorViewController {
     }
 
     func processNetworkError(_ error: MyError?) {
-        print("네트워크 오류발생 [\(String(describing: error))]")
         if let error = error {
             if let resCode = error.resCode {
                 if resCode == 403 {
@@ -56,6 +55,7 @@ class CommonViewController: LoadingIndicatorViewController {
                     return
                 }
                 if resCode != 200 { self.showSimpleAlert(title: "네트워크 오류발생 [코드:\(resCode)]", msg: error.description) } //isyuun
+                print("[LOG][네트워크][오류확인][코드:\(String(describing: error.resCode))][내용:\(String(describing: error.description))]")
             }
             // if let description = error.description {
             //     self.showSimpleAlert(title: "Network fail", msg: description)
