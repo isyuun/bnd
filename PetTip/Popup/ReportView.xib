@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,17 +14,120 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="416"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고 사유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mW-9Y-fyQ">
-                    <rect key="frame" x="20.000000000000004" y="20" width="59.333333333333343" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb1-Bj-cAs">
+                    <rect key="frame" x="20" y="19" width="357" height="24"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="zSR-0T-Uy1"/>
+                        <constraint firstAttribute="height" constant="24" id="uzc-cz-75Q"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                    <color key="textColor" systemColor="darkTextColor"/>
+                    <attributedString key="attributedText">
+                        <fragment content="*">
+                            <attributes>
+                                <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="신고횟수가">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" 3">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="회">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="이상인">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="유저는">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="글작성이">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="제한될수">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="있습니다">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=".">
+                            <attributes>
+                                <color key="NSColor" systemColor="darkTextColor"/>
+                                <font key="NSFont" metaFont="system" size="14"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5z-Sa-Sd2" customClass="UIControl">
-                    <rect key="frame" x="20" y="52" width="353" height="48"/>
+                    <rect key="frame" x="20" y="75" width="353" height="48"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고 사유를 선택하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYQ-lt-hEY">
                             <rect key="frame" x="10" y="16" width="313" height="16"/>
@@ -63,17 +166,17 @@
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CXI-Or-agQ">
-                    <rect key="frame" x="20" y="148" width="353" height="200"/>
+                    <rect key="frame" x="20" y="171" width="353" height="176"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="ZZu-36-ILq"/>
+                        <constraint firstAttribute="height" constant="176" id="ZZu-36-ILq"/>
                     </constraints>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gte-n7-p2a">
-                    <rect key="frame" x="20.000000000000004" y="116" width="59.333333333333343" height="24"/>
+                    <rect key="frame" x="20.000000000000004" y="139" width="59.333333333333343" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="hfn-Di-Kp8"/>
                     </constraints>
@@ -129,28 +232,40 @@
                         <action selector="onOK:" destination="iN0-l3-epB" eventType="touchUpInside" id="JzF-Qn-2hf"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고 사유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mW-9Y-fyQ">
+                    <rect key="frame" x="20.000000000000004" y="51" width="59.333333333333343" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="zSR-0T-Uy1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" systemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="gfN-Gl-WYH" secondAttribute="trailing" constant="22" id="08E-YA-028"/>
-                <constraint firstItem="gfN-Gl-WYH" firstAttribute="top" secondItem="m5z-Sa-Sd2" secondAttribute="bottom" id="0KI-NB-7TZ"/>
+                <constraint firstItem="gfN-Gl-WYH" firstAttribute="top" secondItem="m5z-Sa-Sd2" secondAttribute="bottom" constant="-23" id="0KI-NB-7TZ"/>
                 <constraint firstItem="CXI-Or-agQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="1yR-8b-89Y"/>
                 <constraint firstItem="18r-1Q-4Lj" firstAttribute="width" secondItem="Xgg-0I-zl6" secondAttribute="width" id="3px-mo-bAU"/>
-                <constraint firstItem="7mW-9Y-fyQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="8bQ-uj-8H3"/>
+                <constraint firstItem="Pb1-Bj-cAs" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="7Zu-7X-Q6t"/>
+                <constraint firstItem="7mW-9Y-fyQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="51" id="8bQ-uj-8H3"/>
                 <constraint firstAttribute="bottom" secondItem="18r-1Q-4Lj" secondAttribute="bottom" id="9JQ-CR-yb0"/>
                 <constraint firstItem="gte-n7-p2a" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="B5H-3y-nG8"/>
-                <constraint firstItem="m5z-Sa-Sd2" firstAttribute="top" secondItem="7mW-9Y-fyQ" secondAttribute="bottom" constant="8" id="BOI-3t-vE6"/>
+                <constraint firstItem="m5z-Sa-Sd2" firstAttribute="top" secondItem="7mW-9Y-fyQ" secondAttribute="bottom" id="BOI-3t-vE6"/>
                 <constraint firstItem="Xgg-0I-zl6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="C4k-4D-2tX"/>
-                <constraint firstItem="18r-1Q-4Lj" firstAttribute="top" secondItem="CXI-Or-agQ" secondAttribute="bottom" constant="20" id="GJs-lu-LAc"/>
+                <constraint firstItem="18r-1Q-4Lj" firstAttribute="top" secondItem="CXI-Or-agQ" secondAttribute="bottom" constant="21" id="GJs-lu-LAc"/>
                 <constraint firstItem="7mW-9Y-fyQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="IKL-u7-AGH"/>
                 <constraint firstItem="gfN-Gl-WYH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="22" id="MJl-vf-Q1X"/>
-                <constraint firstItem="Xgg-0I-zl6" firstAttribute="top" secondItem="CXI-Or-agQ" secondAttribute="bottom" constant="20" id="PeW-n2-kq5"/>
+                <constraint firstItem="Xgg-0I-zl6" firstAttribute="top" secondItem="CXI-Or-agQ" secondAttribute="bottom" constant="21" id="PeW-n2-kq5"/>
                 <constraint firstItem="CXI-Or-agQ" firstAttribute="top" secondItem="gte-n7-p2a" secondAttribute="bottom" constant="8" id="PiV-xI-t8L"/>
                 <constraint firstAttribute="bottom" secondItem="Xgg-0I-zl6" secondAttribute="bottom" id="YLy-Vt-mYg"/>
                 <constraint firstAttribute="trailing" secondItem="18r-1Q-4Lj" secondAttribute="trailing" id="aMi-sB-t4z"/>
                 <constraint firstItem="18r-1Q-4Lj" firstAttribute="leading" secondItem="Xgg-0I-zl6" secondAttribute="trailing" id="c4f-LJ-Cm8"/>
                 <constraint firstAttribute="trailing" secondItem="CXI-Or-agQ" secondAttribute="trailing" constant="20" id="e5J-rs-DP7"/>
+                <constraint firstItem="7mW-9Y-fyQ" firstAttribute="top" secondItem="Pb1-Bj-cAs" secondAttribute="bottom" constant="8" id="exn-QT-M7o"/>
                 <constraint firstItem="m5z-Sa-Sd2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="fZZ-Aj-cfT"/>
+                <constraint firstItem="Pb1-Bj-cAs" firstAttribute="leading" secondItem="7mW-9Y-fyQ" secondAttribute="leading" id="mbF-vJ-sdc"/>
                 <constraint firstItem="gte-n7-p2a" firstAttribute="top" secondItem="m5z-Sa-Sd2" secondAttribute="bottom" constant="16" id="qsh-0p-iXk"/>
                 <constraint firstAttribute="trailing" secondItem="m5z-Sa-Sd2" secondAttribute="trailing" constant="20" id="sKU-Va-4ZS"/>
             </constraints>
