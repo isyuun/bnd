@@ -9,15 +9,29 @@ import Foundation
 import Alamofire
 
 struct WeatherAPI {
-    static func weather(request: WeatherRequest, completion: @escaping (_ succeed: Weather?, _ failed: Error?) -> Void) {
+    // static func weather(request: WeatherRequest, completion: @escaping (_ succeed: Weather?, _ failed: Error?) -> Void) {
+    //     API.session.request(WeatherTarget.weather(request), interceptor: nil)
+    //         .responseDecodable { (response: AFDataResponse<WeatherResponse>) in
+    //         switch response.result {
+    //         case .success(let response):
+    //             completion(response.toDomain, nil)
+    //         case .failure(let error):
+    //             completion(nil, error)
+    //         }
+    //     }
+    // }
+    static func weather(request: WeatherRequest, completion: @escaping (_ succeed: Weather?, _ failed: MyError?) -> Void) {
         API.session.request(WeatherTarget.weather(request), interceptor: nil)
             .responseDecodable { (response: AFDataResponse<WeatherResponse>) in
-                switch response.result {
-                case .success(let response):
-                    completion(response.toDomain, nil)
-                case .failure(let error):
-                    completion(nil, error)
-                }
+            switch response.result {
+            case .success(let response):
+                completion(response.toDomain, nil)
+            case .failure(let error):
+                let myError = MyError()
+                myError.description = error.localizedDescription
+                myError.resCode = response.response?.statusCode
+                completion(nil, myError)
             }
+        }
     }
 }
