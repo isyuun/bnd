@@ -55,7 +55,7 @@ class CommonViewController: LoadingIndicatorViewController {
             }
             if error.resCode != nil && error.resCode != 200 { self.showSimpleAlert(title: "네트워크 오류발생 [코드:\(String(describing: error.resCode))]", msg: String(describing: error.description)) }
         }
-        print("[LOG][네트워크][오류확인][오류:\(String(describing: error))][코드:\(String(describing: error?.resCode))][설명:\(String(describing: error?.description))]")
+        NSLog("Info[LOG][네트워크][오류확인][오류:\(String(describing: error))][코드:\(String(describing: error?.resCode))][설명:\(String(describing: error?.description))]")
     }
 
     // MARK: - MOVE LOGIN PAGE : HTTP 403 Duplicate login JWT Token

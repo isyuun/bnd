@@ -903,7 +903,7 @@ class StoryDetailViewController: CommonDetailViewController {
                     // }
                     if error?.resCode == 200 { self.showSimpleAlert(msg: "신고처리 되었습니다\n처리후 컴토까지 최대 24시간 소요됩니다.") }
                 })
-                print("[LOG][네트워크][신고확인][dclrCreateStory:\(String(describing: dclrCreateStory))]")
+                NSLog("Info[LOG][네트워크][신고확인][dclrCreateStory:\(String(describing: dclrCreateStory))]")
             }
         } else if _dclrSeCd == "002" {
             DailyLifeAPI.dclrCreateCmnt(request: request) { dclrCreateCmnt, error in
@@ -917,7 +917,7 @@ class StoryDetailViewController: CommonDetailViewController {
                     // }
                     if error?.resCode == 200 { self.showSimpleAlert(msg: "신고처리 되었습니다\n처리후 컴토까지 최대 24시간 소요됩니다.") }
                 })
-                print("[LOG][네트워크][신고확인][dclrCreateCmnt:\(String(describing: dclrCreateCmnt))]")
+                NSLog("Info[LOG][네트워크][신고확인][dclrCreateCmnt:\(String(describing: dclrCreateCmnt))]")
             }
         }
     }
