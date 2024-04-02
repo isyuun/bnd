@@ -542,7 +542,7 @@ class MainViewController: LocationViewController {
             }
 
             // if let error = error { self.showSimpleAlert(title: "날씨오류", msg: error.localizedDescription) }
-            NSLog("Info[LOG][네트워크][날씨확인][오류:\(String(describing: error))][내용:\(String(describing: weather))]")
+            NSLog("[I][LOG][네트워크][날씨확인][오류:\(String(describing: error))][내용:\(String(describing: weather))]")
         }
     }
 
