@@ -117,6 +117,7 @@ class LoginViewController: CommonViewController {
         // vw_basicAcctArea.isHidden = true
         // vw_basicAcctArea.heightAnchor.constraint(equalToConstant: 0).isActive = true
 
+        // IY: 변경: 디버그시 ID/PW 로그인폼 표시처리
         #if DEBUG
             IDPWLoginForm.isHidden = false // 디버그 모드에서 실행할 코드
         #else
@@ -226,8 +227,8 @@ class LoginViewController: CommonViewController {
                 userDef.set(login.nckNm, forKey: "nckNm")
                 userDef.set(loginMethod, forKey: "method")
                 userDef.synchronize()
-//                KeychainServiceImpl.shared.accessToken = login.accessToken
-//                KeychainServiceImpl.shared.refreshToken = login.refreshToken
+                // KeychainServiceImpl.shared.accessToken = login.accessToken
+                // KeychainServiceImpl.shared.refreshToken = login.refreshToken
 
                 self.trmnlMng(appKeyVl: login.appKeyVl)
 
@@ -239,12 +240,7 @@ class LoginViewController: CommonViewController {
         }
     }
 
-
-
-
-
     // MARK: - KAKAO LOGIN
-
     @IBAction func onLoginKakao(_ sender: Any) {
         startKakaoLogin()
     }
@@ -280,22 +276,12 @@ class LoginViewController: CommonViewController {
         }
     }
 
-
-
-
-
     // MARK: - NAVER LOGIN
-
     @IBAction func onLoginNaver(_ sender: Any) {
         startNaverLogin()
     }
 
-
-
-
-
     // MARK: - APPLE LOGIN
-
     @IBAction func onLoginApple(_ sender: Any) {
         startAppleLogin()
     }
@@ -311,10 +297,6 @@ class LoginViewController: CommonViewController {
         authorizationController.performRequests()
     }
 }
-
-
-
-
 
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
@@ -391,10 +373,6 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     }
 }
 
-
-
-
-
 extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
@@ -417,10 +395,10 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             }
         }
 
-        // 처음 애플 로그인 시 이메일은 credential.fullName 에 들어있다.
-        if let fullName = credential.fullName {
-            // print("이름 : \(fullName.familyName ?? "")\(fullName.givenName ?? "")")
-        }
+        // // 처음 애플 로그인 시 이메일은 credential.fullName 에 들어있다.
+        // if let fullName = credential.fullName {
+        //     // print("이름 : \(fullName.familyName ?? "")\(fullName.givenName ?? "")")
+        // }
 
         // print("userIdentifier : \(credential.user)")
         let user = credential.user
