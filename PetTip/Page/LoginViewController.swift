@@ -36,6 +36,9 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
 
+    @IBOutlet weak var SNSSLoginForm: UIView!
+    @IBOutlet weak var IDPWLoginForm: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -104,7 +107,7 @@ class LoginViewController: CommonViewController {
         cr_loginGoogleBtnAreaHeight.constant = 0
 
         cr_totalLoginBtnAreaHeight.constant -= diffHeight
-        cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
+        // cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
 
 
         /*
@@ -113,6 +116,12 @@ class LoginViewController: CommonViewController {
         // cr_topMarginAreaHeight.constant = 160
         // vw_basicAcctArea.isHidden = true
         // vw_basicAcctArea.heightAnchor.constraint(equalToConstant: 0).isActive = true
+
+        #if DEBUG
+            IDPWLoginForm.isHidden = false // 디버그 모드에서 실행할 코드
+        #else
+            IDPWLoginForm.isHidden = true // 릴리스 모드에서 실행할 코드
+        #endif
     }
 
     @IBOutlet weak var btnLogin: UIButton!

@@ -2527,7 +2527,7 @@
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G">
                                                 <rect key="frame" x="0.0" y="100" width="393" height="737"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSLoginBtnsView">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSSLoginForm">
                                                         <rect key="frame" x="20" y="20" width="353" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
@@ -2726,7 +2726,7 @@
                                                             <constraint firstItem="ffF-ei-McM" firstAttribute="leading" secondItem="aX2-SX-KXT" secondAttribute="leading" id="zsL-4z-raA"/>
                                                         </constraints>
                                                     </view>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr" userLabel="IDPWLoginForm">
                                                         <rect key="frame" x="20" y="386" width="353" height="311"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-Zo-091">
@@ -2772,7 +2772,7 @@
                                                                     <action selector="onLogin:" destination="o4R-pM-VvT" eventType="touchUpInside" id="Qf6-1v-G2k"/>
                                                                 </connections>
                                                             </button>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-iA-SPY" userLabel="AcctMgrLinkView">
+                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-iA-SPY" userLabel="AcctMgrLinkView">
                                                                 <rect key="frame" x="40" y="236" width="273" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnL-Da-j75">
@@ -2929,6 +2929,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wbu-y5-bp5"/>
                     <connections>
+                        <outlet property="IDPWLoginForm" destination="0QI-Df-fKr" id="bRF-ke-qAo"/>
+                        <outlet property="SNSSLoginForm" destination="aX2-SX-KXT" id="eqp-5w-24E"/>
                         <outlet property="bgView" destination="tcI-ef-11G" id="a4N-mj-UZL"/>
                         <outlet property="btnLogin" destination="ysZ-FJ-cBw" id="8oA-gb-fxv"/>
                         <outlet property="btnLoginApple" destination="uDb-by-I10" id="t3m-CP-k1a"/>
@@ -3047,7 +3049,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="43t-yt-BLb"/>
+        <segue reference="ksD-bF-nzH"/>
         <segue reference="ISm-sO-KAv"/>
         <segue reference="8xf-V6-Ark"/>
     </inferredMetricsTieBreakers>
