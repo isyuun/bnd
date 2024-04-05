@@ -2867,6 +2867,7 @@
                                                             <constraint firstItem="mgO-iA-SPY" firstAttribute="leading" secondItem="0QI-Df-fKr" secondAttribute="leading" constant="40" id="oYz-zC-nAM"/>
                                                             <constraint firstItem="5KF-pY-HRT" firstAttribute="leading" secondItem="0QI-Df-fKr" secondAttribute="leading" id="qqT-RG-a1f"/>
                                                             <constraint firstItem="Z1m-Zo-091" firstAttribute="centerX" secondItem="0QI-Df-fKr" secondAttribute="centerX" id="rgZ-jW-ngu"/>
+                                                            <constraint firstAttribute="height" constant="311" id="vOJ-Hh-Phb"/>
                                                             <constraint firstItem="ysZ-FJ-cBw" firstAttribute="leading" secondItem="0QI-Df-fKr" secondAttribute="leading" id="vQw-yq-V2X"/>
                                                             <constraint firstAttribute="trailing" secondItem="5KF-pY-HRT" secondAttribute="trailing" id="wNd-86-NHH"/>
                                                         </constraints>
@@ -2880,7 +2881,7 @@
                                                     <constraint firstItem="aX2-SX-KXT" firstAttribute="leading" secondItem="tcI-ef-11G" secondAttribute="leading" constant="20" id="SjG-L4-lLY"/>
                                                     <constraint firstAttribute="trailing" secondItem="0QI-Df-fKr" secondAttribute="trailing" constant="20" id="YDq-26-1rF"/>
                                                     <constraint firstItem="0QI-Df-fKr" firstAttribute="leading" secondItem="tcI-ef-11G" secondAttribute="leading" constant="20" id="mct-Yd-PXL"/>
-                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aX2-SX-KXT" secondAttribute="bottom" constant="150" id="tmr-18-og7"/>
+                                                    <constraint firstItem="aX2-SX-KXT" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="tcI-ef-11G" secondAttribute="bottom" constant="-150" id="tmr-18-og7"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-26-gFX">
@@ -2941,7 +2942,6 @@
                         <outlet property="cr_loginFacebookBtnAreaHeight" destination="vrF-W9-ZgH" id="i80-xu-eSr"/>
                         <outlet property="cr_loginGoogleBtnAreaHeight" destination="0VY-lG-8bh" id="tda-B3-BDf"/>
                         <outlet property="cr_topMarginAreaHeight" destination="VxE-xB-KqC" id="aOU-FC-j8i"/>
-                        <outlet property="cr_totalLoginBtnAreaBottomMargin" destination="tmr-18-og7" id="GJo-kD-kgP"/>
                         <outlet property="cr_totalLoginBtnAreaHeight" destination="NjA-q2-FYt" id="efm-Wv-e8P"/>
                         <outlet property="inputBoxId" destination="5KF-pY-HRT" id="d94-i6-v07"/>
                         <outlet property="inputBoxPwd" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>

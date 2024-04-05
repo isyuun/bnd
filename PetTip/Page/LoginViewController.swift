@@ -38,6 +38,8 @@ class LoginViewController: CommonViewController {
 
     @IBOutlet weak var SNSSLoginForm: UIView!
     @IBOutlet weak var IDPWLoginForm: UIView!
+    @IBOutlet weak var longinHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var longinBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,12 +119,12 @@ class LoginViewController: CommonViewController {
         // vw_basicAcctArea.isHidden = true
         // vw_basicAcctArea.heightAnchor.constraint(equalToConstant: 0).isActive = true
 
-        // IY: 변경: 디버그시 ID/PW 로그인폼 표시처리
-        #if DEBUG
-            IDPWLoginForm.isHidden = false // 디버그 모드에서 실행할 코드
-        #else
-            IDPWLoginForm.isHidden = true // 릴리스 모드에서 실행할 코드
-        #endif
+        // // IY: 변경: 디버그시 ID/PW 로그인폼 표시처리
+        // #if DEBUG
+        //     IDPWLoginForm.isHidden = false // 디버그 모드에서 실행할 코드
+        // #else
+        //     IDPWLoginForm.isHidden = true // 릴리스 모드에서 실행할 코드
+        // #endif
     }
 
     @IBOutlet weak var btnLogin: UIButton!
