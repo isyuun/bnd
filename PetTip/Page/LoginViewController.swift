@@ -95,21 +95,20 @@ class LoginViewController: CommonViewController {
             inputBoxId.text = email
         }
 
-        var diffHeight = 0.0
-
-        /*
-         * HIDE : Facebook, Google LOGIN
-         */
-        btnLoginFacebook.isHidden = true
-        diffHeight += cr_loginFacebookBtnAreaHeight.constant
-        cr_loginFacebookBtnAreaHeight.constant = 0
-
-        btnLoginGoogle.isHidden = true
-        diffHeight += cr_loginGoogleBtnAreaHeight.constant
-        cr_loginGoogleBtnAreaHeight.constant = 0
-
-        cr_totalLoginBtnAreaHeight.constant -= diffHeight
-        // cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
+        // /*
+        //  * HIDE : Facebook, Google LOGIN
+        //  */
+        // var diffHeight = 0.0
+        // btnLoginFacebook.isHidden = true
+        // diffHeight += cr_loginFacebookBtnAreaHeight.constant
+        // cr_loginFacebookBtnAreaHeight.constant = 0
+        // 
+        // btnLoginGoogle.isHidden = true
+        // diffHeight += cr_loginGoogleBtnAreaHeight.constant
+        // cr_loginGoogleBtnAreaHeight.constant = 0
+        // 
+        // // cr_totalLoginBtnAreaHeight.constant -= diffHeight
+        // // cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
 
 
         /*
