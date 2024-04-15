@@ -31,14 +31,11 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var btnLoginGoogle: UIButton!
     @IBOutlet weak var btnLoginApple: UIButton!
 
-    @IBOutlet weak var cr_totalLoginBtnAreaBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
 
     @IBOutlet weak var SNSSLoginForm: UIView!
     @IBOutlet weak var IDPWLoginForm: UIView!
-    @IBOutlet weak var longinHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var longinBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
