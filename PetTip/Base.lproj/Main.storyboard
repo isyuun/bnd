@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cja-jY-cJN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cja-jY-cJN">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1141,7 +1141,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-Qh-hAi">
                                 <rect key="frame" x="0.0" y="119" width="393" height="248"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-Lk-Znk">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-Lk-Znk">
                                         <rect key="frame" x="5" y="20" width="215.66666666666666" height="24"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhA-xL-req">
@@ -2672,26 +2672,26 @@
                                                             <constraint firstAttribute="trailing" secondItem="5KF-pY-HRT" secondAttribute="trailing" id="wNd-86-NHH"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSLoginBtnsView">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSLoginBtnsView">
                                                         <rect key="frame" x="20" y="351" width="353" height="346"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNS 계정으로 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZI-MD-Lrn">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="SNS 계정으로 로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZI-MD-Lrn">
                                                                         <rect key="frame" x="108" y="13" width="137" height="20"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-Kn-mdH">
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-Kn-mdH">
                                                                         <rect key="frame" x="0.0" y="22.666666666666686" width="93" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="vmH-wM-XTo"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tv2-XF-d2s">
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tv2-XF-d2s">
                                                                         <rect key="frame" x="260" y="22.666666666666686" width="93" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -2710,7 +2710,7 @@
                                                                     <constraint firstItem="GZI-MD-Lrn" firstAttribute="leading" secondItem="hcQ-Kn-mdH" secondAttribute="trailing" constant="15" id="y86-CJ-FG2"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffF-ei-McM">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffF-ei-McM">
                                                                 <rect key="frame" x="0.0" y="66" width="353" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgR-FK-ih2">
@@ -2738,7 +2738,7 @@
                                                                     <constraint firstItem="KgR-FK-ih2" firstAttribute="leading" secondItem="ffF-ei-McM" secondAttribute="leading" id="veL-oK-jWe"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cr-Wn-1Vx">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cr-Wn-1Vx">
                                                                 <rect key="frame" x="0.0" y="122" width="353" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ajx-3t-Wb0">
@@ -2766,7 +2766,7 @@
                                                                     <constraint firstAttribute="height" constant="56" id="tPg-iO-hup"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjY-ts-9T7">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UjY-ts-9T7">
                                                                 <rect key="frame" x="0.0" y="178" width="353" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir9-S0-PMU">
@@ -2791,7 +2791,7 @@
                                                                     <constraint firstAttribute="height" constant="56" id="vrF-W9-ZgH"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-rJ-tod">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-rJ-tod">
                                                                 <rect key="frame" x="0.0" y="234" width="353" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8j-0l-pzP">
@@ -2818,7 +2818,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="u8j-0l-pzP" secondAttribute="trailing" id="b0N-NO-JSn"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZW-Rn-v2h">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RZW-Rn-v2h">
                                                                 <rect key="frame" x="0.0" y="290" width="353" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-by-I10">
@@ -2853,7 +2853,6 @@
                                                             <constraint firstAttribute="bottom" secondItem="RZW-Rn-v2h" secondAttribute="bottom" id="E7T-jH-SIp"/>
                                                             <constraint firstItem="sjA-iK-nlF" firstAttribute="top" secondItem="aX2-SX-KXT" secondAttribute="top" id="EoU-aO-BFg"/>
                                                             <constraint firstAttribute="trailing" secondItem="ffF-ei-McM" secondAttribute="trailing" id="Jlz-ve-scJ"/>
-                                                            <constraint firstAttribute="height" constant="346" id="NjA-q2-FYt"/>
                                                             <constraint firstAttribute="trailing" secondItem="UjY-ts-9T7" secondAttribute="trailing" id="SR1-Uv-USW"/>
                                                             <constraint firstItem="7cr-Wn-1Vx" firstAttribute="top" secondItem="ffF-ei-McM" secondAttribute="bottom" id="b7R-5D-wSD"/>
                                                             <constraint firstItem="7cr-Wn-1Vx" firstAttribute="leading" secondItem="aX2-SX-KXT" secondAttribute="leading" id="ezl-fi-7sx"/>
@@ -2940,7 +2939,6 @@
                         <outlet property="cr_loginGoogleBtnAreaHeight" destination="0VY-lG-8bh" id="tda-B3-BDf"/>
                         <outlet property="cr_topMarginAreaHeight" destination="VxE-xB-KqC" id="aOU-FC-j8i"/>
                         <outlet property="cr_totalLoginBtnAreaBottomMargin" destination="tmr-18-og7" id="GJo-kD-kgP"/>
-                        <outlet property="cr_totalLoginBtnAreaHeight" destination="NjA-q2-FYt" id="efm-Wv-e8P"/>
                         <outlet property="inputBoxId" destination="5KF-pY-HRT" id="d94-i6-v07"/>
                         <outlet property="inputBoxPwd" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
                         <outlet property="logoImageView" destination="0VK-jh-OlM" id="Jwj-60-2Me"/>
