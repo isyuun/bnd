@@ -2528,7 +2528,7 @@
                                                 <rect key="frame" x="0.0" y="100" width="393" height="737"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr" userLabel="IDPWLoginForm">
-                                                        <rect key="frame" x="20" y="40" width="353" height="311"/>
+                                                        <rect key="frame" x="20" y="396" width="353" height="311"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-Zo-091">
                                                                 <rect key="frame" x="145" y="0.0" width="63" height="29"/>
@@ -2673,7 +2673,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSSLoginForm">
-                                                        <rect key="frame" x="20" y="351" width="353" height="346"/>
+                                                        <rect key="frame" x="20" y="40" width="353" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
@@ -2685,14 +2685,14 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-Kn-mdH">
-                                                                        <rect key="frame" x="0.0" y="22.666666666666686" width="93" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="22.666666666666657" width="93" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="vmH-wM-XTo"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tv2-XF-d2s">
-                                                                        <rect key="frame" x="260" y="22.666666666666686" width="93" height="1"/>
+                                                                        <rect key="frame" x="260" y="22.666666666666657" width="93" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="gl0-Qy-ece"/>
@@ -2874,8 +2874,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="0QI-Df-fKr" firstAttribute="top" secondItem="tcI-ef-11G" secondAttribute="top" constant="40" id="GxA-Bg-OeV"/>
-                                                    <constraint firstItem="aX2-SX-KXT" firstAttribute="top" secondItem="0QI-Df-fKr" secondAttribute="bottom" id="MaQ-Zu-qOU"/>
+                                                    <constraint firstItem="0QI-Df-fKr" firstAttribute="top" secondItem="aX2-SX-KXT" secondAttribute="bottom" constant="10" id="GxA-Bg-OeV"/>
+                                                    <constraint firstItem="aX2-SX-KXT" firstAttribute="top" secondItem="tcI-ef-11G" secondAttribute="top" constant="40" id="MaQ-Zu-qOU"/>
                                                     <constraint firstAttribute="trailing" secondItem="aX2-SX-KXT" secondAttribute="trailing" constant="20" id="Rl6-16-yoe"/>
                                                     <constraint firstItem="aX2-SX-KXT" firstAttribute="leading" secondItem="tcI-ef-11G" secondAttribute="leading" constant="20" id="SjG-L4-lLY"/>
                                                     <constraint firstAttribute="trailing" secondItem="0QI-Df-fKr" secondAttribute="trailing" constant="20" id="YDq-26-1rF"/>
