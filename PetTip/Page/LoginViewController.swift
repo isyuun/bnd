@@ -95,11 +95,11 @@ class LoginViewController: CommonViewController {
             inputBoxId.text = email
         }
 
+        var diffHeight = 0.0
 
         /*
          * HIDE : Facebook, Google LOGIN
          */
-        var diffHeight = 0.0
         btnLoginFacebook.isHidden = true
         diffHeight += cr_loginFacebookBtnAreaHeight.constant
         cr_loginFacebookBtnAreaHeight.constant = 0
