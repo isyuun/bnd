@@ -31,7 +31,6 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var btnLoginGoogle: UIButton!
     @IBOutlet weak var btnLoginApple: UIButton!
 
-    @IBOutlet weak var cr_totalLoginBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_totalLoginBtnAreaBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
@@ -95,23 +94,15 @@ class LoginViewController: CommonViewController {
             inputBoxId.text = email
         }
 
-        var diffHeight = 0.0
-
         /*
          * HIDE : Facebook, Google LOGIN
          */
         btnLoginFacebook.isHidden = true
-        diffHeight += cr_loginFacebookBtnAreaHeight.constant
         cr_loginFacebookBtnAreaHeight.constant = 0
         
         btnLoginGoogle.isHidden = true
-        diffHeight += cr_loginGoogleBtnAreaHeight.constant
         cr_loginGoogleBtnAreaHeight.constant = 0
         
-        // cr_totalLoginBtnAreaHeight.constant -= diffHeight
-        // cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
-
-
         /*
          * Hide basic account controls. Only shows SNS account controls.
          */
