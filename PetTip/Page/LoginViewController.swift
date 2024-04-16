@@ -31,11 +31,10 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var btnLoginGoogle: UIButton!
     @IBOutlet weak var btnLoginApple: UIButton!
 
+    @IBOutlet weak var cr_totalLoginBtnAreaHeight: NSLayoutConstraint!
+    @IBOutlet weak var cr_totalLoginBtnAreaBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
-
-    @IBOutlet weak var SNSSLoginForm: UIView!
-    @IBOutlet weak var IDPWLoginForm: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,28 +90,29 @@ class LoginViewController: CommonViewController {
             inputBoxId.text = email
         }
 
+
         /*
          * HIDE : Facebook, Google LOGIN
          */
+        var diffHeight = 0.0
         btnLoginFacebook.isHidden = true
+        diffHeight += cr_loginFacebookBtnAreaHeight.constant
         cr_loginFacebookBtnAreaHeight.constant = 0
-        
+
         btnLoginGoogle.isHidden = true
+        diffHeight += cr_loginGoogleBtnAreaHeight.constant
         cr_loginGoogleBtnAreaHeight.constant = 0
-        
-        /*
-         * Hide basic account controls. Only shows SNS account controls.
-         */
+
+        cr_totalLoginBtnAreaHeight.constant -= diffHeight
+        cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
+
+
+        // /*
+        //  * Hide basic account controls. Only shows SNS account controls.
+        //  */
         // cr_topMarginAreaHeight.constant = 160
         // vw_basicAcctArea.isHidden = true
         // vw_basicAcctArea.heightAnchor.constraint(equalToConstant: 0).isActive = true
-
-        // // IY: 변경: 디버그시 ID/PW 로그인폼 표시처리
-        // #if DEBUG
-        //     IDPWLoginForm.isHidden = false // 디버그 모드에서 실행할 코드
-        // #else
-        //     IDPWLoginForm.isHidden = true // 릴리스 모드에서 실행할 코드
-        // #endif
     }
 
     @IBOutlet weak var btnLogin: UIButton!
@@ -173,20 +173,20 @@ class LoginViewController: CommonViewController {
         }
     }
 
-    // override func processNetworkError(_ error: MyError?) {
-    //     if let error = error {
-    //         if let resCode = error.resCode {
-    //             // if resCode == 406 {
-    //             //     DispatchQueue.main.async {
-    //             //         self.showToast(msg: "아이디 및 패스워드를 확인해주세요")
-    //             //     }
-    //             //     return
-    //             // }
-    //             self.showSimpleAlert(title: "로그인 오류발생 [코드:\(resCode)]", msg: error.description) //isyuun
-    //         }
-    //         // self.showSimpleAlert(title: "Network fail", msg: error.description)
-    //     }
-    // }
+    override func processNetworkError(_ error: MyError?) {
+        if let error = error {
+            if let resCode = error.resCode {
+                if resCode == 406 {
+                    DispatchQueue.main.async {
+                        self.showToast(msg: "아이디 및 패스워드를 확인해주세요")
+                    }
+                    return
+                }
+            }
+
+            self.showSimpleAlert(title: "Network fail", msg: error.description)
+        }
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueLoginToFindId") {
@@ -201,7 +201,7 @@ class LoginViewController: CommonViewController {
         }
     }
 
-    private func snsLogin(userId: String, userPw: String, loginMethod: String, nick: String?) {
+    private func snsLogin(userId: String, userPw: String, loginMethod: String) {
         startLoading()
 
         let request = LoginRequest(appTypNm: Util.getModel(), userID: userId, userPW: userPw)
@@ -224,7 +224,7 @@ class LoginViewController: CommonViewController {
 
             } else {
                 let snsJoinViewcontroller = UIStoryboard(name: "Member", bundle: nil).instantiateViewController(identifier: "SNSJoinViewcontroller") as SNSJoinViewcontroller
-                snsJoinViewcontroller.memberData = MemberJoinData(id: userId, pw: userPw, nick: nick != nil ? nick! : "", method: loginMethod)
+                snsJoinViewcontroller.memberData = MemberJoinData(id: userId, pw: userPw, nick: "", method: loginMethod)
                 self.navigationController?.pushViewController(snsJoinViewcontroller, animated: true)
             }
         }
@@ -257,7 +257,7 @@ class LoginViewController: CommonViewController {
             UserApi.shared.me() { user, error in
 
                 if let email = user?.kakaoAccount?.email, let id = user?.id {
-                    self.snsLogin(userId: email, userPw: String(describing: id), loginMethod: "KAKAO", nick: user?.kakaoAccount?.profile?.nickname)
+                    self.snsLogin(userId: email, userPw: String(describing: id), loginMethod: "KAKAO")
 
                 } else {
                     self.showToast(msg: "KAKAO 로그인에 문제가 발생했어요")
@@ -340,23 +340,16 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
                     let res = json?.value(forKey: "response") as? NSDictionary
                     let email = res?.value(forKey: "email") as? String
                     let _id = res?.value(forKey: "id") as? String
-                    let nickname = res?.value(forKey: "nickname") as? String
 
                     if let email = email, let _id = _id {
-                        DispatchQueue.main.async {
-                            self.snsLogin(userId: email, userPw: String(describing: _id), loginMethod: "NAVER", nick: nickname)
-                        }
+                        self.snsLogin(userId: email, userPw: String(describing: _id), loginMethod: "NAVER")
 
                     } else {
-                        DispatchQueue.main.async {
-                            self.showToast(msg: "NAVER 로그인에 문제가 발생했어요 [E]")
-                        }
+                        self.showToast(msg: "NAVER 로그인에 문제가 발생했어요 [E]")
                     }
 
                 } catch {
-                    DispatchQueue.main.async {
-                        self.showToast(msg: "NAVER 로그인에 문제가 발생했어요 [N]")
-                    }
+                    self.showToast(msg: "NAVER 로그인에 문제가 발생했어요 [N]")
                 }
             }
         }).resume()
@@ -385,15 +378,15 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             }
         }
 
-        // // 처음 애플 로그인 시 이메일은 credential.fullName 에 들어있다.
-        // if let fullName = credential.fullName {
-        //     // print("이름 : \(fullName.familyName ?? "")\(fullName.givenName ?? "")")
-        // }
+        // 처음 애플 로그인 시 이메일은 credential.fullName 에 들어있다.
+        if let fullName = credential.fullName {
+            // print("이름 : \(fullName.familyName ?? "")\(fullName.givenName ?? "")")
+        }
 
         // print("userIdentifier : \(credential.user)")
         let user = credential.user
 
-        self.snsLogin(userId: _email, userPw: user, loginMethod: "APPLE", nick: nil)
+        self.snsLogin(userId: _email, userPw: user, loginMethod: "APPLE")
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

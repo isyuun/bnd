@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cja-jY-cJN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cja-jY-cJN">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1141,7 +1141,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxf-Qh-hAi">
                                 <rect key="frame" x="0.0" y="119" width="393" height="248"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-Lk-Znk">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydW-Lk-Znk">
                                         <rect key="frame" x="5" y="20" width="215.66666666666666" height="24"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhA-xL-req">
@@ -2527,8 +2527,8 @@
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G">
                                                 <rect key="frame" x="0.0" y="100" width="393" height="737"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr" userLabel="IDPWLoginForm">
-                                                        <rect key="frame" x="20" y="396" width="353" height="311"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr">
+                                                        <rect key="frame" x="20" y="40" width="353" height="311"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-Zo-091">
                                                                 <rect key="frame" x="145" y="0.0" width="63" height="29"/>
@@ -2672,8 +2672,8 @@
                                                             <constraint firstAttribute="trailing" secondItem="5KF-pY-HRT" secondAttribute="trailing" id="wNd-86-NHH"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSSLoginForm">
-                                                        <rect key="frame" x="20" y="40" width="353" height="346"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSLoginBtnsView">
+                                                        <rect key="frame" x="20" y="351" width="353" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
@@ -2685,14 +2685,14 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-Kn-mdH">
-                                                                        <rect key="frame" x="0.0" y="22.666666666666657" width="93" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="22.666666666666686" width="93" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="vmH-wM-XTo"/>
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tv2-XF-d2s">
-                                                                        <rect key="frame" x="260" y="22.666666666666657" width="93" height="1"/>
+                                                                        <rect key="frame" x="260" y="22.666666666666686" width="93" height="1"/>
                                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="gl0-Qy-ece"/>
@@ -2874,8 +2874,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="0QI-Df-fKr" firstAttribute="top" secondItem="aX2-SX-KXT" secondAttribute="bottom" constant="10" id="GxA-Bg-OeV"/>
-                                                    <constraint firstItem="aX2-SX-KXT" firstAttribute="top" secondItem="tcI-ef-11G" secondAttribute="top" constant="40" id="MaQ-Zu-qOU"/>
+                                                    <constraint firstItem="0QI-Df-fKr" firstAttribute="top" secondItem="tcI-ef-11G" secondAttribute="top" constant="40" id="GxA-Bg-OeV"/>
+                                                    <constraint firstItem="aX2-SX-KXT" firstAttribute="top" secondItem="0QI-Df-fKr" secondAttribute="bottom" id="MaQ-Zu-qOU"/>
                                                     <constraint firstAttribute="trailing" secondItem="aX2-SX-KXT" secondAttribute="trailing" constant="20" id="Rl6-16-yoe"/>
                                                     <constraint firstItem="aX2-SX-KXT" firstAttribute="leading" secondItem="tcI-ef-11G" secondAttribute="leading" constant="20" id="SjG-L4-lLY"/>
                                                     <constraint firstAttribute="trailing" secondItem="0QI-Df-fKr" secondAttribute="trailing" constant="20" id="YDq-26-1rF"/>
@@ -2938,6 +2938,9 @@
                         <outlet property="btnLoginNaver" destination="Ajx-3t-Wb0" id="HIH-x6-TSt"/>
                         <outlet property="cr_loginFacebookBtnAreaHeight" destination="vrF-W9-ZgH" id="i80-xu-eSr"/>
                         <outlet property="cr_loginGoogleBtnAreaHeight" destination="0VY-lG-8bh" id="tda-B3-BDf"/>
+                        <outlet property="cr_topMarginAreaHeight" destination="VxE-xB-KqC" id="aOU-FC-j8i"/>
+                        <outlet property="cr_totalLoginBtnAreaBottomMargin" destination="tmr-18-og7" id="GJo-kD-kgP"/>
+                        <outlet property="cr_totalLoginBtnAreaHeight" destination="NjA-q2-FYt" id="efm-Wv-e8P"/>
                         <outlet property="inputBoxId" destination="5KF-pY-HRT" id="d94-i6-v07"/>
                         <outlet property="inputBoxPwd" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
                         <outlet property="logoImageView" destination="0VK-jh-OlM" id="Jwj-60-2Me"/>
@@ -3044,7 +3047,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ksD-bF-nzH"/>
+        <segue reference="43t-yt-BLb"/>
         <segue reference="ISm-sO-KAv"/>
         <segue reference="8xf-V6-Ark"/>
     </inferredMetricsTieBreakers>
