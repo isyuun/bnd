@@ -2524,10 +2524,10 @@
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d73-OV-2At" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="837"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="LoginView">
                                                 <rect key="frame" x="0.0" y="100" width="393" height="737"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr" userLabel="IDPWLoginView">
                                                         <rect key="frame" x="20" y="40" width="353" height="311"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-Zo-091">
@@ -2672,7 +2672,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="5KF-pY-HRT" secondAttribute="trailing" id="wNd-86-NHH"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSLoginBtnsView">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-SX-KXT" userLabel="SNSSLoginView">
                                                         <rect key="frame" x="20" y="351" width="353" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
@@ -2929,6 +2929,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wbu-y5-bp5"/>
                     <connections>
+                        <outlet property="IDPWLoginView" destination="0QI-Df-fKr" id="cbn-aT-bDg"/>
+                        <outlet property="SNSSLoginView" destination="aX2-SX-KXT" id="hYf-wx-jfZ"/>
                         <outlet property="bgView" destination="tcI-ef-11G" id="a4N-mj-UZL"/>
                         <outlet property="btnLogin" destination="ysZ-FJ-cBw" id="8oA-gb-fxv"/>
                         <outlet property="btnLoginApple" destination="uDb-by-I10" id="t3m-CP-k1a"/>

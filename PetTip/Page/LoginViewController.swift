@@ -36,7 +36,10 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
 
-    override func viewDidLoad() {
+	@IBOutlet weak var IDPWLoginView: UIView!
+	@IBOutlet weak var SNSSLoginView: UIView!
+
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
