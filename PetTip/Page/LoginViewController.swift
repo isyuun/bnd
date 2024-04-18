@@ -14,9 +14,6 @@ import AuthenticationServices
 
 class LoginViewController: CommonViewController {
 
-    @IBOutlet weak var cr_topMarginAreaHeight: NSLayoutConstraint!
-    @IBOutlet weak var vw_basicAcctArea: UIView!
-
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginView: UIView!
@@ -31,18 +28,15 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var btnLoginGoogle: UIButton!
     @IBOutlet weak var btnLoginApple: UIButton!
 
-    @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
-    @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
-
-	@IBOutlet weak var IDPWLoginView: UIView!
 	@IBOutlet weak var SNSSLoginView: UIView!
+	@IBOutlet weak var IDPWLoginView: UIView!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
 
-        topBgView.backgroundColor = UIColor.init(hex: "#FF4783f5")
+        topBgView.backgroundColor = UIColor.init(hex: "#FF4783F5")
 
         logoImageView.image = UIImage(named: "logo_login")
 
@@ -91,14 +85,7 @@ class LoginViewController: CommonViewController {
             inputBoxId.text = email
         }
 
-
-        // /*
-        //  * Hide basic account controls. Only shows SNS account controls.
-        //  */
-        // cr_topMarginAreaHeight.constant = 160
-        // vw_basicAcctArea.isHidden = true
-        // vw_basicAcctArea.heightAnchor.constraint(equalToConstant: 0).isActive = true
-    }
+	}
 
     @IBOutlet weak var btnLogin: UIButton!
     @IBAction func onLogin(_ sender: Any) {
