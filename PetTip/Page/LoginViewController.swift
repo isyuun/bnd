@@ -31,8 +31,6 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var btnLoginGoogle: UIButton!
     @IBOutlet weak var btnLoginApple: UIButton!
 
-    // @IBOutlet weak var cr_totalLoginBtnAreaHeight: NSLayoutConstraint!
-    // @IBOutlet weak var cr_totalLoginBtnAreaBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
 
@@ -92,22 +90,6 @@ class LoginViewController: CommonViewController {
         if let email = UserDefaults.standard.value(forKey: "email") as? String {
             inputBoxId.text = email
         }
-
-
-        // /*
-        //  * HIDE : Facebook, Google LOGIN
-        //  */
-        // var diffHeight = 0.0
-        // btnLoginFacebook.isHidden = true
-        // diffHeight += cr_loginFacebookBtnAreaHeight.constant
-        // cr_loginFacebookBtnAreaHeight.constant = 0
-        // 
-        // btnLoginGoogle.isHidden = true
-        // diffHeight += cr_loginGoogleBtnAreaHeight.constant
-        // cr_loginGoogleBtnAreaHeight.constant = 0
-
-        // cr_totalLoginBtnAreaHeight.constant -= diffHeight
-        // cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
 
 
         // /*

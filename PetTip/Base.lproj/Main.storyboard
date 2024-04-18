@@ -2530,10 +2530,10 @@
                                                     <constraint firstAttribute="height" constant="100" id="VxE-xB-KqC"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-i7-be4" userLabel="LoginView">
-                                                <rect key="frame" x="0.0" y="100" width="393" height="657"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-i7-be4" userLabel="LoginView">
+                                                <rect key="frame" x="0.0" y="100" width="393" height="614"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aZU-Kc-LU9" userLabel="SNSSLoginView">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aZU-Kc-LU9" userLabel="SNSSLoginView">
                                                         <rect key="frame" x="0.0" y="0.0" width="393" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
@@ -2566,6 +2566,7 @@
                                                                     <constraint firstItem="GZI-MD-Lrn" firstAttribute="centerY" secondItem="sjA-iK-nlF" secondAttribute="centerY" id="5Rp-EO-QNg"/>
                                                                     <constraint firstItem="hcQ-Kn-mdH" firstAttribute="leading" secondItem="sjA-iK-nlF" secondAttribute="leading" id="Hjy-e0-2Qs"/>
                                                                     <constraint firstItem="hcQ-Kn-mdH" firstAttribute="centerY" secondItem="sjA-iK-nlF" secondAttribute="centerY" id="Poz-ZG-URn"/>
+                                                                    <constraint firstAttribute="height" constant="66" id="deg-2k-MH0"/>
                                                                     <constraint firstItem="Tv2-XF-d2s" firstAttribute="centerY" secondItem="sjA-iK-nlF" secondAttribute="centerY" id="h88-8k-ilu"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Tv2-XF-d2s" secondAttribute="trailing" id="vfa-zH-sva"/>
                                                                     <constraint firstItem="GZI-MD-Lrn" firstAttribute="leading" secondItem="hcQ-Kn-mdH" secondAttribute="trailing" constant="15" id="y86-CJ-FG2"/>
@@ -2708,15 +2709,12 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="346" id="1N1-sS-GeZ"/>
-                                                        </constraints>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QI-Df-fKr" userLabel="IDPWLoginView">
-                                                        <rect key="frame" x="0.0" y="346" width="393" height="311"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gLV-nu-QF6" userLabel="IDPWLoginView">
+                                                        <rect key="frame" x="60" y="346" width="273" height="268"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-Zo-091">
-                                                                <rect key="frame" x="165" y="0.0" width="63" height="29"/>
+                                                                <rect key="frame" x="105" y="0.0" width="63" height="29"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="29" id="S9x-Po-VPA"/>
                                                                     <constraint firstAttribute="width" constant="63" id="V9J-C0-jaH"/>
@@ -2726,7 +2724,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5KF-pY-HRT">
-                                                                <rect key="frame" x="0.0" y="49" width="393" height="48"/>
+                                                                <rect key="frame" x="105.33333333333336" y="44" width="62.666666666666671" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="gPn-Gh-Q2U"/>
                                                                 </constraints>
@@ -2734,7 +2732,7 @@
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pR-Qh-UoN">
-                                                                <rect key="frame" x="0.0" y="107" width="393" height="48"/>
+                                                                <rect key="frame" x="91.333333333333343" y="107" width="90.333333333333343" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="pyc-ig-2Qh"/>
                                                                 </constraints>
@@ -2742,7 +2740,7 @@
                                                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysZ-FJ-cBw">
-                                                                <rect key="frame" x="0.0" y="175" width="393" height="48"/>
+                                                                <rect key="frame" x="102.33333333333334" y="170" width="68.333333333333343" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="Cj9-gH-F7m"/>
                                                                 </constraints>
@@ -2759,7 +2757,7 @@
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-iA-SPY" userLabel="AcctMgrLinkView">
-                                                                <rect key="frame" x="40" y="236" width="273" height="35"/>
+                                                                <rect key="frame" x="0.0" y="233" width="273" height="35"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnL-Da-j75">
                                                                         <rect key="frame" x="0.0" y="0.0" width="89" height="35"/>
@@ -2839,28 +2837,11 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="ysZ-FJ-cBw" secondAttribute="trailing" id="0mJ-VI-b0I"/>
-                                                            <constraint firstItem="mgO-iA-SPY" firstAttribute="top" secondItem="ysZ-FJ-cBw" secondAttribute="bottom" constant="13" id="8Mi-OM-knl"/>
-                                                            <constraint firstItem="5KF-pY-HRT" firstAttribute="top" secondItem="Z1m-Zo-091" secondAttribute="bottom" constant="20" id="8uT-mZ-pVW"/>
-                                                            <constraint firstItem="7pR-Qh-UoN" firstAttribute="leading" secondItem="0QI-Df-fKr" secondAttribute="leading" id="CAq-G2-iUX"/>
-                                                            <constraint firstItem="Z1m-Zo-091" firstAttribute="top" secondItem="0QI-Df-fKr" secondAttribute="top" id="HrA-LF-JVu"/>
-                                                            <constraint firstItem="7pR-Qh-UoN" firstAttribute="top" secondItem="5KF-pY-HRT" secondAttribute="bottom" constant="10" id="N9B-mG-TH3"/>
-                                                            <constraint firstItem="ysZ-FJ-cBw" firstAttribute="top" secondItem="7pR-Qh-UoN" secondAttribute="bottom" constant="20" id="RIR-8K-2Nq"/>
-                                                            <constraint firstAttribute="trailing" secondItem="mgO-iA-SPY" secondAttribute="trailing" constant="40" id="VrI-Cb-Eif"/>
-                                                            <constraint firstAttribute="trailing" secondItem="7pR-Qh-UoN" secondAttribute="trailing" id="cuh-ZI-BD7"/>
-                                                            <constraint firstAttribute="bottom" secondItem="mgO-iA-SPY" secondAttribute="bottom" constant="40" id="hbB-ZF-UlJ"/>
-                                                            <constraint firstItem="mgO-iA-SPY" firstAttribute="leading" secondItem="0QI-Df-fKr" secondAttribute="leading" constant="40" id="oYz-zC-nAM"/>
-                                                            <constraint firstItem="5KF-pY-HRT" firstAttribute="leading" secondItem="0QI-Df-fKr" secondAttribute="leading" id="qqT-RG-a1f"/>
-                                                            <constraint firstItem="Z1m-Zo-091" firstAttribute="centerX" secondItem="0QI-Df-fKr" secondAttribute="centerX" id="rgZ-jW-ngu"/>
-                                                            <constraint firstItem="ysZ-FJ-cBw" firstAttribute="leading" secondItem="0QI-Df-fKr" secondAttribute="leading" id="vQw-yq-V2X"/>
-                                                            <constraint firstAttribute="trailing" secondItem="5KF-pY-HRT" secondAttribute="trailing" id="wNd-86-NHH"/>
-                                                        </constraints>
-                                                    </view>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="BlankView">
-                                                <rect key="frame" x="0.0" y="757" width="393" height="95"/>
+                                                <rect key="frame" x="0.0" y="714" width="393" height="138"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
@@ -2893,7 +2874,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wbu-y5-bp5"/>
                     <connections>
-                        <outlet property="IDPWLoginView" destination="0QI-Df-fKr" id="cbn-aT-bDg"/>
                         <outlet property="btnLogin" destination="ysZ-FJ-cBw" id="8oA-gb-fxv"/>
                         <outlet property="btnLoginApple" destination="uDb-by-I10" id="t3m-CP-k1a"/>
                         <outlet property="btnLoginFacebook" destination="ir9-S0-PMU" id="Tyc-dk-A4O"/>
@@ -2908,7 +2888,6 @@
                         <outlet property="logoImageView" destination="0VK-jh-OlM" id="Jwj-60-2Me"/>
                         <outlet property="scrollView" destination="gAt-t5-E4E" id="VOX-v0-A7S"/>
                         <outlet property="topBgView" destination="7cw-He-U2H" id="i9P-kV-oEy"/>
-                        <outlet property="vw_basicAcctArea" destination="0QI-Df-fKr" id="Tad-Hz-Usv"/>
                         <segue destination="PdL-Qo-FjW" kind="show" identifier="segueLoginToMain" id="ksD-bF-nzH"/>
                     </connections>
                 </viewController>
