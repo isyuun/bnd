@@ -14,10 +14,7 @@ import AuthenticationServices
 
 class LoginViewController: CommonViewController {
 
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginView: UIView!
-    @IBOutlet weak var topBgView: UIView!
 
     @IBOutlet weak var inputBoxId: UITextField!
     @IBOutlet weak var inputBoxPwd: UITextField!
@@ -35,12 +32,6 @@ class LoginViewController: CommonViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
-
-        topBgView.backgroundColor = UIColor.init(hex: "#FF4783F5")
-
-        logoImageView.image = UIImage(named: "logo_login")
-
-        scrollView.backgroundColor = UIColor.clear
 
         loginView.layer.cornerRadius = 35
         loginView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]

@@ -2504,24 +2504,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-He-U2H">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-He-U2H" userLabel="TopBgView">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
                                 <color key="backgroundColor" red="0.27843137254901962" green="0.51372549019607838" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="jXH-cU-RKX"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0VK-jh-OlM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="0VK-jh-OlM" userLabel="LogoView">
                                 <rect key="frame" x="136.66666666666666" y="89" width="119.99999999999997" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="E7p-UE-dEr"/>
                                     <constraint firstAttribute="width" constant="120" id="INZ-YV-Jec"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-t5-E4E">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-t5-E4E" userLabel="ScrollView">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-aP-dyp" userLabel="ContentView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-aP-dyp" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-26-gFX" userLabel="BlankView">
@@ -2862,6 +2862,7 @@
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="gLV-nu-QF6" firstAttribute="leading" secondItem="ndT-i7-be4" secondAttribute="leading" constant="20" id="YeP-xN-nGi"/>
                                                     <constraint firstAttribute="trailing" secondItem="gLV-nu-QF6" secondAttribute="trailing" constant="20" id="Zrc-DL-84u"/>
@@ -2869,18 +2870,17 @@
                                                     <constraint firstItem="aZU-Kc-LU9" firstAttribute="leading" secondItem="ndT-i7-be4" secondAttribute="leading" constant="20" id="xhb-RF-ZBG"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="BlankView">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="BlankView">
                                                 <rect key="frame" x="0.0" y="602" width="393" height="191"/>
                                             </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="JTw-Fu-Gko" firstAttribute="trailing" secondItem="BoU-aP-dyp" secondAttribute="trailing" id="apG-FD-e1y"/>
-                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="leading" secondItem="JTw-Fu-Gko" secondAttribute="leading" id="hCC-02-VMO"/>
-                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="top" secondItem="JTw-Fu-Gko" secondAttribute="top" id="jRX-sh-9qS"/>
-                                    <constraint firstItem="JTw-Fu-Gko" firstAttribute="bottom" secondItem="BoU-aP-dyp" secondAttribute="bottom" id="oV7-hj-rFN"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="trailing" secondItem="1P0-96-9Mc" secondAttribute="trailing" constant="393" id="apG-FD-e1y"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="leading" secondItem="1P0-96-9Mc" secondAttribute="leading" id="hCC-02-VMO"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="top" secondItem="1P0-96-9Mc" secondAttribute="top" id="jRX-sh-9qS"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="bottom" secondItem="1P0-96-9Mc" secondAttribute="bottom" constant="793" id="oV7-hj-rFN"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="1P0-96-9Mc"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JTw-Fu-Gko"/>
@@ -2902,6 +2902,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wbu-y5-bp5"/>
                     <connections>
+                        <outlet property="IDPWLoginView" destination="gLV-nu-QF6" id="yNi-tY-2Av"/>
+                        <outlet property="SNSSLoginView" destination="aZU-Kc-LU9" id="1xZ-MH-Qr2"/>
                         <outlet property="btnLogin" destination="ysZ-FJ-cBw" id="8oA-gb-fxv"/>
                         <outlet property="btnLoginApple" destination="uDb-by-I10" id="t3m-CP-k1a"/>
                         <outlet property="btnLoginFacebook" destination="ir9-S0-PMU" id="Tyc-dk-A4O"/>
@@ -2910,10 +2912,7 @@
                         <outlet property="btnLoginNaver" destination="Ajx-3t-Wb0" id="HIH-x6-TSt"/>
                         <outlet property="inputBoxId" destination="5KF-pY-HRT" id="d94-i6-v07"/>
                         <outlet property="inputBoxPwd" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
-                        <outlet property="loginView" destination="ndT-i7-be4" id="2ip-3Z-dmR"/>
-                        <outlet property="logoImageView" destination="0VK-jh-OlM" id="Jwj-60-2Me"/>
-                        <outlet property="scrollView" destination="gAt-t5-E4E" id="VOX-v0-A7S"/>
-                        <outlet property="topBgView" destination="7cw-He-U2H" id="i9P-kV-oEy"/>
+                        <outlet property="loginView" destination="ndT-i7-be4" id="jSK-zX-3RJ"/>
                         <segue destination="PdL-Qo-FjW" kind="show" identifier="segueLoginToMain" id="ksD-bF-nzH"/>
                     </connections>
                 </viewController>
@@ -3033,6 +3032,7 @@
         <image name="icon_weight" width="18" height="18"/>
         <image name="img_gradation" width="200" height="120"/>
         <image name="img_story1" width="200" height="280"/>
+        <image name="logo_login" width="90" height="32"/>
         <image name="logo_splash_kr" width="84" height="46"/>
         <image name="main_pattern" width="360" height="320"/>
         <image name="sunny_ver2" width="70" height="72.263999938964844"/>
