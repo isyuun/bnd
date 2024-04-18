@@ -31,8 +31,8 @@ class LoginViewController: CommonViewController {
     @IBOutlet weak var btnLoginGoogle: UIButton!
     @IBOutlet weak var btnLoginApple: UIButton!
 
-    @IBOutlet weak var cr_totalLoginBtnAreaHeight: NSLayoutConstraint!
-    @IBOutlet weak var cr_totalLoginBtnAreaBottomMargin: NSLayoutConstraint!
+    // @IBOutlet weak var cr_totalLoginBtnAreaHeight: NSLayoutConstraint!
+    // @IBOutlet weak var cr_totalLoginBtnAreaBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var cr_loginFacebookBtnAreaHeight: NSLayoutConstraint!
     @IBOutlet weak var cr_loginGoogleBtnAreaHeight: NSLayoutConstraint!
 
@@ -106,8 +106,8 @@ class LoginViewController: CommonViewController {
         diffHeight += cr_loginGoogleBtnAreaHeight.constant
         cr_loginGoogleBtnAreaHeight.constant = 0
 
-        cr_totalLoginBtnAreaHeight.constant -= diffHeight
-        cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
+        // cr_totalLoginBtnAreaHeight.constant -= diffHeight
+        // cr_totalLoginBtnAreaBottomMargin.constant += diffHeight
 
 
         // /*
