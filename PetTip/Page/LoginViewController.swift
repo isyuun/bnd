@@ -19,7 +19,7 @@ class LoginViewController: CommonViewController {
 
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var topBgView: UIView!
 
     @IBOutlet weak var inputBoxId: UITextField!
@@ -50,10 +50,10 @@ class LoginViewController: CommonViewController {
 
         scrollView.backgroundColor = UIColor.clear
 
-        bgView.layer.cornerRadius = 35
-        bgView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        bgView.layer.masksToBounds = true
-        bgView.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
+        loginView.layer.cornerRadius = 35
+        loginView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        loginView.layer.masksToBounds = true
+        loginView.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
 
         inputBoxId.layer.borderColor = UIColor.init(hex: "#e3e9f2")?.cgColor
         inputBoxId.initLeftIconIncludeTextField(iconImg: UIImage(named: "icon_email")!)
