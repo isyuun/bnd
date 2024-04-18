@@ -16,8 +16,8 @@ class LoginViewController: CommonViewController {
 
     @IBOutlet weak var loginView: UIView!
 
-    @IBOutlet weak var inputBoxId: UITextField!
-    @IBOutlet weak var inputBoxPwd: UITextField!
+    @IBOutlet weak var inputBoxID: UITextField!
+    @IBOutlet weak var inputBoxPW: UITextField!
 
     @IBOutlet weak var btnLoginKakao: UIButton!
     @IBOutlet weak var btnLoginNaver: UIButton!
@@ -30,6 +30,9 @@ class LoginViewController: CommonViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+		
+		SNSSLoginView.isHidden = false
+		IDPWLoginView.isHidden = true
 
         view.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
 
@@ -38,11 +41,11 @@ class LoginViewController: CommonViewController {
         loginView.layer.masksToBounds = true
         loginView.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
 
-        inputBoxId.layer.borderColor = UIColor.init(hex: "#e3e9f2")?.cgColor
-        inputBoxId.initLeftIconIncludeTextField(iconImg: UIImage(named: "icon_email")!)
+        inputBoxID.layer.borderColor = UIColor.init(hex: "#E3E9F2")?.cgColor
+        inputBoxID.initLeftIconIncludeTextField(iconImg: UIImage(named: "icon_email")!)
 
-        inputBoxPwd.layer.borderColor = UIColor.init(hex: "#e3e9f2")?.cgColor
-        inputBoxPwd.initLeftIconIncludeTextField(iconImg: UIImage(named: "icon_password")!)
+        inputBoxPW.layer.borderColor = UIColor.init(hex: "#E3E9F2")?.cgColor
+        inputBoxPW.initLeftIconIncludeTextField(iconImg: UIImage(named: "icon_password")!)
 
         btnLogin.setTitleColor(UIColor.white, for: .normal)
         btnLogin.showShadowMid()
@@ -73,18 +76,17 @@ class LoginViewController: CommonViewController {
         btnLoginApple.addSubview(imageView)
 
         if let email = UserDefaults.standard.value(forKey: "email") as? String {
-            inputBoxId.text = email
+            inputBoxID.text = email
         }
-
 	}
 
     @IBOutlet weak var btnLogin: UIButton!
     @IBAction func onLogin(_ sender: Any) {
-        inputBoxId.resignFirstResponder()
-        inputBoxPwd.resignFirstResponder()
+        inputBoxID.resignFirstResponder()
+        inputBoxPW.resignFirstResponder()
 
-        let inputId = inputBoxId.text ?? ""
-        let inputPw = inputBoxPwd.text ?? ""
+        let inputId = inputBoxID.text ?? ""
+        let inputPw = inputBoxPW.text ?? ""
         if (inputId.contains("@") && inputId.contains(".")
                 && inputPw.count >= 4) {
             member_Login()
@@ -98,7 +100,7 @@ class LoginViewController: CommonViewController {
     func member_Login() {
         startLoading()
 
-        let request = LoginRequest(appTypNm: Util.getModel(), userID: inputBoxId.text!, userPW: inputBoxPwd.text!)
+        let request = LoginRequest(appTypNm: Util.getModel(), userID: inputBoxID.text!, userPW: inputBoxPW.text!)
         MemberAPI.login(request: request) { login, error in
             self.stopLoading()
 

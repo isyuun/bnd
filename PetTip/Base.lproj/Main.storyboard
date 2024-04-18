@@ -1628,7 +1628,7 @@
                                                         <rect key="frame" x="249.33333333333329" y="0.0" width="103.66666666666666" height="38"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책거리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hH-DD-GLd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="17"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="49" height="17"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="17" id="zaD-Fp-WdI"/>
                                                                 </constraints>
@@ -2504,8 +2504,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-He-U2H" userLabel="TopBgView">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-He-U2H" userLabel="TopBgView">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
                                 <color key="backgroundColor" red="0.27843137254901962" green="0.51372549019607838" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="500" id="jXH-cU-RKX"/>
@@ -2522,7 +2522,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-aP-dyp" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1061"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-26-gFX" userLabel="BlankView">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
@@ -2867,11 +2867,13 @@
                                                     <constraint firstItem="gLV-nu-QF6" firstAttribute="leading" secondItem="ndT-i7-be4" secondAttribute="leading" constant="20" id="YeP-xN-nGi"/>
                                                     <constraint firstAttribute="trailing" secondItem="gLV-nu-QF6" secondAttribute="trailing" constant="20" id="Zrc-DL-84u"/>
                                                     <constraint firstAttribute="trailing" secondItem="aZU-Kc-LU9" secondAttribute="trailing" constant="20" id="cdq-SF-8zp"/>
+                                                    <constraint firstItem="aZU-Kc-LU9" firstAttribute="top" secondItem="ndT-i7-be4" secondAttribute="top" constant="40" id="dsR-Et-cSc"/>
                                                     <constraint firstItem="aZU-Kc-LU9" firstAttribute="leading" secondItem="ndT-i7-be4" secondAttribute="leading" constant="20" id="xhb-RF-ZBG"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="BlankView">
-                                                <rect key="frame" x="0.0" y="602" width="393" height="191"/>
+                                                <rect key="frame" x="0.0" y="602" width="393" height="459"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -2910,8 +2912,8 @@
                         <outlet property="btnLoginGoogle" destination="u8j-0l-pzP" id="T7Z-zA-ZM1"/>
                         <outlet property="btnLoginKakao" destination="KgR-FK-ih2" id="74g-y3-1AA"/>
                         <outlet property="btnLoginNaver" destination="Ajx-3t-Wb0" id="HIH-x6-TSt"/>
-                        <outlet property="inputBoxId" destination="5KF-pY-HRT" id="d94-i6-v07"/>
-                        <outlet property="inputBoxPwd" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
+                        <outlet property="inputBoxID" destination="5KF-pY-HRT" id="d94-i6-v07"/>
+                        <outlet property="inputBoxPW" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
                         <outlet property="loginView" destination="ndT-i7-be4" id="jSK-zX-3RJ"/>
                         <segue destination="PdL-Qo-FjW" kind="show" identifier="segueLoginToMain" id="ksD-bF-nzH"/>
                     </connections>
