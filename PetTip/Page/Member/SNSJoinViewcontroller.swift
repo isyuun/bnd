@@ -305,7 +305,7 @@ class SNSJoinViewcontroller: CommonViewController {
         
         guard let memberData = memberData else { return }
         
-        if btn_chkAgreeTerm1.isSelected == false || btn_chkAgreeTerm2.isSelected == false || btn_chkAgreeTerm3.isSelected == false {
+        if btn_chkAgreeTerm1.isSelected == false || btn_chkAgreeTerm2.isSelected == false /*|| btn_chkAgreeTerm3.isSelected == false*/ {
             showToast(msg: "약관에 동의해주세요")
             return
         }

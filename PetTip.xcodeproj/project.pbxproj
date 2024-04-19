@@ -327,6 +327,8 @@
 		02EB98092B0CFF05007428AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EB98082B0CFF05007428AD /* Assets.xcassets */; };
 		02EB980C2B0CFF05007428AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EB980A2B0CFF05007428AD /* LaunchScreen.storyboard */; };
 		5E2DC0A0814DA2B0068B1269 /* Pods_PetTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */; };
+		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
+		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
 		7BD8DB692BCF5058000755D1 /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB672BCF5058000755D1 /* RELEASE.md */; };
 /* End PBXBuildFile section */
@@ -655,6 +657,8 @@
 		02EB980B2B0CFF05007428AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02EB980D2B0CFF05007428AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E098ED0E3EB98C1A7B84FE /* Pods-PetTip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.debug.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.debug.xcconfig"; sourceTree = "<group>"; };
+		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
+		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7BD8DB672BCF5058000755D1 /* RELEASE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
 		DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -720,6 +724,7 @@
 				022B41A72B1D7A270057323E /* IntroViewController.swift */,
 				025B7CD72B85875F004E85D1 /* PermissionInfoViewController.swift */,
 				022B41942B1B910F0057323E /* LoginViewController.swift */,
+				7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */,
 				022B418E2B1B22660057323E /* MainViewController.swift */,
 				022B41A92B1E05510057323E /* Common */,
 				022B41AE2B1E32FC0057323E /* Home */,
@@ -820,6 +825,7 @@
 			isa = PBXGroup;
 			children = (
 				022B41882B1ABC7D0057323E /* CommonViewController.swift */,
+				7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */,
 				02A05A7D2B31A27900E8ABFA /* CommonDetailViewController.swift */,
 				020B79702B2C37B900C0AB2D /* CommonDetailImageItemView.swift */,
 				020B79722B2C37DA00C0AB2D /* CommonDetailImageItemView.xib */,
@@ -1515,6 +1521,7 @@
 				02A7AAED2B58A6F1002F0C03 /* CreateUserRequest.swift in Sources */,
 				02A05B182B3FA2DE00E8ABFA /* EventListItemView.swift in Sources */,
 				028625052B47CCF30055E62F /* MyPetInvttCreateRequest.swift in Sources */,
+				7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */,
 				020B798D2B300FCD00C0AB2D /* StoryListResponse.swift in Sources */,
 				02A05B1E2B3FD0BE00E8ABFA /* EventDetailViewController.swift in Sources */,
 				027F765E2B4E917A00429AC5 /* FaqListRequest.swift in Sources */,
@@ -1523,6 +1530,7 @@
 				020B796D2B2BEC5D00C0AB2D /* LifeViewResponse.swift in Sources */,
 				020B796B2B2BEC0F00C0AB2D /* LifeViewRequest.swift in Sources */,
 				02A05AD22B3C3D4F00E8ABFA /* CmntDeleteRequest.swift in Sources */,
+				7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */,
 				0286252B2B4BBFB60055E62F /* MyPetCreateRequest.swift in Sources */,
 				020B79452B28771900C0AB2D /* RealTimeListRequest.swift in Sources */,
 				02E3FC862B25995100A1CE62 /* DailyLifeTarget.swift in Sources */,

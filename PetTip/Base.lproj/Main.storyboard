@@ -2496,10 +2496,10 @@
             </objects>
             <point key="canvasLocation" x="224" y="-128"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Login View Controller2-->
         <scene sceneID="4bP-7j-VYs">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="o4R-pM-VvT" customClass="LoginViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="o4R-pM-VvT" customClass="LoginViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qwl-GS-OIl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2772,7 +2772,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgO-iA-SPY" userLabel="AcctMgrLinkView">
                                                                 <rect key="frame" x="40" y="233" width="273" height="35"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnL-Da-j75">
+                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnL-Da-j75">
                                                                         <rect key="frame" x="0.0" y="0.0" width="89" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="eba-Ha-gkS"/>
@@ -2786,11 +2786,10 @@
                                                                             <segue destination="d2M-Sh-82i" kind="show" identifier="segueLoginToFindId" id="cTT-IO-VB9"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg4-mZ-whJ">
+                                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg4-mZ-whJ">
                                                                         <rect key="frame" x="97" y="0.0" width="93" height="35"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="35" id="Bkf-dJ-bk0"/>
-                                                                            <constraint firstAttribute="width" constant="93" id="d6H-fs-h4J"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -2801,7 +2800,7 @@
                                                                             <segue destination="a7z-iB-wUy" kind="show" identifier="segueLoginToFindPw" id="ZKm-Dn-YKU"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eca-Ud-bLi">
+                                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eca-Ud-bLi">
                                                                         <rect key="frame" x="90" y="13" width="1" height="10"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
@@ -2918,9 +2917,11 @@
                         <outlet property="btnLoginGoogle" destination="u8j-0l-pzP" id="T7Z-zA-ZM1"/>
                         <outlet property="btnLoginKakao" destination="KgR-FK-ih2" id="74g-y3-1AA"/>
                         <outlet property="btnLoginNaver" destination="Ajx-3t-Wb0" id="HIH-x6-TSt"/>
+                        <outlet property="contentView" destination="BoU-aP-dyp" id="Ts4-Bc-quk"/>
                         <outlet property="inputBoxID" destination="5KF-pY-HRT" id="d94-i6-v07"/>
                         <outlet property="inputBoxPW" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
                         <outlet property="loginView" destination="ndT-i7-be4" id="jSK-zX-3RJ"/>
+                        <outlet property="scrollView" destination="gAt-t5-E4E" id="EPG-WM-gRl"/>
                         <segue destination="PdL-Qo-FjW" kind="show" identifier="segueLoginToMain" id="ksD-bF-nzH"/>
                     </connections>
                 </viewController>
