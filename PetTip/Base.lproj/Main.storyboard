@@ -184,7 +184,7 @@
                                 <rect key="frame" x="0.0" y="119" width="393" height="650"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kq-xN-9GG" userLabel="Contents View">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1367"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1374.3333333333333"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-mf-o6H">
                                                 <rect key="frame" x="0.0" y="380" width="393" height="80"/>
@@ -895,7 +895,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9B7-mU-I56">
-                                                <rect key="frame" x="20" y="1164" width="353" height="73"/>
+                                                <rect key="frame" x="20" y="1164" width="353" height="80.333333333333258"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3S-un-5ke">
                                                         <rect key="frame" x="0.0" y="0.0" width="42" height="15"/>
@@ -924,7 +924,7 @@
                                                                     <constraint firstAttribute="height" constant="15" id="mM9-jj-nx9"/>
                                                                     <constraint firstAttribute="width" constant="84" id="oaz-Za-dyV"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -965,8 +965,8 @@
                                                             <constraint firstAttribute="height" constant="15" id="tsB-JO-axk"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(주) 케어팻    서울특별시 성동구 아차산로17길 49 생각공장 데시앙플렉스 대표이사 : ㅇㅇㅇ    사업자 번호 : 000-00-00000 업종 : ㅇㅇㅇㅇㅇ    개인정보보호책임자 : ㅇㅇㅇ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-vP-QON">
-                                                        <rect key="frame" x="0.0" y="23" width="353" height="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04799  서울특별시 성동구 아차산로17길 49 (성수동2가) 생각공장 데시앙플렉스 1719호 대표이사 : 문형윤    사업자 번호 : 289-88-01406 전화: 02-409-1913" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-vP-QON">
+                                                        <rect key="frame" x="0.0" y="23.000000000000004" width="353" height="57.333333333333343"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="NZf-6H-fiD"/>
                                                         </constraints>

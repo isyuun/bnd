@@ -196,7 +196,7 @@ class PetModViewController: CommonViewController {
         lb_petKind.text = "사이즈 / 품종 선택"
         btnNormalUI(view: vw_petKindBg)
 
-        lb_addr.text = "주소 선택"
+        lb_addr.text = "지역 선택"
         btnNormalUI(view: vw_addrBg)
 
         tf_name.delegate = self

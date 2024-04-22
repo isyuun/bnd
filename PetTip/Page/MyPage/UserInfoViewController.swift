@@ -75,6 +75,11 @@ class UserInfoViewController: CommonViewController {
         
         guard let nicknm = tf_nickNm.text else { return }
         
+        if containsSpecialCharacter(input: nicknm) {
+            self.showAlertPopup(title: "알림", msg: "특수문자는 사용 할 수 없습니다")
+            return
+        }
+        
         startLoading()
         
         let request = ChkNcknmRequest(ncknm: nicknm)

@@ -474,10 +474,12 @@ class MainViewController: LocationViewController {
 
         startLoading()
 
-        let request = WeatherRequest(lat: recentLoc.coordinate.latitude.description, lon: recentLoc.coordinate.longitude.description)
+        let lat = (recentLoc.coordinate.latitude)
+        let lon = (recentLoc.coordinate.longitude)
+        let request = WeatherRequest(lat: String(lat), lon: String(lon))
         WeatherAPI.weather(request: request) { weather, error in
             self.stopLoading()
-            self.processNetworkError(error)
+            // self.processNetworkError(error)
 
             if let weather = weather {
                 var temp: String! = nil

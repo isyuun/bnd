@@ -63,10 +63,11 @@ struct Global {
         Sido(cdld: 48, upCdId: "SCD", cdNm: "경상남도"),
         Sido(cdld: 47, upCdId: "SCD", cdNm: "경상북도"),
         Sido(cdld: 46, upCdId: "SCD", cdNm: "전라남도"),
-        Sido(cdld: 45, upCdId: "SCD", cdNm: "전라북도"),
+        Sido(cdld: 45, upCdId: "SCD", cdNm: "전북특별자치도"),
         Sido(cdld: 44, upCdId: "SCD", cdNm: "충청남도"),
         Sido(cdld: 43, upCdId: "SCD", cdNm: "충청북도"),
         Sido(cdld: 41, upCdId: "SCD", cdNm: "경기도"),
+        Sido(cdld: 31, upCdId: "SCD", cdNm: "울산광역시"),
         Sido(cdld: 30, upCdId: "SCD", cdNm: "대전광역시"),
         Sido(cdld: 29, upCdId: "SCD", cdNm: "광주광역시"),
         Sido(cdld: 28, upCdId: "SCD", cdNm: "인천광역시"),
@@ -74,5 +75,5 @@ struct Global {
         Sido(cdld: 26, upCdId: "SCD", cdNm: "부산광역시"),
         Sido(cdld: 11, upCdId: "SCD", cdNm: "서울특별시"),
         Sido(cdld: 51, upCdId: "SCD", cdNm: "강원특별자치도")
-    ]
+    ]	
 }

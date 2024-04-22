@@ -207,7 +207,7 @@
                                                     <constraint firstItem="PNq-ml-gGQ" firstAttribute="leading" secondItem="OjJ-Em-1Vb" secondAttribute="trailing" constant="16" id="zjV-AH-k0S"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z8-UF-4qp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동 지역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z8-UF-4qp">
                                                 <rect key="frame" x="20" y="358" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="Pzu-BZ-Cwk"/>
@@ -266,16 +266,18 @@
                                                     <constraint firstAttribute="height" constant="19" id="Edk-rr-Jaq"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="이름">
+                                                    <fragment content="펫명">
                                                         <attributes>
-                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSFont" size="16" name=".AppleSDGothicNeoI-Regular"/>
                                                             <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="*">
                                                         <attributes>
                                                             <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -987,7 +989,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="Op9-Tk-dZX" secondAttribute="trailing" constant="16" id="xSv-f5-fTa"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa7-Ox-Q6j">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="활동 지역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa7-Ox-Q6j">
                                                 <rect key="frame" x="20" y="358" width="353" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="19" id="IKy-br-eF8"/>
@@ -1046,16 +1048,18 @@
                                                     <constraint firstAttribute="height" constant="19" id="z7J-By-xyc"/>
                                                 </constraints>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="이름">
+                                                    <fragment content="펫명">
                                                         <attributes>
-                                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <font key="NSFont" size="16" name=".AppleSDGothicNeoI-Regular"/>
                                                             <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                     <fragment content="*">
                                                         <attributes>
                                                             <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
                                                 </attributedString>
@@ -1218,9 +1222,9 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 1kg 미만의 경우, 600g = 0.6으로 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AEB-tP-R1S">
-                                                <rect key="frame" x="20" y="714" width="353" height="12"/>
+                                                <rect key="frame" x="20" y="714" width="353" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="12" id="Uih-2L-dpr"/>
+                                                    <constraint firstAttribute="height" constant="18" id="Uih-2L-dpr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1480,7 +1484,7 @@
                                             <constraint firstItem="eLH-5h-Rwd" firstAttribute="leading" secondItem="zti-LE-6TR" secondAttribute="leading" constant="20" id="GpZ-uj-I4E"/>
                                             <constraint firstAttribute="trailing" secondItem="uBV-tF-zO6" secondAttribute="trailing" constant="20" id="Guq-wr-9Qu"/>
                                             <constraint firstAttribute="trailing" secondItem="pe4-b4-zcs" secondAttribute="trailing" constant="20" id="Ju2-kr-dfR"/>
-                                            <constraint firstItem="UnX-GJ-8rJ" firstAttribute="top" secondItem="AEB-tP-R1S" secondAttribute="bottom" constant="16" id="Kl9-gn-Mai"/>
+                                            <constraint firstItem="UnX-GJ-8rJ" firstAttribute="top" secondItem="AEB-tP-R1S" secondAttribute="bottom" constant="10" id="Kl9-gn-Mai"/>
                                             <constraint firstItem="L9J-uG-wYe" firstAttribute="leading" secondItem="zti-LE-6TR" secondAttribute="leading" constant="20" id="M8h-LV-rMl"/>
                                             <constraint firstItem="bv0-wv-lOc" firstAttribute="top" secondItem="JWV-13-h0L" secondAttribute="bottom" constant="8" id="Nfc-rE-bDh"/>
                                             <constraint firstItem="tXt-wt-yt4" firstAttribute="top" secondItem="kgw-tk-eHB" secondAttribute="bottom" constant="8" symbolic="YES" id="O9X-MG-GxI"/>

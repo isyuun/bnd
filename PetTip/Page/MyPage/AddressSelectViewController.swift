@@ -289,7 +289,7 @@ class AddressSelectViewController: CommonViewController {
     func showBackTitleBarView() {
         if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
             view.frame = titleBarView.bounds
-            view.lb_title.text = "주소 선택"
+            view.lb_title.text = "지역 선택"
             view.delegate = self
             titleBarView.addSubview(view)
         }
