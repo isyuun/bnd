@@ -78,7 +78,7 @@ class LoginViewController: CommonViewController2 {
     @IBAction func onLogin(_ sender: Any) {
         login()
     }
-    
+
     func login() {
         inputBoxID.resignFirstResponder()
         inputBoxPW.resignFirstResponder()
@@ -141,7 +141,7 @@ class LoginViewController: CommonViewController2 {
             if let resCode = error.resCode {
                 if resCode == 406 {
                     DispatchQueue.main.async {
-                        self.showToast(msg: "아이디 및 패스워드를 확인해주세요")
+                        self.showSimpleAlert(msg: "아이디 및 패스워드를 확인해주세요")
                     }
                     return
                 }
@@ -221,9 +221,8 @@ class LoginViewController: CommonViewController2 {
 
                 if let email = user?.kakaoAccount?.email, let id = user?.id {
                     self.snsLogin(userId: email, userPw: String(describing: id), loginMethod: "KAKAO")
-
                 } else {
-                    self.showToast(msg: "KAKAO 로그인에 문제가 발생했어요")
+                    self.showSimpleAlert(msg: "KAKAO 로그인에 문제가 발생했어요")
                 }
             }
         }
@@ -306,13 +305,12 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
 
                     if let email = email, let _id = _id {
                         self.snsLogin(userId: email, userPw: String(describing: _id), loginMethod: "NAVER")
-
                     } else {
-                        self.showToast(msg: "NAVER 로그인에 문제가 발생했어요 [E]")
+                        self.showSimpleAlert(msg: "NAVER 로그인에 문제가 발생했어요 [E]")
                     }
 
                 } catch {
-                    self.showToast(msg: "NAVER 로그인에 문제가 발생했어요 [N]")
+                    self.showSimpleAlert(msg: "NAVER 로그인에 문제가 발생했어요 [N]")
                 }
             }
         }).resume()

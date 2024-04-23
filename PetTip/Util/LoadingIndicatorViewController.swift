@@ -55,12 +55,15 @@ class LoadingIndicatorViewController : UIViewController {
         if (timeoutTimer != nil) { return }
         
         loadingMsg = msg
-        
-        self.view.addSubview(loadingBgView)
-        self.view.addSubview(loadingIdicatorBgView)
-        self.view.addSubview(loadingIndicatorView)
-        self.view.addSubview(loadingLabel)
-        loadingIndicatorView.startAnimating()
+
+        // 출처: https://hongssup.tistory.com/20 [Outgoing Introvert:티스토리]
+        DispatchQueue.main.async {
+            self.view.addSubview(self.loadingBgView)
+            self.view.addSubview(self.loadingIdicatorBgView)
+            self.view.addSubview(self.loadingIndicatorView)
+            self.view.addSubview(self.loadingLabel)
+            self.loadingIndicatorView.startAnimating()
+        }
         
         timeoutTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(timeoutTimerCallback), userInfo: timeoutTimer, repeats: false)
     }

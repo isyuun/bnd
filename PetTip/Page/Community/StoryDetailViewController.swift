@@ -527,7 +527,7 @@ class StoryDetailViewController: CommonDetailViewController {
                                 self.arrComment.append(comment)
 
                                 if self.vw_commentArea.subviews.count == 0 {
-//                                    self.cr_msgAreaHeight.isActive = false
+                                    // self.cr_msgAreaHeight.isActive = false
                                     self.cr_commentAreaHeight.priority = .defaultLow
                                 }
 
