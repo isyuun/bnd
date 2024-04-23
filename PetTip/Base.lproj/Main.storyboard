@@ -2518,7 +2518,7 @@
                                     <constraint firstAttribute="width" constant="120" id="INZ-YV-Jec"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-t5-E4E" userLabel="ScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-t5-E4E" userLabel="ScrollView">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-aP-dyp" userLabel="Content">
@@ -2882,8 +2882,8 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="leading" secondItem="JTw-Fu-Gko" secondAttribute="leading" id="DCE-dr-XU8"/>
-                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="trailing" secondItem="JTw-Fu-Gko" secondAttribute="trailing" id="YBa-5Y-czc"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="leading" secondItem="1P0-96-9Mc" secondAttribute="leading" id="DCE-dr-XU8"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="trailing" secondItem="1P0-96-9Mc" secondAttribute="trailing" constant="393" id="YBa-5Y-czc"/>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="top" secondItem="1P0-96-9Mc" secondAttribute="top" id="jRX-sh-9qS"/>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="bottom" secondItem="1P0-96-9Mc" secondAttribute="bottom" id="oV7-hj-rFN"/>
                                     <constraint firstItem="JTw-Fu-Gko" firstAttribute="trailing" secondItem="BoU-aP-dyp" secondAttribute="trailing" id="p7g-bn-5RP"/>

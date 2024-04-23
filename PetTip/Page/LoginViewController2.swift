@@ -9,31 +9,36 @@ import UIKit
 
 class LoginViewController2: LoginViewController {
 
-	@IBOutlet weak var SNSSLoginView: UIView!
-	@IBOutlet weak var IDPWLoginView: UIView!
+    @IBOutlet weak var SNSSLoginView: UIView!
+    @IBOutlet weak var IDPWLoginView: UIView!
 
-	@IBOutlet weak var scrollView: UIScrollView!
-	@IBOutlet weak var contentView: UIStackView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIStackView!
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-		SNSSLoginView.isHidden = false
-		#if DEBUG
-			IDPWLoginView.isHidden = false
-		#else
-			IDPWLoginView.isHidden = true
-		#endif
+        SNSSLoginView.isHidden = false
+        #if DEBUG
+            IDPWLoginView.isHidden = false
+        #else
+            IDPWLoginView.isHidden = true
+        #endif
 
-        // // 키보드 등록 알림을 받음
-        // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        // NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        // 
         // // 스크롤뷰의 콘텐츠 크기 설정
         // scrollView.contentSize = contentView.frame.size
-	}
+    }
 
-
+    // override func viewDidAppear(_ animated: Bool) {
+    //     super.viewDidAppear(animated)
+    //     addKeyboardObserver()
+    // }
+    // 
+    // override func viewDidDisappear(_ animated: Bool) {
+    //     super.viewDidDisappear(animated)
+    //     removeKeyboardObserver()
+    // }
+    // 
     // override func keyboardWillShow(_ notification: NSNotification) {
     //     super.keyboardWillShow(notification)
     //     // 키보드 높이 가져오기
@@ -44,7 +49,7 @@ class LoginViewController2: LoginViewController {
     //         scrollView.scrollIndicatorInsets = insets
     //     }
     // }
-    // 
+    //
     // override func keyboardWillHide(_ notification: NSNotification) {
     //     // 키보드가 사라질 때 스크롤뷰의 콘텐츠 영역을 원래대로 돌려놓음
     //     let insets = UIEdgeInsets.zero
