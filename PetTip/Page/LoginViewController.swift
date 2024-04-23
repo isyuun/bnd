@@ -76,6 +76,10 @@ class LoginViewController: CommonViewController2 {
 
     @IBOutlet weak var btnLogin: UIButton!
     @IBAction func onLogin(_ sender: Any) {
+        login()
+    }
+    
+    func login() {
         inputBoxID.resignFirstResponder()
         inputBoxPW.resignFirstResponder()
 

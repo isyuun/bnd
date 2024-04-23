@@ -2518,13 +2518,13 @@
                                     <constraint firstAttribute="width" constant="120" id="INZ-YV-Jec"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-t5-E4E" userLabel="ScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAt-t5-E4E" userLabel="ScrollView">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-aP-dyp" userLabel="Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="962"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-aP-dyp" userLabel="Content">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="652"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-26-gFX" userLabel="BlankView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-26-gFX" userLabel="HeadView">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="gIg-3e-hJE"/>
@@ -2743,7 +2743,7 @@
                                                                     <constraint firstAttribute="height" constant="48" id="gPn-Gh-Q2U"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                                             </textField>
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7pR-Qh-UoN">
                                                                 <rect key="frame" x="0.0" y="107" width="353" height="48"/>
@@ -2751,7 +2751,7 @@
                                                                     <constraint firstAttribute="height" constant="48" id="pyc-ig-2Qh"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysZ-FJ-cBw">
                                                                 <rect key="frame" x="0.0" y="170" width="353" height="48"/>
@@ -2871,14 +2871,11 @@
                                                     <constraint firstItem="aZU-Kc-LU9" firstAttribute="leading" secondItem="ndT-i7-be4" secondAttribute="leading" constant="20" id="xhb-RF-ZBG"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="BlankView">
-                                                <rect key="frame" x="0.0" y="602" width="393" height="360"/>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="TailView">
+                                                <rect key="frame" x="0.0" y="602" width="393" height="50"/>
                                                 <color key="backgroundColor" red="0.96470588235294119" green="0.97254901960784312" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="962" id="at1-yr-CBd"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
