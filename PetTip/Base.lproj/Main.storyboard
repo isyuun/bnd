@@ -2505,10 +2505,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-He-U2H" userLabel="TopBgView">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="300"/>
                                 <color key="backgroundColor" red="0.27843137254901962" green="0.51372549019607838" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="jXH-cU-RKX"/>
+                                    <constraint firstAttribute="height" constant="300" id="jXH-cU-RKX"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_login" translatesAutoresizingMaskIntoConstraints="NO" id="0VK-jh-OlM" userLabel="LogoView">
@@ -2861,7 +2861,7 @@
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.96470588235294119" green="0.97254901960784312" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="gLV-nu-QF6" firstAttribute="leading" secondItem="ndT-i7-be4" secondAttribute="leading" constant="20" id="YeP-xN-nGi"/>
                                                     <constraint firstAttribute="trailing" secondItem="gLV-nu-QF6" secondAttribute="trailing" constant="20" id="Zrc-DL-84u"/>
@@ -2873,7 +2873,7 @@
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="BlankView">
                                                 <rect key="frame" x="0.0" y="602" width="393" height="360"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.96470588235294119" green="0.97254901960784312" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -2883,10 +2883,10 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="leading" secondItem="1P0-96-9Mc" secondAttribute="leading" id="DCE-dr-XU8"/>
-                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="trailing" secondItem="1P0-96-9Mc" secondAttribute="trailing" constant="393" id="YBa-5Y-czc"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="trailing" secondItem="1P0-96-9Mc" secondAttribute="trailing" id="YBa-5Y-czc"/>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="top" secondItem="1P0-96-9Mc" secondAttribute="top" id="jRX-sh-9qS"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="width" secondItem="JTw-Fu-Gko" secondAttribute="width" id="jX0-qq-COi"/>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="bottom" secondItem="1P0-96-9Mc" secondAttribute="bottom" id="oV7-hj-rFN"/>
-                                    <constraint firstItem="JTw-Fu-Gko" firstAttribute="trailing" secondItem="BoU-aP-dyp" secondAttribute="trailing" id="p7g-bn-5RP"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="1P0-96-9Mc"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JTw-Fu-Gko"/>

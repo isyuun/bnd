@@ -33,7 +33,6 @@ class LoginViewController: CommonViewController2 {
         loginView.layer.cornerRadius = 35
         loginView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         loginView.layer.masksToBounds = true
-        loginView.backgroundColor = UIColor.init(hex: "#FFF6F8FC")
 
         inputBoxID.layer.borderColor = UIColor.init(hex: "#E3E9F2")?.cgColor
         inputBoxID.initLeftIconIncludeTextField(iconImg: UIImage(named: "icon_email")!)
