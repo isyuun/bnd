@@ -2883,7 +2883,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="leading" secondItem="JTw-Fu-Gko" secondAttribute="leading" id="DCE-dr-XU8"/>
-                                    <constraint firstItem="JTw-Fu-Gko" firstAttribute="trailing" secondItem="BoU-aP-dyp" secondAttribute="trailing" id="YBa-5Y-czc"/>
+                                    <constraint firstItem="BoU-aP-dyp" firstAttribute="trailing" secondItem="JTw-Fu-Gko" secondAttribute="trailing" id="YBa-5Y-czc"/>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="top" secondItem="1P0-96-9Mc" secondAttribute="top" id="jRX-sh-9qS"/>
                                     <constraint firstItem="BoU-aP-dyp" firstAttribute="bottom" secondItem="1P0-96-9Mc" secondAttribute="bottom" id="oV7-hj-rFN"/>
                                     <constraint firstItem="JTw-Fu-Gko" firstAttribute="trailing" secondItem="BoU-aP-dyp" secondAttribute="trailing" id="p7g-bn-5RP"/>
