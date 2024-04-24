@@ -63,24 +63,26 @@ class LoadingIndicatorViewController : UIViewController {
             self.view.addSubview(self.loadingIndicatorView)
             self.view.addSubview(self.loadingLabel)
             self.loadingIndicatorView.startAnimating()
+            self.timeoutTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.timeoutTimerCallback), userInfo: self.timeoutTimer, repeats: false)
         }
-        
-        timeoutTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(timeoutTimerCallback), userInfo: timeoutTimer, repeats: false)
+      
     }
     
     func stopLoading() {
         if (isLoading == false) { return }
         isLoading = false
         
-        loadingIndicatorView.stopAnimating()
-        loadingIndicatorView.removeFromSuperview()
-        loadingLabel.removeFromSuperview()
-        loadingIdicatorBgView.removeFromSuperview()
-        loadingBgView.removeFromSuperview()
-        
-        if (timeoutTimer != nil) {
-            timeoutTimer?.invalidate()
-            timeoutTimer = nil
+        // 출처: https://hongssup.tistory.com/20 [Outgoing Introvert:티스토리]
+        DispatchQueue.main.async { [self] in
+            self.loadingIndicatorView.stopAnimating()
+            self.loadingIndicatorView.removeFromSuperview()
+            self.loadingLabel.removeFromSuperview()
+            self.loadingIdicatorBgView.removeFromSuperview()
+            self.loadingBgView.removeFromSuperview()
+            if (self.timeoutTimer != nil) {
+                self.timeoutTimer?.invalidate()
+                timeoutTimer = nil
+            }
         }
     }
     

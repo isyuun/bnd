@@ -24,20 +24,23 @@ class CommonViewController: LoadingIndicatorViewController {
     }
 
     func showSimpleAlert(title: String, msg: String) {
-        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        // let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        // {
-        //     (action: UIAlertAction!) in
-        //     print("you have pressed the Cancel button")
-        // }
-        // alertController.addAction(cancelAction)
-        let OKAction = UIAlertAction(title: "OK", style: .default)
-        {
-            (action: UIAlertAction!) in
-            print("you have pressed OK button")
+        // 출처: https://hongssup.tistory.com/20 [Outgoing Introvert:티스토리]
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+            // let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            // {
+            //     (action: UIAlertAction!) in
+            //     print("you have pressed the Cancel button")
+            // }
+            // alertController.addAction(cancelAction)
+            let OKAction = UIAlertAction(title: "OK", style: .default)
+            {
+                (action: UIAlertAction!) in
+                print("you have pressed OK button")
+            }
+            alertController.addAction(OKAction)
+            self.present(alertController, animated: true, completion: nil)
         }
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion: nil)
     }
 
     func showSimpleAlert(msg: String) {

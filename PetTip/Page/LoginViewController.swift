@@ -165,7 +165,7 @@ class LoginViewController: CommonViewController2 {
     }
 
     private func snsLogin(userId: String, userPw: String, loginMethod: String) {
-        startLoading()
+        self.startLoading()
 
         let request = LoginRequest(appTypNm: Util.getModel(), userID: userId, userPW: userPw)
         MemberAPI.login(request: request) { login, error in
@@ -199,14 +199,13 @@ class LoginViewController: CommonViewController2 {
     }
 
     private func startKakaoLogin() {
-        // 카카오톡 설치된 경우 카톡 실행
         if (UserApi.isKakaoTalkLoginAvailable()) {
+            // 카카오톡 설치된 경우 카톡 실행
             UserApi.shared.loginWithKakaoTalk { oauthToken, error in
                 onKakaoLoginCompleted(oauthToken?.accessToken)
             }
-        }
-        // 카카오톡 설치되지 않은 경우 카카오 로그인 웹뷰를 띄운다.
-            else {
+        } else {
+            // 카카오톡 설치되지 않은 경우 카카오 로그인 웹뷰를 띄운다.
             UserApi.shared.loginWithKakaoAccount(prompts: [.Login]) { oauthToken, error in
                 onKakaoLoginCompleted(oauthToken?.accessToken)
             }
@@ -269,17 +268,19 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
         self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
     }
 
+    func requestNaverLogin() {
+        guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
+        loginInstance.delegate = self
+        loginInstance.requestThirdPartyLogin()
+    }
+
     func startNaverLogin() {
         guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
-
-        //이미 로그인되어있는 경우
         if loginInstance.isValidAccessTokenExpireTimeNow() {
             self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
             return
         }
-
-        loginInstance.delegate = self
-        loginInstance.requestThirdPartyLogin()
+        requestNaverLogin()
     }
 
     func getNaverUserInfo(_ tokenType: String?, _ accessToken: String?) {
@@ -299,16 +300,22 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
             {
                 do {
                     let json = try JSONSerialization.jsonObject(with: responseData, options: []) as? NSDictionary
-                    let res = json?.value(forKey: "response") as? NSDictionary
-                    let email = res?.value(forKey: "email") as? String
-                    let _id = res?.value(forKey: "id") as? String
+                    let rescode = json?.value(forKey: "resultcode") as? String
+                    let message = json?.value(forKey: "message") as? String
+                    print("[NAVER][로그인][resultcode:\(String(describing: rescode))][message:\(String(describing: message))]")
+                    if let response = json?.value(forKey: "response") as? NSDictionary
+                    {
+                        let email = response.value(forKey: "email") as? String
+                        let _id = response.value(forKey: "id") as? String
 
-                    if let email = email, let _id = _id {
-                        self.snsLogin(userId: email, userPw: String(describing: _id), loginMethod: "NAVER")
+                        if let email = email, let _id = _id {
+                            self.snsLogin(userId: email, userPw: String(describing: _id), loginMethod: "NAVER")
+                        } else {
+                            self.showSimpleAlert(msg: "NAVER 로그인에 문제가 발생했어요 [E]\n\(String(describing: message))")
+                        }
                     } else {
-                        self.showSimpleAlert(msg: "NAVER 로그인에 문제가 발생했어요 [E]")
+                        self.requestNaverLogin()
                     }
-
                 } catch {
                     self.showSimpleAlert(msg: "NAVER 로그인에 문제가 발생했어요 [N]")
                 }
