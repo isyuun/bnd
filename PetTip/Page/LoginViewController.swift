@@ -171,6 +171,7 @@ class LoginViewController: CommonViewController2 {
         MemberAPI.login(request: request) { login, error in
             self.stopLoading()
 
+            NSLog("[LOG][W][네트워크][\(String(describing: login))][\(String(describing: error?.resCode))][\(String(describing: error?.description))]")
             if let login = login {
                 let userDef = UserDefaults.standard
                 userDef.set(login.accessToken, forKey: "accessToken")
@@ -182,9 +183,7 @@ class LoginViewController: CommonViewController2 {
                 userDef.synchronize()
                 // KeychainServiceImpl.shared.accessToken = login.accessToken
                 // KeychainServiceImpl.shared.refreshToken = login.refreshToken
-
                 self.trmnlMng(appKeyVl: login.appKeyVl)
-
             } else {
                 let snsJoinViewcontroller = UIStoryboard(name: "Member", bundle: nil).instantiateViewController(identifier: "SNSJoinViewcontroller") as SNSJoinViewcontroller
                 snsJoinViewcontroller.memberData = MemberJoinData(id: userId, pw: userPw, nick: "", method: loginMethod)

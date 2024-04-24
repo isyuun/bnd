@@ -268,7 +268,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="펫명">
                                                         <attributes>
-                                                            <font key="NSFont" size="16" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <font key="NSOriginalFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
@@ -1050,7 +1050,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="펫명">
                                                         <attributes>
-                                                            <font key="NSFont" size="16" name=".AppleSDGothicNeoI-Regular"/>
+                                                            <font key="NSFont" metaFont="system" size="16"/>
                                                             <font key="NSOriginalFont" metaFont="system" size="16"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
