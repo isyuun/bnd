@@ -345,10 +345,10 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
             }
         }
 
-        // 처음 애플 로그인 시 이메일은 credential.fullName 에 들어있다.
-        if let fullName = credential.fullName {
-            // print("이름 : \(fullName.familyName ?? "")\(fullName.givenName ?? "")")
-        }
+        // // 처음 애플 로그인 시 이메일은 credential.fullName 에 들어있다.
+        // if let fullName = credential.fullName {
+        //     // print("이름 : \(fullName.familyName ?? "")\(fullName.givenName ?? "")")
+        // }
 
         // print("userIdentifier : \(credential.user)")
         let user = credential.user
