@@ -329,6 +329,7 @@
 		5E2DC0A0814DA2B0068B1269 /* Pods_PetTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */; };
 		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
 		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
+		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
 		7BD8DB692BCF5058000755D1 /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB672BCF5058000755D1 /* RELEASE.md */; };
 		7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */; };
@@ -660,6 +661,7 @@
 		17E098ED0E3EB98C1A7B84FE /* Pods-PetTip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.debug.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
 		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
+		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7BD8DB672BCF5058000755D1 /* RELEASE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
@@ -1032,6 +1034,7 @@
 				02A7AAE82B54FC2D002F0C03 /* FindPwViewController.swift */,
 				02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */,
 				02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */,
+				7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */,
 				02A7AAE22B54F895002F0C03 /* Member.storyboard */,
 			);
 			path = Member;
@@ -1678,6 +1681,7 @@
 				02E00AF72B595D240092C909 /* LifeCreateResponse.swift in Sources */,
 				02A05ADC2B3D6AF700E8ABFA /* CmntUpdateRequest.swift in Sources */,
 				027F765C2B4E8D5E00429AC5 /* NoticeDtlListResponse.swift in Sources */,
+				7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */,
 				02A05AB92B3A771F00E8ABFA /* CmntRcmdtn.swift in Sources */,
 				02A05AF22B3E849D00E8ABFA /* DclrCreateRequest.swift in Sources */,
 				02DB37FE2B648344007D19A1 /* MyPetWeightListResponse.swift in Sources */,

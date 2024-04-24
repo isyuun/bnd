@@ -606,7 +606,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPD-pw-0u4">
                                 <rect key="frame" x="0.0" y="60" width="393" height="782"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJc-jV-Tzz" userLabel="Content">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJc-jV-Tzz">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="725"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9h-xK-M0p">
@@ -2592,16 +2592,16 @@
     </scenes>
     <designables>
         <designable name="J7H-kc-4x4">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
         <designable name="e0H-MH-re3">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="hqa-Pj-3j2">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="knt-VH-hAf">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

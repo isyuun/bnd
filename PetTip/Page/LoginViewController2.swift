@@ -7,13 +7,13 @@
 
 import UIKit
 
-class LoginViewController2: LoginViewController, UITextFieldDelegate {
+class LoginViewController2: LoginViewController {
 
     @IBOutlet weak var SNSSLoginView: UIView!
     @IBOutlet weak var IDPWLoginView: UIView!
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIStackView!
+    @IBOutlet weak var content: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,18 +27,12 @@ class LoginViewController2: LoginViewController, UITextFieldDelegate {
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         scrollView.addGestureRecognizer(tap)
-
-        // UITextField의 delegate 설정
-        inputBoxID.delegate = self
-        inputBoxPW.delegate = self
-
-        inputBoxID.inputAccessoryView = toolBar
-        inputBoxPW.inputAccessoryView = toolBar
     }
 
     // UITextFieldDelegate 메서드 구현
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        NSLog("[W][LOG][텍스트][textFieldShouldReturn][ID:\(textField == inputBoxID)][PW:\(textField == inputBoxPW)][\(textField)]")
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        NSLog("[W][LOG][텍스트][textFieldShouldReturn][ID:\(textField == inputBoxID)][PW:\(textField == inputBoxPW)][textField:\(textField)]")
+        let ret = super.textFieldShouldReturn(textField)
         btnLogin.isUserInteractionEnabled = true
         if textField == inputBoxID {
             // usernameTextField에서 리턴 키를 눌렀을 때 passwordTextField로 포커스 이동
@@ -48,7 +42,7 @@ class LoginViewController2: LoginViewController, UITextFieldDelegate {
             btnLogin.becomeFirstResponder()
             login()
         }
-        return true
+        return ret
     }
 
     override func keyboardWillShow(_ notification: NSNotification) {
@@ -70,5 +64,4 @@ class LoginViewController2: LoginViewController, UITextFieldDelegate {
         scrollView.contentInset = insets
         scrollView.scrollIndicatorInsets = insets
     }
-
 }

@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class SNSJoinViewcontroller: CommonViewController {
+class SNSJoinViewcontroller: CommonViewController2 {
     
     public var memberData: MemberJoinData?
     
@@ -365,7 +365,7 @@ extension SNSJoinViewcontroller: BackTitleBarViewProtocol {
 
 
 
-extension SNSJoinViewcontroller: UITextFieldDelegate {
+extension SNSJoinViewcontroller {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == tf_nickNm {

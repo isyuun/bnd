@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommonViewController2: CommonViewController {
+class CommonViewController2: CommonViewController, UITextFieldDelegate {
 
     var toolBar: UIToolbar!
     var prevButton: UIBarButtonItem!
@@ -19,21 +19,35 @@ class CommonViewController2: CommonViewController {
         super.viewDidLoad()
         // let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         // self.view.addGestureRecognizer(tap)
+        initTextFiels()
+    }
 
+    //...
+    func initTextFiels() {
         // UITextField의 inputAccessoryView 설정
         toolBar = UIToolbar()
         toolBar.sizeToFit()
 
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        nextButton = UIBarButtonItem(title: "ᐯ", style: .done, target: self, action: #selector(nextButtonTapped))
-        prevButton = UIBarButtonItem(title: "ᐱ", style: .done, target: self, action: #selector(prevButtonTapped))
+        nextButton = UIBarButtonItem(image: UIImage(systemName: "chevron.down"), style: .done, target: self, action: #selector(nextButtonTapped))
+        prevButton = UIBarButtonItem(image: UIImage(systemName: "chevron.up"), style: .done, target: self, action: #selector(prevButtonTapped))
         doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonTapped))
 
         toolBar.items = [prevButton, nextButton, flexibleSpace, doneButton]
 
         textFields = findAllTextFields(view: self.view)
+        
+        for textField in textFields {
+            textField.inputAccessoryView = toolBar
+            textField.delegate = self
+        }
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        NSLog("[W][LOG][텍스트][textFieldShouldReturn][textField:\(textField)]")
+        return false
+    }
+    
     @objc func prevButtonTapped() {
         prevButton.isEnabled = true
         nextButton.isEnabled = true

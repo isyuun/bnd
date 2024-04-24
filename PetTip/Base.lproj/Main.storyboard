@@ -2913,7 +2913,7 @@
                         <outlet property="btnLoginGoogle" destination="u8j-0l-pzP" id="T7Z-zA-ZM1"/>
                         <outlet property="btnLoginKakao" destination="KgR-FK-ih2" id="74g-y3-1AA"/>
                         <outlet property="btnLoginNaver" destination="Ajx-3t-Wb0" id="HIH-x6-TSt"/>
-                        <outlet property="contentView" destination="BoU-aP-dyp" id="Ts4-Bc-quk"/>
+                        <outlet property="content" destination="BoU-aP-dyp" id="Ts4-Bc-quk"/>
                         <outlet property="inputBoxID" destination="5KF-pY-HRT" id="d94-i6-v07"/>
                         <outlet property="inputBoxPW" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
                         <outlet property="loginView" destination="ndT-i7-be4" id="jSK-zX-3RJ"/>
