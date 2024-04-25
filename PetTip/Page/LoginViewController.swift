@@ -198,23 +198,31 @@ class LoginViewController: CommonViewController2 {
     }
 
     private func startKakaoLogin() {
+        NSLog("[LOG][I][카카오로그인][시작][ST]")
+        self.startLoading()
+
         if (UserApi.isKakaoTalkLoginAvailable()) {
             // 카카오톡 설치된 경우 카톡 실행
             UserApi.shared.loginWithKakaoTalk { oauthToken, error in
+                NSLog("[LOG][I][카카오로그인][카톡][ST][\(String(describing: oauthToken))][\(String(describing: error))]")
                 onKakaoLoginCompleted(oauthToken?.accessToken)
             }
         } else {
             // 카카오톡 설치되지 않은 경우 카카오 로그인 웹뷰를 띄운다.
             UserApi.shared.loginWithKakaoAccount(prompts: [.Login]) { oauthToken, error in
+                NSLog("[LOG][I][카카오로그인][웹앱][ST][\(String(describing: oauthToken))][\(String(describing: error))]")
                 onKakaoLoginCompleted(oauthToken?.accessToken)
             }
         }
 
         func onKakaoLoginCompleted(_ accessToken: String?) {
+            NSLog("[LOG][I][카카오로그인][확인][ST][\(String(describing: accessToken))]")
+            self.stopLoading()
             getKakaoUserInfo(accessToken)
         }
 
         func getKakaoUserInfo(_ accessToken: String?) {
+            NSLog("[LOG][I][카카오로그인][로긴][ST][\(String(describing: accessToken))]")
             UserApi.shared.me() { user, error in
 
                 if let email = user?.kakaoAccount?.email, let id = user?.id {
@@ -223,7 +231,9 @@ class LoginViewController: CommonViewController2 {
                     self.showSimpleAlert(msg: "KAKAO 로그인에 문제가 발생했어요")
                 }
             }
+            NSLog("[LOG][I][카카오로그인][로긴][ED][\(String(describing: accessToken))]")
         }
+        NSLog("[LOG][I][카카오로그인][시작][ED]")
     }
 
     // MARK: - NAVER LOGIN
@@ -251,43 +261,43 @@ class LoginViewController: CommonViewController2 {
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     // 네이버 로그인 실패 시 호출되는 메서드
     func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        NSLog("[LOG][I][네이버로그인][실패]")
+        NSLog("[LOG][I][네이버로그인][실패][oauth20ConnectionDidFinishRequestACTokenWithRefreshToken]")
     }
 
     // 네이버 로그인 창이 닫혔을 때 호출되는 메서드
     func oauth20ConnectionDidFinishDeleteToken() {
-        NSLog("[LOG][I][네이버로그인][취소]")
+        NSLog("[LOG][I][네이버로그인][취소][oauth20ConnectionDidFinishDeleteToken]")
     }
 
     // 에러 발생 시 호출되는 메서드
     func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-        NSLog("[LOG][I][네이버로그인][에러][\(error.localizedDescription)]")
+        NSLog("[LOG][I][네이버로그인][에러][oauth20Connection][\(error.localizedDescription)]")
     }
 
     // 네이버 로그인 성공 시 호출되는 메서드
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
         let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
-        NSLog("[LOG][I][네이버로그인][확인][ST][\(String(describing: loginInstance))]")
+        NSLog("[LOG][I][네이버로그인][확인][ST][oauth20ConnectionDidFinishRequestACTokenWithAuthCode][\(String(describing: loginInstance))]")
         if loginInstance == nil {
-            NSLog("[LOG][E][네이버로그인][확인][NG][\(String(describing: loginInstance))]")
+            NSLog("[LOG][E][네이버로그인][확인][NG][oauth20ConnectionDidFinishRequestACTokenWithAuthCode][\(String(describing: loginInstance))]")
             return
         }
         if loginInstance?.accessToken != nil {
-            NSLog("[LOG][W][네이버로그인][확인][OK][\(String(describing: loginInstance))][\(String(describing: loginInstance?.tokenType))][\(String(describing: loginInstance?.accessToken))]")
+            NSLog("[LOG][W][네이버로그인][확인][OK][oauth20ConnectionDidFinishRequestACTokenWithAuthCode][\(String(describing: loginInstance))]")
             self.getNaverUserInfo(loginInstance?.tokenType, loginInstance?.accessToken)
         }
-        NSLog("[LOG][I][네이버로그인][확인][ED][\(String(describing: loginInstance))]")
+        NSLog("[LOG][I][네이버로그인][확인][ED][oauth20ConnectionDidFinishRequestACTokenWithAuthCode][\(String(describing: loginInstance))]")
     }
 
     func requestNaverLogin() {
-        NSLog("[LOG][I][네이버로그인][요청]")
+        NSLog("[LOG][I][네이버로그인][요청][requestNaverLogin]")
         guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
         loginInstance.delegate = self
         loginInstance.requestThirdPartyLogin()
     }
 
     func startNaverLogin() {
-        NSLog("[LOG][I][네이버로그인][시작]")
+        NSLog("[LOG][I][네이버로그인][시작][requestNaverLogin]")
         guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
         if loginInstance.isValidAccessTokenExpireTimeNow() {
             self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
@@ -297,6 +307,7 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     }
 
     func getNaverUserInfo(_ tokenType: String?, _ accessToken: String?) {
+        NSLog("[LOG][I][네이버로그인][로긴][getNaverUserInfo]")
         guard let tokenType = tokenType else { return }
         guard let accessToken = accessToken else { return }
 

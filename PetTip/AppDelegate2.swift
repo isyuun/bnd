@@ -19,6 +19,8 @@ class AppDelegate2: AppDelegate {
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let ret = super.application(application, didFinishLaunchingWithOptions: launchOptions)
 
+        KakaoSDK.initSDK(appKey: "226344419c2ba87b4309b7d42ac22ae0")
+
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
         instance?.isNaverAppOauthEnable = true
         instance?.isInAppOauthEnable = true
