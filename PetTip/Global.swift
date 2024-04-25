@@ -9,54 +9,57 @@ import Foundation
 import RxSwift
 import RxRelay
 
-struct Global {
-//    static var DOMAIN = "http://carepet.hopto.org:8020"
-//    static var DOMAIN = "http://dev.pettip.net:8020"
+class Global {
+    // #if DEBUG
+    //     static var DOMAIN = "http://dev.pettip.net:8020"
+    // #else
+    //     static var DOMAIN = "https://pettip.net"
+    // #endif
     static var DOMAIN = "https://pettip.net"
-    
+
     static var BASE_URI = DOMAIN + "/api/v1"
 
     static var URL_TERMS_1 = DOMAIN + "/terms"
     static var URL_TERMS_2 = DOMAIN + "/privacy_policy"
     static var URL_TERMS_3 = DOMAIN + "/marketing"
-    
+
     static var appKey: String = ""
-    
+
     static var toSchUnqNo: Int = 0
-    
+
     static var petRelUnqNo: Int = 0 //182
-    
+
     static var rsnCodeList: [CDDetailList]?
     static var pstCodeList: [CDDetailList]?
     static var schCodeList: [CDDetailList]? // 일상구분
-    
+
     static var cmmPetListDog: [CmmPetListData]?
     static var cmmPetListCat: [CmmPetListData]?
-    
+
     // USER_NICKNAME
     static var userNckNmBehaviorRelay = BehaviorRelay<String?>(value: nil)
     static var userNckNm: Observable<String?> {
         return userNckNmBehaviorRelay.asObservable()
     }
-    
+
     // MY_PET_LIST
     static var myPetListBehaviorRelay = BehaviorRelay<MyPetList?>(value: nil)
     static var myPetList: Observable<MyPetList?> {
         return myPetListBehaviorRelay.asObservable()
     }
-    
+
     // DAILYLIFE_PETS
     static var dailyLifePetsBehaviorRelay = BehaviorRelay<PetList?>(value: nil)
     static var dailyLifePets: Observable<PetList?> {
         return dailyLifePetsBehaviorRelay.asObservable()
     }
-    
+
     // SELECTED PET INDEX
     static var selectedPetIndexBehaviorRelay = BehaviorRelay<Int?>(value: 0)
     static var selectedPetIndex: Observable<Int?> {
         return selectedPetIndexBehaviorRelay.asObservable()
     }
-    
+
     static var cmmSidoList = [
         Sido(cdld: 36, upCdId: "SCD", cdNm: "세종특별자치시"),
         Sido(cdld: 50, upCdId: "SCD", cdNm: "제주특별자치도"),
@@ -75,5 +78,5 @@ struct Global {
         Sido(cdld: 26, upCdId: "SCD", cdNm: "부산광역시"),
         Sido(cdld: 11, upCdId: "SCD", cdNm: "서울특별시"),
         Sido(cdld: 51, upCdId: "SCD", cdNm: "강원특별자치도")
-    ]	
+    ]
 }

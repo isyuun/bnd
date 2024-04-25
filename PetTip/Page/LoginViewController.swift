@@ -249,31 +249,45 @@ class LoginViewController: CommonViewController2 {
 }
 
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
+    // 네이버 로그인 실패 시 호출되는 메서드
     func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-        print("토큰 요청 완료")
+        NSLog("[LOG][I][네이버로그인][실패]")
     }
 
+    // 네이버 로그인 창이 닫혔을 때 호출되는 메서드
     func oauth20ConnectionDidFinishDeleteToken() {
-        print("네이버 로그인 토큰이 삭제되었습니다.")
+        NSLog("[LOG][I][네이버로그인][취소]")
     }
 
+    // 에러 발생 시 호출되는 메서드
     func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-        print("error: ", error as Any)
+        NSLog("[LOG][I][네이버로그인][에러][\(error.localizedDescription)]")
     }
 
+    // 네이버 로그인 성공 시 호출되는 메서드
     func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-        guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
-
-        self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
+        let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+        NSLog("[LOG][I][네이버로그인][확인][ST][\(String(describing: loginInstance))]")
+        if loginInstance == nil {
+            NSLog("[LOG][E][네이버로그인][확인][NG][\(String(describing: loginInstance))]")
+            return
+        }
+        if loginInstance?.accessToken != nil {
+            NSLog("[LOG][W][네이버로그인][확인][OK][\(String(describing: loginInstance))][\(String(describing: loginInstance?.tokenType))][\(String(describing: loginInstance?.accessToken))]")
+            self.getNaverUserInfo(loginInstance?.tokenType, loginInstance?.accessToken)
+        }
+        NSLog("[LOG][I][네이버로그인][확인][ED][\(String(describing: loginInstance))]")
     }
 
     func requestNaverLogin() {
+        NSLog("[LOG][I][네이버로그인][요청]")
         guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
         loginInstance.delegate = self
         loginInstance.requestThirdPartyLogin()
     }
 
     func startNaverLogin() {
+        NSLog("[LOG][I][네이버로그인][시작]")
         guard let loginInstance = NaverThirdPartyLoginConnection.getSharedInstance() else { return }
         if loginInstance.isValidAccessTokenExpireTimeNow() {
             self.getNaverUserInfo(loginInstance.tokenType, loginInstance.accessToken)
