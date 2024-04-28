@@ -1,6 +1,6 @@
 ##[iOS] 펫팁 1.0
 
-###PetTip iOS 가이드																
+###PetTip iOS 가이드															
 
 	1	대응 OS 버전																
 		iOS 14																
@@ -15,98 +15,98 @@
 		2023.11.20 ~ 2024.02.20																
 																		
 	5	사용 라이브러리																
-		Alamofire			통신														
+		Alamofire		통신														
 		AlamofireImage		이미지 통신														
-		DGCharts			그래프, 챠트														
-		DropDown			콤보박스														
-		Firebase			FCM														
-		FSPagerView			화면 좌/우 스와이프 이미지 뷰														
-		Kakao				카카오 로그인														
+		DGCharts		그래프, 챠트														
+		DropDown		콤보박스														
+		Firebase		FCM														
+		FSPagerView		화면 좌/우 스와이프 이미지 뷰														
+		Kakao			카카오 로그인														
 		naveridlogin		네이버 로그인														
-		NMapsMap			네이버 지도														
-		Pageboy				Tabman 라이브러리에서 사용														
-		RxSwift				RxSwift 구현에 사용														
-		Tabman				상단 탭														
-		Toaster				안드로이드 Toast 호환														
+		NMapsMap		네이버 지도														
+		Pageboy			Tabman 라이브러리에서 사용														
+		RxSwift			RxSwift 구현에 사용														
+		Tabman			상단 탭														
+		Toaster			안드로이드 Toast 호환														
 																		
 	6	소스 인덱스																
 		현재 사용되고 있는 코드만 기재합니다.																
 		Popup																
-			PopupModalViewController					팝업이 출력되는 화면 단위										
-			CommonPopupView								팝업 뷰의 공통단										
-			CommonConfirmView							확인 팝업 뷰										
-			CommonModifyView							수정가능 팝업 뷰										
-			CommentModifyView							커뮤니티 코멘트 팝업 뷰										
-			ReportView									신고 팝업 뷰										
-			DatePickerView								날짜일시 선택 팝업 뷰										
-			SelectInvitePetView							초대 펫 선택 팝업 뷰										
-			PetWeightView								펫 무게 입력 팝업 뷰										
-			SelectWalkPetView							산책할 펫 선택 팝업 뷰										
-			SelectWalkPetItemView						산책할 펫 선택 팝업 내 테이블 뷰 아이템										
-			SelectWalkMarkPetView						다수 펫 데리고 산책 중 마커 표시할 때 마커할 펫 선택 팝업 뷰										
-			SelectWalkMarkPetItemView					다수 펫 데리고 산책 중 마커 표시할 때 마커할 펫 선택 팝업 뷰의 테이블 뷰 아이템										
+			PopupModalViewController	팝업이 출력되는 화면 단위										
+			CommonPopupView			팝업 뷰의 공통단										
+			CommonConfirmView		확인 팝업 뷰										
+			CommonModifyView		수정가능 팝업 뷰										
+			CommentModifyView		커뮤니티 코멘트 팝업 뷰										
+			ReportView			신고 팝업 뷰										
+			DatePickerView			날짜일시 선택 팝업 뷰										
+			SelectInvitePetView		초대 펫 선택 팝업 뷰										
+			PetWeightView			펫 무게 입력 팝업 뷰										
+			SelectWalkPetView		산책할 펫 선택 팝업 뷰										
+			SelectWalkPetItemView		산책할 펫 선택 팝업 내 테이블 뷰 아이템										
+			SelectWalkMarkPetView		다수 펫 데리고 산책 중 마커 표시할 때 마커할 펫 선택 팝업 뷰										
+			SelectWalkMarkPetItemView	다수 펫 데리고 산책 중 마커 표시할 때 마커할 펫 선택 팝업 뷰의 테이블 뷰 아이템										
 		Network																
-			OAuth										로그인 oauth 인증 관련										
-			Base										통신에 사용할 공통										
-			API											API 통신 그룹별 Model, API 호출부, API 호출 관련 선언부										
-			Domain										API에서 응답받은 컨텐츠 VO										
+			OAuth				로그인 oauth 인증 관련										
+			Base				통신에 사용할 공통										
+			API				API 통신 그룹별 Model, API 호출부, API 호출 관련 선언부										
+			Domain				API에서 응답받은 컨텐츠 VO										
 		Util																
 			기능 별 사용되는 유틸성 기능															
 		Page																
 			Member															
-				FindIdPwViewController					ID/비밀번호 찾기 화면										
+				FindIdPwViewController				ID/비밀번호 찾기 화면										
 				FindIdPwContainerViewController			ID/비밀번호 찾기 화면 탭에 대한 분리 화면 구축용 컨테이너										
-				FindIdViewController					ID찾기 화면										
-				FindPwViewController					비밀번호 찾기 화면										
-				JoinViewController						회원가입 화면										
-				SNSJoinViewcontrroller					SNS회원가입 화면										
-				Member									Member 그룹 스토리보드										
-			IntroViewController							인트로 화면										
+				FindIdViewController				ID찾기 화면										
+				FindPwViewController				비밀번호 찾기 화면										
+				JoinViewController				회원가입 화면										
+				SNSJoinViewcontrroller				SNS회원가입 화면										
+				Member						Member 그룹 스토리보드										
+			IntroViewController					인트로 화면										
 			PermissionInfoViewController				권한안내 화면										
-			LoginViewController							로그인 화면										
-			MainViewController 							메인 화면										
+			LoginViewController					로그인 화면										
+			MainViewController 					메인 화면										
 			Common																
-				CommonViewController					화면 공통 (모든 화면은 이 클래스를 확장하여 전개)										
-				CommonDetailViewController				화면별 상세화면 구현시 사용할 공통										
-				CommonDetailImageItemView				좌/우 스와이프 되는 이미지 뷰 공통										
-				LogoTitleBarView						로고 이미지 있는 화면 상단 타이틀바										
-				BackTitleBarView						뒤로가기 버튼 있는 화면 상단 타이틀바										
-				ImageViewController						이미지 상세보기 화면										
-				Common									Common 그룹 스토리보드										
+				CommonViewController				화면 공통 (모든 화면은 이 클래스를 확장하여 전개)										
+				CommonDetailViewController			면별 상세화면 구현시 사용할 공통										
+				CommonDetailImageItemView			좌/우 스와이프 되는 이미지 뷰 공통										
+				LogoTitleBarView				로고 이미지 있는 화면 상단 타이틀바										
+				BackTitleBarView				뒤로가기 버튼 있는 화면 상단 타이틀바										
+				ImageViewController				이미지 상세보기 화면										
+				Common						Common 그룹 스토리보드										
 			Home																
-				SelectPetView							메인 화면에서 나의 반려동물 선택 뷰										
-				SelectPetItemView						메인 화면에서 나의 반려동물 선택 뷰의 콜랙션 아이템 뷰										
-				CompPetListView							메인 화면에서 반려동물 선택 뷰										
-				CompPetListItemView						메인 화면에서 반려동물 선택 뷰의 테이블 아이템 뷰										
-				PetProfItemView							펫 프로파일 이미지 공통 뷰										
-				HomeStoryItemView						메인화면 스토리 콜랙션 아이템 뷰										
+				SelectPetView					메인 화면에서 나의 반려동물 선택 뷰										
+				SelectPetItemView				메인 화면에서 나의 반려동물 선택 뷰의 콜랙션 아이템 뷰										
+				CompPetListView					메인 화면에서 반려동물 선택 뷰										
+				CompPetListItemView				메인 화면에서 반려동물 선택 뷰의 테이블 아이템 뷰										
+				PetProfItemView					펫 프로파일 이미지 공통 뷰										
+				HomeStoryItemView				메인화면 스토리 콜랙션 아이템 뷰										
 			WalkHistory																
-				WalkHistoryViewController				산책기록 주간 화면										
+				WalkHistoryViewController			산책기록 주간 화면										
 				WalkHistoryDetailViewController			산책기록 상세 화면										
-				WalkHistroryItemView					산책기록 주간/월간 날짜별 표시용 뷰										
-				WalkHistoryWeekListItemView				산책기록 주간 표시 테이블 아이템 뷰										
-				WalkHistoryPetItemView					산책기록 펫 별 아이템 뷰										
-				WalkHistoryMonthView 					산책기록 주간 화면에 띄울 월간 화면 뷰										
+				WalkHistroryItemView				산책기록 주간/월간 날짜별 표시용 뷰										
+				WalkHistoryWeekListItemView			산책기록 주간 표시 테이블 아이템 뷰										
+				WalkHistoryPetItemView				산책기록 펫 별 아이템 뷰										
+				WalkHistoryMonthView 				산책기록 주간 화면에 띄울 월간 화면 뷰										
 			Community															
-				CommunityViewController					커뮤니티 화면										
+				CommunityViewController				커뮤니티 화면										
 				CommunityContainerViewController		커뮤니티 화면 탭에 대한 분리 화면 구축용 컨테이너										
-				StoryListViewController					스토리 목록 화면										
-				StoryDetailViewController				스토리 상세 화면										
-				StoryItemView							스토리 목록 아이템 뷰										
-				CommunityCommentView					스토리 상세화면 코멘트 뷰										
-				EventListViewController					이벤트 목록 화면										
-				EventDetailViewController				이벤트 상세 화면										
-				AncmntListItemView						이벤트 목록 테이블 아이템 뷰										
+				StoryListViewController				스토리 목록 화면										
+				StoryDetailViewController			스토리 상세 화면										
+				StoryItemView					스토리 목록 아이템 뷰										
+				CommunityCommentView				스토리 상세화면 코멘트 뷰										
+				EventListViewController				이벤트 목록 화면										
+				EventDetailViewController			이벤트 상세 화면										
+				AncmntListItemView				이벤트 목록 테이블 아이템 뷰										
 				AncmntWinnerDetailViewController		당첨자 발표 상세 화면										
-				StoryAddViewController					스토리 등록 화면										
-				DailyLifeGubunItemView					일상 구분 아이템 뷰										
-				StoryModifyViewController				스토리 수정 화면										
-				Community								Community 그룹 스토리보드										
+				StoryAddViewController				스토리 등록 화면										
+				DailyLifeGubunItemView				일상 구분 아이템 뷰										
+				StoryModifyViewController			스토리 수정 화면										
+				Community					Community 그룹 스토리보드										
 			MyPage															
-				MyPageViewController					마이페이지 화면										
-				MyPageCompPetListItemView				내 펫 목록 아이템 뷰										
+				MyPageViewController				마이페이지 화면										
+				MyPageCompPetListItemView			내 펫 목록 아이템 뷰										
 				MyPageCompPetListEmptyItemView			내 펫 목록 비어있을 때 표시용 뷰										
-				UserInfoViewController					사용자 정보 화면										
+				UserInfoViewController				사용자 정보 화면										
 				InviteCreateViewController				초대하기 화면										
 				InviteSetKetViewController 				초대용 키 입력 화면										
 				PetAddViewController					펫 등록 화면										
