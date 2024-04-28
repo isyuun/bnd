@@ -1,5 +1,6 @@
-#[iOS] 펫팁 1.0
-###PetTip iOS 가이드																	
+##[iOS] 펫팁 1.0
+
+###PetTip iOS 가이드																
 
 	1	대응 OS 버전																
 		iOS 14																
