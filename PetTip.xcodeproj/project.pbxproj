@@ -329,6 +329,8 @@
 		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
 		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
+		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
+		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
@@ -662,6 +664,8 @@
 		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
 		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
+		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
+		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
 		7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
@@ -797,7 +801,9 @@
 				028625082B47E8D90055E62F /* InviteCreateViewController.swift */,
 				0286250A2B47E8FC0055E62F /* InviteSetKeyViewController.swift */,
 				028625122B4905540055E62F /* PetAddViewController.swift */,
+				7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */,
 				02DB381B2B65F225007D19A1 /* PetModViewController.swift */,
+				7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */,
 				0286251C2B4996E50055E62F /* PetTypeSelectViewController.swift */,
 				0286251E2B4A61880055E62F /* AddressSelectViewController.swift */,
 				0286252E2B4D9AE10055E62F /* CustomerCenterViewController.swift */,
@@ -1694,6 +1700,7 @@
 				0286252D2B4BBFCC0055E62F /* MyPetCreateResponse.swift in Sources */,
 				028625392B4DA0FF0055E62F /* QnAViewController.swift in Sources */,
 				02DB38362B6E2B59007D19A1 /* SelectWalkMarkPetView.swift in Sources */,
+				7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */,
 				020B79472B28772400C0AB2D /* RealTimeListResponse.swift in Sources */,
 				027F76582B4E89A700429AC5 /* NoticeDetailViewController.swift in Sources */,
 				020B794D2B28797E00C0AB2D /* RealTimeList.swift in Sources */,
@@ -1705,6 +1712,7 @@
 				02DB38042B64955A007D19A1 /* PetWeightView.swift in Sources */,
 				0293C62A2B0E43280004F19D /* UTCTimeViewModel.swift in Sources */,
 				02A05B5A2B4790BE00E8ABFA /* SelectInvitePetView.swift in Sources */,
+				7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */,
 				020B795B2B29902200C0AB2D /* WalkHistoryItemView.swift in Sources */,
 				028625232B4A77AD0055E62F /* SggListRequest.swift in Sources */,
 				02A7AAE72B54FC20002F0C03 /* FindIdViewController.swift in Sources */,
