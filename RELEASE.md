@@ -1,6 +1,6 @@
 ## [iOS]멧팁.1.0 배포정보
 
-### 버전 1.1.3 (2) - 3차 - 4/4
+### 버전 1.1.3 (3) - 4차 - 4/29
 0  [Xcode] Distribution failed with errors: Invalid bundle. ... ~Info.plist key~
 0  [Xcode] Distribution failed with errors:Invalid bundle. ... launch storyboard file~
 0  [iOS]ITMS-91053: Missing API declaration
