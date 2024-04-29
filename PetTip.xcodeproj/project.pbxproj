@@ -333,6 +333,7 @@
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
+		7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD347E62BDF678700EFAF59 /* MainViewController2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
 		7BD8DB692BCF5058000755D1 /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB672BCF5058000755D1 /* RELEASE.md */; };
 		7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */; };
@@ -669,6 +670,7 @@
 		7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7BD347E62BDF678700EFAF59 /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7BD8DB672BCF5058000755D1 /* RELEASE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
 		7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 				022B41942B1B910F0057323E /* LoginViewController.swift */,
 				7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */,
 				022B418E2B1B22660057323E /* MainViewController.swift */,
+				7BD347E62BDF678700EFAF59 /* MainViewController2.swift */,
 				022B41A92B1E05510057323E /* Common */,
 				022B41AE2B1E32FC0057323E /* Home */,
 				022B41962B1C43860057323E /* WalkHistory */,
@@ -1695,6 +1698,7 @@
 				02A05AF22B3E849D00E8ABFA /* DclrCreateRequest.swift in Sources */,
 				02DB37FE2B648344007D19A1 /* MyPetWeightListResponse.swift in Sources */,
 				022B41872B1ABC1C0057323E /* PostViewController.swift in Sources */,
+				7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */,
 				02A05B262B404A9800E8ABFA /* AncmntWinnerListResponse.swift in Sources */,
 				0286251B2B49941F0055E62F /* CmmPetListResponse.swift in Sources */,
 				0286252D2B4BBFCC0055E62F /* MyPetCreateResponse.swift in Sources */,

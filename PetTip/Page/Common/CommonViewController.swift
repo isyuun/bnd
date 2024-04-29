@@ -57,13 +57,24 @@ class CommonViewController: LoadingIndicatorViewController {
 
     func processNetworkError(_ error: MyError?) {
         if let error = error {
-            if error.resCode == 403 {
+            if error.resCode == 401 {
                 let userDef = UserDefaults.standard
                 userDef.removeObject(forKey: "accessToken")
                 userDef.removeObject(forKey: "refreshToken")
                 userDef.synchronize()
 
-                self.showToast(msg: "중복 로그인이 감지되었습니다.\n로그인 화면으로 이동합니다.")
+                self.showSimpleAlert(msg: "로그인 세션이 만료 되었습니다.\n로그인 화면으로 이동합니다.")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+                    self.moveLoginPage()
+                })
+                return
+            } else if error.resCode == 403 {
+                let userDef = UserDefaults.standard
+                userDef.removeObject(forKey: "accessToken")
+                userDef.removeObject(forKey: "refreshToken")
+                userDef.synchronize()
+
+                self.showSimpleAlert(msg: "중복 로그인이 감지되었습니다.\n로그인 화면으로 이동합니다.")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
                     self.moveLoginPage()
                 })
@@ -71,7 +82,7 @@ class CommonViewController: LoadingIndicatorViewController {
             }
             if error.resCode != nil && error.resCode != 200 { self.showSimpleAlert(title: "네트워크 오류발생 [코드:\(String(describing: error.resCode))]", msg: String(describing: error.description)) }
         }
-        NSLog("[LOG][I][네트워크][오류확인][오류:\(String(describing: error))][코드:\(String(describing: error?.resCode))][설명:\(String(describing: error?.description))]")
+        NSLog("[LOG][E][네트워크][오류확인][오류:\(String(describing: error))][코드:\(String(describing: error?.resCode))][설명:\(String(describing: error?.description))]")
     }
 
     // MARK: - MOVE LOGIN PAGE : HTTP 403 Duplicate login JWT Token
