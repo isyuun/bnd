@@ -36,7 +36,7 @@ class CommonViewController2: CommonViewController, UITextFieldDelegate {
         toolBar.items = [prevButton, nextButton, flexibleSpace, doneButton]
 
         textFields = findAllTextFields(view: self.view)
-        
+
         for textField in textFields {
             textField.inputAccessoryView = toolBar
             textField.delegate = self
@@ -47,7 +47,7 @@ class CommonViewController2: CommonViewController, UITextFieldDelegate {
         NSLog("[W][LOG][텍스트][textFieldShouldReturn][textField:\(textField)]")
         return false
     }
-    
+
     @objc func prevButtonTapped() {
         prevButton.isEnabled = true
         nextButton.isEnabled = true
@@ -116,8 +116,8 @@ class CommonViewController2: CommonViewController, UITextFieldDelegate {
             return
         }
 
-        if currentIndex == 0 {prevButton.isEnabled = false} else {prevButton.isEnabled = true}
-        if currentIndex == textFields.count - 1 {nextButton.isEnabled = false} else {nextButton.isEnabled = true}
+        if currentIndex == 0 { prevButton.isEnabled = false } else { prevButton.isEnabled = true }
+        if currentIndex == textFields.count - 1 { nextButton.isEnabled = false } else { nextButton.isEnabled = true }
     }
 
     // 현재 포커스를 가진 UITextField 찾기
@@ -181,5 +181,4 @@ class CommonViewController2: CommonViewController, UITextFieldDelegate {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
     }
-
 }

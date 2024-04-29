@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pet Mod View Controller-->
+        <!--Pet Mod View Controller2-->
         <scene sceneID="Sxe-pZ-OUS">
             <objects>
-                <viewController storyboardIdentifier="PetModViewController" id="sS9-VA-T1B" customClass="PetModViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetModViewController" id="sS9-VA-T1B" customClass="PetModViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3GY-0o-bgw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -791,10 +791,10 @@
             </objects>
             <point key="canvasLocation" x="2233" y="-35"/>
         </scene>
-        <!--Pet Add View Controller-->
+        <!--Pet Add View Controller2-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="PetAddViewController" id="Y6W-OH-hqX" customClass="PetAddViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetAddViewController" id="Y6W-OH-hqX" customClass="PetAddViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1199,7 +1199,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="insetX">
-                                                        <real key="value" value="15"/>
+                                                        <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
@@ -1734,10 +1734,10 @@
             </objects>
             <point key="canvasLocation" x="1197.709923664122" y="-35.211267605633807"/>
         </scene>
-        <!--Pet Profile View Controller-->
+        <!--Pet Profile View Controller2-->
         <scene sceneID="nbe-c6-SZF">
             <objects>
-                <viewController storyboardIdentifier="PetProfileViewController" id="duU-vj-4LH" customClass="PetProfileViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetProfileViewController" id="duU-vj-4LH" customClass="PetProfileViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ALJ-Sn-DvR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2428,22 +2428,22 @@
     </scenes>
     <designables>
         <designable name="3ix-pf-pe8">
-            <size key="intrinsicContentSize" width="155" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
         </designable>
         <designable name="5Yh-lb-zHi">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
         <designable name="7wt-k4-7QA">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
         <designable name="LlK-Ii-v7s">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
         <designable name="me2-95-HPu">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
         <designable name="mm3-A5-agI">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
@@ -2462,7 +2462,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

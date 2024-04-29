@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PetAddViewController: CommonViewController {
+class PetAddViewController: CommonViewController3 {
 
     public var memberData: MemberJoinData?
 
@@ -20,10 +20,6 @@ class PetAddViewController: CommonViewController {
 
         showCommonUI()
     }
-
-
-
-
 
     @IBOutlet weak var vw_profileBg: UIView!
     @IBOutlet weak var vw_profileIv: UIView!
@@ -634,10 +630,6 @@ class PetAddViewController: CommonViewController {
     }
 }
 
-
-
-
-
 extension PetAddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
@@ -650,10 +642,6 @@ extension PetAddViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
 }
 
-
-
-
-
 extension PetAddViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
@@ -661,20 +649,12 @@ extension PetAddViewController: BackTitleBarViewProtocol {
     }
 }
 
-
-
-
-
 extension PetAddViewController: PetTypeSelectViewControllerDelegate {
     func selectComplete(pet: CmmPetListData) {
         self.selectedPetKind = pet
         self.lb_petKind.text = self.selectedPetKind?.petNm
     }
 }
-
-
-
-
 
 extension PetAddViewController: AddressSelectViewControllerDelegate {
     func selectComplete(selectedSido: Sido?, selectedSigungu: SggListData?, selectedUpmeondong: UmdListData?) {
@@ -696,11 +676,7 @@ extension PetAddViewController: AddressSelectViewControllerDelegate {
     }
 }
 
-
-
-
-
-extension PetAddViewController: UITextFieldDelegate {
+extension PetAddViewController {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tfSelectedUI(view: textField)
@@ -708,6 +684,10 @@ extension PetAddViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         tfNormalUI(view: textField)
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
     }
 }
 
