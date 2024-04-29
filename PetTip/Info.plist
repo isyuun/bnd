@@ -2,18 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <!-- Invalid bundle. Because your app supports Multitasking on iPad, you need to include the LaunchScreen.storyboard launch storyboard file~ -->
-    <key>UILaunchStoryboardName</key>
-    <string>LaunchScreen</string>
-    <!-- Invalid bundle. The "UlInterfaceOrientationPortrait,UlInterfaceOrientationLandscapeLeft,UlInterfaceOrientationLan dscapeRight" orientations were provided for the UISupportedInterfaceOrientations Info.plist key~ -->
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-        <string>UIInterfaceOrientationPortrait</string>
-        <string>UIInterfaceOrientationPortraitUpsideDown</string>
-        <string>UIInterfaceOrientationLandscapeLeft</string>
-        <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
-    <key>CFBundleURLTypes</key>
+	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
