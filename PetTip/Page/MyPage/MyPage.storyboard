@@ -1101,10 +1101,10 @@
             </objects>
             <point key="canvasLocation" x="2174.8091603053435" y="701.4084507042254"/>
         </scene>
-        <!--Invite Set Key View Controller-->
+        <!--Invite Set Key View Controller2-->
         <scene sceneID="VLr-aE-es5">
             <objects>
-                <viewController id="N5F-3R-4aK" customClass="InviteSetKeyViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N5F-3R-4aK" customClass="InviteSetKeyViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vBr-DS-ZLI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

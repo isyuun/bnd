@@ -69,10 +69,6 @@ class MainViewController: LocationViewController {
         }
     }
 
-
-
-
-
     private let disposeBag = DisposeBag()
 
     var selectedPetIndex = 0
@@ -106,14 +102,14 @@ class MainViewController: LocationViewController {
     }
 
     func requestCurrPetWeekData(_ ownrPetUnqNo: String) {
-        startLoading()
+        //startLoading()
 
         let fomatter = DateFormatter()
         fomatter.dateFormat = "yyyy-MM-dd"
         let searchDay = fomatter.string(from: Date())
 
         let request = WeekRecordRequest(ownrPetUnqNo: ownrPetUnqNo, searchDay: searchDay)
-//        let request = WeekRecordRequest(ownrPetUnqNo: "P20230908000005", searchDay: searchDay)
+        // let request = WeekRecordRequest(ownrPetUnqNo: "P20230908000005", searchDay: searchDay)
         DailyLifeAPI.weekRecord(request: request) { weekRecord, error in
             self.stopLoading()
 
@@ -166,7 +162,7 @@ class MainViewController: LocationViewController {
     }
 
     func dailyLife_PetList() {
-        startLoading()
+        //startLoading()
 
         let request = PetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         DailyLifeAPI.petList(request: request) { petList, error in
@@ -185,7 +181,7 @@ class MainViewController: LocationViewController {
     }
 
     func myPet_list() {
-        startLoading()
+        //startLoading()
 
         let request = MyPetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         MyPetAPI.list(request: request) { myPetList, error in
@@ -256,12 +252,7 @@ class MainViewController: LocationViewController {
         }
     }
 
-
-
-
-
     // MARK: - COMMON UI
-
     @IBOutlet weak var bgWeatherView: UIView!
 
     @IBOutlet weak var bgPetListView: UIView!
@@ -273,7 +264,7 @@ class MainViewController: LocationViewController {
 
         bgPetListView.layer.cornerRadius = 40
         bgPetListView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-//        bgPetListView.layer.masksToBounds = true
+        // bgPetListView.layer.masksToBounds = true
 
         bgPetListView.layer.borderColor = UIColor.init(hex: "#4E608526")?.cgColor
         bgPetListView.layer.borderWidth = 1
@@ -287,8 +278,8 @@ class MainViewController: LocationViewController {
         btnWalkGo.layer.shadowRadius = 2
         btnWalkGo.layer.shadowOpacity = 0.2
         btnWalkGo.layer.shadowOffset = CGSize(width: 2, height: 4)
-//        btnWalkGo.setBackgroundColor(UIColor(hex: "#ff4783f5")!, for: UIControl.State.normal)
-//        btnWalkGo.setBackgroundColor(UIColor(hex: "#ff4B64F5")!, for: UIControl.State.highlighted)
+        // btnWalkGo.setBackgroundColor(UIColor(hex: "#ff4783f5")!, for: UIControl.State.normal)
+        // btnWalkGo.setBackgroundColor(UIColor(hex: "#ff4B64F5")!, for: UIControl.State.highlighted)
 
         lbCurrPetKind.text = ""
         lbCurrPetNm.text = ""
@@ -315,12 +306,7 @@ class MainViewController: LocationViewController {
         })
     }
 
-
-
-
-
     // MARK: - SELECTED PET INFO
-
     @IBOutlet weak var lbCurrPetKind: UILabel!
     @IBOutlet weak var lbCurrPetNm: UILabel!
 
@@ -391,12 +377,7 @@ class MainViewController: LocationViewController {
         bgCompPetWalkDistIcon.layer.cornerRadius = 10
     }
 
-
-
-
-
     // MARK: - SELECT MY PET
-
     var selectPetView: SelectPetView! = nil
 
     func showSelectMyPet() {
@@ -407,7 +388,7 @@ class MainViewController: LocationViewController {
         bottomSheetVC = BottomSheetViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         bottomSheetVC.dismissIndicatorView.isHidden = true
-//        bottomSheetVC.isDynamicHeight = true
+        // bottomSheetVC.isDynamicHeight = true
         if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
             bottomSheetVC.addContentSubView(v: v)
             v.initialize()
@@ -418,12 +399,7 @@ class MainViewController: LocationViewController {
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
 
-
-
-
-
     // MARK: - COMPANION PET LIST
-
     var bottomSheetVC: BottomSheetViewController! = nil
     var compPetListView: CompPetListView! = nil
 
@@ -453,12 +429,7 @@ class MainViewController: LocationViewController {
         showCompPetListBottomSheet()
     }
 
-
-
-
-
     // MARK: - WEATHER INFO
-
     @IBOutlet weak var iv_weather: UIImageView!
     @IBOutlet weak var lb_temp: UILabel!
     @IBOutlet weak var lb_per: UILabel!
@@ -472,7 +443,7 @@ class MainViewController: LocationViewController {
 
         guard let recentLoc = locations.last else { return }
 
-        startLoading()
+        //startLoading()
 
         let lat = (recentLoc.coordinate.latitude)
         let lon = (recentLoc.coordinate.longitude)
@@ -548,12 +519,7 @@ class MainViewController: LocationViewController {
         }
     }
 
-
-
-
-
     // MARK: - REALTIME STORY
-
     @IBOutlet weak var storyCollectionView: UICollectionView!
 
     var realTimeList: RealTimeList? = nil
@@ -561,7 +527,7 @@ class MainViewController: LocationViewController {
     var currStoryItemIndex: CGFloat = 0
 
     func story_realTimeList() {
-        startLoading()
+        //startLoading()
 
         let request = RealTimeListRequest()
         StoryAPI.realTimeList(request: request) { realTimeList, error in
@@ -608,12 +574,7 @@ class MainViewController: LocationViewController {
         self.tabBarController?.selectedIndex = 2
     }
 
-
-
-
-
     // MARK: - FSPager
-
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
             pagerView.register(UINib.init(nibName: "PetProfItemView", bundle: nil), forCellWithReuseIdentifier: "PetProfItemView")
@@ -632,12 +593,7 @@ class MainViewController: LocationViewController {
         self.pagerView.decelerationDistance = 1 // FSPagerViewAutomaticDistance
     }
 
-
-
-
-
     // MARK: - Top LogoTitleBar
-
     @IBOutlet weak var titleBarView: UIView!
 
     var titleBarPfImageView: UIImageView!
@@ -654,12 +610,7 @@ class MainViewController: LocationViewController {
         }
     }
 
-
-
-
-
     // MARK: - Bottom TabBar
-
     private func customBottomTabBar() {
         if let tbc = self.tabBarController {
             tbc.delegate = self
@@ -690,12 +641,7 @@ class MainViewController: LocationViewController {
     }
 }
 
-
-
-
-
 // MARK: - FSPager Delegate
-
 extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
@@ -744,12 +690,7 @@ extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     }
 }
 
-
-
-
-
 // MARK: - Realtime Story Delegate
-
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -793,12 +734,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-
-
-
-
 // MARK: - COMPANION PET LIST DELEGATE
-
 extension MainViewController: CompPetListViewProtocol {
     func onAddPet() {
         bottomSheetVC.hideBottomSheetAndGoBack()
@@ -823,12 +759,7 @@ extension MainViewController: CompPetListViewProtocol {
     }
 }
 
-
-
-
-
 // MARK: - LOGO TITLE BAR VIEW DELEGATE
-
 extension MainViewController: LogoTitleBarViewProtocol {
     func onShowSelectMyPet() {
         showSelectMyPet()
@@ -839,12 +770,7 @@ extension MainViewController: LogoTitleBarViewProtocol {
     }
 }
 
-
-
-
-
 // MARK: - SELECT PET VIEW DELEGATE
-
 extension MainViewController: SelectPetViewProtocol {
     func onSelectPet(_ selectedIdx: Int) {
         bottomSheetVC.hideBottomSheetAndGoBack()

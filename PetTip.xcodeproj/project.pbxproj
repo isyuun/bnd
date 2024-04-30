@@ -331,6 +331,7 @@
 		7B250FCF2BDFCBF600171EFD /* CommonPopupView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCE2BDFCBF600171EFD /* CommonPopupView2.swift */; };
 		7B250FD12BDFCC5D00171EFD /* PetWeightView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */; };
 		7B250FD32BE06FC700171EFD /* MyPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */; };
+		7B250FD52BE0CFE200171EFD /* InviteSetKeyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */; };
 		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
 		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
@@ -672,6 +673,7 @@
 		7B250FCE2BDFCBF600171EFD /* CommonPopupView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPopupView2.swift; sourceTree = "<group>"; };
 		7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightView2.swift; sourceTree = "<group>"; };
 		7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController2.swift; sourceTree = "<group>"; };
+		7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSetKeyViewController2.swift; sourceTree = "<group>"; };
 		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
 		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
@@ -814,6 +816,7 @@
 				02A05B432B42A46900E8ABFA /* UserInfoViewController.swift */,
 				028625082B47E8D90055E62F /* InviteCreateViewController.swift */,
 				0286250A2B47E8FC0055E62F /* InviteSetKeyViewController.swift */,
+				7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */,
 				028625122B4905540055E62F /* PetAddViewController.swift */,
 				7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */,
 				02DB381B2B65F225007D19A1 /* PetModViewController.swift */,
@@ -917,17 +920,17 @@
 		0251FD522B11939C00F35EF8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				0251FD612B16F7F400F35EF8 /* UIColor.swift */,
-				0251FD552B11B4FB00F35EF8 /* UIButton.swift */,
 				0251FD6D2B1871F400F35EF8 /* UIView.swift */,
+				0251FD612B16F7F400F35EF8 /* UIColor.swift */,
+				022B41A32B1CB7E10057323E /* UITextField.swift */,
+				0251FD552B11B4FB00F35EF8 /* UIButton.swift */,
 				0251FD732B1909BA00F35EF8 /* UIImage.swift */,
-				02C1140A2B5CBD9900A14F77 /* UIViewController.swift */,
 				7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */,
+				02C1140A2B5CBD9900A14F77 /* UIViewController.swift */,
 				0251FD6F2B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift */,
 				022B41802B19AABD0057323E /* BottomSheetViewController.swift */,
 				022B41902B1B649D0057323E /* CALayer.swift */,
 				022B41922B1B67390057323E /* CustomTabBar.swift */,
-				022B41A32B1CB7E10057323E /* UITextField.swift */,
 				02A05B1B2B3FAC4200E8ABFA /* Date.swift */,
 				02A05B412B42907700E8ABFA /* Util.swift */,
 				02A05B492B433A4900E8ABFA /* String.swift */,
@@ -1648,6 +1651,7 @@
 				02A05AB12B3805DF00E8ABFA /* CmntCreateResponse.swift in Sources */,
 				020B79852B2EC84600C0AB2D /* CommnunityContainerViewController.swift in Sources */,
 				02E3FC7F2B257CE700A1CE62 /* KeychainService.swift in Sources */,
+				7B250FD52BE0CFE200171EFD /* InviteSetKeyViewController2.swift in Sources */,
 				02DB38182B65E009007D19A1 /* MyPetRelCloseRequest.swift in Sources */,
 				02A7AAA22B4FBE5C002F0C03 /* QnAListRequest.swift in Sources */,
 				02E3FC672B25490F00A1CE62 /* LoginRequest.swift in Sources */,

@@ -59,7 +59,6 @@ class PetProfileViewController: CommonViewController {
     @IBOutlet weak var sv_member: UIStackView!
 
     func showCommonUI() {
-
         initProfile()
     }
 
@@ -208,8 +207,8 @@ class PetProfileViewController: CommonViewController {
     // MARK: - PET WEIGHT
     private var arrWeight: [MyPetWeightData]?
 
-    private var dayData: [String] = []
-    private var weightData: [Double]! = []
+    var dayData: [String] = []
+    var weightData: [Double]! = []
     // private var dayData: [String] = ["11월02일", "11월03일", "11월04일", "11월05일", "11월06일", "11월07일", "11월08일", "11월09일", "11월10일"]
     // private var weightData: [Double]! = [100, 345, 20, 120, 90, 300, 450, 220, 120]
     // private var dayData = ["11월02일", "11월03일"]
@@ -298,7 +297,7 @@ class PetProfileViewController: CommonViewController {
         return lineDataEntries
     }
 
-    private func weight_list() {
+    func weight_list() {
         guard let petInfo = petInfo else { return }
 
         self.startLoading()
@@ -314,8 +313,13 @@ class PetProfileViewController: CommonViewController {
                     self.dayData.removeAll()
                     self.weightData.removeAll()
                     for i in 0..<arrWeight.count {
-                        self.dayData.append(arrWeight[i].crtrYmd)
-                        self.weightData.append(Double(arrWeight[i].wghtVl))
+                        var date = arrWeight[i].crtrYmd
+                        var wght = arrWeight[i].wghtVl
+                        let index = arrWeight[i].crtrYmd.index(arrWeight[i].crtrYmd.startIndex, offsetBy: 5)
+                        date.insert("\n", at: index)
+                        print("\(date) = \(wght)")
+                        self.dayData.append(date)
+                        self.weightData.append(Double(wght))
                     }
 
                     self.arrWeight = arrWeight

@@ -8,7 +8,6 @@
 import UIKit
 
 class PetWeightView2: PetWeightView, UITextViewDelegate {
-
     override func initialize(viewMode: PetWeightViewMode) {
         super.initialize(viewMode: viewMode)
         tf_weight.keyboardType = .decimalPad
