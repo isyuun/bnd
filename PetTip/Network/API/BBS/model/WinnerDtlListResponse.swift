@@ -1,5 +1,5 @@
 //
-//  AncmntWinnerDtlListResponse.swift
+//  WinnerDtlListResponse.swift
 //  PetTip
 //
 //  Created by carebiz on 12/31/23.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct AncmntWinnerDtlListResponse: Codable {
-    let data: AncmntWinnerDtlListData
+struct WinnerDtlListResponse: Codable {
+    let data: WinnerDtlListData
     let statusCode: Int
     let resultMessage: String
     let detailMessage: JSONNull?
 }
 
 // MARK: - DataClass
-struct AncmntWinnerDtlListData: Codable {
+struct WinnerDtlListData: Codable {
     let pstSn: Int
     let userID: JSONNull?
     let bbsSn, upPstNo: Int

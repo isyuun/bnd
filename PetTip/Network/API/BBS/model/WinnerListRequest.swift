@@ -1,5 +1,5 @@
 //
-//  AncmntWinnerListRequest.swift
+//  WinnerListRequest.swift
 //  PetTip
 //
 //  Created by carebiz on 12/30/23.
@@ -16,7 +16,7 @@ import Foundation
 }
 */
 
-struct AncmntWinnerListRequest: Encodable {
+struct WinnerListRequest: Encodable {
     let bbsSn: Int = 11
     let page: Int
     let pageSize: Int

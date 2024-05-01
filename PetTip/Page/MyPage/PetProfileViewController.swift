@@ -103,12 +103,12 @@ class PetProfileViewController: CommonViewController {
     }
 
     // MARK: - CONN PET DETAIL
-    private var petDetailInfo: MyPetDetailData?
+    var petDetailInfo: MyPetDetailData?
 
     private func detail() {
         guard let petInfo = petInfo else { return }
 
-        self.startLoading()
+        //self.startLoading()
 
         let request = MyPetDetailRequest(ownrPetUnqNo: petInfo.ownrPetUnqNo, petRprsYn: petInfo.petRprsYn, userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         MyPetAPI.detail(request: request) { response, error in
@@ -137,7 +137,7 @@ class PetProfileViewController: CommonViewController {
         }
     }
 
-    private func showProfileInfo() {
+    func showProfileInfo() {
         guard let petDetailInfo = petDetailInfo else { return }
 
         if let petImg = petDetailInfo.petRprsImgAddr {
@@ -181,7 +181,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     private func rel_close(memberList: MemberList) {
-        self.startLoading()
+        //self.startLoading()
 
         let request = MyPetRelCloseRequest(ownrPetUnqNo: memberList.ownrPetUnqNo, petRelUnqNo: memberList.petRelUnqNo)
         MyPetAPI.relClose(request: request) { response, error in
@@ -300,7 +300,7 @@ class PetProfileViewController: CommonViewController {
     func weight_list() {
         guard let petInfo = petInfo else { return }
 
-        self.startLoading()
+        //self.startLoading()
 
         let request = MyPetWeightListRequest(ownrPetUnqNo: petInfo.ownrPetUnqNo)
         MyPetAPI.weightList(request: request) { response, error in
@@ -314,7 +314,7 @@ class PetProfileViewController: CommonViewController {
                     self.weightData.removeAll()
                     for i in 0..<arrWeight.count {
                         var date = arrWeight[i].crtrYmd
-                        var wght = arrWeight[i].wghtVl
+                        let wght = arrWeight[i].wghtVl
                         let index = arrWeight[i].crtrYmd.index(arrWeight[i].crtrYmd.startIndex, offsetBy: 5)
                         date.insert("\n", at: index)
                         print("\(date) = \(wght)")
@@ -392,7 +392,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     private func weight_create(crtrYmd: String, ownrPetUnqNo: String, wghtVl: String) {
-        self.startLoading()
+        //self.startLoading()
 
         let request = MyPetWeightCreateRequest(crtrYmd: crtrYmd, ownrPetUnqNo: ownrPetUnqNo, wghtVl: wghtVl)
         MyPetAPI.weightCreate(request: request) { response, error in
@@ -417,7 +417,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     private func weight_update(crtrYmd: String, petDtlUnqNo: Int, wghtVl: String) {
-        self.startLoading()
+        //self.startLoading()
 
         let request = MyPetWeightUpdateRequest(crtrYmd: crtrYmd, petDtlUnqNo: petDtlUnqNo, wghtVl: wghtVl)
         MyPetAPI.weightUpdate(request: request) { response, error in
@@ -442,7 +442,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     private func weight_delete(petDtlUnqNo: Int) {
-        self.startLoading()
+        //self.startLoading()
 
         let request = MyPetWeightDeleteRequest(petDtlUnqNo: petDtlUnqNo)
         MyPetAPI.weightDelete(request: request) { response, error in

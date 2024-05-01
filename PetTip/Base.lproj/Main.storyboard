@@ -3006,7 +3006,7 @@
             <objects>
                 <viewController id="fdW-M5-u3o" customClass="CommnunityContainerViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tfz-gs-Dgp">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="730"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="rWR-xL-5KV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3018,8 +3018,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ksD-bF-nzH"/>
-        <segue reference="DfS-D8-BTo"/>
+        <segue reference="vfl-ne-gmJ"/>
+        <segue reference="ISm-sO-KAv"/>
         <segue reference="8xf-V6-Ark"/>
     </inferredMetricsTieBreakers>
     <resources>

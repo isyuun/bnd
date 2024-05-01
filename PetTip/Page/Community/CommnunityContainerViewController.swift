@@ -30,7 +30,7 @@ class CommnunityContainerViewController : TabmanViewController {
     
     let secondVC = UIStoryboard.init(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "EventListViewController") as! EventListViewController
     
-    let thirdVC = UIStoryboard.init(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "AncmntWinnerListViewController") as! AncmntWinnerListViewController
+    let thirdVC = UIStoryboard.init(name: "Community", bundle: nil).instantiateViewController(withIdentifier: "WinnerListViewController") as! WinnerListViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()

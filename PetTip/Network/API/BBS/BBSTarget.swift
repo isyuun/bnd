@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 enum BBSTarget {
-    case ancmntWinnerList(AncmntWinnerListRequest)
-    case ancmntWinnerDtlList(AncmntWinnerDtlListRequest)
+    case ancmntWinnerList(WinnerListRequest)
+    case ancmntWinnerDtlList(WinnerDtlListRequest)
     case eventList(EventListRequest)
     case eventDtlList(EventDtlListRequest)
     case noticeList(NoticeListRequest)

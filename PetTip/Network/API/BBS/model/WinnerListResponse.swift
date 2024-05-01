@@ -1,5 +1,5 @@
 //
-//  AncmntWinnerListResponse.swift
+//  WinnerListResponse.swift
 //  PetTip
 //
 //  Created by carebiz on 12/30/23.
@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct AncmntWinnerListResponse: Codable {
-    let data: AncmntWinnerListData
+struct WinnerListResponse: Codable {
+    let data: WinnerListData
     let statusCode: Int
     let resultMessage: String
     let detailMessage: JSONNull?
 }
 
-// MARK: - AncmntWinnerListData
-struct AncmntWinnerListData: Codable {
-    let bbsAncmntWinnerList: [BBSAncmntWinnerList]
+// MARK: - WinnerListData
+struct WinnerListData: Codable {
+    let bbsWinnerList: [BBSWinnerList]
     let paginate: Paginate?
 }
 
-// MARK: - BBSAncmntWinnerList
-struct BBSAncmntWinnerList: Codable {
+// MARK: - BBSWinnerList
+struct BBSWinnerList: Codable {
     let pstSn: Int
     let rprsImgURL: String
     let pstTTL: String

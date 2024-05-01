@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct BBSAPI {
-    static func ancmntWinnerList(request: AncmntWinnerListRequest, completion: @escaping (_ succeed: AncmntWinnerListData?, _ failed: MyError?) -> Void) {
+    static func ancmntWinnerList(request: WinnerListRequest, completion: @escaping (_ succeed: WinnerListData?, _ failed: MyError?) -> Void) {
         if UserDefaults.standard.value(forKey: "accessToken") == nil
             || UserDefaults.standard.value(forKey: "refreshToken") == nil  {
             return
@@ -22,7 +22,7 @@ struct BBSAPI {
                                                                         credential: credential)
         
         API.session.request(BBSTarget.ancmntWinnerList(request), interceptor: myAuthencitationInterceptor)
-            .responseDecodable { (response: AFDataResponse<AncmntWinnerListResponse>) in
+            .responseDecodable { (response: AFDataResponse<WinnerListResponse>) in
                 switch response.result {
                 case .success(let response):
                     completion(response.data, nil)
@@ -35,7 +35,7 @@ struct BBSAPI {
             }
     }
     
-    static func ancmntWinnerDtlList(request: AncmntWinnerDtlListRequest, completion: @escaping (_ succeed: AncmntWinnerDtlListData?, _ failed: MyError?) -> Void) {
+    static func ancmntWinnerDtlList(request: WinnerDtlListRequest, completion: @escaping (_ succeed: WinnerDtlListData?, _ failed: MyError?) -> Void) {
         if UserDefaults.standard.value(forKey: "accessToken") == nil
             || UserDefaults.standard.value(forKey: "refreshToken") == nil  {
             return
@@ -48,7 +48,7 @@ struct BBSAPI {
                                                                         credential: credential)
         
         API.session.request(BBSTarget.ancmntWinnerDtlList(request), interceptor: myAuthencitationInterceptor)
-            .responseDecodable { (response: AFDataResponse<AncmntWinnerDtlListResponse>) in
+            .responseDecodable { (response: AFDataResponse<WinnerDtlListResponse>) in
                 switch response.result {
                 case .success(let response):
                     completion(response.data, nil)

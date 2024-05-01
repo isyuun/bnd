@@ -1,32 +1,32 @@
 //
-//  AncmntListItemView.swift
+//  EventListViewItem.swift
 //  PetTip
 //
 //  Created by carebiz on 12/30/23.
 //
 
-import Foundation
+import UIKit
 import AlamofireImage
 
-class AncmntListItemView: UITableViewCell {
+class EventListViewItem : UITableViewCell {
     
-    @IBOutlet weak var iv: UIImageView!
-    @IBOutlet weak var lb_imageViewDisable: UILabel!
+    @IBOutlet weak var iv_event: UIImageView!
+    @IBOutlet weak var lb_eventImageViewDisable: UILabel!
     @IBOutlet weak var lb_title: UILabel!
     @IBOutlet weak var lb_dt: UILabel!
     
     public var isEnable: Bool = true
     
-    func initialize(item: BBSAncmntWinnerList) {
-        iv.af.setImage(
-            withURL: URL(string: item.rprsImgURL)!,
+    func initialize(event: BBSEvntList) {
+        iv_event.af.setImage(
+            withURL: URL(string: event.rprsImgURL)!,
             placeholderImage: nil,
-            filter: AspectScaledToFillSizeFilter(size: iv.frame.size)
+            filter: AspectScaledToFillSizeFilter(size: iv_event.frame.size)
         )
         
-        lb_title.text = item.pstTTL
+        lb_title.text = event.pstTTL
         
-        if let pstgBgngDt = item.pstgBgngDt, let pstgEndDt = item.pstgEndDt {
+        if let pstgBgngDt = event.pstgBgngDt, let pstgEndDt = event.pstgEndDt {
             lb_dt.text = String("\(pstgBgngDt) ~ \(pstgEndDt)")
             
             let formatter = DateFormatter()
@@ -55,17 +55,17 @@ class AncmntListItemView: UITableViewCell {
             }
             
             if isEnable {
-                lb_imageViewDisable.isHidden = true
+                lb_eventImageViewDisable.isHidden = true
                 lb_title.textColor = UIColor.darkText
                 lb_dt.textColor = UIColor.init(hex: "#FF737980")
                 
             } else {
-                lb_imageViewDisable.isHidden = false
-                lb_imageViewDisable.backgroundColor = UIColor.init(hex: "#99000000")
+                lb_eventImageViewDisable.isHidden = false
+                lb_eventImageViewDisable.backgroundColor = UIColor.init(hex: "#99000000")
                 if isBefore {
-                    lb_imageViewDisable.text = "시작전"
+                    lb_eventImageViewDisable.text = "시작전 이벤트"
                 } else if isAfter {
-                    lb_imageViewDisable.text = "종료"
+                    lb_eventImageViewDisable.text = "종료된 이벤트"
                 }
                 lb_title.textColor = UIColor.init(hex: "#FFB5B9BE")
                 lb_dt.textColor = UIColor.init(hex: "#FFB5B9BE")
@@ -74,7 +74,7 @@ class AncmntListItemView: UITableViewCell {
         } else {
             lb_dt.text = ""
             
-            lb_imageViewDisable.isHidden = true
+            lb_eventImageViewDisable.isHidden = true
             lb_title.textColor = UIColor.darkText
             lb_dt.textColor = UIColor.init(hex: "#FF737980")
         }

@@ -1,5 +1,5 @@
 //
-//  AncmntWinnerDetailViewController.swift
+//  WinnerDetailViewController.swift
 //  PetTip
 //
 //  Created by carebiz on 12/30/23.
@@ -9,7 +9,7 @@ import UIKit
 import AlamofireImage
 import WebKit
 
-class AncmntWinnerDetailViewController: CommonViewController {
+class WinnerDetailViewController: CommonViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class AncmntWinnerDetailViewController: CommonViewController {
     func ancmntWinner_dtl() {
         startLoading()
         
-        let request = AncmntWinnerDtlListRequest(pstSn: pstSn!)
+        let request = WinnerDtlListRequest(pstSn: pstSn!)
         BBSAPI.ancmntWinnerDtlList(request: request) { ancmntWinnerListData, error in
             self.stopLoading()
          
@@ -83,7 +83,7 @@ class AncmntWinnerDetailViewController: CommonViewController {
 
 
 
-extension AncmntWinnerDetailViewController: BackTitleBarViewProtocol {
+extension WinnerDetailViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
@@ -95,7 +95,7 @@ extension AncmntWinnerDetailViewController: BackTitleBarViewProtocol {
 
 // MARK: - WebView Delegate
 
-extension AncmntWinnerDetailViewController: WKNavigationDelegate {
+extension WinnerDetailViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
         webView.evaluateJavaScript(jscript)

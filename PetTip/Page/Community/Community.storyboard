@@ -337,10 +337,10 @@
             </objects>
             <point key="canvasLocation" x="-137" y="736"/>
         </scene>
-        <!--Ancmnt Winner List View Controller-->
+        <!--Winner List View Controller-->
         <scene sceneID="fTo-of-BGR">
             <objects>
-                <viewController storyboardIdentifier="AncmntWinnerListViewController" id="Xm2-uq-hYg" customClass="AncmntWinnerListViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WinnerListViewController" id="Xm2-uq-hYg" customClass="WinnerListViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1uV-eK-oKW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,17 +361,17 @@
                     </view>
                     <connections>
                         <outlet property="tb_list" destination="y7N-dC-LSF" id="5C1-ak-wYX"/>
-                        <segue destination="QRy-YI-54k" kind="show" identifier="segueAncmntWinnerListToDetail" id="who-ZV-7Bk"/>
+                        <segue destination="QRy-YI-54k" kind="show" identifier="segueWinnerListToDetail" id="who-ZV-7Bk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwU-nR-sF7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-138.1679389312977" y="1520.4225352112676"/>
         </scene>
-        <!--Ancmnt Winner Detail View Controller-->
+        <!--Winner Detail View Controller-->
         <scene sceneID="DO2-PL-U8c">
             <objects>
-                <viewController id="QRy-YI-54k" customClass="AncmntWinnerDetailViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QRy-YI-54k" customClass="WinnerDetailViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Anu-7A-GCo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2633,16 +2633,16 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

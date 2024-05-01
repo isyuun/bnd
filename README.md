@@ -95,9 +95,11 @@
                 StoryItemView                           스토리 목록 아이템 뷰
                 CommunityCommentView                    스토리 상세화면 코멘트 뷰
                 EventListViewController                 이벤트 목록 화면
+                EventListViewItem                       이벤트 목록 테이블 아이템 뷰
                 EventDetailViewController               이벤트 상세 화면
-                AncmntListItemView                      이벤트 목록 테이블 아이템 뷰
-                AncmntWinnerDetailViewController        당첨자 발표 상세 화면
+                WinnerListViewController                당첨자 목록 화면
+                WinnerListViewItem                      당첨자 목록 테이블 아이템 뷰
+                WinnerDetailViewController              당첨자 발표 상세 화면
                 StoryAddViewController                  스토리 등록 화면
                 DailyLifeGubunItemView                  일상 구분 아이템 뷰
                 StoryModifyViewController               스토리 수정 화면

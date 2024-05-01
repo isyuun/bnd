@@ -26,7 +26,7 @@ class EventListViewController: CommonViewController {
     }
     
     func showEventList() {
-        tb_list.register(UINib(nibName: "EventListItemView", bundle: nil), forCellReuseIdentifier: "EventListItemView")
+        tb_list.register(UINib(nibName: "EventListViewItem", bundle: nil), forCellReuseIdentifier: "EventListViewItem")
         tb_list.delegate = self
         tb_list.dataSource = self
         tb_list.separatorStyle = .none
@@ -100,7 +100,7 @@ extension EventListViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventListItemView", for: indexPath) as! EventListItemView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventListViewItem", for: indexPath) as! EventListViewItem
         cell.initialize(event: arrEventList[indexPath.row])
         return cell
     }
@@ -114,7 +114,7 @@ extension EventListViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventListItemView", for: indexPath) as! EventListItemView
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventListViewItem", for: indexPath) as! EventListViewItem
         cell.initialize(event: arrEventList[indexPath.row])
         if cell.isEnable {
             self.performSegue(withIdentifier: "segueEventListToDetail", sender: arrEventList[indexPath.row].pstSn)

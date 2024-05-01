@@ -2428,22 +2428,22 @@
     </scenes>
     <designables>
         <designable name="3ix-pf-pe8">
-            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="135" height="18.666666666666668"/>
         </designable>
         <designable name="5Yh-lb-zHi">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="7wt-k4-7QA">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="LlK-Ii-v7s">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
         <designable name="me2-95-HPu">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="mm3-A5-agI">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

@@ -1,5 +1,5 @@
 //
-//  AncmntWinnerDtlListRequest.swift
+//  WinnerDtlListRequest.swift
 //  PetTip
 //
 //  Created by carebiz on 12/31/23.
@@ -13,6 +13,6 @@ import Foundation
 }
 */
 
-struct AncmntWinnerDtlListRequest: Encodable {
+struct WinnerDtlListRequest: Encodable {
     let pstSn: Int
 }
