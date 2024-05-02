@@ -335,6 +335,8 @@
 		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
 		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
 		7B3C4EF42BE33BA30059EE82 /* WinnerListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */; };
+		7B3C4EF62BE366E50059EE82 /* CommonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */; };
+		7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
 		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
@@ -679,6 +681,8 @@
 		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
 		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
 		7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerListViewController2.swift; sourceTree = "<group>"; };
+		7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListViewController.swift; sourceTree = "<group>"; };
+		7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewController2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
 		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
@@ -789,6 +793,7 @@
 				022B419A2B1C44AC0057323E /* CommunityViewController.swift */,
 				020B79842B2EC84600C0AB2D /* CommnunityContainerViewController.swift */,
 				020B79862B2ED64A00C0AB2D /* StoryListViewController.swift */,
+				7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */,
 				02A05A7B2B318C8700E8ABFA /* StoryDetailViewController.swift */,
 				020B79882B2F3F2C00C0AB2D /* StoryItemView.swift */,
 				02A05AAA2B36658600E8ABFA /* CommunityCommentView.swift */,
@@ -862,6 +867,7 @@
 			isa = PBXGroup;
 			children = (
 				022B41882B1ABC7D0057323E /* CommonViewController.swift */,
+				7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */,
 				7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */,
 				7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */,
 				02A05A7D2B31A27900E8ABFA /* CommonDetailViewController.swift */,
@@ -1695,6 +1701,7 @@
 				02E3FC742B25762300A1CE62 /* RefreshTokenRequest.swift in Sources */,
 				02A547792B0EE1300035E07F /* UTCTimeViewController.swift in Sources */,
 				02A05B462B43144600E8ABFA /* ChkNcknmRequest.swift in Sources */,
+				7B3C4EF62BE366E50059EE82 /* CommonListViewController.swift in Sources */,
 				02E3FC782B257A7500A1CE62 /* RefreshToken.swift in Sources */,
 				02A05B2E2B404FC300E8ABFA /* WinnerDetailViewController.swift in Sources */,
 				02DB38282B68CA09007D19A1 /* SNSJoinViewcontroller.swift in Sources */,
@@ -1716,6 +1723,7 @@
 				7B250FCF2BDFCBF600171EFD /* CommonPopupView2.swift in Sources */,
 				02A05B3A2B4133EC00E8ABFA /* MyPageCompPetListItemView.swift in Sources */,
 				02A05AD62B3C4B7500E8ABFA /* CmntDelete.swift in Sources */,
+				7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */,
 				02A05B242B404A8900E8ABFA /* WinnerListRequest.swift in Sources */,
 				022B419B2B1C44AC0057323E /* CommunityViewController.swift in Sources */,
 				02A7AAE92B54FC2D002F0C03 /* FindPwViewController.swift in Sources */,

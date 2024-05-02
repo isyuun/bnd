@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventListViewController: CommonViewController {
+class EventListViewController: CommonListViewController {
 
     @IBOutlet weak var tb_list: UITableView!
 

@@ -48,8 +48,8 @@ extension BBSTarget: TargetType {
 
     var path: String {
         switch self {
-        case .winnerList: return "/winner/list"
-        case .winnerDtlList: return "/winner/dtl/list"
+        case .winnerList: return "/ancmntWinner/list"
+        case .winnerDtlList: return "/ancmntWinner/dtl/list"
         case .eventList: return "/event/list"
         case .eventDtlList: return "/event/dtl/list"
         case .noticeList: return "/ntc/list"

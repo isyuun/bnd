@@ -7,8 +7,8 @@
 
 import UIKit
 
-class WinnerListViewController: CommonViewController {
-    
+class WinnerListViewController: CommonListViewController {
+
     @IBOutlet weak var tb_list: UITableView!
     
     var tabBarContainer: CommnunityContainerViewController?
