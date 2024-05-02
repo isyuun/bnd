@@ -1,5 +1,7 @@
 ## [iOS]멧팁.1.0 배포정보
 
+### 버전 1.1.4 (1) - 5차 - 5/??
+
 ### 버전 1.1.3 (3) - 4차 - 4/29
 0  [Xcode] Distribution failed with errors: Invalid bundle. ... ~Info.plist key~
 0  [Xcode] Distribution failed with errors:Invalid bundle. ... launch storyboard file~
@@ -26,7 +28,6 @@
 2. 로그인 로고 변경 (케어펫 -> 펫팁)
 
 ### 버전 1.1.1 (1) - 1/2차 - 4/1
-
 1. Guideline 1.2 → 신고시 이력 라벨/경고 추가
 2. Guideline 2.3 → 설명란 “펫시터” 삭제
 3. Guideline 2.3.3. → iPad 이미지 올림

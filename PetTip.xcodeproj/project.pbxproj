@@ -342,6 +342,7 @@
 		7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD347E62BDF678700EFAF59 /* MainViewController2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
 		7BD8DB692BCF5058000755D1 /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB672BCF5058000755D1 /* RELEASE.md */; };
+		7BE3F1992BE22E5200FDFCCA /* EventListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */; };
 		7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */; };
 /* End PBXBuildFile section */
 
@@ -685,6 +686,7 @@
 		7BD347E62BDF678700EFAF59 /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7BD8DB672BCF5058000755D1 /* RELEASE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
+		7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController2.swift; sourceTree = "<group>"; };
 		7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ED9599A85857899956A08B /* Pods-PetTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.release.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -789,6 +791,7 @@
 				02A05AAA2B36658600E8ABFA /* CommunityCommentView.swift */,
 				02A05AAB2B36658600E8ABFA /* CommunityCommentView.xib */,
 				02A05B152B3F9A9A00E8ABFA /* EventListViewController.swift */,
+				7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */,
 				02A05B172B3FA2DE00E8ABFA /* EventListViewItem.swift */,
 				02A05B192B3FA2F700E8ABFA /* EventListViewItem.xib */,
 				02A05B1D2B3FD0BE00E8ABFA /* EventDetailViewController.swift */,
@@ -1722,6 +1725,7 @@
 				02DB37FE2B648344007D19A1 /* MyPetWeightListResponse.swift in Sources */,
 				022B41872B1ABC1C0057323E /* PostViewController.swift in Sources */,
 				7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */,
+				7BE3F1992BE22E5200FDFCCA /* EventListViewController2.swift in Sources */,
 				02A05B262B404A9800E8ABFA /* WinnerListResponse.swift in Sources */,
 				0286251B2B49941F0055E62F /* CmmPetListResponse.swift in Sources */,
 				0286252D2B4BBFCC0055E62F /* MyPetCreateResponse.swift in Sources */,
