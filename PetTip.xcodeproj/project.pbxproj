@@ -783,6 +783,7 @@
 		022B41992B1C44890057323E /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				020B79822B2E8A9D00C0AB2D /* Community.storyboard */,
 				022B419A2B1C44AC0057323E /* CommunityViewController.swift */,
 				020B79842B2EC84600C0AB2D /* CommnunityContainerViewController.swift */,
 				020B79862B2ED64A00C0AB2D /* StoryListViewController.swift */,
@@ -802,7 +803,6 @@
 				02C114062B5A8B0B00A14F77 /* StoryAddViewController.swift */,
 				02C114082B5B88B500A14F77 /* DailyLifeGubunItemView.swift */,
 				02BFEDD12B5E8C7B000B1D4D /* StoryModifyViewController.swift */,
-				020B79822B2E8A9D00C0AB2D /* Community.storyboard */,
 			);
 			path = Community;
 			sourceTree = "<group>";
