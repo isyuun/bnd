@@ -334,6 +334,7 @@
 		7B250FD52BE0CFE200171EFD /* InviteSetKeyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */; };
 		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
 		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
+		7B3C4EF42BE33BA30059EE82 /* WinnerListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
 		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
@@ -677,6 +678,7 @@
 		7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSetKeyViewController2.swift; sourceTree = "<group>"; };
 		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
 		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
+		7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerListViewController2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
 		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
@@ -797,6 +799,7 @@
 				02A05B192B3FA2F700E8ABFA /* EventListViewItem.xib */,
 				02A05B1D2B3FD0BE00E8ABFA /* EventDetailViewController.swift */,
 				02A05B272B404F1B00E8ABFA /* WinnerListViewController.swift */,
+				7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */,
 				02A05B2F2B40607E00E8ABFA /* WinnerListViewItem.swift */,
 				02A05B312B40608A00E8ABFA /* WinnerListViewItem.xib */,
 				02A05B2D2B404FC300E8ABFA /* WinnerDetailViewController.swift */,
@@ -1811,6 +1814,7 @@
 				02A05B4E2B446D9200E8ABFA /* ResetPasswordRequest.swift in Sources */,
 				02A05A7E2B31A27900E8ABFA /* CommonDetailViewController.swift in Sources */,
 				022B41982B1C44180057323E /* WalkHistoryViewController.swift in Sources */,
+				7B3C4EF42BE33BA30059EE82 /* WinnerListViewController2.swift in Sources */,
 				02DB38002B6483CF007D19A1 /* MyPetWeightCreateRequest.swift in Sources */,
 				02E3FC6B2B2555D400A1CE62 /* APIEventLogger.swift in Sources */,
 				020B79492B2877CD00C0AB2D /* StoryAPI.swift in Sources */,

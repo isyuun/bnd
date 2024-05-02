@@ -18,7 +18,7 @@ class WinnerDetailViewController: CommonViewController {
         
         showBackTitleBarView()
         
-        ancmntWinner_dtl()
+        winner_dtl()
     }
     
     
@@ -34,14 +34,14 @@ class WinnerDetailViewController: CommonViewController {
     @IBOutlet weak var wv_pstCn : WKWebView!
     @IBOutlet weak var cr_wvPstCnHeight : NSLayoutConstraint!
     
-    func ancmntWinner_dtl() {
+    func winner_dtl() {
         startLoading()
         
         let request = WinnerDtlListRequest(pstSn: pstSn!)
-        BBSAPI.ancmntWinnerDtlList(request: request) { ancmntWinnerListData, error in
+        BBSAPI.winnerDtlList(request: request) { winnerListData, error in
             self.stopLoading()
          
-            if let data = ancmntWinnerListData {
+            if let data = winnerListData {
                 self.iv_rprs.af.setImage(
                     withURL: URL(string: data.rprsImgURL)!,
                     placeholderImage: nil,

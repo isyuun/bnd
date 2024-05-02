@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 struct BBSAPI {
-    static func ancmntWinnerList(request: WinnerListRequest, completion: @escaping (_ succeed: WinnerListData?, _ failed: MyError?) -> Void) {
+    static func winnerList(request: WinnerListRequest, completion: @escaping (_ succeed: WinnerListData?, _ failed: MyError?) -> Void) {
         if UserDefaults.standard.value(forKey: "accessToken") == nil
             || UserDefaults.standard.value(forKey: "refreshToken") == nil  {
             return
@@ -21,7 +21,7 @@ struct BBSAPI {
         let myAuthencitationInterceptor = AuthenticationInterceptor(authenticator: authenticator,
                                                                         credential: credential)
         
-        API.session.request(BBSTarget.ancmntWinnerList(request), interceptor: myAuthencitationInterceptor)
+        API.session.request(BBSTarget.winnerList(request), interceptor: myAuthencitationInterceptor)
             .responseDecodable { (response: AFDataResponse<WinnerListResponse>) in
                 switch response.result {
                 case .success(let response):
@@ -35,7 +35,7 @@ struct BBSAPI {
             }
     }
     
-    static func ancmntWinnerDtlList(request: WinnerDtlListRequest, completion: @escaping (_ succeed: WinnerDtlListData?, _ failed: MyError?) -> Void) {
+    static func winnerDtlList(request: WinnerDtlListRequest, completion: @escaping (_ succeed: WinnerDtlListData?, _ failed: MyError?) -> Void) {
         if UserDefaults.standard.value(forKey: "accessToken") == nil
             || UserDefaults.standard.value(forKey: "refreshToken") == nil  {
             return
@@ -47,7 +47,7 @@ struct BBSAPI {
         let myAuthencitationInterceptor = AuthenticationInterceptor(authenticator: authenticator,
                                                                         credential: credential)
         
-        API.session.request(BBSTarget.ancmntWinnerDtlList(request), interceptor: myAuthencitationInterceptor)
+        API.session.request(BBSTarget.winnerDtlList(request), interceptor: myAuthencitationInterceptor)
             .responseDecodable { (response: AFDataResponse<WinnerDtlListResponse>) in
                 switch response.result {
                 case .success(let response):

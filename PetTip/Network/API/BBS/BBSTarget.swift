@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 enum BBSTarget {
-    case ancmntWinnerList(WinnerListRequest)
-    case ancmntWinnerDtlList(WinnerDtlListRequest)
+    case winnerList(WinnerListRequest)
+    case winnerDtlList(WinnerDtlListRequest)
     case eventList(EventListRequest)
     case eventDtlList(EventDtlListRequest)
     case noticeList(NoticeListRequest)
@@ -31,8 +31,8 @@ extension BBSTarget: TargetType {
 
     var method: HTTPMethod {
         switch self {
-        case .ancmntWinnerList: return .post
-        case .ancmntWinnerDtlList: return .post
+        case .winnerList: return .post
+        case .winnerDtlList: return .post
         case .eventList: return .post
         case .eventDtlList: return .post
         case .noticeList: return .post
@@ -48,8 +48,8 @@ extension BBSTarget: TargetType {
 
     var path: String {
         switch self {
-        case .ancmntWinnerList: return "/ancmntWinner/list"
-        case .ancmntWinnerDtlList: return "/ancmntWinner/dtl/list"
+        case .winnerList: return "/winner/list"
+        case .winnerDtlList: return "/winner/dtl/list"
         case .eventList: return "/event/list"
         case .eventDtlList: return "/event/dtl/list"
         case .noticeList: return "/ntc/list"
@@ -65,8 +65,8 @@ extension BBSTarget: TargetType {
 
     var parameters: RequestParams {
         switch self {
-        case .ancmntWinnerList(let request): return .body(request)
-        case .ancmntWinnerDtlList(let request): return .body(request)
+        case .winnerList(let request): return .body(request)
+        case .winnerDtlList(let request): return .body(request)
         case .eventList(let request): return .body(request)
         case .eventDtlList(let request): return .body(request)
         case .noticeList(let request): return .body(request)

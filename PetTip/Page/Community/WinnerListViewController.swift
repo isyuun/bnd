@@ -31,7 +31,7 @@ class WinnerListViewController: CommonViewController {
         tb_list.dataSource = self
         tb_list.separatorStyle = .none
         
-        ancmntWinner_list(false)
+        winner_list(false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,18 +42,13 @@ class WinnerListViewController: CommonViewController {
             vc.pstSn = sender as? Int
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - CONN EVENT LIST
-    
     var pageIndex = 1
     var arrWinnerList : [BBSWinnerList] = []
     var isEnableNextPage = false
     
-    func ancmntWinner_list(_ isMore: Bool) {
+    func winner_list(_ isMore: Bool) {
         if (isMore) {
             pageIndex += 1
         } else {
@@ -65,11 +60,11 @@ class WinnerListViewController: CommonViewController {
         startLoading()
         
         let request = WinnerListRequest(page: pageIndex, pageSize: 10, recordSize: 20)
-        BBSAPI.ancmntWinnerList(request: request) { ancmntWinnerListData, error in
+        BBSAPI.winnerList(request: request) { winnerListData, error in
             self.stopLoading()
             
-            if let ancmntWinnerListData = ancmntWinnerListData {
-            let bbsWinnerList = ancmntWinnerListData.bbsWinnerList
+            if let winnerListData = winnerListData {
+            let bbsWinnerList = winnerListData.bbsWinnerList
                 if (isMore) {
                     for i in 0 ..< bbsWinnerList.count {
                         self.arrWinnerList.append(bbsWinnerList[i])
@@ -79,7 +74,7 @@ class WinnerListViewController: CommonViewController {
                 }
                 self.tb_list.reloadData()
                 
-                if let _paginate = ancmntWinnerListData.paginate {
+                if let _paginate = winnerListData.paginate {
                     self.isEnableNextPage = _paginate.existNextPage
                 }
             }
@@ -89,12 +84,7 @@ class WinnerListViewController: CommonViewController {
     }
 }
 
-
-
-
-
 // MARK: - UITableView Delegate
-
 extension WinnerListViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrWinnerList.count
@@ -109,7 +99,7 @@ extension WinnerListViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == arrWinnerList.count - 1) {
             if (isEnableNextPage) {
-                ancmntWinner_list(true)
+                winner_list(true)
             }
         }
     }
