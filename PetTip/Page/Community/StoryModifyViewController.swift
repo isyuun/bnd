@@ -24,16 +24,16 @@ class StoryModifyViewController: CommonViewController2 {
         showCommonUI()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        addKeyboardObserver()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        removeKeyboardObserver()
-    }
-    
+    // override func viewDidAppear(_ animated: Bool) {
+    //     super.viewDidAppear(animated)
+    //     addKeyboardObserver()
+    // }
+    // 
+    // override func viewDidDisappear(_ animated: Bool) {
+    //     super.viewDidDisappear(animated)
+    //     removeKeyboardObserver()
+    // }
+    // 
     // private func addKeyboardObserver() {
     //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
     //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)

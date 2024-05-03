@@ -816,9 +816,9 @@
 				02A05B2F2B40607E00E8ABFA /* WinnerListViewItem.swift */,
 				02A05B312B40608A00E8ABFA /* WinnerListViewItem.xib */,
 				02A05B2D2B404FC300E8ABFA /* WinnerDetailViewController.swift */,
+				02C114082B5B88B500A14F77 /* DailyLifeGubunItemView.swift */,
 				02C114062B5A8B0B00A14F77 /* StoryAddViewController.swift */,
 				7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */,
-				02C114082B5B88B500A14F77 /* DailyLifeGubunItemView.swift */,
 				02BFEDD12B5E8C7B000B1D4D /* StoryModifyViewController.swift */,
 				7BE820EB2BE47B6B00B09973 /* StoryModifyViewController2.swift */,
 			);
