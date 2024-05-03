@@ -154,12 +154,12 @@ class LoginViewController: CommonViewController2 {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueLoginToFindId") {
             let dest = segue.destination
-            guard let vc = dest as? FindIdPwViewController else { return }
+            guard let vc = dest as? FindIDPWViewController else { return }
             vc.launchTabPageIndex = 0
 
         } else if (segue.identifier == "segueLoginToFindPw") {
             let dest = segue.destination
-            guard let vc = dest as? FindIdPwViewController else { return }
+            guard let vc = dest as? FindIDPWViewController else { return }
             vc.launchTabPageIndex = 1
         }
     }

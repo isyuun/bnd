@@ -226,11 +226,11 @@
 		02A7AADA2B522A87002F0C03 /* QnAUpdateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAD92B522A87002F0C03 /* QnAUpdateRequest.swift */; };
 		02A7AADC2B522A97002F0C03 /* QnAUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AADB2B522A97002F0C03 /* QnAUpdateResponse.swift */; };
 		02A7AADE2B526160002F0C03 /* QnAModifyAttachFileItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AADD2B526160002F0C03 /* QnAModifyAttachFileItemView.swift */; };
-		02A7AAE12B54F888002F0C03 /* FindIdPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE02B54F888002F0C03 /* FindIdPwViewController.swift */; };
+		02A7AAE12B54F888002F0C03 /* FindIDPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE02B54F888002F0C03 /* FindIDPWViewController.swift */; };
 		02A7AAE32B54F895002F0C03 /* Member.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A7AAE22B54F895002F0C03 /* Member.storyboard */; };
-		02A7AAE52B54FB5B002F0C03 /* FindIdPwContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE42B54FB5B002F0C03 /* FindIdPwContainerViewController.swift */; };
-		02A7AAE72B54FC20002F0C03 /* FindIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE62B54FC20002F0C03 /* FindIdViewController.swift */; };
-		02A7AAE92B54FC2D002F0C03 /* FindPwViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE82B54FC2D002F0C03 /* FindPwViewController.swift */; };
+		02A7AAE52B54FB5B002F0C03 /* FindIDPWContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE42B54FB5B002F0C03 /* FindIDPWContainerViewController.swift */; };
+		02A7AAE72B54FC20002F0C03 /* FindIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE62B54FC20002F0C03 /* FindIDViewController.swift */; };
+		02A7AAE92B54FC2D002F0C03 /* FindPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAE82B54FC2D002F0C03 /* FindPWViewController.swift */; };
 		02A7AAEB2B552E8F002F0C03 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */; };
 		02A7AAED2B58A6F1002F0C03 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAEC2B58A6F1002F0C03 /* CreateUserRequest.swift */; };
 		02A7AAEF2B58A6FE002F0C03 /* CreateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAEE2B58A6FE002F0C03 /* CreateUserResponse.swift */; };
@@ -573,11 +573,11 @@
 		02A7AAD92B522A87002F0C03 /* QnAUpdateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAUpdateRequest.swift; sourceTree = "<group>"; };
 		02A7AADB2B522A97002F0C03 /* QnAUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAUpdateResponse.swift; sourceTree = "<group>"; };
 		02A7AADD2B526160002F0C03 /* QnAModifyAttachFileItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnAModifyAttachFileItemView.swift; sourceTree = "<group>"; };
-		02A7AAE02B54F888002F0C03 /* FindIdPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwViewController.swift; sourceTree = "<group>"; };
+		02A7AAE02B54F888002F0C03 /* FindIDPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDPWViewController.swift; sourceTree = "<group>"; };
 		02A7AAE22B54F895002F0C03 /* Member.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Member.storyboard; sourceTree = "<group>"; };
-		02A7AAE42B54FB5B002F0C03 /* FindIdPwContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdPwContainerViewController.swift; sourceTree = "<group>"; };
-		02A7AAE62B54FC20002F0C03 /* FindIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIdViewController.swift; sourceTree = "<group>"; };
-		02A7AAE82B54FC2D002F0C03 /* FindPwViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPwViewController.swift; sourceTree = "<group>"; };
+		02A7AAE42B54FB5B002F0C03 /* FindIDPWContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDPWContainerViewController.swift; sourceTree = "<group>"; };
+		02A7AAE62B54FC20002F0C03 /* FindIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIDViewController.swift; sourceTree = "<group>"; };
+		02A7AAE82B54FC2D002F0C03 /* FindPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPWViewController.swift; sourceTree = "<group>"; };
 		02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		02A7AAEC2B58A6F1002F0C03 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
 		02A7AAEE2B58A6FE002F0C03 /* CreateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserResponse.swift; sourceTree = "<group>"; };
@@ -1081,10 +1081,10 @@
 		02A7AADF2B54F7F2002F0C03 /* Member */ = {
 			isa = PBXGroup;
 			children = (
-				02A7AAE02B54F888002F0C03 /* FindIdPwViewController.swift */,
-				02A7AAE42B54FB5B002F0C03 /* FindIdPwContainerViewController.swift */,
-				02A7AAE62B54FC20002F0C03 /* FindIdViewController.swift */,
-				02A7AAE82B54FC2D002F0C03 /* FindPwViewController.swift */,
+				02A7AAE02B54F888002F0C03 /* FindIDPWViewController.swift */,
+				02A7AAE42B54FB5B002F0C03 /* FindIDPWContainerViewController.swift */,
+				02A7AAE62B54FC20002F0C03 /* FindIDViewController.swift */,
+				02A7AAE82B54FC2D002F0C03 /* FindPWViewController.swift */,
 				02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */,
 				02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */,
 				7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */,
@@ -1711,7 +1711,7 @@
 				028625312B4D9B020055E62F /* CustomerCenterContainerViewController.swift in Sources */,
 				02A05AEA2B3E4F6700E8ABFA /* CommonTarget.swift in Sources */,
 				0293C6282B0E3BD80004F19D /* UTCTimeService.swift in Sources */,
-				02A7AAE52B54FB5B002F0C03 /* FindIdPwContainerViewController.swift in Sources */,
+				02A7AAE52B54FB5B002F0C03 /* FindIDPWContainerViewController.swift in Sources */,
 				02E3FC742B25762300A1CE62 /* RefreshTokenRequest.swift in Sources */,
 				02A547792B0EE1300035E07F /* UTCTimeViewController.swift in Sources */,
 				02A05B462B43144600E8ABFA /* ChkNcknmRequest.swift in Sources */,
@@ -1740,7 +1740,7 @@
 				7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */,
 				02A05B242B404A8900E8ABFA /* WinnerListRequest.swift in Sources */,
 				022B419B2B1C44AC0057323E /* CommunityViewController.swift in Sources */,
-				02A7AAE92B54FC2D002F0C03 /* FindPwViewController.swift in Sources */,
+				02A7AAE92B54FC2D002F0C03 /* FindPWViewController.swift in Sources */,
 				02E00AF72B595D240092C909 /* LifeCreateResponse.swift in Sources */,
 				02A05ADC2B3D6AF700E8ABFA /* CmntUpdateRequest.swift in Sources */,
 				027F765C2B4E8D5E00429AC5 /* NoticeDtlListResponse.swift in Sources */,
@@ -1771,7 +1771,7 @@
 				7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */,
 				020B795B2B29902200C0AB2D /* WalkHistoryItemView.swift in Sources */,
 				028625232B4A77AD0055E62F /* SggListRequest.swift in Sources */,
-				02A7AAE72B54FC20002F0C03 /* FindIdViewController.swift in Sources */,
+				02A7AAE72B54FC20002F0C03 /* FindIDViewController.swift in Sources */,
 				020B79592B28A9C600C0AB2D /* Weather.swift in Sources */,
 				02C114092B5B88B500A14F77 /* DailyLifeGubunItemView.swift in Sources */,
 				02A05AFA2B3EA27B00E8ABFA /* LifeUpdateResponse.swift in Sources */,
@@ -1851,7 +1851,7 @@
 				02A7AAA42B4FBE6E002F0C03 /* QnAListResponse.swift in Sources */,
 				027F76562B4E820400429AC5 /* NoticeListResponse.swift in Sources */,
 				0251FD6C2B185C6400F35EF8 /* Track.swift in Sources */,
-				02A7AAE12B54F888002F0C03 /* FindIdPwViewController.swift in Sources */,
+				02A7AAE12B54F888002F0C03 /* FindIDPWViewController.swift in Sources */,
 				028625292B4A86D40055E62F /* UmdListResponse.swift in Sources */,
 				02DB38202B663B3A007D19A1 /* MyPetUpdateResponse.swift in Sources */,
 				02A05B0C2B3F94A500E8ABFA /* EventListResponse.swift in Sources */,

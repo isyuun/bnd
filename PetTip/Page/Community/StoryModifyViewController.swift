@@ -973,7 +973,7 @@ extension StoryModifyViewController: UIImagePickerControllerDelegate, UINavigati
 }
 
 // MARK: - UITextFieldDelegate
-extension StoryModifyViewController: UITextFieldDelegate {
+extension StoryModifyViewController {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switch textField {
         case tf_hashtag:

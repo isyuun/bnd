@@ -2,17 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Find Id Pw View Controller-->
+        <!--FindIDPW View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="FindIdPwViewController" id="Y6W-OH-hqX" customClass="FindIdPwViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindIdPwViewController" id="Y6W-OH-hqX" customClass="FindIDPWViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1010,10 +1009,10 @@
             </objects>
             <point key="canvasLocation" x="110.74766355140186" y="1580.9935205183585"/>
         </scene>
-        <!--Find Id Pw Container View Controller-->
+        <!--FindIDPW Container View Controller-->
         <scene sceneID="zzf-MP-q1E">
             <objects>
-                <viewController id="3cd-zw-2sg" customClass="FindIdPwContainerViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3cd-zw-2sg" customClass="FindIDPWContainerViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p0f-8B-JCb">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="779"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1025,10 +1024,10 @@
             </objects>
             <point key="canvasLocation" x="1073" y="-34"/>
         </scene>
-        <!--Find Id View Controller-->
+        <!--FindID View Controller-->
         <scene sceneID="Klj-BP-b9N">
             <objects>
-                <viewController storyboardIdentifier="FindIdViewController" id="MvO-8Z-GoR" customClass="FindIdViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindIdViewController" id="MvO-8Z-GoR" customClass="FindIDViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qfF-FP-iNe" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1176,10 +1175,10 @@
             </objects>
             <point key="canvasLocation" x="2188.5496183206105" y="-35.211267605633807"/>
         </scene>
-        <!--Find Pw View Controller-->
+        <!--FindPW View Controller-->
         <scene sceneID="Dv5-gK-cct">
             <objects>
-                <viewController storyboardIdentifier="FindPwViewController" id="RFs-aH-lIU" customClass="FindPwViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindPwViewController" id="RFs-aH-lIU" customClass="FindPWViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h5z-Zv-RXz">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1354,32 +1353,6 @@
             <point key="canvasLocation" x="2189" y="723"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="089-lF-PSh">
-            <size key="intrinsicContentSize" width="129.33333333333334" height="17"/>
-        </designable>
-        <designable name="6Js-al-E47">
-            <size key="intrinsicContentSize" width="76.666666666666671" height="17"/>
-        </designable>
-        <designable name="Dn8-Pu-WGL">
-            <size key="intrinsicContentSize" width="64.666666666666671" height="18.666666666666668"/>
-        </designable>
-        <designable name="J7L-Ad-cgS">
-            <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
-        </designable>
-        <designable name="QIH-Uu-cm5">
-            <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
-        </designable>
-        <designable name="RoP-I7-cle">
-            <size key="intrinsicContentSize" width="76.666666666666671" height="18.666666666666668"/>
-        </designable>
-        <designable name="hsv-6W-asx">
-            <size key="intrinsicContentSize" width="128.66666666666666" height="18.666666666666668"/>
-        </designable>
-        <designable name="nOC-18-Uhb">
-            <size key="intrinsicContentSize" width="76.666666666666671" height="18.666666666666668"/>
-        </designable>
-    </designables>
     <resources>
         <image name="checkbox_white" width="12" height="12"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>

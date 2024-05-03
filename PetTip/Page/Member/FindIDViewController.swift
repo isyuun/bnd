@@ -1,5 +1,5 @@
 //
-//  FindIdViewController.swift
+//  FindIDViewController.swift
 //  PetTip
 //
 //  Created by carebiz on 1/15/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FindIdViewController: CommonViewController {
+class FindIDViewController: CommonViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class FindIdViewController: CommonViewController {
 
 
 
-extension FindIdViewController: UITextFieldDelegate {
+extension FindIDViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         inputTextSelectedUI(view: textField)

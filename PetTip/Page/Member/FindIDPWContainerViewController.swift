@@ -1,5 +1,5 @@
 //
-//  FindIdPwContainerViewController.swift
+//  FindIDPWContainerViewController.swift
 //  PetTip
 //
 //  Created by carebiz on 1/15/24.
@@ -9,7 +9,7 @@ import Foundation
 import Tabman
 import Pageboy
 
-class FindIdPwContainerViewController : TabmanViewController {
+class FindIDPWContainerViewController : TabmanViewController {
     
     public var launchTabPageIndex = 0
     
@@ -23,9 +23,9 @@ class FindIdPwContainerViewController : TabmanViewController {
     }
     
     private var viewControllers: [UIViewController] = []
-    let firstVC = UIStoryboard.init(name: "Member", bundle: nil).instantiateViewController(withIdentifier: "FindIdViewController") as! FindIdViewController
+    let firstVC = UIStoryboard.init(name: "Member", bundle: nil).instantiateViewController(withIdentifier: "FindIdViewController") as! FindIDViewController
     
-    let secondVC = UIStoryboard.init(name: "Member", bundle: nil).instantiateViewController(withIdentifier: "FindPwViewController") as! FindPwViewController
+    let secondVC = UIStoryboard.init(name: "Member", bundle: nil).instantiateViewController(withIdentifier: "FindPwViewController") as! FindPWViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class FindIdPwContainerViewController : TabmanViewController {
     }
 }
 
-extension FindIdPwContainerViewController: PageboyViewControllerDataSource, TMBarDataSource {
+extension FindIDPWContainerViewController: PageboyViewControllerDataSource, TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         switch index {

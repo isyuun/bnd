@@ -131,10 +131,6 @@ class PetModViewController: CommonViewController {
         petProfileViewController?.isRequireRefresh = true
     }
 
-
-
-
-
     @IBOutlet weak var vw_profileBg: UIView!
     @IBOutlet weak var vw_profileIv: UIView!
     @IBOutlet weak var iv_profile: UIImageView!
@@ -525,10 +521,6 @@ class PetModViewController: CommonViewController {
         }
     }
 
-
-
-
-
     private var img: UIImage?
 
     @IBAction func onProfileImg(_ sender: Any) {
@@ -541,10 +533,6 @@ class PetModViewController: CommonViewController {
             present(imagePicker, animated: true, completion: nil)
         }
     }
-
-
-
-
 
     private func btnSelectedUI(view: UIView) {
         view.layer.cornerRadius = 12
@@ -594,30 +582,17 @@ class PetModViewController: CommonViewController {
         view.layer.borderColor = UIColor(hex: "#ffe3e9f2")?.cgColor // NORMAL COLOR
     }
 
-
-
-
-
     var selectedPetKind: CmmPetListData?
 
     @IBAction func onKind(_ sender: Any) {
         self.performSegue(withIdentifier: "seguePetModifyToPetKind", sender: btn_petTypeDog.isSelected ? "001" : "002")
     }
 
-
-
-
-
     private var selectedSido: Sido?
     private var selectedSigungu: SggListData?
     private var selectedUpmeondong: UmdListData?
 
-
-
-
-
     // MARK: - Back TitleBar
-
     @IBOutlet weak var titleBarView: UIView!
 
     func showBackTitleBarView() {
@@ -629,12 +604,7 @@ class PetModViewController: CommonViewController {
         }
     }
 
-
-
-
-
     // MARK: - DELETE PET
-
     @IBAction func onDeletePet(_ sender: Any) {
         self.showComfirmPopup(title: "반려동물 삭제", msg: "정말 삭제하시겠어요?", didTapOK: {
             self.delete()
@@ -674,10 +644,6 @@ class PetModViewController: CommonViewController {
     }
 }
 
-
-
-
-
 extension PetModViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
@@ -690,10 +656,6 @@ extension PetModViewController: UIImagePickerControllerDelegate, UINavigationCon
     }
 }
 
-
-
-
-
 extension PetModViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
@@ -701,20 +663,12 @@ extension PetModViewController: BackTitleBarViewProtocol {
     }
 }
 
-
-
-
-
 extension PetModViewController: PetTypeSelectViewControllerDelegate {
     func selectComplete(pet: CmmPetListData) {
         self.selectedPetKind = pet
         self.lb_petKind.text = self.selectedPetKind?.petNm
     }
 }
-
-
-
-
 
 extension PetModViewController: AddressSelectViewControllerDelegate {
     func selectComplete(selectedSido: Sido?, selectedSigungu: SggListData?, selectedUpmeondong: UmdListData?) {
@@ -735,10 +689,6 @@ extension PetModViewController: AddressSelectViewControllerDelegate {
         self.lb_addr.text = addrStr
     }
 }
-
-
-
-
 
 extension PetModViewController: UITextFieldDelegate {
 

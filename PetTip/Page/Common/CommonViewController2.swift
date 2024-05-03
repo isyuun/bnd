@@ -7,14 +7,13 @@
 
 import UIKit
 
-private var toolBar: UIToolbar!
-private var prevButton: UIBarButtonItem!
-private var nextButton: UIBarButtonItem!
-private var doneButton: UIBarButtonItem!
-private var textFields: [UITextField]!
+class CommonViewController2: CommonViewController, UITextFieldDelegate {
 
-// class CommonViewController2: CommonViewController, UITextFieldDelegate {
-extension CommonViewController: UITextFieldDelegate {
+    private var toolBar: UIToolbar!
+    private var prevButton: UIBarButtonItem!
+    private var nextButton: UIBarButtonItem!
+    private var doneButton: UIBarButtonItem!
+    private var textFields: [UITextField]!
 
     override func viewDidLoad() {
         super.viewDidLoad()

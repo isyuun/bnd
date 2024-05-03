@@ -1,5 +1,5 @@
 //
-//  FindIdPwViewController.swift
+//  FindIDPWViewController.swift
 //  PetTip
 //
 //  Created by carebiz on 1/15/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FindIdPwViewController : UIViewController {
+class FindIDPWViewController : UIViewController {
     
     public var launchTabPageIndex = 0
     
@@ -21,11 +21,11 @@ class FindIdPwViewController : UIViewController {
     
     
     
-    var containerViewController: FindIdPwContainerViewController?
+    var containerViewController: FindIDPWContainerViewController?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueFindIdPwToContainer" {
-            containerViewController = segue.destination as? FindIdPwContainerViewController
+            containerViewController = segue.destination as? FindIDPWContainerViewController
             if let containerViewController = containerViewController {
                 containerViewController.launchTabPageIndex = launchTabPageIndex
             }
@@ -56,7 +56,7 @@ class FindIdPwViewController : UIViewController {
 
 
 
-extension FindIdPwViewController: BackTitleBarViewProtocol {
+extension FindIDPWViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false

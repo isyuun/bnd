@@ -726,7 +726,7 @@ extension StoryAddViewController: UIImagePickerControllerDelegate, UINavigationC
 }
 
 // MARK: - UITextFieldDelegate
-extension StoryAddViewController: UITextFieldDelegate {
+extension StoryAddViewController {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switch textField {
         case tf_hashtag:

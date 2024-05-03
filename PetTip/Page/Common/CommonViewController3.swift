@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension CommonViewController {
+class CommonViewController3: CommonViewController2 {
 
     func checkOneDecimal(textField: UITextField, range: NSRange, string: String) -> Bool {
         // 입력된 문자열이 숫자 또는 소수점인지 확인합니다.
