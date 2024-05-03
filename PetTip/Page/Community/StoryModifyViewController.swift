@@ -9,8 +9,8 @@ import UIKit
 import AlamofireImage
 import DropDown
 
-class StoryModifyViewController: CommonViewController {
-    
+class StoryModifyViewController: CommonViewController2 {
+
     var storyDetailViewController: StoryDetailViewController?
     var lifeViewData : LifeViewData!
     
@@ -34,45 +34,41 @@ class StoryModifyViewController: CommonViewController {
         removeKeyboardObserver()
     }
     
-    private func addKeyboardObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    private func removeKeyboardObserver() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc private func keyboardWillShow(_ notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
-        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        let keyboardFrame = keyboardSize.cgRectValue
-        
-        sv_content.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
-        sv_content.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
-        
-        let bottomOffset = CGPoint(x: 0, y: sv_content.contentSize.height - sv_content.bounds.height + sv_content.contentInset.bottom)
-        if (bottomOffset.y > 0) {
-            sv_content.setContentOffset(bottomOffset, animated: true)
-        }
-    }
-    
-    @objc private func keyboardWillHide(_ notification: NSNotification) {
-        sv_content.contentInset = UIEdgeInsets.zero
-        sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
-    }
+    // private func addKeyboardObserver() {
+    //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_ :)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    // }
+    // 
+    // private func removeKeyboardObserver() {
+    //     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    //     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    // }
+    // 
+    // @objc private func keyboardWillShow(_ notification: NSNotification) {
+    //     guard let userInfo = notification.userInfo else { return }
+    //     guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+    //     let keyboardFrame = keyboardSize.cgRectValue
+    //     
+    //     sv_content.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    //     sv_content.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    //     
+    //     let bottomOffset = CGPoint(x: 0, y: sv_content.contentSize.height - sv_content.bounds.height + sv_content.contentInset.bottom)
+    //     if (bottomOffset.y > 0) {
+    //         sv_content.setContentOffset(bottomOffset, animated: true)
+    //     }
+    // }
+    // 
+    // @objc private func keyboardWillHide(_ notification: NSNotification) {
+    //     sv_content.contentInset = UIEdgeInsets.zero
+    //     sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
+    // }
     
     private func reqCloseKeyboard() {
         view.endEditing(true)
     }
-    
-    
-    
-    
-    
+
     @IBOutlet weak var sv_content: UIScrollView!
-    
+
     @IBOutlet weak var lb_currDate: UILabel!
     
     private func showCommonUI() {
@@ -110,15 +106,10 @@ class StoryModifyViewController: CommonViewController {
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor(hex: "#ffe3e9f2")?.cgColor // NORMAL COLOR
     }
-    
-    
-    
-    
-    
+
     // MARK: - CURRENT SELECT PETS
-    
     @IBOutlet weak var cv_currSelPet : UICollectionView!
-    
+
     var items: [DailyLifePetList]?
     
     private func initCurrSelectPet() {
@@ -172,13 +163,8 @@ class StoryModifyViewController: CommonViewController {
     private func setSelected(_ selIdx: Int) {
         itemSelected[selIdx].toggle()
     }
-    
-    
-    
-    
-    
+
     // MARK: - SELECT ENABLE PETS
-    
     @IBOutlet weak var cv_selEnablePet : UICollectionView!
     
     var selectEnableItems: [DailyLifePetList]?
@@ -249,15 +235,10 @@ class StoryModifyViewController: CommonViewController {
     private func setEnableSelected(_ selIdx: Int) {
         itemEnableSelected[selIdx].toggle()
     }
-    
-    
-    
-    
-    
+
     // MARK: - ATTACH FILE
-    
     @IBOutlet weak var cv_attachFile : UICollectionView!
-    
+
     var arrStoryAtchHybidData = [StoryAtchHybridData]()
     var arrStoryAtchDelete = [DailyLifeFileList]()
     
@@ -297,13 +278,8 @@ class StoryModifyViewController: CommonViewController {
             present(imagePicker, animated: true, completion: nil)
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - DAILY LIFE GUBUN
-    
     @IBOutlet weak var cv_dailyLifeGubun: UICollectionView!
     
     var idxSelectedGubunItem = -1
@@ -359,13 +335,8 @@ class StoryModifyViewController: CommonViewController {
             gubunItemSelected[selIdx].toggle()
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - CONN COMMON CODE-LIST
-    
     private var schCodeList: [CDDetailList]?
     
     private func code_list(cmmCdData: [String], complete: (()-> Void)?) {
@@ -401,13 +372,8 @@ class StoryModifyViewController: CommonViewController {
             }
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - COMBO TITLE
-    
     @IBOutlet weak var vw_titleArea: UIView!
     @IBOutlet weak var tf_title: UITextField!
     @IBOutlet weak var vw_titleComboShowingArea: UIView!
@@ -463,12 +429,8 @@ class StoryModifyViewController: CommonViewController {
         }
     }
     
-    
-    
-    
-    
+
     // MARK: - MEMO
-    
     @IBOutlet weak var tv_memo: UITextView!
     
     let textViewPlaceHolder = "일상을 기록해주세요"
@@ -506,13 +468,8 @@ class StoryModifyViewController: CommonViewController {
             textView.textColor = .black
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - HASHTAG
-    
     @IBOutlet weak var tf_hashtag: UITextField!
     
     private func initHashtag() {
@@ -532,13 +489,8 @@ class StoryModifyViewController: CommonViewController {
         
         tf_hashtag.resolveHashTags()
     }
-    
-    
-    
-    
-    
+
     // MARK: - SUBMIT
-    
     @IBOutlet weak var btn_complete: UIButton!
     
     private func initComplete() {
@@ -781,12 +733,8 @@ class StoryModifyViewController: CommonViewController {
         
         return ret
     }
-    
-    
-    
-    
+
     // MARK: - CONN DAILY-LIFE UPLOAD
-    
     private var fileUploadResult: [PhotoData]?
     
     private func dailylife_upload() {
@@ -826,13 +774,8 @@ class StoryModifyViewController: CommonViewController {
             self.processNetworkError(error)
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - CONN DAILY-LIFE UPDATE
-    
     private func dailylife_update() {
         startLoading()
         
@@ -859,13 +802,8 @@ class StoryModifyViewController: CommonViewController {
             }
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - Back TitleBar
-    
     @IBOutlet weak var titleBarView : UIView!
     
     func showBackTitleBarView() {
@@ -878,20 +816,12 @@ class StoryModifyViewController: CommonViewController {
     }
 }
 
-
-
-
-
 extension StoryModifyViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
     }
 }
-
-
-
-
 
 extension StoryModifyViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -1005,7 +935,6 @@ extension StoryModifyViewController: UICollectionViewDataSource, UICollectionVie
         return UICollectionViewCell()
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if collectionView == cv_currSelPet {
             setSelected(indexPath.row)
@@ -1030,10 +959,6 @@ extension StoryModifyViewController: UICollectionViewDataSource, UICollectionVie
     }
 }
 
-
-
-
-
 extension StoryModifyViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
@@ -1047,12 +972,7 @@ extension StoryModifyViewController: UIImagePickerControllerDelegate, UINavigati
     }
 }
 
-
-
-
-
 // MARK: - UITextFieldDelegate
-
 extension StoryModifyViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switch textField {
@@ -1104,18 +1024,12 @@ extension StoryModifyViewController: UITextFieldDelegate {
     }
 }
 
-
-
-
-
 // MARK: - UITextViewDelegate
-
 extension StoryModifyViewController : UITextViewDelegate {
-    
     func textViewDidChange(_ textView: UITextView) {
         textViewFitSize(textView)
     }
-    
+
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == textViewPlaceHolder {
             textView.text = nil
@@ -1134,10 +1048,6 @@ extension StoryModifyViewController : UITextViewDelegate {
         inputTextNormalUI(view: textView)
     }
 }
-
-
-
-
 
 struct StoryAtchHybridData {
     var local: UIImage?

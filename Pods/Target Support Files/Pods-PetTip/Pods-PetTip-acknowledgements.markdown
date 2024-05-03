@@ -2415,7 +2415,7 @@ SOFTWARE.
 
 ## NMapsGeometry
 
-Copyright © 2018 NAVER Corp.
+Copyright © 2024 NAVER Corp.
 All rights reserved.
 
 
