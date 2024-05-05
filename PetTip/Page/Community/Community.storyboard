@@ -1881,7 +1881,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6N-nw-DOg">
                                                         <rect key="frame" x="20" y="43" width="353" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-kc-4x4" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-kc-4x4" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                                 <rect key="frame" x="-16" y="0.0" width="369" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -2367,7 +2367,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqz-01-NYR">
                                                         <rect key="frame" x="20" y="27" width="353" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knt-VH-hAf" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knt-VH-hAf" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                                 <rect key="frame" x="-16" y="0.0" width="369" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -2416,7 +2416,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oi5-n6-5iq">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oi5-n6-5iq" customClass="UITextView2" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="118" width="353" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -2425,6 +2425,11 @@
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                <integer key="value" value="1330"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시 태그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8s-nW-3Gz">
                                                         <rect key="frame" x="20" y="234" width="353" height="19"/>
@@ -2435,7 +2440,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0H-MH-re3" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0H-MH-re3" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="261" width="353" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="Kcc-eg-tLq"/>
@@ -2635,8 +2640,8 @@
                         <outlet property="iv_storyShareAgree" destination="X7T-1Y-Fjl" id="cm2-aW-QQz"/>
                         <outlet property="lb_currDate" destination="qzC-Eh-9fv" id="NYk-b1-QIu"/>
                         <outlet property="sv_content" destination="8wd-MC-qKy" id="sqc-55-2X4"/>
-                        <outlet property="tf_hashtag" destination="e0H-MH-re3" id="Aaw-Ef-z0t"/>
-                        <outlet property="tf_title" destination="knt-VH-hAf" id="wfk-FG-JJe"/>
+                        <outlet property="tf_hashtag" destination="e0H-MH-re3" id="Tqd-Ue-QWZ"/>
+                        <outlet property="tf_title" destination="knt-VH-hAf" id="lqS-F4-5Qq"/>
                         <outlet property="titleBarView" destination="dPm-MY-DwM" id="kzI-6k-Al2"/>
                         <outlet property="tv_memo" destination="oi5-n6-5iq" id="hIR-Xf-gwu"/>
                         <outlet property="vw_storyShareAgree" destination="CYH-94-ECd" id="NjD-xs-SGJ"/>
@@ -2651,16 +2656,16 @@
     </scenes>
     <designables>
         <designable name="J7H-kc-4x4">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
         <designable name="e0H-MH-re3">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="hqa-Pj-3j2">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="knt-VH-hAf">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

@@ -344,7 +344,7 @@
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
 		7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD347E62BDF678700EFAF59 /* MainViewController2.swift */; };
-		7BD541EF2BE48486008861DE /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD541EE2BE48486008861DE /* UITextView.swift */; };
+		7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD541EE2BE48486008861DE /* UITextView2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
 		7BD8DB692BCF5058000755D1 /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB672BCF5058000755D1 /* RELEASE.md */; };
 		7BE3F1992BE22E5200FDFCCA /* EventListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */; };
@@ -695,7 +695,7 @@
 		7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7BD347E62BDF678700EFAF59 /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
-		7BD541EE2BE48486008861DE /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
+		7BD541EE2BE48486008861DE /* UITextView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView2.swift; sourceTree = "<group>"; };
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7BD8DB672BCF5058000755D1 /* RELEASE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
 		7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController2.swift; sourceTree = "<group>"; };
@@ -946,7 +946,7 @@
 				0251FD612B16F7F400F35EF8 /* UIColor.swift */,
 				022B41A32B1CB7E10057323E /* UITextField.swift */,
 				7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */,
-				7BD541EE2BE48486008861DE /* UITextView.swift */,
+				7BD541EE2BE48486008861DE /* UITextView2.swift */,
 				0251FD552B11B4FB00F35EF8 /* UIButton.swift */,
 				0251FD732B1909BA00F35EF8 /* UIImage.swift */,
 				7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */,
@@ -1825,7 +1825,7 @@
 				02EB98022B0CFF03007428AD /* SceneDelegate.swift in Sources */,
 				020B79672B2B376700C0AB2D /* BackTitleBarView.swift in Sources */,
 				02A7AAD22B52168E002F0C03 /* QnAAtchUploadResponse.swift in Sources */,
-				7BD541EF2BE48486008861DE /* UITextView.swift in Sources */,
+				7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */,
 				027F76542B4E81F000429AC5 /* NoticeListRequest.swift in Sources */,
 				020B79892B2F3F2C00C0AB2D /* StoryItemView.swift in Sources */,
 				02E3FC932B25A7D700A1CE62 /* MyPetListResponse.swift in Sources */,

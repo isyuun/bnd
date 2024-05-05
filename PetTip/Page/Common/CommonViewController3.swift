@@ -9,7 +9,7 @@ import UIKit
 
 class CommonViewController3: CommonViewController2 {
 
-    func checkOneDecimal(textField: UITextField, range: NSRange, string: String) -> Bool {
+    func checkOneDecimal(textField: UITextField, range: NSRange, string: String, decimal: Int = 1) -> Bool {
         // 입력된 문자열이 숫자 또는 소수점인지 확인합니다.
         let allowedCharacterSet = CharacterSet(charactersIn: "0123456789.")
         let replacementCharacterSet = CharacterSet(charactersIn: string)
@@ -31,11 +31,20 @@ class CommonViewController3: CommonViewController2 {
         // 소수점 이하 자릿수를 1자리로 제한합니다.
         if let dotIndex = textField.text?.firstIndex(of: ".") {
             let decimalPlaces = textField.text?.distance(from: dotIndex, to: textField.text?.endIndex ?? dotIndex)
-            if decimalPlaces == 2, string != "" {
+            if decimalPlaces == decimal + 1, string != "" {
                 return false
             }
         }
 
         return true
+    }
+
+    func checkMaxLength(textField: UITextField, range: NSRange, string: String, maxLength: Int = 0) -> Bool {
+        if maxLength == 0 { return true }
+
+        let currentString = (textField.text ?? "") as NSString
+        let newString = currentString.replacingCharacters(in: range, with: string)
+
+        return newString.count <= maxLength
     }
 }

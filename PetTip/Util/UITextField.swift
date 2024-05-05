@@ -7,6 +7,22 @@
 
 import UIKit
 
+@IBDesignable
+class TextField: UITextField {
+    @IBInspectable var insetX: CGFloat = 0
+    @IBInspectable var insetY: CGFloat = 0
+
+    // placeholder position
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: insetX, dy: insetY)
+    }
+
+    // text position
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: insetX, dy: insetY)
+    }
+}
+
 extension UITextField {
     func initLeftIconIncludeTextField(iconImg: UIImage) {
         let leftView = UIView(frame: CGRectMake(0, 0, 35, 20))
@@ -63,21 +79,5 @@ extension UITextField {
         // again, this will also wipe out any fonts and colors from the storyboard,
         // so remember to re-add them in the attrs dictionary above
         self.attributedText = attrString
-    }
-}
-
-@IBDesignable
-class TextField: UITextField {
-    @IBInspectable var insetX: CGFloat = 0
-    @IBInspectable var insetY: CGFloat = 0
-
-    // placeholder position
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: insetX, dy: insetY)
-    }
-
-    // text position
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.insetBy(dx: insetX, dy: insetY)
     }
 }

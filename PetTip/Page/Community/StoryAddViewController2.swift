@@ -18,16 +18,6 @@ class StoryAddViewController2: StoryAddViewController {
         super.viewDidDisappear(animated)
     }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][textField:\(textField)][range:\(range)][string:\(string)]")
-        // let maxLength = 1
-        // let currentString = (textField.text ?? "") as NSString
-        // let newString = currentString.replacingCharacters(in: range, with: string)
-        //
-        // return newString.count <= maxLength
-        return true
-    }
-
     @objc override func keyboardWillShow(_ notification: NSNotification) {
         super.keyboardWillShow(notification)
 
@@ -46,7 +36,7 @@ class StoryAddViewController2: StoryAddViewController {
 
     @objc override func keyboardWillHide(_ notification: NSNotification) {
         super.keyboardWillHide(notification)
-        
+
         sv_content.contentInset = UIEdgeInsets.zero
         sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
     }
