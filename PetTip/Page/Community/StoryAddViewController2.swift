@@ -40,4 +40,9 @@ class StoryAddViewController2: StoryAddViewController {
         sv_content.contentInset = UIEdgeInsets.zero
         sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
     }
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView == tv_memo { return range.location < tv_memo.maxLength }
+        else { return true }
+    }
 }

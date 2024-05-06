@@ -10,7 +10,7 @@ import NMapsMap
 import AlamofireImage
 import DropDown
 
-class PostViewController : CommonViewController {
+class PostViewController : CommonViewController3 {
     
     var arrTrack: Array<Track>?
     var arrImageFromCamera: [UIImage]?
@@ -25,13 +25,9 @@ class PostViewController : CommonViewController {
         
         showCommonUI()
     }
-    
-    
-    
-    
-    
+
     @IBOutlet weak var sv_content: UIScrollView!
-    
+
     @IBOutlet weak var lb_currDate: UILabel!
     
     @IBOutlet weak var vw_walkInfoBG: UIView!
@@ -106,13 +102,8 @@ class PostViewController : CommonViewController {
     @IBAction func onBtnComplete(_ sender: Any) {
         dailylife_upload()
     }
-    
-    
-    
-    
-    
+
     // MARK: - CONN DAILY-LIFE CREATE
-    
     private func dailylife_create() {
         self.startLoading()
         
@@ -215,13 +206,8 @@ class PostViewController : CommonViewController {
         
         return ret
     }
-    
-    
-    
-    
-    
+
     // MARK: - CONN DAILY-LIFE UPLOAD
-    
     private var fileUploadResult: [PhotoData]?
     
     private func dailylife_upload() {
@@ -256,11 +242,7 @@ class PostViewController : CommonViewController {
             self.processNetworkError(error)
         }
     }
-    
-    
-    
-    
-    
+
     private func showWalkTimeDist() {
         vw_walkInfoBG.layer.cornerRadius = 20
         vw_walkInfoBG.layer.masksToBounds = true
@@ -418,13 +400,8 @@ class PostViewController : CommonViewController {
         
         return ret
     }
-    
-    
-    
-    
-    
+
     // MARK: - ATTACH FILE
-    
     @IBOutlet weak var cv_attachFile : UICollectionView!
     
     var arrAtchHybidData = [AtchHybridData]()
@@ -466,13 +443,8 @@ class PostViewController : CommonViewController {
             present(imagePicker, animated: true, completion: nil)
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - COMBO TITLE
-    
     @IBOutlet weak var vw_titleArea: UIView!
     @IBOutlet weak var tf_title: UITextField!
     @IBOutlet weak var vw_titleComboShowingArea: UIView!
@@ -525,13 +497,8 @@ class PostViewController : CommonViewController {
             tf_title.resignFirstResponder()
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - MEMO
-    
     @IBOutlet weak var tv_memo: UITextView!
     
     let textViewPlaceHolder = "오늘 산책 중 재미있던 일을 기록해주세요."
@@ -582,13 +549,8 @@ class PostViewController : CommonViewController {
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor(hex: "#ffe3e9f2")?.cgColor // NORMAL COLOR
     }
-    
-    
-    
-    
-    
+
     // MARK: - HASHTAG
-    
     @IBOutlet weak var tf_hashtag: UITextField!
     
     private func initHashtag() {
@@ -597,13 +559,8 @@ class PostViewController : CommonViewController {
         tf_hashtag.spellCheckingType = .no
         inputTextNormalUI(view: tf_hashtag)
     }
-    
-    
-    
-    
-    
+
     // MARK: - STORY SHARE AGREE
-    
     @IBOutlet weak var btn_storyShareAgree: UIButton!
     @IBOutlet weak var iv_storyShareAgree: UIImageView!
     @IBOutlet weak var vw_storyShareAgree: UIView!
@@ -628,13 +585,8 @@ class PostViewController : CommonViewController {
             vw_storyShareAgree.backgroundColor = UIColor.white
         }
     }
-    
-    
-    
-    
-    
+
     // MARK: - GPX
-    
     func getGPXData() -> String? {
         guard let arrTrack = arrTrack else { return nil }
         
@@ -784,10 +736,6 @@ class PostViewController : CommonViewController {
     }
 }
 
-
-
-
-
 extension PostViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -841,10 +789,6 @@ extension PostViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-
-
-
-
 extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
@@ -858,12 +802,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
     }
 }
 
-
-
-
-
 // MARK: - UITextFieldDelegate
-
 extension PostViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switch textField {
@@ -916,13 +855,7 @@ extension PostViewController: UITextFieldDelegate {
     }
 }
 
-
-
-
-
-
 // MARK: - UITextViewDelegate
-
 extension PostViewController : UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {

@@ -1596,10 +1596,10 @@
     </scenes>
     <designables>
         <designable name="ujV-WE-C3R">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="xvl-5v-5uX">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>
@@ -1608,8 +1608,8 @@
         <image name="icon_bubble" width="58" height="48"/>
         <image name="line_answer" width="12" height="36"/>
         <image name="picture_delete" width="10" height="10"/>
-        <image name="square.and.pencil" catalog="system" width="32" height="32"/>
-        <image name="trash.fill" catalog="system" width="32" height="32"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="121"/>
+        <image name="trash.fill" catalog="system" width="117" height="128"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

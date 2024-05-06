@@ -24,20 +24,25 @@ class StoryModifyViewController2: StoryModifyViewController {
         guard let userInfo = notification.userInfo else { return }
         guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
         let keyboardFrame = keyboardSize.cgRectValue
-    
+
         sv_content.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
         sv_content.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
-    
+
         let bottomOffset = CGPoint(x: 0, y: sv_content.contentSize.height - sv_content.bounds.height + sv_content.contentInset.bottom)
         if (bottomOffset.y > 0) {
             sv_content.setContentOffset(bottomOffset, animated: true)
         }
     }
-    
+
     @objc override func keyboardWillHide(_ notification: NSNotification) {
         super.keyboardWillHide(notification)
 
         sv_content.contentInset = UIEdgeInsets.zero
         sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
+    }
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if textView == tv_memo { return range.location < tv_memo.maxLength }
+        else { return true }
     }
 }

@@ -392,8 +392,8 @@ class StoryModifyViewController: CommonViewController3 {
     
 
     // MARK: - MEMO
-    @IBOutlet weak var tv_memo: UITextView!
-    
+    @IBOutlet weak var tv_memo: UITextView2!
+
     let textViewPlaceHolder = "일상을 기록해주세요"
     
     private func initMemo() {
@@ -431,8 +431,8 @@ class StoryModifyViewController: CommonViewController3 {
     }
 
     // MARK: - HASHTAG
-    @IBOutlet weak var tf_hashtag: UITextField!
-    
+    @IBOutlet weak var tf_hashtag: UITextField2!
+
     private func initHashtag() {
         if let dailyLifeSchHashTagList = lifeViewData.dailyLifeSchHashTagList {
             var str = ""
