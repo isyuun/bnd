@@ -190,8 +190,8 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="19"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcB-dG-c49">
-                                                                                <rect key="frame" x="-12.666666666666686" y="-9" width="75" height="37"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcB-dG-c49">
+                                                                                <rect key="frame" x="-12.666666666666664" y="-9" width="75.333333333333329" height="37"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="37" id="AhB-Yu-UVB"/>
                                                                                     <constraint firstAttribute="width" constant="75" id="Qhs-6U-kUd"/>
@@ -201,6 +201,10 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="lcB-dG-c49" firstAttribute="centerY" secondItem="xyv-39-rLZ" secondAttribute="centerY" id="PjD-TA-ChR"/>
+                                                                            <constraint firstItem="lcB-dG-c49" firstAttribute="centerX" secondItem="xyv-39-rLZ" secondAttribute="centerX" id="dWg-U7-TEV"/>
+                                                                        </constraints>
                                                                     </collectionViewCellContentView>
                                                                 </collectionViewCell>
                                                             </cells>
@@ -212,7 +216,6 @@
                                                         <constraint firstItem="TTr-Uy-hMD" firstAttribute="leading" secondItem="mxI-ZR-85p" secondAttribute="leading" id="4eN-7g-NXY"/>
                                                         <constraint firstItem="2yU-e1-1Gr" firstAttribute="leading" secondItem="mxI-ZR-85p" secondAttribute="leading" constant="12" id="6UU-Fl-FXr"/>
                                                         <constraint firstItem="ZVk-FB-T9Z" firstAttribute="trailing" secondItem="Rem-Xs-Weh" secondAttribute="trailing" id="86a-of-gxg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2yU-e1-1Gr" secondAttribute="bottom" constant="14" id="EY6-Ad-KC1"/>
                                                         <constraint firstItem="TTr-Uy-hMD" firstAttribute="top" secondItem="mxI-ZR-85p" secondAttribute="top" id="JIR-xY-tmj"/>
                                                         <constraint firstItem="2yU-e1-1Gr" firstAttribute="top" secondItem="Rem-Xs-Weh" secondAttribute="bottom" constant="216" id="MGJ-Nv-MZd"/>
                                                         <constraint firstItem="ZVk-FB-T9Z" firstAttribute="top" secondItem="yDr-vB-Q9K" secondAttribute="bottom" constant="4" id="Myx-99-4hH"/>
@@ -227,6 +230,7 @@
                                                         <constraint firstItem="ZVk-FB-T9Z" firstAttribute="leading" secondItem="mxI-ZR-85p" secondAttribute="leading" constant="12" id="nPw-f8-YaG"/>
                                                         <constraint firstAttribute="bottom" secondItem="TTr-Uy-hMD" secondAttribute="bottom" id="tRO-rR-OKp"/>
                                                         <constraint firstAttribute="trailing" secondItem="yDr-vB-Q9K" secondAttribute="trailing" constant="12" id="xNO-ey-eWH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2yU-e1-1Gr" secondAttribute="bottom" constant="14" id="ypa-kw-PJp"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <connections>
