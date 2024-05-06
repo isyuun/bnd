@@ -12,4 +12,9 @@ class StoryDetailViewController2: StoryDetailViewController {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][animated:\(animated)]")
         super.viewDidAppear(animated)
     }
+
+    override func requestLifeViewData() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][schUnqNo\(String(describing: schUnqNo))]")
+        super.requestLifeViewData()
+    }
 }
