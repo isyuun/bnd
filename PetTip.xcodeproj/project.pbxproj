@@ -339,6 +339,7 @@
 		7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */; };
 		7B3C4EFA2BE3A6880059EE82 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
+		7B714A7D2BE8690F00E89AE8 /* PostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */; };
 		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
@@ -689,6 +690,7 @@
 		7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewController2.swift; sourceTree = "<group>"; };
 		7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
+		7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController2.swift; sourceTree = "<group>"; };
 		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
 		7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -934,6 +936,7 @@
 				022B41822B1A29770057323E /* MapBottomView.swift */,
 				022B41842B1A29A80057323E /* MapBottomView.xib */,
 				022B41862B1ABC1C0057323E /* PostViewController.swift */,
+				7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */,
 				02DB383D2B731F31007D19A1 /* Map.storyboard */,
 			);
 			path = Map;
@@ -1704,6 +1707,7 @@
 				0251FD742B1909BA00F35EF8 /* UIImage.swift in Sources */,
 				02E3FC812B257D0A00A1CE62 /* KeychainAccessible.swift in Sources */,
 				028625352B4DA08D0055E62F /* NoticeViewController.swift in Sources */,
+				7B714A7D2BE8690F00E89AE8 /* PostViewController2.swift in Sources */,
 				0293C6262B0E37340004F19D /* UTCRepository.swift in Sources */,
 				02A7AAA62B4FCC75002F0C03 /* QnADetailViewController.swift in Sources */,
 				0251FD512B0F328100F35EF8 /* NMapViewController.swift in Sources */,

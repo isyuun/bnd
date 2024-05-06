@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Post View Controller-->
+        <!--Post View Controller2-->
         <scene sceneID="OQ5-PW-epF">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" id="sjE-zC-BED" customClass="PostViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" id="sjE-zC-BED" customClass="PostViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Olp-qz-LrW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,13 +333,16 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYV-xx-sxi">
                                                         <rect key="frame" x="20" y="40" width="353" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6al-js-EGV" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6al-js-EGV" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                                 <rect key="frame" x="-16" y="0.0" width="369" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                                                         <real key="value" value="32"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                        <integer key="value" value="80"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
@@ -379,7 +382,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pge-fN-po5">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pge-fN-po5" customClass="UITextView2" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="168" width="353" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -388,6 +391,11 @@
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                <integer key="value" value="1330"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시 태그" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-v4-ibs">
                                                         <rect key="frame" x="20" y="308" width="353" height="24"/>
@@ -398,7 +406,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-Ja-LHk" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-Ja-LHk" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="348" width="353" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="IqE-x1-f3T"/>
@@ -408,6 +416,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                                                 <real key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                <integer key="value" value="30"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
