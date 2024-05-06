@@ -139,7 +139,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Rem-Xs-Weh">
-                                                            <rect key="frame" x="121" y="14" width="67" height="14"/>
+                                                            <rect key="frame" x="121" y="20" width="67" height="14"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_like_default" translatesAutoresizingMaskIntoConstraints="NO" id="tlf-S2-9pF">
                                                                     <rect key="frame" x="0.0" y="0.0" width="14" height="14"/>
@@ -176,6 +176,9 @@
                                                         </stackView>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2yU-e1-1Gr">
                                                             <rect key="frame" x="12" y="244" width="176" height="22"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="22" id="QYe-sH-rDy"/>
+                                                            </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IVM-Br-x6U">
                                                                 <size key="itemSize" width="50" height="19"/>
                                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -212,17 +215,16 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="ZVk-FB-T9Z" secondAttribute="trailing" constant="12" id="1MZ-Zf-2iw"/>
+                                                        <constraint firstItem="Rem-Xs-Weh" firstAttribute="top" secondItem="mxI-ZR-85p" secondAttribute="top" constant="20" id="2tA-oP-uWp"/>
                                                         <constraint firstAttribute="trailing" secondItem="bBE-t5-GM7" secondAttribute="trailing" id="32D-Bp-Q0b"/>
                                                         <constraint firstItem="TTr-Uy-hMD" firstAttribute="leading" secondItem="mxI-ZR-85p" secondAttribute="leading" id="4eN-7g-NXY"/>
                                                         <constraint firstItem="2yU-e1-1Gr" firstAttribute="leading" secondItem="mxI-ZR-85p" secondAttribute="leading" constant="12" id="6UU-Fl-FXr"/>
                                                         <constraint firstItem="ZVk-FB-T9Z" firstAttribute="trailing" secondItem="Rem-Xs-Weh" secondAttribute="trailing" id="86a-of-gxg"/>
                                                         <constraint firstItem="TTr-Uy-hMD" firstAttribute="top" secondItem="mxI-ZR-85p" secondAttribute="top" id="JIR-xY-tmj"/>
-                                                        <constraint firstItem="2yU-e1-1Gr" firstAttribute="top" secondItem="Rem-Xs-Weh" secondAttribute="bottom" constant="216" id="MGJ-Nv-MZd"/>
                                                         <constraint firstItem="ZVk-FB-T9Z" firstAttribute="top" secondItem="yDr-vB-Q9K" secondAttribute="bottom" constant="4" id="Myx-99-4hH"/>
                                                         <constraint firstAttribute="trailing" secondItem="TTr-Uy-hMD" secondAttribute="trailing" id="O8W-ff-zaP"/>
                                                         <constraint firstItem="2yU-e1-1Gr" firstAttribute="top" secondItem="ZVk-FB-T9Z" secondAttribute="bottom" constant="8" symbolic="YES" id="PV0-CV-iNh"/>
                                                         <constraint firstItem="bBE-t5-GM7" firstAttribute="leading" secondItem="mxI-ZR-85p" secondAttribute="leading" id="X9P-pV-amc"/>
-                                                        <constraint firstItem="Rem-Xs-Weh" firstAttribute="top" secondItem="mxI-ZR-85p" secondAttribute="top" constant="14" id="b6a-Jq-U52"/>
                                                         <constraint firstItem="yDr-vB-Q9K" firstAttribute="leading" secondItem="mxI-ZR-85p" secondAttribute="leading" constant="12" id="bar-w3-OAZ"/>
                                                         <constraint firstItem="ZVk-FB-T9Z" firstAttribute="top" secondItem="yDr-vB-Q9K" secondAttribute="bottom" constant="4" id="d9b-Mp-jXM"/>
                                                         <constraint firstAttribute="trailing" secondItem="2yU-e1-1Gr" secondAttribute="trailing" constant="12" id="ldb-MZ-D8K"/>
@@ -2722,16 +2724,16 @@
     </scenes>
     <designables>
         <designable name="J7H-kc-4x4">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
         <designable name="e0H-MH-re3">
-            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="hqa-Pj-3j2">
-            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="knt-VH-hAf">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>
