@@ -111,10 +111,6 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     private func showCommonUI() {
         lb_title?.text = "스토리"
 
@@ -191,12 +187,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - PUBLIC or PRIVATE STATE
-
     var rlsYn: String!
 
     func initRls() {
@@ -257,12 +248,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - DELETE STORY
-
     @IBAction func onDeleteStory(_ sender: Any) {
         let commonConfirmView = UINib(nibName: "CommonConfirmView", bundle: nil).instantiate(withOwner: self).first as! CommonConfirmView
         commonConfirmView.initialize(title: "게시글 삭제하기", msg: "정말 삭제하시겠어요?", cancelBtnTxt: "취소", okBtnTitleTxt: "삭제하기")
@@ -304,12 +290,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - CONN LIKE/DISLIKE
-
     private func rcmdtn(rcmdtnSeCd: String, schUnqNo: Int, targetBtn: UIButton) {
         startLoading()
 
@@ -326,12 +307,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - CONN COMMENT LIKE/DISLIKE
-
     private func cmnt_rcmdtn(cmntNo: Int, rcmdtnSeCd: String, schUnqNo: Int, view: CommunityCommentView) {
         startLoading()
 
@@ -357,12 +333,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - CONN COMMENT DELETE
-
     private func cmnt_delete(cmntNo: Int, view: CommunityCommentView) {
         startLoading()
 
@@ -427,12 +398,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - CONN COMMENT UPDATE
-
     private func cmnt_update(cmntNo: Int, cmntCn: String, view: CommunityCommentView) {
         startLoading()
 
@@ -461,12 +427,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - WRITE COMMENT
-
     @IBOutlet weak var btn_writeComment: UIButton!
 
     var upCmntNo: Int = 0
@@ -585,12 +546,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - CONN COMMON CODE-LIST
-
     private func code_list(cmmCdData: [String], complete: (() -> Void)?) {
         if Global.rsnCodeList != nil {
             complete?()
@@ -612,12 +568,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - TARGET LIFE VIEW DATA
-
     var schUnqNo: Int? = 0
 
     var slides: [CommonDetailImageItemView]!
@@ -843,12 +794,7 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-
-
-
-
     // MARK: - WRITE REPORT (dlcr_create)
-
     @IBAction func onReport(_ sender: Any) {
         writeReport(cmntNo: nil)
     }
@@ -923,12 +869,7 @@ class StoryDetailViewController: CommonDetailViewController {
     }
 }
 
-
-
-
-
 // MARK: - COMMENT VIEW DELEGATE
-
 extension StoryDetailViewController: CommunityCommentViewDelegate {
     func onReplyComment(cmntNo: Int, petNm: String?, view: CommunityCommentView) {
         upCmntNo = cmntNo
@@ -991,23 +932,13 @@ extension StoryDetailViewController: CommunityCommentViewDelegate {
     }
 }
 
-
-
-
-
 // MARK: - SAVED COMMENT DATA CLASS
-
 struct CommentData {
     var comment: CmntList
     var reply: [CommentData]
 }
 
-
-
-
-
 // MARK: - Comment Input TextViewDelegate
-
 extension StoryDetailViewController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
@@ -1047,12 +978,7 @@ extension StoryDetailViewController: UITextViewDelegate {
     }
 }
 
-
-
-
-
 // MARK: - IMAGE VIEW SCROLLVIEW DELEGATE
-
 extension StoryDetailViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / view.frame.width)
@@ -1087,4 +1013,3 @@ extension StoryDetailViewController: UIScrollViewDelegate {
         }
     }
 }
-

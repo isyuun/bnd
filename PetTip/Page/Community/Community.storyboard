@@ -641,10 +641,10 @@
             </objects>
             <point key="canvasLocation" x="870.99236641221376" y="737.32394366197184"/>
         </scene>
-        <!--Story Detail View Controller-->
+        <!--Story Detail View Controller2-->
         <scene sceneID="JCN-S8-yYQ">
             <objects>
-                <viewController id="ki1-Ny-bgg" customClass="StoryDetailViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ki1-Ny-bgg" customClass="StoryDetailViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ig8-gC-zAH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1210,8 +1210,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Upz-ik-2u0" secondAttribute="trailing" id="BCI-qQ-pyi"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Upz-ik-2u0" secondAttribute="bottom" id="Jf9-xF-ZYR"/>
+                                                    <constraint firstItem="Upz-ik-2u0" firstAttribute="trailing" secondItem="t0Q-7L-JRQ" secondAttribute="trailing" id="BCI-qQ-pyi"/>
+                                                    <constraint firstItem="Upz-ik-2u0" firstAttribute="bottom" secondItem="t0Q-7L-JRQ" secondAttribute="bottom" id="Jf9-xF-ZYR"/>
                                                     <constraint firstItem="Upz-ik-2u0" firstAttribute="top" secondItem="t0Q-7L-JRQ" secondAttribute="top" constant="20" id="PQT-eQ-cP7"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="Wc3-Wk-Hl9"/>
                                                     <constraint firstItem="Upz-ik-2u0" firstAttribute="leading" secondItem="t0Q-7L-JRQ" secondAttribute="leading" id="siB-j0-Kis"/>
