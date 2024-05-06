@@ -336,7 +336,7 @@ class StoryModifyViewController: CommonViewController3 {
 
     // MARK: - COMBO TITLE
     @IBOutlet weak var vw_titleArea: UIView!
-    @IBOutlet weak var tf_title: UITextField!
+    @IBOutlet weak var tf_title: UITextField2!
     @IBOutlet weak var vw_titleComboShowingArea: UIView!
     
     private var dropDown: DropDown?

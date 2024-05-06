@@ -41,8 +41,25 @@ class StoryAddViewController2: StoryAddViewController {
         sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case tf_title:
+            return range.location < tf_title.maxLength
+        case tf_hashtag:
+            return range.location < tf_hashtag.maxLength
+        default:
+            break
+        }
+        return true
+    }
+
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if textView == tv_memo { return range.location < tv_memo.maxLength }
-        else { return true }
+        switch textView {
+        case tv_memo:
+            return range.location < tv_memo.maxLength
+        default:
+            break
+        }
+        return true
     }
 }
