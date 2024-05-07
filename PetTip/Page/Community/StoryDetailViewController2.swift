@@ -17,7 +17,6 @@ class StoryDetailViewController2: StoryDetailViewController {
             self.lb_msg.text = lifeView.lifeViewData.schCN
             self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
             self.vw_msgArea.isHidden = false
-            // self.vw_msgArea.heightAnchor.constraint(equalToConstant: 37).isActive = true
         } else {
             self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
             self.vw_msgArea.isHidden = true
