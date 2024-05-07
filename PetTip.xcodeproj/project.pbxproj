@@ -339,6 +339,7 @@
 		7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */; };
 		7B3C4EFA2BE3A6880059EE82 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
+		7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */; };
 		7B714A7D2BE8690F00E89AE8 /* PostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */; };
 		7B714A7F2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */; };
 		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
@@ -691,6 +692,7 @@
 		7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewController2.swift; sourceTree = "<group>"; };
 		7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
+		7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController2.swift; sourceTree = "<group>"; };
 		7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController2.swift; sourceTree = "<group>"; };
 		7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController2.swift; sourceTree = "<group>"; };
 		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
@@ -930,6 +932,7 @@
 			isa = PBXGroup;
 			children = (
 				0251FD502B0F328100F35EF8 /* NMapViewController.swift */,
+				7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */,
 				0251FD572B12351100F35EF8 /* LocationViewController.swift */,
 				0251FD5F2B16EEE300F35EF8 /* MapTopView.swift */,
 				0251FD652B1707A000F35EF8 /* MapTipView.xib */,
@@ -1810,6 +1813,7 @@
 				02C1140D2B5CF31F00A14F77 /* LifeUploadRequest.swift in Sources */,
 				02E3FC912B25A79400A1CE62 /* MyPetListRequest.swift in Sources */,
 				02E3FC602B25479300A1CE62 /* TargetType.swift in Sources */,
+				7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */,
 				0293C6242B0E34220004F19D /* UTCTimeEntity.swift in Sources */,
 				0286252F2B4D9AE10055E62F /* CustomerCenterViewController.swift in Sources */,
 				02D4D4132B20B2090086104D /* HomeStoryItemView.swift in Sources */,
