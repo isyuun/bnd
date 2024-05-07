@@ -231,25 +231,25 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         mapView.positionMode = .direction
         mapView.zoomLevel = 17
         mapView.minZoomLevel = 5.0
-//        mapView.maxZoomLevel = 18.0
-
-//        mapView.locationOverlay.icon = NMFOverlayImage(name: "currentLocation")
-//        mapView.locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-//        mapView.locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-
-//        mapView.locationOverlay.subIcon = NMFOverlayImage(name: "currentLocation")
-//        mapView.locationOverlay.subIconWidth = 40
-//        mapView.locationOverlay.subIconHeight = 40
-////        mapView.locationOverlay.subAnchor = CGPoint(x: 0.4, y: 0.4)
-//        mapView.locationOverlay.subAnchor = CGPoint(x: 0.5, y: 1)
-
-//        mapView.locationOverlay.circleColor = UIColor.red
-
-//        let circleOverlay = NMFCircleOverlay(NMGLatLng(lat: 37.5666102, lng: 126.9783881), radius: 500)                            // 원 위치 및 반지름을 설정합니다.
-//        circleOverlay.fillColor = .lightGray        // 원 내부 색을 설정합니다.
-//        circleOverlay.outlineColor = .red           // 원 테두리 색을 설정합니다.
-//        circleOverlay.outlineWidth = 3              // 원 테두리 두께를 설정합니다.
-//        circleOverlay.mapView = naverMapView.mapView
+        // mapView.maxZoomLevel = 18.0
+        // 
+        // mapView.locationOverlay.icon = NMFOverlayImage(name: "currentLocation")
+        // mapView.locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        // mapView.locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
+        // 
+        // mapView.locationOverlay.subIcon = NMFOverlayImage(name: "currentLocation")
+        // mapView.locationOverlay.subIconWidth = 40
+        // mapView.locationOverlay.subIconHeight = 40
+        // mapView.locationOverlay.subAnchor = CGPoint(x: 0.4, y: 0.4)
+        // mapView.locationOverlay.subAnchor = CGPoint(x: 0.5, y: 1)
+        // 
+        // mapView.locationOverlay.circleColor = UIColor.red
+        // 
+        // let circleOverlay = NMFCircleOverlay(NMGLatLng(lat: 37.5666102, lng: 126.9783881), radius: 500) // 원 위치 및 반지름을 설정합니다.
+        // circleOverlay.fillColor = .lightGray // 원 내부 색을 설정합니다.
+        // circleOverlay.outlineColor = .red // 원 테두리 색을 설정합니다.
+        // circleOverlay.outlineWidth = 3 // 원 테두리 두께를 설정합니다.
+        // circleOverlay.mapView = naverMapView.mapView
 
         naverMapView.showCompass = false
         naverMapView.showIndoorLevelPicker = true
@@ -260,7 +260,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         naverMapView.showLocationButton = false
         locationButton.mapView = naverMapView.mapView
 
-//        mapView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        // mapView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
 
         btnWalk.layer.cornerRadius = 10.0
         btnWalk.tintColor = UIColor.init(hexCode: "4783F5")
@@ -408,16 +408,16 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
             }
         }
 
-//        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))
-//                    cameraUpdate.animation = .easeIn
-//                    mapView.moveCamera(cameraUpdate)
+        // let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0, lng: locationManager.location?.coordinate.longitude ?? 0))
+        // cameraUpdate.animation = .easeIn
+        // mapView.moveCamera(cameraUpdate)
     }
 
     static func getTextMarker(loc: NMGLatLng, text: String, forceShow: Bool) -> NMFMarker {
         let marker = NMFMarker()
         marker.captionText = text
         marker.captionOffset = -39
-//        marker.captionColor = UIColor.white
+        // marker.captionColor = UIColor.white
         marker.captionTextSize = 12
         marker.position = loc
         marker.iconImage = NMFOverlayImage(image: UIImage(named: "marker_start")!)
@@ -698,7 +698,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         if (segue.identifier == "showPost") {
             let dest = segue.destination
             guard let vc = dest as? PostViewController else { return }
-//            vc.mapSnapImg = _mapSnapImg
+            // vc.mapSnapImg = _mapSnapImg
             vc.arrTrack = arrTrack
             vc.arrImageFromCamera = arrImageFromCamera
             vc.movedSec = movedSec
@@ -722,11 +722,11 @@ extension NMapViewController: UINavigationControllerDelegate, UIImagePickerContr
         selectEventMarkPet(mark: .IMG)
 
         picker.dismiss(animated: true, completion: nil)
-        // 비디오인 경우 - url로 받는 형태
-//    guard let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL else {
-//      picker.dismiss(animated: true, completion: nil)
-//      return
-//    }
-//    let video = AVAsset(url: url)
+        // // 비디오인 경우 - url로 받는 형태
+        // guard let url = info[UIImagePickerController.InfoKey.mediaURL] as? URL else {
+        //     picker.dismiss(animated: true, completion: nil)
+        //     return
+        // }
+        // let video = AVAsset(url: url)
     }
 }

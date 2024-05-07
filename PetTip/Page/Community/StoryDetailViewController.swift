@@ -399,7 +399,7 @@ class StoryDetailViewController: CommonDetailViewController {
     }
 
     // MARK: - CONN COMMENT UPDATE
-    private func cmnt_update(cmntNo: Int, cmntCn: String, view: CommunityCommentView) {
+    internal func cmnt_update(cmntNo: Int, cmntCn: String, view: CommunityCommentView) {
         startLoading()
 
         let request = CmntUpdateRequest(cmntCn: cmntCn, cmntNo: cmntNo)
@@ -588,209 +588,213 @@ class StoryDetailViewController: CommonDetailViewController {
                 self.stopLoading()
 
                 if let lifeView = lifeView {
-                    self.lifeViewData = lifeView.lifeViewData
-
-                    self.atchPath = lifeView.lifeViewData.atchPath
-
-                    self.lb_ttl.text = lifeView.lifeViewData.schTTL
-                    self.lb_writeDt.text = lifeView.lifeViewData.rlsDt
-
-                    self.initRls()
-
-                    self.lb_likeCnt.text = String(lifeView.lifeViewData.rcmdtnCnt)
-                    self.lb_CmtCnt.text = String(lifeView.lifeViewData.cmntCnt)
-                    self.lb_CmtCnt2.text = String("댓글 \(lifeView.lifeViewData.cmntCnt)")
-                    self.btn_like.isSelected = lifeView.lifeViewData.myRcmdtn != nil && lifeView.lifeViewData.myRcmdtn == "001"
-                    self.btn_dislike.isSelected = lifeView.lifeViewData.myRcmdtn != nil && lifeView.lifeViewData.myRcmdtn == "002"
-
-                    if UserDefaults.standard.value(forKey: "userId") as! String == lifeView.lifeViewData.userID {
-                        self.vw_storyModifyDeleteBtnArea.isHidden = false
-                        self.vw_storyReportBtnArea.isHidden = true
-                        self.cr_width_reportBtnArea.constant = 0
-                    } else {
-                        self.vw_storyModifyDeleteBtnArea.isHidden = true
-                        self.vw_storyReportBtnArea.isHidden = false
-                    }
-
-                    if let petList = lifeView.lifeViewData.dailyLifePetList {
-                        if petList.count > 0 {
-                            if let petImg = petList[0].petImg {
-                                self.iv_repPetProf.af.setImage(
-                                    withURL: URL(string: petImg)!,
-                                    placeholderImage: UIImage(named: "profile_default")!,
-                                    filter: AspectScaledToFillSizeFilter(size: self.iv_repPetProf.frame.size)
-                                )
-                            } else {
-                                self.iv_repPetProf.image = UIImage(named: "profile_default")
-                            }
-
-                            self.lb_repPetNm.text = petList[0].petNm
-                        }
-                    }
-
-                    if let fileList = lifeView.lifeViewData.dailyLifeFileList {
-                        if (fileList.count > 0) {
-                            self.pc_img.isHidden = false
-                            self.cr_height_imageArea.constant = 286
-
-                            self.slides = [CommonDetailImageItemView](repeating: CommonDetailImageItemView(), count: fileList.count)
-
-                            self.sv_img.contentSize = CGSize(width: self.sv_img.frame.width * CGFloat(self.slides.count), height: self.sv_img.frame.height)
-                            self.sv_img.showsHorizontalScrollIndicator = false
-                            self.sv_img.isPagingEnabled = true
-                            self.sv_img.delegate = self
-
-                            self.pc_img.numberOfPages = self.slides.count
-                            self.pc_img.currentPage = 0
-
-                            for i in 0 ..< fileList.count {
-                                let slide = Bundle.main.loadNibNamed("CommonDetailImageItemView", owner: self, options: nil)?.first as! CommonDetailImageItemView
-
-                                slide.frame = CGRect(x: self.sv_img.frame.width * CGFloat(i), y: 0, width: self.sv_img.frame.width, height: self.sv_img.frame.height)
-
-                                slide.iv_img.af.setImage(
-                                    withURL: URL(string: String("\(lifeView.lifeViewData.atchPath)\(fileList[i].filePathNm)\(fileList[i].atchFileNm)"))!
-                                )
-                                slide.didTapImage = {
-                                    let vc = UIStoryboard.init(name: "Common", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
-                                    vc.initialize(image: nil, strUrl: String("\(lifeView.lifeViewData.atchPath)\(fileList[i].filePathNm)\(fileList[i].atchFileNm)"))
-                                    self.navigationController?.pushViewController(vc, animated: true)
-                                }
-
-                                self.slides[i] = slide
-                                self.sv_img.addSubview(self.slides[i])
-                            }
-
-                        } else {
-                            self.pc_img.isHidden = true
-                            self.cr_height_imageArea.constant = 0
-                        }
-                    } else {
-                        self.pc_img.isHidden = true
-                        self.cr_height_imageArea.constant = 0
-                    }
-
-                    var isWalk = false
-                    for dailyLifeSchSEList in lifeView.lifeViewData.dailyLifeSchSEList {
-                        if dailyLifeSchSEList.cdID == "001" {
-                            isWalk = true
-                            break
-                        }
-                    }
-                    if isWalk {
-                        if let walkDtStr = lifeView.lifeViewData.walkDptreDt {
-                            if walkDtStr.count > 0 {
-                                let formatter = DateFormatter()
-                                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                                let searchDay = formatter.date(from: walkDtStr)
-                                if searchDay != nil {
-                                    let formatter2 = DateFormatter()
-                                    formatter2.dateFormat = "yyyy.MM.dd"
-                                    self.lb_walkDt.text = formatter2.string(from: searchDay!)
-                                } else {
-                                    self.lb_walkDt.text = "0000.00.00"
-                                }
-                            }
-
-                            self.lb_walkTime.text = lifeView.lifeViewData.runTime
-                            self.lb_walkDist.text = String(format: "%.1fkm", Float(lifeView.lifeViewData.runDstnc) / Float(1000.0))
-                        }
-                    } else {
-                        self.vw_walkInfoArea.isHidden = true
-                        self.vw_walkInfoArea.translatesAutoresizingMaskIntoConstraints = false
-                        self.cr_height_walkInfoArea.constant = 0
-                    }
-
-                    if let schCN = lifeView.lifeViewData.schCN, schCN.count > 0, schCN != " " {
-                        self.lb_msg.preferredMaxLayoutWidth = self.lb_msg.frame.size.width
-                        self.lb_msg.text = lifeView.lifeViewData.schCN
-                        self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
-                        self.vw_msgArea.isHidden = false
-                        self.vw_msgArea.heightAnchor.constraint(equalToConstant: 37).isActive = true
-
-                    } else {
-                        self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
-                        self.vw_msgArea.isHidden = true
-                        self.vw_msgArea.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
-                    }
-
-                    if let dailyLifeSchHashTagList = lifeView.lifeViewData.dailyLifeSchHashTagList {
-                        var str = ""
-                        for i in 0..<dailyLifeSchHashTagList.count {
-                            if str != "" {
-                                str += " "
-                            }
-                            str += String("#\(dailyLifeSchHashTagList[i].hashTagNm)")
-                        }
-                        self.lb_tag.preferredMaxLayoutWidth = self.lb_tag.frame.size.width
-                        self.lb_tag.text = str
-                        self.vw_tagArea.translatesAutoresizingMaskIntoConstraints = false
-                        self.vw_tagArea.isHidden = false
-                        self.vw_tagArea.heightAnchor.constraint(equalToConstant: 37).isActive = true
-
-                    } else {
-                        self.vw_tagArea.translatesAutoresizingMaskIntoConstraints = false
-                        self.vw_tagArea.isHidden = true
-                        self.vw_tagArea.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
-                    }
-
-                    self.vw_commentArea.subviews.forEach({ $0.removeFromSuperview() })
-
-                    if lifeView.lifeViewData.cmntCnt > 0 {
-                        self.cr_commentAreaHeight.priority = .defaultLow
-
-                        if let _cmntList = lifeView.lifeViewData.cmntList {
-                            self.arrComment = [CommentData]()
-                            for cmnt in _cmntList {
-//                                guard cmnt.delYn == "N" else {
-//                                    continue
-//                                }
-
-                                if cmnt.cmntNo == cmnt.upCmntNo {
-                                    let commentData = CommentData(comment: cmnt, reply: [CommentData]())
-                                    self.arrComment.append(commentData)
-
-                                } else {
-                                    for i in 0..<self.arrComment.count {
-                                        if self.arrComment[i].comment.cmntNo == cmnt.upCmntNo {
-                                            self.arrComment[i].reply.append(CommentData(comment: cmnt, reply: [CommentData]()))
-                                            break
-                                        }
-                                    }
-                                }
-
-                                if (cmnt.cmntNo > self.lastCmntNo) {
-                                    self.lastCmntNo = cmnt.cmntNo
-                                }
-
-                                // myRcmdtn 처리?
-                                // myCmntRcmdtn ??
-                            }
-
-                            for i in 0..<self.arrComment.count {
-                                let commentData = self.arrComment[i]
-
-                                if let view = UINib(nibName: "CommunityCommentView", bundle: nil).instantiate(withOwner: self).first as? CommunityCommentView
-                                {
-                                    view.initialize(_isReplyMode: false,
-                                                    _data: commentData,
-                                                    _atchPath: self.atchPath,
-                                                    _rootView: self.view,
-                                                    _delegate: self)
-
-                                    self.vw_commentArea.addArrangedSubview(view)
-                                }
-                            }
-                        }
-
-                    } else {
-                        self.cr_commentAreaHeight.constant = 0
-                        self.cr_commentAreaHeight.priority = UILayoutPriority.init(1000)
-                    }
+                    self.dailylife_update(lifeView: lifeView)
                 }
 
                 self.processNetworkError(error)
             }
+        }
+    }
+
+    func dailylife_update(lifeView: LifeView) {
+        self.lifeViewData = lifeView.lifeViewData
+
+        self.atchPath = lifeView.lifeViewData.atchPath
+
+        self.lb_ttl.text = lifeView.lifeViewData.schTTL
+        self.lb_writeDt.text = lifeView.lifeViewData.rlsDt
+
+        self.initRls()
+
+        self.lb_likeCnt.text = String(lifeView.lifeViewData.rcmdtnCnt)
+        self.lb_CmtCnt.text = String(lifeView.lifeViewData.cmntCnt)
+        self.lb_CmtCnt2.text = String("댓글 \(lifeView.lifeViewData.cmntCnt)")
+        self.btn_like.isSelected = lifeView.lifeViewData.myRcmdtn != nil && lifeView.lifeViewData.myRcmdtn == "001"
+        self.btn_dislike.isSelected = lifeView.lifeViewData.myRcmdtn != nil && lifeView.lifeViewData.myRcmdtn == "002"
+
+        if UserDefaults.standard.value(forKey: "userId") as! String == lifeView.lifeViewData.userID {
+            self.vw_storyModifyDeleteBtnArea.isHidden = false
+            self.vw_storyReportBtnArea.isHidden = true
+            self.cr_width_reportBtnArea.constant = 0
+        } else {
+            self.vw_storyModifyDeleteBtnArea.isHidden = true
+            self.vw_storyReportBtnArea.isHidden = false
+        }
+
+        if let petList = lifeView.lifeViewData.dailyLifePetList {
+            if petList.count > 0 {
+                if let petImg = petList[0].petImg {
+                    self.iv_repPetProf.af.setImage(
+                        withURL: URL(string: petImg)!,
+                        placeholderImage: UIImage(named: "profile_default")!,
+                        filter: AspectScaledToFillSizeFilter(size: self.iv_repPetProf.frame.size)
+                    )
+                } else {
+                    self.iv_repPetProf.image = UIImage(named: "profile_default")
+                }
+
+                self.lb_repPetNm.text = petList[0].petNm
+            }
+        }
+
+        if let fileList = lifeView.lifeViewData.dailyLifeFileList {
+            if (fileList.count > 0) {
+                self.pc_img.isHidden = false
+                self.cr_height_imageArea.constant = 286
+
+                self.slides = [CommonDetailImageItemView](repeating: CommonDetailImageItemView(), count: fileList.count)
+
+                self.sv_img.contentSize = CGSize(width: self.sv_img.frame.width * CGFloat(self.slides.count), height: self.sv_img.frame.height)
+                self.sv_img.showsHorizontalScrollIndicator = false
+                self.sv_img.isPagingEnabled = true
+                self.sv_img.delegate = self
+
+                self.pc_img.numberOfPages = self.slides.count
+                self.pc_img.currentPage = 0
+
+                for i in 0 ..< fileList.count {
+                    let slide = Bundle.main.loadNibNamed("CommonDetailImageItemView", owner: self, options: nil)?.first as! CommonDetailImageItemView
+
+                    slide.frame = CGRect(x: self.sv_img.frame.width * CGFloat(i), y: 0, width: self.sv_img.frame.width, height: self.sv_img.frame.height)
+
+                    slide.iv_img.af.setImage(
+                        withURL: URL(string: String("\(lifeView.lifeViewData.atchPath)\(fileList[i].filePathNm)\(fileList[i].atchFileNm)"))!
+                    )
+                    slide.didTapImage = {
+                        let vc = UIStoryboard.init(name: "Common", bundle: nil).instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+                        vc.initialize(image: nil, strUrl: String("\(lifeView.lifeViewData.atchPath)\(fileList[i].filePathNm)\(fileList[i].atchFileNm)"))
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+
+                    self.slides[i] = slide
+                    self.sv_img.addSubview(self.slides[i])
+                }
+
+            } else {
+                self.pc_img.isHidden = true
+                self.cr_height_imageArea.constant = 0
+            }
+        } else {
+            self.pc_img.isHidden = true
+            self.cr_height_imageArea.constant = 0
+        }
+
+        var isWalk = false
+        for dailyLifeSchSEList in lifeView.lifeViewData.dailyLifeSchSEList {
+            if dailyLifeSchSEList.cdID == "001" {
+                isWalk = true
+                break
+            }
+        }
+        if isWalk {
+            if let walkDtStr = lifeView.lifeViewData.walkDptreDt {
+                if walkDtStr.count > 0 {
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    let searchDay = formatter.date(from: walkDtStr)
+                    if searchDay != nil {
+                        let formatter2 = DateFormatter()
+                        formatter2.dateFormat = "yyyy.MM.dd"
+                        self.lb_walkDt.text = formatter2.string(from: searchDay!)
+                    } else {
+                        self.lb_walkDt.text = "0000.00.00"
+                    }
+                }
+
+                self.lb_walkTime.text = lifeView.lifeViewData.runTime
+                self.lb_walkDist.text = String(format: "%.1fkm", Float(lifeView.lifeViewData.runDstnc) / Float(1000.0))
+            }
+        } else {
+            self.vw_walkInfoArea.isHidden = true
+            self.vw_walkInfoArea.translatesAutoresizingMaskIntoConstraints = false
+            self.cr_height_walkInfoArea.constant = 0
+        }
+
+        // if let schCN = lifeView.lifeViewData.schCN, schCN.count > 0, schCN != " " {
+        //     self.lb_msg.preferredMaxLayoutWidth = self.lb_msg.frame.size.width
+        //     self.lb_msg.text = lifeView.lifeViewData.schCN
+        //     self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
+        //     self.vw_msgArea.isHidden = false
+        //     self.vw_msgArea.heightAnchor.constraint(equalToConstant: 37).isActive = true
+        //
+        // } else {
+        //     self.vw_msgArea.translatesAutoresizingMaskIntoConstraints = false
+        //     self.vw_msgArea.isHidden = true
+        //     self.vw_msgArea.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+        // }
+
+        if let dailyLifeSchHashTagList = lifeView.lifeViewData.dailyLifeSchHashTagList {
+            var str = ""
+            for i in 0..<dailyLifeSchHashTagList.count {
+                if str != "" {
+                    str += " "
+                }
+                str += String("#\(dailyLifeSchHashTagList[i].hashTagNm)")
+            }
+            self.lb_tag.preferredMaxLayoutWidth = self.lb_tag.frame.size.width
+            self.lb_tag.text = str
+            self.vw_tagArea.translatesAutoresizingMaskIntoConstraints = false
+            self.vw_tagArea.isHidden = false
+            self.vw_tagArea.heightAnchor.constraint(equalToConstant: 37).isActive = true
+
+        } else {
+            self.vw_tagArea.translatesAutoresizingMaskIntoConstraints = false
+            self.vw_tagArea.isHidden = true
+            self.vw_tagArea.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+        }
+
+        self.vw_commentArea.subviews.forEach({ $0.removeFromSuperview() })
+
+        if lifeView.lifeViewData.cmntCnt > 0 {
+            self.cr_commentAreaHeight.priority = .defaultLow
+
+            if let _cmntList = lifeView.lifeViewData.cmntList {
+                self.arrComment = [CommentData]()
+                for cmnt in _cmntList {
+                    // guard cmnt.delYn == "N" else {
+                    //     continue
+                    // }
+
+                    if cmnt.cmntNo == cmnt.upCmntNo {
+                        let commentData = CommentData(comment: cmnt, reply: [CommentData]())
+                        self.arrComment.append(commentData)
+
+                    } else {
+                        for i in 0..<self.arrComment.count {
+                            if self.arrComment[i].comment.cmntNo == cmnt.upCmntNo {
+                                self.arrComment[i].reply.append(CommentData(comment: cmnt, reply: [CommentData]()))
+                                break
+                            }
+                        }
+                    }
+
+                    if (cmnt.cmntNo > self.lastCmntNo) {
+                        self.lastCmntNo = cmnt.cmntNo
+                    }
+
+                    // myRcmdtn 처리?
+                    // myCmntRcmdtn ??
+                }
+
+                for i in 0..<self.arrComment.count {
+                    let commentData = self.arrComment[i]
+
+                    if let view = UINib(nibName: "CommunityCommentView", bundle: nil).instantiate(withOwner: self).first as? CommunityCommentView
+                    {
+                        view.initialize(_isReplyMode: false,
+                                        _data: commentData,
+                                        _atchPath: self.atchPath,
+                                        _rootView: self.view,
+                                        _delegate: self)
+
+                        self.vw_commentArea.addArrangedSubview(view)
+                    }
+                }
+            }
+
+        } else {
+            self.cr_commentAreaHeight.constant = 0
+            self.cr_commentAreaHeight.priority = UILayoutPriority.init(1000)
         }
     }
 
