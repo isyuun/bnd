@@ -1,5 +1,5 @@
 //
-//  CommonViewController4.swift
+//  CommonPopupView3.swift
 //  PetTip
 //
 //  Created by isyuun on 2024/5/8.
@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class CommonViewController4: CommonViewController3 {
+class CommonPopupView3: CommonPopupView2 {
     // MARK: - CONN COMMON CODE-LIST
     internal var schCodeList: [CDDetailList]?
 
@@ -19,11 +19,11 @@ class CommonViewController4: CommonViewController3 {
             return
         }
 
-        self.startLoading()
+        // self.startLoading()
 
         let request = CodeListRequest(cmmCdData: cmmCdData)
         CommonAPI.codeList(request: request) { codeList, error in
-            self.stopLoading()
+            // self.stopLoading()
 
             if let codeList = codeList, let data = codeList.data?[0] {
                 Global.schCodeList = data.cdDetailList
@@ -31,7 +31,7 @@ class CommonViewController4: CommonViewController3 {
                 complete?()
             }
 
-            self.processNetworkError(error)
+            // self.processNetworkError(error)
         }
     }
 
@@ -47,7 +47,7 @@ class CommonViewController4: CommonViewController3 {
     }
 }
 
-extension CommonViewController {
+extension CommonPopupView {
 
     internal func setPetImage(imageView: UIImageView, pet: Pet) {
         var named = "profile_default"

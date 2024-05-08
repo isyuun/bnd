@@ -30,16 +30,8 @@ class SelectWalkPetItemView: UITableViewCell {
         iv_profile.backgroundColor = UIColor.white
         iv_profile.layer.cornerRadius = self.iv_profile.bounds.size.width / 2
         
-        if let petRprsImgAddr = pet.petRprsImgAddr {
-            iv_profile.af.setImage(
-                withURL: URL(string: petRprsImgAddr)!,
-                placeholderImage: UIImage(named: "profile_default")!,
-                filter: AspectScaledToFillSizeFilter(size: iv_profile.frame.size)
-            )
-        } else {
-            iv_profile.image = UIImage(named: "profile_default")
-        }
-        
+        setPetImage(imageView: iv_profile, pet: pet)
+
         lb_nm.text = pet.petNm
         
         iv_chkSelected.image = UIImage.imageFromColor(color: UIColor.clear)

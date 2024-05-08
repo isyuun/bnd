@@ -94,17 +94,9 @@ extension SelectPetView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
 
-        if let _item = self.pets?[indexPath.row] {
-            if let petRprsImgAddr = _item.petRprsImgAddr {
-                cell.ivProf.af.setImage(
-                    withURL: URL(string: petRprsImgAddr)!,
-                    placeholderImage: UIImage(named: "profile_default")!,
-                    filter: AspectScaledToFillSizeFilter(size: cell.ivProf.frame.size)
-                )
-            } else {
-                cell.ivProf.image = UIImage(named: "profile_default")
-            }
-            cell.lbName.text = _item.petNm
+        if let pet = self.pets?[indexPath.row] {
+            setPetImage(imageView: cell.ivProf, pet: pet)
+            cell.lbName.text = pet.petNm
             cell.update(itemSelected[indexPath.row])
         }
 

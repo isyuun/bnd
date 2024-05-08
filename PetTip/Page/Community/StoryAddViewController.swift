@@ -267,7 +267,7 @@ class StoryAddViewController: CommonViewController4 {
     private func initTitleComboText() {
         arrTitleComboText.removeAll()
 
-        if let self.pets = self.pets {
+        if let pets = self.pets {
             for i in 0..<pets.count {
                 arrTitleComboText.append(String("\(pets[i].petNm)와 즐거운 산책~!"))
             }
@@ -572,7 +572,7 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == cv_selPet {
-            if let cnt = items?.count {
+            if let cnt = self.pets?.count {
                 return cnt
             }
 
@@ -596,17 +596,9 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
         if collectionView == cv_selPet {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
 
-            if let _item = items?[indexPath.row] {
-                if let petRprsImgAddr = _item.petRprsImgAddr {
-                    cell.ivProf.af.setImage(
-                        withURL: URL(string: petRprsImgAddr)!,
-                        placeholderImage: UIImage(named: "profile_default")!,
-                        filter: AspectScaledToFillSizeFilter(size: cell.ivProf.frame.size)
-                    )
-                } else {
-                    cell.ivProf.image = UIImage(named: "profile_default")
-                }
-                cell.lbName.text = _item.petNm
+            if let pet = self.pets?[indexPath.row] {
+                setPetImage(imageView: cell.ivProf, pet: pet)
+                cell.lbName.text = pet.petNm
                 cell.update(itemSelected[indexPath.row])
             }
 

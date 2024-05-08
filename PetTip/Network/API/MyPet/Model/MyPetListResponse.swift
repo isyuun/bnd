@@ -26,7 +26,7 @@ struct MyPet: Codable {
     let ntrTypCD, ntrTypNm, petRegNo: String
     let wghtVl: Double
     let mngrType, endDt: String
-    let petRprsImgAddr: String?
+    let petRprsImgAddr, petTypCd: String?
 
     enum CodingKeys: String, CodingKey {
         case ownrPetUnqNo, petNm, petKindNm, petBrthYmd, petRelUnqNo, petInfoUnqNo
@@ -41,7 +41,7 @@ struct MyPet: Codable {
         case sexTypCD = "sexTypCd"
         case sexTypNm
         case ntrTypCD = "ntrTypCd"
-        case ntrTypNm, petRegNo, wghtVl, mngrType, endDt, petRprsImgAddr
+        case ntrTypNm, petRegNo, wghtVl, mngrType, endDt, petRprsImgAddr, petTypCd
     }
 }
 

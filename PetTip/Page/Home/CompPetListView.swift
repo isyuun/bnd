@@ -36,10 +36,10 @@ class CompPetListView : UIView {
         tableView.separatorStyle = .none
     }
     
-    var itemDatas: [MyPet]?
+    var pets: [MyPet]?
     func setData(_ data: Any) {
         if let items = data as? [MyPet] {
-            itemDatas = items
+            self.pets = items
             tableView.reloadData()
             
             if (items.count < 2) {
@@ -62,8 +62,8 @@ class CompPetListView : UIView {
     
     @IBAction func onPetManage(_ sender: Any) {
         if (delegate != nil) {
-            if let itemDatas = itemDatas, let indexPath = tableView.indexPathForSelectedRow {
-                delegate.onPetManage(myPet: itemDatas[indexPath.row])
+            if let pets = self.pets, let indexPath = tableView.indexPathForSelectedRow {
+                delegate.onPetManage(myPet: pets[indexPath.row])
             }
         }
     }
@@ -71,7 +71,7 @@ class CompPetListView : UIView {
 
 extension CompPetListView : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let cnt = itemDatas?.count {
+        if let cnt = self.pets?.count {
             return cnt > 0 ? cnt : 1
         } else {
             return 1
@@ -81,7 +81,7 @@ extension CompPetListView : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CompPetListItemView", for: indexPath) as! CompPetListItemView
         
-        if (itemDatas?.count == 0) {
+        if (self.pets?.count == 0) {
             cell.lbTitle.text = "등록된 반려동물이 없어요"
             
             cell.lbNone.isHidden = false
@@ -91,22 +91,14 @@ extension CompPetListView : UITableViewDelegate, UITableViewDataSource {
             cell.lbSubtitle.isHidden = true
             
         } else {
-            if let _itemDatas = itemDatas {
-                if let petRprsImgAddr = _itemDatas[indexPath.row].petRprsImgAddr {
-                    cell.ivProf.af.setImage(
-                        withURL: URL(string: petRprsImgAddr)!,
-                        placeholderImage: UIImage(named: "profile_default")!,
-                        filter: AspectScaledToFillSizeFilter(size: cell.ivProf.frame.size)
-                    )
-                } else {
-                    cell.ivProf.image = UIImage(named: "profile_default")
-                }
+            if let pets = self.pets {
+                setPetImage(imageView: cell.ivProf, pet: pets[indexPath.row])
+
+                cell.lbTitle.text = pets[indexPath.row].petNm
                 
-                cell.lbTitle.text = _itemDatas[indexPath.row].petNm
-                
-                cell.lbSubtitle.text = _itemDatas[indexPath.row].petKindNm 
-                + " | " + Util.transDiffDateStr(_itemDatas[indexPath.row].petBrthYmd)
-                    + " | " + _itemDatas[indexPath.row].sexTypNm
+                cell.lbSubtitle.text = pets[indexPath.row].petKindNm 
+                + " | " + Util.transDiffDateStr(pets[indexPath.row].petBrthYmd)
+                    + " | " + pets[indexPath.row].sexTypNm
             }
             
             cell.lbNone.isHidden = true
@@ -120,7 +112,7 @@ extension CompPetListView : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        if (itemDatas?.count == 0) {
+        if (pets?.count == 0) {
             return false
         } else {
             return true

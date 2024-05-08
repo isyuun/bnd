@@ -84,7 +84,7 @@ struct DailyLifePetList: Codable {
     let bwlMvmNmtm, urineNmtm, relmIndctNmtm: Int?
     let stdgUmdNm, age: String?
     let schUnqNo: Int?
-    let petImg: String?
+    let petImg, petTypCd: String?
     let rowState: String?
 }
 

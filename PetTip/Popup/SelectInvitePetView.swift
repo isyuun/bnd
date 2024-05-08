@@ -195,15 +195,7 @@ extension SelectInvitePetView: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
 
         if let pet = self.pets?[indexPath.row] {
-            if let petRprsImgAddr = pet.petRprsImgAddr {
-                cell.ivProf.af.setImage(
-                    withURL: URL(string: petRprsImgAddr)!,
-                    placeholderImage: UIImage(named: "profile_default")!,
-                    filter: AspectScaledToFillSizeFilter(size: cell.ivProf.frame.size)
-                )
-            } else {
-                cell.ivProf.image = UIImage(named: "profile_default")
-            }
+            setPetImage(imageView: cell.ivProf, pet: pet)
             cell.lbName.text = pet.petNm
             cell.update(itemSelected[indexPath.row])
         }
