@@ -7,8 +7,8 @@
 
 import UIKit
 
-class CommonDetailViewController : CommonViewController {
-    
+class CommonDetailViewController : CommonViewController4 {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,13 +16,8 @@ class CommonDetailViewController : CommonViewController {
         
         showBackTitleBarView()
     }
-    
-    
-    
-    
-    
+
     // MARK: - Back TitleBar
-    
     @IBOutlet weak var titleBarView : UIView!
     
     var lb_title : UILabel? = nil

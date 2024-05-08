@@ -136,28 +136,30 @@ class MainViewController: LocationViewController {
         if petList.pets.count > 0 {
             self.bgCompPetFirstImg.isHidden = false
 
-            if let petRprsImgAddr = petList.pets[0].petRprsImgAddr {
-                self.compPetFirstImg.af.setImage(
-                    withURL: URL(string: petRprsImgAddr)!,
-                    placeholderImage: UIImage(named: "profile_default")!,
-                    filter: AspectScaledToFillSizeFilter(size: self.compPetFirstImg.frame.size)
-                )
-            } else {
-                self.compPetFirstImg.image = UIImage(named: "profile_default")
-            }
+            // if let petRprsImgAddr = petList.pets[0].petRprsImgAddr {
+            //     self.compPetFirstImg.af.setImage(
+            //         withURL: URL(string: petRprsImgAddr)!,
+            //         placeholderImage: UIImage(named: "profile_default")!,
+            //         filter: AspectScaledToFillSizeFilter(size: self.compPetFirstImg.frame.size)
+            //     )
+            // } else {
+            //     self.compPetFirstImg.image = UIImage(named: "profile_default")
+            // }
+            setPetImage(imageView: self.compPetFirstImg, pet: petList.pets[0])
         }
         if petList.pets.count > 1 {
             self.bgCompPetSecondImg.isHidden = false
 
-            if let petRprsImgAddr = petList.pets[1].petRprsImgAddr {
-                self.compPetSecondImg.af.setImage(
-                    withURL: URL(string: petRprsImgAddr)!,
-                    placeholderImage: UIImage(named: "profile_default")!,
-                    filter: AspectScaledToFillSizeFilter(size: self.compPetSecondImg.frame.size)
-                )
-            } else {
-                self.compPetSecondImg.image = UIImage(named: "profile_default")
-            }
+            // if let petRprsImgAddr = petList.pets[1].petRprsImgAddr {
+            //     self.compPetSecondImg.af.setImage(
+            //         withURL: URL(string: petRprsImgAddr)!,
+            //         placeholderImage: UIImage(named: "profile_default")!,
+            //         filter: AspectScaledToFillSizeFilter(size: self.compPetSecondImg.frame.size)
+            //     )
+            // } else {
+            //     self.compPetSecondImg.image = UIImage(named: "profile_default")
+            // }
+            setPetImage(imageView: self.compPetSecondImg, pet: petList.pets[1])
         }
     }
 
@@ -204,15 +206,18 @@ class MainViewController: LocationViewController {
         if let petList = self.dailyLifePets {
             if (petList.pets.count > 0) {
                 Global.petRelUnqNo = petList.pets[self.selectedPetIndex].petRelUnqNo
-                if let petRprsImgAddr = petList.pets[self.selectedPetIndex].petRprsImgAddr {
-                    self.titleBarPfImageView.af.setImage(
-                        withURL: URL(string: petRprsImgAddr)!,
-                        placeholderImage: UIImage(named: "profile_default")!,
-                        filter: AspectScaledToFillSizeFilter(size: self.titleBarPfImageView.frame.size)
-                    )
-                } else {
-                    self.titleBarPfImageView.image = UIImage(named: "profile_default")
-                }
+
+                // if let petRprsImgAddr = petList.pets[self.selectedPetIndex].petRprsImgAddr {
+                //     self.titleBarPfImageView.af.setImage(
+                //         withURL: URL(string: petRprsImgAddr)!,
+                //         placeholderImage: UIImage(named: "profile_default")!,
+                //         filter: AspectScaledToFillSizeFilter(size: self.titleBarPfImageView.frame.size)
+                //     )
+                // } else {
+                //     self.titleBarPfImageView.image = UIImage(named: "profile_default")
+                // }
+                setPetImage(imageView: self.titleBarPfImageView, pet: petList.pets[self.selectedPetIndex])
+
                 self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
 
                 self.lbCurrPetKind.text = petList.pets[self.selectedPetIndex].petKindNm
@@ -658,15 +663,16 @@ extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
         if let pets = dailyLifePets?.pets {
             if (pets.count > 0) {
-                if let petRprsImgAddr = pets[index].petRprsImgAddr {
-                    cell.profileImageView.af.setImage(
-                        withURL: URL(string: petRprsImgAddr)!,
-                        placeholderImage: UIImage(named: "profile_default")!,
-                        filter: AspectScaledToFillSizeFilter(size: cell.profileImageView.frame.size)
-                    )
-                } else {
-                    cell.profileImageView.image = UIImage(named: "profile_default")
-                }
+                // if let petRprsImgAddr = pets[index].petRprsImgAddr {
+                //     cell.profileImageView.af.setImage(
+                //         withURL: URL(string: petRprsImgAddr)!,
+                //         placeholderImage: UIImage(named: "profile_default")!,
+                //         filter: AspectScaledToFillSizeFilter(size: cell.profileImageView.frame.size)
+                //     )
+                // } else {
+                //     cell.profileImageView.image = UIImage(named: "profile_default")
+                // }
+                setPetImage(imageView: cell.profileImageView, pet: pets[index])
             } else {
                 cell.profileImageView.image = UIImage(named: "profile_default")
             }

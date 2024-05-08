@@ -74,25 +74,44 @@ class StoryDetailViewController: CommonDetailViewController {
         requestLifeViewData()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        addKeyboardObserver()
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        removeKeyboardObserver()
-    }
-
-    func addKeyboardObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    func removeKeyboardObserver() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
+    // override func viewDidAppear(_ animated: Bool) {
+    //     super.viewDidAppear(animated)
+    //     addKeyboardObserver()
+    // }
+    // 
+    // override func viewDidDisappear(_ animated: Bool) {
+    //     super.viewDidDisappear(animated)
+    //     removeKeyboardObserver()
+    // }
+    // 
+    // func addKeyboardObserver() {
+    //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    // }
+    // 
+    // func removeKeyboardObserver() {
+    //     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    //     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    // }
+    // 
+    // @objc func keyboardWillShow(_ notification: NSNotification) {
+    //     guard let userInfo = notification.userInfo else { return }
+    //     guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+    //     let keyboardFrame = keyboardSize.cgRectValue
+    // 
+    //     sv_content.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    //     sv_content.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
+    // 
+    //     let bottomOffset = CGPoint(x: 0, y: sv_content.contentSize.height - sv_content.bounds.height + sv_content.contentInset.bottom)
+    //     if (bottomOffset.y > 0) {
+    //         sv_content.setContentOffset(bottomOffset, animated: true)
+    //     }
+    // }
+    // 
+    // @objc func keyboardWillHide(_ notification: NSNotification) {
+    //     sv_content.contentInset = UIEdgeInsets.zero
+    //     sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
+    // }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueStoryDetailToModify") {
@@ -142,25 +161,6 @@ class StoryDetailViewController: CommonDetailViewController {
 
     func reqRefreshStoryList() {
         storyListViewController?.isRequireRefresh = true
-    }
-
-    @objc func keyboardWillShow(_ notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
-        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        let keyboardFrame = keyboardSize.cgRectValue
-
-        sv_content.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
-        sv_content.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardFrame.height, right: 0)
-
-        let bottomOffset = CGPoint(x: 0, y: sv_content.contentSize.height - sv_content.bounds.height + sv_content.contentInset.bottom)
-        if (bottomOffset.y > 0) {
-            sv_content.setContentOffset(bottomOffset, animated: true)
-        }
-    }
-
-    @objc func keyboardWillHide(_ notification: NSNotification) {
-        sv_content.contentInset = UIEdgeInsets.zero
-        sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 
     @objc private func tap(_ sender: Any) {
@@ -546,27 +546,27 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-    // MARK: - CONN COMMON CODE-LIST
-    private func code_list(cmmCdData: [String], complete: (() -> Void)?) {
-        if Global.rsnCodeList != nil {
-            complete?()
-            return
-        }
-
-        self.startLoading()
-
-        let request = CodeListRequest(cmmCdData: cmmCdData)
-        CommonAPI.codeList(request: request) { codeList, error in
-            self.stopLoading()
-
-            if let codeList = codeList, let data = codeList.data?[0] {
-                Global.rsnCodeList = data.cdDetailList
-                complete?()
-            }
-
-            self.processNetworkError(error)
-        }
-    }
+    // // MARK: - CONN COMMON CODE-LIST
+    // private func code_list(cmmCdData: [String], complete: (() -> Void)?) {
+    //     if Global.rsnCodeList != nil {
+    //         complete?()
+    //         return
+    //     }
+    // 
+    //     self.startLoading()
+    // 
+    //     let request = CodeListRequest(cmmCdData: cmmCdData)
+    //     CommonAPI.codeList(request: request) { codeList, error in
+    //         self.stopLoading()
+    // 
+    //         if let codeList = codeList, let data = codeList.data?[0] {
+    //             Global.rsnCodeList = data.cdDetailList
+    //             complete?()
+    //         }
+    // 
+    //         self.processNetworkError(error)
+    //     }
+    // }
 
     // MARK: - TARGET LIFE VIEW DATA
     var schUnqNo: Int? = 0

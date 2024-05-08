@@ -31,7 +31,7 @@ class LoginViewController2: LoginViewController {
 
     // UITextFieldDelegate 메서드 구현
     override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        NSLog("[W][LOG][텍스트][textFieldShouldReturn][ID:\(textField == inputBoxID)][PW:\(textField == inputBoxPW)][textField:\(textField)]")
+        NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][ID:\(textField == inputBoxID)][PW:\(textField == inputBoxPW)][textField:\(textField)]")
         let ret = super.textFieldShouldReturn(textField)
         btnLogin.isUserInteractionEnabled = true
         if textField == inputBoxID {

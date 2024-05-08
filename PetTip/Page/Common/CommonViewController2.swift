@@ -44,7 +44,7 @@ class CommonViewController2: CommonViewController, UITextFieldDelegate {
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        NSLog("[W][LOG][텍스트][textFieldShouldReturn][textField:\(textField)]")
+        NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][textField:\(textField)]")
         return false
     }
 

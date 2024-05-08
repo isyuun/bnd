@@ -9,7 +9,7 @@ import UIKit
 import AlamofireImage
 import DropDown
 
-class StoryModifyViewController: CommonViewController3 {
+class StoryModifyViewController: CommonViewController4 {
 
     var storyDetailViewController: StoryDetailViewController?
     var lifeViewData : LifeViewData!
@@ -297,42 +297,42 @@ class StoryModifyViewController: CommonViewController3 {
         }
     }
 
-    // MARK: - CONN COMMON CODE-LIST
-    private var schCodeList: [CDDetailList]?
-    
-    private func code_list(cmmCdData: [String], complete: (()-> Void)?) {
-        if Global.schCodeList != nil {
-            filterSchCodeListWithoutWalk()
-            complete?()
-            return
-        }
-        
-        self.startLoading()
-        
-        let request = CodeListRequest(cmmCdData: cmmCdData)
-        CommonAPI.codeList( request: request) { codeList, error in
-            self.stopLoading()
-            
-            if let codeList = codeList, let data = codeList.data?[0] {
-                Global.schCodeList = data.cdDetailList
-                self.filterSchCodeListWithoutWalk()
-                complete?()
-            }
-            
-            self.processNetworkError(error)
-        }
-    }
-    
-    private func filterSchCodeListWithoutWalk() {
-        if let list = Global.schCodeList {
-            schCodeList = [CDDetailList]()
-            for i in 0..<list.count {
-                if list[i].cdID != "001" {
-                    schCodeList?.append(list[i])
-                }
-            }
-        }
-    }
+    // // MARK: - CONN COMMON CODE-LIST
+    // private var schCodeList: [CDDetailList]?
+    // 
+    // private func code_list(cmmCdData: [String], complete: (()-> Void)?) {
+    //     if Global.schCodeList != nil {
+    //         filterSchCodeListWithoutWalk()
+    //         complete?()
+    //         return
+    //     }
+    //     
+    //     self.startLoading()
+    //     
+    //     let request = CodeListRequest(cmmCdData: cmmCdData)
+    //     CommonAPI.codeList( request: request) { codeList, error in
+    //         self.stopLoading()
+    //         
+    //         if let codeList = codeList, let data = codeList.data?[0] {
+    //             Global.schCodeList = data.cdDetailList
+    //             self.filterSchCodeListWithoutWalk()
+    //             complete?()
+    //         }
+    //         
+    //         self.processNetworkError(error)
+    //     }
+    // }
+    // 
+    // private func filterSchCodeListWithoutWalk() {
+    //     if let list = Global.schCodeList {
+    //         schCodeList = [CDDetailList]()
+    //         for i in 0..<list.count {
+    //             if list[i].cdID != "001" {
+    //                 schCodeList?.append(list[i])
+    //             }
+    //         }
+    //     }
+    // }
 
     // MARK: - COMBO TITLE
     @IBOutlet weak var vw_titleArea: UIView!

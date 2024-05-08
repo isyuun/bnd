@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CommonViewController4: CommonViewController3 {
     // MARK: - CONN COMMON CODE-LIST
-    private var schCodeList: [CDDetailList]?
+    internal var schCodeList: [CDDetailList]?
 
-    internal func code_list(cmmCdData: [String], complete: (()-> Void)?) {
+    internal func code_list(cmmCdData: [String], complete: (() -> Void)?) {
         if Global.schCodeList != nil {
             filterSchCodeListWithoutWalk()
             complete?()
@@ -21,7 +22,7 @@ class CommonViewController4: CommonViewController3 {
         self.startLoading()
 
         let request = CodeListRequest(cmmCdData: cmmCdData)
-        CommonAPI.codeList( request: request) { codeList, error in
+        CommonAPI.codeList(request: request) { codeList, error in
             self.stopLoading()
 
             if let codeList = codeList, let data = codeList.data?[0] {
@@ -45,4 +46,16 @@ class CommonViewController4: CommonViewController3 {
         }
     }
 
+    internal func setPetImage(imageView: UIImageView, pet: Pet) {
+        NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][imageView:\(imageView)][pet:\(pet)]")
+        if let petRprsImgAddr = pet.petRprsImgAddr {
+            imageView.af.setImage(
+                withURL: URL(string: petRprsImgAddr)!,
+                placeholderImage: UIImage(named: "profile_default")!,
+                filter: AspectScaledToFillSizeFilter(size: imageView.frame.size)
+            )
+        } else {
+            imageView.image = UIImage(named: "profile_default")
+        }
+    }
 }
