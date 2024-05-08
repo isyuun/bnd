@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class CommentModifyView: CommonPopupView {
+class CommentModifyView: CommonPopupView3 {
 
     @IBOutlet weak var btn_cancel: UIButton!
 
@@ -49,11 +49,8 @@ class CommentModifyView: CommonPopupView {
         vw_profIvBorder.layer.borderColor = UIColor.init(hex: "#4E608533")?.cgColor
         vw_profIvBorder.showShadowMid()
 
-        iv_prof.af.setImage(
-            withURL: URL(string: String("\(atchPath)\(data.comment.petImg!)"))!,
-            placeholderImage: UIImage(named: "profile_default")!,
-            filter: AspectScaledToFillSizeFilter(size: iv_prof.frame.size)
-        )
+        setPetImage(imageView: iv_prof, pet: data.comment)
+
         lb_nm.text = data.comment.petNm
         lb_dt.text = data.comment.lastStrgDt
         lb_msg.text = data.comment.cmntCN

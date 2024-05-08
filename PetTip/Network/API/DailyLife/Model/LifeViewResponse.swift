@@ -112,12 +112,14 @@ struct CmntList: Codable {
     let petNm: String?
     let stdgUmdNm: String?
     let myCmntRcmdtn: String?
+    let petTypCd: String?
 
     enum CodingKeys: String, CodingKey {
         case upCmntNo, cmntNo, schUnqNo, petRelUnqNo, lastStrgDt, stepLevel
         case userID = "userId"
         case cmntCN = "cmntCn"
         case rcmdtnCnt, nrcmdtnCnt, bldYn, delYn, petImg, petNm, stdgUmdNm, myCmntRcmdtn
+        case petTypCd
     }
 }
 

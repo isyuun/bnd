@@ -42,16 +42,7 @@ class PetModViewController: CommonViewController {
     private func setCurrInfo() {
         guard let petDetailInfo = petDetailInfo else { return }
 
-        if let petImg = petDetailInfo.petRprsImgAddr {
-            self.iv_profile.af.setImage(
-                withURL: URL(string: petImg)!,
-                placeholderImage: UIImage(named: "profile_default")!,
-                filter: AspectScaledToFillSizeFilter(size: self.iv_profile.frame.size)
-            )
-
-        } else {
-            self.iv_profile.image = UIImage(named: "profile_default")
-        }
+        self.setPetImage(imageView: self.iv_profile, pet: petDetailInfo)
 
 
         if (petDetailInfo.petTypCD == "001") {

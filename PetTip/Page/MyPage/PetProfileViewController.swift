@@ -82,7 +82,7 @@ class PetProfileViewController: CommonViewController {
         vw_genderBg.layer.cornerRadius = 8
         vw_weightBg.layer.cornerRadius = 8
 
-        guard let petInfo = petInfo else { return }
+        guard let petInfo = self.petInfo else { return }
 
         if petInfo.mngrType != "M" {
             btn_petModify.setAttrTitle("관리자만 수정가능", 14)
@@ -140,16 +140,7 @@ class PetProfileViewController: CommonViewController {
     func showProfileInfo() {
         guard let petDetailInfo = petDetailInfo else { return }
 
-        if let petImg = petDetailInfo.petRprsImgAddr {
-            self.iv_profile.af.setImage(
-                withURL: URL(string: petImg)!,
-                placeholderImage: UIImage(named: "profile_default")!,
-                filter: AspectScaledToFillSizeFilter(size: self.iv_profile.frame.size)
-            )
-
-        } else {
-            self.iv_profile.image = UIImage(named: "profile_default")
-        }
+        setPetImage(imageView: self.iv_profile, pet: petDetailInfo)
 
         self.lb_petKind.text = petDetailInfo.petKindNm
         self.lb_petNm.text = petDetailInfo.petNm

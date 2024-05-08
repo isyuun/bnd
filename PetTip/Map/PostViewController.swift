@@ -313,15 +313,7 @@ class PostViewController: CommonViewController3 {
             if let view = UINib(nibName: "WalkHistoryPetItemView", bundle: nil).instantiate(withOwner: self).first as? WalkHistoryPetItemView {
                 sv_walkPet.addArrangedSubview(view)
 
-                if let petImg = selectedPets[i].petRprsImgAddr {
-                    view.iv_prof.af.setImage(
-                        withURL: URL(string: petImg)!,
-                        placeholderImage: UIImage(named: "profile_default")!,
-                        filter: AspectScaledToFillSizeFilter(size: view.iv_prof.frame.size)
-                    )
-                } else {
-                    view.iv_prof.image = UIImage(named: "profile_default")
-                }
+                setPetImage(imageView: view.iv_prof, pet: selectedPets[i])
 
                 view.lb_nm.text = selectedPets[i].petNm
 

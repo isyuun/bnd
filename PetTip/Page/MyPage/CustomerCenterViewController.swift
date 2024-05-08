@@ -7,28 +7,21 @@
 
 import UIKit
 
-class CustomerCenterViewController : UIViewController {
-    
+class CustomerCenterViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         showBackTitleBarView()
-        
+
         showCommonUI()
     }
-    
-    private func showCommonUI() {
-        
-    }
-    
-    
-    
-    
-    
+
+    private func showCommonUI() { }
+
     // MARK: - Back TitleBar
-    
-    @IBOutlet weak var titleBarView : UIView!
-    
+    @IBOutlet weak var titleBarView: UIView!
+
     func showBackTitleBarView() {
         if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
             view.frame = titleBarView.bounds
@@ -39,14 +32,9 @@ class CustomerCenterViewController : UIViewController {
     }
 }
 
-
-
-
-
 extension CustomerCenterViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
     }
 }
-
