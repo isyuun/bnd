@@ -16,9 +16,9 @@ struct PetListResponse: Codable {
 
 // MARK: - Datum
 struct Pet: Codable {
-    let ownrPetUnqNo, petNm, petTypCd: String
+    let ownrPetUnqNo, petNm: String
     let petRelUnqNo: Int
-    let petRprsImgAddr: String?
+    let petRprsImgAddr, petTypCd: String?
     let age, petKindNm, sexTypNm: String
     let wghtVl: Double
 }

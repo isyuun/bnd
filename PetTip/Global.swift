@@ -15,8 +15,8 @@ class Global {
     #else
         static var DOMAIN = "https://pettip.net"
     #endif
-    // static var DOMAIN = "https://pettip.net"
     // static var DOMAIN = "http://dev.pettip.net:8020"    //test
+    // static var DOMAIN = "https://pettip.net"
 
     static var BASE_URI = DOMAIN + "/api/v1"
 
