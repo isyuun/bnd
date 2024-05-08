@@ -8,29 +8,29 @@
 import UIKit
 import AlamofireImage
 
-class SelectPetView : UIView {
-    
-    var delegate : SelectPetViewProtocol!
-    func setDelegate(_ _delegate : SelectPetViewProtocol) {
+class SelectPetView: UIView {
+
+    var delegate: SelectPetViewProtocol!
+    func setDelegate(_ _delegate: SelectPetViewProtocol) {
         delegate = _delegate
     }
-    
-    @IBOutlet weak var selPetColView : UICollectionView!
-    
+
+    @IBOutlet weak var selPetColView: UICollectionView!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
-    required init?(coder aDecoder : NSCoder) {
-        super.init(coder: aDecoder);
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
-    
+
     func initialize() {
         selPetColView.register(UINib(nibName: "SelectPetItemView", bundle: nil), forCellWithReuseIdentifier: "SelectPetItemView")
         selPetColView.delegate = self
         selPetColView.dataSource = self
         selPetColView.showsHorizontalScrollIndicator = false
-        
+
         let insetX = 20
         let insetY = 0
         let layout = selPetColView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -40,21 +40,21 @@ class SelectPetView : UIView {
         layout.scrollDirection = .horizontal
         selPetColView.contentInset = UIEdgeInsets(top: CGFloat(insetY), left: CGFloat(insetX), bottom: CGFloat(insetY), right: CGFloat(insetX))
     }
-    
+
     var idxSelectedItem = -1
     var isSingleSelectMode = true
-    
-    var items: [Pet]?
+
+    private var pets: [Pet]?
     func setData(_ data: Any) {
-        if let _items = data as? [Pet] {
-            items = _items
+        if let pets = data as? [Pet] {
+            self.pets = pets
             initSelected()
         }
     }
-    
+
     var itemSelected: Array<Bool> = Array()
     func initSelected() {
-        itemSelected = Array(repeating: false, count: items!.count)
+        itemSelected = Array(repeating: false, count: self.pets!.count)
         for i in 0..<itemSelected.count {
             itemSelected[i] = false
         }
@@ -62,15 +62,15 @@ class SelectPetView : UIView {
     }
     func setSelected(_ selIdx: Int) {
         if (isSingleSelectMode) {
-            initSelected();
+            initSelected()
             itemSelected[selIdx] = true
             idxSelectedItem = selIdx
-            
+
         } else {
             itemSelected[selIdx].toggle()
         }
     }
-    
+
     @IBAction func onSelectPet(_ sender: Any) {
         if let _delegate = delegate {
             _delegate.onSelectPet(idxSelectedItem)
@@ -82,19 +82,19 @@ extension SelectPetView: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let cnt = items?.count {
+        if let cnt = self.pets?.count {
             return cnt > 0 ? cnt : 1
         } else {
             return 1
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
-        
-        if let _item = items?[indexPath.row] {
+
+        if let _item = self.pets?[indexPath.row] {
             if let petRprsImgAddr = _item.petRprsImgAddr {
                 cell.ivProf.af.setImage(
                     withURL: URL(string: petRprsImgAddr)!,
@@ -107,15 +107,15 @@ extension SelectPetView: UICollectionViewDataSource, UICollectionViewDelegate {
             cell.lbName.text = _item.petNm
             cell.update(itemSelected[indexPath.row])
         }
-        
+
         return cell
     }
-    
-    
+
+
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         setSelected(indexPath.row)
         selPetColView.reloadData()
-        
+
         return itemSelected[indexPath.row]
     }
 }

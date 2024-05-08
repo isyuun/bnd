@@ -12,86 +12,84 @@ import DropDown
 class StoryAddViewController: CommonViewController4 {
 
     public var storyListViewController: StoryListViewController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        
+
         self.tabBarController?.tabBar.isHidden = true
-        
+
         showBackTitleBarView()
-        
+
         showCommonUI()
     }
-    
+
     func reqRefreshStoryList() {
         storyListViewController?.isRequireRefresh = true
     }
 
     @IBOutlet weak var sv_content: UIScrollView!
-    
+
     @IBOutlet weak var lb_currDate: UILabel!
-    
+
     func showCommonUI() {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
         lb_currDate.text = dateFormatter.string(from: Date())
-        
+
         initSelectPet()
-        
+
         initAttachFile()
-        
+
         initDailyLifeGubun()
-        
+
         initComboTitle()
-        
+
         initMemo()
-        
+
         initHashtag()
-        
+
         initStoryShareAgree()
-        
+
         initComplete()
     }
-    
+
     @IBAction func onContentViewTap(_ sender: Any) {
         reqCloseKeyboard()
     }
-    
+
     private func reqCloseKeyboard() {
         tf_title.resignFirstResponder()
         tv_memo.resignFirstResponder()
         tf_hashtag.resignFirstResponder()
     }
-    
+
     private func inputTextSelectedUI(view: UIView) {
         view.layer.cornerRadius = 4
-        
+
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor(hex: "#FF000000")?.cgColor // SELECTED COLOR
     }
-    
+
     private func inputTextNormalUI(view: UIView) {
         view.layer.cornerRadius = 4
-        
+
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor(hex: "#ffe3e9f2")?.cgColor // NORMAL COLOR
     }
 
     // MARK: - SELECT PETS
-    @IBOutlet weak var cv_selPet : UICollectionView!
-    
+    @IBOutlet weak var cv_selPet: UICollectionView!
+
     var idxSelectedItem = -1
     var isSingleSelectMode = false
 
-    var items: [Pet]?
-    
     private func initSelectPet() {
         cv_selPet.register(UINib(nibName: "SelectPetItemView", bundle: nil), forCellWithReuseIdentifier: "SelectPetItemView")
         cv_selPet.delegate = self
         cv_selPet.dataSource = self
         cv_selPet.showsHorizontalScrollIndicator = false
-        
+
         let insetX = 20
         let insetY = 0
         let layout = cv_selPet.collectionViewLayout as! UICollectionViewFlowLayout
@@ -100,21 +98,22 @@ class StoryAddViewController: CommonViewController4 {
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .horizontal
         cv_selPet.contentInset = UIEdgeInsets(top: CGFloat(insetY), left: CGFloat(insetX), bottom: CGFloat(insetY), right: CGFloat(insetX))
-        
+
         setData(Global.dailyLifePetsBehaviorRelay.value?.pets as Any)
     }
-    
+
+    private var pets: [Pet]?
     private func setData(_ data: Any) {
-        if let _items = data as? [Pet] {
-            items = _items
-            
+        if let pets = data as? [Pet] {
+            self.pets = pets
+
             initSelected()
         }
     }
-    
+
     var itemSelected: Array<Bool> = Array()
     private func initSelected() {
-        itemSelected = Array(repeating: false, count: items!.count)
+        itemSelected = Array(repeating: false, count: self.pets!.count)
         for i in 0..<itemSelected.count {
             itemSelected[i] = false
         }
@@ -122,41 +121,41 @@ class StoryAddViewController: CommonViewController4 {
     }
     private func setSelected(_ selIdx: Int) {
         if (isSingleSelectMode) {
-            initSelected();
+            initSelected()
             itemSelected[selIdx] = true
             idxSelectedItem = selIdx
-            
+
         } else {
             itemSelected[selIdx].toggle()
         }
     }
 
     // MARK: - ATTACH FILE
-    @IBOutlet weak var cv_attachFile : UICollectionView!
-    
+    @IBOutlet weak var cv_attachFile: UICollectionView!
+
     var arrAtchHybidData = [AtchHybridData]()
     var arrAtchDelete = [PhotoDataUp]()
-    
+
     private func initAttachFile() {
         let layout = self.cv_attachFile.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = 5
         layout.scrollDirection = .horizontal
         self.cv_attachFile.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-      
+
         self.cv_attachFile.delegate = self
         self.cv_attachFile.dataSource = self
         self.cv_attachFile.showsHorizontalScrollIndicator = false
-        
+
         // 스크롤 시 빠르게 감속 되도록 설정
         self.cv_attachFile.decelerationRate = UIScrollView.DecelerationRate.fast
-        
+
         self.cv_attachFile.reloadData()
     }
-    
+
     private func requestAddImageFromGallary() {
         reqCloseKeyboard()
-        
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum // .photoLibrary
@@ -168,29 +167,29 @@ class StoryAddViewController: CommonViewController4 {
 
     // MARK: - DAILY LIFE GUBUN
     @IBOutlet weak var cv_dailyLifeGubun: UICollectionView!
-    
+
     var idxSelectedGubunItem = -1
     var isGubunSingleSelectMode = false
-    
+
     private func initDailyLifeGubun() {
         let layout = self.cv_dailyLifeGubun.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumLineSpacing = 3
         layout.scrollDirection = .horizontal
         self.cv_dailyLifeGubun.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-      
+
         self.cv_dailyLifeGubun.delegate = self
         self.cv_dailyLifeGubun.dataSource = self
         self.cv_dailyLifeGubun.showsHorizontalScrollIndicator = false
-        
+
         // 스크롤 시 빠르게 감속 되도록 설정
         self.cv_dailyLifeGubun.decelerationRate = UIScrollView.DecelerationRate.fast
-        
+
         code_list(cmmCdData: ["SCH"]) {
             self.initGubunSelected()
             self.cv_dailyLifeGubun.reloadData()
         }
     }
-    
+
     var gubunItemSelected: Array<Bool> = Array()
     private func initGubunSelected() {
         gubunItemSelected = Array(repeating: false, count: schCodeList!.count)
@@ -201,10 +200,10 @@ class StoryAddViewController: CommonViewController4 {
     }
     private func setGubunSelected(_ selIdx: Int) {
         if (isGubunSingleSelectMode) {
-            initGubunSelected();
+            initGubunSelected()
             gubunItemSelected[selIdx] = true
             idxSelectedGubunItem = selIdx
-            
+
         } else {
             gubunItemSelected[selIdx].toggle()
         }
@@ -212,30 +211,30 @@ class StoryAddViewController: CommonViewController4 {
 
     // // MARK: - CONN COMMON CODE-LIST
     // private var schCodeList: [CDDetailList]?
-    // 
+    //
     // private func code_list(cmmCdData: [String], complete: (()-> Void)?) {
     //     if Global.schCodeList != nil {
     //         filterSchCodeListWithoutWalk()
     //         complete?()
     //         return
     //     }
-    //     
+    //
     //     self.startLoading()
-    //     
+    //
     //     let request = CodeListRequest(cmmCdData: cmmCdData)
     //     CommonAPI.codeList( request: request) { codeList, error in
     //         self.stopLoading()
-    //         
+    //
     //         if let codeList = codeList, let data = codeList.data?[0] {
     //             Global.schCodeList = data.cdDetailList
     //             self.filterSchCodeListWithoutWalk()
     //             complete?()
     //         }
-    //         
+    //
     //         self.processNetworkError(error)
     //     }
     // }
-    // 
+    //
     // private func filterSchCodeListWithoutWalk() {
     //     if let list = Global.schCodeList {
     //         schCodeList = [CDDetailList]()
@@ -251,49 +250,49 @@ class StoryAddViewController: CommonViewController4 {
     @IBOutlet weak var vw_titleArea: UIView!
     @IBOutlet weak var tf_title: UITextField2!
     @IBOutlet weak var vw_titleComboShowingArea: UIView!
-    
+
     private var dropDown: DropDown?
-    
+
     private var arrTitleComboText = [String]()
-    
+
     private func initComboTitle() {
         vw_titleArea.layer.cornerRadius = 12
         vw_titleArea.layer.borderWidth = 1
         vw_titleArea.layer.borderColor = UIColor.init(hex: "#FFE3E9F2")?.cgColor
-        
+
         tf_title.delegate = self
         tf_title.placeholder = "제목을 입력해주세요"
     }
-    
+
     private func initTitleComboText() {
         arrTitleComboText.removeAll()
-        
-        if let items = items {
-            for i in 0..<items.count {
-                arrTitleComboText.append(String("\(items[i].petNm)와 즐거운 산책~!"))
+
+        if let self.pets = self.pets {
+            for i in 0..<pets.count {
+                arrTitleComboText.append(String("\(pets[i].petNm)와 즐거운 산책~!"))
             }
         }
     }
-    
+
     private func showComboData() {
         initTitleComboText()
-        
+
         dropDown = DropDown()
         guard let dropDown = dropDown else { return }
 
         // The view to which the drop down will appear on
         dropDown.anchorView = vw_titleComboShowingArea // UIView or UIBarButtonItem
 
-        // The list of items to display. Can be changed dynamically
+        // The list of self.pets to display. Can be changed dynamically
         dropDown.dataSource = arrTitleComboText
-        
+
         dropDown.direction = .bottom
         dropDown.offsetFromWindowBottom = 400
-        
+
         dropDown.width = vw_titleComboShowingArea.frame.size.width
-        
+
         DropDown.startListeningToKeyboard()
-        
+
         dropDown.show()
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             tf_title.text = arrTitleComboText[index]
@@ -303,9 +302,9 @@ class StoryAddViewController: CommonViewController4 {
 
     // MARK: - MEMO
     @IBOutlet weak var tv_memo: UITextView2!
-    
+
     let textViewPlaceHolder = "일상을 기록해주세요"
-    
+
     private func initMemo() {
         tv_memo.text = textViewPlaceHolder
         tv_memo.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -313,23 +312,23 @@ class StoryAddViewController: CommonViewController4 {
         textViewFitSize(tv_memo)
         inputTextNormalUI(view: tv_memo)
     }
-    
+
     func textViewFitSize(_ textView: UITextView) {
         let size = CGSize(width: textView.frame.size.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
-        
+
         guard textView.contentSize.height < 200.0 else {
             textView.isScrollEnabled = true
             return
         }
-        
+
         textView.isScrollEnabled = false
         textView.constraints.forEach { (constraint) in
             if constraint.firstAttribute == .height {
                 constraint.constant = estimatedSize.height > 100 ? estimatedSize.height : 100
             }
         }
-        
+
         if textView.text == textViewPlaceHolder {
             textView.textColor = UIColor.init(hex: "#FFB5B9BE")
         } else {
@@ -349,7 +348,7 @@ class StoryAddViewController: CommonViewController4 {
     @IBOutlet weak var btn_storyShareAgree: UIButton!
     @IBOutlet weak var iv_storyShareAgree: UIImageView!
     @IBOutlet weak var vw_storyShareAgree: UIView!
-    
+
     private func initStoryShareAgree() {
         iv_storyShareAgree.image = UIImage.imageFromColor(color: UIColor.clear)
         btn_storyShareAgree.isSelected = false
@@ -358,13 +357,13 @@ class StoryAddViewController: CommonViewController4 {
         vw_storyShareAgree.layer.borderWidth = 1
         vw_storyShareAgree.layer.borderColor = UIColor.init(hex: "#FFE3E9F2")?.cgColor
     }
-    
+
     @IBAction func onStoryShareAgreeCheck(_ sender: Any) {
         btn_storyShareAgree.isSelected.toggle()
         if btn_storyShareAgree.isSelected {
             iv_storyShareAgree.image = UIImage(named: "checkbox_white")
             vw_storyShareAgree.backgroundColor = UIColor.init(hex: "#FF4783F5")
-            
+
         } else {
             iv_storyShareAgree.image = UIImage.imageFromColor(color: UIColor.clear)
             vw_storyShareAgree.backgroundColor = UIColor.white
@@ -373,11 +372,11 @@ class StoryAddViewController: CommonViewController4 {
 
     // MARK: - SUBMIT
     @IBOutlet weak var btn_complete: UIButton!
-    
+
     private func initComplete() {
         btn_complete.setAttrTitle("등록하기", 14, UIColor.white)
     }
-    
+
     @IBAction func onComplete(_ sender: Any) {
         if getSelectedPets().count == 0 {
             self.showToast(msg: "반려동물을 선택해주세요")
@@ -388,54 +387,54 @@ class StoryAddViewController: CommonViewController4 {
             self.showToast(msg: "일상구분을 선택해주세요")
             return
         }
-        
+
         if let text = tf_title.text, text.count == 0 {
             self.showToast(msg: "제목을 입력해주세요")
             return
         }
-        
+
         if arrAtchHybidData.count == 0 {
             dailylife_create()
-            
+
         } else {
             dailylife_upload()
         }
     }
-    
+
     private func getSelectedPets() -> [DailyLifePet] {
         var ret = [DailyLifePet]()
-        
+
         for i in 0..<itemSelected.count {
             if itemSelected[i] {
-                let item = DailyLifePet(ownrPetUnqNo: items![i].ownrPetUnqNo,
-                                        petNm: items![i].petNm,
+                let item = DailyLifePet(ownrPetUnqNo: self.pets![i].ownrPetUnqNo,
+                                        petNm: self.pets![i].petNm,
                                         bwlMvmNmtm: "0",
                                         urineNmtm: "0",
                                         relmIndctNmtm: "0")
                 ret.append(item)
             }
         }
-        
-        return ret;
+
+        return ret
     }
-    
+
     private func getSelectedDailyLife() -> [String] {
         var ret = [String]()
-        
+
         for i in 0..<gubunItemSelected.count {
             if gubunItemSelected[i] {
                 ret.append(schCodeList![i].cdID)
             }
         }
-        
-        return ret;
+
+        return ret
     }
-    
+
     private func getInsertedFile() -> [DailyLifeFile]? {
-        guard let fileUploadResult = fileUploadResult, fileUploadResult.count > 0 else { return nil}
-        
+        guard let fileUploadResult = fileUploadResult, fileUploadResult.count > 0 else { return nil }
+
         var ret = [DailyLifeFile]()
-        
+
         for i in 0..<fileUploadResult.count {
             let it = DailyLifeFile(orgnlAtchFileNm: fileUploadResult[i].orgnlAtchFileNm,
                                    atchFileNm: fileUploadResult[i].atchFileNm,
@@ -446,70 +445,70 @@ class StoryAddViewController: CommonViewController4 {
                                    atchFileSz: fileUploadResult[i].atchFileSz)
             ret.append(it)
         }
-        
+
         return ret
     }
-    
+
     private func getInsertedHash() -> [String] {
         var ret = [String]()
-        
+
         let arrSplit = tf_hashtag.text!.components(separatedBy: " ")
         for i in 0..<arrSplit.count {
             if arrSplit[i].starts(with: "#") {
                 var str = String(arrSplit[i])
-                
+
                 let removeCharacters: Set<Character> = ["#"]
-                str.removeAll(where: { removeCharacters.contains($0) } )
-                
+                str.removeAll(where: { removeCharacters.contains($0) })
+
                 ret.append(str)
             }
         }
-        
+
         return ret
     }
-    
+
     private func getMemo() -> String {
         if let text = tv_memo.text {
             if text == textViewPlaceHolder { return "" }
-            
+
             return text
         }
-        
+
         return ""
     }
 
     // MARK: - CONN DAILY-LIFE UPLOAD
     private var fileUploadResult: [PhotoData]?
-    
+
     private func dailylife_upload() {
         self.startLoading()
-        
+
         var arrImage = [UIImage]()
         for i in 0..<arrAtchHybidData.count {
             if let image = arrAtchHybidData[i].local {
                 arrImage.append(image)
             }
         }
-        
+
         let request = LifeUploadRequest(arrFile: arrImage)
         DailyLifeAPI.upload(request: request) { response, error in
             self.stopLoading()
-            
+
             if let response = response {
                 if response.statusCode == 200 {
                     self.fileUploadResult = response.data
-                    
+
                     self.dailylife_create()
                 }
                 else if response.statusCode == 406 {
                     self.showAlertPopup(title: response.resultMessage != nil ? response.resultMessage! : "에러", msg: response.detailMessage!)
-                    
+
                 } else {
                     self.showAlertPopup(title: "에러", msg: "통신 에러가 발생했어요")
                     //self.showAlertPopup(title: response.resultMessage, msg: response.detailMessage!)
                 }
             }
-            
+
             self.processNetworkError(error)
         }
     }
@@ -517,7 +516,7 @@ class StoryAddViewController: CommonViewController4 {
     // MARK: - CONN DAILY-LIFE CREATE
     private func dailylife_create() {
         self.startLoading()
-        
+
         let request = LifeCreateRequest(cmntUseYn: "Y",
                                         rcmdtnYn: "Y",
                                         rlsYn: btn_storyShareAgree.isSelected ? "Y" : "N",
@@ -531,24 +530,24 @@ class StoryAddViewController: CommonViewController4 {
                                         walkDptreDt: "",
                                         walkEndDt: "",
                                         files: getInsertedFile())
-        DailyLifeAPI.create( request: request) { response, error in
+        DailyLifeAPI.create(request: request) { response, error in
             self.stopLoading()
-            
+
             if (response?.data) != nil {
                 self.reqRefreshStoryList()
                 self.onBack()
-                
+
             } else {
                 self.showAlertPopup(title: "에러", msg: "통신 에러가 발생했어요")
             }
-            
+
             self.processNetworkError(error)
         }
     }
 
     // MARK: - Back TitleBar
-    @IBOutlet weak var titleBarView : UIView!
-    
+    @IBOutlet weak var titleBarView: UIView!
+
     func showBackTitleBarView() {
         if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
             view.frame = titleBarView.bounds
@@ -570,33 +569,33 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == cv_selPet {
             if let cnt = items?.count {
                 return cnt
             }
-            
+
         } else if collectionView == cv_attachFile {
             if arrAtchHybidData.count < 5 {
                 return arrAtchHybidData.count + 1
             }
-            
+
             return arrAtchHybidData.count
-            
+
         } else if collectionView == cv_dailyLifeGubun {
             if let cnt = schCodeList?.count {
                 return cnt
             }
         }
-        
+
         return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == cv_selPet {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
-            
+
             if let _item = items?[indexPath.row] {
                 if let petRprsImgAddr = _item.petRprsImgAddr {
                     cell.ivProf.af.setImage(
@@ -610,9 +609,9 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
                 cell.lbName.text = _item.petNm
                 cell.update(itemSelected[indexPath.row])
             }
-            
+
             return cell
-            
+
         } else if collectionView == cv_attachFile {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "qnaModifyAttachFileItemView", for: indexPath) as! QnAModifyAttachFileItemView
             if indexPath.row > arrAtchHybidData.count - 1 {
@@ -627,62 +626,62 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
                         let data = PhotoDataUp(flmPstnLat: "", filePathNm: remote.filePathNm, flmPstnLot: "", orgnlAtchFileNm: remote.orgnlAtchFileNm, atchFileNm: remote.atchFileNm, atchFileSz: remote.atchFileSz, fileExtnNm: remote.fileExtnNm, atchFileSn: remote.atchFileSn, rowState: "D")
                         self.arrAtchDelete.append(data)
                     }
-                    
+
                     self.arrAtchHybidData.remove(at: indexPath.row)
                     self.cv_attachFile.reloadData()
                 }
-                
+
                 if indexPath.row == 0 {
                     cell.markRepresentative(flag: true)
                 } else {
                     cell.markRepresentative(flag: false)
                 }
             }
-            
+
             return cell
-            
+
         } else if collectionView == cv_dailyLifeGubun {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyLifeGubunItemView", for: indexPath) as! DailyLifeGubunItemView
-            
+
             if let schCodeList = schCodeList {
                 cell.lb_gubun.text = schCodeList[indexPath.row].cdNm
                 cell.update(gubunItemSelected[indexPath.row])
             }
-            
+
             return cell
         }
-        
+
         return UICollectionViewCell()
     }
-    
-    
+
+
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         if collectionView == cv_selPet {
             setSelected(indexPath.row)
             cv_selPet.reloadData()
-            
+
             return itemSelected[indexPath.row]
-            
+
         } else if collectionView == cv_dailyLifeGubun {
             setGubunSelected(indexPath.row)
             cv_dailyLifeGubun.reloadData()
-            
+
             return gubunItemSelected[indexPath.row]
         }
-        
+
         return false
     }
 }
 
 extension StoryAddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        
+
         arrAtchHybidData.append(AtchHybridData(local: image.resizeImageForUpload(maxWidth: 1920, maxHeight: 1080), remote: nil))
-        
+
         cv_attachFile.reloadData()
     }
 }
@@ -694,12 +693,12 @@ extension StoryAddViewController {
         case tf_hashtag:
             tf_hashtag.resolveHashTags()
             break
-            
+
         default:
             break
         }
     }
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case tf_title:
@@ -709,17 +708,17 @@ extension StoryAddViewController {
             vw_titleArea.layer.borderWidth = 2
             vw_titleArea.layer.borderColor = UIColor.init(hex: "#FF000000")?.cgColor
             break
-        
+
         case tf_hashtag:
             textField.layer.borderWidth = 2
             textField.layer.borderColor = UIColor.init(hex: "#FF000000")?.cgColor
             break
-            
+
         default:
             break
         }
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
         case tf_title:
@@ -727,12 +726,12 @@ extension StoryAddViewController {
             vw_titleArea.layer.borderWidth = 1
             vw_titleArea.layer.borderColor = UIColor.init(hex: "#FFE3E9F2")?.cgColor
             break
-            
+
         case tf_hashtag:
             textField.layer.borderWidth = 1
             textField.layer.borderColor = UIColor.init(hex: "#FFE3E9F2")?.cgColor
             break
-            
+
         default:
             break
         }
@@ -740,18 +739,18 @@ extension StoryAddViewController {
 }
 
 // MARK: - UITextViewDelegate
-extension StoryAddViewController : UITextViewDelegate {
+extension StoryAddViewController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
         textViewFitSize(textView)
     }
-    
+
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == textViewPlaceHolder {
             textView.text = nil
             textView.textColor = .darkText
         }
-        
+
         inputTextSelectedUI(view: textView)
     }
 
@@ -760,7 +759,7 @@ extension StoryAddViewController : UITextViewDelegate {
             textView.text = textViewPlaceHolder
             textView.textColor = UIColor.init(hex: "#FFB5B9BE")
         }
-        
+
         inputTextNormalUI(view: textView)
     }
 }
