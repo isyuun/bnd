@@ -785,7 +785,7 @@ extension StoryModifyViewController: UICollectionViewDataSource, UICollectionVie
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
 
             if let pet = self.pets?[indexPath.row] {
-                setPetImage(imageView: cell.ivProf, pet: pet)
+                Global2.setPetImage(imageView: cell.ivProf, pet: pet)
                 cell.lbName.text = pet.petNm
                 cell.update(itemSelected[indexPath.row])
             }
@@ -796,7 +796,7 @@ extension StoryModifyViewController: UICollectionViewDataSource, UICollectionVie
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
 
             if let pet = selectEnableItems?[indexPath.row] {
-                setPetImage(imageView: cell.ivProf, pet: pet)
+                Global2.setPetImage(imageView: cell.ivProf, pet: pet)
                 cell.lbName.text = pet.petNm
                 cell.update(itemEnableSelected[indexPath.row])
             }

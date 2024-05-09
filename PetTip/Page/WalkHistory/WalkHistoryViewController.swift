@@ -181,7 +181,7 @@ class WalkHistoryViewController: CommonViewController {
 
         if let petList = self.dailyLifePets {
             if (petList.pets.count > 0) {
-                self.setPetImage(imageView: self.titleBarPfImageView, pet: petList.pets[self.selectedPetIndex])
+                Global2.setPetImage(imageView: self.titleBarPfImageView, pet: petList.pets[self.selectedPetIndex])
 
                 self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
 

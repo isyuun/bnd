@@ -23,6 +23,9 @@ class StoryListViewController2: StoryListViewController {
 
     override func story_list(_ isMore: Bool) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][isMore:\(isMore)][\(self.arrStoryList.isEmpty)][\(self.arrStoryList.count)]")
-        super.story_list(isMore)
+        code_list(cmmCdData: ["SCH"]) {
+            NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][Global.schCodeList:\(String(describing: Global.schCodeList))]")
+            super.story_list(isMore)
+        }
     }
 }

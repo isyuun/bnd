@@ -42,7 +42,7 @@ class PetModViewController: CommonViewController {
     private func setCurrInfo() {
         guard let petDetailInfo = petDetailInfo else { return }
 
-        self.setPetImage(imageView: self.iv_profile, pet: petDetailInfo)
+        Global2.setPetImage(imageView: self.iv_profile, pet: petDetailInfo)
 
 
         if (petDetailInfo.petTypCD == "001") {

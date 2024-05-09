@@ -337,8 +337,6 @@
 		7B3C4EF62BE366E50059EE82 /* CommonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */; };
 		7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */; };
 		7B3C4EFA2BE3A6880059EE82 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */; };
-		7B451F0C2BEB70FA008514BC /* UIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B451F0B2BEB70FA008514BC /* UIView2.swift */; };
-		7B451F0E2BEB7264008514BC /* UIViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B451F0D2BEB7264008514BC /* UIViewController2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
 		7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */; };
 		7B714A7D2BE8690F00E89AE8 /* PostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */; };
@@ -352,9 +350,10 @@
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
 		7BD8DB692BCF5058000755D1 /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB672BCF5058000755D1 /* RELEASE.md */; };
 		7BE12BCE2BEC5386009B556A /* StoryItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE12BCD2BEC5386009B556A /* StoryItemView2.swift */; };
-		7BE12BD02BEC5635009B556A /* UIView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE12BCF2BEC5635009B556A /* UIView4.swift */; };
-		7BE12BD22BEC5D7E009B556A /* UIView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE12BD12BEC5D7E009B556A /* UIView3.swift */; };
+		7BE12BD02BEC5635009B556A /* UIView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE12BCF2BEC5635009B556A /* UIView3.swift */; };
+		7BE12BD22BEC5D7E009B556A /* UIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE12BD12BEC5D7E009B556A /* UIView2.swift */; };
 		7BE12BD42BEC638D009B556A /* UICollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE12BD32BEC638D009B556A /* UICollectionViewCell2.swift */; };
+		7BE12BD62BECA75A009B556A /* Global2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE12BD52BECA75A009B556A /* Global2.swift */; };
 		7BE3F1992BE22E5200FDFCCA /* EventListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */; };
 		7BE5C75D2BEB006A00735E85 /* CommonViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5C75C2BEB006A00735E85 /* CommonViewController4.swift */; };
 		7BE5C7652BEB4EE100735E85 /* UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5C7642BEB4EE100735E85 /* UICollectionViewDataSource.swift */; };
@@ -698,8 +697,6 @@
 		7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListViewController.swift; sourceTree = "<group>"; };
 		7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewController2.swift; sourceTree = "<group>"; };
 		7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
-		7B451F0B2BEB70FA008514BC /* UIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView2.swift; sourceTree = "<group>"; };
-		7B451F0D2BEB7264008514BC /* UIViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
 		7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController2.swift; sourceTree = "<group>"; };
 		7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController2.swift; sourceTree = "<group>"; };
@@ -714,9 +711,10 @@
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7BD8DB672BCF5058000755D1 /* RELEASE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
 		7BE12BCD2BEC5386009B556A /* StoryItemView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryItemView2.swift; sourceTree = "<group>"; };
-		7BE12BCF2BEC5635009B556A /* UIView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView4.swift; sourceTree = "<group>"; };
-		7BE12BD12BEC5D7E009B556A /* UIView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView3.swift; sourceTree = "<group>"; };
+		7BE12BCF2BEC5635009B556A /* UIView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView3.swift; sourceTree = "<group>"; };
+		7BE12BD12BEC5D7E009B556A /* UIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView2.swift; sourceTree = "<group>"; };
 		7BE12BD32BEC638D009B556A /* UICollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell2.swift; sourceTree = "<group>"; };
+		7BE12BD52BECA75A009B556A /* Global2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global2.swift; sourceTree = "<group>"; };
 		7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController2.swift; sourceTree = "<group>"; };
 		7BE5C75C2BEB006A00735E85 /* CommonViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController4.swift; sourceTree = "<group>"; };
 		7BE5C7642BEB4EE100735E85 /* UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -970,9 +968,8 @@
 			isa = PBXGroup;
 			children = (
 				0251FD6D2B1871F400F35EF8 /* UIView.swift */,
-				7B451F0B2BEB70FA008514BC /* UIView2.swift */,
-				7BE12BD12BEC5D7E009B556A /* UIView3.swift */,
-				7BE12BCF2BEC5635009B556A /* UIView4.swift */,
+				7BE12BD12BEC5D7E009B556A /* UIView2.swift */,
+				7BE12BCF2BEC5635009B556A /* UIView3.swift */,
 				7BE12BD32BEC638D009B556A /* UICollectionViewCell2.swift */,
 				0251FD612B16F7F400F35EF8 /* UIColor.swift */,
 				022B41A32B1CB7E10057323E /* UITextField.swift */,
@@ -982,7 +979,6 @@
 				0251FD732B1909BA00F35EF8 /* UIImage.swift */,
 				7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */,
 				02C1140A2B5CBD9900A14F77 /* UIViewController.swift */,
-				7B451F0D2BEB7264008514BC /* UIViewController2.swift */,
 				7BE5C7662BEB4F7F00735E85 /* UITableViewDataSource.swift */,
 				7BE5C7642BEB4EE100735E85 /* UICollectionViewDataSource.swift */,
 				0251FD6F2B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift */,
@@ -1383,6 +1379,7 @@
 				7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */,
 				02EB97FF2B0CFF03007428AD /* AppDelegate2.swift */,
 				02A05ABE2B3B2FEE00E8ABFA /* Global.swift */,
+				7BE12BD52BECA75A009B556A /* Global2.swift */,
 				02EB98012B0CFF03007428AD /* SceneDelegate.swift */,
 				7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */,
 				02EB98032B0CFF03007428AD /* ViewController.swift */,
@@ -1639,8 +1636,8 @@
 				02A05B3E2B41426600E8ABFA /* MyPageCompPetListIEmptytemView.swift in Sources */,
 				7B250FD32BE06FC700171EFD /* MyPageViewController2.swift in Sources */,
 				028625192B4994140055E62F /* CmmPetListRequest.swift in Sources */,
-				7BE12BD22BEC5D7E009B556A /* UIView3.swift in Sources */,
-				7BE12BD02BEC5635009B556A /* UIView4.swift in Sources */,
+				7BE12BD22BEC5D7E009B556A /* UIView2.swift in Sources */,
+				7BE12BD02BEC5635009B556A /* UIView3.swift in Sources */,
 				02DB383A2B6E73F3007D19A1 /* SelectWalkMarkPetItemView.swift in Sources */,
 				0286250D2B485FE20055E62F /* NoPasteUITextField.swift in Sources */,
 				02A05B282B404F1B00E8ABFA /* WinnerListViewController.swift in Sources */,
@@ -1679,7 +1676,6 @@
 				0286250B2B47E8FC0055E62F /* InviteSetKeyViewController.swift in Sources */,
 				02E3FC8D2B259B7500A1CE62 /* PetList.swift in Sources */,
 				020B79792B2D5C3800C0AB2D /* WalkHistoryMonthView.swift in Sources */,
-				7B451F0E2BEB7264008514BC /* UIViewController2.swift in Sources */,
 				02DB381E2B663ACE007D19A1 /* MyPetUpdateRequest.swift in Sources */,
 				02A05B162B3F9A9A00E8ABFA /* EventListViewController.swift in Sources */,
 				02A05AB32B3806D200E8ABFA /* CmntCreate.swift in Sources */,
@@ -1701,7 +1697,6 @@
 				02E3FC842B25994200A1CE62 /* DailyLifeAPI.swift in Sources */,
 				02E3FC8B2B25999500A1CE62 /* PetListResponse.swift in Sources */,
 				028625372B4DA0B10055E62F /* FaqViewController.swift in Sources */,
-				7B451F0C2BEB70FA008514BC /* UIView2.swift in Sources */,
 				7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */,
 				02A05AD42B3C3D7600E8ABFA /* CmntDeleteResponse.swift in Sources */,
 				02A05B102B3F951600E8ABFA /* BBSTarget.swift in Sources */,
@@ -1844,6 +1839,7 @@
 				0251FD622B16F7F400F35EF8 /* UIColor.swift in Sources */,
 				02C1140D2B5CF31F00A14F77 /* LifeUploadRequest.swift in Sources */,
 				02E3FC912B25A79400A1CE62 /* MyPetListRequest.swift in Sources */,
+				7BE12BD62BECA75A009B556A /* Global2.swift in Sources */,
 				02E3FC602B25479300A1CE62 /* TargetType.swift in Sources */,
 				7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */,
 				0293C6242B0E34220004F19D /* UTCTimeEntity.swift in Sources */,

@@ -140,7 +140,7 @@ class PetProfileViewController: CommonViewController {
     func showProfileInfo() {
         guard let petDetailInfo = petDetailInfo else { return }
 
-        setPetImage(imageView: self.iv_profile, pet: petDetailInfo)
+        Global2.setPetImage(imageView: self.iv_profile, pet: petDetailInfo)
 
         self.lb_petKind.text = petDetailInfo.petKindNm
         self.lb_petNm.text = petDetailInfo.petNm

@@ -560,7 +560,7 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
 
             if let pet = self.pets?[indexPath.row] {
-                setPetImage(imageView: cell.ivProf, pet: pet)
+                Global2.setPetImage(imageView: cell.ivProf, pet: pet)
                 cell.lbName.text = pet.petNm
                 cell.update(itemSelected[indexPath.row])
             }

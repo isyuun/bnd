@@ -92,7 +92,7 @@ extension CompPetListView : UITableViewDelegate, UITableViewDataSource {
             
         } else {
             if let pets = self.pets {
-                setPetImage(imageView: cell.ivProf, pet: pets[indexPath.row])
+                Global2.setPetImage(imageView: cell.ivProf, pet: pets[indexPath.row])
 
                 cell.lbTitle.text = pets[indexPath.row].petNm
                 

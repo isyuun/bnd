@@ -35,7 +35,7 @@ class MyPageCompPetListItemView: UITableViewCell {
         lb_status.layer.cornerRadius = 5
         lb_status.layer.masksToBounds = true
 
-        setPetImage(imageView: iv_prof, pet: myPet)
+        Global2.setPetImage(imageView: iv_prof, pet: myPet)
 
         lb_title.text = myPet.petNm
         lb_subtitle.text = myPet.petKindNm

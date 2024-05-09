@@ -49,7 +49,7 @@ class CommentModifyView: CommonPopupView {
         vw_profIvBorder.layer.borderColor = UIColor.init(hex: "#4E608533")?.cgColor
         vw_profIvBorder.showShadowMid()
 
-        setPetImage(imageView: iv_prof, pet: data.comment)
+        Global2.setPetImage(imageView: iv_prof, pet: data.comment)
 
         lb_nm.text = data.comment.petNm
         lb_dt.text = data.comment.lastStrgDt

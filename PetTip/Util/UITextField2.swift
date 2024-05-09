@@ -32,20 +32,20 @@ extension UITextField2 {
             addTarget(self, action: #selector(checkMaxLength), for: .editingChanged)
         }
     }
-
+    
     @objc func checkMaxLength(textField: UITextField) {
         guard let prospectiveText = self.text,
             prospectiveText.count > maxLength
             else {
             return
         }
-
+    
         let selection = selectedTextRange
-
+    
         let indexEndOfText = prospectiveText.index(prospectiveText.startIndex, offsetBy: maxLength)
         let substring = prospectiveText[..<indexEndOfText]
         text = String(substring)
-
+    
         selectedTextRange = selection
     }
 }

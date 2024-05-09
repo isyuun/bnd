@@ -11,7 +11,10 @@ import AlamofireImage
 class CommonViewController4: CommonViewController3 {
     var schCodeList: [CDDetailList]? {
         get {
-            return _schCodeList
+            return schCodeList()
+        }
+        set(value) {
+            schCodeList(schCodeList: value)
         }
     }
 }
@@ -57,5 +60,9 @@ extension CommonViewController {
 
     internal func schCodeList() -> [CDDetailList]? {
         return _schCodeList
+    }
+
+    internal func schCodeList(schCodeList: [CDDetailList]?) {
+        _schCodeList = schCodeList
     }
 }

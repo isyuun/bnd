@@ -40,13 +40,4 @@ extension CommonViewController {
 
         return true
     }
-
-    func checkMaxLength(textField: UITextField, range: NSRange, string: String, maxLength: Int = 0) -> Bool {
-        if maxLength == 0 { return true }
-
-        let currentString = (textField.text ?? "") as NSString
-        let newString = currentString.replacingCharacters(in: range, with: string)
-
-        return newString.count <= maxLength
-    }
 }

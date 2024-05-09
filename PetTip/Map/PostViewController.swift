@@ -313,7 +313,7 @@ class PostViewController: CommonViewController3 {
             if let view = UINib(nibName: "WalkHistoryPetItemView", bundle: nil).instantiate(withOwner: self).first as? WalkHistoryPetItemView {
                 sv_walkPet.addArrangedSubview(view)
 
-                setPetImage(imageView: view.iv_prof, pet: selectedPets[i])
+                Global2.setPetImage(imageView: view.iv_prof, pet: selectedPets[i])
 
                 view.lb_nm.text = selectedPets[i].petNm
 

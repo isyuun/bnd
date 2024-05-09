@@ -135,11 +135,11 @@ class MainViewController: LocationViewController {
         self.bgCompPetSecondImg.isHidden = true
         if petList.pets.count > 0 {
             self.bgCompPetFirstImg.isHidden = false
-            setPetImage(imageView: self.compPetFirstImg, pet: petList.pets[0])
+            Global2.setPetImage(imageView: self.compPetFirstImg, pet: petList.pets[0])
         }
         if petList.pets.count > 1 {
             self.bgCompPetSecondImg.isHidden = false
-            setPetImage(imageView: self.compPetSecondImg, pet: petList.pets[1])
+            Global2.setPetImage(imageView: self.compPetSecondImg, pet: petList.pets[1])
         }
     }
 
@@ -187,7 +187,7 @@ class MainViewController: LocationViewController {
             if (petList.pets.count > 0) {
                 Global.petRelUnqNo = petList.pets[self.selectedPetIndex].petRelUnqNo
 
-                setPetImage(imageView: self.titleBarPfImageView, pet: petList.pets[self.selectedPetIndex])
+                Global2.setPetImage(imageView: self.titleBarPfImageView, pet: petList.pets[self.selectedPetIndex])
 
                 self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
 
@@ -634,7 +634,7 @@ extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
         if let pets = dailyLifePets?.pets {
             if (pets.count > 0) {
-                setPetImage(imageView: cell.profileImageView, pet: pets[index])
+                Global2.setPetImage(imageView: cell.profileImageView, pet: pets[index])
             } else {
                 cell.profileImageView.image = UIImage(named: "profile_default")
             }

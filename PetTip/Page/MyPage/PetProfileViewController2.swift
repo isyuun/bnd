@@ -30,6 +30,6 @@ class PetProfileViewController2: PetProfileViewController {
         super.showProfileInfo()
 
         guard let petInfo = self.petInfo else { return }
-        setPetImage(imageView: self.iv_profile, pet: petInfo)
+        Global2.setPetImage(imageView: self.iv_profile, pet: petInfo)
     }
 }

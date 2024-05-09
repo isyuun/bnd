@@ -623,7 +623,7 @@ class StoryDetailViewController: CommonDetailViewController {
 
         if let petList = lifeView.lifeViewData.dailyLifePetList {
             if petList.count > 0 {
-                self.setPetImage(imageView: self.iv_repPetProf, pet: petList[0])
+                Global2.setPetImage(imageView: self.iv_repPetProf, pet: petList[0])
 
                 self.lb_repPetNm.text = petList[0].petNm
             }

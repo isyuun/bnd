@@ -238,7 +238,7 @@
                                                 <connections>
                                                     <outlet property="cr_imgHeight" destination="Zsm-ve-Wto" id="jo4-Qg-3oh"/>
                                                     <outlet property="cr_imgWidth" destination="ECy-my-yAh" id="EFL-eR-tvw"/>
-                                                    <outlet property="cv_dailyLifeGubun" destination="2yU-e1-1Gr" id="hmO-CR-Wtr"/>
+                                                    <outlet property="cv_dailyLifeGubun" destination="2yU-e1-1Gr" id="XPZ-tH-crs"/>
                                                     <outlet property="lb_cmdtnCnt" destination="lNH-cg-UDf" id="ice-ov-XlQ"/>
                                                     <outlet property="lb_cmntCnt" destination="BKM-rZ-g00" id="rqY-PD-xeF"/>
                                                     <outlet property="lb_petNM" destination="ZVk-FB-T9Z" id="4km-mR-tJa"/>
