@@ -100,7 +100,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storyItemView" id="sXS-0l-juN" customClass="StoryItemView" customModule="PetTip" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="storyItemView" id="sXS-0l-juN" customClass="StoryItemView2" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="76.666666666666671" y="0.0" width="200" height="280"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mxI-ZR-85p">
@@ -238,6 +238,7 @@
                                                 <connections>
                                                     <outlet property="cr_imgHeight" destination="Zsm-ve-Wto" id="jo4-Qg-3oh"/>
                                                     <outlet property="cr_imgWidth" destination="ECy-my-yAh" id="EFL-eR-tvw"/>
+                                                    <outlet property="cv_dailyLifeGubun" destination="2yU-e1-1Gr" id="hmO-CR-Wtr"/>
                                                     <outlet property="lb_cmdtnCnt" destination="lNH-cg-UDf" id="ice-ov-XlQ"/>
                                                     <outlet property="lb_cmntCnt" destination="BKM-rZ-g00" id="rqY-PD-xeF"/>
                                                     <outlet property="lb_petNM" destination="ZVk-FB-T9Z" id="4km-mR-tJa"/>

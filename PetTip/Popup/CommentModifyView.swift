@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class CommentModifyView: CommonPopupView3 {
+class CommentModifyView: CommonPopupView {
 
     @IBOutlet weak var btn_cancel: UIButton!
 

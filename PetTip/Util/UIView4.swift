@@ -1,17 +1,17 @@
 //
-//  CommonViewController4.swift
+//  UIView3.swift
 //  PetTip
 //
-//  Created by isyuun on 2024/5/8.
+//  Created by isyuun on 2024/5/9.
 //
 
 import UIKit
 import AlamofireImage
 
-class CommonViewController4: CommonViewController3 {
+class UIView4: UIView2 {
     var schCodeList: [CDDetailList]? {
         get {
-            return _schCodeList
+            return schCodeList()
         }
     }
 }
@@ -19,7 +19,7 @@ class CommonViewController4: CommonViewController3 {
 // MARK: - CONN COMMON CODE-LIST
 private var _schCodeList: [CDDetailList]?
 
-extension CommonViewController {
+extension UIView {
 
     internal func code_list(cmmCdData: [String], complete: (() -> Void)?) {
         if Global.schCodeList != nil {
@@ -28,11 +28,11 @@ extension CommonViewController {
             return
         }
 
-        self.startLoading()
+        // self.startLoading()
 
         let request = CodeListRequest(cmmCdData: cmmCdData)
         CommonAPI.codeList(request: request) { codeList, error in
-            self.stopLoading()
+            // self.stopLoading()
 
             if let codeList = codeList, let data = codeList.data?[0] {
                 Global.schCodeList = data.cdDetailList
@@ -40,7 +40,7 @@ extension CommonViewController {
                 complete?()
             }
 
-            self.processNetworkError(error)
+            // self.processNetworkError(error)
         }
     }
 

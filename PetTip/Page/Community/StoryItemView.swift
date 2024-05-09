@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StoryItemView : UICollectionViewCell {
+class StoryItemView : UICollectionViewCell2 {
     
     @IBOutlet weak var storyImgView : UIImageView!
     @IBOutlet weak var lb_schTtl : UILabel!

@@ -12,7 +12,7 @@ enum PetWeightViewMode {
     case MODIFY
 }
 
-class PetWeightView: CommonPopupView2 {
+class PetWeightView: CommonPopupView {
 
     public var didTapOK: ((_ date: Date, _ weight: String) -> Void)?
     public var didTapCancel: (() -> Void)?
