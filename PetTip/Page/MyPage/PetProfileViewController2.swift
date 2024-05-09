@@ -29,7 +29,7 @@ class PetProfileViewController2: PetProfileViewController {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: petInfo))][petDetailInfo:\(String(describing: petDetailInfo))]")
         super.showProfileInfo()
 
-        guard let petInfo = self.petInfo else { return }
-        Global2.setPetImage(imageView: self.iv_profile, pet: petInfo)
+        guard let pet = self.petInfo else { return }
+        Global2.setPetImage(imageView: self.iv_profile, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
     }
 }

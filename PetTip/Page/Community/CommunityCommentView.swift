@@ -84,7 +84,8 @@ class CommunityCommentView: UIView {
         vw_profIvBorder.layer.borderColor = UIColor.init(hex: "#4E608526")?.cgColor
         vw_profIvBorder.showShadowMid()
 
-        Global2.setPetImage(imageView: iv_prof, pet: data.comment)
+        let pet = data.comment
+        Global2.setPetImage(imageView: iv_prof, petTypCd: pet.petTypCd, petImgAddr: pet.petImg)
 
         lb_nm.text = data.comment.petNm != nil ? data.comment.petNm : " - "
         lb_dt.text = data.comment.lastStrgDt

@@ -30,7 +30,7 @@ class SelectWalkPetItemView: UITableViewCell {
         iv_profile.backgroundColor = UIColor.white
         iv_profile.layer.cornerRadius = self.iv_profile.bounds.size.width / 2
         
-        Global2.setPetImage(imageView: iv_profile, pet: pet)
+        Global2.setPetImage(imageView: iv_profile, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
 
         lb_nm.text = pet.petNm
         

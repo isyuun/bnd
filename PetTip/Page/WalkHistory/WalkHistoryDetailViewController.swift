@@ -111,7 +111,8 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
                                     petViews[i] = view
                                     self.vw_petListContent.addSubview(view)
 
-                                    Global2.setPetImage(imageView: view.iv_prof, pet: petList[i])
+                                    let pet = petList[i]
+                                    Global2.setPetImage(imageView: view.iv_prof, petTypCd: pet.petTypCd, petImgAddr: pet.petImg)
 
                                     view.lb_nm.text = petList[i].petNm
 

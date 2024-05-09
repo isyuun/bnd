@@ -133,14 +133,21 @@ class MainViewController: LocationViewController {
 
         self.bgCompPetFirstImg.isHidden = true
         self.bgCompPetSecondImg.isHidden = true
+
+        var pet: Pet? = nil
+        var imageView: UIImageView? = nil
         if petList.pets.count > 0 {
-            self.bgCompPetFirstImg.isHidden = false
-            Global2.setPetImage(imageView: self.compPetFirstImg, pet: petList.pets[0])
+            pet = petList.pets[0]
+            imageView = self.compPetFirstImg
+            imageView?.isHidden = false
         }
+
         if petList.pets.count > 1 {
-            self.bgCompPetSecondImg.isHidden = false
-            Global2.setPetImage(imageView: self.compPetSecondImg, pet: petList.pets[1])
+            pet = petList.pets[1]
+            imageView = self.compPetSecondImg
+            imageView?.isHidden = false
         }
+        if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
     }
 
     func dailyLife_PetList() {
@@ -187,7 +194,8 @@ class MainViewController: LocationViewController {
             if (petList.pets.count > 0) {
                 Global.petRelUnqNo = petList.pets[self.selectedPetIndex].petRelUnqNo
 
-                Global2.setPetImage(imageView: self.titleBarPfImageView, pet: petList.pets[self.selectedPetIndex])
+                let pet = petList.pets[self.selectedPetIndex]
+                Global2.setPetImage(imageView: self.titleBarPfImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
 
                 self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
 
@@ -634,7 +642,8 @@ extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
         if let pets = dailyLifePets?.pets {
             if (pets.count > 0) {
-                Global2.setPetImage(imageView: cell.profileImageView, pet: pets[index])
+                let pet = pets[index]
+                Global2.setPetImage(imageView: cell.profileImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
             } else {
                 cell.profileImageView.image = UIImage(named: "profile_default")
             }

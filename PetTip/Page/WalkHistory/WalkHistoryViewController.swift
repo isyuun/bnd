@@ -181,14 +181,16 @@ class WalkHistoryViewController: CommonViewController {
 
         if let petList = self.dailyLifePets {
             if (petList.pets.count > 0) {
-                Global2.setPetImage(imageView: self.titleBarPfImageView, pet: petList.pets[self.selectedPetIndex])
+                let pet = petList.pets[self.selectedPetIndex]
 
-                self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
+                Global2.setPetImage(imageView: self.titleBarPfImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
 
-                self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
+                self.titleBarPfNMLabel.text = pet.petNm
+
+                self.requestCurrPetWeekData(pet.ownrPetUnqNo)
 
                 if (self.walkHistoryMonthView != nil) {
-                    self.walkHistoryMonthView?.ownrPetUnqNo = petList.pets[self.selectedPetIndex].ownrPetUnqNo
+                    self.walkHistoryMonthView?.ownrPetUnqNo = pet.ownrPetUnqNo
                     self.walkHistoryMonthView?.update()
                 }
 

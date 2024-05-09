@@ -195,7 +195,7 @@ extension SelectInvitePetView: UICollectionViewDataSource, UICollectionViewDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectPetItemView", for: indexPath) as! SelectPetItemView
 
         if let pet = self.pets?[indexPath.row] {
-            Global2.setPetImage(imageView: cell.ivProf, pet: pet)
+            Global2.setPetImage(imageView: cell.ivProf, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
             cell.lbName.text = pet.petNm
             cell.update(itemSelected[indexPath.row])
         }
