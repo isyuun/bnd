@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxRelay
 
-class MyPageViewController: CommonViewController {
+class MyPageViewController: CommonViewController, SelectPetViewProtocol {
 
     @IBOutlet weak var lb_title: UILabel!
     @IBOutlet weak var iv_prof: UIImageView!
@@ -174,6 +174,14 @@ class MyPageViewController: CommonViewController {
             vc.invttKeyVl = sender as? String
         }
     }
+
+    // MARK: - SELECT PET VIEW DELEGATE
+    func onSelectPet(_ selectedIdx: Int) {
+        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC = nil
+
+        selectPetView = nil
+    }
 }
 
 // MARK: - UITableView Delegate
@@ -222,14 +230,3 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(petProfileViewController, animated: true)
     }
 }
-
-// MARK: - SELECT PET VIEW DELEGATE
-extension MyPageViewController: SelectPetViewProtocol {
-    func onSelectPet(_ selectedIdx: Int) {
-        bottomSheetVC.hideBottomSheetAndGoBack()
-        bottomSheetVC = nil
-
-        selectPetView = nil
-    }
-}
-

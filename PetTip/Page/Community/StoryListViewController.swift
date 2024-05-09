@@ -204,10 +204,6 @@ class StoryListViewController: CommonListViewController {
     }
 }
 
-
-
-
-
 // MARK: - Story Delegate
 extension StoryListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 

@@ -8,4 +8,5 @@
 import UIKit
 
 class InviteSetKeyViewController2: InviteSetKeyViewController {
+
 }
