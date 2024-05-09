@@ -358,6 +358,7 @@
 		7BE5C7672BEB4F7F00735E85 /* UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5C7662BEB4F7F00735E85 /* UITableViewDataSource.swift */; };
 		7BE820EC2BE47B6B00B09973 /* StoryModifyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE820EB2BE47B6B00B09973 /* StoryModifyViewController2.swift */; };
 		7BE820EE2BE47BB900B09973 /* StoryAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */; };
+		7BE9A6B12BED494F006E10E7 /* Global4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9A6B02BED494F006E10E7 /* Global4.swift */; };
 		7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */; };
 /* End PBXBuildFile section */
 
@@ -717,6 +718,7 @@
 		7BE5C7662BEB4F7F00735E85 /* UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataSource.swift; sourceTree = "<group>"; };
 		7BE820EB2BE47B6B00B09973 /* StoryModifyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModifyViewController2.swift; sourceTree = "<group>"; };
 		7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAddViewController2.swift; sourceTree = "<group>"; };
+		7BE9A6B02BED494F006E10E7 /* Global4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global4.swift; sourceTree = "<group>"; };
 		7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ED9599A85857899956A08B /* Pods-PetTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.release.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -1374,6 +1376,7 @@
 				02A05ABE2B3B2FEE00E8ABFA /* Global.swift */,
 				7BE12BD52BECA75A009B556A /* Global2.swift */,
 				7BE12BD72BECB312009B556A /* Global3.swift */,
+				7BE9A6B02BED494F006E10E7 /* Global4.swift */,
 				02EB98012B0CFF03007428AD /* SceneDelegate.swift */,
 				7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */,
 				02EB98032B0CFF03007428AD /* ViewController.swift */,
@@ -1643,6 +1646,7 @@
 				02E3FC7D2B257CCA00A1CE62 /* Crypto.swift in Sources */,
 				02DB380A2B64D486007D19A1 /* MyPetWeightUpdateResponse.swift in Sources */,
 				028625072B47CD250055E62F /* MyPetInvttCreateResponse.swift in Sources */,
+				7BE9A6B12BED494F006E10E7 /* Global4.swift in Sources */,
 				02A05B582B47886B00E8ABFA /* CommonPopupView.swift in Sources */,
 				022B41912B1B649D0057323E /* CALayer.swift in Sources */,
 				025B7CD22B7F4F44004E85D1 /* ImageViewController.swift in Sources */,

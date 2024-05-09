@@ -50,7 +50,7 @@ class FaqViewController: CommonViewController {
             tb_list.reloadData()
         }
         
-        startLoading()
+        self.startLoading()
         
         let request = FaqListRequest(bbsSn: 8, page: 1, pageSize: 10, recordSize: 20)
         BBSAPI.faqList(request: request) { response, error in

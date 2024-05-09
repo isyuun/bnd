@@ -149,7 +149,7 @@ class AddressSelectViewController: CommonViewController {
     private func sgg_list() {
         guard let selectedSido = selectedSido else { return }
         
-        startLoading()
+        self.startLoading()
         
         let request = SggListRequest(sidoCd: selectedSido.cdld)
         CommonAPI.sggList(request: request) { response, error in
@@ -220,7 +220,7 @@ class AddressSelectViewController: CommonViewController {
         guard let selectedSido = selectedSido else { return }
         guard let selectedSigungu = selectedSigungu else { return }
         
-        startLoading()
+        self.startLoading()
         
         let request = UmdListRequest(sidoCd: selectedSido.cdld, sggCd: Int(selectedSigungu.sggCD)!)
         CommonAPI.umdList(request: request) { response, error in

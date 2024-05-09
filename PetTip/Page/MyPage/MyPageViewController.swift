@@ -50,13 +50,10 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
 
     private let disposeBag = DisposeBag()
 
-    var myPetList: MyPetList = MyPetList(myPets: [])
+    var myPetList: MyPetList?
+    var dailyLifePets: PetList?
 
     internal func initRx() {
-        Global.userNckNm.subscribe(onNext: { [weak self] nckNm in
-            self?.refreshUserNckNm(data: nckNm)
-        }).disposed(by: disposeBag)
-
         Global.myPetList.subscribe(onNext: { [weak self] myPetList in
             self?.refreshMyPetList(data: myPetList)
         }).disposed(by: disposeBag)
@@ -64,6 +61,21 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
         Global.dailyLifePets.subscribe(onNext: { [weak self] petList in
             self?.refreshDailyLifePetList(data: petList)
         }).disposed(by: disposeBag)
+
+        Global.userNckNm.subscribe(onNext: { [weak self] nckNm in
+            self?.refreshUserNckNm(data: nckNm)
+        }).disposed(by: disposeBag)
+    }
+
+    internal func refreshMyPetList(data: MyPetList?) {
+        guard let myPetList = data else { return }
+        self.myPetList = myPetList
+        self.tv_compPet.reloadData()
+    }
+
+    internal func refreshDailyLifePetList(data: PetList?) {
+        guard let petList = data else { return }
+        self.dailyLifePets = petList
     }
 
     private func refreshUserNckNm(data: String?) {
@@ -71,23 +83,12 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
         self.lb_userNm.text = userNckNm
     }
 
-    private func refreshMyPetList(data: MyPetList?) {
-        guard let myPetList = data else { return }
-        self.myPetList = myPetList
-        self.tv_compPet.reloadData()
-    }
-
-    private func refreshDailyLifePetList(data: PetList?) {
-        guard let petList = data else { return }
-        self.dailyLifePets = petList
-    }
-
     @IBAction func onLogout(_ sender: Any) {
         logout()
     }
 
     private func logout() {
-        startLoading()
+        self.startLoading()
 
         let request = LogoutRequest()
         MemberAPI.logout(request: request) { response, error in
@@ -111,8 +112,6 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
     var bottomSheetVC: BottomSheetViewController! = nil
 
     var selectPetView: SelectPetView! = nil
-
-    var dailyLifePets: PetList?
 
     func showSelectMyPetForInvite() {
         if (dailyLifePets == nil || dailyLifePets?.pets.count == 0) {
@@ -141,7 +140,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
     }
 
     func invtt_create(pets: [Pet], beginDt: String, endDt: String) {
-        startLoading()
+        self.startLoading()
 
         let request = MyPetInvttCreateRequest(pet: pets, relBgngDt: beginDt, relEndDt: endDt)
         MyPetAPI.invttCreate(request: request) { response, error in
@@ -185,15 +184,17 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
 // MARK: - UITableView Delegate
 extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if myPetList.myPets.count == 0 {
+        guard let count = myPetList?.myPets.count else { return 1 }
+        if count == 0 {
             return 1
         } else {
-            return myPetList.myPets.count
+            return count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if myPetList.myPets.count == 0 {
+        guard let count = myPetList?.myPets.count else { return UITableViewCell() }
+        if count == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageCompPetListIEmptytemView", for: indexPath) as! MyPageCompPetListIEmptytemView
             cell.initialize()
 
@@ -204,11 +205,11 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
 
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyPageCompPetListItemView", for: indexPath) as! MyPageCompPetListItemView
-            cell.initialize(myPet: myPetList.myPets[indexPath.row])
+            if let pet = myPetList?.myPets[indexPath.row] { cell.initialize(myPet: pet) }
 
-            if myPetList.myPets.count == 1 {
+            if count == 1 {
                 cr_tvCompPetHeight.constant = cell.frame.size.height
-            } else if myPetList.myPets.count == 2 {
+            } else if count == 2 {
                 cr_tvCompPetHeight.constant = cell.frame.size.height * 2
             } else {
                 cr_tvCompPetHeight.constant = cell.frame.size.height * 3
@@ -223,7 +224,7 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let petProfileViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetProfileViewController") as PetProfileViewController
-        petProfileViewController.petInfo = myPetList.myPets[indexPath.row]
+        petProfileViewController.petInfo = myPetList?.myPets[indexPath.row]
 
         self.navigationController?.pushViewController(petProfileViewController, animated: true)
     }

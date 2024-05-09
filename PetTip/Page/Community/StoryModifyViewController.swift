@@ -707,7 +707,7 @@ class StoryModifyViewController: CommonViewController2 {
 
     // MARK: - CONN DAILY-LIFE UPDATE
     private func dailylife_update() {
-        startLoading()
+        self.startLoading()
 
         let request = LifeUpdateRequest(cmntUseYn: lifeViewData.cmntUseYn,
                                         delYn: lifeViewData.delYn,

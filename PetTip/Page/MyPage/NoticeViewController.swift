@@ -53,7 +53,7 @@ class NoticeViewController: CommonViewController {
             tb_list.reloadData()
         }
         
-        startLoading()
+        self.startLoading()
         
         let request = NoticeListRequest(bbsSn: 7, page: pageIndex, pageSize: 10, recordSize: 20)
         BBSAPI.noticeList(request: request) { response, error in

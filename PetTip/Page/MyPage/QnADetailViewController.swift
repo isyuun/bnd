@@ -75,7 +75,7 @@ class QnADetailViewController: CommonViewController{
     var arrFile = [File]()
     
     private func qna_dtl() {
-        startLoading()
+        self.startLoading()
         
         let request = QnADtlListRequest(pstSn: pstSn!)
         BBSAPI.qnaDtlList(request: request) { data, error in
@@ -153,7 +153,7 @@ class QnADetailViewController: CommonViewController{
     func qna_delete() {
         guard let pstSn = pstSn else { return }
         
-        startLoading()
+        self.startLoading()
         
         let request = QnADeleteRequest(pstSn: pstSn)
         BBSAPI.qnaDelete(request: request) { response, error in

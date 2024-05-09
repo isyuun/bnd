@@ -79,7 +79,7 @@ class InviteSetKeyViewController: CommonViewController2 {
     func invtt_setKey(key: String) {
         tf_key.resignFirstResponder()
 
-        startLoading()
+        self.startLoading()
 
         let request = MyPetInvttSetKeyRequest(invttKeyVl: key)
         MyPetAPI.invttSetKey(request: request) { response, error in
@@ -89,7 +89,7 @@ class InviteSetKeyViewController: CommonViewController2 {
                 if response.statusCode == 200 {
                     self.showAlertPopup(title: "알림", msg: response.resultMessage, didTapOK: {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                            self.onBack()
+                            self.invtt_setKey() //self.onBack()
                         })
                     })
                 }
@@ -105,6 +105,8 @@ class InviteSetKeyViewController: CommonViewController2 {
             self.processNetworkError(error)
         }
     }
+
+    func invtt_setKey() { }
 
     // MARK: - Back TitleBar
     @IBOutlet weak var titleBarView: UIView!

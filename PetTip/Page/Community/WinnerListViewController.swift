@@ -57,7 +57,7 @@ class WinnerListViewController: CommonListViewController {
             tb_list.reloadData()
         }
         
-        startLoading()
+        self.startLoading()
         
         let request = WinnerListRequest(page: pageIndex, pageSize: 10, recordSize: 20)
         BBSAPI.winnerList(request: request) { winnerListData, error in

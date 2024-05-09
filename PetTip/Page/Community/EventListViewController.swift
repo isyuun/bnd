@@ -56,7 +56,7 @@ class EventListViewController: CommonListViewController {
             tb_list.reloadData()
         }
 
-        startLoading()
+        self.startLoading()
 
         let request = EventListRequest(page: pageIndex, pageSize: 10, recordSize: 20)
         BBSAPI.eventList(request: request) { eventList, error in

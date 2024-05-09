@@ -80,7 +80,7 @@ class UserInfoViewController: CommonViewController {
             return
         }
         
-        startLoading()
+        self.startLoading()
         
         let request = ChkNcknmRequest(ncknm: nicknm)
         MemberAPI.chkNcknm(request: request) { data, error in
@@ -169,7 +169,7 @@ class UserInfoViewController: CommonViewController {
         guard tf_nickNm.text != nil else { return }
         guard let userId = UserDefaults.standard.value(forKey: "userId") as? String else { return }
         
-        startLoading()
+        self.startLoading()
         
         let request = ResetNcknmRequest(ncknm: self.tf_nickNm.text!, userID: userId)
         MemberAPI.resetNcknm(request: request) { data, error in
@@ -200,7 +200,7 @@ class UserInfoViewController: CommonViewController {
     func reset_password() {
         guard let email = UserDefaults.standard.value(forKey: "email") as? String else { return }
         
-        startLoading()
+        self.startLoading()
         
         let request = ResetPasswordRequest(email: email, userPW: self.tf_pwd.text!)
         MemberAPI.resetPassword(request: request) { data, error in
@@ -248,7 +248,7 @@ class UserInfoViewController: CommonViewController {
     }
     
     private func withdraw() {
-        startLoading()
+        self.startLoading()
         
         let request = WithdrawRequest()
         MemberAPI.withdraw(request: request) { data, error in

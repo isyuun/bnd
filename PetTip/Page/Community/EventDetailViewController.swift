@@ -35,7 +35,7 @@ class EventDetailViewController: CommonViewController {
     @IBOutlet weak var cr_wvPstCnHeight : NSLayoutConstraint!
     
     func event_dtl() {
-        startLoading()
+        self.startLoading()
         
         let request = EventDtlListRequest(pstSn: pstSn!)
         BBSAPI.eventDtlList(request: request) { eventListData, error in

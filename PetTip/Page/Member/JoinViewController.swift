@@ -89,7 +89,7 @@ class JoinViewController: CommonViewController {
             return
         }
         
-        startLoading()
+        self.startLoading()
         
         let request = ChkNcknmRequest(ncknm: nicknm)
         MemberAPI.chkNcknm(request: request) { data, error in

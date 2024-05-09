@@ -244,7 +244,7 @@ class QnAAddViewController: CommonViewController {
             return
         }
         
-        startLoading()
+        self.startLoading()
         
         if arrAttachFile.count > 0 {
             let request = QnAAtchUploadRequest(arrFile: arrAttachFile)

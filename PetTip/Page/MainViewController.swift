@@ -44,8 +44,6 @@ class MainViewController: LocationViewController {
 
         showCommonUI()
 
-        initRx()
-
         requestPageData()
 
         fsPagerInit()
@@ -73,14 +71,13 @@ class MainViewController: LocationViewController {
 
     var selectedPetIndex = 0
 
-    var dailyLifePets: PetList? = nil
-
-    var myPetList: MyPetList? = nil
-
     var weekRecord: WeekRecord? = nil
 
     var selectIdxFromPrevPage: Bool = false
     var walkHistoryViewController: WalkHistoryViewController? = nil
+
+    var myPetList: MyPetList?
+    var dailyLifePets: PetList?
 
     func initRx() {
         Global.myPetList.subscribe(onNext: { [weak self] myPetList in
@@ -96,13 +93,36 @@ class MainViewController: LocationViewController {
         }).disposed(by: disposeBag)
     }
 
-    private func refreshMyPetList(data: MyPetList?) {
+    internal func refreshMyPetList(data: MyPetList?) {
         guard let myPetList = data else { return }
         self.myPetList = myPetList
     }
 
+    internal func refreshDailyLifePetList(data: PetList?) {
+        guard let petList = data else { return }
+        self.dailyLifePets = petList
+
+        self.bgCompPetFirstImg.isHidden = true
+        self.bgCompPetSecondImg.isHidden = true
+
+        var pet: Pet? = nil
+        var imageView: UIImageView? = nil
+        if petList.pets.count > 0 {
+            pet = petList.pets[0]
+            imageView = self.compPetFirstImg
+            imageView?.isHidden = false
+        }
+
+        if petList.pets.count > 1 {
+            pet = petList.pets[1]
+            imageView = self.compPetSecondImg
+            imageView?.isHidden = false
+        }
+        if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
+    }
+
     func requestCurrPetWeekData(_ ownrPetUnqNo: String) {
-        //startLoading()
+        //self.startLoading()
 
         let fomatter = DateFormatter()
         fomatter.dateFormat = "yyyy-MM-dd"
@@ -127,31 +147,8 @@ class MainViewController: LocationViewController {
         myPet_list()
     }
 
-    private func refreshDailyLifePetList(data: PetList?) {
-        guard let petList = data else { return }
-        self.dailyLifePets = petList
-
-        self.bgCompPetFirstImg.isHidden = true
-        self.bgCompPetSecondImg.isHidden = true
-
-        var pet: Pet? = nil
-        var imageView: UIImageView? = nil
-        if petList.pets.count > 0 {
-            pet = petList.pets[0]
-            imageView = self.compPetFirstImg
-            imageView?.isHidden = false
-        }
-
-        if petList.pets.count > 1 {
-            pet = petList.pets[1]
-            imageView = self.compPetSecondImg
-            imageView?.isHidden = false
-        }
-        if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
-    }
-
     func dailyLife_PetList() {
-        //startLoading()
+        //self.startLoading()
 
         let request = PetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         DailyLifeAPI.petList(request: request) { petList, error in
@@ -170,7 +167,7 @@ class MainViewController: LocationViewController {
     }
 
     func myPet_list() {
-        //startLoading()
+        //self.startLoading()
 
         let request = MyPetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         MyPetAPI.list(request: request) { myPetList, error in
@@ -427,7 +424,7 @@ class MainViewController: LocationViewController {
 
         guard let recentLoc = locations.last else { return }
 
-        //startLoading()
+        //self.startLoading()
 
         let lat = (recentLoc.coordinate.latitude)
         let lon = (recentLoc.coordinate.longitude)
@@ -511,7 +508,7 @@ class MainViewController: LocationViewController {
     var currStoryItemIndex: CGFloat = 0
 
     func story_realTimeList() {
-        //startLoading()
+        //self.startLoading()
 
         let request = RealTimeListRequest()
         StoryAPI.realTimeList(request: request) { realTimeList, error in

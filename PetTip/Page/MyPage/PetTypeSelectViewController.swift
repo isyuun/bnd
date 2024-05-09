@@ -101,7 +101,7 @@ class PetTypeSelectViewController: CommonViewController {
     var selectedPet: CmmPetListData?
     
     func pet_list(petTypCd: String) {
-        startLoading()
+        self.startLoading()
         
         let request = CmmPetListRequest(petDogSzCd: "", petTypCd: petTypCd)
         CommonAPI.petList(request: request) { response, error in

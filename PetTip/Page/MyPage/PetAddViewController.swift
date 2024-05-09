@@ -349,7 +349,7 @@ class PetAddViewController: CommonViewController2 {
         let stdgSggCd = selectedSigungu == nil ? "" : selectedSigungu!.sggCD //isyuun
         let stdgUmdCd = selectedUpmeondong == nil ? "" : selectedUpmeondong!.umdCD //isyuun
 
-        startLoading()
+        self.startLoading()
 
         let request = MyPetCreateRequest(petRelCd: petRelCd,
                                          petNm: petNm,
@@ -395,7 +395,7 @@ class PetAddViewController: CommonViewController2 {
     }
 
     func myPet_list() {
-        startLoading()
+        self.startLoading()
 
         let request = MyPetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         MyPetAPI.list(request: request) { myPetList, error in
@@ -412,7 +412,7 @@ class PetAddViewController: CommonViewController2 {
     }
 
     func dailyLife_PetList() {
-        startLoading()
+        self.startLoading()
 
         let request = PetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         DailyLifeAPI.petList(request: request) { petList, error in
@@ -443,7 +443,7 @@ class PetAddViewController: CommonViewController2 {
     private func create_user(bAddPet: Bool) {
         guard let memberData = memberData else { return }
 
-        startLoading()
+        self.startLoading()
 
         let request = CreateUserRequest(appKey: Global.appKey, appOs: "002", appTypNm: Util.getModel(), ncknm: memberData.nick, snsLogin: memberData.method, userID: memberData.id, userName: memberData.nick, userPW: memberData.pw)
         MemberAPI.createUser(request: request) { response, error in
@@ -469,7 +469,7 @@ class PetAddViewController: CommonViewController2 {
     func member_Login(bAddPet: Bool) {
         guard let memberData = memberData else { return }
 
-        startLoading()
+        self.startLoading()
 
         let request = LoginRequest(appTypNm: Util.getModel(), userID: memberData.id, userPW: memberData.pw)
         MemberAPI.login(request: request) { login, error in

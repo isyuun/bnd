@@ -210,7 +210,7 @@ class WalkHistoryViewController: CommonViewController {
 
     // MARK: - TARGET PET WEEKLY RECORD
     func requestCurrPetWeekData(_ ownrPetUnqNo: String) {
-        startLoading()
+        self.startLoading()
 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -391,7 +391,7 @@ extension WalkHistoryViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension WalkHistoryViewController: WalkHistoryMonthViewProtocol {
     func onStartLoading() {
-        startLoading()
+        self.startLoading()
     }
 
     func onStopLoading() {

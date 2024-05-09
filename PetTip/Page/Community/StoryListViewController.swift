@@ -162,7 +162,7 @@ class StoryListViewController: CommonListViewController {
     }
 
     func story_list(_ isMore: Bool) {
-        startLoading()
+        self.startLoading()
 
         let request = StoryListRequest(orderType: sortOrderParam, viewType: showModeParam, page: pageIndex, pageSize: 10, recordSize: 20)
         StoryAPI.list(request: request) { storyList, error in

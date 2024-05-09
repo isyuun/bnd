@@ -96,7 +96,7 @@ class LoginViewController: CommonViewController2 {
     }
 
     func member_Login() {
-        startLoading()
+        self.startLoading()
 
         let request = LoginRequest(appTypNm: Util.getModel(), userID: inputBoxID.text!, userPW: inputBoxPW.text!)
         MemberAPI.login(request: request) { login, error in

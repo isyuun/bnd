@@ -433,7 +433,7 @@ class PetModViewController: CommonViewController {
         let stdgSggCd = selectedSigungu == nil ? "" : selectedSigungu!.sggCD //isyuun
         let stdgUmdCd = selectedUpmeondong == nil ? "" : selectedUpmeondong!.umdCD //isyuun
 
-        startLoading()
+        self.startLoading()
 
         let request = MyPetUpdateRequest(ownrPetUnqNo: ownrPetUnqNo,
                                          petRelCd: petRelCd,
@@ -477,7 +477,7 @@ class PetModViewController: CommonViewController {
     }
 
     func myPet_list(onComplete: (() -> Void)?) {
-        startLoading()
+        self.startLoading()
 
         let request = MyPetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         MyPetAPI.list(request: request) { myPetList, error in
@@ -494,7 +494,7 @@ class PetModViewController: CommonViewController {
     }
 
     func dailyLife_PetList(onComplete: (() -> Void)?) {
-        startLoading()
+        self.startLoading()
 
         let request = PetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         DailyLifeAPI.petList(request: request) { petList, error in
@@ -606,7 +606,7 @@ class PetModViewController: CommonViewController {
     private func delete() {
         guard let petDetailInfo = petDetailInfo else { return }
 
-        startLoading()
+        self.startLoading()
 
         let request = MyPetDeleteRequest(delYn: "Y", ownrPetUnqNo: petDetailInfo.ownrPetUnqNo)
         MyPetAPI.delete(request: request) { response, error in

@@ -47,7 +47,7 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
 
     func requestLifeViewData() {
         if let schUnqNo = schUnqNo {
-            startLoading()
+            self.startLoading()
 
             let request = LifeViewRequest(cmntYn: "N", schUnqNo: schUnqNo)
             DailyLifeAPI.view(request: request) { lifeView, error in
@@ -111,8 +111,7 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
                                     petViews[i] = view
                                     self.vw_petListContent.addSubview(view)
 
-                                    let pet = petList[i]
-                                    Global2.setPetImage(imageView: view.iv_prof, petTypCd: pet.petTypCd, petImgAddr: pet.petImg)
+                                    Global2.setPetImage(imageView: view.iv_prof, petTypCd: petList[i].petTypCd, petImgAddr: petList[i].petImg)
 
                                     view.lb_nm.text = petList[i].petNm
 
@@ -276,7 +275,7 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
 
     // MARK: - CONN LOCATION-FILE DATA
     private func locationFile(fileSn: String) {
-        startLoading()
+        self.startLoading()
 
         let request = LocationFileRequest(totMvmnPathFileSn: fileSn)
         DailyLifeAPI.locationFile(request: request) { response, error in

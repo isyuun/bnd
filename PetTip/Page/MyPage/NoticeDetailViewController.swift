@@ -47,7 +47,7 @@ class NoticeDetailViewController: CommonViewController {
     // MARK: - CONN NOTICE DETAIL
     
     private func notice_dtl() {
-        startLoading()
+        self.startLoading()
         
         let request = NoticeDtlListRequest(pstSn: pstSn!)
         BBSAPI.noticeDtlList(request: request) { data, error in

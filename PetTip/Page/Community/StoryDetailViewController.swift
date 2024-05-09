@@ -264,7 +264,7 @@ class StoryDetailViewController: CommonDetailViewController {
     }
 
     func story_delete() {
-        startLoading()
+        self.startLoading()
 
         let request = LifeUpdateRequest(cmntUseYn: "Y",
                                         delYn: "Y",
@@ -292,7 +292,7 @@ class StoryDetailViewController: CommonDetailViewController {
 
     // MARK: - CONN LIKE/DISLIKE
     private func rcmdtn(rcmdtnSeCd: String, schUnqNo: Int, targetBtn: UIButton) {
-        startLoading()
+        self.startLoading()
 
         let request = RcmdtnRequest(rcmdtnSeCd: rcmdtnSeCd, schUnqNo: schUnqNo)
         DailyLifeAPI.rcmdtn(request: request) { lifeView, error in
@@ -309,7 +309,7 @@ class StoryDetailViewController: CommonDetailViewController {
 
     // MARK: - CONN COMMENT LIKE/DISLIKE
     private func cmnt_rcmdtn(cmntNo: Int, rcmdtnSeCd: String, schUnqNo: Int, view: CommunityCommentView) {
-        startLoading()
+        self.startLoading()
 
         let request = CmntRcmdtnRequest(cmntNo: cmntNo, rcmdtnSeCd: rcmdtnSeCd, schUnqNo: schUnqNo)
         DailyLifeAPI.cmntRcmdtn(request: request) { cmntRcmdtn, error in
@@ -335,7 +335,7 @@ class StoryDetailViewController: CommonDetailViewController {
 
     // MARK: - CONN COMMENT DELETE
     private func cmnt_delete(cmntNo: Int, view: CommunityCommentView) {
-        startLoading()
+        self.startLoading()
 
         let request = CmntDeleteRequest(cmntNo: cmntNo)
         DailyLifeAPI.cmntDelete(request: request) { cmntDelete, error in
@@ -400,7 +400,7 @@ class StoryDetailViewController: CommonDetailViewController {
 
     // MARK: - CONN COMMENT UPDATE
     internal func cmnt_update(cmntNo: Int, cmntCn: String, view: CommunityCommentView) {
-        startLoading()
+        self.startLoading()
 
         let request = CmntUpdateRequest(cmntCn: cmntCn, cmntNo: cmntNo)
         DailyLifeAPI.cmntUpdate(request: request) { cmntUpdate, error in
@@ -461,7 +461,7 @@ class StoryDetailViewController: CommonDetailViewController {
         // 3. 추가된 댓글 배열 내용을 arrComment에 그 순서에 맞게 append
         // 4. 추가된 댓글 배열대로 for문을 돌면서 알맞는 구역에 새로운 댓글 뷰 컴포넌트 추가
 
-        startLoading()
+        self.startLoading()
 
         let request = CmntCreateRequest(cmntCn: tv_comment.text, petRelUnqNo: Global.petRelUnqNo, schUnqNo: schUnqNo!, upCmntNo: upCmntNo)
         DailyLifeAPI.cmntCreate(request: request) { cmntCreate, error in
@@ -559,7 +559,7 @@ class StoryDetailViewController: CommonDetailViewController {
 
     func requestLifeViewData() {
         if let schUnqNo = schUnqNo {
-            startLoading()
+            self.startLoading()
 
             let request = LifeViewRequest(cmntYn: "Y", schUnqNo: schUnqNo)
             DailyLifeAPI.view(request: request) { lifeView, error in
@@ -808,7 +808,7 @@ class StoryDetailViewController: CommonDetailViewController {
             _dclrSeCd = "002"
         }
 
-        startLoading()
+        self.startLoading()
 
         let request = DclrCreateRequest(cmntNo: _cmntNo, dclrCn: dclrCn, dclrRsnCd: dclrRsnCd, dclrSeCd: _dclrSeCd, schUnqNo: self.schUnqNo!)
 

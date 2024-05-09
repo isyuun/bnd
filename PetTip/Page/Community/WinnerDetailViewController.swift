@@ -35,7 +35,7 @@ class WinnerDetailViewController: CommonViewController {
     @IBOutlet weak var cr_wvPstCnHeight : NSLayoutConstraint!
     
     func winner_dtl() {
-        startLoading()
+        self.startLoading()
         
         let request = WinnerDtlListRequest(pstSn: pstSn!)
         BBSAPI.winnerDtlList(request: request) { winnerListData, error in

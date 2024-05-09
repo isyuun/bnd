@@ -460,7 +460,7 @@ class PetProfileViewController: CommonViewController {
 
     // MARK: - CONN MYPET-LIST, DAILYLIFE-PETLIST
     func myPet_list() {
-        startLoading()
+        self.startLoading()
 
         let request = MyPetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         MyPetAPI.list(request: request) { myPetList, error in
@@ -477,7 +477,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     func dailyLife_PetList() {
-        startLoading()
+        self.startLoading()
 
         let request = PetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         DailyLifeAPI.petList(request: request) { petList, error in

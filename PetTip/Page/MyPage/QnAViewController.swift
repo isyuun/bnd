@@ -63,7 +63,7 @@ class QnAViewController: CommonViewController {
             tb_list.reloadData()
         }
         
-        startLoading()
+        self.startLoading()
         
         let request = QnAListRequest(bbsSn: 10, page: 1, pageSize: 10, recordSize: 20)
         BBSAPI.qnaList(request: request) { response, error in
