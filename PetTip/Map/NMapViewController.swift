@@ -72,20 +72,27 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
 
         } else {
             guard let dailyLifePets = dailyLifePets else {
-                self.showToast(msg: "등록된 펫이 없습니다")
+                self.showNoPet()
                 return
             }
 
-            if dailyLifePets.pets.count > 1 {
-                showSelectPetList()
+            let pets = dailyLifePets.pets
 
+            if pets.count == 0 {
+                self.showNoPet()
+                return
+            } else if pets.count > 1 {
+                showSelectPetList()
             } else {
                 selectedPets = [Pet]()
                 selectedPets.append(dailyLifePets.pets.last!)
-
                 startWalkingProcess()
             }
         }
+    }
+
+    func showNoPet() {
+        self.showToast(msg: "등록된 펫이 없습니다")
     }
 
     private func showSelectPetList() {
@@ -160,7 +167,6 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         selectEventMarkPet(mark: .PEE)
     }
 
-
     @IBOutlet weak var btnPoo: UIButton!
     @IBAction func onBtnPoo(_ sender: Any) {
         selectEventMarkPet(mark: .POO)
@@ -232,19 +238,19 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         mapView.zoomLevel = 17
         mapView.minZoomLevel = 5.0
         // mapView.maxZoomLevel = 18.0
-        // 
+        //
         // mapView.locationOverlay.icon = NMFOverlayImage(name: "currentLocation")
         // mapView.locationOverlay.iconWidth = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
         // mapView.locationOverlay.iconHeight = CGFloat(NMF_LOCATION_OVERLAY_SIZE_AUTO)
-        // 
+        //
         // mapView.locationOverlay.subIcon = NMFOverlayImage(name: "currentLocation")
         // mapView.locationOverlay.subIconWidth = 40
         // mapView.locationOverlay.subIconHeight = 40
         // mapView.locationOverlay.subAnchor = CGPoint(x: 0.4, y: 0.4)
         // mapView.locationOverlay.subAnchor = CGPoint(x: 0.5, y: 1)
-        // 
+        //
         // mapView.locationOverlay.circleColor = UIColor.red
-        // 
+        //
         // let circleOverlay = NMFCircleOverlay(NMGLatLng(lat: 37.5666102, lng: 126.9783881), radius: 500) // 원 위치 및 반지름을 설정합니다.
         // circleOverlay.fillColor = .lightGray // 원 내부 색을 설정합니다.
         // circleOverlay.outlineColor = .red // 원 테두리 색을 설정합니다.

@@ -61,4 +61,16 @@ class NMapViewController2: NMapViewController {
         }
         recentLoc = locations.last
     }
+
+    override func showNoPet() {
+        super.showNoPet()
+        self.onBack()
+    }
+}
+
+extension NMapViewController2: BackTitleBarViewProtocol {
+    func onBack() {
+        navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
+    }
 }
