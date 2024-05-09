@@ -6,11 +6,6 @@
 //
 
 import UIKit
-import FSPagerView
-import CoreLocation
-import RxSwift
-import RxCocoa
-import AlamofireImage
 
 class MainViewController2: MainViewController {
     override func viewDidAppear(_ animated: Bool) {
