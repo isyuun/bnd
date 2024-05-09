@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PetAddViewController: CommonViewController3 {
+class PetAddViewController: CommonViewController2 {
 
     public var memberData: MemberJoinData?
 
@@ -431,10 +431,6 @@ class PetAddViewController: CommonViewController3 {
         }
     }
 
-
-
-
-
     @IBAction func onSkipAddFromMemberJoin(_ sender: Any) {
         guard memberData != nil else {
             showToast(msg: "등록 중 장애가 발생했어요")
@@ -487,8 +483,8 @@ class PetAddViewController: CommonViewController3 {
                 userDef.set(login.email, forKey: "email")
                 userDef.set(login.nckNm, forKey: "nckNm")
                 userDef.synchronize()
-//                KeychainServiceImpl.shared.accessToken = login.accessToken
-//                KeychainServiceImpl.shared.refreshToken = login.refreshToken
+                // KeychainServiceImpl.shared.accessToken = login.accessToken
+                // KeychainServiceImpl.shared.refreshToken = login.refreshToken
 
                 if bAddPet {
                     self.myPet_create()
@@ -507,10 +503,6 @@ class PetAddViewController: CommonViewController3 {
         self.navigationController?.pushViewController(tabBarControllerView, animated: true)
     }
 
-
-
-
-
     private var img: UIImage?
 
     @IBAction func onProfileImg(_ sender: Any) {
@@ -523,10 +515,6 @@ class PetAddViewController: CommonViewController3 {
             present(imagePicker, animated: true, completion: nil)
         }
     }
-
-
-
-
 
     private func btnSelectedUI(view: UIView) {
         view.layer.cornerRadius = 12
@@ -576,30 +564,17 @@ class PetAddViewController: CommonViewController3 {
         view.layer.borderColor = UIColor(hex: "#ffe3e9f2")?.cgColor // NORMAL COLOR
     }
 
-
-
-
-
     var selectedPetKind: CmmPetListData?
 
     @IBAction func onKind(_ sender: Any) {
         self.performSegue(withIdentifier: "seguePetAddToPetKind", sender: btn_petTypeDog.isSelected ? "001" : "002")
     }
 
-
-
-
-
     private var selectedSido: Sido?
     private var selectedSigungu: SggListData?
     private var selectedUpmeondong: UmdListData?
 
-
-
-
-
     // MARK: - Back TitleBar
-
     @IBOutlet weak var titleBarView: UIView!
 
     func showBackTitleBarView() {
@@ -610,10 +585,6 @@ class PetAddViewController: CommonViewController3 {
             titleBarView.addSubview(view)
         }
     }
-
-
-
-
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "seguePetAddToPetKind") {
@@ -690,4 +661,3 @@ extension PetAddViewController {
         return true
     }
 }
-

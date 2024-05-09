@@ -29,7 +29,7 @@ struct MyPetDetailData: Codable {
     let memberList: [MemberList]
     let stdgSggCD: String
     let petRprsImgAddr: String?
-    let petTypCD, petRegNo, stdgCtpvCD, stdgCtpvNm: String
+    let petTypCd, petRegNo, stdgCtpvCD, stdgCtpvNm: String
     let stdgUmdNm: String?
     let petNm: String
     let wghtVl: Double
@@ -46,7 +46,7 @@ struct MyPetDetailData: Codable {
         case memberList
         case stdgSggCD = "stdgSggCd"
         case petRprsImgAddr
-        case petTypCD = "petTypCd"
+        case petTypCd = "petTypCd"
         case petRegNo
         case stdgCtpvCD = "stdgCtpvCd"
         case stdgCtpvNm, stdgUmdNm, petNm, wghtVl, mngrType, endDt

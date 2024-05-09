@@ -45,10 +45,10 @@ class PetModViewController: CommonViewController {
         Global2.setPetImage(imageView: self.iv_profile, pet: petDetailInfo)
 
 
-        if (petDetailInfo.petTypCD == "001") {
+        if (petDetailInfo.petTypCd == "001") {
             onPetType(btn_petTypeDog as Any)
 
-        } else if (petDetailInfo.petTypCD == "002") {
+        } else if (petDetailInfo.petTypCd == "002") {
             onPetType(btn_petTypeCat as Any)
         }
 

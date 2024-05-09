@@ -31,41 +31,41 @@ class StoryItemView2: StoryItemView, UICollectionViewDelegate, UICollectionViewD
         self.cv_dailyLifeGubun.decelerationRate = UIScrollView.DecelerationRate.fast
 
         NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][Global.schCodeList:\(String(describing: Global.schCodeList))]")
-        // if let schCodeList = Global.schCodeList {
-        //     for i in 0..<schCodeList.count {
-        //         NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][schCodeList[i]:\(schCodeList[i])]")
-        //     }
-        // 
-        // }
+        if let schCodeList = Global.schCodeList {
+            for i in 0..<schCodeList.count {
+                NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][schCodeList[i]:\(schCodeList[i])]")
+            }
+        
+        }
 
         self.cv_dailyLifeGubun.reloadData()
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
     // func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][collectionView:\(collectionView)][section:\(section)]")
-    //     if collectionView == cv_dailyLifeGubun {
-    //         if let cnt = schCodeList?.count {
-    //             return cnt
-    //         }
-    //     }
-    //
     //     return 0
     // }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == cv_dailyLifeGubun {
+            if let cnt = Global.schCodeList?.count {
+                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][collectionView:\(collectionView)][section:\(section)]")
+                return cnt
+            }
+        }
+    
+        return 0
+    }
 
     // func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     //     return UICollectionViewCell()
     // }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][collectionView:\(collectionView)][indexPath:\(indexPath)]")
         if collectionView == cv_dailyLifeGubun {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyLifeGubunItemView", for: indexPath) as! DailyLifeGubunItemView
 
-            if let schCodeList = schCodeList {
+            if let schCodeList = Global.schCodeList {
                 cell.lb_gubun.text = schCodeList[indexPath.row].cdNm
-                // cell.update(gubunItemSelected[indexPath.row])
+                cell.update(false)  // cell.update(gubunItemSelected[indexPath.row])
+                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][cell:\(cell)][indexPath:\(indexPath)][text:\(String(describing: cell.lb_gubun.text))][cdNm:\(schCodeList[indexPath.row].cdNm)]")
             }
 
             return cell
@@ -74,14 +74,15 @@ class StoryItemView2: StoryItemView, UICollectionViewDelegate, UICollectionViewD
         return UICollectionViewCell()
     }
 
-    // func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-    //     // if collectionView == cv_dailyLifeGubun {
-    //     //     setGubunSelected(indexPath.row)
-    //     //     cv_dailyLifeGubun.reloadData()
-    //     //
-    //     //     return gubunItemSelected[indexPath.row]
-    //     // }
-    //
-    //     return false
-    // }
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][collectionView:\(collectionView)][indexPath:\(indexPath)]")
+        // if collectionView == cv_dailyLifeGubun {
+        //     setGubunSelected(indexPath.row)
+        //     cv_dailyLifeGubun.reloadData()
+        //
+        //     return gubunItemSelected[indexPath.row]
+        // }
+    
+        return false
+    }
 }

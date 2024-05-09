@@ -7,6 +7,6 @@
 
 import UIKit
 
-class CommonPopupView: UIView3 {
+class CommonPopupView: UIView {
     var parentViewController: CommonViewController?
 }

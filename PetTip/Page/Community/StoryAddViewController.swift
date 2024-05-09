@@ -9,7 +9,7 @@ import UIKit
 import AlamofireImage
 import DropDown
 
-class StoryAddViewController: CommonViewController4 {
+class StoryAddViewController: CommonViewController2 {
 
     public var storyListViewController: StoryListViewController?
 
@@ -184,7 +184,7 @@ class StoryAddViewController: CommonViewController4 {
         // 스크롤 시 빠르게 감속 되도록 설정
         self.cv_dailyLifeGubun.decelerationRate = UIScrollView.DecelerationRate.fast
 
-        code_list(cmmCdData: ["SCH"]) {
+        Global3.code_list(cmmCdData: ["SCH"]) {
             self.initGubunSelected()
             self.cv_dailyLifeGubun.reloadData()
         }
@@ -192,9 +192,11 @@ class StoryAddViewController: CommonViewController4 {
 
     var gubunItemSelected: Array<Bool> = Array()
     private func initGubunSelected() {
-        gubunItemSelected = Array(repeating: false, count: schCodeList!.count)
-        for i in 0..<gubunItemSelected.count {
-            gubunItemSelected[i] = false
+        if let schCodeList = Global.schCodeList {
+            gubunItemSelected = Array(repeating: false, count: schCodeList.count)
+            for i in 0..<gubunItemSelected.count {
+                gubunItemSelected[i] = false
+            }
         }
         idxSelectedGubunItem = -1
     }
@@ -384,9 +386,11 @@ class StoryAddViewController: CommonViewController4 {
     private func getSelectedDailyLife() -> [String] {
         var ret = [String]()
 
-        for i in 0..<gubunItemSelected.count {
-            if gubunItemSelected[i] {
-                ret.append(schCodeList![i].cdID)
+        if let schCodeList = Global.schCodeList {
+            for i in 0..<gubunItemSelected.count {
+                if gubunItemSelected[i] {
+                    ret.append(schCodeList[i].cdID)
+                }
             }
         }
 
@@ -547,7 +551,7 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
             return arrAtchHybidData.count
 
         } else if collectionView == cv_dailyLifeGubun {
-            if let cnt = schCodeList?.count {
+            if let cnt = Global.schCodeList?.count {
                 return cnt
             }
         }
@@ -598,7 +602,7 @@ extension StoryAddViewController: UICollectionViewDataSource, UICollectionViewDe
         } else if collectionView == cv_dailyLifeGubun {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyLifeGubunItemView", for: indexPath) as! DailyLifeGubunItemView
 
-            if let schCodeList = schCodeList {
+            if let schCodeList = Global.schCodeList {
                 cell.lb_gubun.text = schCodeList[indexPath.row].cdNm
                 cell.update(gubunItemSelected[indexPath.row])
             }

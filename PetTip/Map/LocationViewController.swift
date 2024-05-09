@@ -8,7 +8,7 @@
 import UIKit
 import NMapsMap
 
-class LocationViewController: CommonViewController4 {
+class LocationViewController: CommonViewController2 {
 
     var locationManager: CLLocationManager!
     var locationReqType: Int = 0 // 0:NONE, 1:ONCE, 2:CONTINUE

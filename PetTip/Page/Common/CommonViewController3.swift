@@ -7,8 +7,6 @@
 
 import UIKit
 
-class CommonViewController3: CommonViewController2 {}
-
 extension CommonViewController {
 
     func checkOneDecimal(textField: UITextField, range: NSRange, string: String, decimal: Int = 1) -> Bool {

@@ -24,8 +24,6 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
         super.viewDidLoad()
 
         showCommonUI()
-
-        initRx()
     }
 
     private func showCommonUI() {
@@ -54,7 +52,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
 
     var myPetList: MyPetList = MyPetList(myPets: [])
 
-    private func initRx() {
+    internal func initRx() {
         Global.userNckNm.subscribe(onNext: { [weak self] nckNm in
             self?.refreshUserNckNm(data: nckNm)
         }).disposed(by: disposeBag)

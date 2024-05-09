@@ -1,13 +1,11 @@
 //
-//  UIView3.swift
+//  UIView2.swift
 //  PetTip
 //
 //  Created by isyuun on 2024/5/9.
 //
 
 import UIKit
-
-class UIView2: UIView { }
 
 extension UIView {
 

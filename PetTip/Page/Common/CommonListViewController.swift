@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommonListViewController: CommonViewController4 {
+class CommonListViewController: CommonViewController2 {
     private var blankListView: UIStackView?
 
     override func viewDidLoad() {

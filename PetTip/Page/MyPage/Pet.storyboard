@@ -388,7 +388,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrg-6X-sOK">
-                                                <rect key="frame" x="20" y="567" width="267" height="34.333333333333371"/>
+                                                <rect key="frame" x="20" y="567" width="267" height="34.666666666666629"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
                                                 <connections>
@@ -599,7 +599,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfR-BH-rL8">
-                                                <rect key="frame" x="229.33333333333337" y="875" width="155.66666666666663" height="30"/>
+                                                <rect key="frame" x="229" y="875" width="156" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="8En-BL-fRx"/>
                                                 </constraints>
@@ -1433,7 +1433,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XY-5t-TxT">
-                                                <rect key="frame" x="300.33333333333331" y="-7" width="72.666666666666686" height="30"/>
+                                                <rect key="frame" x="300.66666666666669" y="-7" width="72.333333333333314" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="04i-Al-wTg"/>
                                                 </constraints>
@@ -1778,7 +1778,7 @@
                                                 <rect key="frame" x="0.0" y="216" width="393" height="129"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="웨스트 하이랜드 화이트 테리어 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLH-dV-dx3">
-                                                        <rect key="frame" x="110.33333333333333" y="0.0" width="172.66666666666669" height="17"/>
+                                                        <rect key="frame" x="110" y="0.0" width="173" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.44738984110000002" green="0.46619033809999999" blue="0.49019962550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
@@ -2428,22 +2428,22 @@
     </scenes>
     <designables>
         <designable name="3ix-pf-pe8">
-            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="135" height="18.666666666666668"/>
         </designable>
         <designable name="5Yh-lb-zHi">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="7wt-k4-7QA">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="LlK-Ii-v7s">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
         <designable name="me2-95-HPu">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
         <designable name="mm3-A5-agI">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

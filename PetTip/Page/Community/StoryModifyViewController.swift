@@ -9,7 +9,7 @@ import UIKit
 import AlamofireImage
 import DropDown
 
-class StoryModifyViewController: CommonViewController4 {
+class StoryModifyViewController: CommonViewController2 {
 
     var storyDetailViewController: StoryDetailViewController?
     var lifeViewData: LifeViewData!
@@ -259,10 +259,10 @@ class StoryModifyViewController: CommonViewController4 {
         // 스크롤 시 빠르게 감속 되도록 설정
         self.cv_dailyLifeGubun.decelerationRate = UIScrollView.DecelerationRate.fast
 
-        code_list(cmmCdData: ["SCH"]) {
+        Global3.code_list(cmmCdData: ["SCH"]) {
             self.initGubunSelected()
 
-            if let schCodeList = self.schCodeList {
+            if let schCodeList = Global.schCodeList {
                 for i in 0..<schCodeList.count {
                     for j in 0..<self.lifeViewData.dailyLifeSchSEList.count {
                         if schCodeList[i].cdID == self.lifeViewData.dailyLifeSchSEList[j].cdID {
@@ -271,7 +271,6 @@ class StoryModifyViewController: CommonViewController4 {
                         }
                     }
                 }
-
             }
 
             self.cv_dailyLifeGubun.reloadData()
@@ -280,9 +279,11 @@ class StoryModifyViewController: CommonViewController4 {
 
     var gubunItemSelected: Array<Bool> = Array()
     private func initGubunSelected() {
-        gubunItemSelected = Array(repeating: false, count: schCodeList!.count)
-        for i in 0..<gubunItemSelected.count {
-            gubunItemSelected[i] = false
+        if let schCodeList = Global.schCodeList {
+            gubunItemSelected = Array(repeating: false, count: Global.schCodeList!.count)
+            for i in 0..<gubunItemSelected.count {
+                gubunItemSelected[i] = false
+            }
         }
         idxSelectedGubunItem = -1
     }
@@ -541,10 +542,12 @@ class StoryModifyViewController: CommonViewController4 {
 
         for i in 0..<lifeViewData.dailyLifeSchSEList.count {
             var isExistCurrDelete = false
-            for j in 0..<schCodeList!.count {
-                if lifeViewData.dailyLifeSchSEList[i].cdID == schCodeList![j].cdID && gubunItemSelected[j] == false {
-                    isExistCurrDelete = true
-                    break
+            if let schCodeList = Global.schCodeList {
+                for j in 0..<schCodeList.count {
+                    if lifeViewData.dailyLifeSchSEList[i].cdID == schCodeList[j].cdID && gubunItemSelected[j] == false {
+                        isExistCurrDelete = true
+                        break
+                    }
                 }
             }
 
@@ -559,21 +562,23 @@ class StoryModifyViewController: CommonViewController4 {
             }
         }
 
-        for i in 0..<schCodeList!.count {
-            var isExist = false
-            for j in 0..<lifeViewData.dailyLifeSchSEList.count {
-                if schCodeList![i].cdID == lifeViewData.dailyLifeSchSEList[j].cdID {
-                    isExist = true
-                    break
+        if let schCodeList = Global.schCodeList {
+            for i in 0..<schCodeList.count {
+                var isExist = false
+                for j in 0..<lifeViewData.dailyLifeSchSEList.count {
+                    if schCodeList[i].cdID == lifeViewData.dailyLifeSchSEList[j].cdID {
+                        isExist = true
+                        break
+                    }
                 }
-            }
 
-            if isExist == false && gubunItemSelected[i] == true {
-                let it = DailyLifeSchSEList(cdID: schCodeList![i].cdID,
-                                            cdNm: schCodeList![i].cdNm,
-                                            schUnqNo: lifeViewData.schUnqNo,
-                                            rowState: "C")
-                ret.append(it)
+                if isExist == false && gubunItemSelected[i] == true {
+                    let it = DailyLifeSchSEList(cdID: schCodeList[i].cdID,
+                                                cdNm: schCodeList[i].cdNm,
+                                                schUnqNo: lifeViewData.schUnqNo,
+                                                rowState: "C")
+                    ret.append(it)
+                }
             }
         }
 
@@ -772,7 +777,7 @@ extension StoryModifyViewController: UICollectionViewDataSource, UICollectionVie
             return arrStoryAtchHybidData.count
 
         } else if collectionView == cv_dailyLifeGubun {
-            if let cnt = schCodeList?.count {
+            if let cnt = Global.schCodeList?.count {
                 return cnt
             }
         }
@@ -833,7 +838,7 @@ extension StoryModifyViewController: UICollectionViewDataSource, UICollectionVie
         } else if collectionView == cv_dailyLifeGubun {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyLifeGubunItemView", for: indexPath) as! DailyLifeGubunItemView
 
-            if let schCodeList = schCodeList {
+            if let schCodeList = Global.schCodeList {
                 cell.lb_gubun.text = schCodeList[indexPath.row].cdNm
                 cell.update(gubunItemSelected[indexPath.row])
             }

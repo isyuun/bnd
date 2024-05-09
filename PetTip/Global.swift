@@ -10,19 +10,19 @@ import RxSwift
 import RxRelay
 
 class Global {
-    #if DEBUG
-        static var DOMAIN = "http://dev.pettip.net:8020" //test
-    #else
-        static var DOMAIN = "https://pettip.net"
-    #endif
-    // static var DOMAIN = "http://dev.pettip.net:8020"    //test
-    // static var DOMAIN = "https://pettip.net"
+    // #if DEBUG
+    //     static var DOMAIN = "http://dev.pettip.net:8020"
+    // #else
+    //     static var DOMAIN = "https://pettip.net"
+    // #endif
+    // static var DOMAIN = "http://dev.pettip.net:8020" //test
+    static var DOMAIN = "https://pettip.net" //test
 
-    static var BASE_URI = DOMAIN + "/api/v1"
+    static var BASE_URI = "\(DOMAIN)/api/v1"
 
-    static var URL_TERMS_1 = DOMAIN + "/terms"
-    static var URL_TERMS_2 = DOMAIN + "/privacy_policy"
-    static var URL_TERMS_3 = DOMAIN + "/marketing"
+    static var URL_TERMS_1 = "\(DOMAIN)/terms"
+    static var URL_TERMS_2 = "\(DOMAIN)/privacy_policy"
+    static var URL_TERMS_3 = "\(DOMAIN)/marketing"
 
     static var appKey: String = ""
 

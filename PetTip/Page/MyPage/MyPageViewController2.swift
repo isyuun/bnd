@@ -12,13 +12,24 @@ class MyPageViewController2: MyPageViewController {
         let count = myPetList.myPets.count
         let index = indexPath.row
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][indexPath:\(indexPath)][\(index)/\(count)]")
-        if index < count - 1 {
+        if index < count {
             super.tableView(tableView, didSelectRowAt: indexPath)
         }
     }
 
-    override func onSelectPet(_ selectedIdx: Int) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][selectedIdx:\(selectedIdx)]")
-        // super.onSelectPet(selectedIdx)
+    override func viewDidLoad() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        super.viewDidAppear(animated)
+        initRx()
+    }
+
+    override func initRx() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        super.initRx()
     }
 }

@@ -10,7 +10,7 @@ import NMapsMap
 import AlamofireImage
 import DropDown
 
-class PostViewController: CommonViewController3 {
+class PostViewController: CommonViewController2 {
 
     var arrTrack: Array<Track>?
     var arrImageFromCamera: [UIImage]?

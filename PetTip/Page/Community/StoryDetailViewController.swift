@@ -546,28 +546,6 @@ class StoryDetailViewController: CommonDetailViewController {
         }
     }
 
-    // // MARK: - CONN COMMON CODE-LIST
-    // private func code_list(cmmCdData: [String], complete: (() -> Void)?) {
-    //     if Global.rsnCodeList != nil {
-    //         complete?()
-    //         return
-    //     }
-    //
-    //     self.startLoading()
-    //
-    //     let request = CodeListRequest(cmmCdData: cmmCdData)
-    //     CommonAPI.codeList(request: request) { codeList, error in
-    //         self.stopLoading()
-    //
-    //         if let codeList = codeList, let data = codeList.data?[0] {
-    //             Global.rsnCodeList = data.cdDetailList
-    //             complete?()
-    //         }
-    //
-    //         self.processNetworkError(error)
-    //     }
-    // }
-
     // MARK: - TARGET LIFE VIEW DATA
     var schUnqNo: Int? = 0
 
@@ -796,7 +774,7 @@ class StoryDetailViewController: CommonDetailViewController {
     }
 
     func writeReport(cmntNo: Int?) {
-        code_list(cmmCdData: ["RSN"]) {
+        Global3.code_list(cmmCdData: ["RSN"]) {
             self.removeKeyboardObserver()
 
             let reportView = UINib(nibName: "ReportView", bundle: nil).instantiate(withOwner: self).first as! ReportView

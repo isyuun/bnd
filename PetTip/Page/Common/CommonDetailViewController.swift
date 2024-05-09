@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommonDetailViewController : CommonViewController4 {
+class CommonDetailViewController : CommonViewController2 {
 
     override func viewDidLoad() {
         super.viewDidLoad()
