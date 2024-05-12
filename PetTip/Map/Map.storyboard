@@ -194,7 +194,7 @@
                         <outlet property="btnWalk" destination="SXD-WQ-XDV" id="eCc-K7-Xf7"/>
                         <outlet property="locationButton" destination="JxX-a8-RxK" id="vaT-Q5-elq"/>
                         <outlet property="mapTopView" destination="oAx-zg-Y7t" id="HBt-9i-7Pd"/>
-                        <outlet property="naverMap" destination="YkQ-GE-je8" id="nla-xl-J6F"/>
+                        <outlet property="naverMapView" destination="YkQ-GE-je8" id="nla-xl-J6F"/>
                         <outlet property="zoomControlView" destination="Biq-Jz-3TP" id="ojt-Jo-ggq"/>
                         <segue destination="sjE-zC-BED" kind="show" identifier="showPost" id="1ag-fq-Q8i"/>
                     </connections>
@@ -799,7 +799,7 @@
                         <outlet property="lb_currDate" destination="Krs-3F-Eqt" id="L2n-EG-Sww"/>
                         <outlet property="lb_walkDist" destination="Zwc-0m-0kk" id="EPD-KH-jCY"/>
                         <outlet property="lb_walkTime" destination="N73-Jo-2st" id="CVV-KD-CB2"/>
-                        <outlet property="naverMap" destination="Uxq-w9-l0Y" id="VSN-L8-ZbD"/>
+                        <outlet property="naverMapView" destination="Uxq-w9-l0Y" id="VSN-L8-ZbD"/>
                         <outlet property="sv_content" destination="w0j-GP-f27" id="SoZ-9N-8W8"/>
                         <outlet property="sv_walkPet" destination="p91-Ab-ajk" id="iGD-wo-hKO"/>
                         <outlet property="tf_hashtag" destination="zHh-Ja-LHk" id="hCb-TR-W92"/>

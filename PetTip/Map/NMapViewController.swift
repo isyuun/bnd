@@ -14,9 +14,9 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
     public var dailyLifePets: PetList?
     private var selectedPets = [Pet]()
 
-    @IBOutlet weak var naverMap: NMFNaverMapView!
+    @IBOutlet weak var naverMapView: NMFNaverMapView!
     var mapView: NMFMapView {
-        return naverMap.mapView
+        return naverMapView.mapView
     }
 
     @IBOutlet weak var zoomControlView: NMFZoomControlView!
@@ -36,7 +36,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         if (bWalkingState == true) {
             if (endMarker == nil) {
                 endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), text: "도착", forceShow: false)
-                endMarker.mapView = self.naverMap.mapView
+                endMarker.mapView = self.naverMapView.mapView
 
                 let track = Track()
                 track.location = CLLocation(coordinate: arrTrack.last!.location!.coordinate,
@@ -54,7 +54,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
 
             showTrackSummaryMap()
 
-            naverMap.takeSnapshot(withShowControls: false, complete: { [weak self] (image) in
+            naverMapView.takeSnapshot(withShowControls: false, complete: { [weak self] (image) in
                 self?.mapSnapImg = image
             })
 
@@ -254,17 +254,16 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         // circleOverlay.fillColor = .lightGray // 원 내부 색을 설정합니다.
         // circleOverlay.outlineColor = .red // 원 테두리 색을 설정합니다.
         // circleOverlay.outlineWidth = 3 // 원 테두리 두께를 설정합니다.
-        // circleOverlay.mapView = naverMap.mapView
+        // circleOverlay.mapView = naverMapView.mapView
 
-        naverMap.showCompass = false
-        naverMap.showIndoorLevelPicker = true
+        naverMapView.showCompass = false
+        naverMapView.showIndoorLevelPicker = true
 
-        naverMap.showZoomControls = false
-        zoomControlView.mapView = naverMap.mapView
+        naverMapView.showZoomControls = false
+        zoomControlView.mapView = naverMapView.mapView
 
-        naverMap.showLocationButton = false
-        // locationButton.mapView = naverMap.mapView
-        locationButton.isHidden = true
+        naverMapView.showLocationButton = false
+        locationButton.isHidden = true  // locationButton.mapView = naverMapView.mapView
 
         // mapView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
 
@@ -373,7 +372,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         } else if (locationReqType == 2) {
             if (startMarker == nil) {
                 startMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), text: "출발", forceShow: false)
-                startMarker.mapView = self.naverMap.mapView
+                startMarker.mapView = self.naverMapView.mapView
             } else {
 
             }

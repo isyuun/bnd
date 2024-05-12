@@ -9,10 +9,10 @@ import UIKit
 import NMapsMap
 import AVKit
 
-class NMapViewController3: NMapViewController {
+class NMapViewController3: NMapViewController2 {
 
     override func viewDidLoad() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMap:\(String(describing: naverMap))][mapView:\(String(describing: mapView))]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMapView:\(String(describing: naverMapView))][mapView:\(String(describing: mapView))]")
         super.viewDidLoad()
 
         btnLocation.layer.cornerRadius = 2.0
@@ -23,13 +23,16 @@ class NMapViewController3: NMapViewController {
         btnLocation.setTitle("", for: .normal)
         btnLocation.showShadowLight()
 
+        mapView.logoInteractionEnabled = true
         mapView.positionMode = .normal
+
+        updateBtnLocation()
     }
 
     @IBOutlet weak var btnLocation: UIButton!
     @IBAction func onBtnLocation(_ sender: Any) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMap.showLocationButton:\(String(describing: naverMap.showLocationButton))][mapView.positionMode:\(String(describing: mapView.positionMode))]")
-        naverMap.showLocationButton = false
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMapView.showLocationButton:\(String(describing: naverMapView.showLocationButton))][mapView.positionMode:\(String(describing: mapView.positionMode))]")
+        naverMapView.showLocationButton = false
 
         switch (mapView.positionMode) {
         case .disabled:
@@ -49,6 +52,11 @@ class NMapViewController3: NMapViewController {
             break
         }
 
+        updateBtnLocation()
+    }
+
+    func updateBtnLocation() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         switch (mapView.positionMode) {
         case .disabled:
             btnLocation.setImage(UIImage(named: "icon-gps1"), for: .normal)
@@ -66,5 +74,25 @@ class NMapViewController3: NMapViewController {
             btnLocation.setImage(UIImage(named: "icon-gps1-bgx"), for: .normal)
             break
         }
+    }
+
+    override func updateCurrLocation(_ locations: [CLLocation]) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][locations:\(locations)]")
+        super.updateCurrLocation(locations)
+        updateBtnLocation()
+    }
+
+    override func startWalkingProcess() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
+        super.startWalkingProcess()
+        mapView.positionMode = .direction
+        updateBtnLocation()
+    }
+
+    override func stopWalkingProcess() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
+        super.stopWalkingProcess()
+        mapView.positionMode = .normal
+        updateBtnLocation()
     }
 }

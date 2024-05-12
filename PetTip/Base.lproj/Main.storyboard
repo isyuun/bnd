@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cja-jY-cJN">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1790,7 +1791,7 @@
                         <outlet property="lb_msg" destination="PPt-5A-HK6" id="jac-xy-nQ0"/>
                         <outlet property="lb_time" destination="BsR-sx-Siq" id="LK0-mv-6Zq"/>
                         <outlet property="lb_walker" destination="okY-fr-nEi" id="QYp-nE-ATd"/>
-                        <outlet property="naverMap" destination="Vba-5g-Omv" id="5ty-MH-jwb"/>
+                        <outlet property="naverMapView" destination="Vba-5g-Omv" id="5ty-MH-jwb"/>
                         <outlet property="pc_img" destination="DLL-ZF-GCq" id="qtj-t0-Zag"/>
                         <outlet property="sv_img" destination="bEA-3D-M4A" id="kzz-Xy-fR4"/>
                         <outlet property="titleBarView" destination="eNg-8v-D7R" id="oo5-xZ-qGa"/>
@@ -2454,7 +2455,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ksp-tw-tWe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eTI-GO-51e">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2954,7 +2954,6 @@
                     <tabBarItem key="tabBarItem" title="Community" id="OH7-Zk-XoE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CZX-WH-a08">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2973,7 +2972,6 @@
                     <tabBarItem key="tabBarItem" title="Main" id="B4E-aE-Ccc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="XoG-IB-d2h">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2992,7 +2990,6 @@
                     <tabBarItem key="tabBarItem" title="WalkHistoryWeek" id="45N-bc-YyO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="r3G-lq-egm">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
