@@ -347,6 +347,7 @@
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
 		7BAA2C5A2BF072D10013FBDE /* DailyLifeGubunItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */; };
 		7BAA2C5B2BF072D10013FBDE /* StoryModifyViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */; };
+		7BB811D22BF0B20A00B97D27 /* NMapViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */; };
 		7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD347E62BDF678700EFAF59 /* MainViewController2.swift */; };
 		7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD541EE2BE48486008861DE /* UITextView2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
@@ -709,6 +710,7 @@
 		7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLifeGubunItemView2.swift; sourceTree = "<group>"; };
 		7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModifyViewController3.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController3.swift; sourceTree = "<group>"; };
 		7BD347E62BDF678700EFAF59 /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 		7BD541EE2BE48486008861DE /* UITextView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView2.swift; sourceTree = "<group>"; };
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -952,6 +954,7 @@
 			children = (
 				0251FD502B0F328100F35EF8 /* NMapViewController.swift */,
 				7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */,
+				7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */,
 				0251FD572B12351100F35EF8 /* LocationViewController.swift */,
 				0251FD5F2B16EEE300F35EF8 /* MapTopView.swift */,
 				0251FD652B1707A000F35EF8 /* MapTipView.xib */,
@@ -1883,6 +1886,7 @@
 				02A05A7E2B31A27900E8ABFA /* CommonDetailViewController.swift in Sources */,
 				022B41982B1C44180057323E /* WalkHistoryViewController.swift in Sources */,
 				7B3C4EF42BE33BA30059EE82 /* WinnerListViewController2.swift in Sources */,
+				7BB811D22BF0B20A00B97D27 /* NMapViewController3.swift in Sources */,
 				02DB38002B6483CF007D19A1 /* MyPetWeightCreateRequest.swift in Sources */,
 				02E3FC6B2B2555D400A1CE62 /* APIEventLogger.swift in Sources */,
 				020B79492B2877CD00C0AB2D /* StoryAPI.swift in Sources */,

@@ -640,11 +640,11 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
     private var arrImageFromCamera = [UIImage]()
 
     @IBAction func onBtnCamera(_ sender: Any) {
-        #if targetEnvironment(simulator)
-            //fatalError()
-            self.showToast(msg: "Simulator에서는 카메라가 동작하지 않아요")
-            return
-        #endif
+        // #if targetEnvironment(simulator)
+        //     //fatalError()
+        //     self.showToast(msg: "Simulator에서는 카메라가 동작하지 않아요")
+        //     return
+        // #endif
 
         if arrImageFromCamera.count >= 5 {
             showToast(msg: "사진은 최대 5장까지만 가능해요")

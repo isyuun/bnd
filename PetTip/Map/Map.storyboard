@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller2-->
+        <!--Map View Controller3-->
         <scene sceneID="DSD-BT-axv">
             <objects>
-                <viewController storyboardIdentifier="NMapViewController" id="yl3-UN-9S3" customClass="NMapViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NMapViewController" id="yl3-UN-9S3" customClass="NMapViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aha-VV-VmO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,6 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YkQ-GE-je8" customClass="NMFNaverMapView">
                                         <rect key="frame" x="0.0" y="125" width="393" height="727"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biq-Jz-3TP" customClass="NMFZoomControlView">
                                         <rect key="frame" x="15" y="155" width="40" height="87"/>
@@ -83,6 +82,18 @@
                                             <action selector="onBtnCamera:" destination="yl3-UN-9S3" eventType="touchUpInside" id="mGf-Ld-wPj"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqF-tO-RNR">
+                                        <rect key="frame" x="17" y="661" width="43" height="43"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="43" id="N4X-Tl-1Ts"/>
+                                            <constraint firstAttribute="width" constant="43" id="bhZ-eB-H0t"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="C"/>
+                                        <connections>
+                                            <action selector="onBtnLocation:" destination="yl3-UN-9S3" eventType="touchUpInside" id="4qL-A6-LLO"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zu8-2y-n0h">
                                         <rect key="frame" x="335" y="662" width="43" height="43"/>
                                         <constraints>
@@ -139,6 +150,7 @@
                                     <constraint firstItem="JxX-a8-RxK" firstAttribute="leading" secondItem="8Zv-9l-PYc" secondAttribute="leading" constant="15" id="4Tb-IX-v3X"/>
                                     <constraint firstItem="N5a-aD-kat" firstAttribute="leading" secondItem="8Zv-9l-PYc" secondAttribute="leading" constant="17" id="5vX-AT-ewO"/>
                                     <constraint firstAttribute="trailing" secondItem="ZIb-A5-a52" secondAttribute="trailing" constant="15" id="8Wr-Om-sce"/>
+                                    <constraint firstItem="kqF-tO-RNR" firstAttribute="top" secondItem="N5a-aD-kat" secondAttribute="bottom" constant="15" id="DCI-VP-VL0"/>
                                     <constraint firstAttribute="trailing" secondItem="zu8-2y-n0h" secondAttribute="trailing" constant="15" id="DEp-LY-wyF"/>
                                     <constraint firstAttribute="trailing" secondItem="aTi-CG-Yv8" secondAttribute="trailing" constant="15" id="K91-I9-wsc"/>
                                     <constraint firstAttribute="trailing" secondItem="SXD-WQ-XDV" secondAttribute="trailing" constant="15" id="NCq-SQ-5rI"/>
@@ -149,6 +161,7 @@
                                     <constraint firstAttribute="bottom" secondItem="YkQ-GE-je8" secondAttribute="bottom" id="TG3-07-Aa5"/>
                                     <constraint firstItem="JxX-a8-RxK" firstAttribute="top" secondItem="N5a-aD-kat" secondAttribute="bottom" constant="15" id="Vqo-l3-smL"/>
                                     <constraint firstItem="N5a-aD-kat" firstAttribute="top" secondItem="ANQ-uj-WO0" secondAttribute="bottom" constant="15" id="VxF-fz-Hxz"/>
+                                    <constraint firstItem="kqF-tO-RNR" firstAttribute="leading" secondItem="8Zv-9l-PYc" secondAttribute="leading" constant="17" id="Xi4-fq-LAM"/>
                                     <constraint firstItem="SXD-WQ-XDV" firstAttribute="top" secondItem="zu8-2y-n0h" secondAttribute="bottom" constant="19" id="cEG-pe-VLX"/>
                                     <constraint firstAttribute="bottom" secondItem="SXD-WQ-XDV" secondAttribute="bottom" constant="80" id="cwV-nd-EWv"/>
                                     <constraint firstItem="SXD-WQ-XDV" firstAttribute="leading" secondItem="8Zv-9l-PYc" secondAttribute="leading" constant="15" id="hlR-Yr-USb"/>
@@ -174,6 +187,7 @@
                     <connections>
                         <outlet property="btnCamera" destination="N5a-aD-kat" id="lCz-gP-dOw"/>
                         <outlet property="btnList" destination="ANQ-uj-WO0" id="ArR-5u-aIb"/>
+                        <outlet property="btnLocation" destination="kqF-tO-RNR" id="f7I-IW-Aug"/>
                         <outlet property="btnMrk" destination="zu8-2y-n0h" id="ZxC-lm-eqg"/>
                         <outlet property="btnPee" destination="aTi-CG-Yv8" id="vah-iN-idR"/>
                         <outlet property="btnPoo" destination="ZIb-A5-a52" id="wBg-1R-rxs"/>
