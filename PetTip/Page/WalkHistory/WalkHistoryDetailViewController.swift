@@ -192,12 +192,12 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
         naverMapView.showZoomControls = false
         naverMapView.showLocationButton = false
 
-        naverMapView.mapView.mapType = .navi
+        naverMapView.mapView.mapType = .basic
         naverMapView.mapView.isNightModeEnabled = traitCollection.userInterfaceStyle == .dark ? true : false // default:false
-//        naverMapView.mapView.positionMode = .direction
+        // naverMapView.mapView.positionMode = .direction
         naverMapView.mapView.zoomLevel = 17
         naverMapView.mapView.minZoomLevel = 5.0
-//        naverMapView.mapView.maxZoomLevel = 18.0
+        // naverMapView.mapView.maxZoomLevel = 18.0
 
         showTrackSummaryMap()
 

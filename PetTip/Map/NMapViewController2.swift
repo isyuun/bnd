@@ -20,6 +20,11 @@ private let GPS_CAMERA_ZOOM_ZERO = 17.0
 
 class NMapViewController2: NMapViewController {
 
+    override func viewDidLoad() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMapView:\(naverMapView)]")
+        super.viewDidLoad()
+    }
+
     var recentLoc: CLLocation?
 
     override func startWalkingProcess() {
