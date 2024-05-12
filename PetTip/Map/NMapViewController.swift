@@ -32,7 +32,6 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
     var mapSnapImg: UIImage? = nil
 
     @IBOutlet weak var btnWalk: UIButton!
-
     @IBAction func onBtnWalk(_ sender: Any) {
         if (bWalkingState == true) {
             if (endMarker == nil) {
@@ -232,7 +231,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
 
         self.tabBarController?.tabBar.isHidden = true
 
-        mapView.mapType = .navi
+        mapView.mapType = .basic
         mapView.isNightModeEnabled = traitCollection.userInterfaceStyle == .dark ? true : false // default:false
         mapView.positionMode = .direction
         mapView.zoomLevel = 17
@@ -264,7 +263,8 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         zoomControlView.mapView = naverMapView.mapView
 
         naverMapView.showLocationButton = false
-        locationButton.mapView = naverMapView.mapView
+        // locationButton.mapView = naverMapView.mapView
+        locationButton.isHidden = true
 
         // mapView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
 
@@ -636,15 +636,12 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
 
     // MARK: - CAMERA
     @IBOutlet weak var btnCamera: UIButton!
-
-    private var arrImageFromCamera = [UIImage]()
-
     @IBAction func onBtnCamera(_ sender: Any) {
-        // #if targetEnvironment(simulator)
-        //     //fatalError()
-        //     self.showToast(msg: "Simulator에서는 카메라가 동작하지 않아요")
-        //     return
-        // #endif
+        #if targetEnvironment(simulator)
+            //fatalError()
+            self.showToast(msg: "Simulator에서는 카메라가 동작하지 않아요")
+            return
+        #endif
 
         if arrImageFromCamera.count >= 5 {
             showToast(msg: "사진은 최대 5장까지만 가능해요")
@@ -670,6 +667,8 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
             self.present(pickerController, animated: true)
         }
     }
+
+    private var arrImageFromCamera = [UIImage]()
 
     func showAlertGoToSetting() {
         let alertController = UIAlertController(
