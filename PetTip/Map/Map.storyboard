@@ -817,10 +817,10 @@
     </scenes>
     <designables>
         <designable name="6al-js-EGV">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
         <designable name="zHh-Ja-LHk">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>
