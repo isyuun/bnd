@@ -186,7 +186,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dailyLifeGubunItemView2" id="Hzg-3Q-dXc" customClass="DailyLifeGubunItemView2">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dailyLifeGubunItemView" id="Hzg-3Q-dXc" customClass="DailyLifeGubunItemView" customModule="PetTip" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="19"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xyv-39-rLZ">
@@ -200,7 +200,7 @@
                                                                                     <constraint firstAttribute="width" constant="75" id="Qhs-6U-kUd"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -210,7 +210,7 @@
                                                                         </constraints>
                                                                     </collectionViewCellContentView>
                                                                     <connections>
-                                                                        <outlet property="lb_gubun" destination="lcB-dG-c49" id="kVu-E2-1Ea"/>
+                                                                        <outlet property="lb_gubun" destination="lcB-dG-c49" id="h5K-S6-JMj"/>
                                                                     </connections>
                                                                 </collectionViewCell>
                                                             </cells>
@@ -2717,16 +2717,16 @@
     </scenes>
     <designables>
         <designable name="J7H-kc-4x4">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
         <designable name="e0H-MH-re3">
-            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="hqa-Pj-3j2">
-            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="knt-VH-hAf">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

@@ -22,14 +22,14 @@ class StoryItemView2: StoryItemView, UICollectionViewDelegate, UICollectionViewD
         layout.minimumLineSpacing = 3
         layout.scrollDirection = .horizontal
         self.cv_dailyLifeGubun.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-        
+
         self.cv_dailyLifeGubun.delegate = self
         self.cv_dailyLifeGubun.dataSource = self
         self.cv_dailyLifeGubun.showsHorizontalScrollIndicator = false
-        
+
         // 스크롤 시 빠르게 감속 되도록 설정
         self.cv_dailyLifeGubun.decelerationRate = UIScrollView.DecelerationRate.fast
-        
+
         NSLog("[LOG][W][(\(#fileID):\(#line))::\(#function)][Global.schCodeList:\(String(describing: Global.schCodeList))]")
         if let schCodeList = Global.schCodeList {
             for i in 0..<schCodeList.count {
@@ -37,7 +37,7 @@ class StoryItemView2: StoryItemView, UICollectionViewDelegate, UICollectionViewD
             }
         
         }
-        
+
         self.cv_dailyLifeGubun.reloadData()
     }
 
@@ -60,7 +60,7 @@ class StoryItemView2: StoryItemView, UICollectionViewDelegate, UICollectionViewD
     // }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == cv_dailyLifeGubun {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyLifeGubunItemView2", for: indexPath) as! DailyLifeGubunItemView2
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dailyLifeGubunItemView", for: indexPath) as! DailyLifeGubunItemView
 
             if let schCodeList = Global.schCodeList {
                 cell.lb_gubun.text = schCodeList[indexPath.row].cdNm

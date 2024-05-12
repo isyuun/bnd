@@ -8,6 +8,7 @@
 import UIKit
 
 class DailyLifeGubunItemView: UICollectionViewCell {
+    
     @IBOutlet weak var lb_gubun: UILabel!
     
     func update(_ isSelected : Bool){
