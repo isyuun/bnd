@@ -654,7 +654,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nph-pc-tQq">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nph-pc-tQq">
                                                                 <rect key="frame" x="0.0" y="12" width="28.666666666666668" height="24"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
@@ -670,6 +670,7 @@
                                                             <constraint firstAttribute="bottom" secondItem="nph-pc-tQq" secondAttribute="bottom" constant="12" id="JGv-fh-Pt1"/>
                                                             <constraint firstAttribute="height" constant="48" id="ROw-ls-5Zs"/>
                                                             <constraint firstItem="jkS-dA-RJz" firstAttribute="leading" secondItem="T20-N2-vVc" secondAttribute="leading" id="ZkF-MG-NNw"/>
+                                                            <constraint firstItem="nph-pc-tQq" firstAttribute="leading" secondItem="jkS-dA-RJz" secondAttribute="leading" id="axo-Nz-1Vj"/>
                                                             <constraint firstItem="jkS-dA-RJz" firstAttribute="centerY" secondItem="T20-N2-vVc" secondAttribute="centerY" id="lev-b4-uXC"/>
                                                             <constraint firstItem="a6P-fN-ZGa" firstAttribute="centerY" secondItem="T20-N2-vVc" secondAttribute="centerY" id="tv0-gj-riV"/>
                                                             <constraint firstItem="a6P-fN-ZGa" firstAttribute="leading" secondItem="jkS-dA-RJz" secondAttribute="trailing" constant="5" id="wfB-9M-2ct"/>
