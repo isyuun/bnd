@@ -14,7 +14,7 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
 
     @IBOutlet weak var lb_dt: UILabel!
 
-    @IBOutlet weak var naverMapView: NMFNaverMapView!
+    @IBOutlet weak var naverMap: NMFNaverMapView!
 
     @IBOutlet weak var cr_imgHeight: NSLayoutConstraint!
     @IBOutlet weak var vw_img: UIView!
@@ -187,17 +187,17 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
 
     // MARK: - NAVER MAP SHOW
     private func showMap() {
-        naverMapView.showCompass = false
-        naverMapView.showIndoorLevelPicker = true
-        naverMapView.showZoomControls = false
-        naverMapView.showLocationButton = false
+        naverMap.showCompass = false
+        naverMap.showIndoorLevelPicker = true
+        naverMap.showZoomControls = false
+        naverMap.showLocationButton = false
 
-        naverMapView.mapView.mapType = .basic
-        naverMapView.mapView.isNightModeEnabled = traitCollection.userInterfaceStyle == .dark ? true : false // default:false
-        // naverMapView.mapView.positionMode = .direction
-        naverMapView.mapView.zoomLevel = 17
-        naverMapView.mapView.minZoomLevel = 5.0
-        // naverMapView.mapView.maxZoomLevel = 18.0
+        naverMap.mapView.mapType = .basic
+        naverMap.mapView.isNightModeEnabled = traitCollection.userInterfaceStyle == .dark ? true : false // default:false
+        // naverMap.mapView.positionMode = .direction
+        naverMap.mapView.zoomLevel = 17
+        naverMap.mapView.minZoomLevel = 5.0
+        // naverMap.mapView.maxZoomLevel = 18.0
 
         showTrackSummaryMap()
 
@@ -206,17 +206,17 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
         pathOverlay.color = UIColor(hex: "#A0FFDBDB")!
         pathOverlay.outlineWidth = 2
         pathOverlay.outlineColor = UIColor(hex: "#A0FF5000")!
-        pathOverlay.mapView = naverMapView.mapView
+        pathOverlay.mapView = naverMap.mapView
 
         for i in 0..<arrTrack.count {
             if i == 0 {
                 let startMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), text: "출발", forceShow: true)
-                startMarker.mapView = self.naverMapView.mapView
+                startMarker.mapView = self.naverMap.mapView
             }
 
             if i == arrTrack.count - 1 {
                 let endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), text: "도착", forceShow: true)
-                endMarker.mapView = self.naverMapView.mapView
+                endMarker.mapView = self.naverMap.mapView
             }
 
             if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk) {
@@ -235,20 +235,20 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
                 }
 
                 let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), event: event)
-                eventMarker.mapView = self.naverMapView.mapView
+                eventMarker.mapView = self.naverMap.mapView
             }
 
             if i == 1 {
                 pathOverlay.path = NMGLineString(points: [
                     NMGLatLng(lat: arrTrack[0].location!.coordinate.latitude, lng: arrTrack[0].location!.coordinate.longitude),
                     NMGLatLng(lat: arrTrack[1].location!.coordinate.latitude, lng: arrTrack[1].location!.coordinate.longitude)])
-                pathOverlay.mapView = naverMapView.mapView
+                pathOverlay.mapView = naverMap.mapView
 
             } else if i > 1 {
                 let path = pathOverlay.path
                 path.addPoint(NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude))
                 pathOverlay.path = path
-                pathOverlay.mapView = naverMapView.mapView
+                pathOverlay.mapView = naverMap.mapView
             }
         }
     }
@@ -270,7 +270,7 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
         let latLng2 = NMGLatLng(lat: lat2, lng: lon2)
         let bounds = NMGLatLngBounds(southWest: latLng1, northEast: latLng2)
         let cameraUpdate = NMFCameraUpdate.init(fit: bounds, padding: 40)
-        naverMapView.mapView.moveCamera(cameraUpdate)
+        naverMap.mapView.moveCamera(cameraUpdate)
     }
 
     // MARK: - CONN LOCATION-FILE DATA

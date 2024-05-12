@@ -12,8 +12,8 @@ import AVKit
 class NMapViewController3: NMapViewController {
 
     override func viewDidLoad() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMapView:\(String(describing: naverMapView))]")
         super.viewDidLoad()
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMap:\(String(describing: naverMap))][mapView:\(String(describing: mapView))]")
 
         btnLocation.layer.cornerRadius = 2.0
         btnLocation.layer.borderColor = UIColor.init(hexCode: "e3e9f2").cgColor
@@ -26,6 +26,8 @@ class NMapViewController3: NMapViewController {
 
     @IBOutlet weak var btnLocation: UIButton!
     @IBAction func onBtnLocation(_ sender: Any) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][sender:\(String(describing: sender))]")
+        // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][sender:\(String(describing: sender))]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMap:\(String(describing: naverMap))][mapView:\(String(describing: mapView))]")
+        naverMap.showLocationButton = false
     }
 }
