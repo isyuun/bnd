@@ -345,6 +345,8 @@
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
+		7BAA2C5A2BF072D10013FBDE /* DailyLifeGubunItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */; };
+		7BAA2C5B2BF072D10013FBDE /* StoryModifyViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */; };
 		7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD347E62BDF678700EFAF59 /* MainViewController2.swift */; };
 		7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD541EE2BE48486008861DE /* UITextView2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
@@ -704,6 +706,8 @@
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
 		7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
+		7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLifeGubunItemView2.swift; sourceTree = "<group>"; };
+		7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModifyViewController3.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7BD347E62BDF678700EFAF59 /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 		7BD541EE2BE48486008861DE /* UITextView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView2.swift; sourceTree = "<group>"; };
@@ -837,10 +841,12 @@
 				02A05B312B40608A00E8ABFA /* WinnerListViewItem.xib */,
 				02A05B2D2B404FC300E8ABFA /* WinnerDetailViewController.swift */,
 				02C114082B5B88B500A14F77 /* DailyLifeGubunItemView.swift */,
+				7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */,
 				02C114062B5A8B0B00A14F77 /* StoryAddViewController.swift */,
 				7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */,
 				02BFEDD12B5E8C7B000B1D4D /* StoryModifyViewController.swift */,
 				7BE820EB2BE47B6B00B09973 /* StoryModifyViewController2.swift */,
+				7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -1764,6 +1770,7 @@
 				02E3FC5D2B25472500A1CE62 /* MemberAPI.swift in Sources */,
 				025B7CD82B85875F004E85D1 /* PermissionInfoViewController.swift in Sources */,
 				7BE12BCE2BEC5386009B556A /* StoryItemView2.swift in Sources */,
+				7BAA2C5B2BF072D10013FBDE /* StoryModifyViewController3.swift in Sources */,
 				02A7AACE2B51387E002F0C03 /* QnAAddAttachFileItemView.swift in Sources */,
 				020B79572B28A8A300C0AB2D /* WeatherTarget.swift in Sources */,
 				029851102B7DD10A00A0A056 /* TrmnlMngRequest.swift in Sources */,
@@ -1851,6 +1858,7 @@
 				7BE820EE2BE47BB900B09973 /* StoryAddViewController2.swift in Sources */,
 				02A05AE02B3D6CD500E8ABFA /* CmntUpdate.swift in Sources */,
 				02C114072B5A8B0B00A14F77 /* StoryAddViewController.swift in Sources */,
+				7BAA2C5A2BF072D10013FBDE /* DailyLifeGubunItemView2.swift in Sources */,
 				0265B9EA2B75F59D00B27221 /* LocationFileRequest.swift in Sources */,
 				02A05AAC2B36658600E8ABFA /* CommunityCommentView.swift in Sources */,
 				02E3FC4A2B229F1A00A1CE62 /* CompPetListItemView.swift in Sources */,

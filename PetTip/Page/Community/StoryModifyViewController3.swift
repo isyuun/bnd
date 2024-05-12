@@ -7,6 +7,4 @@
 
 import UIKit
 
-class StoryModifyViewController3: StoryModifyViewController2 {
-
-}
+class StoryModifyViewController3: StoryModifyViewController2 { }
