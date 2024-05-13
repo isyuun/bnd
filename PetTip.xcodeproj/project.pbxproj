@@ -326,6 +326,8 @@
 		02EB98072B0CFF03007428AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EB98052B0CFF03007428AD /* Main.storyboard */; };
 		02EB98092B0CFF05007428AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EB98082B0CFF05007428AD /* Assets.xcassets */; };
 		5E2DC0A0814DA2B0068B1269 /* Pods_PetTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */; };
+		7B0DDAF52BF2504E0042129A /* CompPetListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF32BF2504D0042129A /* CompPetListView2.swift */; };
+		7B0DDAF62BF2504E0042129A /* CompPetListView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF42BF2504E0042129A /* CompPetListView2.xib */; };
 		7B250FCB2BDFC57F00171EFD /* CommonViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */; };
 		7B250FCD2BDFCA8D00171EFD /* PetProfileViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCC2BDFCA8D00171EFD /* PetProfileViewController2.swift */; };
 		7B250FD12BDFCC5D00171EFD /* PetWeightView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */; };
@@ -691,6 +693,8 @@
 		02EB98082B0CFF05007428AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EB980D2B0CFF05007428AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E098ED0E3EB98C1A7B84FE /* Pods-PetTip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.debug.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.debug.xcconfig"; sourceTree = "<group>"; };
+		7B0DDAF32BF2504D0042129A /* CompPetListView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompPetListView2.swift; sourceTree = "<group>"; };
+		7B0DDAF42BF2504E0042129A /* CompPetListView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompPetListView2.xib; sourceTree = "<group>"; };
 		7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController3.swift; sourceTree = "<group>"; };
 		7B250FCC2BDFCA8D00171EFD /* PetProfileViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController2.swift; sourceTree = "<group>"; };
 		7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightView2.swift; sourceTree = "<group>"; };
@@ -935,6 +939,8 @@
 				02E3FC512B23E21100A1CE62 /* SelectPetItemView.swift */,
 				02E3FC532B23E21D00A1CE62 /* SelectPetItemView.xib */,
 				02E3FC452B229E3000A1CE62 /* CompPetListView.swift */,
+				7B0DDAF32BF2504D0042129A /* CompPetListView2.swift */,
+				7B0DDAF42BF2504E0042129A /* CompPetListView2.xib */,
 				02E3FC472B229E5500A1CE62 /* CompPetListView.xib */,
 				02E3FC492B229F1A00A1CE62 /* CompPetListItemView.swift */,
 				02E3FC4B2B229F4000A1CE62 /* CompPetListItemView.xib */,
@@ -1504,6 +1510,7 @@
 				022B41AD2B1E05CF0057323E /* LogoTitleBarView.xib in Resources */,
 				02E3FC482B229E5500A1CE62 /* CompPetListView.xib in Resources */,
 				02DB38382B6E2B99007D19A1 /* SelectWalkMarkPetView.xib in Resources */,
+				7B0DDAF62BF2504E0042129A /* CompPetListView2.xib in Resources */,
 				02A05AE42B3DD8A900E8ABFA /* ReportView.xib in Resources */,
 				020B79632B2A033300C0AB2D /* WalkHistoryWeekListItemView.xib in Resources */,
 				02DB38162B64FCE6007D19A1 /* PetProfileMemberItemView.xib in Resources */,
@@ -1685,6 +1692,7 @@
 				0286251D2B4996E50055E62F /* PetTypeSelectViewController.swift in Sources */,
 				02DB381A2B65E016007D19A1 /* MyPetRelCloseResponse.swift in Sources */,
 				02E00AF12B58E2E20092C909 /* LogoutRequest.swift in Sources */,
+				7B0DDAF52BF2504E0042129A /* CompPetListView2.swift in Sources */,
 				02A05B1C2B3FAC4200E8ABFA /* Date.swift in Sources */,
 				02E3FC642B25480D00A1CE62 /* MemberTarget.swift in Sources */,
 				02A05B4C2B44696700E8ABFA /* ResetNcknmRequest.swift in Sources */,

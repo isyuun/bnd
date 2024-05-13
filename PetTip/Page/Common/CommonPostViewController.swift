@@ -15,11 +15,20 @@ class CommonPostViewController: CommonViewController2 {
     @IBOutlet weak var tf_hashtag: UITextField2!
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][text:\(String(describing: textField.text))][range:\(range)][string:\(string)]")
+        let text = textField.text
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][text:\(String(describing: text))][range:\(range)][string:\(string)]")
         switch textField {
         case tf_title:
             return range.location < tf_title.maxLength
         case tf_hashtag:
+            // 입력된 문자열이 "#"로 시작하는지 확인
+            if let text = text, text.hasPrefix("#") {
+                // "#"로 시작하면 텍스트 필드의 텍스트 색상을 파란색으로 변경
+                textField.textColor = .blue
+            } else {
+                // "#"로 시작하지 않으면 기본 텍스트 색상으로 변경
+                textField.textColor = .black
+            }
             return range.location < tf_hashtag.maxLength
         default:
             break

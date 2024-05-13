@@ -46,6 +46,8 @@ class MainViewController: LocationViewController {
 
         requestPageData()
 
+        // initRx()
+
         fsPagerInit()
 
         showSelectedPetInfo()
