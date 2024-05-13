@@ -1,5 +1,5 @@
 //
-//  StoryModifyViewController.swift
+//  StoryModViewController.swift
 //  PetTip
 //
 //  Created by carebiz on 1/22/24.
@@ -9,7 +9,7 @@ import UIKit
 import AlamofireImage
 import DropDown
 
-class StoryModifyViewController: CommonViewController2 {
+class StoryModViewController: CommonPostViewController {
 
     var storyDetailViewController: StoryDetailViewController?
     var lifeViewData: LifeViewData!
@@ -300,7 +300,7 @@ class StoryModifyViewController: CommonViewController2 {
 
     // MARK: - COMBO TITLE
     @IBOutlet weak var vw_titleArea: UIView!
-    @IBOutlet weak var tf_title: UITextField2!
+    // @IBOutlet weak var tf_title: UITextField2!
     @IBOutlet weak var vw_titleComboShowingArea: UIView!
 
     private var dropDown: DropDown?
@@ -356,7 +356,7 @@ class StoryModifyViewController: CommonViewController2 {
 
 
     // MARK: - MEMO
-    @IBOutlet weak var tv_memo: UITextView2!
+    // @IBOutlet weak var tv_memo: UITextView2!
 
     let textViewPlaceHolder = "일상을 기록해주세요"
 
@@ -395,7 +395,7 @@ class StoryModifyViewController: CommonViewController2 {
     }
 
     // MARK: - HASHTAG
-    @IBOutlet weak var tf_hashtag: UITextField2!
+    // @IBOutlet weak var tf_hashtag: UITextField2!
 
     private func initHashtag() {
         if let dailyLifeSchHashTagList = lifeViewData.dailyLifeSchHashTagList {
@@ -746,14 +746,14 @@ class StoryModifyViewController: CommonViewController2 {
     }
 }
 
-extension StoryModifyViewController: BackTitleBarViewProtocol {
+extension StoryModViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
         self.tabBarController?.tabBar.isHidden = false
     }
 }
 
-extension StoryModifyViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension StoryModViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -873,7 +873,7 @@ extension StoryModifyViewController: UICollectionViewDataSource, UICollectionVie
     }
 }
 
-extension StoryModifyViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension StoryModViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else {
@@ -887,7 +887,7 @@ extension StoryModifyViewController: UIImagePickerControllerDelegate, UINavigati
 }
 
 // MARK: - UITextFieldDelegate
-extension StoryModifyViewController {
+extension StoryModViewController {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switch textField {
         case tf_hashtag:
@@ -939,7 +939,7 @@ extension StoryModifyViewController {
 }
 
 // MARK: - UITextViewDelegate
-extension StoryModifyViewController: UITextViewDelegate {
+extension StoryModViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         textViewFitSize(textView)
     }

@@ -701,7 +701,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showPost") {
             let dest = segue.destination
-            guard let vc = dest as? PostViewController else { return }
+            guard let vc = dest as? WalkPostViewController else { return }
             // vc.mapSnapImg = _mapSnapImg
             vc.arrTrack = arrTrack
             vc.arrImageFromCamera = arrImageFromCamera

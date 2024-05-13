@@ -46,7 +46,7 @@
 		022B41812B19AABD0057323E /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41802B19AABD0057323E /* BottomSheetViewController.swift */; };
 		022B41832B1A29770057323E /* MapBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41822B1A29770057323E /* MapBottomView.swift */; };
 		022B41852B1A29A80057323E /* MapBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022B41842B1A29A80057323E /* MapBottomView.xib */; };
-		022B41872B1ABC1C0057323E /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41862B1ABC1C0057323E /* PostViewController.swift */; };
+		022B41872B1ABC1C0057323E /* WalkPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41862B1ABC1C0057323E /* WalkPostViewController.swift */; };
 		022B41892B1ABC7D0057323E /* CommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41882B1ABC7D0057323E /* CommonViewController.swift */; };
 		022B418F2B1B22660057323E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B418E2B1B22660057323E /* MainViewController.swift */; };
 		022B41912B1B649D0057323E /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41902B1B649D0057323E /* CALayer.swift */; };
@@ -234,7 +234,7 @@
 		02A7AAEB2B552E8F002F0C03 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */; };
 		02A7AAED2B58A6F1002F0C03 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAEC2B58A6F1002F0C03 /* CreateUserRequest.swift */; };
 		02A7AAEF2B58A6FE002F0C03 /* CreateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7AAEE2B58A6FE002F0C03 /* CreateUserResponse.swift */; };
-		02BFEDD22B5E8C7B000B1D4D /* StoryModifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BFEDD12B5E8C7B000B1D4D /* StoryModifyViewController.swift */; };
+		02BFEDD22B5E8C7B000B1D4D /* StoryModViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BFEDD12B5E8C7B000B1D4D /* StoryModViewController.swift */; };
 		02C114072B5A8B0B00A14F77 /* StoryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C114062B5A8B0B00A14F77 /* StoryAddViewController.swift */; };
 		02C114092B5B88B500A14F77 /* DailyLifeGubunItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C114082B5B88B500A14F77 /* DailyLifeGubunItemView.swift */; };
 		02C1140B2B5CBD9900A14F77 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C1140A2B5CBD9900A14F77 /* UIViewController.swift */; };
@@ -342,14 +342,14 @@
 		7B3C4EFA2BE3A6880059EE82 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
 		7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */; };
-		7B714A7D2BE8690F00E89AE8 /* PostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */; };
+		7B714A7D2BE8690F00E89AE8 /* WalkPostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */; };
 		7B714A7F2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */; };
 		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
+		7B8AB5ED2BF223B800CA051B /* CommonPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */; };
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
 		7BAA2C5A2BF072D10013FBDE /* DailyLifeGubunItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */; };
-		7BAA2C5B2BF072D10013FBDE /* StoryModifyViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */; };
 		7BB811D22BF0B20A00B97D27 /* NMapViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */; };
 		7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD347E62BDF678700EFAF59 /* MainViewController2.swift */; };
 		7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD541EE2BE48486008861DE /* UITextView2.swift */; };
@@ -362,7 +362,7 @@
 		7BE3F1992BE22E5200FDFCCA /* EventListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */; };
 		7BE5C7652BEB4EE100735E85 /* UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5C7642BEB4EE100735E85 /* UICollectionViewDataSource.swift */; };
 		7BE5C7672BEB4F7F00735E85 /* UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE5C7662BEB4F7F00735E85 /* UITableViewDataSource.swift */; };
-		7BE820EC2BE47B6B00B09973 /* StoryModifyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE820EB2BE47B6B00B09973 /* StoryModifyViewController2.swift */; };
+		7BE820EC2BE47B6B00B09973 /* StoryModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE820EB2BE47B6B00B09973 /* StoryModViewController2.swift */; };
 		7BE820EE2BE47BB900B09973 /* StoryAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */; };
 		7BE9A6B12BED494F006E10E7 /* Global4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9A6B02BED494F006E10E7 /* Global4.swift */; };
 		7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */; };
@@ -408,7 +408,7 @@
 		022B41802B19AABD0057323E /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		022B41822B1A29770057323E /* MapBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBottomView.swift; sourceTree = "<group>"; };
 		022B41842B1A29A80057323E /* MapBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapBottomView.xib; sourceTree = "<group>"; };
-		022B41862B1ABC1C0057323E /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		022B41862B1ABC1C0057323E /* WalkPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController.swift; sourceTree = "<group>"; };
 		022B41882B1ABC7D0057323E /* CommonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController.swift; sourceTree = "<group>"; };
 		022B418E2B1B22660057323E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		022B41902B1B649D0057323E /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
@@ -596,7 +596,7 @@
 		02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		02A7AAEC2B58A6F1002F0C03 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
 		02A7AAEE2B58A6FE002F0C03 /* CreateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserResponse.swift; sourceTree = "<group>"; };
-		02BFEDD12B5E8C7B000B1D4D /* StoryModifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModifyViewController.swift; sourceTree = "<group>"; };
+		02BFEDD12B5E8C7B000B1D4D /* StoryModViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModViewController.swift; sourceTree = "<group>"; };
 		02C114062B5A8B0B00A14F77 /* StoryAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAddViewController.swift; sourceTree = "<group>"; };
 		02C114082B5B88B500A14F77 /* DailyLifeGubunItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeGubunItemView.swift; sourceTree = "<group>"; };
 		02C1140A2B5CBD9900A14F77 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -707,14 +707,14 @@
 		7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
 		7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController2.swift; sourceTree = "<group>"; };
-		7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController2.swift; sourceTree = "<group>"; };
+		7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController2.swift; sourceTree = "<group>"; };
 		7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController2.swift; sourceTree = "<group>"; };
 		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
+		7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPostViewController.swift; sourceTree = "<group>"; };
 		7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLifeGubunItemView2.swift; sourceTree = "<group>"; };
-		7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryModifyViewController3.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController3.swift; sourceTree = "<group>"; };
 		7BD347E62BDF678700EFAF59 /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
@@ -728,7 +728,7 @@
 		7BE3F1982BE22E5200FDFCCA /* EventListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewController2.swift; sourceTree = "<group>"; };
 		7BE5C7642BEB4EE100735E85 /* UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDataSource.swift; sourceTree = "<group>"; };
 		7BE5C7662BEB4F7F00735E85 /* UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewDataSource.swift; sourceTree = "<group>"; };
-		7BE820EB2BE47B6B00B09973 /* StoryModifyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModifyViewController2.swift; sourceTree = "<group>"; };
+		7BE820EB2BE47B6B00B09973 /* StoryModViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModViewController2.swift; sourceTree = "<group>"; };
 		7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAddViewController2.swift; sourceTree = "<group>"; };
 		7BE9A6B02BED494F006E10E7 /* Global4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global4.swift; sourceTree = "<group>"; };
 		7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
@@ -852,9 +852,8 @@
 				7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */,
 				02C114062B5A8B0B00A14F77 /* StoryAddViewController.swift */,
 				7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */,
-				02BFEDD12B5E8C7B000B1D4D /* StoryModifyViewController.swift */,
-				7BE820EB2BE47B6B00B09973 /* StoryModifyViewController2.swift */,
-				7BAA2C592BF072D10013FBDE /* StoryModifyViewController3.swift */,
+				02BFEDD12B5E8C7B000B1D4D /* StoryModViewController.swift */,
+				7BE820EB2BE47B6B00B09973 /* StoryModViewController2.swift */,
 			);
 			path = Community;
 			sourceTree = "<group>";
@@ -914,6 +913,7 @@
 				7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */,
 				7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */,
 				7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */,
+				7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */,
 				02A05A7D2B31A27900E8ABFA /* CommonDetailViewController.swift */,
 				020B79702B2C37B900C0AB2D /* CommonDetailImageItemView.swift */,
 				020B79722B2C37DA00C0AB2D /* CommonDetailImageItemView.xib */,
@@ -970,8 +970,8 @@
 				0251FD6B2B185C6400F35EF8 /* Track.swift */,
 				022B41822B1A29770057323E /* MapBottomView.swift */,
 				022B41842B1A29A80057323E /* MapBottomView.xib */,
-				022B41862B1ABC1C0057323E /* PostViewController.swift */,
-				7B714A7C2BE8690F00E89AE8 /* PostViewController2.swift */,
+				022B41862B1ABC1C0057323E /* WalkPostViewController.swift */,
+				7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */,
 				02DB383D2B731F31007D19A1 /* Map.storyboard */,
 			);
 			path = Map;
@@ -1706,8 +1706,9 @@
 				02A05AEC2B3E4F8300E8ABFA /* CodeListRequest.swift in Sources */,
 				02EB98042B0CFF03007428AD /* ViewController.swift in Sources */,
 				02A05AFE2B3EC22500E8ABFA /* RlsUpdateResponse.swift in Sources */,
+				7B8AB5ED2BF223B800CA051B /* CommonPostViewController.swift in Sources */,
 				020B798B2B300FB200C0AB2D /* StoryListRequest.swift in Sources */,
-				7BE820EC2BE47B6B00B09973 /* StoryModifyViewController2.swift in Sources */,
+				7BE820EC2BE47B6B00B09973 /* StoryModViewController2.swift in Sources */,
 				02A05ACF2B3C296700E8ABFA /* PopupModalViewController.swift in Sources */,
 				02E3FC842B25994200A1CE62 /* DailyLifeAPI.swift in Sources */,
 				02E3FC8B2B25999500A1CE62 /* PetListResponse.swift in Sources */,
@@ -1738,7 +1739,7 @@
 				02DB380E2B64DBEA007D19A1 /* MyPetWeightDeleteResponse.swift in Sources */,
 				02A7AAEB2B552E8F002F0C03 /* JoinViewController.swift in Sources */,
 				02A05AF42B3E84B300E8ABFA /* DclrCreateStoryResponse.swift in Sources */,
-				02BFEDD22B5E8C7B000B1D4D /* StoryModifyViewController.swift in Sources */,
+				02BFEDD22B5E8C7B000B1D4D /* StoryModViewController.swift in Sources */,
 				02A7AACA2B510896002F0C03 /* QnADeleteResponse.swift in Sources */,
 				02A05ACE2B3C296700E8ABFA /* CommonConfirmView.swift in Sources */,
 				022B41B02B1E33280057323E /* PetProfItemView.swift in Sources */,
@@ -1754,7 +1755,7 @@
 				0251FD742B1909BA00F35EF8 /* UIImage.swift in Sources */,
 				02E3FC812B257D0A00A1CE62 /* KeychainAccessible.swift in Sources */,
 				028625352B4DA08D0055E62F /* NoticeViewController.swift in Sources */,
-				7B714A7D2BE8690F00E89AE8 /* PostViewController2.swift in Sources */,
+				7B714A7D2BE8690F00E89AE8 /* WalkPostViewController2.swift in Sources */,
 				0293C6262B0E37340004F19D /* UTCRepository.swift in Sources */,
 				02A7AAA62B4FCC75002F0C03 /* QnADetailViewController.swift in Sources */,
 				0251FD512B0F328100F35EF8 /* NMapViewController.swift in Sources */,
@@ -1783,7 +1784,6 @@
 				02E3FC5D2B25472500A1CE62 /* MemberAPI.swift in Sources */,
 				025B7CD82B85875F004E85D1 /* PermissionInfoViewController.swift in Sources */,
 				7BE12BCE2BEC5386009B556A /* StoryItemView2.swift in Sources */,
-				7BAA2C5B2BF072D10013FBDE /* StoryModifyViewController3.swift in Sources */,
 				02A7AACE2B51387E002F0C03 /* QnAAddAttachFileItemView.swift in Sources */,
 				020B79572B28A8A300C0AB2D /* WeatherTarget.swift in Sources */,
 				029851102B7DD10A00A0A056 /* TrmnlMngRequest.swift in Sources */,
@@ -1800,7 +1800,7 @@
 				02A05AB92B3A771F00E8ABFA /* CmntRcmdtn.swift in Sources */,
 				02A05AF22B3E849D00E8ABFA /* DclrCreateRequest.swift in Sources */,
 				02DB37FE2B648344007D19A1 /* MyPetWeightListResponse.swift in Sources */,
-				022B41872B1ABC1C0057323E /* PostViewController.swift in Sources */,
+				022B41872B1ABC1C0057323E /* WalkPostViewController.swift in Sources */,
 				7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */,
 				7B39BF2C2BF1963F0092E4F6 /* SelectInvitePetView2.swift in Sources */,
 				7BE3F1992BE22E5200FDFCCA /* EventListViewController2.swift in Sources */,

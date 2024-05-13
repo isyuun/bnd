@@ -116,7 +116,7 @@ class StoryDetailViewController: CommonDetailViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueStoryDetailToModify") {
             let dest = segue.destination
-            guard let vc = dest as? StoryModifyViewController else { return }
+            guard let vc = dest as? StoryModViewController else { return }
             vc.storyDetailViewController = self
             vc.lifeViewData = lifeViewData
         }

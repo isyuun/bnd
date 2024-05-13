@@ -1580,10 +1580,10 @@
             </objects>
             <point key="canvasLocation" x="874.04580152671747" y="-27.464788732394368"/>
         </scene>
-        <!--Story Modify View Controller2-->
+        <!--Story Mod View Controller2-->
         <scene sceneID="nX5-6z-NZt">
             <objects>
-                <viewController id="rF2-GQ-nIu" customClass="StoryModifyViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rF2-GQ-nIu" customClass="StoryModViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OG8-Od-Sgq">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2118,10 +2118,10 @@
                         <outlet property="cv_selEnablePet" destination="Hf8-NJ-ppw" id="Icn-dy-Kdc"/>
                         <outlet property="lb_currDate" destination="HyG-p5-vJo" id="J8z-91-sIn"/>
                         <outlet property="sv_content" destination="1IX-mQ-0ay" id="MBA-lx-7fO"/>
-                        <outlet property="tf_hashtag" destination="hqa-Pj-3j2" id="aXA-5j-J5O"/>
-                        <outlet property="tf_title" destination="J7H-kc-4x4" id="vTR-wy-Jgl"/>
+                        <outlet property="tf_hashtag" destination="hqa-Pj-3j2" id="J49-5c-lxb"/>
+                        <outlet property="tf_title" destination="J7H-kc-4x4" id="l0J-Bp-4Cy"/>
                         <outlet property="titleBarView" destination="a6Q-aP-dEC" id="LRv-mK-0E1"/>
-                        <outlet property="tv_memo" destination="RT2-ul-k0g" id="JRb-ne-pY4"/>
+                        <outlet property="tv_memo" destination="RT2-ul-k0g" id="Yyb-1r-8xs"/>
                         <outlet property="vw_titleArea" destination="f6N-nw-DOg" id="R76-Wj-h5z"/>
                         <outlet property="vw_titleComboShowingArea" destination="fnR-Wk-tGG" id="WlH-x5-PXc"/>
                     </connections>
@@ -2701,10 +2701,10 @@
                         <outlet property="iv_storyShareAgree" destination="X7T-1Y-Fjl" id="cm2-aW-QQz"/>
                         <outlet property="lb_currDate" destination="qzC-Eh-9fv" id="NYk-b1-QIu"/>
                         <outlet property="sv_content" destination="8wd-MC-qKy" id="sqc-55-2X4"/>
-                        <outlet property="tf_hashtag" destination="e0H-MH-re3" id="Tqd-Ue-QWZ"/>
-                        <outlet property="tf_title" destination="knt-VH-hAf" id="lqS-F4-5Qq"/>
+                        <outlet property="tf_hashtag" destination="e0H-MH-re3" id="7RA-3f-aJy"/>
+                        <outlet property="tf_title" destination="knt-VH-hAf" id="487-lf-hPx"/>
                         <outlet property="titleBarView" destination="dPm-MY-DwM" id="kzI-6k-Al2"/>
-                        <outlet property="tv_memo" destination="oi5-n6-5iq" id="hIR-Xf-gwu"/>
+                        <outlet property="tv_memo" destination="oi5-n6-5iq" id="cx7-lY-Kv7"/>
                         <outlet property="vw_storyShareAgree" destination="CYH-94-ECd" id="NjD-xs-SGJ"/>
                         <outlet property="vw_titleArea" destination="tqz-01-NYR" id="CGJ-nw-J4N"/>
                         <outlet property="vw_titleComboShowingArea" destination="6gI-0T-rOJ" id="iOQ-A3-dVT"/>
@@ -2720,13 +2720,13 @@
             <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
         <designable name="e0H-MH-re3">
-            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="hqa-Pj-3j2">
             <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="knt-VH-hAf">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="-2118" y="1001"/>
         </scene>
-        <!--Post View Controller2-->
+        <!--Walk Post View Controller2-->
         <scene sceneID="OQ5-PW-epF">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" id="sjE-zC-BED" customClass="PostViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" id="sjE-zC-BED" customClass="WalkPostViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Olp-qz-LrW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -802,9 +802,9 @@
                         <outlet property="naverMapView" destination="Uxq-w9-l0Y" id="VSN-L8-ZbD"/>
                         <outlet property="sv_content" destination="w0j-GP-f27" id="SoZ-9N-8W8"/>
                         <outlet property="sv_walkPet" destination="p91-Ab-ajk" id="iGD-wo-hKO"/>
-                        <outlet property="tf_hashtag" destination="zHh-Ja-LHk" id="hCb-TR-W92"/>
-                        <outlet property="tf_title" destination="6al-js-EGV" id="Acv-cr-NY2"/>
-                        <outlet property="tv_memo" destination="pge-fN-po5" id="49u-dJ-988"/>
+                        <outlet property="tf_hashtag" destination="zHh-Ja-LHk" id="yu1-ek-XrT"/>
+                        <outlet property="tf_title" destination="6al-js-EGV" id="Zyh-XF-LlI"/>
+                        <outlet property="tv_memo" destination="pge-fN-po5" id="gCG-LB-Qc5"/>
                         <outlet property="vw_storyShareAgree" destination="jkS-dA-RJz" id="OEe-aq-BTW"/>
                         <outlet property="vw_titleArea" destination="BYV-xx-sxi" id="hKS-fH-vWi"/>
                         <outlet property="vw_titleComboShowingArea" destination="32Z-3x-UV4" id="gCy-E2-tJW"/>
@@ -842,7 +842,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

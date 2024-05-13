@@ -181,7 +181,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Vd-ZP-8yt">
-                                <rect key="frame" x="0.0" y="119" width="430" height="730"/>
+                                <rect key="frame" x="0.0" y="119" width="430" height="730.00000000000023"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kq-xN-9GG" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="1374.3333333333333"/>

@@ -82,7 +82,7 @@ class NMapViewController4: NMapViewController3 {
 
             let infoWindow = NMFInfoWindow()
             let dataSource = NMFInfoWindowDefaultTextSource.data()
-            dataSource.title = "\(petName) \(eventInfo)"
+            dataSource.title = "\(petName) \(eventInfo) 삭제"
             infoWindow.dataSource = dataSource
             infoWindow.touchHandler = { overlay in
                 if let infoWindow = overlay as? NMFInfoWindow {

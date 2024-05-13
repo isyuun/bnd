@@ -1,5 +1,5 @@
 //
-//  StoryModifyViewController2.swift
+//  StoryModViewController2.swift
 //  PetTip
 //
 //  Created by isyuun on 2024/5/3.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StoryModifyViewController2: StoryModifyViewController {
+class StoryModViewController2: StoryModViewController {
     override func viewDidAppear(_ animated: Bool) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][animated:\(animated)]")
         super.viewDidAppear(animated)
@@ -41,25 +41,27 @@ class StoryModifyViewController2: StoryModifyViewController {
         sv_content.scrollIndicatorInsets = UIEdgeInsets.zero
     }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        switch textField {
-        case tf_title:
-            return range.location < tf_title.maxLength
-        case tf_hashtag:
-            return range.location < tf_hashtag.maxLength
-        default:
-            break
-        }
-        return true
-    }
-
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        switch textView {
-        case tv_memo:
-            return range.location < tv_memo.maxLength
-        default:
-            break
-        }
-        return true
-    }
+    // func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    //     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][range:\(range)][string:\(string)]")
+    //     switch textField {
+    //     case tf_title:
+    //         return range.location < tf_title.maxLength
+    //     case tf_hashtag:
+    //         return range.location < tf_hashtag.maxLength
+    //     default:
+    //         break
+    //     }
+    //     return true
+    // }
+    // 
+    // func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    //     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][range:\(range)][text:\(text)]")
+    //     switch textView {
+    //     case tv_memo:
+    //         return range.location < tv_memo.maxLength
+    //     default:
+    //         break
+    //     }
+    //     return true
+    // }
 }

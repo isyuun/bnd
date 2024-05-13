@@ -1,5 +1,5 @@
 //
-//  PostViewController.swift
+//  WalkPostViewController.swift
 //  PetTip
 //
 //  Created by carebiz on 12/2/23.
@@ -10,7 +10,7 @@ import NMapsMap
 import AlamofireImage
 import DropDown
 
-class PostViewController: CommonViewController2 {
+class WalkPostViewController: CommonPostViewController {
 
     var arrTrack: Array<Track>?
     var arrImageFromCamera: [UIImage]?
@@ -400,7 +400,7 @@ class PostViewController: CommonViewController2 {
 
     // MARK: - COMBO TITLE
     @IBOutlet weak var vw_titleArea: UIView!
-    @IBOutlet weak var tf_title: UITextField2!
+    // @IBOutlet weak var tf_title: UITextField2!
     @IBOutlet weak var vw_titleComboShowingArea: UIView!
 
     private var dropDown: DropDown?
@@ -453,7 +453,7 @@ class PostViewController: CommonViewController2 {
     }
 
     // MARK: - MEMO
-    @IBOutlet weak var tv_memo: UITextView2!
+    // @IBOutlet weak var tv_memo: UITextView2!
 
     let textViewPlaceHolder = "오늘 산책 중 재미있던 일을 기록해주세요."
 
@@ -505,7 +505,7 @@ class PostViewController: CommonViewController2 {
     }
 
     // MARK: - HASHTAG
-    @IBOutlet weak var tf_hashtag: UITextField2!
+    // @IBOutlet weak var tf_hashtag: UITextField2!
 
     private func initHashtag() {
         tf_hashtag.delegate = self
@@ -690,7 +690,7 @@ class PostViewController: CommonViewController2 {
     }
 }
 
-extension PostViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension WalkPostViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -743,7 +743,7 @@ extension PostViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension WalkPostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else {
@@ -757,7 +757,7 @@ extension PostViewController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 // MARK: - UITextFieldDelegate
-extension PostViewController {
+extension WalkPostViewController {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         switch textField {
         case tf_hashtag:
@@ -810,7 +810,7 @@ extension PostViewController {
 }
 
 // MARK: - UITextViewDelegate
-extension PostViewController: UITextViewDelegate {
+extension WalkPostViewController: UITextViewDelegate {
 
     func textViewDidChange(_ textView: UITextView) {
         textViewFitSize(textView)

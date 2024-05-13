@@ -9,7 +9,7 @@ import UIKit
 import AlamofireImage
 import DropDown
 
-class StoryAddViewController: CommonViewController2 {
+class StoryAddViewController: CommonPostViewController {
 
     public var storyListViewController: StoryListViewController?
 
@@ -213,7 +213,7 @@ class StoryAddViewController: CommonViewController2 {
 
     // MARK: - COMBO TITLE
     @IBOutlet weak var vw_titleArea: UIView!
-    @IBOutlet weak var tf_title: UITextField2!
+    // @IBOutlet weak var tf_title: UITextField2!
     @IBOutlet weak var vw_titleComboShowingArea: UIView!
 
     private var dropDown: DropDown?
@@ -266,7 +266,7 @@ class StoryAddViewController: CommonViewController2 {
     }
 
     // MARK: - MEMO
-    @IBOutlet weak var tv_memo: UITextView2!
+    // @IBOutlet weak var tv_memo: UITextView2!
 
     let textViewPlaceHolder = "일상을 기록해주세요"
 
@@ -302,7 +302,7 @@ class StoryAddViewController: CommonViewController2 {
     }
 
     // MARK: - HASHTAG
-    @IBOutlet weak var tf_hashtag: UITextField2!
+    // @IBOutlet weak var tf_hashtag: UITextField2!
 
     private func initHashtag() {
         tf_hashtag.delegate = self
