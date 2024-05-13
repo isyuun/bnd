@@ -13,4 +13,19 @@ class MainViewController2: MainViewController {
         super.viewDidAppear(animated)
         initRx()
     }
+
+    override func requestPageData() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        super.requestPageData()
+    }
+
+    override func dailyLife_PetList() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        super.dailyLife_PetList()
+    }
+
+    override func myPet_list() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        super.myPet_list()
+    }
 }

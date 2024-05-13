@@ -65,7 +65,7 @@ class SelectInvitePetView: CommonPopupView {
     var idxSelectedItem = -1
     var isSingleSelectMode = true
 
-    private var pets: [Pet]?
+    internal var pets: [Pet]?
     func setData(_ data: Any) {
         if let pets = data as? [Pet] {
             self.pets = pets

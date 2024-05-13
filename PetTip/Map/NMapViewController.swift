@@ -176,7 +176,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         selectEventMarkPet(mark: .MRK)
     }
 
-    private func selectEventMarkPet(mark: NMapViewController.EventMark) {
+    internal func selectEventMarkPet(mark: NMapViewController.EventMark) {
         if selectedPets.count == 0 {
             return
 
@@ -200,7 +200,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
         }
     }
 
-    private func addEventMark(mark: NMapViewController.EventMark, pet: Pet) {
+    internal func addEventMark(mark: NMapViewController.EventMark, pet: Pet) {
         if (arrTrack != nil && arrTrack.last != nil && arrTrack.last?.location != nil) {
             let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), event: mark)
             eventMarker.mapView = self.mapView

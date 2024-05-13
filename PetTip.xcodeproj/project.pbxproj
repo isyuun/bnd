@@ -333,6 +333,9 @@
 		7B250FD52BE0CFE200171EFD /* InviteSetKeyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */; };
 		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
 		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
+		7B39BF2C2BF1963F0092E4F6 /* SelectInvitePetView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39BF2B2BF1963F0092E4F6 /* SelectInvitePetView2.swift */; };
+		7B39BF2E2BF197D50092E4F6 /* SelectInvitePetView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B39BF2D2BF197D50092E4F6 /* SelectInvitePetView2.xib */; };
+		7B39BF302BF1A7AC0092E4F6 /* NMapViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39BF2F2BF1A7AC0092E4F6 /* NMapViewController4.swift */; };
 		7B3C4EF42BE33BA30059EE82 /* WinnerListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */; };
 		7B3C4EF62BE366E50059EE82 /* CommonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */; };
 		7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */; };
@@ -695,6 +698,9 @@
 		7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSetKeyViewController2.swift; sourceTree = "<group>"; };
 		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
 		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
+		7B39BF2B2BF1963F0092E4F6 /* SelectInvitePetView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInvitePetView2.swift; sourceTree = "<group>"; };
+		7B39BF2D2BF197D50092E4F6 /* SelectInvitePetView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectInvitePetView2.xib; sourceTree = "<group>"; };
+		7B39BF2F2BF1A7AC0092E4F6 /* NMapViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController4.swift; sourceTree = "<group>"; };
 		7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerListViewController2.swift; sourceTree = "<group>"; };
 		7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListViewController.swift; sourceTree = "<group>"; };
 		7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewController2.swift; sourceTree = "<group>"; };
@@ -955,6 +961,7 @@
 				0251FD502B0F328100F35EF8 /* NMapViewController.swift */,
 				7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */,
 				7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */,
+				7B39BF2F2BF1A7AC0092E4F6 /* NMapViewController4.swift */,
 				0251FD572B12351100F35EF8 /* LocationViewController.swift */,
 				0251FD5F2B16EEE300F35EF8 /* MapTopView.swift */,
 				0251FD652B1707A000F35EF8 /* MapTipView.xib */,
@@ -1026,8 +1033,10 @@
 				02A05AE32B3DD8A900E8ABFA /* ReportView.xib */,
 				02A05B532B46A8F300E8ABFA /* DatePickerView.swift */,
 				02A05B552B46A90400E8ABFA /* DatePickerView.xib */,
-				02A05B592B4790BE00E8ABFA /* SelectInvitePetView.swift */,
 				02A05B5B2B47914300E8ABFA /* SelectInvitePetView.xib */,
+				02A05B592B4790BE00E8ABFA /* SelectInvitePetView.swift */,
+				7B39BF2D2BF197D50092E4F6 /* SelectInvitePetView2.xib */,
+				7B39BF2B2BF1963F0092E4F6 /* SelectInvitePetView2.swift */,
 				02DB38032B64955A007D19A1 /* PetWeightView.swift */,
 				7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */,
 				02DB38052B64957E007D19A1 /* PetWeightView.xib */,
@@ -1510,6 +1519,7 @@
 				02DB38342B6DC4FA007D19A1 /* SelectWalkPetItemView.xib in Resources */,
 				02A05AD02B3C296700E8ABFA /* CommonConfirmView.xib in Resources */,
 				02DB383C2B6E73FF007D19A1 /* SelectWalkMarkPetItemView.xib in Resources */,
+				7B39BF2E2BF197D50092E4F6 /* SelectInvitePetView2.xib in Resources */,
 				02E3FC4C2B229F4000A1CE62 /* CompPetListItemView.xib in Resources */,
 				02A05B562B46A90400E8ABFA /* DatePickerView.xib in Resources */,
 				028625332B4D9BD20055E62F /* CustomerCenter.storyboard in Resources */,
@@ -1792,6 +1802,7 @@
 				02DB37FE2B648344007D19A1 /* MyPetWeightListResponse.swift in Sources */,
 				022B41872B1ABC1C0057323E /* PostViewController.swift in Sources */,
 				7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */,
+				7B39BF2C2BF1963F0092E4F6 /* SelectInvitePetView2.swift in Sources */,
 				7BE3F1992BE22E5200FDFCCA /* EventListViewController2.swift in Sources */,
 				02A05B262B404A9800E8ABFA /* WinnerListResponse.swift in Sources */,
 				0286251B2B49941F0055E62F /* CmmPetListResponse.swift in Sources */,
@@ -1838,6 +1849,7 @@
 				020B798F2B30118700C0AB2D /* StoryList.swift in Sources */,
 				02A7AAC82B51088B002F0C03 /* QnADeleteRequest.swift in Sources */,
 				02E3FC9F2B275D1E00A1CE62 /* WeekRecordResponse.swift in Sources */,
+				7B39BF302BF1A7AC0092E4F6 /* NMapViewController4.swift in Sources */,
 				02A7AACC2B5111D2002F0C03 /* QnAAddViewController.swift in Sources */,
 				02A05B342B4068CC00E8ABFA /* WinnerDtlListRequest.swift in Sources */,
 				02E3FC622B2547BC00A1CE62 /* HTTPHeaderField.swift in Sources */,
