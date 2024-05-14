@@ -2521,7 +2521,7 @@
                                 <rect key="frame" x="0.0" y="59" width="430" height="759"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-aP-dyp" userLabel="Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="652"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="764"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-26-gFX" userLabel="HeadView">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="100"/>
@@ -2530,10 +2530,10 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-i7-be4" userLabel="LoginView">
-                                                <rect key="frame" x="0.0" y="100" width="430" height="502"/>
+                                                <rect key="frame" x="0.0" y="100" width="430" height="614"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aZU-Kc-LU9" userLabel="SNSSLoginView">
-                                                        <rect key="frame" x="20" y="0.0" width="390" height="234"/>
+                                                        <rect key="frame" x="20" y="0.0" width="390" height="346"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjA-iK-nlF">
                                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="66"/>
@@ -2627,7 +2627,7 @@
                                                                     <constraint firstAttribute="height" constant="56" id="tPg-iO-hup"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjY-ts-9T7">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjY-ts-9T7">
                                                                 <rect key="frame" x="0.0" y="178" width="390" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir9-S0-PMU">
@@ -2652,8 +2652,8 @@
                                                                     <constraint firstAttribute="height" constant="56" id="vrF-W9-ZgH"/>
                                                                 </constraints>
                                                             </view>
-                                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-rJ-tod">
-                                                                <rect key="frame" x="0.0" y="178" width="390" height="56"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-rJ-tod">
+                                                                <rect key="frame" x="0.0" y="234" width="390" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8j-0l-pzP">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="48"/>
@@ -2680,7 +2680,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZW-Rn-v2h">
-                                                                <rect key="frame" x="0.0" y="178" width="390" height="56"/>
+                                                                <rect key="frame" x="0.0" y="290" width="390" height="56"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDb-by-I10">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="48"/>
@@ -2725,7 +2725,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gLV-nu-QF6" userLabel="IDPWLoginView">
-                                                        <rect key="frame" x="20" y="234" width="390" height="268"/>
+                                                        <rect key="frame" x="20" y="346" width="390" height="268"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-Zo-091">
                                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="29"/>
@@ -2871,7 +2871,7 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tcI-ef-11G" userLabel="TailView">
-                                                <rect key="frame" x="0.0" y="602" width="430" height="50"/>
+                                                <rect key="frame" x="0.0" y="714" width="430" height="50"/>
                                                 <color key="backgroundColor" red="0.96470588235294119" green="0.97254901960784312" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
@@ -2916,7 +2916,12 @@
                         <outlet property="inputBoxID" destination="5KF-pY-HRT" id="d94-i6-v07"/>
                         <outlet property="inputBoxPW" destination="7pR-Qh-UoN" id="RRG-ww-PNH"/>
                         <outlet property="loginView" destination="ndT-i7-be4" id="jSK-zX-3RJ"/>
-                        <outlet property="scrollView" destination="gAt-t5-E4E" id="EPG-WM-gRl"/>
+                        <outlet property="scroll" destination="gAt-t5-E4E" id="E47-Y9-H9z"/>
+                        <outlet property="vwLoginApple" destination="RZW-Rn-v2h" id="uHf-C3-knd"/>
+                        <outlet property="vwLoginFacebook" destination="UjY-ts-9T7" id="KBa-2z-Q6f"/>
+                        <outlet property="vwLoginGoogle" destination="UGG-rJ-tod" id="ddG-HS-PEx"/>
+                        <outlet property="vwLoginKakao" destination="ffF-ei-McM" id="Oer-kw-AxK"/>
+                        <outlet property="vwLoginNaver" destination="7cr-Wn-1Vx" id="x5T-6G-7hH"/>
                         <segue destination="PdL-Qo-FjW" kind="show" identifier="segueLoginToMain" id="ksD-bF-nzH"/>
                     </connections>
                 </viewController>

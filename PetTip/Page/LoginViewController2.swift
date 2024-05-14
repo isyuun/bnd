@@ -12,21 +12,37 @@ class LoginViewController2: LoginViewController {
     @IBOutlet weak var SNSSLoginView: UIView!
     @IBOutlet weak var IDPWLoginView: UIView!
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vwLoginKakao: UIView!
+    @IBOutlet weak var vwLoginNaver: UIView!
+    @IBOutlet weak var vwLoginFacebook: UIView!
+    @IBOutlet weak var vwLoginGoogle: UIView!
+    @IBOutlet weak var vwLoginApple: UIView!
+
+    @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var content: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         SNSSLoginView.isHidden = false
+        vwLoginKakao.isHidden = false
+        vwLoginNaver.isHidden = false
+        vwLoginFacebook.isHidden = false
+        vwLoginGoogle.isHidden = false
+        vwLoginApple.isHidden = false
+
         #if DEBUG
             IDPWLoginView.isHidden = false
+            vwLoginFacebook.isHidden = false
+            vwLoginGoogle.isHidden = false
         #else
             IDPWLoginView.isHidden = true
+            vwLoginFacebook.isHidden = true
+            vwLoginGoogle.isHidden = true
         #endif
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        scrollView.addGestureRecognizer(tap)
+        scroll.addGestureRecognizer(tap)
     }
 
     // UITextFieldDelegate 메서드 구현
@@ -51,9 +67,9 @@ class LoginViewController2: LoginViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             // 스크롤뷰의 콘텐츠 영역을 키보드의 높이만큼 조정
             let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-            scrollView.contentInset = insets
-            scrollView.scrollIndicatorInsets = insets
-            scrollView.scroll(to: .bottom)
+            scroll.contentInset = insets
+            scroll.scrollIndicatorInsets = insets
+            scroll.scroll(to: .bottom)
         }
     }
 
@@ -61,7 +77,7 @@ class LoginViewController2: LoginViewController {
         super.keyboardWillHide(notification)
         // 키보드가 사라질 때 스크롤뷰의 콘텐츠 영역을 원래대로 돌려놓음
         let insets = UIEdgeInsets.zero
-        scrollView.contentInset = insets
-        scrollView.scrollIndicatorInsets = insets
+        scroll.contentInset = insets
+        scroll.scrollIndicatorInsets = insets
     }
 }
