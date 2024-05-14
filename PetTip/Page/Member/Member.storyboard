@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="113.74045801526717" y="-34.507042253521128"/>
         </scene>
-        <!--Join View Controller-->
+        <!--Join View Controller2-->
         <scene sceneID="SIb-Gd-k7v">
             <objects>
-                <viewController storyboardIdentifier="JoinViewController" id="iXW-2V-wfY" customClass="JoinViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinViewController" id="iXW-2V-wfY" customClass="JoinViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cSy-W1-TwA">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,13 +214,18 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIy-wr-5f9">
                                                                 <rect key="frame" x="20" y="285" width="390" height="48"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-Oa-ptK">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ubp-Oa-ptK" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                                         <rect key="frame" x="16" y="0.0" width="269" height="48"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="48" id="HIr-dn-JHY"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                                <integer key="value" value="20"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUh-tb-F1F">
                                                                         <rect key="frame" x="301" y="9" width="80" height="30"/>
@@ -335,6 +340,7 @@
                         <outlet property="btn_nickDupChk" destination="cUh-tb-F1F" id="nhc-Z1-B0n"/>
                         <outlet property="tf_id" destination="hsv-6W-asx" id="ule-JJ-NEP"/>
                         <outlet property="tf_nickNm" destination="Ubp-Oa-ptK" id="pvg-iV-DG2"/>
+                        <outlet property="tf_nickNname" destination="Ubp-Oa-ptK" id="aHw-Q7-7h3"/>
                         <outlet property="tf_pw" destination="089-lF-PSh" id="bWx-cA-Ycg"/>
                         <outlet property="tf_pwRe" destination="6Js-al-E47" id="8sz-9c-b93"/>
                         <outlet property="titleBarView" destination="cAb-3X-3Fo" id="HeZ-dn-WX9"/>
@@ -345,10 +351,10 @@
             </objects>
             <point key="canvasLocation" x="113.74045801526717" y="768.30985915492965"/>
         </scene>
-        <!--Join Viewcontroller2-->
+        <!--Join View Controller2-->
         <scene sceneID="jli-iZ-ReQ">
             <objects>
-                <viewController storyboardIdentifier="SNSJoinViewcontroller" id="Mia-fl-hSf" customClass="SNSJoinViewcontroller2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SNSJoinViewcontroller" id="Mia-fl-hSf" customClass="SNSJoinViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e4a-Lh-rdk">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -813,13 +819,18 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njG-s7-CZ8">
                                                         <rect key="frame" x="20" y="328" width="390" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-lv-92I">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yw-lv-92I" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                                 <rect key="frame" x="16" y="0.0" width="269" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="8Bh-8Q-TDf"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                        <integer key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bt1-e8-tHN">
                                                                 <rect key="frame" x="301" y="9" width="80" height="30"/>
@@ -997,6 +1008,7 @@
                         <outlet property="lb_chkAgreeAll" destination="ee8-1s-TpF" id="q8Y-xs-DNF"/>
                         <outlet property="scrollView" destination="x6u-SA-yMo" id="83B-JS-aKY"/>
                         <outlet property="tf_nickNm" destination="1Yw-lv-92I" id="GnZ-d8-9cV"/>
+                        <outlet property="tf_nickNname" destination="1Yw-lv-92I" id="uCk-Zi-1Fu"/>
                         <outlet property="titleBarView" destination="3q4-bd-0pT" id="ehR-at-3H5"/>
                         <outlet property="vw_chkAgreeAll" destination="Y69-5X-wmw" id="JvE-f8-YeH"/>
                         <outlet property="vw_chkAgreeAllBg" destination="teT-aE-Wio" id="uL9-oz-d99"/>
@@ -1356,28 +1368,31 @@
     </scenes>
     <designables>
         <designable name="089-lF-PSh">
-            <size key="intrinsicContentSize" width="159.33333333333334" height="17"/>
+            <size key="intrinsicContentSize" width="129.33333333333334" height="17"/>
+        </designable>
+        <designable name="1Yw-lv-92I">
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
         </designable>
         <designable name="6Js-al-E47">
-            <size key="intrinsicContentSize" width="106.66666666666667" height="17"/>
+            <size key="intrinsicContentSize" width="76.666666666666671" height="17"/>
         </designable>
         <designable name="Dn8-Pu-WGL">
-            <size key="intrinsicContentSize" width="94.666666666666671" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="64.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="J7L-Ad-cgS">
-            <size key="intrinsicContentSize" width="117.66666666666667" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="QIH-Uu-cm5">
-            <size key="intrinsicContentSize" width="117.66666666666667" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="87.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="RoP-I7-cle">
-            <size key="intrinsicContentSize" width="106.66666666666667" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="76.666666666666671" height="18.666666666666668"/>
         </designable>
         <designable name="hsv-6W-asx">
-            <size key="intrinsicContentSize" width="158.66666666666666" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="128.66666666666666" height="18.666666666666668"/>
         </designable>
         <designable name="nOC-18-Uhb">
-            <size key="intrinsicContentSize" width="106.66666666666667" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="76.666666666666671" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

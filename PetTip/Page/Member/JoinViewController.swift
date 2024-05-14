@@ -7,94 +7,85 @@
 
 import UIKit
 
-class JoinViewController: CommonViewController {
- 
+class JoinViewController: CommonPostViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.tabBarController?.tabBar.isHidden = true
-        
+
         showBackTitleBarView()
-        
+
         showCommonUI()
     }
-    
-    
-    
-    
-    
+
     @IBOutlet weak var tf_id: UITextField!
     @IBOutlet weak var tf_pw: UITextField!
     @IBOutlet weak var tf_pwRe: UITextField!
-    
+
     @IBOutlet weak var vw_nickNmBg: UIView!
-    @IBOutlet weak var tf_nickNm: UITextField!
+    @IBOutlet weak var tf_nickNm: UITextField2!
     @IBOutlet weak var btn_nickDupChk: UIButton!
-    
+
     private func showCommonUI() {
         tf_id.delegate = self
         inputTextNormalUI(view: tf_id)
-        
+
         tf_pw.delegate = self
         inputTextNormalUI(view: tf_pw)
-        
+
         tf_pwRe.delegate = self
         inputTextNormalUI(view: tf_pwRe)
-        
+
         tf_nickNm.delegate = self
         inputTextNormalUI(view: vw_nickNmBg)
         btn_nickDupChk.isHidden = true
     }
-    
+
     private func inputTextSelectedUI(view: UIView) {
         view.layer.cornerRadius = 4
-        
+
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor(hex: "#FF000000")?.cgColor // SELECTED COLOR
     }
-    
+
     private func inputTextNormalUI(view: UIView) {
         view.layer.cornerRadius = 4
-        
+
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor(hex: "#ffe3e9f2")?.cgColor // NORMAL COLOR
     }
-    
+
     @IBAction func onContentViewTap(_ sender: Any) {
         reqCloseKeyboard()
     }
-    
+
     private func reqCloseKeyboard() {
         tf_id.resignFirstResponder()
         tf_pw.resignFirstResponder()
         tf_pwRe.resignFirstResponder()
         tf_nickNm.resignFirstResponder()
     }
-    
-    
-    
-    
-    
+
     // MARK: - CHECK DUPLICATE NICKNAME
-    
     var checkedNcknm: String?
-    
+
     @IBAction func onCheckDuplicate(_ sender: Any) {
         reqCloseKeyboard()
-     
+
         guard let nicknm = tf_nickNm.text else { return }
-        
+
         if containsSpecialCharacter(input: nicknm) {
             self.showAlertPopup(title: "알림", msg: "특수문자는 사용 할 수 없습니다")
             return
         }
-        
+
         self.startLoading()
-        
+
         let request = ChkNcknmRequest(ncknm: nicknm)
         MemberAPI.chkNcknm(request: request) { data, error in
             self.stopLoading()
-            
+
             if let statusCode = data?.statusCode {
                 if statusCode == 200 {
                     self.checkedNcknm = self.tf_nickNm.text
@@ -103,18 +94,14 @@ class JoinViewController: CommonViewController {
                     self.showAlertPopup(title: "알림", msg: "이미 사용중인 닉네임입니다")
                 }
             }
-            
+
             self.processNetworkError(error)
         }
     }
-    
-    
-    
-    
-    
+
     @IBAction func onComplete(_ sender: Any) {
         reqCloseKeyboard()
-        
+
         if let id = tf_id.text {
             if id.isEmpty {
                 showToast(msg: "아이디를 입력해주세요")
@@ -124,7 +111,7 @@ class JoinViewController: CommonViewController {
                 return
             }
         }
-        
+
         if let pw = tf_pw.text {
             if pw.isEmpty {
                 showToast(msg: "비밀번호를 입력해주세요")
@@ -134,7 +121,7 @@ class JoinViewController: CommonViewController {
                 return
             }
         }
-        
+
         if let pwRe = tf_pwRe.text {
             if pwRe.isEmpty {
                 showToast(msg: "비밀번호 확인을 입력해주세요")
@@ -144,12 +131,12 @@ class JoinViewController: CommonViewController {
                 return
             }
         }
-        
+
         if let pw = tf_pw.text, let pwRe = tf_pwRe.text, pw != pwRe {
             showToast(msg: "비밀번호가 일치하지 않습니다")
             return
         }
-        
+
         if let nick = tf_nickNm.text {
             if nick.isEmpty {
                 showToast(msg: "닉네임을 입력해주세요")
@@ -159,20 +146,15 @@ class JoinViewController: CommonViewController {
                 return
             }
         }
-        
+
         let petAddViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetAddViewController") as PetAddViewController
         petAddViewController.memberData = MemberJoinData(id: tf_id.text!, pw: tf_pw.text!, nick: tf_nickNm.text!, method: "EMAIL")
         self.navigationController?.pushViewController(petAddViewController, animated: true)
     }
-    
-    
-    
-    
-    
+
     // MARK: - Back TitleBar
-    
-    @IBOutlet weak var titleBarView : UIView!
-    
+    @IBOutlet weak var titleBarView: UIView!
+
     func showBackTitleBarView() {
         if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
             view.frame = titleBarView.bounds
@@ -183,10 +165,6 @@ class JoinViewController: CommonViewController {
     }
 }
 
-
-
-
-
 extension JoinViewController: BackTitleBarViewProtocol {
     func onBack() {
         navigationController?.popViewController(animated: true)
@@ -194,12 +172,8 @@ extension JoinViewController: BackTitleBarViewProtocol {
     }
 }
 
+extension JoinViewController {
 
-
-
-
-extension JoinViewController: UITextFieldDelegate {
-    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == tf_nickNm {
             if let text = textField.text, text.count > 0 {
@@ -209,7 +183,7 @@ extension JoinViewController: UITextFieldDelegate {
             }
         }
     }
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == tf_nickNm {
             inputTextSelectedUI(view: vw_nickNmBg)
@@ -217,7 +191,7 @@ extension JoinViewController: UITextFieldDelegate {
             inputTextSelectedUI(view: textField)
         }
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == tf_nickNm {
             inputTextNormalUI(view: vw_nickNmBg)
@@ -227,14 +201,9 @@ extension JoinViewController: UITextFieldDelegate {
     }
 }
 
-
-
-
-
 struct MemberJoinData {
     let id: String
     let pw: String
     let nick: String
     let method: String
 }
-

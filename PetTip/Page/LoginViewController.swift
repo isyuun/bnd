@@ -185,7 +185,7 @@ class LoginViewController: CommonViewController2 {
                 // KeychainServiceImpl.shared.refreshToken = login.refreshToken
                 self.trmnlMng(appKeyVl: login.appKeyVl)
             } else {
-                let snsJoinViewcontroller = UIStoryboard(name: "Member", bundle: nil).instantiateViewController(identifier: "SNSJoinViewcontroller") as SNSJoinViewcontroller
+                let snsJoinViewcontroller = UIStoryboard(name: "Member", bundle: nil).instantiateViewController(identifier: "SNSJoinViewcontroller") as SNSJoinViewController
                 snsJoinViewcontroller.memberData = MemberJoinData(id: userId, pw: userPw, nick: "", method: loginMethod)
                 self.navigationController?.pushViewController(snsJoinViewcontroller, animated: true)
             }

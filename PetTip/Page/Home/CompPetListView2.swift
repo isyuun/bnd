@@ -98,7 +98,7 @@ extension CompPetListView2 : UITableViewDelegate, UITableViewDataSource {
                 cell.lbTitle.text = pets[indexPath.row].petNm
                 
                 cell.lbSubtitle.text = pets[indexPath.row].petKindNm 
-                + " | " + Util.transDiffDateStr(pets[indexPath.row].petBrthYmd)
+                + " | " + Util.transDiffDateStr(pets[indexPath.row].age)
                     + " | " + pets[indexPath.row].sexTypNm
             }
             

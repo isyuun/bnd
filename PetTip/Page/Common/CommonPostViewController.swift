@@ -10,6 +10,7 @@ import AlamofireImage
 import DropDown
 
 class CommonPostViewController: CommonViewController2 {
+    @IBOutlet weak var tf_nickNname: UITextField2!
     @IBOutlet weak var tf_title: UITextField2!
     @IBOutlet weak var tv_memo: UITextView2!
     @IBOutlet weak var tf_hashtag: UITextField2!

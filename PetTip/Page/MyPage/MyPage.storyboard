@@ -418,10 +418,10 @@
             </objects>
             <point key="canvasLocation" x="1035.8778625954199" y="-34.507042253521128"/>
         </scene>
-        <!--User Info View Controller-->
+        <!--User Info View Controller2-->
         <scene sceneID="yNR-Nk-RkK">
             <objects>
-                <viewController id="NMw-pq-hJr" customClass="UserInfoViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NMw-pq-hJr" customClass="UserInfoViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U1M-i6-XZk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -468,13 +468,18 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxj-4P-ePW">
                                                 <rect key="frame" x="20" y="47" width="353" height="48"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OIQ-dz-G4P">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OIQ-dz-G4P" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="0.0" width="232" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="2cG-hc-RAL"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                                <integer key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bo7-qt-xZH">
                                                         <rect key="frame" x="264" y="9" width="80" height="30"/>

@@ -1,5 +1,5 @@
 //
-//  SNSJoinViewcontroller2.swift
+//  SNSJoinViewController2.swift
 //  PetTip
 //
 //  Created by isyuun on 2024/4/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SNSJoinViewcontroller2: SNSJoinViewcontroller {
+class SNSJoinViewController2: SNSJoinViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var content: UIStackView!

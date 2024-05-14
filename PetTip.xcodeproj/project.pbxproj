@@ -265,7 +265,7 @@
 		02DB38202B663B3A007D19A1 /* MyPetUpdateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB381F2B663B3A007D19A1 /* MyPetUpdateResponse.swift */; };
 		02DB38222B664EB1007D19A1 /* MyPetDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38212B664EB1007D19A1 /* MyPetDeleteRequest.swift */; };
 		02DB38242B664EBC007D19A1 /* MyPetDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38232B664EBC007D19A1 /* MyPetDeleteResponse.swift */; };
-		02DB38282B68CA09007D19A1 /* SNSJoinViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */; };
+		02DB38282B68CA09007D19A1 /* SNSJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB38272B68CA09007D19A1 /* SNSJoinViewController.swift */; };
 		02DB382C2B6B5953007D19A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02DB382B2B6B5953007D19A1 /* GoogleService-Info.plist */; };
 		02DB382E2B6CE6E7007D19A1 /* SelectWalkPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02DB382D2B6CE6E7007D19A1 /* SelectWalkPetView.swift */; };
 		02DB38302B6CE6FF007D19A1 /* SelectWalkPetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02DB382F2B6CE6FF007D19A1 /* SelectWalkPetView.xib */; };
@@ -328,6 +328,8 @@
 		5E2DC0A0814DA2B0068B1269 /* Pods_PetTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */; };
 		7B0DDAF52BF2504E0042129A /* CompPetListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF32BF2504D0042129A /* CompPetListView2.swift */; };
 		7B0DDAF62BF2504E0042129A /* CompPetListView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF42BF2504E0042129A /* CompPetListView2.xib */; };
+		7B0DDAF82BF2E55C0042129A /* JoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */; };
+		7B0DDAFA2BF2E6CD0042129A /* UserInfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */; };
 		7B250FCB2BDFC57F00171EFD /* CommonViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */; };
 		7B250FCD2BDFCA8D00171EFD /* PetProfileViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCC2BDFCA8D00171EFD /* PetProfileViewController2.swift */; };
 		7B250FD12BDFCC5D00171EFD /* PetWeightView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */; };
@@ -342,7 +344,7 @@
 		7B3C4EF62BE366E50059EE82 /* CommonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */; };
 		7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */; };
 		7B3C4EFA2BE3A6880059EE82 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */; };
-		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */; };
+		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewController2.swift */; };
 		7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */; };
 		7B714A7D2BE8690F00E89AE8 /* WalkPostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */; };
 		7B714A7F2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */; };
@@ -629,7 +631,7 @@
 		02DB381F2B663B3A007D19A1 /* MyPetUpdateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetUpdateResponse.swift; sourceTree = "<group>"; };
 		02DB38212B664EB1007D19A1 /* MyPetDeleteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetDeleteRequest.swift; sourceTree = "<group>"; };
 		02DB38232B664EBC007D19A1 /* MyPetDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPetDeleteResponse.swift; sourceTree = "<group>"; };
-		02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller.swift; sourceTree = "<group>"; };
+		02DB38272B68CA09007D19A1 /* SNSJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewController.swift; sourceTree = "<group>"; };
 		02DB382A2B6A8A38007D19A1 /* PetTip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PetTip.entitlements; sourceTree = "<group>"; };
 		02DB382B2B6B5953007D19A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02DB382D2B6CE6E7007D19A1 /* SelectWalkPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWalkPetView.swift; sourceTree = "<group>"; };
@@ -695,6 +697,8 @@
 		17E098ED0E3EB98C1A7B84FE /* Pods-PetTip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.debug.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.debug.xcconfig"; sourceTree = "<group>"; };
 		7B0DDAF32BF2504D0042129A /* CompPetListView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompPetListView2.swift; sourceTree = "<group>"; };
 		7B0DDAF42BF2504E0042129A /* CompPetListView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompPetListView2.xib; sourceTree = "<group>"; };
+		7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController2.swift; sourceTree = "<group>"; };
+		7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController2.swift; sourceTree = "<group>"; };
 		7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController3.swift; sourceTree = "<group>"; };
 		7B250FCC2BDFCA8D00171EFD /* PetProfileViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController2.swift; sourceTree = "<group>"; };
 		7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightView2.swift; sourceTree = "<group>"; };
@@ -709,7 +713,7 @@
 		7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListViewController.swift; sourceTree = "<group>"; };
 		7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewController2.swift; sourceTree = "<group>"; };
 		7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
-		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewcontroller2.swift; sourceTree = "<group>"; };
+		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewController2.swift; sourceTree = "<group>"; };
 		7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController2.swift; sourceTree = "<group>"; };
 		7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController2.swift; sourceTree = "<group>"; };
 		7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController2.swift; sourceTree = "<group>"; };
@@ -872,6 +876,7 @@
 				02A05B3D2B41426600E8ABFA /* MyPageCompPetListIEmptytemView.swift */,
 				02A05B3F2B41427000E8ABFA /* MyPageCompPetListIEmptytemView.xib */,
 				02A05B432B42A46900E8ABFA /* UserInfoViewController.swift */,
+				7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */,
 				028625082B47E8D90055E62F /* InviteCreateViewController.swift */,
 				0286250A2B47E8FC0055E62F /* InviteSetKeyViewController.swift */,
 				7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */,
@@ -1134,8 +1139,9 @@
 				02A7AAE62B54FC20002F0C03 /* FindIDViewController.swift */,
 				02A7AAE82B54FC2D002F0C03 /* FindPWViewController.swift */,
 				02A7AAEA2B552E8F002F0C03 /* JoinViewController.swift */,
-				02DB38272B68CA09007D19A1 /* SNSJoinViewcontroller.swift */,
-				7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift */,
+				7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */,
+				02DB38272B68CA09007D19A1 /* SNSJoinViewController.swift */,
+				7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewController2.swift */,
 				02A7AAE22B54F895002F0C03 /* Member.storyboard */,
 			);
 			path = Member;
@@ -1698,6 +1704,7 @@
 				02A05B4C2B44696700E8ABFA /* ResetNcknmRequest.swift in Sources */,
 				0286250B2B47E8FC0055E62F /* InviteSetKeyViewController.swift in Sources */,
 				02E3FC8D2B259B7500A1CE62 /* PetList.swift in Sources */,
+				7B0DDAF82BF2E55C0042129A /* JoinViewController2.swift in Sources */,
 				020B79792B2D5C3800C0AB2D /* WalkHistoryMonthView.swift in Sources */,
 				02DB381E2B663ACE007D19A1 /* MyPetUpdateRequest.swift in Sources */,
 				02A05B162B3F9A9A00E8ABFA /* EventListViewController.swift in Sources */,
@@ -1778,7 +1785,7 @@
 				7B3C4EF62BE366E50059EE82 /* CommonListViewController.swift in Sources */,
 				02E3FC782B257A7500A1CE62 /* RefreshToken.swift in Sources */,
 				02A05B2E2B404FC300E8ABFA /* WinnerDetailViewController.swift in Sources */,
-				02DB38282B68CA09007D19A1 /* SNSJoinViewcontroller.swift in Sources */,
+				02DB38282B68CA09007D19A1 /* SNSJoinViewController.swift in Sources */,
 				02E3FC972B25A81000A1CE62 /* MyPetTarget.swift in Sources */,
 				020B797D2B2D70A800C0AB2D /* MonthRecordRequest.swift in Sources */,
 				02A7AADC2B522A97002F0C03 /* QnAUpdateResponse.swift in Sources */,
@@ -1804,7 +1811,7 @@
 				02E00AF72B595D240092C909 /* LifeCreateResponse.swift in Sources */,
 				02A05ADC2B3D6AF700E8ABFA /* CmntUpdateRequest.swift in Sources */,
 				027F765C2B4E8D5E00429AC5 /* NoticeDtlListResponse.swift in Sources */,
-				7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewcontroller2.swift in Sources */,
+				7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewController2.swift in Sources */,
 				02A05AB92B3A771F00E8ABFA /* CmntRcmdtn.swift in Sources */,
 				02A05AF22B3E849D00E8ABFA /* DclrCreateRequest.swift in Sources */,
 				02DB37FE2B648344007D19A1 /* MyPetWeightListResponse.swift in Sources */,
@@ -1889,6 +1896,7 @@
 				020B794B2B2877DC00C0AB2D /* StoryTarget.swift in Sources */,
 				0251FD682B17126300F35EF8 /* MapNavView.swift in Sources */,
 				02EB98022B0CFF03007428AD /* SceneDelegate.swift in Sources */,
+				7B0DDAFA2BF2E6CD0042129A /* UserInfoViewController2.swift in Sources */,
 				020B79672B2B376700C0AB2D /* BackTitleBarView.swift in Sources */,
 				02A7AAD22B52168E002F0C03 /* QnAAtchUploadResponse.swift in Sources */,
 				7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */,
