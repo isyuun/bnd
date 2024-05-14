@@ -76,7 +76,8 @@ class JoinViewController: CommonPostViewController {
         guard let nicknm = tf_nickNm.text else { return }
 
         if containsSpecialCharacter(input: nicknm) {
-            self.showAlertPopup(title: "알림", msg: "특수문자는 사용 할 수 없습니다")
+            self.showSimpleAlert(msg: "닉네임은 특수문자를 사용 할 수 없습니다.")
+            self.tf_nickNm.becomeFirstResponder()
             return
         }
 
@@ -139,10 +140,19 @@ class JoinViewController: CommonPostViewController {
 
         if let nick = tf_nickNm.text {
             if nick.isEmpty {
-                showToast(msg: "닉네임을 입력해주세요")
+                self.showSimpleAlert(msg: "닉네임을 입력해주세요")
+                self.tf_nickNm.becomeFirstResponder()
                 return
-            } else if checkedNcknm == nil || checkedNcknm != tf_nickNm.text {
+            } else {
+                if containsSpecialCharacter(input: nick) {
+                    self.showSimpleAlert(msg: "닉네임은 특수문자를 사용 할 수 없습니다.")
+                    self.tf_nickNm.becomeFirstResponder()
+                    return
+                }
+            }
+            if checkedNcknm == nil || checkedNcknm != tf_nickNm.text {
                 self.showAlertPopup(title: "알림", msg: "닉네임 중복확인을 해주세요")
+                self.tf_nickNm.becomeFirstResponder()
                 return
             }
         }

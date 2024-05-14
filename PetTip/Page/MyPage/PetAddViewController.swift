@@ -34,7 +34,7 @@ class PetAddViewController: CommonPostViewController {
     @IBOutlet weak var vw_addrBg: UIView!
     @IBOutlet weak var lb_addr: UILabel!
 
-    @IBOutlet weak var tf_name: UITextField!
+    @IBOutlet weak var tf_petNm: UITextField2!
 
     @IBOutlet weak var tf_birth: UITextField!
     @IBOutlet weak var btn_birth_unkown: UIButton!
@@ -87,8 +87,8 @@ class PetAddViewController: CommonPostViewController {
         lb_addr.text = "지역 선택"
         btnNormalUI(view: vw_addrBg)
 
-        tf_name.delegate = self
-        tfNormalUI(view: tf_name)
+        tf_petNm.delegate = self
+        tfNormalUI(view: tf_petNm)
 
         tf_birth.delegate = self
         tfNormalUI(view: tf_birth)
@@ -145,7 +145,7 @@ class PetAddViewController: CommonPostViewController {
     }
 
     private func reqCloseKeyboard() {
-        tf_name.resignFirstResponder()
+        tf_petNm.resignFirstResponder()
         tf_birth.resignFirstResponder()
         tf_weight.resignFirstResponder()
     }
@@ -290,7 +290,7 @@ class PetAddViewController: CommonPostViewController {
             // } else if selectedSido == nil || selectedSigungu == nil {
             //     showToast(msg: "주소를 입력해주세요")
             //     return false
-        } else if let name = tf_name.text, name.count == 0 {
+        } else if let name = tf_petNm.text, name.count == 0 {
             showToast(msg: "이름을 입력해주세요")
             return false
         } else if btn_birth_unkown.isSelected == false, let birth = tf_birth.text, birth.count == 0 {
@@ -334,7 +334,7 @@ class PetAddViewController: CommonPostViewController {
 
     func myPet_create() {
         let petRelCd = "001"
-        let petNm = tf_name.text!
+        let petNm = tf_petNm.text!
         let petRegNo = "Y"
         let petInfoUnqNo = String(selectedPetKind!.petInfoUnqNo)
         let petBrthYmd = getBirthData()
@@ -657,7 +657,7 @@ extension PetAddViewController {
         tfNormalUI(view: textField)
     }
 
-    // override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    // func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     //     return true
     // }
 }

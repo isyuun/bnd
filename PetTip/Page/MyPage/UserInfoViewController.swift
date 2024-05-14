@@ -71,7 +71,8 @@ class UserInfoViewController: CommonPostViewController {
         guard let nicknm = tf_nickNm.text else { return }
 
         if containsSpecialCharacter(input: nicknm) {
-            self.showAlertPopup(title: "알림", msg: "특수문자는 사용 할 수 없습니다")
+            self.showSimpleAlert(msg: "닉네임은 특수문자를 사용 할 수 없습니다.")
+            self.tf_nickNm.becomeFirstResponder()
             return
         }
 
@@ -101,19 +102,34 @@ class UserInfoViewController: CommonPostViewController {
     @IBAction func onModify(_ sender: Any) {
         reqCloseKeyboard()
 
+        if let nick = tf_nickNm.text {
+            if nick.isEmpty {
+                self.showSimpleAlert(msg: "닉네임을 입력해주세요")
+                self.tf_nickNm.becomeFirstResponder()
+                return
+            } else {
+                if containsSpecialCharacter(input: nick) {
+                    self.showSimpleAlert(msg: "닉네임은 특수문자를 사용 할 수 없습니다.")
+                    self.tf_nickNm.becomeFirstResponder()
+                    return
+                }
+            }
+            if checkedNcknm == nil || checkedNcknm != tf_nickNm.text {
+                self.showAlertPopup(title: "알림", msg: "닉네임 중복확인을 해주세요")
+                self.tf_nickNm.becomeFirstResponder()
+                return
+            }
+        }
+
         isChangedNcknm = false
         isChangedPwd = false
 
         var _isChangedNcknm = false
         if let nckNm = UserDefaults.standard.value(forKey: "nckNm") as? String {
-            if nckNm != tf_nickNm.text {
-                if checkedNcknm == nil || checkedNcknm != tf_nickNm.text {
-                    self.showAlertPopup(title: "알림", msg: "닉네임 중복확인을 해주세요")
-                    return
-                } else {
-                    _isChangedNcknm = true
-                }
-            }
+            // if nckNm != tf_nickNm.text {
+            //     _isChangedNcknm = true
+            // }
+            _isChangedNcknm = nckNm != tf_nickNm.text
         }
 
         var _isChangedPwd = false
@@ -289,17 +305,17 @@ class UserInfoViewController: CommonPostViewController {
     // override func viewDidAppear(_ animated: Bool) {
     //     addKeyboardObserver()
     // }
-    // 
+    //
     // override func viewDidDisappear(_ animated: Bool) {
     //     super.viewDidDisappear(animated)
     //     removeKeyboardObserver()
     // }
-    // 
+    //
     // func addKeyboardObserver() {
     //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     //     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     // }
-    // 
+    //
     // func removeKeyboardObserver() {
     //     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     //     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)

@@ -10,19 +10,6 @@ import Toaster
 
 class CommonViewController: LoadingIndicatorViewController {
 
-    func containsSpecialCharacter(input: String) -> Bool {
-        do {
-            // 알파벳, 숫자, 한글, 공백이 아닌 문자를 나타내는 정규식 패턴
-            let regex = try NSRegularExpression(pattern: "[^A-Za-z0-9ㄱ-힣]+", options: [])
-            // 정규식 패턴과 매치되는 문자열이 있는지 확인
-            return regex.firstMatch(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count)) != nil
-        } catch {
-            // 정규식 에러 처리
-            print("Error creating regex: \(error)")
-            return false
-        }
-    }
-
     func showSimpleAlert(title: String, msg: String) {
         // 출처: https://hongssup.tistory.com/20 [Outgoing Introvert:티스토리]
         DispatchQueue.main.async {
@@ -47,12 +34,20 @@ class CommonViewController: LoadingIndicatorViewController {
         showSimpleAlert(title: "확인", msg: msg)
     }
 
+    var toast: Toast?
     func showToast(msg: String) {
-        let t = Toast(text: msg, duration: Delay.short)
-        t.view.bottomOffsetPortrait = 200 //self.view.bounds.size.height / 2
-        t.view.textInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
-        t.view.font = UIFont.systemFont(ofSize: 18)
-        t.show()
+        // 출처: https://hongssup.tistory.com/20 [Outgoing Introvert:티스토리]
+        DispatchQueue.main.async {
+            if let toast = self.toast {
+                toast.cancel()
+            } else {
+                self.toast = Toast(text: msg, duration: Delay.short)
+            }
+            self.toast?.view.bottomOffsetPortrait = 200 //self.view.bounds.size.height / 2
+            self.toast?.view.textInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+            self.toast?.view.font = UIFont.systemFont(ofSize: 18)
+            self.toast?.show()
+        }
     }
 
     func processNetworkError(_ error: MyError?) {

@@ -918,8 +918,8 @@
 			children = (
 				022B41882B1ABC7D0057323E /* CommonViewController.swift */,
 				7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */,
-				7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */,
 				7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */,
+				7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */,
 				02A05A7D2B31A27900E8ABFA /* CommonDetailViewController.swift */,
 				020B79702B2C37B900C0AB2D /* CommonDetailImageItemView.swift */,
 				020B79722B2C37DA00C0AB2D /* CommonDetailImageItemView.xib */,

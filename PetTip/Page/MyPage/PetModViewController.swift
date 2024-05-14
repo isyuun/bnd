@@ -77,7 +77,7 @@ class PetModViewController: CommonPostViewController {
         self.lb_addr.text = addrStr
 
 
-        self.tf_name.text = petDetailInfo.petNm
+        self.tf_petNm.text = petDetailInfo.petNm
 
 
         if petDetailInfo.petBrthYmd == "미상" {
@@ -136,7 +136,7 @@ class PetModViewController: CommonPostViewController {
     @IBOutlet weak var vw_addrBg: UIView!
     @IBOutlet weak var lb_addr: UILabel!
 
-    @IBOutlet weak var tf_name: UITextField!
+    @IBOutlet weak var tf_petNm: UITextField2!
 
     @IBOutlet weak var tf_birth: UITextField!
     @IBOutlet weak var btn_birth_unkown: UIButton!
@@ -187,8 +187,8 @@ class PetModViewController: CommonPostViewController {
         lb_addr.text = "지역 선택"
         btnNormalUI(view: vw_addrBg)
 
-        tf_name.delegate = self
-        tfNormalUI(view: tf_name)
+        tf_petNm.delegate = self
+        tfNormalUI(view: tf_petNm)
 
         tf_birth.delegate = self
         tfNormalUI(view: tf_birth)
@@ -236,7 +236,7 @@ class PetModViewController: CommonPostViewController {
     }
 
     private func reqCloseKeyboard() {
-        tf_name.resignFirstResponder()
+        tf_petNm.resignFirstResponder()
         tf_birth.resignFirstResponder()
     }
 
@@ -380,7 +380,7 @@ class PetModViewController: CommonPostViewController {
             // } else if let addr = lb_addr.text, addr.count == 0 {
             //     showToast(msg: "주소를 입력해주세요")
             //     return false
-        } else if let name = tf_name.text, name.count == 0 {
+        } else if let name = tf_petNm.text, name.count == 0 {
             showToast(msg: "이름을 입력해주세요")
             return false
 
@@ -419,7 +419,7 @@ class PetModViewController: CommonPostViewController {
         let ownrPetUnqNo = petDetailInfo.ownrPetUnqNo
 
         let petRelCd = petDetailInfo.petRelCD
-        let petNm = tf_name.text!
+        let petNm = tf_petNm.text!
         let petRegNo = petDetailInfo.petRegNo
         let petInfoUnqNo = String(selectedPetKind!.petInfoUnqNo)
         let petBrthYmd = getBirthData()

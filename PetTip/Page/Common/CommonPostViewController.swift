@@ -20,10 +20,18 @@ class CommonPostViewController: CommonViewController2 {
         let text = textField.text
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][text:\(String(describing: text))][range:\(range)][string:\(string)]")
         switch textField {
-        case tf_petName:
-            return range.location < tf_petName.maxLength
-        case tf_nickNname:
-            return range.location < tf_nickNname.maxLength
+        // case tf_petName:
+        //     if containsSpecialCharacter(input: string) {
+        //         self.showToast(msg: "펫명은 특수문자를 사용 할 수 없습니다.")
+        //         return false
+        //     }
+        //     return range.location < tf_petName.maxLength
+        // case tf_nickNname:
+        //     if containsSpecialCharacter(input: string) {
+        //         self.showToast(msg: "닉네임은 특수문자를 사용 할 수 없습니다.")
+        //         return false
+        //     }
+        //     return range.location < tf_nickNname.maxLength
         case tf_hashtag:
             // 입력된 문자열이 "#"로 시작하는지 확인
             if let text = text, text.hasPrefix("#") {

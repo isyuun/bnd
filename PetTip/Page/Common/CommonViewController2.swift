@@ -9,6 +9,19 @@ import UIKit
 
 extension CommonViewController {
 
+    func containsSpecialCharacter(input: String) -> Bool {
+        do {
+            // 알파벳, 숫자, 한글, 공백이 아닌 문자를 나타내는 정규식 패턴
+            let regex = try NSRegularExpression(pattern: "[^A-Za-z0-9ㄱ-힣]+", options: [])
+            // 정규식 패턴과 매치되는 문자열이 있는지 확인
+            return regex.firstMatch(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count)) != nil
+        } catch {
+            // 정규식 에러 처리
+            print("Error creating regex: \(error)")
+            return false
+        }
+    }
+
     func checkOneDecimal(textField: UITextField, range: NSRange, string: String, integer: Int = 0, decimal: Int = 1) -> Bool {
         // 입력된 문자열이 숫자 또는 소수점인지 확인합니다.
         let allowedCharacterSet = CharacterSet(charactersIn: "0123456789.")

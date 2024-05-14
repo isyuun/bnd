@@ -22,8 +22,8 @@ class PetAddViewController2: PetAddViewController {
     }
 
     override func onPetType(_ sender: Any) {
-        guard let button = sender as? UIButton else { return }
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][sender:\(button)]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][sender:\(sender)]")
+               guard let button = sender as? UIButton else { return }
         super.onPetType(sender)
 
         var petTypCd = "001"
@@ -39,5 +39,17 @@ class PetAddViewController2: PetAddViewController {
         }
 
         Global3.setPetImage(imageView: iv_profile, petTypCd: petTypCd)
+    }
+
+    override func onComplete(_ sender: Any) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][sender:\(sender)]")
+        if let petName = tf_petNm.text {
+            if containsSpecialCharacter(input: petName) {
+                self.showSimpleAlert(msg: "펫명은 특수문자를 사용 할 수 없습니다.")
+                tf_petNm.becomeFirstResponder()
+                return
+            }
+        }
+        super.onComplete(sender)
     }
 }
