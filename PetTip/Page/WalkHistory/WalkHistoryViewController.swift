@@ -161,7 +161,7 @@ class WalkHistoryViewController: CommonViewController {
     var walkList: [DailyLifeWalkList]? = nil
 
     func initRx() {
-        Global.dailyLifePets.subscribe(onNext: { [weak self] petList in
+        Global.dailyLifePetList.subscribe(onNext: { [weak self] petList in
             self?.refreshDailyLifePetList(data: petList)
         }).disposed(by: disposeBag)
 

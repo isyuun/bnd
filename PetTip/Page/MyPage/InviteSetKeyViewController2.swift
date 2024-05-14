@@ -33,7 +33,7 @@ class InviteSetKeyViewController2: InviteSetKeyViewController {
             self.stopLoading()
 
             if let petList = petList {
-                Global.dailyLifePetsBehaviorRelay.accept(petList)
+                Global.dailyLifePetListBehaviorRelay.accept(petList)
                 Global.selectedPetIndexBehaviorRelay.accept(0)
 
                 self.onBack()
@@ -46,12 +46,12 @@ class InviteSetKeyViewController2: InviteSetKeyViewController {
     }
 
     override func invtt_setKey(key: String) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         super.invtt_setKey(key: key)
     }
 
     override func invtt_setKey() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         super.invtt_setKey()
         myPet_list()
     }

@@ -484,7 +484,7 @@ class PetProfileViewController: CommonViewController {
             self.stopLoading()
 
             if let petList = petList {
-                Global.dailyLifePetsBehaviorRelay.accept(petList)
+                Global.dailyLifePetListBehaviorRelay.accept(petList)
                 Global.selectedPetIndexBehaviorRelay.accept(0)
             }
 

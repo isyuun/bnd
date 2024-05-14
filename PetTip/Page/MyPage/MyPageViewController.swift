@@ -58,7 +58,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
             self?.refreshMyPetList(data: myPetList)
         }).disposed(by: disposeBag)
 
-        Global.dailyLifePets.subscribe(onNext: { [weak self] petList in
+        Global.dailyLifePetList.subscribe(onNext: { [weak self] petList in
             self?.refreshDailyLifePetList(data: petList)
         }).disposed(by: disposeBag)
 

@@ -86,7 +86,7 @@ class StoryModViewController: CommonPostViewController {
         layout.scrollDirection = .horizontal
         cv_currSelPet.contentInset = UIEdgeInsets(top: CGFloat(insetY), left: CGFloat(insetX), bottom: CGFloat(insetY), right: CGFloat(insetX))
 
-        setCurrSelPetData(Global.dailyLifePetsBehaviorRelay.value?.pets as Any)
+        setCurrSelPetData(Global.dailyLifePetListBehaviorRelay.value?.pets as Any)
     }
 
     private var pets: [DailyLifePetList]?
@@ -144,7 +144,7 @@ class StoryModViewController: CommonPostViewController {
         layout.scrollDirection = .horizontal
         cv_selEnablePet.contentInset = UIEdgeInsets(top: CGFloat(insetY), left: CGFloat(insetX), bottom: CGFloat(insetY), right: CGFloat(insetX))
 
-        setSelectEnableData(Global.dailyLifePetsBehaviorRelay.value?.pets as Any)
+        setSelectEnableData(Global.dailyLifePetListBehaviorRelay.value?.pets as Any)
     }
 
     private func setSelectEnableData(_ data: Any) {
@@ -321,7 +321,7 @@ class StoryModViewController: CommonPostViewController {
     private func initTitleComboText() {
         arrTitleComboText.removeAll()
 
-        if let pets = Global.dailyLifePetsBehaviorRelay.value?.pets {
+        if let pets = Global.dailyLifePetListBehaviorRelay.value?.pets {
             for i in 0..<pets.count {
                 arrTitleComboText.append(String("\(pets[i].petNm)와 즐거운 산책~!"))
             }

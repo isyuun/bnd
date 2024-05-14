@@ -54,7 +54,7 @@ class StoryListViewController: CommonListViewController {
     @IBAction func onStoryWrite(_ sender: Any) {
         btn_storyWrite.backgroundColor = UIColor(hex: "#FFF54F68")
 
-        if let petList = Global.dailyLifePetsBehaviorRelay.value, petList.pets.count > 0 {
+        if let petList = Global.dailyLifePetListBehaviorRelay.value, petList.pets.count > 0 {
             self.performSegue(withIdentifier: "segueStoryListToAdd", sender: self)
         } else {
             self.showToast(msg: "등록된 펫이 없습니다")

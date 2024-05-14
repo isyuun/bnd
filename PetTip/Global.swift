@@ -49,9 +49,9 @@ class Global {
     }
 
     // DAILYLIFE_PETS
-    static var dailyLifePetsBehaviorRelay = BehaviorRelay<PetList?>(value: nil)
-    static var dailyLifePets: Observable<PetList?> {
-        return dailyLifePetsBehaviorRelay.asObservable()
+    static var dailyLifePetListBehaviorRelay = BehaviorRelay<PetList?>(value: nil)
+    static var dailyLifePetList: Observable<PetList?> {
+        return dailyLifePetListBehaviorRelay.asObservable()
     }
 
     // SELECTED PET INDEX

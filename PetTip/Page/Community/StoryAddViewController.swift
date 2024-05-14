@@ -99,7 +99,7 @@ class StoryAddViewController: CommonPostViewController {
         layout.scrollDirection = .horizontal
         cv_selPet.contentInset = UIEdgeInsets(top: CGFloat(insetY), left: CGFloat(insetX), bottom: CGFloat(insetY), right: CGFloat(insetX))
 
-        setData(Global.dailyLifePetsBehaviorRelay.value?.pets as Any)
+        setData(Global.dailyLifePetListBehaviorRelay.value?.pets as Any)
     }
 
     private var pets: [Pet]?

@@ -86,7 +86,7 @@ class MainViewController: LocationViewController {
             self?.refreshMyPetList(data: myPetList)
         }).disposed(by: disposeBag)
 
-        Global.dailyLifePets.subscribe(onNext: { [weak self] petList in
+        Global.dailyLifePetList.subscribe(onNext: { [weak self] petList in
             self?.refreshDailyLifePetList(data: petList)
         }).disposed(by: disposeBag)
 
@@ -157,7 +157,7 @@ class MainViewController: LocationViewController {
             self.stopLoading()
 
             if let petList = petList {
-                Global.dailyLifePetsBehaviorRelay.accept(petList)
+                Global.dailyLifePetListBehaviorRelay.accept(petList)
                 Global.selectedPetIndexBehaviorRelay.accept(0)
             }
 

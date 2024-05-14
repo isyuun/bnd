@@ -10,7 +10,7 @@ import AlamofireImage
 
 class SelectInvitePetView2: SelectInvitePetView {
     override func onSelectPet(_ sender: Any) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePets)]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         // super.onSelectPet(sender)
 
         if isSingleSelectMode == false {
