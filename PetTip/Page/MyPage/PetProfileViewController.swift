@@ -206,7 +206,7 @@ class PetProfileViewController: CommonViewController {
     // private var dayData = ["11월02일", "11월03일"]
     // private var weightData: [Double]! = [100, 60]
 
-    private func initPetWeightGraph() {
+    internal func initPetWeightGraph() {
         vw_lineChart.backgroundColor = .white
         vw_lineChart.noDataTextColor = UIColor.init(hex: "#FF737980")!
 

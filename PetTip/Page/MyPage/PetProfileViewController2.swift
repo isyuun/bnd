@@ -32,4 +32,20 @@ class PetProfileViewController2: PetProfileViewController {
         guard let pet = self.petInfo else { return }
         Global2.setPetImage(imageView: self.iv_profile, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
     }
+
+    override func initPetWeightGraph() {
+        super.initPetWeightGraph()
+
+        // let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        // vw_lineChart.addGestureRecognizer(tapGesture)
+    }
+
+    // 탭 제스처 핸들러
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        // 탭된 뷰 확인
+        if gesture.view == vw_lineChart {
+            // vw_lineChart가 탭되었을 때 수행할 작업 수행
+            self.showToast(msg: "길게 누르면 몸무게 수정이 가능합니다.")
+        }
+    }
 }

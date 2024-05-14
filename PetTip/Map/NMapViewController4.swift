@@ -31,7 +31,26 @@ extension Track: Equatable {
     }
 }
 
-class NMapViewController4: NMapViewController3 {
+class NMapViewController4: NMapViewController3, NMFMapViewTouchDelegate {
+
+    override func viewDidLoad() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
+        super.viewDidLoad()
+
+        mapView.touchDelegate = self
+    }
+
+    // NMFMapViewTouchDelegate 프로토콜의 콜백 메서드
+    func mapView(_ mapView: NMFMapView, didTapMap latlng: NMGLatLng, point: CGPoint) {
+        // 네이버 맵뷰가 탭되었을 때 수행할 작업을 여기에 추가
+        print("네이버 맵뷰가 탭되었습니다. 좌표: \(latlng.lat), \(latlng.lng)")
+        if let markers = self.arrEventMarker {
+            markers.forEach { marker in
+                marker.infoWindow?.close()
+            }
+        }
+    }
+
     override func selectEventMarkPet(mark: NMapViewController.EventMark) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][mark:\(mark)]")
         super.selectEventMarkPet(mark: mark)
@@ -88,9 +107,6 @@ class NMapViewController4: NMapViewController3 {
                 if let infoWindow = overlay as? NMFInfoWindow {
                     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][인포::터치][infoWindow:\(infoWindow)][marker:\(String(describing: infoWindow.marker))][mapView:\(String(describing: infoWindow.marker?.mapView))]")
                     infoWindow.marker?.mapView = nil
-                    // deleteTrack(track)
-                    // deleteMark(track)
-                    // self.arrTrack = self.arrTrack.filter { $0 !== track }
                     self.arrTrack.removeAll { $0 === track }
                     infoWindow.close()
                 }
@@ -100,31 +116,31 @@ class NMapViewController4: NMapViewController3 {
 
             let w = marker.width
             let h = marker.height
-            
-            // marker.infoWindow = infoWindow
+            let z = marker.zIndex
+            let m = 10
+
             marker.touchHandler = { /*[weak self]*/ overlay in
                 // 마커가 탭되었을 때 실행될 코드
                 NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][마커::터치][overlay:\(String(describing: overlay))][marker:\(marker)]")
                 if let marker = overlay as? NMFMarker/*, track.event != .img*/ {
-                    if (marker.zIndex == 10) {
+                    if (marker.zIndex == m) {
                         marker.width = w * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
                         marker.height = h * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
-                        // marker.zIndex = 2
+                        marker.zIndex = z
 
                         infoWindow.close()
                     } else {
                         marker.width = w * 1.1 //(32 * 1.1f).dp.toPx(context).toInt()
                         marker.height = h * 1.1 //(32 * 1.1f).dp.toPx(context).toInt()
-                        // marker.zIndex = 10
+                        marker.zIndex = m
 
                         infoWindow.open(with: marker)
                     }
-
                     if let markers = self.arrEventMarker {
                         markers.filter { $0 != marker }.forEach { otherMarker in
                             marker.width = w * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
                             marker.height = h * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
-                            // otherMarker.zIndex = 2
+                            otherMarker.zIndex = z
 
                             otherMarker.infoWindow?.close()
                         }
