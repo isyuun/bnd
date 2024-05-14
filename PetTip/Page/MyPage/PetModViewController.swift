@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class PetModViewController: CommonViewController {
+class PetModViewController: CommonPostViewController {
 
     public var petProfileViewController: PetProfileViewController?
     public var petDetailInfo: MyPetDetailData?
@@ -682,7 +682,7 @@ extension PetModViewController: AddressSelectViewControllerDelegate {
     }
 }
 
-extension PetModViewController: UITextFieldDelegate {
+extension PetModViewController {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         tfSelectedUI(view: textField)

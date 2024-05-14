@@ -283,7 +283,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="me2-95-HPu" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="me2-95-HPu" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="476" width="353" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="DZd-N3-4AH"/>
@@ -293,6 +293,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                                         <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
@@ -778,6 +781,7 @@
                         <outlet property="lb_petKind" destination="OjJ-Em-1Vb" id="lY0-om-Ils"/>
                         <outlet property="tf_birth" destination="mm3-A5-agI" id="9Ef-Bo-Tc3"/>
                         <outlet property="tf_name" destination="me2-95-HPu" id="AEd-Pv-cJ9"/>
+                        <outlet property="tf_petName" destination="me2-95-HPu" id="wmZ-Hb-l2u"/>
                         <outlet property="titleBarView" destination="3ea-9D-9pL" id="c5x-tP-lpP"/>
                         <outlet property="vw_addrBg" destination="1XV-Zr-rdr" id="27x-fs-Bnm"/>
                         <outlet property="vw_birth_unknown" destination="bw1-3g-j3e" id="FdE-i0-77X"/>
@@ -1065,7 +1069,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wt-k4-7QA" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wt-k4-7QA" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="476" width="353" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="gpt-0Y-RIu"/>
@@ -1075,6 +1079,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="insetX">
                                                         <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                        <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
@@ -1576,6 +1583,7 @@
                         <outlet property="lb_petKind" destination="tDX-ms-sgc" id="ImX-BC-S2v"/>
                         <outlet property="tf_birth" destination="5Yh-lb-zHi" id="aDp-6O-wgh"/>
                         <outlet property="tf_name" destination="7wt-k4-7QA" id="RIe-V1-fBk"/>
+                        <outlet property="tf_petName" destination="7wt-k4-7QA" id="3JV-YP-HsN"/>
                         <outlet property="tf_weight" destination="3ix-pf-pe8" id="3MQ-ml-LNL"/>
                         <outlet property="titleBarView" destination="Ced-v0-ytD" id="bXT-fp-A1F"/>
                         <outlet property="vw_addrBg" destination="mxN-P2-n54" id="fnZ-wv-QIm"/>
@@ -2427,27 +2435,27 @@
     </scenes>
     <designables>
         <designable name="3ix-pf-pe8">
-            <size key="intrinsicContentSize" width="135" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
         </designable>
         <designable name="5Yh-lb-zHi">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
         <designable name="7wt-k4-7QA">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
         <designable name="LlK-Ii-v7s">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
         </designable>
         <designable name="me2-95-HPu">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
         <designable name="mm3-A5-agI">
-            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="Vsv-0H-5D3"/>
-        <segue reference="V2Q-hP-A8g"/>
+        <segue reference="DHX-XS-apO"/>
+        <segue reference="Cay-Et-CIm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow_move" width="9.4139995574951172" height="14.597999572753906"/>

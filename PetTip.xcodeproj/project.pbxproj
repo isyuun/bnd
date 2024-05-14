@@ -330,7 +330,6 @@
 		7B0DDAF62BF2504E0042129A /* CompPetListView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF42BF2504E0042129A /* CompPetListView2.xib */; };
 		7B0DDAF82BF2E55C0042129A /* JoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */; };
 		7B0DDAFA2BF2E6CD0042129A /* UserInfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */; };
-		7B250FCB2BDFC57F00171EFD /* CommonViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */; };
 		7B250FCD2BDFCA8D00171EFD /* PetProfileViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCC2BDFCA8D00171EFD /* PetProfileViewController2.swift */; };
 		7B250FD12BDFCC5D00171EFD /* PetWeightView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */; };
 		7B250FD32BE06FC700171EFD /* MyPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */; };
@@ -699,7 +698,6 @@
 		7B0DDAF42BF2504E0042129A /* CompPetListView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompPetListView2.xib; sourceTree = "<group>"; };
 		7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController2.swift; sourceTree = "<group>"; };
 		7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController2.swift; sourceTree = "<group>"; };
-		7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController3.swift; sourceTree = "<group>"; };
 		7B250FCC2BDFCA8D00171EFD /* PetProfileViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController2.swift; sourceTree = "<group>"; };
 		7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightView2.swift; sourceTree = "<group>"; };
 		7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController2.swift; sourceTree = "<group>"; };
@@ -920,7 +918,6 @@
 			children = (
 				022B41882B1ABC7D0057323E /* CommonViewController.swift */,
 				7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */,
-				7B250FCA2BDFC57F00171EFD /* CommonViewController3.swift */,
 				7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */,
 				7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */,
 				02A05A7D2B31A27900E8ABFA /* CommonDetailViewController.swift */,
@@ -1879,7 +1876,6 @@
 				0286252F2B4D9AE10055E62F /* CustomerCenterViewController.swift in Sources */,
 				02D4D4132B20B2090086104D /* HomeStoryItemView.swift in Sources */,
 				7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */,
-				7B250FCB2BDFC57F00171EFD /* CommonViewController3.swift in Sources */,
 				020B79812B2D723900C0AB2D /* MonthRecord.swift in Sources */,
 				02A7AAD82B522909002F0C03 /* QnAModifyViewController.swift in Sources */,
 				02A05AAF2B38057400E8ABFA /* CmntCreateRequest.swift in Sources */,

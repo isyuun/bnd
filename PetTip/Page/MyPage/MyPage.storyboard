@@ -776,6 +776,7 @@
                     <navigationItem key="navigationItem" id="0fm-uk-Elw"/>
                     <connections>
                         <outlet property="tf_nickNm" destination="OIQ-dz-G4P" id="I1W-Dw-G23"/>
+                        <outlet property="tf_nickNname" destination="OIQ-dz-G4P" id="Lih-WP-5gO"/>
                         <outlet property="tf_phoneNum" destination="pae-j1-S0l" id="5MD-2Y-6CI"/>
                         <outlet property="tf_pwd" destination="hJl-YO-7AR" id="9Ug-zz-r7C"/>
                         <outlet property="tf_pwdRe" destination="CnX-CX-SyH" id="0me-HQ-xsc"/>
@@ -1358,6 +1359,11 @@
             <point key="canvasLocation" x="109.16030534351144" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="OIQ-dz-G4P">
+            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow_diagonal" width="12" height="12"/>
         <image name="icon_copy" width="20" height="20"/>

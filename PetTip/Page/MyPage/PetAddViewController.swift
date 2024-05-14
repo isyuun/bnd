@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PetAddViewController: CommonViewController2 {
+class PetAddViewController: CommonPostViewController {
 
     public var memberData: MemberJoinData?
 
@@ -657,7 +657,7 @@ extension PetAddViewController {
         tfNormalUI(view: textField)
     }
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
-    }
+    // override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    //     return true
+    // }
 }

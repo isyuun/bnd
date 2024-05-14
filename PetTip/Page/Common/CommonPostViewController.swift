@@ -10,6 +10,7 @@ import AlamofireImage
 import DropDown
 
 class CommonPostViewController: CommonViewController2 {
+    @IBOutlet weak var tf_petName: UITextField2!
     @IBOutlet weak var tf_nickNname: UITextField2!
     @IBOutlet weak var tf_title: UITextField2!
     @IBOutlet weak var tv_memo: UITextView2!
@@ -19,8 +20,10 @@ class CommonPostViewController: CommonViewController2 {
         let text = textField.text
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][text:\(String(describing: text))][range:\(range)][string:\(string)]")
         switch textField {
-        case tf_title:
-            return range.location < tf_title.maxLength
+        case tf_petName:
+            return range.location < tf_petName.maxLength
+        case tf_nickNname:
+            return range.location < tf_nickNname.maxLength
         case tf_hashtag:
             // 입력된 문자열이 "#"로 시작하는지 확인
             if let text = text, text.hasPrefix("#") {

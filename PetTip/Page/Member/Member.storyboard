@@ -147,6 +147,19 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Js-al-E47" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                                                <rect key="frame" x="20" y="194" width="390" height="48"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="48" id="rb6-v1-wVj"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                                                        <real key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-lA-yK6" userLabel="닉네임*">
                                                                 <rect key="frame" x="20" y="258" width="390" height="19"/>
                                                                 <constraints>
@@ -173,44 +186,6 @@
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 확인" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Js-al-E47" customClass="TextField" customModule="PetTip" customModuleProvider="target">
-                                                                <rect key="frame" x="20" y="194" width="390" height="48"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="48" id="rb6-v1-wVj"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
-                                                                        <real key="value" value="15"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                            </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-4t-Eoe">
-                                                                <rect key="frame" x="20" y="349" width="390" height="48"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="48" id="G9h-vG-GeF"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain">
-                                                                    <backgroundConfiguration key="background">
-                                                                        <color key="backgroundColor" red="0.33538335559999999" green="0.50926822419999995" blue="0.92945450539999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    </backgroundConfiguration>
-                                                                    <attributedString key="attributedTitle">
-                                                                        <fragment content="다음">
-                                                                            <attributes>
-                                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                <font key="NSFont" metaFont="system" size="14"/>
-                                                                                <font key="NSOriginalFont" metaFont="system" size="14"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="onComplete:" destination="iXW-2V-wfY" eventType="touchUpInside" id="LY1-8a-xNP"/>
-                                                                </connections>
-                                                            </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIy-wr-5f9">
                                                                 <rect key="frame" x="20" y="285" width="390" height="48"/>
                                                                 <subviews>
@@ -267,6 +242,31 @@
                                                                     <constraint firstAttribute="bottom" secondItem="cUh-tb-F1F" secondAttribute="bottom" constant="9" id="sjn-Kh-kjm"/>
                                                                 </constraints>
                                                             </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-4t-Eoe">
+                                                                <rect key="frame" x="20" y="349" width="390" height="48"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="48" id="G9h-vG-GeF"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain">
+                                                                    <backgroundConfiguration key="background">
+                                                                        <color key="backgroundColor" red="0.33538335559999999" green="0.50926822419999995" blue="0.92945450539999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </backgroundConfiguration>
+                                                                    <attributedString key="attributedTitle">
+                                                                        <fragment content="다음">
+                                                                            <attributes>
+                                                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <font key="NSFont" metaFont="system" size="14"/>
+                                                                                <font key="NSOriginalFont" metaFont="system" size="14"/>
+                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                            </attributes>
+                                                                        </fragment>
+                                                                    </attributedString>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="onComplete:" destination="iXW-2V-wfY" eventType="touchUpInside" id="LY1-8a-xNP"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -816,6 +816,32 @@
                                                             <constraint firstItem="Ux8-NM-aEC" firstAttribute="leading" secondItem="cvd-eW-wPR" secondAttribute="leading" constant="39" id="x23-vI-2ov"/>
                                                         </constraints>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny0-TW-a5B" userLabel="닉네임*">
+                                                        <rect key="frame" x="20" y="301" width="390" height="19"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="19" id="DXc-dP-hgH"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content=" ">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="닉네임">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                                    <font key="NSOriginalFont" metaFont="system" size="16"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="*">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njG-s7-CZ8">
                                                         <rect key="frame" x="20" y="328" width="390" height="48"/>
                                                         <subviews>
@@ -872,32 +898,6 @@
                                                             <constraint firstAttribute="bottom" secondItem="1Yw-lv-92I" secondAttribute="bottom" id="gp5-j6-2GA"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ny0-TW-a5B" userLabel="닉네임*">
-                                                        <rect key="frame" x="20" y="301" width="390" height="19"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="19" id="DXc-dP-hgH"/>
-                                                        </constraints>
-                                                        <attributedString key="attributedText">
-                                                            <fragment content=" ">
-                                                                <attributes>
-                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="닉네임">
-                                                                <attributes>
-                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
-                                                                    <font key="NSOriginalFont" metaFont="system" size="16"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment content="*">
-                                                                <attributes>
-                                                                    <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <font key="NSFont" size="16" name="AppleSDGothicNeo-Bold"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7v-Mm-vBO">
                                                         <rect key="frame" x="20" y="392" width="390" height="48"/>
                                                         <constraints>
@@ -1387,6 +1387,9 @@
         </designable>
         <designable name="RoP-I7-cle">
             <size key="intrinsicContentSize" width="76.666666666666671" height="18.666666666666668"/>
+        </designable>
+        <designable name="Ubp-Oa-ptK">
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
         </designable>
         <designable name="hsv-6W-asx">
             <size key="intrinsicContentSize" width="128.66666666666666" height="18.666666666666668"/>
