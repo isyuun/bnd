@@ -91,7 +91,7 @@ class WalkHistoryViewController: CommonViewController {
     @IBAction func onWeekPrev(_ sender: Any) {
         selectedDate = Calendar.current.date(byAdding: .day, value: -7, to: selectedDate)!
 
-        if let petList = self.dailyLifePets {
+        if let petList = self.dailyLifePetList {
             self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
         }
 
@@ -101,7 +101,7 @@ class WalkHistoryViewController: CommonViewController {
     @IBAction func onWeekNext(_ sender: Any) {
         selectedDate = Calendar.current.date(byAdding: .day, value: 7, to: selectedDate)!
 
-        if let petList = self.dailyLifePets {
+        if let petList = self.dailyLifePetList {
             self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
         }
 
@@ -115,7 +115,7 @@ class WalkHistoryViewController: CommonViewController {
         {
             walkHistoryMonthView = view
             vw_monthlyHistory.addSubview(view)
-            if let petList = dailyLifePets {
+            if let petList = dailyLifePetList {
                 view.delegate = self
                 view.initialize()
                 view.ownrPetUnqNo = petList.pets[selectedPetIndex].ownrPetUnqNo
@@ -172,14 +172,14 @@ class WalkHistoryViewController: CommonViewController {
 
     private func refreshDailyLifePetList(data: PetList?) {
         guard let petList = data else { return }
-        self.dailyLifePets = petList
+        self.dailyLifePetList = petList
     }
 
     private func refreshSelectedPetIndex(data: Int?) {
         guard let index = data else { return }
         self.selectedPetIndex = index
 
-        if let petList = self.dailyLifePets {
+        if let petList = self.dailyLifePetList {
             if (petList.pets.count > 0) {
                 let pet = petList.pets[self.selectedPetIndex]
 
@@ -269,13 +269,13 @@ class WalkHistoryViewController: CommonViewController {
     }
 
     // MARK: - SELECT MY PET
-    var dailyLifePets: PetList? = nil
+    var dailyLifePetList: PetList? = nil
 
     var bottomSheetVC: BottomSheetViewController! = nil
     var selectPetView: SelectPetView! = nil
 
     func showSelectMyPet() {
-        if (dailyLifePets == nil || dailyLifePets?.pets.count == 0) {
+        if (dailyLifePetList == nil || dailyLifePetList?.pets.count == 0) {
             return
         }
 
@@ -286,7 +286,7 @@ class WalkHistoryViewController: CommonViewController {
         if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
             bottomSheetVC.addContentSubView(v: v)
             v.initialize()
-            v.setData(dailyLifePets?.pets as Any)
+            v.setData(dailyLifePetList?.pets as Any)
             v.setSelected(self.selectedPetIndex)
             v.setDelegate(self)
         }

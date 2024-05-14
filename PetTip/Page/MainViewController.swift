@@ -21,7 +21,7 @@ extension MainViewController: UITabBarControllerDelegate {
                 walkHistoryViewController = vc
 
                 vc.selectIdxFromPrevPage = true
-                vc.dailyLifePets = dailyLifePets
+                vc.dailyLifePetList = dailyLifePetList
             } else {
                 print("# didSelect : others...")
             }
@@ -65,7 +65,7 @@ class MainViewController: LocationViewController {
         if (segue.identifier == "segueMainToMap") {
             let dest = segue.destination
             guard let vc = dest as? NMapViewController else { return }
-            vc.dailyLifePets = dailyLifePets
+            vc.dailyLifePetList = dailyLifePetList
         }
     }
 
@@ -79,7 +79,7 @@ class MainViewController: LocationViewController {
     var walkHistoryViewController: WalkHistoryViewController? = nil
 
     var myPetList: MyPetList?
-    var dailyLifePets: PetList?
+    var dailyLifePetList: PetList?
 
     func initRx() {
         Global.myPetList.subscribe(onNext: { [weak self] myPetList in
@@ -102,7 +102,7 @@ class MainViewController: LocationViewController {
 
     internal func refreshDailyLifePetList(data: PetList?) {
         guard let petList = data else { return }
-        self.dailyLifePets = petList
+        self.dailyLifePetList = petList
 
         self.bgCompPetFirstImg.isHidden = true
         self.bgCompPetSecondImg.isHidden = true
@@ -162,7 +162,7 @@ class MainViewController: LocationViewController {
             }
 
             if let error = error {
-                self.dailyLifePets = nil
+                self.dailyLifePetList = nil
                 self.showSimpleAlert(title: "PetList fail", msg: error.localizedDescription)
             }
         }
@@ -189,7 +189,7 @@ class MainViewController: LocationViewController {
 
         self.pagerView.reloadData()
 
-        if let petList = self.dailyLifePets {
+        if let petList = self.dailyLifePetList {
             if (petList.pets.count > 0) {
                 Global.petRelUnqNo = petList.pets[self.selectedPetIndex].petRelUnqNo
 
@@ -229,7 +229,7 @@ class MainViewController: LocationViewController {
 
         if (self.selectIdxFromPrevPage == false) {
             self.walkHistoryViewController?.selectIdxFromPrevPage = true
-            self.walkHistoryViewController?.dailyLifePets = self.dailyLifePets
+            self.walkHistoryViewController?.dailyLifePetList = self.dailyLifePetList
         } else {
             self.selectIdxFromPrevPage = false
         }
@@ -364,7 +364,7 @@ class MainViewController: LocationViewController {
     var selectPetView: SelectPetView! = nil
 
     func showSelectMyPet() {
-        if (dailyLifePets == nil || dailyLifePets?.pets.count == 0) {
+        if (dailyLifePetList == nil || dailyLifePetList?.pets.count == 0) {
             return
         }
 
@@ -375,7 +375,7 @@ class MainViewController: LocationViewController {
         if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
             bottomSheetVC.addContentSubView(v: v)
             v.initialize()
-            v.setData(dailyLifePets?.pets as Any)
+            v.setData(dailyLifePetList?.pets as Any)
             v.setSelected(self.selectedPetIndex)
             v.setDelegate(self)
         }
@@ -628,7 +628,7 @@ class MainViewController: LocationViewController {
 extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
-        if let pets = dailyLifePets?.pets {
+        if let pets = dailyLifePetList?.pets {
             if (pets.count == 0) { return 1 }
             return pets.count
         }
@@ -639,7 +639,7 @@ extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "PetProfItemView", at: index) as! PetProfItemView
 
-        if let pets = dailyLifePets?.pets {
+        if let pets = dailyLifePetList?.pets {
             if (pets.count > 0) {
                 let pet = pets[index]
                 Global2.setPetImage(imageView: cell.profileImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)

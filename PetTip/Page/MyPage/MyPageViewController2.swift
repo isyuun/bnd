@@ -32,14 +32,14 @@ class MyPageViewController2: MyPageViewController {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         // super.showSelectMyPetForInvite()
 
-        if (dailyLifePets == nil || dailyLifePets?.pets.count == 0) {
+        if (dailyLifePetList == nil || dailyLifePetList?.pets.count == 0) {
             self.showToast(msg: "등록된 펫이 없습니다")
             return
         }
         
         if let v = UINib(nibName: "SelectInvitePetView2", bundle: nil).instantiate(withOwner: self).first as? SelectInvitePetView2 {
             v.initialize()
-            v.setData(dailyLifePets?.pets as Any)
+            v.setData(dailyLifePetList?.pets as Any)
             v.lb_title.text = "누구를 위해 초대를 할까요?"
             v.btn_select.setAttrTitle("초대하기", 14)
             v.isSingleSelectMode = false

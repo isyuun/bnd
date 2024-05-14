@@ -51,7 +51,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
     private let disposeBag = DisposeBag()
 
     var myPetList: MyPetList?
-    var dailyLifePets: PetList?
+    var dailyLifePetList: PetList?
 
     internal func initRx() {
         Global.myPetList.subscribe(onNext: { [weak self] myPetList in
@@ -75,7 +75,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
 
     internal func refreshDailyLifePetList(data: PetList?) {
         guard let petList = data else { return }
-        self.dailyLifePets = petList
+        self.dailyLifePetList = petList
     }
 
     private func refreshUserNckNm(data: String?) {
@@ -114,14 +114,14 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
     var selectPetView: SelectPetView! = nil
 
     func showSelectMyPetForInvite() {
-        if (dailyLifePets == nil || dailyLifePets?.pets.count == 0) {
+        if (dailyLifePetList == nil || dailyLifePetList?.pets.count == 0) {
             self.showToast(msg: "등록된 펫이 없습니다")
             return
         }
 
         if let v = UINib(nibName: "SelectInvitePetView", bundle: nil).instantiate(withOwner: self).first as? SelectInvitePetView {
             v.initialize()
-            v.setData(dailyLifePets?.pets as Any)
+            v.setData(dailyLifePetList?.pets as Any)
             v.lb_title.text = "누구를 위해 초대를 할까요?"
             v.btn_select.setAttrTitle("초대하기", 14)
             v.isSingleSelectMode = false

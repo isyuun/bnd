@@ -11,7 +11,7 @@ import AVKit
 
 class NMapViewController: LocationViewController, MapBottomViewProtocol {
 
-    public var dailyLifePets: PetList?
+    public var dailyLifePetList: PetList?
     private var selectedPets = [Pet]()
 
     @IBOutlet weak var naverMapView: NMFNaverMapView!
@@ -70,7 +70,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
             self.present(bottomSheetVC, animated: false, completion: nil)
 
         } else {
-            guard let dailyLifePets = dailyLifePets else {
+            guard let dailyLifePets = dailyLifePetList else {
                 self.showNoPet()
                 return
             }
@@ -98,7 +98,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
 
         if let v = UINib(nibName: "SelectWalkPetView", bundle: nil).instantiate(withOwner: self).first as? SelectWalkPetView {
             v.initialize()
-            v.setData(dailyLifePets?.pets as Any)
+            v.setData(dailyLifePetList?.pets as Any)
             v.isSingleSelectMode = false
             v.didTapOK = { selectedPets in
                 self.didTapPopupOK()

@@ -54,14 +54,14 @@ class MainViewController2: MainViewController {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPetList:\(String(describing: myPetList))][count:\(String(describing: myPetList?.myPets.count))][\(String(describing: myPetList?.myPets))]")
         // super.showCompPetListBottomSheet()
 
-        guard let dailyLifePets = self.dailyLifePets else {
+        guard let myPetList: MyPetList = self.myPetList else {
             self.showToast(msg: "등록된 펫이 없습니다.")
             return
         }
 
-        let pets = dailyLifePets.pets
+        let myPets = myPetList.myPets
 
-        if (pets.count == 0) {
+        if (myPets.count == 0) {
             self.showToast(msg: "등록된 펫이 없습니다.")
             return
         }
@@ -73,10 +73,10 @@ class MainViewController2: MainViewController {
         if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
             bottomSheetVC.addContentSubView(v: v)
             v.initialize()
-            v.setData(pets as Any)
+            v.setData(myPets)
             v.setDelegate(self)
             compPetListView = v
-            if pets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+            if myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
         }
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
