@@ -50,21 +50,43 @@ class MainViewController2: MainViewController {
     }
 
     override func showCompPetListBottomSheet() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPetList:\(String(describing: myPetList))][count:\(String(describing: myPetList?.myPets.count))][\(String(describing: myPetList?.myPets))]")
-        // super.showCompPetListBottomSheet()
+        // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
+        // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPetList:\(String(describing: myPetList))][count:\(String(describing: myPetList?.myPets.count))][myPets:\(String(describing: myPetList?.myPets))]")
+        // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][dailyLifePetList:\(String(describing: dailyLifePetList))][count:\(String(describing: myPetList?.myPets.count))][pets:\(String(describing: dailyLifePetList?.pets))]")
+        super.showCompPetListBottomSheet()
 
         guard let myPetList: MyPetList = self.myPetList else {
-            self.showToast(msg: "등록된 펫이 없습니다.")
+            self.showSimpleAlert(msg: "등록된 펫이 없습니다.")
             return
         }
 
-        let myPets = myPetList.myPets
-
-        if (myPets.count == 0) {
-            self.showToast(msg: "등록된 펫이 없습니다.")
+        if (myPetList.myPets.count == 0) {
+            self.showSimpleAlert(msg: "등록된 펫이 없습니다.")
             return
         }
+
+        var myPets = [MyPet]()
+
+        myPetList.myPets.forEach { myPet in
+            switch (myPet.mngrType) {
+            case "M":   //관리중
+                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
+                myPets.append(myPet)
+                break
+            case "I":   //참여중
+                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
+                myPets.append(myPet)
+                break
+            case "C":   //동행중단
+                break
+            default:
+                break
+            }
+        }
+
+        // myPets.forEach { myPet in
+        //     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
+        // }
 
         bottomSheetVC = BottomSheetViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen

@@ -387,25 +387,25 @@ class MainViewController: LocationViewController {
     var compPetListView: CompPetListView! = nil
 
     func showCompPetListBottomSheet() {
-        if (myPetList == nil || myPetList?.myPets.count == 0) {
-            return
-        }
-
-        bottomSheetVC = BottomSheetViewController()
-        bottomSheetVC.modalPresentationStyle = .overFullScreen
-        bottomSheetVC.dismissIndicatorView.isHidden = true
-        bottomSheetVC.isDynamicHeight = true
-        if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
-            bottomSheetVC.addContentSubView(v: v)
-            v.initialize()
-            v.setData(myPetList?.myPets as Any)
-            v.setDelegate(self)
-            compPetListView = v
-            if let _myPetList = myPetList {
-                if _myPetList.myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
-            }
-        }
-        self.present(bottomSheetVC, animated: false, completion: nil)
+        // if (myPetList == nil || myPetList?.myPets.count == 0) {
+        //     return
+        // }
+        // 
+        // bottomSheetVC = BottomSheetViewController()
+        // bottomSheetVC.modalPresentationStyle = .overFullScreen
+        // bottomSheetVC.dismissIndicatorView.isHidden = true
+        // bottomSheetVC.isDynamicHeight = true
+        // if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
+        //     bottomSheetVC.addContentSubView(v: v)
+        //     v.initialize()
+        //     v.setData(myPetList?.myPets as Any)
+        //     v.setDelegate(self)
+        //     compPetListView = v
+        //     if let _myPetList = myPetList {
+        //         if _myPetList.myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+        //     }
+        // }
+        // self.present(bottomSheetVC, animated: false, completion: nil)
     }
 
     @IBAction func onShowCompPetListBottomSheet(_ sender: Any) {
