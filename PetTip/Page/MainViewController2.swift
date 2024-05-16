@@ -68,11 +68,8 @@ class MainViewController2: MainViewController {
             }
         }
 
-        myPetList?.myPets.forEach { myPet in
-            NSLog("[LOG][I][myPets?][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
-        }
         myPets.forEach { myPet in
-            NSLog("[LOG][I][myPets!][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
+            NSLog("[LOG][I][myPets][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
         }
 
         self.bottomSheetVC = BottomSheetViewController()

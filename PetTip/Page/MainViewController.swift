@@ -389,26 +389,26 @@ class MainViewController: LocationViewController {
     var compPetListView: CompPetListView? = nil
 
     func showCompPetListBottomSheet() {
-        guard let myPetList = self.myPetList else { return }
-        if (myPetList == nil || myPetList.myPets.count == 0) {
-            return
-        }
-
-        self.bottomSheetVC = BottomSheetViewController()
-        if let bottomSheetVC = self.bottomSheetVC {
-            bottomSheetVC.modalPresentationStyle = .overFullScreen
-            bottomSheetVC.dismissIndicatorView.isHidden = true
-            bottomSheetVC.isDynamicHeight = true
-            if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
-                bottomSheetVC.addContentSubView(v: v)
-                v.initialize()
-                v.setData(myPetList.myPets)
-                v.setDelegate(self)
-                compPetListView = v
-                if myPetList.myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
-            }
-            self.present(bottomSheetVC, animated: false, completion: nil)
-        }
+        // guard let myPetList = self.myPetList else { return }
+        // if (myPetList == nil || myPetList.myPets.count == 0) {
+        //     return
+        // }
+        // 
+        // self.bottomSheetVC = BottomSheetViewController()
+        // if let bottomSheetVC = self.bottomSheetVC {
+        //     bottomSheetVC.modalPresentationStyle = .overFullScreen
+        //     bottomSheetVC.dismissIndicatorView.isHidden = true
+        //     bottomSheetVC.isDynamicHeight = true
+        //     if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
+        //         bottomSheetVC.addContentSubView(v: v)
+        //         v.initialize()
+        //         v.setData(myPetList.myPets)
+        //         v.setDelegate(self)
+        //         compPetListView = v
+        //         if myPetList.myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+        //     }
+        //     self.present(bottomSheetVC, animated: false, completion: nil)
+        // }
     }
 
     @IBAction func onShowCompPetListBottomSheet(_ sender: Any) {
