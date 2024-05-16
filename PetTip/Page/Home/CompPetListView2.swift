@@ -18,11 +18,5 @@ class CompPetListView2: CompPetListView {
     override func onPetManage(_ sender: Any) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][sender:\(sender)]")
         super.onPetManage(sender)
-
-        if (delegate != nil) {
-            if let myPets = self.myPets, let indexPath = tableView.indexPathForSelectedRow {
-                delegate.onPetManage(myPet: myPets[indexPath.row])
-            }
-        }
     }
 }
