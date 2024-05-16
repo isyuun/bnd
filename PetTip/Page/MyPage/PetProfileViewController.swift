@@ -197,7 +197,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     // MARK: - PET WEIGHT
-    private var arrWeight: [MyPetWeightData]?
+    internal var arrWeight: [MyPetWeightData]?
 
     internal var dayData: [String] = []
     internal var weightData: [Double]! = []
@@ -207,54 +207,54 @@ class PetProfileViewController: CommonViewController {
     // private var weightData: [Double]! = [100, 60]
 
     internal func initPetWeightGraph() {
-        vw_lineChart.backgroundColor = .white
-        vw_lineChart.noDataTextColor = UIColor.init(hex: "#FF737980")!
-
-        vw_lineChart.highlightPerTapEnabled = true
-        vw_lineChart.highlightPerDragEnabled = true
-        vw_lineChart.doubleTapToZoomEnabled = false
-        vw_lineChart.xAxis.labelPosition = .bottom
-        vw_lineChart.xAxis.drawGridLinesEnabled = false
-        vw_lineChart.xAxis.avoidFirstLastClippingEnabled = true
-
-        vw_lineChart.leftAxis.axisMaximum = (weightData.max() ?? 80.0) + 5.0
-        vw_lineChart.leftAxis.axisMinimum = (weightData.min() ?? 30.0) - 5.0
-
-        vw_lineChart.rightAxis.enabled = false
-        vw_lineChart.legend.enabled = false
-        vw_lineChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
-
-        vw_lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData)
-        vw_lineChart.xAxis.granularity = 1
-
-        setLineData(lineChartView: vw_lineChart, lineChartDataEntries: entryData(values: self.weightData))
-
-        vw_lineChart.setVisibleXRangeMaximum(10)
-        vw_lineChart.setVisibleXRangeMinimum(5)
-
-        vw_lineChart.xAxis.setLabelCount(dayData.count, force: true)
-
-        vw_lineChart.leftAxis.axisMaximum = (weightData.max() ?? 80.0) + 5.0
-        vw_lineChart.leftAxis.axisMinimum = (weightData.min() ?? 30.0) - 5.0
-
-        if weightData.count == 1 {
-            vw_lineChart.xAxis.axisMinLabels = 1
-            vw_lineChart.xAxis.labelCount = 1
-            vw_lineChart.setVisibleXRangeMinimum(500)
-            vw_lineChart.xAxis.avoidFirstLastClippingEnabled = false
-        }
-
-        let longPressgesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressDetected(gesture:)))
-        longPressgesture.allowableMovement = 50
-        self.vw_lineChart.addGestureRecognizer(longPressgesture)
-
-        let marker = BalloonMarker(color: UIColor(white: 200 / 255, alpha: 0.75),
-                                   font: .systemFont(ofSize: 11),
-                                   textColor: .darkText,
-                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-        marker.chartView = vw_lineChart
-        marker.minimumSize = CGSize(width: 50, height: 10)
-        vw_lineChart.marker = marker
+        // vw_lineChart.backgroundColor = .white
+        // vw_lineChart.noDataTextColor = UIColor.init(hex: "#FF737980")!
+        // 
+        // vw_lineChart.highlightPerTapEnabled = true
+        // vw_lineChart.highlightPerDragEnabled = true
+        // vw_lineChart.doubleTapToZoomEnabled = false
+        // vw_lineChart.xAxis.labelPosition = .bottom
+        // vw_lineChart.xAxis.drawGridLinesEnabled = false
+        // vw_lineChart.xAxis.avoidFirstLastClippingEnabled = true
+        // 
+        // vw_lineChart.leftAxis.axisMaximum = (weightData.max() ?? 80.0) + 5.0
+        // vw_lineChart.leftAxis.axisMinimum = (weightData.min() ?? 30.0) - 5.0
+        // 
+        // vw_lineChart.rightAxis.enabled = false
+        // vw_lineChart.legend.enabled = false
+        // vw_lineChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
+        // 
+        // vw_lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData)
+        // vw_lineChart.xAxis.granularity = 1
+        // 
+        // setLineData(lineChartView: vw_lineChart, lineChartDataEntries: entryData(values: self.weightData))
+        // 
+        // vw_lineChart.setVisibleXRangeMaximum(10)
+        // vw_lineChart.setVisibleXRangeMinimum(5)
+        // 
+        // vw_lineChart.xAxis.setLabelCount(dayData.count, force: true)
+        // 
+        // vw_lineChart.leftAxis.axisMaximum = (weightData.max() ?? 80.0) + 5.0
+        // vw_lineChart.leftAxis.axisMinimum = (weightData.min() ?? 30.0) - 5.0
+        // 
+        // if weightData.count == 1 {
+        //     vw_lineChart.xAxis.axisMinLabels = 1
+        //     vw_lineChart.xAxis.labelCount = 1
+        //     vw_lineChart.setVisibleXRangeMinimum(500)
+        //     vw_lineChart.xAxis.avoidFirstLastClippingEnabled = false
+        // }
+        // 
+        // let longPressgesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressDetected(gesture:)))
+        // longPressgesture.allowableMovement = 50
+        // self.vw_lineChart.addGestureRecognizer(longPressgesture)
+        // 
+        // let marker = BalloonMarker(color: UIColor(white: 200 / 255, alpha: 0.75),
+        //                            font: .systemFont(ofSize: 11),
+        //                            textColor: .darkText,
+        //                            insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
+        // marker.chartView = vw_lineChart
+        // marker.minimumSize = CGSize(width: 50, height: 10)
+        // vw_lineChart.marker = marker
     }
 
     @objc func longPressDetected(gesture: UILongPressGestureRecognizer) {
@@ -268,7 +268,7 @@ class PetProfileViewController: CommonViewController {
         }
     }
 
-    private func setLineData(lineChartView: LineChartView, lineChartDataEntries: [ChartDataEntry]) {
+    internal func setLineData(lineChartView: LineChartView, lineChartDataEntries: [ChartDataEntry]) {
         let lineChartdataSet = LineChartDataSet(entries: lineChartDataEntries, label: "kg")
         lineChartdataSet.colors = [UIColor.init(hex: "#FFF54F68")!]
         lineChartdataSet.circleColors = [UIColor.init(hex: "#FFF54F68")!]
@@ -279,7 +279,7 @@ class PetProfileViewController: CommonViewController {
         lineChartView.data = lineChartData
     }
 
-    private func entryData(values: [Double]) -> [ChartDataEntry] {
+    internal func entryData(values: [Double]) -> [ChartDataEntry] {
         var lineDataEntries: [ChartDataEntry] = []
 
         for i in 0 ..< values.count {
@@ -332,35 +332,35 @@ class PetProfileViewController: CommonViewController {
         }
     }
 
-    private func onModifyPetWeight(seq: Int) {
-        guard let arrWeight = arrWeight else { return }
-
-        let petWeightView = UINib(nibName: "PetWeightView", bundle: nil).instantiate(withOwner: self).first as! PetWeightView2
-        petWeightView.initialize(viewMode: .MODIFY)
-        petWeightView.tf_date.text = String(dayData[seq])
-        petWeightView.tf_weight.text = String(weightData[seq])
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
-        let date = dateFormatter.date(from: petWeightView.tf_date.text!)
-        petWeightView.targetDate = date
-
-        petWeightView.didTapOK = { date, weight in
-            self.didTapPopupOK()
-
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyyMMdd"
-            let strDate = dateFormatter.string(from: date)
-
-            self.weight_update(crtrYmd: strDate, petDtlUnqNo: arrWeight[seq].petDtlUnqNo, wghtVl: weight)
-        }
-        petWeightView.didTapCancel = {
-            self.didTapPopupCancel()
-
-            self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo)
-        }
-
-        self.popupShow(contentView: petWeightView, wSideMargin: 40, isTapCancel: true)
+    internal func onModifyPetWeight(seq: Int) {
+        // guard let arrWeight = arrWeight else { return }
+        // 
+        // let petWeightView = UINib(nibName: "PetWeightView", bundle: nil).instantiate(withOwner: self).first as! PetWeightView2
+        // petWeightView.initialize(viewMode: .MODIFY)
+        // petWeightView.tf_date.text = String(dayData[seq])
+        // petWeightView.tf_weight.text = String(weightData[seq])
+        // 
+        // let dateFormatter = DateFormatter()
+        // dateFormatter.dateFormat = "yyyy.MM.dd"
+        // let date = dateFormatter.date(from: petWeightView.tf_date.text!)
+        // petWeightView.targetDate = date
+        // 
+        // petWeightView.didTapOK = { date, weight in
+        //     self.didTapPopupOK()
+        // 
+        //     let dateFormatter = DateFormatter()
+        //     dateFormatter.dateFormat = "yyyyMMdd"
+        //     let strDate = dateFormatter.string(from: date)
+        // 
+        //     self.weight_update(crtrYmd: strDate, petDtlUnqNo: arrWeight[seq].petDtlUnqNo, wghtVl: weight)
+        // }
+        // petWeightView.didTapCancel = {
+        //     self.didTapPopupCancel()
+        // 
+        //     self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo)
+        // }
+        // 
+        // self.popupShow(contentView: petWeightView, wSideMargin: 40, isTapCancel: true)
     }
 
     @IBAction func onAddPetWeight(_ sender: Any) {
@@ -409,7 +409,7 @@ class PetProfileViewController: CommonViewController {
         }
     }
 
-    private func weight_update(crtrYmd: String, petDtlUnqNo: Int, wghtVl: String) {
+    internal func weight_update(crtrYmd: String, petDtlUnqNo: Int, wghtVl: String) {
         //self.startLoading()
 
         let request = MyPetWeightUpdateRequest(crtrYmd: crtrYmd, petDtlUnqNo: petDtlUnqNo, wghtVl: wghtVl)
@@ -434,7 +434,7 @@ class PetProfileViewController: CommonViewController {
         }
     }
 
-    private func weight_delete(petDtlUnqNo: Int) {
+    internal func weight_delete(petDtlUnqNo: Int) {
         //self.startLoading()
 
         let request = MyPetWeightDeleteRequest(petDtlUnqNo: petDtlUnqNo)
