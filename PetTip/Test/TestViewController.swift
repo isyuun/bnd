@@ -176,19 +176,21 @@ class TestViewController: CommonViewController {
 
     func showSelectMyPet() {
 
-        bottomSheetVC = BottomSheetViewController()
-        bottomSheetVC.modalPresentationStyle = .overFullScreen
-        bottomSheetVC.dismissIndicatorView.isHidden = true
-        // bottomSheetVC.isDynamicHeight = true
-        if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
-            bottomSheetVC.addContentSubView(v: v)
-            v.initialize()
-            v.setData(pets)
-            // v.setDelegate(self)
-            // selectPetView = v
-            // if (names.count > 0) { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+        self.bottomSheetVC = BottomSheetViewController()
+        if let bottomSheetVC = self.bottomSheetVC {
+            bottomSheetVC.modalPresentationStyle = .overFullScreen
+            bottomSheetVC.dismissIndicatorView.isHidden = true
+            // bottomSheetVC.isDynamicHeight = true
+            if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
+                bottomSheetVC.addContentSubView(v: v)
+                v.initialize()
+                v.setData(pets)
+                // v.setDelegate(self)
+                // selectPetView = v
+                // if (names.count > 0) { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+            }
+            self.present(bottomSheetVC, animated: false, completion: nil)
         }
-        self.present(bottomSheetVC, animated: false, completion: nil)
     }
 
     // MARK: - Dynamic height UISCrollView inside Custom View
@@ -204,23 +206,25 @@ class TestViewController: CommonViewController {
 
     // TestTableViewInSheetView
 
-    var bottomSheetVC: BottomSheetViewController! = nil
-    var compPetListView: CompPetListView! = nil
+    var bottomSheetVC: BottomSheetViewController? = nil
+    var compPetListView: CompPetListView? = nil
 
     func showBottomSheet() {
-        // bottomSheetVC = BottomSheetViewController()
-        // bottomSheetVC.modalPresentationStyle = .overFullScreen
-        // bottomSheetVC.dismissIndicatorView.isHidden = true
-        // bottomSheetVC.isDynamicHeight = true
-        // if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
-        //     bottomSheetVC.addContentSubView(v: v)
-        //     v.initialize()
-        //     v.setData(names)
-        //     v.setDelegate(self)
-        //     compPetListView = v
-        //     if (names.count > 0) { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+        // self.bottomSheetVC = BottomSheetViewController()
+        // if let bottomSheetVC = self.bottomSheetVC {
+        //     bottomSheetVC.modalPresentationStyle = .overFullScreen
+        //     bottomSheetVC.dismissIndicatorView.isHidden = true
+        //     bottomSheetVC.isDynamicHeight = true
+        //     if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
+        //         bottomSheetVC.addContentSubView(v: v)
+        //         v.initialize()
+        //         v.setData(names)
+        //         v.setDelegate(self)
+        //         compPetListView = v
+        //         if (names.count > 0) { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+        //     }
+        //     self.present(bottomSheetVC, animated: false, completion: nil)
         // }
-        // self.present(bottomSheetVC, animated: false, completion: nil)
     }
 }
 

@@ -26,7 +26,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
 
     var bWalkingState = false
 
-    var bottomSheetVC: BottomSheetViewController! = nil
+    var bottomSheetVC: BottomSheetViewController? = nil
     var mapBottomView: MapBottomView! = nil
 
     var mapSnapImg: UIImage? = nil
@@ -58,16 +58,18 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
                 self?.mapSnapImg = image
             })
 
-            bottomSheetVC = BottomSheetViewController()
-            bottomSheetVC.modalPresentationStyle = .overFullScreen
-            bottomSheetVC.dismissIndicatorView.isHidden = true
-            if let v = UINib(nibName: "MapBottomView", bundle: nil).instantiate(withOwner: self).first as? MapBottomView {
-                bottomSheetVC.addContentSubView(v: v)
-                v.initialize()
-                v.setDelegate(self)
-                mapBottomView = v
+            self.bottomSheetVC = BottomSheetViewController()
+            if let bottomSheetVC = self.bottomSheetVC {
+                bottomSheetVC.modalPresentationStyle = .overFullScreen
+                bottomSheetVC.dismissIndicatorView.isHidden = true
+                if let v = UINib(nibName: "MapBottomView", bundle: nil).instantiate(withOwner: self).first as? MapBottomView {
+                    bottomSheetVC.addContentSubView(v: v)
+                    v.initialize()
+                    v.setDelegate(self)
+                    mapBottomView = v
+                }
+                self.present(bottomSheetVC, animated: false, completion: nil)
             }
-            self.present(bottomSheetVC, animated: false, completion: nil)
 
         } else {
             guard let dailyLifePets = dailyLifePetList else {
@@ -616,7 +618,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
     func mapBottomViewOnExit() {
         stopWalkingProcess()
 
-        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC?.hideBottomSheetAndGoBack()
         bottomSheetVC = nil
 
         mapBottomView = nil
@@ -627,7 +629,7 @@ class NMapViewController: LocationViewController, MapBottomViewProtocol {
     }
 
     func mapBottomViewOnContinue() {
-        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC?.hideBottomSheetAndGoBack()
         bottomSheetVC = nil
 
         mapBottomView = nil

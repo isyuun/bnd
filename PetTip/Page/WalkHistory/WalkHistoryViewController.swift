@@ -271,7 +271,7 @@ class WalkHistoryViewController: CommonViewController {
     // MARK: - SELECT MY PET
     var dailyLifePetList: PetList? = nil
 
-    var bottomSheetVC: BottomSheetViewController! = nil
+    var bottomSheetVC: BottomSheetViewController? = nil
     var selectPetView: SelectPetView! = nil
 
     func showSelectMyPet() {
@@ -279,18 +279,20 @@ class WalkHistoryViewController: CommonViewController {
             return
         }
 
-        bottomSheetVC = BottomSheetViewController()
-        bottomSheetVC.modalPresentationStyle = .overFullScreen
-        bottomSheetVC.dismissIndicatorView.isHidden = true
-//        bottomSheetVC.isDynamicHeight = true
-        if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
-            bottomSheetVC.addContentSubView(v: v)
-            v.initialize()
-            v.setData(dailyLifePetList?.pets as Any)
-            v.setSelected(self.selectedPetIndex)
-            v.setDelegate(self)
+        self.bottomSheetVC = BottomSheetViewController()
+        if let bottomSheetVC = self.bottomSheetVC {
+            bottomSheetVC.modalPresentationStyle = .overFullScreen
+            bottomSheetVC.dismissIndicatorView.isHidden = true
+            // bottomSheetVC.isDynamicHeight = true
+            if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
+                bottomSheetVC.addContentSubView(v: v)
+                v.initialize()
+                v.setData(dailyLifePetList?.pets as Any)
+                v.setSelected(self.selectedPetIndex)
+                v.setDelegate(self)
+            }
+            self.present(bottomSheetVC, animated: false, completion: nil)
         }
-        self.present(bottomSheetVC, animated: false, completion: nil)
     }
 
     // MARK: - Bottom TabBar
@@ -353,7 +355,7 @@ extension WalkHistoryViewController: LogoTitleBarViewProtocol {
 // MARK: - SELECT PET VIEW DELEGATE
 extension WalkHistoryViewController: SelectPetViewProtocol {
     func onSelectPet(_ selectedIdx: Int) {
-        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC?.hideBottomSheetAndGoBack()
         bottomSheetVC = nil
 
         selectPetView = nil

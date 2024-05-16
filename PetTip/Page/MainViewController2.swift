@@ -29,11 +29,15 @@ class MainViewController2: MainViewController {
         super.refreshDailyLifePetList(data: data)
     }
 
+    override func onShowCompPetListBottomSheet(_ sender: Any) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
+        super.onShowCompPetListBottomSheet(sender)
+    }
+
     override func showCompPetListBottomSheet() {
-        // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPetList:\(String(describing: myPetList))][count:\(String(describing: myPetList?.myPets.count))][myPets:\(String(describing: myPetList?.myPets))]")
         // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][dailyLifePetList:\(String(describing: dailyLifePetList))][count:\(String(describing: myPetList?.myPets.count))][pets:\(String(describing: dailyLifePetList?.pets))]")
-        super.showCompPetListBottomSheet()
 
         let myPetList: MyPetList? = self.myPetList
 
@@ -52,11 +56,9 @@ class MainViewController2: MainViewController {
         myPetList?.myPets.forEach { myPet in
             switch (myPet.mngrType) {
             case "M": //관리중
-                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
                 myPets.append(myPet)
                 break
             case "I": //참여중
-                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
                 myPets.append(myPet)
                 break
             case "C": //동행중단
@@ -67,25 +69,26 @@ class MainViewController2: MainViewController {
         }
 
         myPetList?.myPets.forEach { myPet in
-            NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
+            NSLog("[LOG][I][myPets?][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
         }
-        myPetList?.myPets = myPets
-        myPetList?.myPets.forEach { myPet in
-            NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
+        myPets.forEach { myPet in
+            NSLog("[LOG][I][myPets!][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
         }
 
-        bottomSheetVC = BottomSheetViewController()
-        bottomSheetVC.modalPresentationStyle = .overFullScreen
-        bottomSheetVC.dismissIndicatorView.isHidden = true
-        bottomSheetVC.isDynamicHeight = true
-        if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
-            bottomSheetVC.addContentSubView(v: v)
-            v.initialize()
-            v.setData(myPets)
-            v.setDelegate(self)
-            compPetListView = v
-            if myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+        self.bottomSheetVC = BottomSheetViewController()
+        if let bottomSheetVC = self.bottomSheetVC {
+            bottomSheetVC.modalPresentationStyle = .overFullScreen
+            bottomSheetVC.dismissIndicatorView.isHidden = true
+            bottomSheetVC.isDynamicHeight = true
+            if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView2 {
+                bottomSheetVC.addContentSubView(v: v)
+                v.initialize()
+                v.setData(myPets)
+                v.setDelegate(self)
+                compPetListView = v
+                if myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+            }
+            self.present(bottomSheetVC, animated: false, completion: nil)
         }
-        self.present(bottomSheetVC, animated: false, completion: nil)
     }
 }

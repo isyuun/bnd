@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="1212.9770992366412" y="1361.9718309859156"/>
         </scene>
-        <!--Main View Controller3-->
+        <!--Main View Controller2-->
         <scene sceneID="gSb-NZ-EFb">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="5N0-y7-nND" customClass="MainViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="5N0-y7-nND" customClass="MainViewController2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gmq-Yu-xgZ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,10 +186,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3kq-xN-9GG" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="1374.3333333333333"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U14-5O-1YR">
+                                                <rect key="frame" x="0.0" y="0.0" width="430" height="381"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="381" id="EaQ-tg-lZc"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dw-mf-o6H">
                                                 <rect key="frame" x="0.0" y="380" width="430" height="80"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-f1-PIL">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IM6-f1-PIL" customClass="UIControl">
                                                         <rect key="frame" x="87.666666666666686" y="20" width="255" height="36"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="He1-q0-ch9">
@@ -278,9 +285,6 @@
                                                                     <constraint firstItem="RE5-vu-sA0" firstAttribute="centerX" secondItem="K3z-ey-CmL" secondAttribute="centerX" id="Rlq-QB-lVj"/>
                                                                     <constraint firstAttribute="width" constant="90" id="a1W-ld-Chw"/>
                                                                 </constraints>
-                                                                <connections>
-                                                                    <action selector="onShowCompPetListBottomSheet:" destination="5N0-y7-nND" eventType="touchUpInside" id="HZ3-PM-pFh"/>
-                                                                </connections>
                                                             </view>
                                                         </subviews>
                                                         <constraints>
@@ -299,6 +303,9 @@
                                                             <constraint firstItem="Udq-vg-i98" firstAttribute="top" secondItem="IM6-f1-PIL" secondAttribute="top" id="s7m-tp-Dgb"/>
                                                             <constraint firstItem="byc-mn-0W7" firstAttribute="top" secondItem="IM6-f1-PIL" secondAttribute="top" id="vI6-sM-36l"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="onShowCompPetListBottomSheet:" destination="5N0-y7-nND" eventType="valueChanged" id="jO9-v9-Gdf"/>
+                                                        </connections>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -306,13 +313,6 @@
                                                     <constraint firstAttribute="height" constant="80" id="PGm-S4-5P5"/>
                                                     <constraint firstItem="IM6-f1-PIL" firstAttribute="centerX" secondItem="6dw-mf-o6H" secondAttribute="centerX" id="ch6-JC-JHq"/>
                                                     <constraint firstItem="IM6-f1-PIL" firstAttribute="top" secondItem="6dw-mf-o6H" secondAttribute="top" constant="20" id="ftw-t1-1FT"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U14-5O-1YR">
-                                                <rect key="frame" x="0.0" y="0.0" width="430" height="381"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="381" id="EaQ-tg-lZc"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_pattern" translatesAutoresizingMaskIntoConstraints="NO" id="lTm-tf-lfr">

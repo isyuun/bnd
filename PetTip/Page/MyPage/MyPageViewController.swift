@@ -109,7 +109,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
         self.moveLoginPage()
     }
 
-    var bottomSheetVC: BottomSheetViewController! = nil
+    var bottomSheetVC: BottomSheetViewController? = nil
 
     var selectPetView: SelectPetView! = nil
 
@@ -174,7 +174,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
 
     // MARK: - SELECT PET VIEW DELEGATE
     func onSelectPet(_ selectedIdx: Int) {
-        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC?.hideBottomSheetAndGoBack()
         bottomSheetVC = nil
 
         selectPetView = nil

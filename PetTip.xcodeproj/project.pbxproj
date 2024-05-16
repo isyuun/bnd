@@ -326,7 +326,6 @@
 		02EB98072B0CFF03007428AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02EB98052B0CFF03007428AD /* Main.storyboard */; };
 		02EB98092B0CFF05007428AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02EB98082B0CFF05007428AD /* Assets.xcassets */; };
 		5E2DC0A0814DA2B0068B1269 /* Pods_PetTip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */; };
-		7B055DCD2BF5B7160049B2EF /* MainViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B055DCC2BF5B7160049B2EF /* MainViewController3.swift */; };
 		7B055DCF2BF5B89F0049B2EF /* CompPetListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B055DCE2BF5B89F0049B2EF /* CompPetListView2.swift */; };
 		7B0DDAF52BF2504E0042129A /* _CompPetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF32BF2504D0042129A /* _CompPetListView.swift */; };
 		7B0DDAF62BF2504E0042129A /* _CompPetListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */; };
@@ -696,7 +695,6 @@
 		02EB98082B0CFF05007428AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02EB980D2B0CFF05007428AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E098ED0E3EB98C1A7B84FE /* Pods-PetTip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.debug.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.debug.xcconfig"; sourceTree = "<group>"; };
-		7B055DCC2BF5B7160049B2EF /* MainViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController3.swift; sourceTree = "<group>"; };
 		7B055DCE2BF5B89F0049B2EF /* CompPetListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompPetListView2.swift; sourceTree = "<group>"; };
 		7B0DDAF32BF2504D0042129A /* _CompPetListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _CompPetListView.swift; sourceTree = "<group>"; };
 		7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _CompPetListView.xib; sourceTree = "<group>"; };
@@ -808,7 +806,6 @@
 				7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */,
 				022B418E2B1B22660057323E /* MainViewController.swift */,
 				7BD347E62BDF678700EFAF59 /* MainViewController2.swift */,
-				7B055DCC2BF5B7160049B2EF /* MainViewController3.swift */,
 				022B41A92B1E05510057323E /* Common */,
 				022B41AE2B1E32FC0057323E /* Home */,
 				022B41962B1C43860057323E /* WalkHistory */,
@@ -1683,7 +1680,6 @@
 				02DB380A2B64D486007D19A1 /* MyPetWeightUpdateResponse.swift in Sources */,
 				028625072B47CD250055E62F /* MyPetInvttCreateResponse.swift in Sources */,
 				7BE9A6B12BED494F006E10E7 /* Global4.swift in Sources */,
-				7B055DCD2BF5B7160049B2EF /* MainViewController3.swift in Sources */,
 				02A05B582B47886B00E8ABFA /* CommonPopupView.swift in Sources */,
 				022B41912B1B649D0057323E /* CALayer.swift in Sources */,
 				025B7CD22B7F4F44004E85D1 /* ImageViewController.swift in Sources */,

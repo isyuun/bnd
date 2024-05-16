@@ -368,44 +368,47 @@ class MainViewController: LocationViewController {
             return
         }
 
-        bottomSheetVC = BottomSheetViewController()
-        bottomSheetVC.modalPresentationStyle = .overFullScreen
-        bottomSheetVC.dismissIndicatorView.isHidden = true
-        // bottomSheetVC.isDynamicHeight = true
-        if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
-            bottomSheetVC.addContentSubView(v: v)
-            v.initialize()
-            v.setData(dailyLifePetList?.pets as Any)
-            v.setSelected(self.selectedPetIndex)
-            v.setDelegate(self)
+        self.bottomSheetVC = BottomSheetViewController()
+        if let bottomSheetVC = self.bottomSheetVC {
+            bottomSheetVC.modalPresentationStyle = .overFullScreen
+            bottomSheetVC.dismissIndicatorView.isHidden = true
+            // bottomSheetVC.isDynamicHeight = true
+            if let v = UINib(nibName: "SelectPetView", bundle: nil).instantiate(withOwner: self).first as? SelectPetView {
+                bottomSheetVC.addContentSubView(v: v)
+                v.initialize()
+                v.setData(dailyLifePetList?.pets as Any)
+                v.setSelected(self.selectedPetIndex)
+                v.setDelegate(self)
+            }
+            self.present(bottomSheetVC, animated: false, completion: nil)
         }
-        self.present(bottomSheetVC, animated: false, completion: nil)
     }
 
     // MARK: - COMPANION PET LIST
-    var bottomSheetVC: BottomSheetViewController! = nil
-    var compPetListView: CompPetListView! = nil
+    var bottomSheetVC: BottomSheetViewController? = nil
+    var compPetListView: CompPetListView? = nil
 
     func showCompPetListBottomSheet() {
-        // if (myPetList == nil || myPetList?.myPets.count == 0) {
-        //     return
-        // }
-        // 
-        // bottomSheetVC = BottomSheetViewController()
-        // bottomSheetVC.modalPresentationStyle = .overFullScreen
-        // bottomSheetVC.dismissIndicatorView.isHidden = true
-        // bottomSheetVC.isDynamicHeight = true
-        // if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
-        //     bottomSheetVC.addContentSubView(v: v)
-        //     v.initialize()
-        //     v.setData(myPetList?.myPets as Any)
-        //     v.setDelegate(self)
-        //     compPetListView = v
-        //     if let _myPetList = myPetList {
-        //         if _myPetList.myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
-        //     }
-        // }
-        // self.present(bottomSheetVC, animated: false, completion: nil)
+        guard let myPetList = self.myPetList else { return }
+        if (myPetList == nil || myPetList.myPets.count == 0) {
+            return
+        }
+
+        self.bottomSheetVC = BottomSheetViewController()
+        if let bottomSheetVC = self.bottomSheetVC {
+            bottomSheetVC.modalPresentationStyle = .overFullScreen
+            bottomSheetVC.dismissIndicatorView.isHidden = true
+            bottomSheetVC.isDynamicHeight = true
+            if let v = UINib(nibName: "CompPetListView", bundle: nil).instantiate(withOwner: self).first as? CompPetListView {
+                bottomSheetVC.addContentSubView(v: v)
+                v.initialize()
+                v.setData(myPetList.myPets)
+                v.setDelegate(self)
+                compPetListView = v
+                if myPetList.myPets.count > 0 { v.tableView.selectRow(at: NSIndexPath(row: 0, section: 0) as IndexPath, animated: false, scrollPosition: .none) }
+            }
+            self.present(bottomSheetVC, animated: false, completion: nil)
+        }
     }
 
     @IBAction func onShowCompPetListBottomSheet(_ sender: Any) {
@@ -713,7 +716,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 // MARK: - COMPANION PET LIST DELEGATE
 extension MainViewController: CompPetListViewProtocol {
     func onAddPet() {
-        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC?.hideBottomSheetAndGoBack()
         bottomSheetVC = nil
 
         compPetListView = nil
@@ -723,7 +726,7 @@ extension MainViewController: CompPetListViewProtocol {
     }
 
     func onPetManage(myPet: MyPet) {
-        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC?.hideBottomSheetAndGoBack()
         bottomSheetVC = nil
 
         compPetListView = nil
@@ -749,7 +752,7 @@ extension MainViewController: LogoTitleBarViewProtocol {
 // MARK: - SELECT PET VIEW DELEGATE
 extension MainViewController: SelectPetViewProtocol {
     func onSelectPet(_ selectedIdx: Int) {
-        bottomSheetVC.hideBottomSheetAndGoBack()
+        bottomSheetVC?.hideBottomSheetAndGoBack()
         bottomSheetVC = nil
 
         selectPetView = nil
