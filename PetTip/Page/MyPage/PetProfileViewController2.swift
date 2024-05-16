@@ -46,7 +46,6 @@ class PetProfileViewController2: PetProfileViewController {
 
     override func initPetWeightGraph() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(weightData.count)][weightData:\(String(describing: weightData))]")
-
         // let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         // vw_lineChart.addGestureRecognizer(tapGesture)
 
