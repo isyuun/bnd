@@ -34,21 +34,14 @@ class PetProfileViewController2: PetProfileViewController {
         Global2.setPetImage(imageView: self.iv_profile, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
     }
 
-
-    // 탭 제스처 핸들러
-    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
-        // 탭된 뷰 확인
-        if gesture.view == vw_lineChart {
-            // vw_lineChart가 탭되었을 때 수행할 작업 수행
-            self.showToast(msg: "길게 누르면 몸무게 수정이 가능합니다.")
+    override func initPetWeightGraph() {
+        DispatchQueue.main.async { [self] in
+            initPetWeightChart()
         }
     }
 
-    override func initPetWeightGraph() {
+    private func initPetWeightChart() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(weightData.count)][weightData:\(String(describing: weightData))]")
-        // let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        // vw_lineChart.addGestureRecognizer(tapGesture)
-
         let max = weightData.max()
         let min = weightData.min()
 
@@ -97,10 +90,6 @@ class PetProfileViewController2: PetProfileViewController {
             vw_lineChart.xAxis.avoidFirstLastClippingEnabled = false
         }
 
-        let longPressgesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressDetected(gesture:)))
-        longPressgesture.allowableMovement = 50
-        self.vw_lineChart.addGestureRecognizer(longPressgesture)
-
         let marker = BalloonMarker(color: UIColor(white: 200 / 255, alpha: 0.75),
                                    font: .systemFont(ofSize: 11),
                                    textColor: .darkText,
@@ -108,6 +97,58 @@ class PetProfileViewController2: PetProfileViewController {
         marker.chartView = vw_lineChart
         marker.minimumSize = CGSize(width: 50, height: 10)
         vw_lineChart.marker = marker
+
+        addGestureRecognizer()
+    }
+
+    func addGestureRecognizer() {
+        // DispatchQueue.main.async { [self] in
+        //     // let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        //     // vw_lineChart.addGestureRecognizer(tapGesture)
+        //     let longPressgesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressDetected(gesture:)))
+        //     longPressgesture.allowableMovement = 50
+        //     self.vw_lineChart.addGestureRecognizer(longPressgesture)
+        // }
+    }
+
+    func removeGestureRecognizer() {
+        // DispatchQueue.main.async { [self] in
+        //     // vw_lineChart.removeGestureRecognizer(tapGesture)
+        //     vw_lineChart.removeGestureRecognizer(longPressgesture)
+        // }
+    }
+
+
+    let tapGesture = UITapGestureRecognizer(target: PetProfileViewController2.self, action: #selector(handleTap(_:)))
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][gesture:\(gesture)]")
+
+        if weightData.count > 0 {
+            if let petInfo = myPet, petInfo.mngrType == "C" { return }
+
+            if gesture.state == .ended {
+                let point = gesture.location(in: self.vw_lineChart)
+                let h = self.vw_lineChart.getHighlightByTouchPoint(point)
+
+                onModifyPetWeight(seq: Int(h!.x))
+            }
+        }
+    }
+
+    let longPressgesture = UILongPressGestureRecognizer(target: PetProfileViewController2.self, action: #selector(longPressDetected(gesture:)))
+    override func longPressDetected(gesture: UILongPressGestureRecognizer) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][gesture:\(gesture)]")
+
+        if weightData.count > 0 {
+            if let petInfo = myPet, petInfo.mngrType == "C" { return }
+
+            if gesture.state == .ended {
+                let point = gesture.location(in: self.vw_lineChart)
+                let h = self.vw_lineChart.getHighlightByTouchPoint(point)
+
+                onModifyPetWeight(seq: Int(h!.x))
+            }
+        }
     }
 
     override func onModifyPetWeight(seq: Int) {
@@ -133,16 +174,21 @@ class PetProfileViewController2: PetProfileViewController {
             let strDate = dateFormatter.string(from: date)
 
             self.weight_update(crtrYmd: strDate, petDtlUnqNo: arrWeight[seq].petDtlUnqNo, wghtVl: weight)
+
+            self.vw_lineChart.addGestureRecognizer(self.tapGesture)
         }
         petWeightView.didTapCancel = {
+            self.didTapPopupCancel()
             if arrWeight.count > 1 {
-                self.didTapPopupCancel()
                 self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo)
+                self.vw_lineChart.addGestureRecognizer(self.tapGesture)
             } else {
                 self.showToast(msg: "삭제 할 수 없습니다.")
             }
         }
 
         self.popupShow(contentView: petWeightView, wSideMargin: 40, isTapCancel: true)
+
+        // removeGestureRecognizer()
     }
 }
