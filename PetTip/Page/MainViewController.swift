@@ -729,7 +729,7 @@ extension MainViewController: CompPetListViewProtocol {
         compPetListView = nil
 
         let petProfileViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetProfileViewController") as PetProfileViewController
-        petProfileViewController.petInfo = myPet
+        petProfileViewController.myPet = myPet
 
         self.navigationController?.pushViewController(petProfileViewController, animated: true)
     }

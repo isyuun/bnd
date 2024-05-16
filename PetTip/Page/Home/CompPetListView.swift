@@ -36,9 +36,9 @@ class CompPetListView: UIView {
         tableView.separatorStyle = .none
     }
 
-    var myPets: [MyPet]?
+    internal var myPets: [MyPet]?
     // func setData(_ data: Any) {
-    func setData(_ items: [MyPet]) {
+    internal func setData(_ items: [MyPet]) {
         self.myPets = items
         tableView.reloadData()
 

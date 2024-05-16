@@ -8,11 +8,6 @@
 import UIKit
 
 class MainViewController2: MainViewController {
-    override func viewDidLoad() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
-        super.viewDidLoad()
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         super.viewDidAppear(animated)
@@ -22,21 +17,6 @@ class MainViewController2: MainViewController {
     override func initRx() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         super.initRx()
-    }
-
-    override func requestPageData() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
-        super.requestPageData()
-    }
-
-    override func dailyLife_PetList() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
-        super.dailyLife_PetList()
-    }
-
-    override func myPet_list() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
-        super.myPet_list()
     }
 
     override func refreshMyPetList(data: MyPetList?) {
@@ -55,38 +35,44 @@ class MainViewController2: MainViewController {
         // NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][dailyLifePetList:\(String(describing: dailyLifePetList))][count:\(String(describing: myPetList?.myPets.count))][pets:\(String(describing: dailyLifePetList?.pets))]")
         super.showCompPetListBottomSheet()
 
-        guard let myPetList: MyPetList = self.myPetList else {
+        let myPetList: MyPetList? = self.myPetList
+
+        if(myPetList == nil) {
             self.showSimpleAlert(msg: "등록된 펫이 없습니다.")
             return
         }
 
-        if (myPetList.myPets.count == 0) {
+        if (myPetList?.myPets.count == 0) {
             self.showSimpleAlert(msg: "등록된 펫이 없습니다.")
             return
         }
 
         var myPets = [MyPet]()
 
-        myPetList.myPets.forEach { myPet in
+        myPetList?.myPets.forEach { myPet in
             switch (myPet.mngrType) {
-            case "M":   //관리중
+            case "M": //관리중
                 NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
                 myPets.append(myPet)
                 break
-            case "I":   //참여중
+            case "I": //참여중
                 NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
                 myPets.append(myPet)
                 break
-            case "C":   //동행중단
+            case "C": //동행중단
                 break
             default:
                 break
             }
         }
 
-        // myPets.forEach { myPet in
-        //     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][myPet:\(myPet)]")
-        // }
+        myPetList?.myPets.forEach { myPet in
+            NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
+        }
+        myPetList?.myPets = myPets
+        myPetList?.myPets.forEach { myPet in
+            NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petNm:\(myPet.petNm)][mngrType:\(myPet.mngrType)][petMngrYn:\(myPet.petMngrYn)]")
+        }
 
         bottomSheetVC = BottomSheetViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen

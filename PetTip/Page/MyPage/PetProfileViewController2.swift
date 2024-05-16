@@ -11,30 +11,31 @@ import AlamofireImage
 class PetProfileViewController2: PetProfileViewController {
 
     override func onAddPetWeight(_ sender: Any) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: petInfo))][petDetailInfo:\(String(describing: petDetailInfo))]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: myPet))][petDetailInfo:\(String(describing: petDetailInfo))]")
         super.onAddPetWeight(sender)
     }
 
     override func onModifyPetInfo(_ sender: Any) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: petInfo))][petDetailInfo:\(String(describing: petDetailInfo))]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: myPet))][petDetailInfo:\(String(describing: petDetailInfo))]")
         super.onModifyPetInfo(sender)
     }
 
     override func weight_list() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: petInfo))][petDetailInfo:\(String(describing: petDetailInfo))]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: myPet))][petDetailInfo:\(String(describing: petDetailInfo))]")
         super.weight_list()
     }
 
     override func showProfileInfo() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: petInfo))][petDetailInfo:\(String(describing: petDetailInfo))]")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][petInfo:\(String(describing: myPet))][petDetailInfo:\(String(describing: petDetailInfo))]")
         super.showProfileInfo()
 
-        guard let pet = self.petInfo else { return }
+        guard let pet = self.myPet else { return }
         Global2.setPetImage(imageView: self.iv_profile, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
     }
 
     override func initPetWeightGraph() {
-        super.initPetWeightGraph()
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(weightData.count)][weightData:\(String(describing: weightData))]")
+        if (weightData.count > 0) { super.initPetWeightGraph() }
 
         // let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         // vw_lineChart.addGestureRecognizer(tapGesture)

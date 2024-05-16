@@ -13,7 +13,7 @@ class PetProfileViewController: CommonViewController {
 
     public var isRequireRefresh = false
 
-    public var petInfo: MyPet?
+    public var myPet: MyPet?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +82,7 @@ class PetProfileViewController: CommonViewController {
         vw_genderBg.layer.cornerRadius = 8
         vw_weightBg.layer.cornerRadius = 8
 
-        guard let petInfo = self.petInfo else { return }
+        guard let petInfo = self.myPet else { return }
 
         if petInfo.mngrType != "M" {
             btn_petModify.setAttrTitle("관리자만 수정가능", 14)
@@ -106,7 +106,7 @@ class PetProfileViewController: CommonViewController {
     var petDetailInfo: MyPetDetailData?
 
     private func detail() {
-        guard let petInfo = petInfo else { return }
+        guard let petInfo = myPet else { return }
 
         //self.startLoading()
 
@@ -199,8 +199,8 @@ class PetProfileViewController: CommonViewController {
     // MARK: - PET WEIGHT
     private var arrWeight: [MyPetWeightData]?
 
-    var dayData: [String] = []
-    var weightData: [Double]! = []
+    internal var dayData: [String] = []
+    internal var weightData: [Double]! = []
     // private var dayData: [String] = ["11월02일", "11월03일", "11월04일", "11월05일", "11월06일", "11월07일", "11월08일", "11월09일", "11월10일"]
     // private var weightData: [Double]! = [100, 345, 20, 120, 90, 300, 450, 220, 120]
     // private var dayData = ["11월02일", "11월03일"]
@@ -217,8 +217,9 @@ class PetProfileViewController: CommonViewController {
         vw_lineChart.xAxis.drawGridLinesEnabled = false
         vw_lineChart.xAxis.avoidFirstLastClippingEnabled = true
 
-        vw_lineChart.leftAxis.axisMaximum = weightData.max()! + 5
-        vw_lineChart.leftAxis.axisMinimum = weightData.min()! - 5
+        vw_lineChart.leftAxis.axisMaximum = (weightData.max() ?? 80.0) + 5.0
+        vw_lineChart.leftAxis.axisMinimum = (weightData.min() ?? 30.0) - 5.0
+
         vw_lineChart.rightAxis.enabled = false
         vw_lineChart.legend.enabled = false
         vw_lineChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
@@ -257,7 +258,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     @objc func longPressDetected(gesture: UILongPressGestureRecognizer) {
-        if let petInfo = petInfo, petInfo.mngrType == "C" { return }
+        if let petInfo = myPet, petInfo.mngrType == "C" { return }
 
         if gesture.state == .ended {
             let point = gesture.location(in: self.vw_lineChart)
@@ -290,7 +291,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     func weight_list() {
-        guard let petInfo = petInfo else { return }
+        guard let petInfo = myPet else { return }
 
         //self.startLoading()
 
@@ -363,7 +364,7 @@ class PetProfileViewController: CommonViewController {
     }
 
     @IBAction func onAddPetWeight(_ sender: Any) {
-        guard let petInfo = petInfo else { return }
+        guard let petInfo = myPet else { return }
 
         let petWeightView = UINib(nibName: "PetWeightView", bundle: nil).instantiate(withOwner: self).first as! PetWeightView2
         petWeightView.initialize(viewMode: .ADD)
@@ -501,7 +502,7 @@ class PetProfileViewController: CommonViewController {
         if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
             view.frame = titleBarView.bounds
             var title = "프로필"
-            if let petInfo = petInfo { title = String("\(petInfo.petNm) 프로필") }
+            if let petInfo = myPet { title = String("\(petInfo.petNm) 프로필") }
             view.lb_title.text = title
             view.delegate = self
             titleBarView.addSubview(view)
