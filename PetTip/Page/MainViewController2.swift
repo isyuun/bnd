@@ -42,12 +42,12 @@ class MainViewController2: MainViewController {
         let myPetList: MyPetList? = self.myPetList
 
         if(myPetList == nil) {
-            self.showSimpleAlert(msg: "등록된 펫이 없습니다.")
+            self.showSimpleAlert(msg: "등록된 펫이 정보가 없습니다.")
             return
         }
 
         if (myPetList?.myPets.count == 0) {
-            self.showSimpleAlert(msg: "등록된 펫이 없습니다.")
+            self.showSimpleAlert(msg: "등록된 펫이 목록이 없습니다.")
             return
         }
 
