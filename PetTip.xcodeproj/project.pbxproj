@@ -357,6 +357,7 @@
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
 		7BAA2C5A2BF072D10013FBDE /* DailyLifeGubunItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */; };
 		7BB811D22BF0B20A00B97D27 /* NMapViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */; };
+		7BC02B122BFB45D900C85C20 /* SceneDelegate3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC02B112BFB45D900C85C20 /* SceneDelegate3.swift */; };
 		7BD347E72BDF678700EFAF59 /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD347E62BDF678700EFAF59 /* MainViewController2.swift */; };
 		7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD541EE2BE48486008861DE /* UITextView2.swift */; };
 		7BD8DB682BCF5058000755D1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8DB662BCF5058000755D1 /* README.md */; };
@@ -729,6 +730,7 @@
 		7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLifeGubunItemView2.swift; sourceTree = "<group>"; };
 		7BB14B2B2BD5E67A00827F65 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		7BB811D12BF0B20900B97D27 /* NMapViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController3.swift; sourceTree = "<group>"; };
+		7BC02B112BFB45D900C85C20 /* SceneDelegate3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate3.swift; sourceTree = "<group>"; };
 		7BD347E62BDF678700EFAF59 /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 		7BD541EE2BE48486008861DE /* UITextView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView2.swift; sourceTree = "<group>"; };
 		7BD8DB662BCF5058000755D1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1415,6 +1417,7 @@
 				7BE9A6B02BED494F006E10E7 /* Global4.swift */,
 				02EB98012B0CFF03007428AD /* SceneDelegate.swift */,
 				7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */,
+				7BC02B112BFB45D900C85C20 /* SceneDelegate3.swift */,
 				02EB98032B0CFF03007428AD /* ViewController.swift */,
 				02EB98052B0CFF03007428AD /* Main.storyboard */,
 				02EB98082B0CFF05007428AD /* Assets.xcassets */,
@@ -1784,6 +1787,7 @@
 				0251FD512B0F328100F35EF8 /* NMapViewController.swift in Sources */,
 				02E3FC702B2573CB00A1CE62 /* MyAuthenticationCredential.swift in Sources */,
 				028625312B4D9B020055E62F /* CustomerCenterContainerViewController.swift in Sources */,
+				7BC02B122BFB45D900C85C20 /* SceneDelegate3.swift in Sources */,
 				02A05AEA2B3E4F6700E8ABFA /* CommonTarget.swift in Sources */,
 				0293C6282B0E3BD80004F19D /* UTCTimeService.swift in Sources */,
 				02A7AAE52B54FB5B002F0C03 /* FindIDPWContainerViewController.swift in Sources */,

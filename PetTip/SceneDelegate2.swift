@@ -11,7 +11,6 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 class SceneDelegate2: SceneDelegate {
-
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         // [iOS] 네이버 로그인 SDK 연동하기 출처: https://doggyfootstep.tistory.com/22 [iOS'DoggyFootstep:티스토리]}
         // iOS 13.0 이후부터 앱 UI와 관련된 생명주기는 SceneDelegate에서 컨트롤하기 때문에 위와 같은 코드가 필요합니다.
