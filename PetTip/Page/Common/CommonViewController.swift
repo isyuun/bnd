@@ -34,20 +34,13 @@ class CommonViewController: LoadingIndicatorViewController {
         showSimpleAlert(title: "확인", msg: msg)
     }
 
-    var toast: Toast?
+    private var toast: Toast?
     func showToast(msg: String) {
-        // 출처: https://hongssup.tistory.com/20 [Outgoing Introvert:티스토리]
-        DispatchQueue.main.async {
-            if let toast = self.toast {
-                toast.cancel()
-            } else {
-                self.toast = Toast(text: msg, duration: Delay.short)
-            }
-            self.toast?.view.bottomOffsetPortrait = 200 //self.view.bounds.size.height / 2
-            self.toast?.view.textInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
-            self.toast?.view.font = UIFont.systemFont(ofSize: 18)
-            self.toast?.show()
-        }
+        self.toast = Toast(text: msg, duration: Delay.short)
+        self.toast?.view.bottomOffsetPortrait = 200 //self.view.bounds.size.height / 2
+        self.toast?.view.textInsets = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
+        self.toast?.view.font = UIFont.systemFont(ofSize: 18)
+        self.toast?.show()
     }
 
     func processNetworkError(_ error: MyError?) {

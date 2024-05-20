@@ -223,7 +223,7 @@ extension MyPageViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let petProfileViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetProfileViewController") as PetProfileViewController
+        let petProfileViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetProfileViewController") as PetProfileViewController2
         petProfileViewController.myPet = myPetList?.myPets[indexPath.row]
 
         self.navigationController?.pushViewController(petProfileViewController, animated: true)
