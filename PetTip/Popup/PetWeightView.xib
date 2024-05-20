@@ -179,10 +179,10 @@
     </objects>
     <designables>
         <designable name="kGC-jh-dgm">
-            <size key="intrinsicContentSize" width="137" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="157" height="18.666666666666668"/>
         </designable>
         <designable name="o17-3j-V7t">
-            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="145" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

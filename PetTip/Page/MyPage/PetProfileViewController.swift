@@ -105,7 +105,7 @@ class PetProfileViewController: CommonViewController {
     // MARK: - CONN PET DETAIL
     var petDetailInfo: MyPetDetailData?
 
-    private func detail() {
+    internal func detail() {
         guard let petInfo = myPet else { return }
 
         self.startLoading()
@@ -222,8 +222,8 @@ class PetProfileViewController: CommonViewController {
         
         vw_lineChart.rightAxis.enabled = false
         vw_lineChart.legend.enabled = false
-        vw_lineChart.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
-        
+        vw_lineChart.animate(xAxisDuration: 0.5, yAxisDuration: 0.5)
+
         vw_lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData)
         vw_lineChart.xAxis.granularity = 1
         
@@ -237,12 +237,12 @@ class PetProfileViewController: CommonViewController {
         vw_lineChart.leftAxis.axisMaximum = (weightData.max() ?? 80.0) + 5.0
         vw_lineChart.leftAxis.axisMinimum = (weightData.min() ?? 30.0) - 5.0
         
-        if weightData.count == 1 {
-            vw_lineChart.xAxis.axisMinLabels = 1
-            vw_lineChart.xAxis.labelCount = 1
-            vw_lineChart.setVisibleXRangeMinimum(500)
-            vw_lineChart.xAxis.avoidFirstLastClippingEnabled = false
-        }
+        // if weightData.count == 1 {
+        //     vw_lineChart.xAxis.axisMinLabels = 1
+        //     vw_lineChart.xAxis.labelCount = 1
+        //     vw_lineChart.setVisibleXRangeMinimum(500)
+        //     vw_lineChart.xAxis.avoidFirstLastClippingEnabled = false
+        // }
         
         let longPressgesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressDetected(gesture:)))
         longPressgesture.allowableMovement = 50
@@ -306,10 +306,8 @@ class PetProfileViewController: CommonViewController {
                     self.dayData.removeAll()
                     self.weightData.removeAll()
                     for i in 0..<arrWeight.count {
-                        var date = arrWeight[i].crtrYmd
+                        let date = arrWeight[i].crtrYmd
                         let wght = arrWeight[i].wghtVl
-                        let index = arrWeight[i].crtrYmd.index(arrWeight[i].crtrYmd.startIndex, offsetBy: 5)
-                        date.insert("\n", at: index)
                         print("\(date) = \(wght)")
                         self.dayData.append(date)
                         self.weightData.append(Double(wght))

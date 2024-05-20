@@ -331,7 +331,6 @@
 		7B0DDAF62BF2504E0042129A /* _CompPetListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */; };
 		7B0DDAF82BF2E55C0042129A /* JoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */; };
 		7B0DDAFA2BF2E6CD0042129A /* UserInfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */; };
-		7B250FCD2BDFCA8D00171EFD /* _PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FCC2BDFCA8D00171EFD /* _PetProfileViewController.swift */; };
 		7B250FD12BDFCC5D00171EFD /* PetWeightView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */; };
 		7B250FD32BE06FC700171EFD /* MyPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */; };
 		7B250FD52BE0CFE200171EFD /* InviteSetKeyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */; };
@@ -353,6 +352,7 @@
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
 		7B8AB5ED2BF223B800CA051B /* CommonPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */; };
 		7B8CF2B52BFAEA9400B73A5C /* AppDelegate3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CF2B42BFAEA9400B73A5C /* AppDelegate3.swift */; };
+		7B8CF2B72BFB177C00B73A5C /* String2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CF2B62BFB177C00B73A5C /* String2.swift */; };
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
 		7BAA2C5A2BF072D10013FBDE /* DailyLifeGubunItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */; };
@@ -702,7 +702,6 @@
 		7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _CompPetListView.xib; sourceTree = "<group>"; };
 		7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController2.swift; sourceTree = "<group>"; };
 		7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController2.swift; sourceTree = "<group>"; };
-		7B250FCC2BDFCA8D00171EFD /* _PetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _PetProfileViewController.swift; sourceTree = "<group>"; };
 		7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightView2.swift; sourceTree = "<group>"; };
 		7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController2.swift; sourceTree = "<group>"; };
 		7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSetKeyViewController2.swift; sourceTree = "<group>"; };
@@ -724,6 +723,7 @@
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
 		7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPostViewController.swift; sourceTree = "<group>"; };
 		7B8CF2B42BFAEA9400B73A5C /* AppDelegate3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate3.swift; sourceTree = "<group>"; };
+		7B8CF2B62BFB177C00B73A5C /* String2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String2.swift; sourceTree = "<group>"; };
 		7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLifeGubunItemView2.swift; sourceTree = "<group>"; };
@@ -908,7 +908,6 @@
 				02A7AACD2B51387E002F0C03 /* QnAAddAttachFileItemView.swift */,
 				02A7AAD72B522909002F0C03 /* QnAModifyViewController.swift */,
 				02A7AADD2B526160002F0C03 /* QnAModifyAttachFileItemView.swift */,
-				7B250FCC2BDFCA8D00171EFD /* _PetProfileViewController.swift */,
 				02DB37F42B6340D6007D19A1 /* PetProfileViewController.swift */,
 				7B359DF32BFACBF600DA9870 /* PetProfileViewController2.swift */,
 				02DB38132B64FCD9007D19A1 /* PetProfileMemberItemView.swift */,
@@ -1015,6 +1014,7 @@
 				02A05B1B2B3FAC4200E8ABFA /* Date.swift */,
 				02A05B412B42907700E8ABFA /* Util.swift */,
 				02A05B492B433A4900E8ABFA /* String.swift */,
+				7B8CF2B62BFB177C00B73A5C /* String2.swift */,
 				0286250C2B485FE20055E62F /* NoPasteUITextField.swift */,
 				02DB37F92B641605007D19A1 /* BalloonMarker.swift */,
 			);
@@ -1664,7 +1664,6 @@
 				0251FD582B12351100F35EF8 /* LocationViewController.swift in Sources */,
 				7BE12BD82BECB312009B556A /* Global3.swift in Sources */,
 				02A05A7C2B318C8700E8ABFA /* StoryDetailViewController.swift in Sources */,
-				7B250FCD2BDFCA8D00171EFD /* _PetProfileViewController.swift in Sources */,
 				02A05B542B46A8F300E8ABFA /* DatePickerView.swift in Sources */,
 				02A05ABB2B3A873000E8ABFA /* RcmdtnRequest.swift in Sources */,
 				02A05AE72B3E4F5500E8ABFA /* CommonAPI.swift in Sources */,
@@ -1708,6 +1707,7 @@
 				7B0DDAF52BF2504E0042129A /* _CompPetListView.swift in Sources */,
 				02A05B1C2B3FAC4200E8ABFA /* Date.swift in Sources */,
 				02E3FC642B25480D00A1CE62 /* MemberTarget.swift in Sources */,
+				7B8CF2B72BFB177C00B73A5C /* String2.swift in Sources */,
 				02A05B4C2B44696700E8ABFA /* ResetNcknmRequest.swift in Sources */,
 				0286250B2B47E8FC0055E62F /* InviteSetKeyViewController.swift in Sources */,
 				02E3FC8D2B259B7500A1CE62 /* PetList.swift in Sources */,
