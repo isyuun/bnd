@@ -112,15 +112,16 @@ class MainViewController: LocationViewController {
         if petList.pets.count > 0 {
             pet = petList.pets[0]
             imageView = self.compPetFirstImg
-            imageView?.isHidden = false
+            self.bgCompPetFirstImg.isHidden = false
+            if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
         }
 
         if petList.pets.count > 1 {
             pet = petList.pets[1]
             imageView = self.compPetSecondImg
-            imageView?.isHidden = false
+            self.bgCompPetSecondImg.isHidden = false
+            if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
         }
-        if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
     }
 
     func requestCurrPetWeekData(_ ownrPetUnqNo: String) {

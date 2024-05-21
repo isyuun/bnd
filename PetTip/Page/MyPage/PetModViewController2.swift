@@ -10,36 +10,34 @@ import AlamofireImage
 
 class PetModViewController2: PetModViewController {
 
-    // override func viewDidLoad() {
-    //     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
-    //     super.viewDidLoad()
-    //     tf_weight.keyboardType = .decimalPad
-    // }
-    // 
-    // override func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    //     NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(tf_weight == textField)][textField:\(String(describing: textField.text))][range:\(range)][string:\(string)]")
-    //     if tf_weight == textField { return checkOneDecimal(textField: textField, range: range, string: string) }
-    //     return true
-    // }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setCurrInfo()
+    }
 
     override func onPetType(_ sender: Any) {
         guard let button = sender as? UIButton else { return }
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][sender:\(sender)]")
         super.onPetType(sender)
 
-        var petTypCd = "001"
+        let pet = petDetailInfo
+        let petImgAddr = pet?.petRprsImgAddr
+        let petTypCd = pet?.petTypCd
+
+        var _petTypCd = "001"
         switch button {
         case btn_petTypeDog:
-            petTypCd = "001"
+            _petTypCd = "001"
             break
         case btn_petTypeCat:
-            petTypCd = "002"
+            _petTypCd = "002"
             break
         default:
             break
         }
 
-        Global3.setPetImage(imageView: iv_profile, petTypCd: petTypCd)
+        if petTypCd == _petTypCd { Global2.setPetImage(imageView: iv_profile, petTypCd: _petTypCd, petImgAddr: petImgAddr) }
+        else { Global2.setPetImage(imageView: iv_profile, petTypCd: _petTypCd) }
     }
 
     override func onComplete(_ sender: Any) {

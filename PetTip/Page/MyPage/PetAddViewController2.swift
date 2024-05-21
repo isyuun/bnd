@@ -38,7 +38,7 @@ class PetAddViewController2: PetAddViewController {
             break
         }
 
-        Global3.setPetImage(imageView: iv_profile, petTypCd: petTypCd)
+        Global2.setPetImage(imageView: iv_profile, petTypCd: petTypCd)
     }
 
     override func onComplete(_ sender: Any) {

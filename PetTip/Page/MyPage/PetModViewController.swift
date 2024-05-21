@@ -39,7 +39,7 @@ class PetModViewController: CommonPostViewController {
         }
     }
 
-    private func setCurrInfo() {
+    internal func setCurrInfo() {
         guard let petDetailInfo = petDetailInfo else { return }
 
         let pet = petDetailInfo

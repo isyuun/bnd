@@ -10,9 +10,22 @@ import AlamofireImage
 import DGCharts
 
 class PetProfileViewController2: PetProfileViewController {
+    override func showProfileInfo() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(self.weightData.count)]")
+        guard let pet = petDetailInfo else { return }
+
+        Global2.setPetImage(imageView: self.iv_profile, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
+
+        self.lb_petKind.text = pet.petKindNm
+        self.lb_petNm.text = pet.petNm
+
+        self.lb_age.text = Util.transDiffDateStr(pet.petBrthYmd)
+        self.lb_gender.text = pet.sexTypNm
+        self.lb_weight.text = String(format: "%.1fkg", Float(pet.wghtVl))
+    }
 
     override func initPetWeightGraph() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(self.weightData.count)")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(self.weightData.count)]")
         super.initPetWeightGraph()
 
         vw_lineChart.leftAxis.drawAxisLineEnabled = false
@@ -34,7 +47,7 @@ class PetProfileViewController2: PetProfileViewController {
     }
 
     override func setLineData(lineChartView: LineChartView, lineChartDataEntries: [ChartDataEntry]) {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(self.weightData.count)")
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(self.weightData.count)]")
         var w = 0.0
         if self.weightData.count > 0 {
             super.setLineData(lineChartView: lineChartView, lineChartDataEntries: lineChartDataEntries)
@@ -42,7 +55,7 @@ class PetProfileViewController2: PetProfileViewController {
         }
         else {
             vw_lineChart.data = nil
-            w = 0.2
+            w = 0.5
         }
         vw_lineChart.noDataText = "뭄무게를 등록해 주세요." // this should be remove "No chart data available."
         vw_lineChart.layer.borderWidth = w // 테두리 두께 설정
@@ -55,7 +68,7 @@ class PetProfileViewController2: PetProfileViewController {
     }
 
     override func startLoading() {
-        super.startLoading()
+        // super.startLoading()
     }
 
     override func stopLoading() {
@@ -111,14 +124,14 @@ class PetProfileViewController2: PetProfileViewController {
             self.weight_update(crtrYmd: strDate, petDtlUnqNo: arrWeight[seq].petDtlUnqNo, wghtVl: weight)
         }
         petWeightView.didTapCancel = {
-            self.didTapPopupCancel() //test
-            self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo) //test
-            // if arrWeight.count > 1 {
-            //     self.didTapPopupCancel()
-            //     self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo)
-            // } else {
-            //     self.showToast(msg: "삭제 할 수 없습니다.")
-            // }
+            // self.didTapPopupCancel() //test
+            // self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo) //test
+            if arrWeight.count > 1 {
+                self.didTapPopupCancel()
+                self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo)
+            } else {
+                self.showToast(msg: "삭제 할 수 없습니다.")
+            }
         }
 
         self.popupShow(contentView: petWeightView, wSideMargin: 40, isTapCancel: true)

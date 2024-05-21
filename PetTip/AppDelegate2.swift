@@ -14,7 +14,7 @@ import KakaoSDKCommon
 import NaverThirdPartyLogin
 import DropDown
 
-@UIApplicationMain
+// @UIApplicationMain
 class AppDelegate2: AppDelegate {
     override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let ret = super.application(application, didFinishLaunchingWithOptions: launchOptions)

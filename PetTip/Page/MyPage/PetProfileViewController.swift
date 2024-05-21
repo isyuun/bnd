@@ -138,17 +138,16 @@ class PetProfileViewController: CommonViewController {
     }
 
     func showProfileInfo() {
-        guard let petDetailInfo = petDetailInfo else { return }
-
-        let pet = petDetailInfo
-        Global2.setPetImage(imageView: self.iv_profile, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
-
-        self.lb_petKind.text = petDetailInfo.petKindNm
-        self.lb_petNm.text = petDetailInfo.petNm
-
-        self.lb_age.text = Util.transDiffDateStr(petDetailInfo.petBrthYmd)
-        self.lb_gender.text = petDetailInfo.sexTypNm
-        self.lb_weight.text = String(format: "%.1fkg", Float(petDetailInfo.wghtVl))
+        // guard let petDetailInfo = petDetailInfo else { return }
+        // 
+        // Global2.setPetImage(imageView: self.iv_profile, petTypCd: petDetailInfo.petTypCd, petImgAddr: petDetailInfo.petRprsImgAddr)
+        // 
+        // self.lb_petKind.text = petDetailInfo.petKindNm
+        // self.lb_petNm.text = petDetailInfo.petNm
+        // 
+        // self.lb_age.text = Util.transDiffDateStr(petDetailInfo.petBrthYmd)
+        // self.lb_gender.text = petDetailInfo.sexTypNm
+        // self.lb_weight.text = String(format: "%.1fkg", Float(petDetailInfo.wghtVl))
     }
 
     // MARK: - PET MEMBER LIST
