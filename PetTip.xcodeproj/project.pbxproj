@@ -336,6 +336,9 @@
 		7B250FD52BE0CFE200171EFD /* InviteSetKeyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */; };
 		7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */; };
 		7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */; };
+		7B353F2F2BFD9F8700897BB3 /* InviteCreateViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B353F2E2BFD9F8700897BB3 /* InviteCreateViewController2.swift */; };
+		7B353F332BFDAC4300897BB3 /* PetListResponse2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B353F322BFDAC4300897BB3 /* PetListResponse2.swift */; };
+		7B353F352BFDC0A800897BB3 /* InviteSetKeyViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B353F342BFDC0A800897BB3 /* InviteSetKeyViewController3.swift */; };
 		7B359DF42BFACBF600DA9870 /* PetProfileViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B359DF32BFACBF600DA9870 /* PetProfileViewController2.swift */; };
 		7B39BF2C2BF1963F0092E4F6 /* SelectInvitePetView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B39BF2B2BF1963F0092E4F6 /* SelectInvitePetView2.swift */; };
 		7B39BF2E2BF197D50092E4F6 /* SelectInvitePetView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B39BF2D2BF197D50092E4F6 /* SelectInvitePetView2.xib */; };
@@ -709,6 +712,9 @@
 		7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSetKeyViewController2.swift; sourceTree = "<group>"; };
 		7B2DD68F2BD22B0A00E26261 /* CommonViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewController2.swift; sourceTree = "<group>"; };
 		7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController2.swift; sourceTree = "<group>"; };
+		7B353F2E2BFD9F8700897BB3 /* InviteCreateViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCreateViewController2.swift; sourceTree = "<group>"; };
+		7B353F322BFDAC4300897BB3 /* PetListResponse2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListResponse2.swift; sourceTree = "<group>"; };
+		7B353F342BFDC0A800897BB3 /* InviteSetKeyViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSetKeyViewController3.swift; sourceTree = "<group>"; };
 		7B359DF32BFACBF600DA9870 /* PetProfileViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileViewController2.swift; sourceTree = "<group>"; };
 		7B39BF2B2BF1963F0092E4F6 /* SelectInvitePetView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInvitePetView2.swift; sourceTree = "<group>"; };
 		7B39BF2D2BF197D50092E4F6 /* SelectInvitePetView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectInvitePetView2.xib; sourceTree = "<group>"; };
@@ -887,8 +893,10 @@
 				02A05B432B42A46900E8ABFA /* UserInfoViewController.swift */,
 				7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */,
 				028625082B47E8D90055E62F /* InviteCreateViewController.swift */,
+				7B353F2E2BFD9F8700897BB3 /* InviteCreateViewController2.swift */,
 				0286250A2B47E8FC0055E62F /* InviteSetKeyViewController.swift */,
 				7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */,
+				7B353F342BFDC0A800897BB3 /* InviteSetKeyViewController3.swift */,
 				028625122B4905540055E62F /* PetAddViewController.swift */,
 				7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */,
 				02DB381B2B65F225007D19A1 /* PetModViewController.swift */,
@@ -1303,6 +1311,7 @@
 			children = (
 				02E3FC882B25998000A1CE62 /* PetListRequest.swift */,
 				02E3FC8A2B25999500A1CE62 /* PetListResponse.swift */,
+				7B353F322BFDAC4300897BB3 /* PetListResponse2.swift */,
 				02E3FC9C2B275CEC00A1CE62 /* WeekRecordRequest.swift */,
 				02E3FC9E2B275D1E00A1CE62 /* WeekRecordResponse.swift */,
 				020B797C2B2D70A800C0AB2D /* MonthRecordRequest.swift */,
@@ -1653,6 +1662,7 @@
 				02A7AAED2B58A6F1002F0C03 /* CreateUserRequest.swift in Sources */,
 				02A05B182B3FA2DE00E8ABFA /* EventListViewItem.swift in Sources */,
 				028625052B47CCF30055E62F /* MyPetInvttCreateRequest.swift in Sources */,
+				7B353F352BFDC0A800897BB3 /* InviteSetKeyViewController3.swift in Sources */,
 				7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */,
 				7BF9AC842BFC73F900E67CE3 /* MainViewController3.swift in Sources */,
 				020B798D2B300FCD00C0AB2D /* StoryListResponse.swift in Sources */,
@@ -1845,6 +1855,7 @@
 				027F76582B4E89A700429AC5 /* NoticeDetailViewController.swift in Sources */,
 				020B794D2B28797E00C0AB2D /* RealTimeList.swift in Sources */,
 				020B795F2B29FCDF00C0AB2D /* WalkHistoryWeekListItemView.swift in Sources */,
+				7B353F2F2BFD9F8700897BB3 /* InviteCreateViewController2.swift in Sources */,
 				02A05B0E2B3F950800E8ABFA /* BBSApi.swift in Sources */,
 				027F76622B4ED1A900429AC5 /* FaqListItemView.swift in Sources */,
 				02E3FC6D2B25560B00A1CE62 /* API.swift in Sources */,
@@ -1876,6 +1887,7 @@
 				02A05AD82B3D4A9F00E8ABFA /* CommentModifyView.swift in Sources */,
 				7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */,
 				028625112B48D88C0055E62F /* MyPetInvttSetKeyResponse.swift in Sources */,
+				7B353F332BFDAC4300897BB3 /* PetListResponse2.swift in Sources */,
 				02E3FC992B25AA2B00A1CE62 /* MyPetList.swift in Sources */,
 				02E3FC952B25A80300A1CE62 /* MyPetAPI.swift in Sources */,
 				020B798F2B30118700C0AB2D /* StoryList.swift in Sources */,

@@ -36,7 +36,7 @@ class MyPageViewController2: MyPageViewController {
             self.showToast(msg: "등록된 펫이 없습니다")
             return
         }
-        
+
         if let v = UINib(nibName: "SelectInvitePetView2", bundle: nil).instantiate(withOwner: self).first as? SelectInvitePetView2 {
             v.initialize()
             v.setData(dailyLifePetList?.pets as Any)
@@ -45,33 +45,55 @@ class MyPageViewController2: MyPageViewController {
             v.isSingleSelectMode = false
             v.didTapOK = { selectedPets, endDt in
                 self.didTapPopupOK()
-        
+
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyyMMddHHmm"
                 let nowDt = dateFormatter.string(from: Date())
-        
+
                 self.invtt_create(pets: selectedPets, beginDt: nowDt, endDt: endDt)
             }
-        
+
             self.popupShow(contentView: v, wSideMargin: 0, type: .bottom)
         }
     }
 
+    var petInfos: [PetInfo] = [PetInfo]()
+    var invttKeyVl: String!
+
     override func invtt_create(pets: [Pet], beginDt: String, endDt: String) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][pets:\(pets)][beginDt:\(beginDt)][endDt:\(endDt)]")
-        // super.invtt_create(pets: pets, beginDt: beginDt, endDt: endDt)
-
         self.startLoading()
 
-        let request = MyPetInvttCreateRequest(pet: pets, relBgngDt: beginDt, relEndDt: endDt)
+        self.petInfos.removeAll()
+        pets.forEach { pet in
+            let ownrPetUnqNo = pet.ownrPetUnqNo
+            let petNm = pet.petNm
+            let petInfo = PetInfo(ownrPetUnqNo: ownrPetUnqNo, petNm: petNm)
+            self.petInfos.append(petInfo)
+        }
+
+        let request = MyPetInvttCreateRequest(pet: petInfos, relBgngDt: beginDt, relEndDt: endDt)
         MyPetAPI.invttCreate(request: request) { response, error in
             self.stopLoading()
 
             if let response = response {
-                self.performSegue(withIdentifier: "segueMyPageToInviteCreate", sender: response.invttKeyVl)
+                self.invttKeyVl = response.invttKeyVl
+                self.performSegue(withIdentifier: "segueMyPageToInviteCreate", sender: self)
             }
 
             self.processNetworkError(error)
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "segueMyPageToInviteCreate") {
+            guard let pc = sender as? MyPageViewController2 else { return }
+            guard let vc = segue.destination as? InviteCreateViewController2 else { return }
+            vc.invttKeyVl = pc.invttKeyVl
+            vc.petNames.removeAll()
+            pc.petInfos.forEach { petInfo in
+                vc.petNames.append(petInfo.petNm)
+            }
         }
     }
 }

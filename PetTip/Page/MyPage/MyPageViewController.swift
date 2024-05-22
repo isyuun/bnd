@@ -140,18 +140,18 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
     }
 
     func invtt_create(pets: [Pet], beginDt: String, endDt: String) {
-        self.startLoading()
-
-        let request = MyPetInvttCreateRequest(pet: pets, relBgngDt: beginDt, relEndDt: endDt)
-        MyPetAPI.invttCreate(request: request) { response, error in
-            self.stopLoading()
-
-            if let response = response {
-                self.performSegue(withIdentifier: "segueMyPageToInviteCreate", sender: response.invttKeyVl)
-            }
-
-            self.processNetworkError(error)
-        }
+        // self.startLoading()
+        // 
+        // let request = MyPetInvttCreateRequest(pet: pets, relBgngDt: beginDt, relEndDt: endDt)
+        // MyPetAPI.invttCreate(request: request) { response, error in
+        //     self.stopLoading()
+        // 
+        //     if let response = response {
+        //         self.performSegue(withIdentifier: "segueMyPageToInviteCreate", sender: response.invttKeyVl)
+        //     }
+        // 
+        //     self.processNetworkError(error)
+        // }
     }
 
     @IBAction func onInvite(_ sender: Any) {
