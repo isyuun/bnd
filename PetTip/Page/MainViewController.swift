@@ -159,7 +159,7 @@ class MainViewController: LocationViewController {
 
             if let petList = petList {
                 Global.dailyLifePetListBehaviorRelay.accept(petList)
-                Global.selectedPetIndexBehaviorRelay.accept(0)
+                Global.selectedPetIndexBehaviorRelay.accept(self.selectedPetIndex)
             }
 
             if let error = error {
@@ -184,56 +184,56 @@ class MainViewController: LocationViewController {
         }
     }
 
-    private func refreshSelectedPetIndex(data: Int?) {
-        guard let index = data else { return }
-        self.selectedPetIndex = index
-
-        self.pagerView.reloadData()
-
-        if let petList = self.dailyLifePetList {
-            if (petList.pets.count > 0) {
-                Global.petRelUnqNo = petList.pets[self.selectedPetIndex].petRelUnqNo
-
-                let pet = petList.pets[self.selectedPetIndex]
-                Global2.setPetImage(imageView: self.titleBarPfImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
-
-                self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
-
-                self.lbCurrPetKind.text = petList.pets[self.selectedPetIndex].petKindNm
-                self.lbCurrPetNm.text = petList.pets[self.selectedPetIndex].petNm
-
-                self.ageLabel.text = petList.pets[self.selectedPetIndex].age
-                self.genderLabel.text = petList.pets[self.selectedPetIndex].sexTypNm
-                self.weightLabel.text = String(format: "%.1fkg", Float(petList.pets[self.selectedPetIndex].wghtVl))
-
-                self.currPetNMLabel.text = petList.pets[self.selectedPetIndex].petNm
-
-                self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
-
-            } else {
-                self.titleBarPfImageView.image = UIImage(named: "profile_default")
-                self.titleBarPfNMLabel.text = "등록된 펫 없음"
-
-                self.lbCurrPetKind.text = ""
-                self.lbCurrPetNm.text = "등록된 펫 없음"
-
-                self.currPetNMLabel.text = "댕댕이"
-
-                self.ageLabel.text = "-"
-                self.genderLabel.text = "-"
-                self.weightLabel.text = "-"
-
-                self.totalWalkTimeLabel.text = "00:00:00"
-                self.totalWalkDistLabel.text = "0.0km"
-            }
-        }
-
-        if (self.selectIdxFromPrevPage == false) {
-            self.walkHistoryViewController?.selectIdxFromPrevPage = true
-            self.walkHistoryViewController?.dailyLifePetList = self.dailyLifePetList
-        } else {
-            self.selectIdxFromPrevPage = false
-        }
+    internal func refreshSelectedPetIndex(data: Int?) {
+        // guard let index = data else { return }
+        // self.selectedPetIndex = index
+        // 
+        // self.pagerView.reloadData()
+        // 
+        // if let petList = self.dailyLifePetList {
+        //     if (petList.pets.count > 0) {
+        //         Global.petRelUnqNo = petList.pets[self.selectedPetIndex].petRelUnqNo
+        // 
+        //         let pet = petList.pets[self.selectedPetIndex]
+        //         Global2.setPetImage(imageView: self.titleBarPfImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
+        // 
+        //         self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
+        // 
+        //         self.lbCurrPetKind.text = petList.pets[self.selectedPetIndex].petKindNm
+        //         self.lbCurrPetNm.text = petList.pets[self.selectedPetIndex].petNm
+        // 
+        //         self.ageLabel.text = petList.pets[self.selectedPetIndex].age
+        //         self.genderLabel.text = petList.pets[self.selectedPetIndex].sexTypNm
+        //         self.weightLabel.text = String(format: "%.1fkg", Float(petList.pets[self.selectedPetIndex].wghtVl))
+        // 
+        //         self.currPetNMLabel.text = petList.pets[self.selectedPetIndex].petNm
+        // 
+        //         self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
+        // 
+        //     } else {
+        //         self.titleBarPfImageView.image = UIImage(named: "profile_default")
+        //         self.titleBarPfNMLabel.text = "등록된 펫 없음"
+        // 
+        //         self.lbCurrPetKind.text = ""
+        //         self.lbCurrPetNm.text = "등록된 펫 없음"
+        // 
+        //         self.currPetNMLabel.text = "댕댕이"
+        // 
+        //         self.ageLabel.text = "-"
+        //         self.genderLabel.text = "-"
+        //         self.weightLabel.text = "-"
+        // 
+        //         self.totalWalkTimeLabel.text = "00:00:00"
+        //         self.totalWalkDistLabel.text = "0.0km"
+        //     }
+        // }
+        // 
+        // if (self.selectIdxFromPrevPage == false) {
+        //     self.walkHistoryViewController?.selectIdxFromPrevPage = true
+        //     self.walkHistoryViewController?.dailyLifePetList = self.dailyLifePetList
+        // } else {
+        //     self.selectIdxFromPrevPage = false
+        // }
     }
 
     // MARK: - COMMON UI
@@ -759,7 +759,7 @@ extension MainViewController: SelectPetViewProtocol {
         selectPetView = nil
 
         pagerView.scrollToItem(at: selectedIdx, animated: true)
-        Global.selectedPetIndexBehaviorRelay.accept(selectedIdx)
+        // Global.selectedPetIndexBehaviorRelay.accept(selectedIdx)
     }
 }
 

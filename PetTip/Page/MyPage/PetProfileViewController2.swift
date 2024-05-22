@@ -24,6 +24,18 @@ class PetProfileViewController2: PetProfileViewController {
         self.lb_weight.text = String(format: "%.1fkg", Float(pet.wghtVl))
     }
 
+    override func longPressDetected(gesture: UILongPressGestureRecognizer) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(self.weightData.count)]")
+        if let petInfo = myPet, petInfo.mngrType == "C" { return }
+
+        if self.weightData.count > 0, gesture.state == .ended {
+            let point = gesture.location(in: self.vw_lineChart)
+            let h = self.vw_lineChart.getHighlightByTouchPoint(point)
+
+            onModifyPetWeight(seq: Int(h!.x))
+        }
+    }
+
     override func initPetWeightGraph() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][count:\(self.weightData.count)]")
         super.initPetWeightGraph()
@@ -124,14 +136,17 @@ class PetProfileViewController2: PetProfileViewController {
             self.weight_update(crtrYmd: strDate, petDtlUnqNo: arrWeight[seq].petDtlUnqNo, wghtVl: weight)
         }
         petWeightView.didTapCancel = {
-            // self.didTapPopupCancel() //test
-            // self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo) //test
-            if arrWeight.count > 1 {
-                self.didTapPopupCancel()
-                self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo)
-            } else {
-                self.showToast(msg: "삭제 할 수 없습니다.")
-            }
+            #if DEBUG
+                self.didTapPopupCancel() //test
+                self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo) //test
+            #else
+                if arrWeight.count > 1 {
+                    self.didTapPopupCancel()
+                    self.weight_delete(petDtlUnqNo: arrWeight[seq].petDtlUnqNo)
+                } else {
+                    self.showToast(msg: "삭제 할 수 없습니다.")
+                }
+            #endif
         }
 
         self.popupShow(contentView: petWeightView, wSideMargin: 40, isTapCancel: true)

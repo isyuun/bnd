@@ -373,6 +373,7 @@
 		7BE820EE2BE47BB900B09973 /* StoryAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */; };
 		7BE9A6B12BED494F006E10E7 /* Global4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9A6B02BED494F006E10E7 /* Global4.swift */; };
 		7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */; };
+		7BF9AC842BFC73F900E67CE3 /* MainViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -746,6 +747,7 @@
 		7BE820ED2BE47BB900B09973 /* StoryAddViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryAddViewController2.swift; sourceTree = "<group>"; };
 		7BE9A6B02BED494F006E10E7 /* Global4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global4.swift; sourceTree = "<group>"; };
 		7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController3.swift; sourceTree = "<group>"; };
 		DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ED9599A85857899956A08B /* Pods-PetTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.release.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -812,6 +814,7 @@
 				7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */,
 				022B418E2B1B22660057323E /* MainViewController.swift */,
 				7BD347E62BDF678700EFAF59 /* MainViewController2.swift */,
+				7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */,
 				022B41A92B1E05510057323E /* Common */,
 				022B41AE2B1E32FC0057323E /* Home */,
 				022B41962B1C43860057323E /* WalkHistory */,
@@ -1651,6 +1654,7 @@
 				02A05B182B3FA2DE00E8ABFA /* EventListViewItem.swift in Sources */,
 				028625052B47CCF30055E62F /* MyPetInvttCreateRequest.swift in Sources */,
 				7B2DD6922BD22BC500E26261 /* LoginViewController2.swift in Sources */,
+				7BF9AC842BFC73F900E67CE3 /* MainViewController3.swift in Sources */,
 				020B798D2B300FCD00C0AB2D /* StoryListResponse.swift in Sources */,
 				02A05B1E2B3FD0BE00E8ABFA /* EventDetailViewController.swift in Sources */,
 				027F765E2B4E917A00429AC5 /* FaqListRequest.swift in Sources */,
@@ -2118,7 +2122,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pettip.PetTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2167,7 +2171,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = net.pettip.PetTip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

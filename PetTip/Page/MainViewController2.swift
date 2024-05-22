@@ -8,9 +8,10 @@
 import UIKit
 
 class MainViewController2: MainViewController {
-    override func viewDidAppear(_ animated: Bool) {
+
+    override func viewWillAppear(_ animated: Bool) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         initRx()
     }
 

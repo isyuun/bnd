@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="1212.9770992366412" y="1361.9718309859156"/>
         </scene>
-        <!--Main View Controller2-->
+        <!--Main View Controller3-->
         <scene sceneID="gSb-NZ-EFb">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="5N0-y7-nND" customClass="MainViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="5N0-y7-nND" customClass="MainViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gmq-Yu-xgZ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
