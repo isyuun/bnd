@@ -36,7 +36,7 @@ class MainViewController3: MainViewController2 {
         self.pagerView.reloadData()
 
         if let petList = self.dailyLifePetList {
-            if (petList.pets.count > 0) {
+            if (petList.pets.count > 0 && index < petList.pets.count) {
                 Global.petRelUnqNo = petList.pets[index].petRelUnqNo
 
                 let pet = petList.pets[index]

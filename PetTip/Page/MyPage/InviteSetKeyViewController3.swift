@@ -10,12 +10,27 @@ import UIKit
 class InviteSetKeyViewController3: InviteSetKeyViewController2 {
     var invttKeyVl: String!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+    private func invitation() {
         if let key = self.invttKeyVl, key.count == 6 {
-            self.invttKeyVl = nil
             tf_key.text = key
+            tf_key.isHidden = true
+            tf_key.resignFirstResponder()
+        } else {
+            tf_key.text = ""
+            tf_key.isHidden = false
+            tf_key.becomeFirstResponder()
         }
+
+        self.invttKeyVl = nil
+        Global.invttKeyVl = nil
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        invitation()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 }

@@ -331,6 +331,7 @@
 		7B0DDAF62BF2504E0042129A /* _CompPetListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */; };
 		7B0DDAF82BF2E55C0042129A /* JoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */; };
 		7B0DDAFA2BF2E6CD0042129A /* UserInfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */; };
+		7B21DBEA2BFF1C6000B5DF0B /* MainViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21DBE92BFF1C6000B5DF0B /* MainViewController4.swift */; };
 		7B250FD12BDFCC5D00171EFD /* PetWeightView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */; };
 		7B250FD32BE06FC700171EFD /* MyPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */; };
 		7B250FD52BE0CFE200171EFD /* InviteSetKeyViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */; };
@@ -707,6 +708,7 @@
 		7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _CompPetListView.xib; sourceTree = "<group>"; };
 		7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController2.swift; sourceTree = "<group>"; };
 		7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController2.swift; sourceTree = "<group>"; };
+		7B21DBE92BFF1C6000B5DF0B /* MainViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController4.swift; sourceTree = "<group>"; };
 		7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightView2.swift; sourceTree = "<group>"; };
 		7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController2.swift; sourceTree = "<group>"; };
 		7B250FD42BE0CFE200171EFD /* InviteSetKeyViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSetKeyViewController2.swift; sourceTree = "<group>"; };
@@ -821,6 +823,7 @@
 				022B418E2B1B22660057323E /* MainViewController.swift */,
 				7BD347E62BDF678700EFAF59 /* MainViewController2.swift */,
 				7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */,
+				7B21DBE92BFF1C6000B5DF0B /* MainViewController4.swift */,
 				022B41A92B1E05510057323E /* Common */,
 				022B41AE2B1E32FC0057323E /* Home */,
 				022B41962B1C43860057323E /* WalkHistory */,
@@ -1789,6 +1792,7 @@
 				02DB37FA2B641605007D19A1 /* BalloonMarker.swift in Sources */,
 				7BE5C7652BEB4EE100735E85 /* UICollectionViewDataSource.swift in Sources */,
 				028625272B4A86C70055E62F /* UmdListRequest.swift in Sources */,
+				7B21DBEA2BFF1C6000B5DF0B /* MainViewController4.swift in Sources */,
 				02DB38142B64FCD9007D19A1 /* PetProfileMemberItemView.swift in Sources */,
 				02A05B442B42A46900E8ABFA /* UserInfoViewController.swift in Sources */,
 				02E3FC582B2545AF00A1CE62 /* Login.swift in Sources */,

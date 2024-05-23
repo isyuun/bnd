@@ -1110,7 +1110,7 @@
         <!--Invite Set Key View Controller3-->
         <scene sceneID="VLr-aE-es5">
             <objects>
-                <viewController id="N5F-3R-4aK" customClass="InviteSetKeyViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="inviteSetKeyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N5F-3R-4aK" customClass="InviteSetKeyViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vBr-DS-ZLI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

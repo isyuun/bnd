@@ -9,7 +9,7 @@ import UIKit
 
 extension CommonViewController {
 
-    func containsSpecialCharacter(input: String) -> Bool {
+    internal func containsSpecialCharacter(input: String) -> Bool {
         do {
             // 알파벳, 숫자, 한글, 공백이 아닌 문자를 나타내는 정규식 패턴
             let regex = try NSRegularExpression(pattern: "[^A-Za-z0-9ㄱ-힣]+", options: [])
@@ -22,7 +22,7 @@ extension CommonViewController {
         }
     }
 
-    func checkOneDecimal(textField: UITextField, range: NSRange, string: String, integer: Int = 5, decimal: Int = 1) -> Bool {
+    internal func checkOneDecimal(textField: UITextField, range: NSRange, string: String, integer: Int = 5, decimal: Int = 1) -> Bool {
         // 입력된 문자열이 숫자 또는 소수점인지 확인합니다.
         let allowedCharacterSet = CharacterSet(charactersIn: "0123456789.")
         let replacementCharacterSet = CharacterSet(charactersIn: string)
@@ -62,6 +62,14 @@ extension CommonViewController {
         }
 
         return true
+    }
+
+    internal func invitation(key: String) {
+        // AppDelegate 인스턴스에 접근합니다.
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate3 {
+            // AppDelegate의 메서드 호출
+            appDelegate.invitation(key: key)
+        }
     }
 }
 
