@@ -21,15 +21,17 @@ struct MyPetDetailData: Codable {
     let petInfoUnqNo: Int
     let petKindNm: String
     let petRelUnqNo: Int
-    let stdgUmdCD, stdgSggNm, petBrthYmd, sexTypNm: String
+    let stdgUmdCD, stdgSggNm: String?
+    let petBrthYmd, sexTypNm: String
     let ntrTypNm: String
     let petRelNm: String?
     let sexTypCD, petMngrYn, ownrPetUnqNo, ntrTypCD: String
     let petRelCD: String
     let memberList: [MemberList]
-    let stdgSggCD: String
+    let stdgSggCD: String?
     let petRprsImgAddr: String?
-    let petTypCd, petRegNo, stdgCtpvCD, stdgCtpvNm: String
+    let petTypCd, petRegNo: String
+    let stdgCtpvCD, stdgCtpvNm: String?
     let stdgUmdNm: String?
     let petNm: String
     let wghtVl: Double

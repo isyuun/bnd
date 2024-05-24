@@ -19,7 +19,6 @@ private let GPS_LONGITUDE_ZERO = 127.065330 //127.0
 private let GPS_CAMERA_ZOOM_ZERO = 17.0
 
 class NMapViewController2: NMapViewController {
-    var recentLoc: CLLocation?
 
     override func startWalkingProcess() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][bWalkingState:\(bWalkingState)][recentLoc:\(String(describing: recentLoc)))]")

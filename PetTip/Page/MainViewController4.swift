@@ -21,7 +21,7 @@ class MainViewController4: MainViewController3 {
 
     override func dailyLife_PetList() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
-        // super.dailyLife_PetList()
+        super.dailyLife_PetList()
     }
 
     override func myPet_list() {
@@ -42,7 +42,7 @@ class MainViewController4: MainViewController3 {
 
     override func story_realTimeList() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
-        // super.story_realTimeList()
+        super.story_realTimeList()
     }
 
     override func requestLocation(type: Int) {
@@ -57,6 +57,6 @@ class MainViewController4: MainViewController3 {
 
     override func updateCurrLocation(_ locations: [CLLocation]) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][locations:\(locations)]")
-        // super.updateCurrLocation(locations)
+        super.updateCurrLocation(locations)
     }
 }

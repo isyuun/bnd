@@ -8,6 +8,6 @@
 import Foundation
 
 class MyError {
-    var description: String!
-    var resCode: Int!
+    var description: String = ""
+    var resCode: Int = 0
 }

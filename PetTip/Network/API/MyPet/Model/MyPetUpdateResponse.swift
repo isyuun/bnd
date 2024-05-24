@@ -21,12 +21,15 @@ struct MyPetUpdateData: Codable {
     let petInfoUnqNo: Int
     let petKindNm: String
     let petRelUnqNo: Int
-    let stdgUmdCD, stdgSggNm, petBrthYmd, sexTypNm: String
+    let stdgUmdCD, stdgSggNm: String?
+    let petBrthYmd, sexTypNm: String
     let ntrTypNm: String
     let petRelNm: String?
     let sexTypCD, petMngrYn, ownrPetUnqNo, ntrTypCD: String
-    let petRelCD, stdgSggCD, petRprsImgAddr, petTypCD: String
-    let petRegNo, stdgCtpvCD, stdgCtpvNm, stdgUmdNm: String
+    let petRelCD, petTypCD: String
+    let petRprsImgAddr: String?
+    let petRegNo: String
+    let stdgSggCD, stdgCtpvCD, stdgCtpvNm, stdgUmdNm: String?
     let petNm: String
     let wghtVl: Double
     let mngrType, endDt: String?

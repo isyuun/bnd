@@ -40,8 +40,8 @@ struct StoryAPI {
                     completion(response.toDomain, nil)
                 case .failure(let error):
                     let myError = MyError()
-                    myError.description = error.localizedDescription
-                    myError.resCode = response.response?.statusCode
+                    myError.description = "[\(self):\(#line)]\n\(error.localizedDescription)"
+                    myError.resCode = if response.response?.statusCode == 200 { 999 } else { response.response?.statusCode ?? 999 }
                     completion(nil, myError)
                 }
             }

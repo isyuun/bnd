@@ -138,13 +138,11 @@ class LoginViewController: CommonViewController2 {
 
     override func processNetworkError(_ error: MyError?) {
         if let error = error {
-            if let resCode = error.resCode {
-                if resCode == 406 {
-                    DispatchQueue.main.async {
-                        self.showSimpleAlert(msg: "아이디 및 패스워드를 확인해주세요")
-                    }
-                    return
+            if error.resCode == 406 {
+                DispatchQueue.main.async {
+                    self.showSimpleAlert(msg: "아이디 및 패스워드를 확인해주세요")
                 }
+                return
             }
 
             self.showSimpleAlert(title: "Network fail", msg: error.description)

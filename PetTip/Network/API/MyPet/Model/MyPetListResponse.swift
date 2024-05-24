@@ -17,8 +17,8 @@ struct MyPetListResponse: Codable {
 struct MyPet: Codable {
     let ownrPetUnqNo, petNm, petKindNm, petBrthYmd: String
     let petRelUnqNo, petInfoUnqNo: Int
-    let stdgCtpvCD, stdgCtpvNm, stdgSggCD, stdgSggNm: String
-    let stdgUmdCD: String
+    let stdgCtpvCD, stdgCtpvNm, stdgSggCD, stdgSggNm: String?
+    let stdgUmdCD: String?
     let stdgUmdNm: String?
     let petRelCD: String
     let petRelNm: String?

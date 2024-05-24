@@ -9,7 +9,7 @@ import UIKit
 import NMapsMap
 import AVKit
 
-class NMapViewController: LocationViewController, MapBottomViewProtocol {
+class NMapViewController: LocationViewController2, MapBottomViewProtocol {
 
     public var dailyLifePetList: PetList?
     private var selectedPets = [Pet]()

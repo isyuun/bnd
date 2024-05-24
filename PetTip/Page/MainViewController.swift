@@ -31,7 +31,7 @@ extension MainViewController: UITabBarControllerDelegate {
     }
 }
 
-class MainViewController: LocationViewController {
+class MainViewController: LocationViewController2 {
 
     override func viewDidLoad() {
         super.viewDidLoad()
