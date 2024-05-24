@@ -164,7 +164,7 @@ class LoginViewController: CommonViewController2 {
         }
     }
 
-    private func snsLogin(userId: String, userPw: String, loginMethod: String) {
+    private func snsLogin(userId: String, userPw: String, userNick: String = "", loginMethod: String) {
         self.startLoading()
 
         let request = LoginRequest(appTypNm: Util.getModel(), userID: userId, userPW: userPw)
@@ -186,7 +186,7 @@ class LoginViewController: CommonViewController2 {
                 self.trmnlMng(appKeyVl: login.appKeyVl)
             } else {
                 let snsJoinViewcontroller = UIStoryboard(name: "Member", bundle: nil).instantiateViewController(identifier: "SNSJoinViewcontroller") as SNSJoinViewController
-                snsJoinViewcontroller.memberData = MemberJoinData(id: userId, pw: userPw, nick: "", method: loginMethod)
+                snsJoinViewcontroller.memberData = MemberJoinData(id: userId, pw: userPw, nick: userNick, method: loginMethod)
                 self.navigationController?.pushViewController(snsJoinViewcontroller, animated: true)
             }
         }
@@ -226,7 +226,8 @@ class LoginViewController: CommonViewController2 {
             UserApi.shared.me() { user, error in
 
                 if let email = user?.kakaoAccount?.email, let id = user?.id {
-                    self.snsLogin(userId: email, userPw: String(describing: id), loginMethod: "KAKAO")
+                    let nick = user?.kakaoAccount?.profile?.nickname
+                    self.snsLogin(userId: email, userPw: String(describing: id), userNick: nick ?? "", loginMethod: "KAKAO")
                 } else {
                     self.showSimpleAlert(msg: "KAKAO 로그인에 문제가 발생했어요")
                 }
@@ -331,9 +332,10 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
                     {
                         let email = response.value(forKey: "email") as? String
                         let _id = response.value(forKey: "id") as? String
+                        let nick = response.value(forKey: "nickname") as? String
 
                         if let email = email, let _id = _id {
-                            self.snsLogin(userId: email, userPw: String(describing: _id), loginMethod: "NAVER")
+                            self.snsLogin(userId: email, userPw: String(describing: _id), userNick: nick ?? "", loginMethod: "NAVER")
                         } else {
                             self.showSimpleAlert(msg: "NAVER 로그인에 문제가 발생했어요 [E]\n\(String(describing: message))")
                         }
@@ -378,7 +380,10 @@ extension LoginViewController: ASAuthorizationControllerDelegate, ASAuthorizatio
         // print("userIdentifier : \(credential.user)")
         let user = credential.user
 
-        self.snsLogin(userId: _email, userPw: user, loginMethod: "APPLE")
+        // let nick = credential.fullName
+        let nick = ""
+
+        self.snsLogin(userId: _email, userPw: user, userNick: nick, loginMethod: "APPLE")
     }
 
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
