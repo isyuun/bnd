@@ -7,6 +7,15 @@
 
 import Foundation
 
+// MARK: - Datum
+struct PetInvtt: Codable {
+    let ownrPetUnqNo, petNm: String
+    // let petRelUnqNo: Int
+    // let petRprsImgAddr, petTypCd: String?
+    // let age, petKindNm, sexTypNm: String
+    // let wghtVl: Double
+}
+
 // struct MyPetInvttCreateRequest: Encodable {
 //     let pet: [Pet]
 //     let relBgngDt: String
@@ -14,7 +23,7 @@ import Foundation
 // }
 
 struct MyPetInvttCreateRequest: Encodable {
-    let pet: [PetInfo]
+    let pet: [PetInvtt]
     let relBgngDt: String
     let relEndDt: String
 }

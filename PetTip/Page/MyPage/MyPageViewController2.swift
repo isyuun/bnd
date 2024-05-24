@@ -70,22 +70,22 @@ class MyPageViewController2: MyPageViewController {
         }
     }
 
-    var petInfos: [PetInfo] = [PetInfo]()
+    var PetInvtts: [PetInvtt] = [PetInvtt]()
     var invttKeyVl: String!
 
     override func invtt_create(pets: [Pet], beginDt: String, endDt: String) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][pets:\(pets)][beginDt:\(beginDt)][endDt:\(endDt)]")
         self.startLoading()
 
-        self.petInfos.removeAll()
+        self.PetInvtts.removeAll()
         pets.forEach { pet in
             let ownrPetUnqNo = pet.ownrPetUnqNo
             let petNm = pet.petNm
-            let petInfo = PetInfo(ownrPetUnqNo: ownrPetUnqNo, petNm: petNm)
-            self.petInfos.append(petInfo)
+            let petInvtt = PetInvtt(ownrPetUnqNo: ownrPetUnqNo, petNm: petNm)
+            self.PetInvtts.append(petInvtt)
         }
 
-        let request = MyPetInvttCreateRequest(pet: petInfos, relBgngDt: beginDt, relEndDt: endDt)
+        let request = MyPetInvttCreateRequest(pet: PetInvtts, relBgngDt: beginDt, relEndDt: endDt)
         MyPetAPI.invttCreate(request: request) { response, error in
             self.stopLoading()
 
@@ -104,7 +104,7 @@ class MyPageViewController2: MyPageViewController {
             guard let vc = segue.destination as? InviteCreateViewController2 else { return }
             vc.invttKeyVl = pc.invttKeyVl
             vc.petNames.removeAll()
-            pc.petInfos.forEach { petInfo in
+            pc.PetInvtts.forEach { petInfo in
                 vc.petNames.append(petInfo.petNm)
             }
         }

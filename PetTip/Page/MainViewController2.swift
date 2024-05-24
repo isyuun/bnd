@@ -31,11 +31,6 @@ class MainViewController2: MainViewController {
     }
 
 
-    override func viewDidLoad() {
-        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
-        super.viewDidLoad()
-    }
-
     override func onShowCompPetListBottomSheet(_ sender: Any) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(Global.userNckNm)][\(Global.myPetList)][\(Global.dailyLifePetList)]")
         super.onShowCompPetListBottomSheet(sender)

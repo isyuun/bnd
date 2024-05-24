@@ -81,7 +81,7 @@ class MainViewController: LocationViewController {
     var myPetList: MyPetList?
     var dailyLifePetList: PetList?
 
-    func initRx() {
+    internal func initRx() {
         Global.myPetList.subscribe(onNext: { [weak self] myPetList in
             self?.refreshMyPetList(data: myPetList)
         }).disposed(by: disposeBag)
@@ -145,12 +145,12 @@ class MainViewController: LocationViewController {
         }
     }
 
-    func requestPageData() {
+    private func requestPageData() {
         dailyLife_PetList()
         myPet_list()
     }
 
-    func dailyLife_PetList() {
+    internal func dailyLife_PetList() {
         //self.startLoading()
 
         let request = PetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
@@ -513,7 +513,7 @@ class MainViewController: LocationViewController {
 
     var currStoryItemIndex: CGFloat = 0
 
-    func story_realTimeList() {
+    internal func story_realTimeList() {
         //self.startLoading()
 
         let request = RealTimeListRequest()

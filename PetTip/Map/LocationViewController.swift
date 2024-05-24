@@ -124,12 +124,12 @@ class LocationViewController: CommonViewController2 {
         present(requestLocationServiceAlert, animated: true)
     }
 
-    func requestLocation(type: Int) {
+    internal func requestLocation(type: Int) {
         locationReqType = type
         checkUserDeviceLocationServiceAuthorization()
     }
 
-    func startContinueLocation() {
+    internal func startContinueLocation() {
         locationReqType = 2
         checkUserDeviceLocationServiceAuthorization()
     }
