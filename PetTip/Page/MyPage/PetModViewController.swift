@@ -58,7 +58,7 @@ class PetModViewController: CommonPostViewController {
         self.lb_petKind.text = petDetailInfo.petKindNm
 
 
-        self.selectedSido = Sido(cdld: Int(petDetailInfo.stdgCtpvCD ?? "0"), upCdId: "", cdNm: petDetailInfo.stdgCtpvNm ?? "")
+        if let stdgCtpvCD = petDetailInfo.stdgCtpvCD { self.selectedSido = Sido(cdld: Int(stdgCtpvCD) ?? 0, upCdId: "", cdNm: petDetailInfo.stdgCtpvNm ?? "") }
         self.selectedSigungu = SggListData(sggCD: petDetailInfo.stdgSggCD ?? "0", sggNm: petDetailInfo.stdgSggNm ?? "")
         if petDetailInfo.stdgUmdNm != nil {
             self.selectedUpmeondong = UmdListData(umdCD: petDetailInfo.stdgUmdCD ?? "", umdNm: petDetailInfo.stdgUmdNm!)
