@@ -6,8 +6,21 @@
 //
 
 import UIKit
+import NaverThirdPartyLogin
 
 class MyPageViewController2: MyPageViewController {
+    // 출처: https://doggyfootstep.tistory.com/22 [iOS'DoggyFootstep:티스토리]
+    let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
+
+    override func logout() {
+        super.logout()
+        //카카오로그아웃
+        //네이버로그아웃
+        //페이스북로그아웃
+        //구글로그아웃
+        //애플로그아웃
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let count = myPetList?.myPets.count else { return }
         let index = indexPath.row

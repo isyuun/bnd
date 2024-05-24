@@ -352,6 +352,7 @@
 		7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */; };
 		7B714A7D2BE8690F00E89AE8 /* WalkPostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */; };
 		7B714A7F2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */; };
+		7B75E4BA2C003E6D00589DB8 /* LoginViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B75E4B92C003E6D00589DB8 /* LoginViewController3.swift */; };
 		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
 		7B8AB5ED2BF223B800CA051B /* CommonPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */; };
@@ -729,6 +730,7 @@
 		7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController2.swift; sourceTree = "<group>"; };
 		7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController2.swift; sourceTree = "<group>"; };
 		7B714A7E2BE8A6DE00E89AE8 /* StoryDetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController2.swift; sourceTree = "<group>"; };
+		7B75E4B92C003E6D00589DB8 /* LoginViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController3.swift; sourceTree = "<group>"; };
 		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
 		7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPostViewController.swift; sourceTree = "<group>"; };
@@ -820,6 +822,7 @@
 				025B7CD72B85875F004E85D1 /* PermissionInfoViewController.swift */,
 				022B41942B1B910F0057323E /* LoginViewController.swift */,
 				7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */,
+				7B75E4B92C003E6D00589DB8 /* LoginViewController3.swift */,
 				022B418E2B1B22660057323E /* MainViewController.swift */,
 				7BD347E62BDF678700EFAF59 /* MainViewController2.swift */,
 				7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */,
@@ -1953,6 +1956,7 @@
 				0251FD602B16EEE300F35EF8 /* MapTopView.swift in Sources */,
 				02A05AB72B3A677400E8ABFA /* CmntRcmdtnResponse.swift in Sources */,
 				02E3FC4E2B237CF000A1CE62 /* SelectPetView.swift in Sources */,
+				7B75E4BA2C003E6D00589DB8 /* LoginViewController3.swift in Sources */,
 				02A7AAEF2B58A6FE002F0C03 /* CreateUserResponse.swift in Sources */,
 				02E3FCA12B27617500A1CE62 /* WeekRecord.swift in Sources */,
 				02A05B362B4068D900E8ABFA /* WinnerDtlListResponse.swift in Sources */,

@@ -23,8 +23,6 @@ class AppDelegate2: AppDelegate {
 
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
         instance?.isNaverAppOauthEnable = true
-        instance?.isInAppOauthEnable = true
-        instance?.isOnlyPortraitSupportedInIphone()
         instance?.serviceUrlScheme = kServiceAppUrlScheme
         instance?.consumerKey = kConsumerKey
         instance?.consumerSecret = kConsumerSecret

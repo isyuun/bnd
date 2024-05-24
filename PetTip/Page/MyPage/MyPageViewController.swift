@@ -87,7 +87,7 @@ class MyPageViewController: CommonViewController, SelectPetViewProtocol {
         logout()
     }
 
-    private func logout() {
+    internal func logout() {
         self.startLoading()
 
         let request = LogoutRequest()

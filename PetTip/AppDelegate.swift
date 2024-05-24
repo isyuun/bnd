@@ -31,16 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             completionHandler: { _, _ in })
         application.registerForRemoteNotifications()
 
-        KakaoSDK.initSDK(appKey: "226344419c2ba87b4309b7d42ac22ae0")
-
-        let instance = NaverThirdPartyLoginConnection.getSharedInstance()
-        instance?.isNaverAppOauthEnable = true
-        instance?.isInAppOauthEnable = true
-        instance?.isOnlyPortraitSupportedInIphone()
-        instance?.serviceUrlScheme = kServiceAppUrlScheme
-        instance?.consumerKey = kConsumerKey
-        instance?.consumerSecret = kConsumerSecret
-        instance?.appName = kServiceAppName
+        // KakaoSDK.initSDK(appKey: "226344419c2ba87b4309b7d42ac22ae0")
+        // 
+        // let instance = NaverThirdPartyLoginConnection.getSharedInstance()
+        // instance?.isNaverAppOauthEnable = true
+        // instance?.isInAppOauthEnable = true
+        // instance?.isOnlyPortraitSupportedInIphone()
+        // instance?.serviceUrlScheme = kServiceAppUrlScheme
+        // instance?.consumerKey = kConsumerKey
+        // instance?.consumerSecret = kConsumerSecret
+        // instance?.appName = kServiceAppName
 
         DropDown.startListeningToKeyboard()
 
