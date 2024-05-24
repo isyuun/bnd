@@ -10,6 +10,7 @@ import UIKit
 class MainViewController4: MainViewController3 {
 
     override func viewDidLoad() {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][selectedPetIndex:\(selectedPetIndex)]")
         super.viewDidLoad()
 
         if let key = Global.invttKeyVl, key.count == 6 {

@@ -9,6 +9,26 @@ import UIKit
 
 class LoginViewController2: LoginViewController {
 
+    // override func keyboardWillShow(_ notification: NSNotification) {
+    //     super.keyboardWillShow(notification)
+    //     // 키보드 높이 가져오기
+    //     if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+    //         // 스크롤뷰의 콘텐츠 영역을 키보드의 높이만큼 조정
+    //         let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+    //         scroll.contentInset = insets
+    //         scroll.scrollIndicatorInsets = insets
+    //         scroll.scroll(to: .bottom)
+    //     }
+    // }
+    //
+    // override func keyboardWillHide(_ notification: NSNotification) {
+    //     super.keyboardWillHide(notification)
+    //     // 키보드가 사라질 때 스크롤뷰의 콘텐츠 영역을 원래대로 돌려놓음
+    //     let insets = UIEdgeInsets.zero
+    //     scroll.contentInset = insets
+    //     scroll.scrollIndicatorInsets = insets
+    // }
+
     @IBOutlet weak var SNSSLoginView: UIView!
     @IBOutlet weak var IDPWLoginView: UIView!
 
@@ -59,25 +79,5 @@ class LoginViewController2: LoginViewController {
             login()
         }
         return ret
-    }
-
-    override func keyboardWillShow(_ notification: NSNotification) {
-        super.keyboardWillShow(notification)
-        // 키보드 높이 가져오기
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            // 스크롤뷰의 콘텐츠 영역을 키보드의 높이만큼 조정
-            let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-            scroll.contentInset = insets
-            scroll.scrollIndicatorInsets = insets
-            scroll.scroll(to: .bottom)
-        }
-    }
-
-    override func keyboardWillHide(_ notification: NSNotification) {
-        super.keyboardWillHide(notification)
-        // 키보드가 사라질 때 스크롤뷰의 콘텐츠 영역을 원래대로 돌려놓음
-        let insets = UIEdgeInsets.zero
-        scroll.contentInset = insets
-        scroll.scrollIndicatorInsets = insets
     }
 }

@@ -23,10 +23,12 @@ class AppDelegate2: AppDelegate {
 
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
         instance?.isNaverAppOauthEnable = true
-        instance?.serviceUrlScheme = kServiceAppUrlScheme
-        instance?.consumerKey = kConsumerKey
-        instance?.consumerSecret = kConsumerSecret
-        instance?.appName = kServiceAppName
+        instance?.isInAppOauthEnable = true
+        instance?.isOnlyPortraitSupportedInIphone()
+        instance?.serviceUrlScheme = kServiceAppUrlScheme   //"net.pettip.PetTip"    //URL Scheme
+        instance?.consumerKey = kConsumerKey                //"fk5tuUBi3UzTVQRcBMGK"  //Client ID
+        instance?.consumerSecret = kConsumerSecret          //"kbSHyo7KeQ" //Client Secret
+        instance?.appName = kServiceAppName                 //"펫팁"    //애플리케이션 이름
 
         return ret
     }

@@ -226,20 +226,21 @@ class CommonViewController2: CommonViewController, UITextFieldDelegate {
     }
 
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        print("keyboardWillShow\(notification)")
-        // guard let userInfo = notification.userInfo else { return }
-        // guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        // let keyboardFrame = keyboardSize.cgRectValue
-        // // self.view.frame.size.height -= keyboardFrame.height
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][height:\(self.view.frame.size.height)]")
+        guard let userInfo = notification.userInfo else { return }
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let keyboardFrame = keyboardSize.cgRectValue
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= keyboardFrame.height
+        }
         checkFirstResponder()
     }
 
     @objc func keyboardWillHide(_ notification: NSNotification) {
-        print("keyboardWillHide\(notification)")
-        // guard let userInfo = notification.userInfo else { return }
-        // guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        // let keyboardFrame = keyboardSize.cgRectValue
-        // // self.view.frame.size.height += keyboardFrame.height
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][height:\(self.view.frame.size.height)]")
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
         checkFirstResponder()
     }
 

@@ -994,7 +994,6 @@
                         <outlet property="btn_expandAgreeTerm2" destination="6Ez-vV-cvD" id="1SK-YB-gh5"/>
                         <outlet property="btn_expandAgreeTerm3" destination="9ds-d3-5cf" id="MHH-Qg-bNx"/>
                         <outlet property="btn_nickDupChk" destination="bt1-e8-tHN" id="hXD-VS-95q"/>
-                        <outlet property="content" destination="LaP-4O-Vs4" id="gp4-7D-lID"/>
                         <outlet property="cr_agreeTerm1DetailAreaHeight" destination="wED-e7-ORB" id="AGW-tM-V1m"/>
                         <outlet property="cr_agreeTerm2DetailAreaHeight" destination="IFC-ia-MyU" id="9vz-uX-H9g"/>
                         <outlet property="cr_agreeTerm3DetailAreaHeight" destination="XWd-8a-j8t" id="pGb-pS-bhE"/>
@@ -1006,7 +1005,6 @@
                         <outlet property="iv_chkAgreeTerm2" destination="Jzr-ng-0fe" id="mgh-tM-mZg"/>
                         <outlet property="iv_chkAgreeTerm3" destination="KCd-Of-nXz" id="Ojv-Xz-wri"/>
                         <outlet property="lb_chkAgreeAll" destination="ee8-1s-TpF" id="q8Y-xs-DNF"/>
-                        <outlet property="scrollView" destination="x6u-SA-yMo" id="83B-JS-aKY"/>
                         <outlet property="tf_nickNm" destination="1Yw-lv-92I" id="GnZ-d8-9cV"/>
                         <outlet property="tf_nickNname" destination="1Yw-lv-92I" id="uCk-Zi-1Fu"/>
                         <outlet property="titleBarView" destination="3q4-bd-0pT" id="ehR-at-3H5"/>
