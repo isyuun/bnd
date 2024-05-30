@@ -10,15 +10,19 @@ import GoogleSignIn
 
 class LoginViewController3: LoginViewController2 {
     override func startLoading() {
-        // super.startLoading()
+        super.startLoading()
     }
-
+    
     override func stopLoading() {
-        // super.stopLoading()
+        super.stopLoading()
     }
 
     override func onLoginKakao(_ sender: Any) {
         super.onLoginKakao(sender)
+    }
+
+    override func startKakaoLogin() {
+        super.startKakaoLogin()
     }
 
     override func onLoginNaver(_ sender: Any) {
@@ -69,7 +73,7 @@ class LoginViewController3: LoginViewController2 {
 
     func startGoogleLogin(completion: @escaping (_ succeed: Login?, _ failed: MyError?) -> Void) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
-        // 출처: https://doggyfootstep.tistory.com/31 [iOS'DoggyFootstep:티스토리]    }
+        //출처: https://s-o-h-a.tistory.com/47 [Xcode/iOS] SwiftUI 구글(Google)로그인 구현하고 정보 가져오기
         // rootViewController
         guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else { return }
         // 로그인 진행

@@ -195,7 +195,7 @@ class LoginViewController: CommonViewController2 {
         startKakaoLogin()
     }
 
-    private func startKakaoLogin() {
+    internal func startKakaoLogin() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         self.startLoading()
 
