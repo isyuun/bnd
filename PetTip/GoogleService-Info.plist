@@ -21,16 +21,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>pettip.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:985887161836:ios:10eb8e158b0796bf1ad4c9</string>
+	<key>GIDClientID</key>
+	<string>985887161836-tm48dhlq7mkiorsrgsh7pkcmvf6fk610.apps.googleusercontent.com</string>
 </dict>
 </plist>

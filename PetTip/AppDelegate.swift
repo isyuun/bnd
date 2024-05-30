@@ -13,6 +13,7 @@ import KakaoSDKAuth
 import KakaoSDKCommon
 import NaverThirdPartyLogin
 import DropDown
+import GoogleSignIn
 
 // @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
 
         KakaoSDK.initSDK(appKey: "226344419c2ba87b4309b7d42ac22ae0")
-        
+
         let instance = NaverThirdPartyLoginConnection.getSharedInstance()
         instance?.isNaverAppOauthEnable = true
         instance?.isInAppOauthEnable = true
@@ -68,6 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NaverThirdPartyLoginConnection.getSharedInstance()?.application(app, open: url, options: options)
 
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
+        }
+
         return false
     }
 }
@@ -87,7 +92,7 @@ extension AppDelegate: MessagingDelegate {
         // let userDef = UserDefaults.standard
         // userDef.set(fcmToken, forKey: "appKey")
         // userDef.synchronize()
-        // 
+        //
         // print("Firebase registration token: \(fcmToken)")
         // let dataDict: [String: String] = ["token": fcmToken]
         // NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)

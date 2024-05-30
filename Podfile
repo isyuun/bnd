@@ -24,6 +24,8 @@ target 'PetTip' do
   pod 'naveridlogin-sdk-ios'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'GoogleSignIn'
+  pod 'GoogleSignInSwiftSupport'
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
