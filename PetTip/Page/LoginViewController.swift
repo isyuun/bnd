@@ -121,7 +121,7 @@ class LoginViewController: CommonViewController2 {
         }
     }
 
-    private func trmnlMng(appKeyVl: String?) {
+    internal func trmnlMng(appKeyVl: String?) {
         if (appKeyVl == nil || appKeyVl == "") || appKeyVl != Global.appKey {
 
             let request = TrmnlMngRequest(appKey: Global.appKey, appOs: "002", appTypNm: Util.getModel())

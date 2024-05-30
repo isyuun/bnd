@@ -53,7 +53,7 @@ class LoginViewController2: LoginViewController {
 
         #if DEBUG
             IDPWLoginView.isHidden = false
-            vwLoginFacebook.isHidden = false
+            vwLoginFacebook.isHidden = true
             vwLoginGoogle.isHidden = false
         #else
             IDPWLoginView.isHidden = true

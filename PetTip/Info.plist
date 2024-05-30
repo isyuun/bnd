@@ -22,7 +22,19 @@
 				<string>net.pettip.PetTip</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Google Sign in</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.985887161836-tm48dhlq7mkiorsrgsh7pkcmvf6fk610</string>
+			</array>
+		</dict>
 	</array>
+	<key>GIDClientID</key>
+	<string>985887161836-tm48dhlq7mkiorsrgsh7pkcmvf6fk610.apps.googleusercontent.com</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
