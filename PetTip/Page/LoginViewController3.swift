@@ -9,6 +9,14 @@ import UIKit
 import GoogleSignIn
 
 class LoginViewController3: LoginViewController2 {
+    override func startLoading() {
+        // super.startLoading()
+    }
+
+    override func stopLoading() {
+        // super.stopLoading()
+    }
+
     override func onLoginKakao(_ sender: Any) {
         super.onLoginKakao(sender)
     }
@@ -58,7 +66,6 @@ class LoginViewController3: LoginViewController2 {
             completion(login, error)
         }
     }
-
 
     func startGoogleLogin(completion: @escaping (_ succeed: Login?, _ failed: MyError?) -> Void) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
