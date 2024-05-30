@@ -54,11 +54,9 @@ class LoginViewController2: LoginViewController {
         #if DEBUG
             IDPWLoginView.isHidden = false
             vwLoginFacebook.isHidden = true
-            vwLoginGoogle.isHidden = false
         #else
             IDPWLoginView.isHidden = true
             vwLoginFacebook.isHidden = true
-            vwLoginGoogle.isHidden = true
         #endif
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
