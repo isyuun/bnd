@@ -1135,7 +1135,7 @@
         <!--Walk History View Controller-->
         <scene sceneID="0Mm-vD-MSf">
             <objects>
-                <viewController id="AJp-Uc-hoh" customClass="WalkHistoryViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkHistoryViewController" id="AJp-Uc-hoh" customClass="WalkHistoryViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E9a-Tp-5V9">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3031,8 +3031,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ksD-bF-nzH"/>
-        <segue reference="DfS-D8-BTo"/>
+        <segue reference="vfl-ne-gmJ"/>
+        <segue reference="ISm-sO-KAv"/>
         <segue reference="8xf-V6-Ark"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -26,9 +26,10 @@ class MainViewController4: MainViewController3 {
 
     override func myPet_list() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
+        guard let userId = UserDefaults.standard.value(forKey: "userId") else { return }
         //self.startLoading()
 
-        let request = MyPetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
+        let request = MyPetListRequest(userId: userId as! String)
         MyPetAPI.list(request: request) { myPetList, error in
             self.stopLoading()
 

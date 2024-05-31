@@ -13,9 +13,7 @@ import RxCocoa
 import AlamofireImage
 
 extension MainViewController: UITabBarControllerDelegate {
-
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-
         if let navController = viewController as? UINavigationController {
             if let vc = navController.children.first as? WalkHistoryViewController {
                 walkHistoryViewController = vc
@@ -32,7 +30,6 @@ extension MainViewController: UITabBarControllerDelegate {
 }
 
 class MainViewController: LocationViewController2 {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,11 +55,11 @@ class MainViewController: LocationViewController2 {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "segueMainToMap") {
+        if segue.identifier == "segueMainToMap" {
             let dest = segue.destination
             guard let vc = dest as? NMapViewController else { return }
             vc.dailyLifePetList = dailyLifePetList
@@ -81,7 +78,7 @@ class MainViewController: LocationViewController2 {
     var myPetList: MyPetList?
     var dailyLifePetList: PetList?
 
-    internal func initRx() {
+    func initRx() {
         Global.myPetList.subscribe(onNext: { [weak self] myPetList in
             self?.refreshMyPetList(data: myPetList)
         }).disposed(by: disposeBag)
@@ -95,37 +92,37 @@ class MainViewController: LocationViewController2 {
         }).disposed(by: disposeBag)
     }
 
-    internal func refreshMyPetList(data: MyPetList?) {
+    func refreshMyPetList(data: MyPetList?) {
         guard let myPetList = data else { return }
         self.myPetList = myPetList
     }
 
-    internal func refreshDailyLifePetList(data: PetList?) {
+    func refreshDailyLifePetList(data: PetList?) {
         guard let petList = data else { return }
-        self.dailyLifePetList = petList
+        dailyLifePetList = petList
 
-        self.bgCompPetFirstImg.isHidden = true
-        self.bgCompPetSecondImg.isHidden = true
+        bgCompPetFirstImg.isHidden = true
+        bgCompPetSecondImg.isHidden = true
 
         var pet: Pet? = nil
         var imageView: UIImageView? = nil
         if petList.pets.count > 0 {
             pet = petList.pets[0]
-            imageView = self.compPetFirstImg
-            self.bgCompPetFirstImg.isHidden = false
+            imageView = compPetFirstImg
+            bgCompPetFirstImg.isHidden = false
             if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
         }
 
         if petList.pets.count > 1 {
             pet = petList.pets[1]
-            imageView = self.compPetSecondImg
-            self.bgCompPetSecondImg.isHidden = false
+            imageView = compPetSecondImg
+            bgCompPetSecondImg.isHidden = false
             if let imageView = imageView { Global2.setPetImage(imageView: imageView, petTypCd: pet?.petTypCd, petImgAddr: pet?.petRprsImgAddr) }
         }
     }
 
     func requestCurrPetWeekData(_ ownrPetUnqNo: String) {
-        //self.startLoading()
+        // self.startLoading()
 
         let fomatter = DateFormatter()
         fomatter.dateFormat = "yyyy-MM-dd"
@@ -150,10 +147,11 @@ class MainViewController: LocationViewController2 {
         myPet_list()
     }
 
-    internal func dailyLife_PetList() {
-        //self.startLoading()
+    func dailyLife_PetList() {
+        guard let userId = UserDefaults.standard.value(forKey: "userId") else { return }
+        // self.startLoading()
 
-        let request = PetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
+        let request = PetListRequest(userId: userId as! String)
         DailyLifeAPI.petList(request: request) { petList, error in
             self.stopLoading()
 
@@ -170,7 +168,7 @@ class MainViewController: LocationViewController2 {
     }
 
     func myPet_list() {
-        //self.startLoading()
+        // self.startLoading()
 
         let request = MyPetListRequest(userId: UserDefaults.standard.value(forKey: "userId")! as! String)
         MyPetAPI.list(request: request) { myPetList, error in
@@ -184,50 +182,50 @@ class MainViewController: LocationViewController2 {
         }
     }
 
-    internal func refreshSelectedPetIndex(data: Int?) {
+    func refreshSelectedPetIndex(data: Int?) {
         // guard let index = data else { return }
         // self.selectedPetIndex = index
-        // 
+        //
         // self.pagerView.reloadData()
-        // 
+        //
         // if let petList = self.dailyLifePetList {
         //     if (petList.pets.count > 0) {
         //         Global.petRelUnqNo = petList.pets[self.selectedPetIndex].petRelUnqNo
-        // 
+        //
         //         let pet = petList.pets[self.selectedPetIndex]
         //         Global2.setPetImage(imageView: self.titleBarPfImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
-        // 
+        //
         //         self.titleBarPfNMLabel.text = petList.pets[self.selectedPetIndex].petNm
-        // 
+        //
         //         self.lbCurrPetKind.text = petList.pets[self.selectedPetIndex].petKindNm
         //         self.lbCurrPetNm.text = petList.pets[self.selectedPetIndex].petNm
-        // 
+        //
         //         self.ageLabel.text = petList.pets[self.selectedPetIndex].age
         //         self.genderLabel.text = petList.pets[self.selectedPetIndex].sexTypNm
         //         self.weightLabel.text = String(format: "%.1fkg", Float(petList.pets[self.selectedPetIndex].wghtVl))
-        // 
+        //
         //         self.currPetNMLabel.text = petList.pets[self.selectedPetIndex].petNm
-        // 
+        //
         //         self.requestCurrPetWeekData(petList.pets[self.selectedPetIndex].ownrPetUnqNo)
-        // 
+        //
         //     } else {
         //         self.titleBarPfImageView.image = UIImage(named: "profile_default")
         //         self.titleBarPfNMLabel.text = "등록된 펫 없음"
-        // 
+        //
         //         self.lbCurrPetKind.text = ""
         //         self.lbCurrPetNm.text = "등록된 펫 없음"
-        // 
+        //
         //         self.currPetNMLabel.text = "댕댕이"
-        // 
+        //
         //         self.ageLabel.text = "-"
         //         self.genderLabel.text = "-"
         //         self.weightLabel.text = "-"
-        // 
+        //
         //         self.totalWalkTimeLabel.text = "00:00:00"
         //         self.totalWalkDistLabel.text = "0.0km"
         //     }
         // }
-        // 
+        //
         // if (self.selectIdxFromPrevPage == false) {
         //     self.walkHistoryViewController?.selectIdxFromPrevPage = true
         //     self.walkHistoryViewController?.dailyLifePetList = self.dailyLifePetList
@@ -237,6 +235,7 @@ class MainViewController: LocationViewController2 {
     }
 
     // MARK: - COMMON UI
+
     @IBOutlet weak var bgWeatherView: UIView!
 
     @IBOutlet weak var bgPetListView: UIView!
@@ -250,7 +249,7 @@ class MainViewController: LocationViewController2 {
         bgPetListView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         // bgPetListView.layer.masksToBounds = true
 
-        bgPetListView.layer.borderColor = UIColor.init(hex: "#4E608526")?.cgColor
+        bgPetListView.layer.borderColor = UIColor(hex: "#4E608526")?.cgColor
         bgPetListView.layer.borderWidth = 1
 
         bgPetListView.layer.shadowRadius = 5
@@ -271,17 +270,19 @@ class MainViewController: LocationViewController2 {
 
     @IBAction func onWalkGo(_ sender: Any) {
         btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
-        self.performSegue(withIdentifier: "segueMainToMap", sender: self)
+        performSegue(withIdentifier: "segueMainToMap", sender: self)
     }
+
     @IBAction func onWalkGo_TouchDown(_ sender: Any) {
         btnWalkGo.backgroundColor = UIColor(hex: "#ff4B64F5")
     }
+
     @IBAction func onWalkGo_TouchUpOutside(_ sender: Any) {
         btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
     }
 
     func removeAllBeforeHistory() {
-        self.navigationController?.viewControllers.removeAll(where: { vc -> Bool in
+        navigationController?.viewControllers.removeAll(where: { vc -> Bool in
             if vc.isKind(of: MainViewController.self) {
                 return false
             } else {
@@ -291,6 +292,7 @@ class MainViewController: LocationViewController2 {
     }
 
     // MARK: - SELECTED PET INFO
+
     @IBOutlet weak var lbCurrPetKind: UILabel!
     @IBOutlet weak var lbCurrPetNm: UILabel!
 
@@ -322,7 +324,6 @@ class MainViewController: LocationViewController2 {
     @IBOutlet weak var totalWalkDistLabel: UILabel!
 
     private func showSelectedPetInfo() {
-
         ageBgView.layer.cornerRadius = 8
         genderBgView.layer.cornerRadius = 8
         weightBgView.layer.cornerRadius = 8
@@ -362,15 +363,16 @@ class MainViewController: LocationViewController2 {
     }
 
     // MARK: - SELECT MY PET
+
     var selectPetView: SelectPetView! = nil
 
     func showSelectMyPet() {
-        if (dailyLifePetList == nil || dailyLifePetList?.pets.count == 0) {
+        if dailyLifePetList == nil || dailyLifePetList?.pets.count == 0 {
             return
         }
 
-        self.bottomSheetVC = BottomSheetViewController()
-        if let bottomSheetVC = self.bottomSheetVC {
+        bottomSheetVC = BottomSheetViewController()
+        if let bottomSheetVC = bottomSheetVC {
             bottomSheetVC.modalPresentationStyle = .overFullScreen
             bottomSheetVC.dismissIndicatorView.isHidden = true
             // bottomSheetVC.isDynamicHeight = true
@@ -378,14 +380,15 @@ class MainViewController: LocationViewController2 {
                 bottomSheetVC.addContentSubView(v: v)
                 v.initialize()
                 v.setData(dailyLifePetList?.pets as Any)
-                v.setSelected(self.selectedPetIndex)
+                v.setSelected(selectedPetIndex)
                 v.setDelegate(self)
             }
-            self.present(bottomSheetVC, animated: false, completion: nil)
+            present(bottomSheetVC, animated: false, completion: nil)
         }
     }
 
     // MARK: - COMPANION PET LIST
+
     var bottomSheetVC: BottomSheetViewController? = nil
     var compPetListView: CompPetListView? = nil
 
@@ -394,7 +397,7 @@ class MainViewController: LocationViewController2 {
         // if (myPetList == nil || myPetList.myPets.count == 0) {
         //     return
         // }
-        // 
+        //
         // self.bottomSheetVC = BottomSheetViewController()
         // if let bottomSheetVC = self.bottomSheetVC {
         //     bottomSheetVC.modalPresentationStyle = .overFullScreen
@@ -417,6 +420,7 @@ class MainViewController: LocationViewController2 {
     }
 
     // MARK: - WEATHER INFO
+
     @IBOutlet weak var iv_weather: UIImageView!
     @IBOutlet weak var lb_temp: UILabel!
     @IBOutlet weak var lb_per: UILabel!
@@ -430,7 +434,7 @@ class MainViewController: LocationViewController2 {
 
         guard let recentLoc = locations.last else { return }
 
-        //self.startLoading()
+        // self.startLoading()
 
         let lat = (recentLoc.coordinate.latitude)
         let lon = (recentLoc.coordinate.longitude)
@@ -461,12 +465,12 @@ class MainViewController: LocationViewController2 {
                     }
                 }
 
-                var isNight: Bool = true
+                var isNight = true
                 let df = DateFormatter()
                 df.dateFormat = "HH"
                 let ch = Int(df.string(from: Date()))
                 if let ch = ch {
-                    if (ch >= 6 && ch < 18) {
+                    if ch >= 6 && ch < 18 {
                         isNight = false
                     }
                 }
@@ -507,14 +511,15 @@ class MainViewController: LocationViewController2 {
     }
 
     // MARK: - REALTIME STORY
+
     @IBOutlet weak var storyCollectionView: UICollectionView!
 
     var realTimeList: RealTimeList? = nil
 
     var currStoryItemIndex: CGFloat = 0
 
-    internal func story_realTimeList() {
-        //self.startLoading()
+    func story_realTimeList() {
+        // self.startLoading()
 
         let request = RealTimeListRequest()
         StoryAPI.realTimeList(request: request) { realTimeList, error in
@@ -537,9 +542,9 @@ class MainViewController: LocationViewController2 {
         let cellWidth = 200
         let cellHeight = 280
 
-        //let insetX = (storyCollectionView.bounds.width - CGFloat(cellWidth)) / 2.0
+        // let insetX = (storyCollectionView.bounds.width - CGFloat(cellWidth)) / 2.0
         let insetX = CGFloat(20)
-        //let insetY = (storyCollectionView.bounds.height - CGFloat(cellHeight)) / 2.0
+        // let insetY = (storyCollectionView.bounds.height - CGFloat(cellHeight)) / 2.0
         let insetY = CGFloat(0)
 
         let layout = storyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -558,13 +563,14 @@ class MainViewController: LocationViewController2 {
     }
 
     @IBAction func onMoreStory(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 2
+        tabBarController?.selectedIndex = 2
     }
 
     // MARK: - FSPager
+
     @IBOutlet weak var pagerView: FSPagerView! {
         didSet {
-            pagerView.register(UINib.init(nibName: "PetProfItemView", bundle: nil), forCellWithReuseIdentifier: "PetProfItemView")
+            pagerView.register(UINib(nibName: "PetProfItemView", bundle: nil), forCellWithReuseIdentifier: "PetProfItemView")
         }
     }
 
@@ -576,11 +582,12 @@ class MainViewController: LocationViewController2 {
         pagerView.transformer = FSPagerViewTransformer(type: .overlap)
         pagerView.transformer?.minimumAlpha = 0.4
         let transform: CGAffineTransform = CGAffineTransformMakeScale(0.2, 0.2)
-        self.pagerView.itemSize = CGSizeApplyAffineTransform(CGSize(width: 900, height: 900), transform)
-        self.pagerView.decelerationDistance = 1 // FSPagerViewAutomaticDistance
+        pagerView.itemSize = CGSizeApplyAffineTransform(CGSize(width: 900, height: 900), transform)
+        pagerView.decelerationDistance = 1 // FSPagerViewAutomaticDistance
     }
 
     // MARK: - Top LogoTitleBar
+
     @IBOutlet weak var titleBarView: UIView!
 
     var titleBarPfImageView: UIImageView!
@@ -598,8 +605,9 @@ class MainViewController: LocationViewController2 {
     }
 
     // MARK: - Bottom TabBar
+
     private func customBottomTabBar() {
-        if let tbc = self.tabBarController {
+        if let tbc = tabBarController {
             tbc.delegate = self
 
             UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13)], for: .normal)
@@ -623,17 +631,17 @@ class MainViewController: LocationViewController2 {
             tbc.tabBar.items?[3].selectedImage = UIImage(named: "mypage_active")?.withRenderingMode(.alwaysOriginal)
             tbc.tabBar.items?[3].title = "MY"
 
-            tbc.tabBar.selectionIndicatorImage = UIImage().createSelectionIndicator(color: UIColor.init(hexCode: "#4783f5"), size: CGSize(width: tbc.tabBar.frame.width / CGFloat(tbc.tabBar.items!.count) / 2.5, height: tbc.tabBar.frame.height), lineThickness: 4.0, side: .top)
+            tbc.tabBar.selectionIndicatorImage = UIImage().createSelectionIndicator(color: UIColor(hexCode: "#4783f5"), size: CGSize(width: tbc.tabBar.frame.width / CGFloat(tbc.tabBar.items!.count) / 2.5, height: tbc.tabBar.frame.height), lineThickness: 4.0, side: .top)
         }
     }
 }
 
 // MARK: - FSPager Delegate
-extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
 
+extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     public func numberOfItems(in pagerView: FSPagerView) -> Int {
         if let pets = dailyLifePetList?.pets {
-            if (pets.count == 0) { return 1 }
+            if pets.count == 0 { return 1 }
             return pets.count
         }
 
@@ -644,7 +652,7 @@ extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "PetProfItemView", at: index) as! PetProfItemView
 
         if let pets = dailyLifePetList?.pets {
-            if (pets.count > 0) {
+            if pets.count > 0 {
                 let pet = pets[index]
                 Global2.setPetImage(imageView: cell.profileImageView, petTypCd: pet.petTypCd, petImgAddr: pet.petRprsImgAddr)
             } else {
@@ -664,13 +672,14 @@ extension MainViewController: FSPagerViewDataSource, FSPagerViewDelegate {
     }
 
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             Global.selectedPetIndexBehaviorRelay.accept(targetIndex)
-        })
+        }
     }
 }
 
 // MARK: - Realtime Story Delegate
+
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -709,12 +718,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let realTimeList = realTimeList {
             Global.toSchUnqNo = realTimeList.items[indexPath.row].schUnqNo
-            self.tabBarController?.selectedIndex = 2
+            tabBarController?.selectedIndex = 2
         }
     }
 }
 
 // MARK: - COMPANION PET LIST DELEGATE
+
 extension MainViewController: CompPetListViewProtocol {
     func onAddPet() {
         bottomSheetVC?.hideBottomSheetAndGoBack()
@@ -723,7 +733,7 @@ extension MainViewController: CompPetListViewProtocol {
         compPetListView = nil
 
         let petAddViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetAddViewController") as PetAddViewController
-        self.navigationController?.pushViewController(petAddViewController, animated: true)
+        navigationController?.pushViewController(petAddViewController, animated: true)
     }
 
     func onPetManage(myPet: MyPet) {
@@ -735,22 +745,22 @@ extension MainViewController: CompPetListViewProtocol {
         let petProfileViewController = UIStoryboard(name: "Pet", bundle: nil).instantiateViewController(identifier: "PetProfileViewController") as PetProfileViewController2
         petProfileViewController.myPet = myPet
 
-        self.navigationController?.pushViewController(petProfileViewController, animated: true)
+        navigationController?.pushViewController(petProfileViewController, animated: true)
     }
 }
 
 // MARK: - LOGO TITLE BAR VIEW DELEGATE
+
 extension MainViewController: LogoTitleBarViewProtocol {
     func onShowSelectMyPet() {
         showSelectMyPet()
     }
 
-    func onBack() {
-
-    }
+    func onBack() {}
 }
 
 // MARK: - SELECT PET VIEW DELEGATE
+
 extension MainViewController: SelectPetViewProtocol {
     func onSelectPet(_ selectedIdx: Int) {
         bottomSheetVC?.hideBottomSheetAndGoBack()
@@ -762,4 +772,3 @@ extension MainViewController: SelectPetViewProtocol {
         // Global.selectedPetIndexBehaviorRelay.accept(selectedIdx)
     }
 }
-
