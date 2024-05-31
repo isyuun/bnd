@@ -65,11 +65,12 @@ extension CommonViewController {
     }
 
     internal func invitation(key: String) {
-        // AppDelegate 인스턴스에 접근합니다.
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate3 {
-            // AppDelegate의 메서드 호출
-            appDelegate.invitation(key: key)
-        }
+        NSLog("[LOG][I][ST][(\(#fileID):\(#line))::\(#function)][key:\(key)]")
+        // 초기 뷰 컨트롤러를 스토리보드를 통해 인스턴스화합니다.
+        let initialViewController = UIStoryboard(name: "MyPage", bundle: nil).instantiateViewController(identifier: "inviteSetKeyViewController") as InviteSetKeyViewController3
+        initialViewController.invttKeyVl = key
+        self.navigationController?.pushViewController(initialViewController, animated: true)
+        NSLog("[LOG][I][ED][(\(#fileID):\(#line))::\(#function)][key:\(key)]")
     }
 }
 
