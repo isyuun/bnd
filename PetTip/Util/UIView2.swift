@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIView {
-
     func checkOneDecimal(textField: UITextField, range: NSRange, string: String, integer: Int = 5, decimal: Int = 1) -> Bool {
         // 입력된 문자열이 숫자 또는 소수점인지 확인합니다.
         let allowedCharacterSet = CharacterSet(charactersIn: "0123456789.")
