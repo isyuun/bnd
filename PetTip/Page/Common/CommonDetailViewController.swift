@@ -32,6 +32,11 @@ class CommonDetailViewController : CommonViewController2 {
             self.title = view.lb_title.text
         }
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.title = lb_title?.text
+    }
 }
 
 extension CommonDetailViewController : BackTitleBarViewProtocol {

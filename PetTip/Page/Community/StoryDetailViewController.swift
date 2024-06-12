@@ -93,6 +93,7 @@ class StoryDetailViewController: CommonDetailViewController {
 
     private func showCommonUI() {
         lb_title?.text = "스토리"
+        self.title = lb_title?.text
 
         iv_repPetProf.layer.cornerRadius = iv_repPetProf.bounds.size.width / 2
         iv_repPetProf.layer.masksToBounds = true
