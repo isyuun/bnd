@@ -7,7 +7,6 @@
 
 import UIKit
 
-@main
 class AppDelegate3: AppDelegate2 {
 
     // override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

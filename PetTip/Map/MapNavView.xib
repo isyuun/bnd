@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,11 +12,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MapNavView" customModule="PetTip" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="140"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTT-Xy-b3K" customClass="MapNavView" customModule="PetTip" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="40" width="393" height="100"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fso-oK-u4U">
                             <rect key="frame" x="125" y="48" width="110" height="27"/>
@@ -75,7 +75,7 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
                 <constraint firstItem="jTT-Xy-b3K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Eb2-zC-5bM"/>
-                <constraint firstItem="jTT-Xy-b3K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="T1l-YR-68I"/>
+                <constraint firstItem="jTT-Xy-b3K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="T1l-YR-68I"/>
                 <constraint firstAttribute="bottom" secondItem="jTT-Xy-b3K" secondAttribute="bottom" id="TK7-7J-UG6"/>
                 <constraint firstItem="jTT-Xy-b3K" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="mr0-03-6Ev"/>
             </constraints>
