@@ -55,7 +55,6 @@
 		022B41982B1C44180057323E /* WalkHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41972B1C44180057323E /* WalkHistoryViewController.swift */; };
 		022B419B2B1C44AC0057323E /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B419A2B1C44AC0057323E /* CommunityViewController.swift */; };
 		022B419E2B1C45370057323E /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B419D2B1C45370057323E /* MyPageViewController.swift */; };
-		022B41A42B1CB7E10057323E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41A32B1CB7E10057323E /* UITextField.swift */; };
 		022B41A82B1D7A270057323E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41A72B1D7A270057323E /* IntroViewController.swift */; };
 		022B41AB2B1E058B0057323E /* LogoTitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41AA2B1E058B0057323E /* LogoTitleBarView.swift */; };
 		022B41AD2B1E05CF0057323E /* LogoTitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022B41AC2B1E05CF0057323E /* LogoTitleBarView.xib */; };
@@ -331,6 +330,8 @@
 		7B0DDAF62BF2504E0042129A /* _CompPetListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */; };
 		7B0DDAF82BF2E55C0042129A /* JoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */; };
 		7B0DDAFA2BF2E6CD0042129A /* UserInfoViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */; };
+		7B16B9FE2C1994910080828F /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16B9FC2C1994910080828F /* UITextField2.swift */; };
+		7B16B9FF2C1994910080828F /* UITextField3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16B9FD2C1994910080828F /* UITextField3.swift */; };
 		7B21DBEA2BFF1C6000B5DF0B /* MainViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21DBE92BFF1C6000B5DF0B /* MainViewController4.swift */; };
 		7B250FD12BDFCC5D00171EFD /* PetWeightView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */; };
 		7B250FD32BE06FC700171EFD /* MyPageViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */; };
@@ -433,7 +434,6 @@
 		022B41972B1C44180057323E /* WalkHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkHistoryViewController.swift; sourceTree = "<group>"; };
 		022B419A2B1C44AC0057323E /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		022B419D2B1C45370057323E /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		022B41A32B1CB7E10057323E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		022B41A72B1D7A270057323E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		022B41AA2B1E058B0057323E /* LogoTitleBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoTitleBarView.swift; path = PetTip/Page/LogoTitleBarView.swift; sourceTree = SOURCE_ROOT; };
 		022B41AC2B1E05CF0057323E /* LogoTitleBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoTitleBarView.xib; sourceTree = "<group>"; };
@@ -712,6 +712,8 @@
 		7B0DDAF42BF2504E0042129A /* _CompPetListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _CompPetListView.xib; sourceTree = "<group>"; };
 		7B0DDAF72BF2E55C0042129A /* JoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController2.swift; sourceTree = "<group>"; };
 		7B0DDAF92BF2E6CD0042129A /* UserInfoViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController2.swift; sourceTree = "<group>"; };
+		7B16B9FC2C1994910080828F /* UITextField2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
+		7B16B9FD2C1994910080828F /* UITextField3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField3.swift; sourceTree = "<group>"; };
 		7B21DBE92BFF1C6000B5DF0B /* MainViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController4.swift; sourceTree = "<group>"; };
 		7B250FD02BDFCC5D00171EFD /* PetWeightView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWeightView2.swift; sourceTree = "<group>"; };
 		7B250FD22BE06FC700171EFD /* MyPageViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController2.swift; sourceTree = "<group>"; };
@@ -1022,10 +1024,11 @@
 		0251FD522B11939C00F35EF8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				7B16B9FC2C1994910080828F /* UITextField2.swift */,
+				7B16B9FD2C1994910080828F /* UITextField3.swift */,
 				0251FD6D2B1871F400F35EF8 /* UIView.swift */,
 				7BE12BD12BEC5D7E009B556A /* UIView2.swift */,
 				0251FD612B16F7F400F35EF8 /* UIColor.swift */,
-				022B41A32B1CB7E10057323E /* UITextField.swift */,
 				7BD541EE2BE48486008861DE /* UITextView2.swift */,
 				0251FD552B11B4FB00F35EF8 /* UIButton.swift */,
 				0251FD732B1909BA00F35EF8 /* UIImage.swift */,
@@ -1756,7 +1759,6 @@
 				02A05AE22B3DD89B00E8ABFA /* ReportView.swift in Sources */,
 				020B797F2B2D70F100C0AB2D /* MonthRecordResponse.swift in Sources */,
 				02A05B002B3EC3C500E8ABFA /* RlsUpdate.swift in Sources */,
-				022B41A42B1CB7E10057323E /* UITextField.swift in Sources */,
 				02A05AEC2B3E4F8300E8ABFA /* CodeListRequest.swift in Sources */,
 				02EB98042B0CFF03007428AD /* ViewController.swift in Sources */,
 				02A05AFE2B3EC22500E8ABFA /* RlsUpdateResponse.swift in Sources */,
@@ -1877,6 +1879,7 @@
 				02E3FC6D2B25560B00A1CE62 /* API.swift in Sources */,
 				022B41AB2B1E058B0057323E /* LogoTitleBarView.swift in Sources */,
 				7BE5C7672BEB4F7F00735E85 /* UITableViewDataSource.swift in Sources */,
+				7B16B9FE2C1994910080828F /* UITextField2.swift in Sources */,
 				02DB38042B64955A007D19A1 /* PetWeightView.swift in Sources */,
 				0293C62A2B0E43280004F19D /* UTCTimeViewModel.swift in Sources */,
 				7B8CF2B52BFAEA9400B73A5C /* AppDelegate3.swift in Sources */,
@@ -1942,6 +1945,7 @@
 				0251FD682B17126300F35EF8 /* MapNavView.swift in Sources */,
 				02EB98022B0CFF03007428AD /* SceneDelegate.swift in Sources */,
 				7B0DDAFA2BF2E6CD0042129A /* UserInfoViewController2.swift in Sources */,
+				7B16B9FF2C1994910080828F /* UITextField3.swift in Sources */,
 				020B79672B2B376700C0AB2D /* BackTitleBarView.swift in Sources */,
 				02A7AAD22B52168E002F0C03 /* QnAAtchUploadResponse.swift in Sources */,
 				7BD541EF2BE48486008861DE /* UITextView2.swift in Sources */,
