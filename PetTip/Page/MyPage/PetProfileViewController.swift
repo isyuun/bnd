@@ -503,6 +503,7 @@ class PetProfileViewController: CommonViewController {
             view.lb_title.text = title
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

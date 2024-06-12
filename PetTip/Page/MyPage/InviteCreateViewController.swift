@@ -58,6 +58,7 @@ class InviteCreateViewController: CommonViewController {
             view.lb_title.text = "초대하기"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

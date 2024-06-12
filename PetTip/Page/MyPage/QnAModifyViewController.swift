@@ -395,6 +395,7 @@ class QnAModifyViewController: CommonViewController {
             view.lb_title.text = "1:1 문의 수정"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

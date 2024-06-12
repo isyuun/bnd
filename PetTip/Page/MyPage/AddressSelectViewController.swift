@@ -292,6 +292,7 @@ class AddressSelectViewController: CommonViewController {
             view.lb_title.text = "지역 선택"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

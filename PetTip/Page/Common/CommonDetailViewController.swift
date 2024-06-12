@@ -29,6 +29,7 @@ class CommonDetailViewController : CommonViewController2 {
             view.delegate = self
             lb_title = view.lb_title
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

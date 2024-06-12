@@ -81,6 +81,7 @@ class NoticeDetailViewController: CommonViewController {
             view.lb_title.text = "공지사항"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

@@ -75,6 +75,7 @@ class WinnerDetailViewController: CommonViewController {
             view.lb_title.text = "당첨자 발표"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

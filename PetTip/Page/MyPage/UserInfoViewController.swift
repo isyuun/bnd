@@ -284,6 +284,7 @@ class UserInfoViewController: CommonPostViewController {
             view.lb_title.text = "개인정보 수정"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 

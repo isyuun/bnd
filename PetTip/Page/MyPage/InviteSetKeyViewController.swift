@@ -117,6 +117,7 @@ class InviteSetKeyViewController: CommonViewController2 {
             view.lb_title.text = "초대코드 등록하기"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

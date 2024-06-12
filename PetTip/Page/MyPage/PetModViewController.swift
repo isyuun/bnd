@@ -593,6 +593,7 @@ class PetModViewController: CommonPostViewController {
             view.lb_title.text = "반려동물 정보 입력"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 

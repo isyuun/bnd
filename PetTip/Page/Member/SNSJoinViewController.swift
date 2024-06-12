@@ -336,6 +336,7 @@ class SNSJoinViewController: CommonPostViewController {
             view.lb_title.text = "회원가입"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

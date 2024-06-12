@@ -28,6 +28,7 @@ class CustomerCenterViewController: UIViewController {
             view.lb_title.text = "고객센터"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

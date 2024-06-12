@@ -184,6 +184,7 @@ class QnADetailViewController: CommonViewController{
             view.lb_title.text = "1:1 문의"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

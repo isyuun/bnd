@@ -75,6 +75,7 @@ class EventDetailViewController: CommonViewController {
             view.lb_title.text = "이벤트"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }

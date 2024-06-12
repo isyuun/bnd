@@ -521,6 +521,7 @@ class StoryAddViewController: CommonPostViewController {
             view.lb_title.text = "일상 등록"
             view.delegate = self
             titleBarView.addSubview(view)
+            self.title = view.lb_title.text
         }
     }
 }
