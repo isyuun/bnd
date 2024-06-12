@@ -346,7 +346,6 @@
 		7B3C4EF42BE33BA30059EE82 /* WinnerListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */; };
 		7B3C4EF62BE366E50059EE82 /* CommonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */; };
 		7B3C4EF82BE36E500059EE82 /* StoryListViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */; };
-		7B3C4EFA2BE3A6880059EE82 /* UITextField2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */; };
 		7B4C8F4C2BD8FBD8000718DD /* SNSJoinViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewController2.swift */; };
 		7B713FE02BE9B1CF00D5F8DA /* NMapViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */; };
 		7B714A7D2BE8690F00E89AE8 /* WalkPostViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */; };
@@ -728,7 +727,6 @@
 		7B3C4EF32BE33BA30059EE82 /* WinnerListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerListViewController2.swift; sourceTree = "<group>"; };
 		7B3C4EF52BE366E50059EE82 /* CommonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonListViewController.swift; sourceTree = "<group>"; };
 		7B3C4EF72BE36E500059EE82 /* StoryListViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListViewController2.swift; sourceTree = "<group>"; };
-		7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField2.swift; sourceTree = "<group>"; };
 		7B4C8F4B2BD8FBD8000718DD /* SNSJoinViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNSJoinViewController2.swift; sourceTree = "<group>"; };
 		7B713FDF2BE9B1CF00D5F8DA /* NMapViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController2.swift; sourceTree = "<group>"; };
 		7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController2.swift; sourceTree = "<group>"; };
@@ -1028,7 +1026,6 @@
 				7BE12BD12BEC5D7E009B556A /* UIView2.swift */,
 				0251FD612B16F7F400F35EF8 /* UIColor.swift */,
 				022B41A32B1CB7E10057323E /* UITextField.swift */,
-				7B3C4EF92BE3A6880059EE82 /* UITextField2.swift */,
 				7BD541EE2BE48486008861DE /* UITextView2.swift */,
 				0251FD552B11B4FB00F35EF8 /* UIButton.swift */,
 				0251FD732B1909BA00F35EF8 /* UIImage.swift */,
@@ -1695,7 +1692,6 @@
 				7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */,
 				0286252B2B4BBFB60055E62F /* MyPetCreateRequest.swift in Sources */,
 				020B79452B28771900C0AB2D /* RealTimeListRequest.swift in Sources */,
-				7B3C4EFA2BE3A6880059EE82 /* UITextField2.swift in Sources */,
 				02E3FC862B25995100A1CE62 /* DailyLifeTarget.swift in Sources */,
 				0251FD582B12351100F35EF8 /* LocationViewController.swift in Sources */,
 				7BE12BD82BECB312009B556A /* Global3.swift in Sources */,
