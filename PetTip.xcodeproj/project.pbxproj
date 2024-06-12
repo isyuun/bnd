@@ -55,7 +55,6 @@
 		022B41982B1C44180057323E /* WalkHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41972B1C44180057323E /* WalkHistoryViewController.swift */; };
 		022B419B2B1C44AC0057323E /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B419A2B1C44AC0057323E /* CommunityViewController.swift */; };
 		022B419E2B1C45370057323E /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B419D2B1C45370057323E /* MyPageViewController.swift */; };
-		022B41A42B1CB7E10057323E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41A32B1CB7E10057323E /* UITextField.swift */; };
 		022B41A82B1D7A270057323E /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41A72B1D7A270057323E /* IntroViewController.swift */; };
 		022B41AB2B1E058B0057323E /* LogoTitleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B41AA2B1E058B0057323E /* LogoTitleBarView.swift */; };
 		022B41AD2B1E05CF0057323E /* LogoTitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022B41AC2B1E05CF0057323E /* LogoTitleBarView.xib */; };
@@ -429,7 +428,6 @@
 		022B41972B1C44180057323E /* WalkHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkHistoryViewController.swift; sourceTree = "<group>"; };
 		022B419A2B1C44AC0057323E /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		022B419D2B1C45370057323E /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		022B41A32B1CB7E10057323E /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		022B41A72B1D7A270057323E /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		022B41AA2B1E058B0057323E /* LogoTitleBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogoTitleBarView.swift; path = PetTip/Page/LogoTitleBarView.swift; sourceTree = SOURCE_ROOT; };
 		022B41AC2B1E05CF0057323E /* LogoTitleBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoTitleBarView.xib; sourceTree = "<group>"; };
@@ -1016,7 +1014,6 @@
 				0251FD6D2B1871F400F35EF8 /* UIView.swift */,
 				7BE12BD12BEC5D7E009B556A /* UIView2.swift */,
 				0251FD612B16F7F400F35EF8 /* UIColor.swift */,
-				022B41A32B1CB7E10057323E /* UITextField.swift */,
 				7BD541EE2BE48486008861DE /* UITextView2.swift */,
 				0251FD552B11B4FB00F35EF8 /* UIButton.swift */,
 				0251FD732B1909BA00F35EF8 /* UIImage.swift */,
@@ -1744,7 +1741,6 @@
 				02A05AE22B3DD89B00E8ABFA /* ReportView.swift in Sources */,
 				020B797F2B2D70F100C0AB2D /* MonthRecordResponse.swift in Sources */,
 				02A05B002B3EC3C500E8ABFA /* RlsUpdate.swift in Sources */,
-				022B41A42B1CB7E10057323E /* UITextField.swift in Sources */,
 				02A05AEC2B3E4F8300E8ABFA /* CodeListRequest.swift in Sources */,
 				02EB98042B0CFF03007428AD /* ViewController.swift in Sources */,
 				02A05AFE2B3EC22500E8ABFA /* RlsUpdateResponse.swift in Sources */,
