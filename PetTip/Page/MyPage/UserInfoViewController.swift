@@ -10,7 +10,7 @@ import UIKit
 class UserInfoViewController: CommonPostViewController {
 
     @IBOutlet weak var vw_nickNmBg: UIView!
-    @IBOutlet weak var tf_nickNm: UITextField2!
+    @IBOutlet weak var tf_nickNm: UITextField3!
 
     @IBOutlet weak var vw_phoneNumBg: UIView!
     @IBOutlet weak var tf_phoneNum: UITextField!

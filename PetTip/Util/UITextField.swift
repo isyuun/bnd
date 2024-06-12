@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class TextField: UITextField {
+class UITextField2: UITextField {
     @IBInspectable var insetX: CGFloat = 0
     @IBInspectable var insetY: CGFloat = 0
 

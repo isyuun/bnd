@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -208,7 +207,7 @@
             <objects>
                 <viewController storyboardIdentifier="PostViewController" id="sjE-zC-BED" customClass="WalkPostViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Olp-qz-LrW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0j-GP-f27">
@@ -525,7 +524,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYV-xx-sxi">
                                                         <rect key="frame" x="20" y="40" width="353" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6al-js-EGV" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6al-js-EGV" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                                 <rect key="frame" x="-16" y="0.0" width="369" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -598,7 +597,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-Ja-LHk" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zHh-Ja-LHk" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="348" width="353" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="IqE-x1-f3T"/>
@@ -816,14 +815,6 @@
             <point key="canvasLocation" x="-1106.1068702290077" y="1000.7042253521128"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="6al-js-EGV">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
-        </designable>
-        <designable name="zHh-Ja-LHk">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
-        </designable>
-    </designables>
     <resources>
         <image name="arrow_selectbox" width="12.597999572753906" height="8"/>
         <image name="checkbox_white" width="12" height="12"/>
@@ -842,7 +833,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

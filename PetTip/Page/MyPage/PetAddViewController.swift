@@ -34,7 +34,7 @@ class PetAddViewController: CommonPostViewController {
     @IBOutlet weak var vw_addrBg: UIView!
     @IBOutlet weak var lb_addr: UILabel!
 
-    @IBOutlet weak var tf_petNm: UITextField2!
+    @IBOutlet weak var tf_petNm: UITextField3!
 
     @IBOutlet weak var tf_birth: UITextField!
     @IBOutlet weak var btn_birth_unkown: UIButton!

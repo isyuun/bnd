@@ -24,7 +24,7 @@ class JoinViewController: CommonPostViewController {
     @IBOutlet weak var tf_pwRe: UITextField!
 
     @IBOutlet weak var vw_nickNmBg: UIView!
-    @IBOutlet weak var tf_nickNm: UITextField2!
+    @IBOutlet weak var tf_nickNm: UITextField3!
     @IBOutlet weak var btn_nickDupChk: UIButton!
 
     private func showCommonUI() {

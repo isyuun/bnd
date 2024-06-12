@@ -1,5 +1,5 @@
 //
-//  UITextField2.swift
+//  UITextField3.swift
 //  PetTip
 //
 //  Created by isyuun on 2024/5/2.
@@ -12,13 +12,13 @@ import UIKit
 
 private var __maxLengths: Int = 0
 @IBDesignable
-class UITextField2: TextField {
+class UITextField3: UITextField2 {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return range.location < __maxLengths // limit to 140 chars
     }
 }
 
-extension UITextField2 {
+extension UITextField3 {
     @IBInspectable var maxLength: Int {
         get {
             if let length = objc_getAssociatedObject(self, &__maxLengths) as? Int {

@@ -26,7 +26,7 @@
                             <color key="textColor" systemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="등록일자를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGC-jh-dgm" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="등록일자를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kGC-jh-dgm" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                             <rect key="frame" x="20" y="52" width="353" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="LN9-Ba-eJq"/>
@@ -56,7 +56,7 @@
                             <color key="textColor" systemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o17-3j-V7t" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o17-3j-V7t" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                             <rect key="frame" x="20" y="148" width="329" height="48"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="WdP-l4-uYv"/>
@@ -179,10 +179,10 @@
     </objects>
     <designables>
         <designable name="kGC-jh-dgm">
-            <size key="intrinsicContentSize" width="157" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="137" height="18.666666666666668"/>
         </designable>
         <designable name="o17-3j-V7t">
-            <size key="intrinsicContentSize" width="145" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

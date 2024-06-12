@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -283,7 +282,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="me2-95-HPu" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="me2-95-HPu" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="476" width="353" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="DZd-N3-4AH"/>
@@ -322,7 +321,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생일을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mm3-A5-agI" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생일을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mm3-A5-agI" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="567" width="267" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="4YP-bu-pm7"/>
@@ -1069,7 +1068,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wt-k4-7QA" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7wt-k4-7QA" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="476" width="353" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="gpt-0Y-RIu"/>
@@ -1108,7 +1107,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생일을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Yh-lb-zHi" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생일을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Yh-lb-zHi" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="567" width="267" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="K0k-58-uwd"/>
@@ -1197,7 +1196,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게를 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-pf-pe8" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게를 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ix-pf-pe8" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="658" width="267" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="vNu-HL-AWR"/>
@@ -1603,7 +1602,7 @@
             <objects>
                 <viewController id="ofG-Q8-hui" customClass="PetTypeSelectViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbj-Oa-eII" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONy-OP-D79">
@@ -1625,7 +1624,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="meV-8t-8GI">
                                 <rect key="frame" x="20" y="107" width="353" height="48"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LlK-Ii-v7s" customClass="TextField" customModule="PetTip" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LlK-Ii-v7s" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
                                         <rect key="frame" x="-16" y="0.0" width="369" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2127,7 +2126,7 @@
             <objects>
                 <viewController id="18J-rt-0cI" customClass="AddressSelectViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uHV-5d-Ztx">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFF-Mq-74i">
@@ -2433,26 +2432,6 @@
             <point key="canvasLocation" x="1197.709923664122" y="725.35211267605632"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="3ix-pf-pe8">
-            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
-        </designable>
-        <designable name="5Yh-lb-zHi">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
-        </designable>
-        <designable name="7wt-k4-7QA">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
-        </designable>
-        <designable name="LlK-Ii-v7s">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
-        </designable>
-        <designable name="me2-95-HPu">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
-        </designable>
-        <designable name="mm3-A5-agI">
-            <size key="intrinsicContentSize" width="113" height="18.666666666666668"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Vsv-0H-5D3"/>
         <segue reference="V2Q-hP-A8g"/>

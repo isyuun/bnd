@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -463,7 +462,7 @@
             <objects>
                 <viewController id="QRy-YI-54k" customClass="WinnerDetailViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Anu-7A-GCo">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qeQ-WR-Xf4">
@@ -573,7 +572,7 @@
             <objects>
                 <viewController id="4jv-5B-hld" customClass="EventDetailViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNt-DT-CSm">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCm-rV-H6h">
@@ -683,7 +682,7 @@
             <objects>
                 <viewController id="ki1-Ny-bgg" customClass="StoryDetailViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ig8-gC-zAH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oFv-8W-eeh">
@@ -1585,7 +1584,7 @@
             <objects>
                 <viewController id="rF2-GQ-nIu" customClass="StoryModViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OG8-Od-Sgq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6Q-aP-dEC">
@@ -1931,7 +1930,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6N-nw-DOg">
                                                         <rect key="frame" x="20" y="43" width="353" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-kc-4x4" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7H-kc-4x4" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                                 <rect key="frame" x="-16" y="0.0" width="369" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -2004,7 +2003,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqa-Pj-3j2" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hqa-Pj-3j2" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="277" width="353" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="PNA-HT-E77"/>
@@ -2135,7 +2134,7 @@
             <objects>
                 <viewController storyboardIdentifier="StoryAddViewController" id="etX-IX-MSo" customClass="StoryAddViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uNj-Vp-HIN">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPm-MY-DwM">
@@ -2428,7 +2427,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqz-01-NYR">
                                                         <rect key="frame" x="20" y="27" width="353" height="48"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knt-VH-hAf" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="knt-VH-hAf" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                                 <rect key="frame" x="-16" y="0.0" width="369" height="48"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -2501,7 +2500,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0H-MH-re3" customClass="UITextField2" customModule="PetTip" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="해시 태그를 남겨주세요 ex) #댕댕이" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0H-MH-re3" customClass="UITextField3" customModule="PetTip" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="261" width="353" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="Kcc-eg-tLq"/>
@@ -2715,20 +2714,6 @@
             <point key="canvasLocation" x="1932" y="473"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="J7H-kc-4x4">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
-        </designable>
-        <designable name="e0H-MH-re3">
-            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
-        </designable>
-        <designable name="hqa-Pj-3j2">
-            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
-        </designable>
-        <designable name="knt-VH-hAf">
-            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
-        </designable>
-    </designables>
     <resources>
         <image name="arrow_down" width="2000" height="2000"/>
         <image name="arrow_selectbox" width="12.597999572753906" height="8"/>
