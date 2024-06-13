@@ -27,12 +27,13 @@ class NMapViewController5: NMapViewController4 {
         }
     }
     
-    override func onBtnWalk(_ sender: Any) {
-        super.onBtnWalk(sender)
+    @IBAction func onBtnWalkTest(_ sender: Any) {
         
-//        guard let walkingController - this.walkingController 
-//        walkingController?.startWalkingProcess()
-//        walkingController?.arrTrack(arrTrack.last)
+        guard let walkingController = walkingController else {
+            return;
+        }
+        walkingController.startWalkingProcess()
+//        walkingController.arrTrack(arrTrack.last)
         
     }
 
@@ -42,18 +43,18 @@ class NMapViewController5: NMapViewController4 {
     var lb_title : UILabel? = nil
     
     func showBackTitleBarView() {
-        if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
-            view.frame = titleBarView.bounds
-            view.lb_title.text = "산책하기"
-            view.delegate = self
-            lb_title = view.lb_title
-            titleBarView.addSubview(view)
-        }
+//        if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
+//            view.frame = titleBarView.bounds
+//            view.lb_title.text = "산책하기"
+//            view.delegate = self
+//            lb_title = view.lb_title
+//            titleBarView.addSubview(view)
+//        }
     }
 }
 
 
-extension NMapViewController5: LocationControllerDelegate {
+extension NMapViewController: LocationControllerDelegate {
     func successLocationServiceAuthorization() {
         
     }
