@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1363,6 +1364,38 @@
             <point key="canvasLocation" x="2189" y="723"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="089-lF-PSh">
+            <size key="intrinsicContentSize" width="159.33333333333334" height="17"/>
+        </designable>
+        <designable name="1Yw-lv-92I">
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
+        </designable>
+        <designable name="6Js-al-E47">
+            <size key="intrinsicContentSize" width="106.66666666666667" height="17"/>
+        </designable>
+        <designable name="Dn8-Pu-WGL">
+            <size key="intrinsicContentSize" width="94.666666666666671" height="18.666666666666668"/>
+        </designable>
+        <designable name="J7L-Ad-cgS">
+            <size key="intrinsicContentSize" width="117.66666666666667" height="18.666666666666668"/>
+        </designable>
+        <designable name="QIH-Uu-cm5">
+            <size key="intrinsicContentSize" width="117.66666666666667" height="18.666666666666668"/>
+        </designable>
+        <designable name="RoP-I7-cle">
+            <size key="intrinsicContentSize" width="106.66666666666667" height="18.666666666666668"/>
+        </designable>
+        <designable name="Ubp-Oa-ptK">
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
+        </designable>
+        <designable name="hsv-6W-asx">
+            <size key="intrinsicContentSize" width="158.66666666666666" height="18.666666666666668"/>
+        </designable>
+        <designable name="nOC-18-Uhb">
+            <size key="intrinsicContentSize" width="106.66666666666667" height="18.666666666666668"/>
+        </designable>
+    </designables>
     <resources>
         <image name="checkbox_white" width="12" height="12"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
