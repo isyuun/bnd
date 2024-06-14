@@ -27,8 +27,6 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     var walkingController: WalkingController?
 
     
-//    var bWalkingState = false
-
     var bottomSheetVC: BottomSheetViewController? = nil
     var mapBottomView: MapBottomView! = nil
 
@@ -127,25 +125,97 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             self.popupShow(contentView: v, wSideMargin: 0, type: .bottom)
         }
     }
+    
 
     internal func startWalkingProcess() {
-        walkingController?.bWalkingState = true
 
         btnWalk.tintColor = UIColor.black
         btnWalk.setAttrTitle("산책종료", 14)
 
-        walkingController?.startContinueLocation()
-        walkingController?.resetWalkingData()
+        if pathOverlay == nil {
+            pathOverlay = NMFPath()
+            pathOverlay.width = 6
+            pathOverlay.color = UIColor(hex: "#A0FFDBDB")!
+            pathOverlay.outlineWidth = 2
+            pathOverlay.outlineColor = UIColor(hex: "#A0FF5000")!
+            pathOverlay.mapView = mapView
+        }
 
-        pathOverlay = NMFPath()
-        pathOverlay.width = 6
-        pathOverlay.color = UIColor(hex: "#A0FFDBDB")!
-        pathOverlay.outlineWidth = 2
-        pathOverlay.outlineColor = UIColor(hex: "#A0FF5000")!
-        pathOverlay.mapView = mapView
+        if walkingController?.bWalkingState == false {
+            walkingController?.bWalkingState = true
+            walkingController?.startContinueLocation()
+            walkingController?.resetWalkingData()
+            startLoading(msg: "위치정보 확인중")
+        }
+    }
+    
+    internal func loadWalkingProcess() {
+        guard let walkingController = walkingController else {
+            return
+        }
 
+        if pathOverlay == nil {
+            pathOverlay = NMFPath()
+            pathOverlay.width = 6
+            pathOverlay.color = UIColor(hex: "#A0FFDBDB")!
+            pathOverlay.outlineWidth = 2
+            pathOverlay.outlineColor = UIColor(hex: "#A0FF5000")!
+            pathOverlay.mapView = mapView
+        }
+        
+        let arrTrack = walkingController.arrTrack
 
-        startLoading(msg: "위치정보 확인중")
+        for i in 0..<arrTrack.count {
+            if i == 0 {
+                startMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), text: "출발", forceShow: true)
+                startMarker.mapView = self.naverMapView.mapView
+            }
+
+//            if i == arrTrack.count - 1 {
+//                let endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), text: "도착", forceShow: true)
+//                endMarker.mapView = self.naverMapView.mapView
+//            }
+
+            if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk) {
+                var event: NMapViewController.EventMark = .MRK
+                if arrTrack[i].event! == .pee {
+                    event = .PEE
+
+                } else if arrTrack[i].event! == .poo {
+                    event = .POO
+
+                } else if arrTrack[i].event! == .mrk {
+                    event = .MRK
+
+                } else if arrTrack[i].event! == .img {
+                    event = .IMG
+                }
+
+                let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), event: event)
+                eventMarker.mapView = self.naverMapView.mapView
+            }
+
+            if i == 1 {
+                pathOverlay.path = NMGLineString(points: [
+                    NMGLatLng(lat: arrTrack[0].location!.coordinate.latitude, lng: arrTrack[0].location!.coordinate.longitude),
+                    NMGLatLng(lat: arrTrack[1].location!.coordinate.latitude, lng: arrTrack[1].location!.coordinate.longitude)])
+                pathOverlay.mapView = naverMapView.mapView
+
+            } else if i > 1 {
+                let path = pathOverlay.path
+                path.addPoint(NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude))
+                pathOverlay.path = path
+                pathOverlay.mapView = naverMapView.mapView
+            }
+        }
+        
+        if let location = arrTrack.last?.location {
+            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), zoomTo: 2)
+            cameraUpdate.animation = .easeIn
+            cameraUpdate.animationDuration = 1
+            mapView.moveCamera(cameraUpdate)
+            mapView.positionMode = .direction
+        }
     }
 
     internal func stopWalkingProcess() {
@@ -334,18 +404,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
         btnMrk.setTitle("", for: .normal)
         btnMrk.showShadowLight()
         btnMrk.isHidden = true
-
-        // walkingController Object 추가
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
-            walkingController = appDelegate.walkingController
-            walkingController?.delegate = self
-            walkingController?.requestLocation(type: 1)
-        }
-
-
-        self.mapTopView.showMapTipView()
-
         
+        self.mapTopView.showMapTipView()
 
         // testCode...
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
@@ -417,9 +477,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             track.location = recentLoc
             track.event = .non
             
-            let arrTrack = walkingController.arrTrack
             
-            if (arrTrack.count > 0) {
+            if (walkingController.arrTrack.count > 0) {
                 guard let location = walkingController.arrTrack.last?.location else {
                     return
                 }
@@ -430,7 +489,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 //                    movePathDist += arrTrack[arrTrack.count - 1].location!.distance(from: arrTrack[arrTrack.count - 2].location!)
                     walkingController.movePathDist += walkingController.moveDistance();
 
-
+                    let arrTrack = walkingController.arrTrack
                     if (arrTrack.count == 2) {
                         pathOverlay.path = NMGLineString(points: [
                             NMGLatLng(lat: arrTrack[0].location!.coordinate.latitude, lng: arrTrack[0].location!.coordinate.longitude),
@@ -438,10 +497,16 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                         pathOverlay.mapView = mapView
 
                     } else if (arrTrack.count > 2) {
-                        let path = pathOverlay.path
-                        path.addPoint(NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude))
-                        pathOverlay.path = path
-                        pathOverlay.mapView = mapView
+                        guard let coordinate = walkingController.arrTrack.last?.location?.coordinate else {
+                            return
+                        }
+
+                        if pathOverlay != nil {
+                            let path = pathOverlay.path
+                            path.addPoint(NMGLatLng(lat: coordinate.latitude, lng: coordinate.longitude))
+                            pathOverlay.path = path
+                            pathOverlay.mapView = mapView
+                        }
                     }
                 }
 

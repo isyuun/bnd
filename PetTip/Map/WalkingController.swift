@@ -146,12 +146,10 @@ class WalkingController: LocationController {
     
     
     override func updateCurrLocation(_ locations: [CLLocation]) {
-        guard bWalkingState == true else {
-            stopWalkingProcess()
-            return
-        }
         delegate?.didUpdateLocations(locations);
-        addCurrLocation(locations.last);
+        if bWalkingState == true {
+            addCurrLocation(locations.last);
+        }
     }
 
  }

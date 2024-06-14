@@ -11,6 +11,19 @@ import AVKit
 
 class NMapViewController5: NMapViewController4 {
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+            walkingController = appDelegate.walkingController
+            walkingController?.delegate = self
+        }
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+            appDelegate.walkingController?.delegate = nil
+        }
+    }
 
     override func viewDidLoad() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
@@ -19,22 +32,10 @@ class NMapViewController5: NMapViewController4 {
         self.tabBarController?.tabBar.isHidden = true
         
         showBackTitleBarView()
-        
+        initWalkingInfo()
     }
     
     
-//    @IBAction override func onBtnWalk(_ sender: Any) {
-//        super.onBtnWalk(sender)
-//        NSLog("onBtnWalkonBtnWalk")
-//        
-//        guard let walkingController = walkingController else {
-//            return;
-//        }
-//        walkingController.startWalkingProcess()
-//
-//        
-//    }
-
     // MARK: - Back TitleBar
     @IBOutlet weak var titleBarView : UIView!
     
@@ -50,6 +51,49 @@ class NMapViewController5: NMapViewController4 {
         }
     }
     
+    // MARK: - 데이터 로드
+    func initWalkingInfo() {
+        // walkingController Object 추가
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+            walkingController = appDelegate.walkingController
+            walkingController?.delegate = self
+            
+            checkWalkingState()
+            if walkingController?.bWalkingState == true {
+                // 데이터 로드
+                loadWalkingProcess()
+            } else {
+                walkingController?.requestLocation(type: 1)
+            }
+        }
+    }
+
+    func checkWalkingState() {
+        if walkingController?.bWalkingState == true {
+            btnWalk.tintColor = UIColor.black
+            btnWalk.setAttrTitle("산책종료", 14)
+
+            self.mapTopView.hideMapTipView()
+            self.mapTopView.showMapNavView()
+            self.mapTopView.mapNavView?.timeLabel.text = "00:00:00"
+            self.mapTopView.mapNavView?.distLabel.text = "0.00 km"
+
+            btnPee.isHidden = false
+            btnPoo.isHidden = false
+            btnMrk.isHidden = false
+        } else {
+            btnWalk.tintColor = UIColor.init(hexCode: "4783F5")
+            btnWalk.setAttrTitle("산책하기", 14)
+
+            self.mapTopView.showMapTipView()
+            self.mapTopView.hideMapNavView()
+
+            btnPee.isHidden = true
+            btnPoo.isHidden = true
+            btnMrk.isHidden = true
+        }
+    }
+    
     
     internal override func startWalkingProcess() {
         super.startWalkingProcess()
@@ -58,7 +102,6 @@ class NMapViewController5: NMapViewController4 {
             return;
         }
         walkingController.startWalkingProcess()
-
     }
     
     override func showNoPet() {
