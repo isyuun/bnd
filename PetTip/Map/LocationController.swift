@@ -13,6 +13,7 @@ class LocationController: NSObject {
 
     private let locationManager = CLLocationManager()
     public weak var delegate: LocationControllerDelegate?
+    var locationReqType: Int = 0 // 0:NONE, 1:ONCE, 2:CONTINUE
 
     override init() {
         super.init()
@@ -50,8 +51,17 @@ class LocationController: NSObject {
 
             // 권한 요청을 보내기 전에 desiredAccuracy 설정 필요
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            
             // 권한 요청을 보낸다.
-            locationManager.requestAlwaysAuthorization()
+            if (locationReqType == 0) {
+
+            } else if (locationReqType == 1) {
+                locationManager.requestWhenInUseAuthorization()
+
+            } else if (locationReqType == 2) {
+                locationManager.requestAlwaysAuthorization()
+            }
+
             
         case .denied, .restricted:
             // 사용자가 명시적으로 권한을 거부했거나, 위치 서비스 활성화가 제한된 상태
@@ -62,12 +72,18 @@ class LocationController: NSObject {
 
         case .authorizedAlways, .authorizedWhenInUse:
             // 앱을 사용중일 때, 위치 서비스를 이용할 수 있는 상태
-            // manager 인스턴스를 사용하여 사용자의 위치를 가져온다.
-            locationManager.allowsBackgroundLocationUpdates = true
-            locationManager.startUpdatingLocation()
-            
-            delegate?.successLocationServiceAuthorization()
 
+            if (locationReqType == 1) {
+                locationManager.allowsBackgroundLocationUpdates = false
+
+            } else if (locationReqType == 2) {
+                locationManager.allowsBackgroundLocationUpdates = true
+            }
+
+            // manager 인스턴스를 사용하여 사용자의 위치를 가져온다.
+            locationManager.startUpdatingLocation()
+
+            delegate?.successLocationServiceAuthorization()
 
         default:
             print("Default")
@@ -75,14 +91,21 @@ class LocationController: NSObject {
     }
 
     internal func startContinueLocation() {
+        locationReqType = 2
         checkUserDeviceLocationServiceAuthorization()
     }
 
     func stopContinueLocation() {
+        locationReqType = 0
         locationManager.stopUpdatingLocation()
     }
     
-    func updateCurrLocation(_ locations: [CLLocation]) { }
+    internal func requestLocation(type: Int) {
+        locationReqType = type
+        checkUserDeviceLocationServiceAuthorization()
+    }
+
+    func updateCurrLocation(_ locations: [CLLocation]) {}
     
 }
 
@@ -91,6 +114,10 @@ extension LocationController: CLLocationManagerDelegate {
     // 사용자의 위치를 성공적으로 가져왔을 때 호출
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         updateCurrLocation(locations)
+        
+        if (locationReqType == 0 || locationReqType == 1) {
+            locationManager.stopUpdatingLocation()
+        }
     }
 
     // 사용자가 GPS 사용이 불가한 지역에 있는 등 위치 정보를 가져오지 못했을 때 호출
@@ -114,7 +141,9 @@ extension LocationController: CLLocationManagerDelegate {
 
 
 protocol LocationControllerDelegate: AnyObject {
+    func didUpdateLocations(_ locations: [CLLocation])
     func successLocationServiceAuthorization()
     func failedLocationServiceAuthorization()
     func errorLocationService(message: String?)
+    func walkingTimerCallback()
 }

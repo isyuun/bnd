@@ -9,7 +9,7 @@ import UIKit
 import NMapsMap
 import AVKit
 
-class NMapViewController: LocationViewController2, MapBottomViewProtocol {
+class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
     public var dailyLifePetList: PetList?
     private var selectedPets = [Pet]()
@@ -24,7 +24,10 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
 
     @IBOutlet weak var mapTopView: MapTopView!
 
-    var bWalkingState = false
+    var walkingController: WalkingController?
+
+    
+//    var bWalkingState = false
 
     var bottomSheetVC: BottomSheetViewController? = nil
     var mapBottomView: MapBottomView! = nil
@@ -33,23 +36,34 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
 
     @IBOutlet weak var btnWalk: UIButton!
     @IBAction func onBtnWalk(_ sender: Any) {
-        if (bWalkingState == true) {
+        
+        guard let walkingController = walkingController else {
+            return
+        }
+        
+        if (walkingController.bWalkingState == true) {
             if (endMarker == nil) {
-                endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), text: "도착", forceShow: false)
+                guard let location = walkingController.arrTrack.last?.location else {
+                    return
+                }
+
+                endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), text: "도착", forceShow: false)
                 endMarker.mapView = self.naverMapView.mapView
 
                 let track = Track()
-                track.location = CLLocation(coordinate: arrTrack.last!.location!.coordinate,
-                                            altitude: arrTrack.last!.location!.altitude,
-                                            horizontalAccuracy: arrTrack.last!.location!.horizontalAccuracy,
-                                            verticalAccuracy: arrTrack.last!.location!.verticalAccuracy,
-                                            course: arrTrack.last!.location!.course,
-                                            courseAccuracy: arrTrack.last!.location!.courseAccuracy,
-                                            speed: arrTrack.last!.location!.speed,
-                                            speedAccuracy: arrTrack.last!.location!.speedAccuracy,
+                track.location = CLLocation(coordinate: location.coordinate,
+                                            altitude: location.altitude,
+                                            horizontalAccuracy: location.horizontalAccuracy,
+                                            verticalAccuracy: location.verticalAccuracy,
+                                            course: location.course,
+                                            courseAccuracy: location.courseAccuracy,
+                                            speed: location.speed,
+                                            speedAccuracy: location.speedAccuracy,
                                             timestamp: Date())
                 track.event = .non
-                arrTrack.append(track)
+//                arrTrack.append(track)
+                walkingController.addTrack(track: track);
+                
             }
 
             showTrackSummaryMap()
@@ -115,12 +129,13 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
     }
 
     internal func startWalkingProcess() {
-        bWalkingState = true
+        walkingController?.bWalkingState = true
 
         btnWalk.tintColor = UIColor.black
         btnWalk.setAttrTitle("산책종료", 14)
 
-        startContinueLocation()
+        walkingController?.startContinueLocation()
+        walkingController?.resetWalkingData()
 
         pathOverlay = NMFPath()
         pathOverlay.width = 6
@@ -129,18 +144,17 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
         pathOverlay.outlineColor = UIColor(hex: "#A0FF5000")!
         pathOverlay.mapView = mapView
 
-        arrTrack = Array<Track>()
 
         startLoading(msg: "위치정보 확인중")
     }
 
     internal func stopWalkingProcess() {
-        bWalkingState = false
+        walkingController?.bWalkingState = false
 
         btnWalk.tintColor = UIColor.init(hexCode: "4783F5")
         btnWalk.setAttrTitle("산책하기", 14)
 
-        stopContinueLocation()
+        walkingController?.stopContinueLocation()
 
         if (startMarker != nil) { startMarker.mapView = nil }
         startMarker = nil
@@ -203,29 +217,32 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
     }
 
     internal func addEventMark(mark: NMapViewController.EventMark, pet: Pet) {
-        if (arrTrack != nil && arrTrack.last != nil && arrTrack.last?.location != nil) {
-            let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), event: mark)
-            eventMarker.mapView = self.mapView
-
-            let track = Track()
-            track.location = CLLocation(coordinate: arrTrack.last!.location!.coordinate,
-                                        altitude: arrTrack.last!.location!.altitude,
-                                        horizontalAccuracy: arrTrack.last!.location!.horizontalAccuracy,
-                                        verticalAccuracy: arrTrack.last!.location!.verticalAccuracy,
-                                        course: arrTrack.last!.location!.course,
-                                        courseAccuracy: arrTrack.last!.location!.courseAccuracy,
-                                        speed: arrTrack.last!.location!.speed,
-                                        speedAccuracy: arrTrack.last!.location!.speedAccuracy,
-                                        timestamp: Date())
-            track.event = mark == .PEE ? .pee : mark == .POO ? .poo : mark == .MRK ? .mrk : .img
-            track.pet = pet
-            arrTrack.append(track)
-
-            if (arrEventMarker == nil) {
-                arrEventMarker = Array<NMFMarker>()
-            }
-            arrEventMarker?.append(eventMarker)
+        
+        guard let walkingController = walkingController, let location = walkingController.arrTrack.last?.location else {
+            return
         }
+        
+        let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), event: mark)
+        eventMarker.mapView = self.mapView
+
+        let track = Track()
+        track.location = CLLocation(coordinate: location.coordinate,
+                                    altitude: location.altitude,
+                                    horizontalAccuracy: location.horizontalAccuracy,
+                                    verticalAccuracy: location.verticalAccuracy,
+                                    course: location.course,
+                                    courseAccuracy: location.courseAccuracy,
+                                    speed: location.speed,
+                                    speedAccuracy: location.speedAccuracy,
+                                    timestamp: Date())
+        track.event = mark == .PEE ? .pee : mark == .POO ? .poo : mark == .MRK ? .mrk : .img
+        track.pet = pet
+        walkingController.addTrack(track: track);
+
+        if (arrEventMarker == nil) {
+            arrEventMarker = Array<NMFMarker>()
+        }
+        arrEventMarker?.append(eventMarker)
     }
 
     override func viewDidLoad() {
@@ -318,10 +335,17 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
         btnMrk.showShadowLight()
         btnMrk.isHidden = true
 
-        requestLocation(type: 1)
+        // walkingController Object 추가
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+            walkingController = appDelegate.walkingController
+            walkingController?.delegate = self
+            walkingController?.requestLocation(type: 1)
+        }
+
 
         self.mapTopView.showMapTipView()
 
+        
 
         // testCode...
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
@@ -331,7 +355,13 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
     }
 
     func showTrackSummaryMap() {
-        if (arrTrack == nil || arrTrack.count <= 0) { return }
+        guard let walkingController = walkingController else {
+            return
+        }
+        guard walkingController.arrTrack.count > 0 else { return }
+        
+        let arrTrack = walkingController.arrTrack
+        
         var lat1 = Double(arrTrack.first?.location?.coordinate.latitude ?? 0)
         var lon1 = Double(arrTrack.first?.location?.coordinate.longitude ?? 0)
         var lat2 = Double(arrTrack.last?.location?.coordinate.latitude ?? 0)
@@ -356,22 +386,26 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
     var endMarker: NMFMarker!
 
     var pathOverlay: NMFPath!
-    var arrTrack: Array<Track>!
-    var movePathDist: Double = 0
+//    var arrTrack: Array<Track>!
+//    var movePathDist: Double = 0
 
-    override func updateCurrLocation(_ locations: [CLLocation]) {
-        super.updateCurrLocation(locations)
+//    override func updateCurrLocation(_ locations: [CLLocation]) {
+    func updateCurrLocation(_ locations: [CLLocation]) {
+//        super.updateCurrLocation(locations)
 
         guard let recentLoc = locations.last else { return }
-
-        if (locationReqType == 1) {
+        guard let walkingController = walkingController else {
+            return
+        }
+        
+        if (walkingController.locationReqType == 1) {
             let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), zoomTo: 2)
             cameraUpdate.animation = .easeIn
             cameraUpdate.animationDuration = 1
             mapView.moveCamera(cameraUpdate)
             mapView.positionMode = .direction
 
-        } else if (locationReqType == 2) {
+        } else if (walkingController.locationReqType == 2) {
             if (startMarker == nil) {
                 startMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), text: "출발", forceShow: false)
                 startMarker.mapView = self.naverMapView.mapView
@@ -382,12 +416,20 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
             let track = Track()
             track.location = recentLoc
             track.event = .non
+            
+            let arrTrack = walkingController.arrTrack
+            
+            if (arrTrack.count > 0) {
+                guard let location = walkingController.arrTrack.last?.location else {
+                    return
+                }
+                if (location.distance(from: track.location!) >= 10) {
+//                    arrTrack.append(track)
+                    walkingController.addTrack(track: track);
 
-            if (arrTrack != nil && arrTrack.count > 0) {
-                if (arrTrack.last!.location!.distance(from: track.location!) >= 10) {
-                    arrTrack.append(track)
+//                    movePathDist += arrTrack[arrTrack.count - 1].location!.distance(from: arrTrack[arrTrack.count - 2].location!)
+                    walkingController.movePathDist += walkingController.moveDistance();
 
-                    movePathDist += arrTrack[arrTrack.count - 1].location!.distance(from: arrTrack[arrTrack.count - 2].location!)
 
                     if (arrTrack.count == 2) {
                         pathOverlay.path = NMGLineString(points: [
@@ -397,15 +439,17 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
 
                     } else if (arrTrack.count > 2) {
                         let path = pathOverlay.path
-                        path.addPoint(NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude))
+                        path.addPoint(NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude))
                         pathOverlay.path = path
                         pathOverlay.mapView = mapView
                     }
                 }
 
             } else {
-                arrTrack.append(track)
-                movePathDist = 0
+//                arrTrack.append(track)
+//                movePathDist = 0
+                walkingController.addTrack(track: track);
+                walkingController.movePathDist = 0
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: {
                     self.stopLoading()
@@ -442,8 +486,8 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
     }
 
     // MARK: - Move Timer (Distance, TimeSec)
-    var movedSec: Double = 0
-    var movedDist: Double = 0
+//    var movedSec: Double = 0
+//    var movedDist: Double = 0
 
     override func endAppearanceTransition() {
         if isBeingDismissed {
@@ -452,20 +496,17 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
         super.endAppearanceTransition()
     }
 
-    var statusViewTimer: Timer?
-
     func refreshMoveInfoStart() {
         refreshMoveInfoStop(isSafeStop: true)
 
-        movedSec = 0
-        movedDist = 0
+        walkingController?.movedSec = 0
+        walkingController?.movedDist = 0
+        walkingController?.refreshMoveInfoStart();
 
         self.mapTopView.hideMapTipView()
         self.mapTopView.showMapNavView()
         self.mapTopView.mapNavView?.timeLabel.text = "00:00:00"
         self.mapTopView.mapNavView?.distLabel.text = "0.00 km"
-
-        statusViewTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(statusViewTimerCallback), userInfo: nil, repeats: true)
 
         btnPee.isHidden = false
         btnPoo.isHidden = false
@@ -477,9 +518,8 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
     }
 
     func refreshMoveInfoStop(isSafeStop: Bool) {
-        if (statusViewTimer != nil && statusViewTimer!.isValid) {
-            statusViewTimer!.invalidate()
-        }
+        
+        walkingController?.refreshMoveInfoStop()
 
         if (isSafeStop == false) {
             self.mapTopView.hideMapNavView()
@@ -491,26 +531,31 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
         }
     }
 
-    @objc func statusViewTimerCallback() {
+    func statusViewTimerCallback() {
         let state = UIApplication.shared.applicationState
         switch state {
         case .background:
-            refreshMoveInfoData()
+//            refreshMoveInfoData()
             break
 
         default:
-            refreshMoveInfoData()
+//            refreshMoveInfoData()
             refreshMoveInfoView()
         }
     }
 
     func refreshMoveInfoData() {
-        movedSec += 1
-        movedDist = movePathDist
+//        movedSec += 1
+//        movedDist = movePathDist
+        walkingController?.refreshMoveInfoData()
     }
 
     func refreshMoveInfoView() {
-        let seconds: UInt = UInt(movedSec)
+        guard let movedDist = walkingController?.movedSec else {
+            return
+        }
+        
+        let seconds: UInt = UInt(movedDist)
         let minutes = seconds / 60
         let hours = minutes / 60
         let strMovedTime = String(format: "%02d:%02d:%02d", hours, minutes % 60, seconds % 60)
@@ -704,11 +749,13 @@ class NMapViewController: LocationViewController2, MapBottomViewProtocol {
         if (segue.identifier == "showPost") {
             let dest = segue.destination
             guard let vc = dest as? WalkPostViewController else { return }
+            guard let walkingController = walkingController else { return }
+            
             // vc.mapSnapImg = _mapSnapImg
-            vc.arrTrack = arrTrack
             vc.arrImageFromCamera = arrImageFromCamera
-            vc.movedSec = movedSec
-            vc.movedDist = movedDist
+            vc.arrTrack = walkingController.arrTrack
+            vc.movedSec = walkingController.movedSec
+            vc.movedDist = walkingController.movedDist
             vc.selectedPets = selectedPets
         }
     }

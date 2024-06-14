@@ -11,7 +11,6 @@ import AVKit
 
 class NMapViewController5: NMapViewController4 {
 
-    var walkingController: WalkingController?
 
     override func viewDidLoad() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
@@ -21,21 +20,20 @@ class NMapViewController5: NMapViewController4 {
         
         showBackTitleBarView()
         
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
-            walkingController = appDelegate.walkingController
-            walkingController?.delegate = self
-        }
     }
     
-    @IBAction func onBtnWalkTest(_ sender: Any) {
-        
-        guard let walkingController = walkingController else {
-            return;
-        }
-        walkingController.startWalkingProcess()
-//        walkingController.arrTrack(arrTrack.last)
-        
-    }
+    
+//    @IBAction override func onBtnWalk(_ sender: Any) {
+//        super.onBtnWalk(sender)
+//        NSLog("onBtnWalkonBtnWalk")
+//        
+//        guard let walkingController = walkingController else {
+//            return;
+//        }
+//        walkingController.startWalkingProcess()
+//
+//        
+//    }
 
     // MARK: - Back TitleBar
     @IBOutlet weak var titleBarView : UIView!
@@ -43,18 +41,39 @@ class NMapViewController5: NMapViewController4 {
     var lb_title : UILabel? = nil
     
     func showBackTitleBarView() {
-//        if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
-//            view.frame = titleBarView.bounds
-//            view.lb_title.text = "산책하기"
-//            view.delegate = self
-//            lb_title = view.lb_title
-//            titleBarView.addSubview(view)
-//        }
+        if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
+            view.frame = titleBarView.bounds
+            view.lb_title.text = "산책하기"
+            view.delegate = self
+            lb_title = view.lb_title
+            titleBarView.addSubview(view)
+        }
     }
+    
+    
+    internal override func startWalkingProcess() {
+        super.startWalkingProcess()
+        
+        guard let walkingController = walkingController else {
+            return;
+        }
+        walkingController.startWalkingProcess()
+
+    }
+    
+    override func showNoPet() {
+        super.showNoPet()
+        self.onBack()
+    }
+
 }
 
 
 extension NMapViewController: LocationControllerDelegate {
+    func didUpdateLocations(_ locations: [CLLocation]) {
+        updateCurrLocation(locations);
+    }
+
     func successLocationServiceAuthorization() {
         
     }
@@ -89,5 +108,18 @@ extension NMapViewController: LocationControllerDelegate {
         requestLocationServiceAlert.addAction(cancel)
         present(requestLocationServiceAlert, animated: true)
 
+    }
+
+    func walkingTimerCallback() {
+        statusViewTimerCallback()
+    }
+
+    
+}
+
+extension NMapViewController5: BackTitleBarViewProtocol {
+    func onBack() {
+        navigationController?.popViewController(animated: true)
+        self.tabBarController?.tabBar.isHidden = false
     }
 }

@@ -60,94 +60,93 @@ class NMapViewController4: NMapViewController3, NMFMapViewTouchDelegate {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][mark:\(mark)][pet:\(pet)]")
         // super.addEventMark(mark: mark, pet: pet)
 
-        if (arrTrack != nil && arrTrack.last != nil && arrTrack.last?.location != nil) {
-            let marker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude), event: mark)
-            marker.mapView = self.mapView
+        guard let location = walkingController?.arrTrack.last?.location else {
+            return;
+        }
+        
+        let marker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), event: mark)
+        marker.mapView = self.mapView
 
-            let track = Track()
-            track.location = CLLocation(coordinate: arrTrack.last!.location!.coordinate,
-                                        altitude: arrTrack.last!.location!.altitude,
-                                        horizontalAccuracy: arrTrack.last!.location!.horizontalAccuracy,
-                                        verticalAccuracy: arrTrack.last!.location!.verticalAccuracy,
-                                        course: arrTrack.last!.location!.course,
-                                        courseAccuracy: arrTrack.last!.location!.courseAccuracy,
-                                        speed: arrTrack.last!.location!.speed,
-                                        speedAccuracy: arrTrack.last!.location!.speedAccuracy,
-                                        timestamp: Date())
-            track.event = mark == .PEE ? .pee : mark == .POO ? .poo : mark == .MRK ? .mrk : .img
-            track.pet = pet
-            arrTrack.append(track)
+        let track = Track()
+        track.location = CLLocation(coordinate: location.coordinate,
+                                    altitude: location.altitude,
+                                    horizontalAccuracy: location.horizontalAccuracy,
+                                    verticalAccuracy: location.verticalAccuracy,
+                                    course: location.course,
+                                    courseAccuracy: location.courseAccuracy,
+                                    speed: location.speed,
+                                    speedAccuracy: location.speedAccuracy,
+                                    timestamp: Date())
+        track.event = mark == .PEE ? .pee : mark == .POO ? .poo : mark == .MRK ? .mrk : .img
+        track.pet = pet
 
-            if (arrEventMarker == nil) {
-                arrEventMarker = Array<NMFMarker>()
+        // 이벤트 추가
+        walkingController?.addEvent(track:track, marker: marker)
+
+        let petName = pet.petNm
+
+        let eventInfo: String
+        switch(track.event) {
+        case .pee: eventInfo = "소변"
+            break
+        case .poo: eventInfo = "배변"
+            break
+        case .mrk: eventInfo = "마킹"
+            break
+        case .img: eventInfo = "사진"
+            break
+        default: eventInfo = ""
+            break
+        }
+
+        let infoWindow = NMFInfoWindow()
+        let dataSource = NMFInfoWindowDefaultTextSource.data()
+        dataSource.title = "\(petName) \(eventInfo) 삭제"
+        infoWindow.dataSource = dataSource
+        infoWindow.touchHandler = { overlay in
+            if let infoWindow = overlay as? NMFInfoWindow {
+                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][인포::터치][infoWindow:\(infoWindow)][marker:\(String(describing: infoWindow.marker))][mapView:\(String(describing: infoWindow.marker?.mapView))]")
+                infoWindow.marker?.mapView = nil
+                self.walkingController?.removeTrack(track: track)
+                infoWindow.close()
             }
-            arrEventMarker?.append(marker)
+            return true
+        }
+        infoWindow.mapView = mapView
 
-            let petName = pet.petNm
+        let w = marker.width
+        let h = marker.height
+        let z = marker.zIndex
+        let m = 10
 
-            let eventInfo: String
-            switch(track.event) {
-            case .pee: eventInfo = "소변"
-                break
-            case .poo: eventInfo = "배변"
-                break
-            case .mrk: eventInfo = "마킹"
-                break
-            case .img: eventInfo = "사진"
-                break
-            default: eventInfo = ""
-                break
-            }
+        marker.touchHandler = { /*[weak self]*/ overlay in
+            // 마커가 탭되었을 때 실행될 코드
+            NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][마커::터치][overlay:\(String(describing: overlay))][marker:\(marker)]")
+            if let marker = overlay as? NMFMarker/*, track.event != .img*/ {
+                if (marker.zIndex == m) {
+                    marker.width = w * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
+                    marker.height = h * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
+                    marker.zIndex = z
 
-            let infoWindow = NMFInfoWindow()
-            let dataSource = NMFInfoWindowDefaultTextSource.data()
-            dataSource.title = "\(petName) \(eventInfo) 삭제"
-            infoWindow.dataSource = dataSource
-            infoWindow.touchHandler = { overlay in
-                if let infoWindow = overlay as? NMFInfoWindow {
-                    NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][인포::터치][infoWindow:\(infoWindow)][marker:\(String(describing: infoWindow.marker))][mapView:\(String(describing: infoWindow.marker?.mapView))]")
-                    infoWindow.marker?.mapView = nil
-                    self.arrTrack.removeAll { $0 === track }
                     infoWindow.close()
+                } else {
+                    marker.width = w * 1.1 //(32 * 1.1f).dp.toPx(context).toInt()
+                    marker.height = h * 1.1 //(32 * 1.1f).dp.toPx(context).toInt()
+                    marker.zIndex = m
+
+                    infoWindow.open(with: marker)
                 }
-                return true
-            }
-            infoWindow.mapView = mapView
-
-            let w = marker.width
-            let h = marker.height
-            let z = marker.zIndex
-            let m = 10
-
-            marker.touchHandler = { /*[weak self]*/ overlay in
-                // 마커가 탭되었을 때 실행될 코드
-                NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][마커::터치][overlay:\(String(describing: overlay))][marker:\(marker)]")
-                if let marker = overlay as? NMFMarker/*, track.event != .img*/ {
-                    if (marker.zIndex == m) {
+                if let markers = self.arrEventMarker {
+                    markers.filter { $0 != marker }.forEach { otherMarker in
                         marker.width = w * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
                         marker.height = h * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
-                        marker.zIndex = z
+                        otherMarker.zIndex = z
 
-                        infoWindow.close()
-                    } else {
-                        marker.width = w * 1.1 //(32 * 1.1f).dp.toPx(context).toInt()
-                        marker.height = h * 1.1 //(32 * 1.1f).dp.toPx(context).toInt()
-                        marker.zIndex = m
-
-                        infoWindow.open(with: marker)
-                    }
-                    if let markers = self.arrEventMarker {
-                        markers.filter { $0 != marker }.forEach { otherMarker in
-                            marker.width = w * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
-                            marker.height = h * 0.9 //(32 * 0.9f).dp.toPx(context).toInt()
-                            otherMarker.zIndex = z
-
-                            otherMarker.infoWindow?.close()
-                        }
+                        otherMarker.infoWindow?.close()
                     }
                 }
-                return true
             }
+            return true
         }
     }
 

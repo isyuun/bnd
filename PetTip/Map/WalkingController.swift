@@ -32,7 +32,7 @@ class WalkingController: LocationController {
 
     var bWalkingState = false
 
-    var statusViewTimer: Timer?
+    var walkingTimer: Timer?
 
 //    // MARK: - Move Timer (Distance, TimeSec)
     var movedSec: Double = 0
@@ -54,12 +54,21 @@ class WalkingController: LocationController {
     }
     
 
-    @objc func statusViewTimerCallback() {
+    @objc func walkingTimerCallback() {
         guard bWalkingState == true else {
             stopWalkingProcess()
             return
         }
-        statusViewTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(statusViewTimerCallback), userInfo: nil, repeats: true)
+        refreshMoveInfoData()
+        delegate?.walkingTimerCallback()
+    }
+
+    func resetWalkingData() {
+        movedSec = 0
+        movedDist = 0
+        movePathDist = 0
+        arrTrack.removeAll()
+        arrEventMarker.removeAll()
     }
 
     
@@ -74,10 +83,24 @@ class WalkingController: LocationController {
         bWalkingState = false
         arrTrack.removeAll()
         stopContinueLocation()
-        if (statusViewTimer != nil && statusViewTimer!.isValid) {
-            statusViewTimer!.invalidate()
+    }
+    
+    
+    func refreshMoveInfoStart() {
+        walkingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(walkingTimerCallback), userInfo: nil, repeats: true)
+    }
+    
+    func refreshMoveInfoStop() {
+        if (walkingTimer != nil && walkingTimer!.isValid) {
+            walkingTimer!.invalidate()
         }
     }
+
+    
+    func removeTrack(track: Track) {
+        arrTrack.removeAll { $0 === track }
+    }
+
     
     func addTrack(track: Track) {
         arrTrack.append(track)
@@ -92,8 +115,7 @@ class WalkingController: LocationController {
         if (arrTrack.count > 0) {
             if (arrTrack.last!.location!.distance(from: track.location!) >= 10) {
                 arrTrack.append(track)
-                movePathDist += arrTrack[arrTrack.count - 1].location!.distance(from: arrTrack[arrTrack.count - 2].location!)
-            }
+                movePathDist += moveDistance()            }
 
         } else {
             arrTrack.append(track)
@@ -101,32 +123,37 @@ class WalkingController: LocationController {
         }
     }
 
-
-    func arrEvent(track: Track?, marker: NMFMarker?) {
+    func moveDistance() -> CLLocationDistance {
+        return arrTrack[arrTrack.count - 1].location!.distance(from: arrTrack[arrTrack.count - 2].location!)
+    }
+    
+    
+    func addEvent(track: Track?, marker: NMFMarker?) {
         guard let track = track, let marker = marker, arrTrack.last?.location == nil else {
             return;
         }
         arrTrack.append(track)
         arrEventMarker.append(marker)
-   }
+    }
 
-   
-   
-   func refreshMoveInfoData() {
-       movedSec += 1
-       movedDist = movePathDist
-       
-       NSLog("refreshMoveInfoData \(movedSec) \(movedDist)")
-   }
-   
-   
-   override func updateCurrLocation(_ locations: [CLLocation]) {
-       guard bWalkingState == true else {
-           stopWalkingProcess()
-           return
-       }
-       addCurrLocation(locations.last);
-       refreshMoveInfoData();
-   }
+    
+    
+    func refreshMoveInfoData() {
+        movedSec += 1
+        movedDist = movePathDist
+        
+    }
+    
+    
+    override func updateCurrLocation(_ locations: [CLLocation]) {
+        guard bWalkingState == true else {
+            stopWalkingProcess()
+            return
+        }
+        delegate?.didUpdateLocations(locations);
+        addCurrLocation(locations.last);
+    }
 
-}
+ }
+
+
