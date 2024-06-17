@@ -340,10 +340,10 @@ class WalkPostViewController: CommonPostViewController {
             guard let trackPet = arrTrack[i].pet else { continue }
 
             if trackPet.ownrPetUnqNo == pet.ownrPetUnqNo {
-                if arrTrack[i].event == .pee {
+                if arrTrack[i].event == .poo {
                     ret[0] += 1
 
-                } else if arrTrack[i].event == .poo {
+                } else if arrTrack[i].event == .pee {
                     ret[1] += 1
 
                 } else if arrTrack[i].event == .mrk {

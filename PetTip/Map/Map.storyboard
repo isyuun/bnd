@@ -222,10 +222,10 @@
             </objects>
             <point key="canvasLocation" x="-2118" y="1001"/>
         </scene>
-        <!--Walk Post View Controller2-->
+        <!--Walk Post View Controller3-->
         <scene sceneID="OQ5-PW-epF">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" id="sjE-zC-BED" customClass="WalkPostViewController2" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" id="sjE-zC-BED" customClass="WalkPostViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Olp-qz-LrW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,10 +234,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xS0-u3-Nyy">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1451"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1499"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAA-A9-39J">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="5Wv-rT-pSf"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vP7-cd-GbD">
-                                                <rect key="frame" x="0.0" y="12" width="393" height="32"/>
+                                                <rect key="frame" x="0.0" y="60" width="393" height="32"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNl-j4-jws">
                                                         <rect key="frame" x="20" y="8" width="353" height="16"/>
@@ -281,7 +288,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐거운 산책 완료 !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-NI-d2U">
-                                                <rect key="frame" x="20" y="44" width="353" height="29"/>
+                                                <rect key="frame" x="20" y="92" width="353" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="Zss-JB-DVQ"/>
                                                 </constraints>
@@ -290,7 +297,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LyI-o4-45A">
-                                                <rect key="frame" x="20" y="89" width="353" height="78"/>
+                                                <rect key="frame" x="20" y="137" width="353" height="78"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObA-j9-Q51">
                                                         <rect key="frame" x="0.0" y="0.0" width="176" height="78"/>
@@ -382,14 +389,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxq-w9-l0Y" customClass="NMFNaverMapView">
-                                                <rect key="frame" x="20" y="183" width="353" height="200"/>
+                                                <rect key="frame" x="20" y="231" width="353" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="4q3-F6-hkN"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="같이 산책한 아이들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcW-E6-5Yk">
-                                                <rect key="frame" x="20" y="423" width="353" height="24"/>
+                                                <rect key="frame" x="20" y="471" width="353" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="vMc-JS-SO6"/>
                                                 </constraints>
@@ -398,13 +405,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p91-Ab-ajk">
-                                                <rect key="frame" x="20" y="463" width="353" height="128"/>
+                                                <rect key="frame" x="20" y="511" width="353" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="DwC-rY-Aaa"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0I-r8-9yC">
-                                                <rect key="frame" x="0.0" y="631" width="393" height="144"/>
+                                                <rect key="frame" x="0.0" y="679" width="393" height="144"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 사진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oe-zM-HKy">
                                                         <rect key="frame" x="20" y="0.0" width="353" height="24"/>
@@ -530,7 +537,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRd-Sn-c4W">
-                                                <rect key="frame" x="0.0" y="815" width="393" height="636"/>
+                                                <rect key="frame" x="0.0" y="863" width="393" height="636"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfk-N7-bxa">
                                                         <rect key="frame" x="20" y="0.0" width="353" height="24"/>
@@ -767,6 +774,7 @@
                                             <constraint firstItem="LyI-o4-45A" firstAttribute="top" secondItem="hlG-NI-d2U" secondAttribute="bottom" constant="16" id="GzO-XL-wR1"/>
                                             <constraint firstItem="ZRd-Sn-c4W" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" id="H5z-bh-18Q"/>
                                             <constraint firstAttribute="trailing" secondItem="LyI-o4-45A" secondAttribute="trailing" constant="20" id="HyM-HH-4bS"/>
+                                            <constraint firstItem="vP7-cd-GbD" firstAttribute="top" secondItem="QAA-A9-39J" secondAttribute="bottom" id="JJw-kI-nY9"/>
                                             <constraint firstItem="YcW-E6-5Yk" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" constant="20" id="KdA-sc-8Zt"/>
                                             <constraint firstAttribute="bottom" secondItem="ZRd-Sn-c4W" secondAttribute="bottom" id="LeI-Mn-wNx"/>
                                             <constraint firstAttribute="trailing" secondItem="ZRd-Sn-c4W" secondAttribute="trailing" id="OZs-Tb-Oyz"/>
@@ -777,11 +785,13 @@
                                             <constraint firstItem="g0I-r8-9yC" firstAttribute="top" secondItem="p91-Ab-ajk" secondAttribute="bottom" constant="40" id="ZQh-G0-hU1"/>
                                             <constraint firstItem="YcW-E6-5Yk" firstAttribute="top" secondItem="Uxq-w9-l0Y" secondAttribute="bottom" constant="40" id="Zrv-WM-gOe"/>
                                             <constraint firstItem="vP7-cd-GbD" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" id="aEi-QB-n4k"/>
+                                            <constraint firstAttribute="trailing" secondItem="QAA-A9-39J" secondAttribute="trailing" id="bdJ-Jc-aOb"/>
                                             <constraint firstItem="g0I-r8-9yC" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" id="d86-82-SmF"/>
-                                            <constraint firstItem="vP7-cd-GbD" firstAttribute="top" secondItem="xS0-u3-Nyy" secondAttribute="top" constant="12" id="eH2-Av-QBf"/>
                                             <constraint firstItem="hlG-NI-d2U" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" constant="20" id="eQ0-im-rHm"/>
+                                            <constraint firstItem="QAA-A9-39J" firstAttribute="top" secondItem="xS0-u3-Nyy" secondAttribute="top" id="fPi-95-Ewv"/>
                                             <constraint firstItem="p91-Ab-ajk" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" constant="20" id="jde-VZ-cHN"/>
                                             <constraint firstAttribute="trailing" secondItem="vP7-cd-GbD" secondAttribute="trailing" id="kFy-vK-MB7"/>
+                                            <constraint firstItem="QAA-A9-39J" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" id="weY-34-b6Q"/>
                                             <constraint firstAttribute="height" priority="250" constant="759" id="ww1-55-xR8"/>
                                             <constraint firstItem="hlG-NI-d2U" firstAttribute="top" secondItem="vP7-cd-GbD" secondAttribute="bottom" id="ySF-zI-MZg"/>
                                             <constraint firstItem="LyI-o4-45A" firstAttribute="leading" secondItem="xS0-u3-Nyy" secondAttribute="leading" constant="20" id="ym6-Ot-bJS"/>
@@ -823,6 +833,7 @@
                         <outlet property="sv_walkPet" destination="p91-Ab-ajk" id="iGD-wo-hKO"/>
                         <outlet property="tf_hashtag" destination="zHh-Ja-LHk" id="yu1-ek-XrT"/>
                         <outlet property="tf_title" destination="6al-js-EGV" id="Zyh-XF-LlI"/>
+                        <outlet property="titleBarView" destination="QAA-A9-39J" id="ig8-mU-fU5"/>
                         <outlet property="tv_memo" destination="pge-fN-po5" id="gCG-LB-Qc5"/>
                         <outlet property="vw_storyShareAgree" destination="jkS-dA-RJz" id="OEe-aq-BTW"/>
                         <outlet property="vw_titleArea" destination="BYV-xx-sxi" id="hKS-fH-vWi"/>
@@ -837,10 +848,10 @@
     </scenes>
     <designables>
         <designable name="6al-js-EGV">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
         <designable name="zHh-Ja-LHk">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

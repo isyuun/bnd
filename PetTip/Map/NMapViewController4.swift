@@ -79,10 +79,13 @@ class NMapViewController4: NMapViewController3, NMFMapViewTouchDelegate {
                                     timestamp: Date())
         track.event = mark == .PEE ? .pee : mark == .POO ? .poo : mark == .MRK ? .mrk : .img
         track.pet = pet
+        walkingController?.addTrack(track: track)
 
-        // 이벤트 추가
-        walkingController?.addEvent(track:track, marker: marker)
-
+        if (arrEventMarker == nil) {
+            arrEventMarker = Array<NMFMarker>()
+        }
+        arrEventMarker?.append(marker)
+        
         let petName = pet.petNm
 
         let eventInfo: String

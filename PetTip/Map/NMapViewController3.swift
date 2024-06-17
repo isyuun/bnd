@@ -9,7 +9,7 @@ import UIKit
 import NMapsMap
 import AVKit
 
-class NMapViewController3: NMapViewController {
+class NMapViewController3: NMapViewController2 {
 
     override func viewDidLoad() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][naverMapView:\(String(describing: naverMapView))][mapView:\(String(describing: mapView))]")

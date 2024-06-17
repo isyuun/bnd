@@ -141,16 +141,7 @@ extension NMapViewController: LocationControllerDelegate {
     }
     
     func errorLocationService(message: String?) {
-        let requestLocationServiceAlert = UIAlertController(title: "오류사항", message: message, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "확인", style: .default) { _ in
-
-        }
-        // let cancel = UIAlertAction(title: "취소", style: .default) { [weak self] _ in
-        //     async { await self?.reloadData() }
-        // }
-        requestLocationServiceAlert.addAction(cancel)
-        present(requestLocationServiceAlert, animated: true)
-
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][error message : \(message ?? "Location ERROR")]")
     }
 
     func walkingTimerCallback() {

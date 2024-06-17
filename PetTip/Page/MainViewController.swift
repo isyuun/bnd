@@ -56,6 +56,7 @@ class MainViewController: LocationViewController2 {
 
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+        checkWalkBtn()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -267,18 +268,33 @@ class MainViewController: LocationViewController2 {
         lbCurrPetKind.text = ""
         lbCurrPetNm.text = ""
     }
+    
+    func checkWalkBtn() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate4 else {
+            return
+        }
+        if appDelegate.walkingController?.bWalkingState == true && appDelegate.walkingController?.locationReqType == 2 {
+            btnWalkGo.backgroundColor = UIColor.black
+        } else {
+            btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
+        }
+
+    }
 
     @IBAction func onWalkGo(_ sender: Any) {
-        btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
+//        btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
+        checkWalkBtn()
         performSegue(withIdentifier: "segueMainToMap", sender: self)
     }
 
     @IBAction func onWalkGo_TouchDown(_ sender: Any) {
-        btnWalkGo.backgroundColor = UIColor(hex: "#ff4B64F5")
+//        btnWalkGo.backgroundColor = UIColor(hex: "#ff4B64F5")
+        checkWalkBtn()
     }
 
     @IBAction func onWalkGo_TouchUpOutside(_ sender: Any) {
-        btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
+//        btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
+        checkWalkBtn()
     }
 
     func removeAllBeforeHistory() {

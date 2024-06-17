@@ -30,8 +30,8 @@ import NMapsMap
 
 class WalkingController: LocationController {
 
+    var selectedPets = [Pet]()
     var bWalkingState = false
-
     var walkingTimer: Timer?
 
 //    // MARK: - Move Timer (Distance, TimeSec)
@@ -39,7 +39,6 @@ class WalkingController: LocationController {
     var movedDist: Double = 0
     var movePathDist: Double = 0
     var arrTrack: Array<Track> = Array<Track>();
-    var arrEventMarker: Array<NMFMarker> = Array<NMFMarker>();
 
     enum EventMark: Int {
         case PEE
@@ -68,7 +67,6 @@ class WalkingController: LocationController {
         movedDist = 0
         movePathDist = 0
         arrTrack.removeAll()
-        arrEventMarker.removeAll()
     }
 
     
@@ -115,8 +113,8 @@ class WalkingController: LocationController {
         if (arrTrack.count > 0) {
             if (arrTrack.last!.location!.distance(from: track.location!) >= 10) {
                 arrTrack.append(track)
-                movePathDist += moveDistance()            }
-
+                movePathDist += moveDistance()
+            }
         } else {
             arrTrack.append(track)
             movePathDist = 0
@@ -128,22 +126,10 @@ class WalkingController: LocationController {
     }
     
     
-    func addEvent(track: Track?, marker: NMFMarker?) {
-        guard let track = track, let marker = marker, arrTrack.last?.location == nil else {
-            return;
-        }
-        arrTrack.append(track)
-        arrEventMarker.append(marker)
-    }
-
-    
-    
     func refreshMoveInfoData() {
         movedSec += 1
         movedDist = movePathDist
-        
     }
-    
     
     override func updateCurrLocation(_ locations: [CLLocation]) {
         delegate?.didUpdateLocations(locations);

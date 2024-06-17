@@ -99,6 +99,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             } else {
                 selectedPets = [Pet]()
                 selectedPets.append(dailyLifePets.pets.last!)
+                walkingController.selectedPets = selectedPets
                 startWalkingProcess()
             }
         }
@@ -118,6 +119,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                 self.didTapPopupOK()
 
                 self.selectedPets = selectedPets
+                self.walkingController?.selectedPets = selectedPets;
 
                 self.startWalkingProcess()
             }
@@ -149,11 +151,17 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
         }
     }
     
+    
     internal func loadWalkingProcess() {
         guard let walkingController = walkingController else {
             return
         }
+        
+        guard walkingController.selectedPets.count > 0 else {
+            return;
+        }
 
+        self.selectedPets = walkingController.selectedPets
         if pathOverlay == nil {
             pathOverlay = NMFPath()
             pathOverlay.width = 6
@@ -162,6 +170,11 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             pathOverlay.outlineColor = UIColor(hex: "#A0FF5000")!
             pathOverlay.mapView = mapView
         }
+        
+        if (arrEventMarker == nil) {
+            arrEventMarker = Array<NMFMarker>()
+        }
+        arrEventMarker?.removeAll()
         
         let arrTrack = walkingController.arrTrack
 
@@ -193,6 +206,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
                 let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), event: event)
                 eventMarker.mapView = self.naverMapView.mapView
+                
+                arrEventMarker?.append(eventMarker);
             }
 
             if i == 1 {
@@ -209,13 +224,17 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             }
         }
         
-        if let location = arrTrack.last?.location {
-            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), zoomTo: 2)
-            cameraUpdate.animation = .easeIn
-            cameraUpdate.animationDuration = 1
-            mapView.moveCamera(cameraUpdate)
-            mapView.positionMode = .direction
+        DispatchQueue.main.async {
+            if let location = arrTrack.last?.location {
+                let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), zoomTo: 2)
+                cameraUpdate.animation = .easeIn
+                cameraUpdate.animationDuration = 1
+                self.mapView.moveCamera(cameraUpdate)
+                self.mapView.positionMode = .direction
+            }
+
         }
+
     }
 
     internal func stopWalkingProcess() {
@@ -613,14 +632,16 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 //        movedSec += 1
 //        movedDist = movePathDist
         walkingController?.refreshMoveInfoData()
+        
+
     }
 
     func refreshMoveInfoView() {
-        guard let movedDist = walkingController?.movedSec else {
+        guard let movedSec = walkingController?.movedSec, let movedDist = walkingController?.movedDist else {
             return
         }
         
-        let seconds: UInt = UInt(movedDist)
+        let seconds: UInt = UInt(movedSec)
         let minutes = seconds / 60
         let hours = minutes / 60
         let strMovedTime = String(format: "%02d:%02d:%02d", hours, minutes % 60, seconds % 60)
