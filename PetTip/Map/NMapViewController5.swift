@@ -17,14 +17,31 @@ class NMapViewController5: NMapViewController4 {
             walkingController = appDelegate.walkingController
             walkingController?.delegate = self
         }
+        
+        // Foreground 상태로 변경될때 호출
+        NotificationCenter.default.addObserver(self, selector: #selector(enterForegroundNotification), name: UIScene.willEnterForegroundNotification, object: nil)
+
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
             appDelegate.walkingController?.delegate = nil
         }
+        NotificationCenter.default.removeObserver(self)
     }
 
+    @objc func enterForegroundNotification() {
+        print("enterForegroundNotification")
+        
+        if walkingController?.bWalkingState == true {
+            // 데이터 로드
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.loadWalkingProcess()
+            })
+        }
+    }
+    
     override func viewDidLoad() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         super.viewDidLoad()

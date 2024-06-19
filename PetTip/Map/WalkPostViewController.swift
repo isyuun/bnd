@@ -252,7 +252,7 @@ class WalkPostViewController: CommonPostViewController {
                 endMarker.mapView = self.naverMapView.mapView
             }
 
-            if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk) {
+            if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk || arrTrack[i].event == .img) {
                 var event: NMapViewController.EventMark = .MRK
                 if arrTrack[i].event! == .pee {
                     event = .PEE
@@ -684,7 +684,7 @@ class WalkPostViewController: CommonPostViewController {
 
         let trkseg = "<trkseg>\n\(trkpt)</trkseg>\n"
         let trk = "<trk>\n<name>\(firstTime)</name>\n\(trkseg)</trk>\n"
-        let content = header + metadata + trkseg + footer
+        let content = header + metadata + trk + footer
 
         return comment + content
     }

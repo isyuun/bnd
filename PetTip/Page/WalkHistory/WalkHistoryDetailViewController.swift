@@ -218,7 +218,7 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
                 endMarker.mapView = self.naverMapView.mapView
             }
 
-            if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk) {
+            if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk || arrTrack[i].event == .img) {
                 var event: NMapViewController.EventMark = .MRK
                 if arrTrack[i].event! == .pee {
                     event = .PEE

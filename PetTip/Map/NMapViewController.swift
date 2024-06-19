@@ -157,10 +157,16 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             return
         }
         
-        guard walkingController.selectedPets.count > 0 else {
+        guard walkingController.bWalkingState == true else {
             return;
         }
 
+        guard walkingController.selectedPets.count > 0 else {
+            return;
+        }
+        
+        clearMapOverlay()
+        
         self.selectedPets = walkingController.selectedPets
         if pathOverlay == nil {
             pathOverlay = NMFPath()
@@ -189,7 +195,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 //                endMarker.mapView = self.naverMapView.mapView
 //            }
 
-            if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk) {
+            if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk || arrTrack[i].event == .img) {
                 var event: NMapViewController.EventMark = .MRK
                 if arrTrack[i].event! == .pee {
                     event = .PEE
@@ -245,12 +251,34 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
         walkingController?.stopContinueLocation()
 
+//        if (startMarker != nil) { startMarker.mapView = nil }
+//        startMarker = nil
+//        if (endMarker != nil) { endMarker.mapView = nil; }
+//        endMarker = nil
+//
+//        pathOverlay.mapView = nil
+//        pathOverlay = nil
+//
+//        if let arrMarker = arrEventMarker {
+//            for marker in arrMarker {
+//                marker.mapView = nil
+//            }
+//        }
+
+        clearMapOverlay()
+        
+        refreshMoveInfoStop(isSafeStop: false)
+    }
+    
+    func clearMapOverlay() {
         if (startMarker != nil) { startMarker.mapView = nil }
         startMarker = nil
         if (endMarker != nil) { endMarker.mapView = nil; }
         endMarker = nil
 
-        pathOverlay.mapView = nil
+        if pathOverlay != nil {
+            pathOverlay.mapView = nil
+        }
         pathOverlay = nil
 
         if let arrMarker = arrEventMarker {
@@ -259,7 +287,6 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             }
         }
 
-        refreshMoveInfoStop(isSafeStop: false)
     }
 
     @IBOutlet weak var btnList: UIButton!
@@ -616,26 +643,15 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     }
 
     func statusViewTimerCallback() {
-        let state = UIApplication.shared.applicationState
-        switch state {
-        case .background:
-//            refreshMoveInfoData()
-            break
-
-        default:
-//            refreshMoveInfoData()
+        if UIApplication.shared.applicationState != .background {
             refreshMoveInfoView()
         }
     }
 
     func refreshMoveInfoData() {
-//        movedSec += 1
-//        movedDist = movePathDist
         walkingController?.refreshMoveInfoData()
-        
-
     }
-
+    
     func refreshMoveInfoView() {
         guard let movedSec = walkingController?.movedSec, let movedDist = walkingController?.movedDist else {
             return
@@ -775,7 +791,9 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             return
         #endif
 
-        if arrImageFromCamera.count >= 5 {
+        guard let walkingController = walkingController else { return }
+        
+        if walkingController.arrImageFromCamera.count >= 5 {
             showToast(msg: "사진은 최대 5장까지만 가능해요")
             return
         }
@@ -799,8 +817,6 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             self.present(pickerController, animated: true)
         }
     }
-
-    private var arrImageFromCamera = [UIImage]()
 
     func showAlertGoToSetting() {
         let alertController = UIAlertController(
@@ -838,7 +854,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             guard let walkingController = walkingController else { return }
             
             // vc.mapSnapImg = _mapSnapImg
-            vc.arrImageFromCamera = arrImageFromCamera
+            vc.arrImageFromCamera = walkingController.arrImageFromCamera
             vc.arrTrack = walkingController.arrTrack
             vc.movedSec = walkingController.movedSec
             vc.movedDist = walkingController.movedDist
@@ -856,8 +872,9 @@ extension NMapViewController: UINavigationControllerDelegate, UIImagePickerContr
             picker.dismiss(animated: true)
             return
         }
-        arrImageFromCamera.append(image)
-
+        
+        guard let walkingController = walkingController else { return }
+        walkingController.arrImageFromCamera.append(image)
         selectEventMarkPet(mark: .IMG)
 
         picker.dismiss(animated: true, completion: nil)

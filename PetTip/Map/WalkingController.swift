@@ -39,7 +39,9 @@ class WalkingController: LocationController {
     var movedDist: Double = 0
     var movePathDist: Double = 0
     var arrTrack: Array<Track> = Array<Track>();
+    var arrImageFromCamera = [UIImage]()
 
+    
     enum EventMark: Int {
         case PEE
         case POO
@@ -67,19 +69,21 @@ class WalkingController: LocationController {
         movedDist = 0
         movePathDist = 0
         arrTrack.removeAll()
+        arrImageFromCamera.removeAll()
     }
 
     
     func startWalkingProcess() {
         bWalkingState = true
         arrTrack.removeAll()
+        arrImageFromCamera.removeAll()
         startContinueLocation()
-        
     }
 
     func stopWalkingProcess() {
         bWalkingState = false
         arrTrack.removeAll()
+        arrImageFromCamera.removeAll()
         stopContinueLocation()
     }
     
