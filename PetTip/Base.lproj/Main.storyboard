@@ -3,7 +3,7 @@
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -2094,11 +2094,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="펫팁은 아래 권한들을 필요로 합니다. 서비스 사용 중 앱에서 요청 시 허용해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFp-pQ-eXP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFp-pQ-eXP">
                                 <rect key="frame" x="0.0" y="136" width="430" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="BE2-vm-Z99"/>
                                 </constraints>
+                                <string key="text">펫팁은 아래 권한들을 필요로 합니다.
+서비스 사용 중 앱에서 요청 시 허용해주세요.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2131,11 +2133,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMO-m2-zFo">
                                 <rect key="frame" x="20" y="212" width="390" height="578"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rav-jE-Yc2">
-                                        <rect key="frame" x="0.0" y="0.0" width="394.33333333333331" height="419.33333333333331"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-y0-o7c">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="472.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필수 접근 권한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te0-i7-h5e">
-                                                <rect key="frame" x="0.0" y="0.0" width="91" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="6yf-42-1QN"/>
                                                 </constraints>
@@ -2143,8 +2145,8 @@
                                                 <color key="textColor" red="0.3313170969" green="0.50152462720000002" blue="0.91768938300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카메라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mS-oU-NHt">
-                                                <rect key="frame" x="0.0" y="36" width="42" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mS-oU-NHt">
+                                                <rect key="frame" x="0.0" y="32" width="390" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="INg-4m-MOs"/>
                                                 </constraints>
@@ -2152,53 +2154,14 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운전면허증은 반드시 스캔하여 등록해야 하며, 운행 전 차량 확인 시 반드시 실시간 촬영이 필요합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljD-z0-FPu">
-                                                <rect key="frame" x="0.0" y="60" width="394.33333333333331" height="33.666666666666657"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리 앱은 현재 위치 기반 서비스를 제공합니다. 정확한 서비스를 위해 위치에 접근할 필요가 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljD-z0-FPu">
+                                                <rect key="frame" x="0.0" y="64" width="390" height="33.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택 접근 권한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhB-2d-3VU">
-                                                <rect key="frame" x="0.0" y="191.66666666666669" width="91" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="XAp-7r-pys"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2w-XS-NOC">
-                                                <rect key="frame" x="0.0" y="227.66666666666669" width="28" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="5Jh-X6-mUy"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 현재 위치는 쏘카존 찾기, 부름 서비스, 차량 제어를 위한 필수 정보로 활용됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U6-OI-MmR">
-                                                <rect key="frame" x="0.0" y="251.66666666666666" width="394.33333333333331" height="33.666666666666657"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장공간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyD-yu-aFu">
-                                                <rect key="frame" x="0.0" y="301.33333333333337" width="55.666666666666664" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="F8D-nJ-YHh"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="운행 전 차량 확인 시 촬영한 사진이 저장됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-mY-MYr">
-                                                <rect key="frame" x="0.0" y="325.33333333333337" width="394.33333333333331" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGY-4F-Ld9">
-                                                <rect key="frame" x="0.0" y="109.66666666666669" width="28" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저장용량" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGY-4F-Ld9">
+                                                <rect key="frame" x="0.0" y="109.66666666666669" width="390" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="23Q-Aq-wmo"/>
                                                 </constraints>
@@ -2206,21 +2169,72 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본인 이용 확인을 위해 앱을 사용중인 휴대폰의 전화번호를 조회합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-3i-csh">
-                                                <rect key="frame" x="0.0" y="133.66666666666669" width="394.33333333333331" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱은 사진, 동영상 등의 미디어를 저장하고 관리합니다. 저장소에 접근하여 파일을 저장하고 불러오기 위해 권한이 필요합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fd-3i-csh">
+                                                <rect key="frame" x="0.0" y="141.66666666666669" width="390" height="33.666666666666657"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-ob-tkN">
-                                                <rect key="frame" x="0.0" y="170.66666666666669" width="394.33333333333331" height="1"/>
-                                                <color key="backgroundColor" red="0.8945003748" green="0.9130991101" blue="0.945102632" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyD-yu-aFu">
+                                                <rect key="frame" x="0.0" y="187.33333333333331" width="390" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="OlJ-ME-SvH"/>
+                                                    <constraint firstAttribute="height" constant="20" id="F8D-nJ-YHh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리 앱은 중요한 알림을 통해 사용자에게 정보를 전달합니다. 알림을 표시하기 위해 권한이 필요합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peP-mY-MYr">
+                                                <rect key="frame" x="0.0" y="219.33333333333331" width="390" height="33.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3z-QR-IlQ">
+                                                <rect key="frame" x="0.0" y="265" width="390" height="10"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-ob-tkN">
+                                                        <rect key="frame" x="0.0" y="4.6666666666666856" width="390" height="1"/>
+                                                        <color key="backgroundColor" red="0.8945003748" green="0.9130991101" blue="0.945102632" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="OlJ-ME-SvH"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Icb-ob-tkN" firstAttribute="leading" secondItem="e3z-QR-IlQ" secondAttribute="leading" id="6Pu-f3-36T"/>
+                                                    <constraint firstAttribute="height" constant="10" id="clx-y7-Lq2"/>
+                                                    <constraint firstItem="Icb-ob-tkN" firstAttribute="centerY" secondItem="e3z-QR-IlQ" secondAttribute="centerY" id="rcI-Jh-hqN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Icb-ob-tkN" secondAttribute="trailing" id="wqH-rU-x3m"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="블루투스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amD-RD-NPt">
-                                                <rect key="frame" x="0.0" y="358.33333333333337" width="93" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택 접근 권한" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhB-2d-3VU">
+                                                <rect key="frame" x="0.0" y="287" width="390" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="XAp-7r-pys"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신체활동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2w-XS-NOC">
+                                                <rect key="frame" x="0.0" y="329" width="390" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="5Jh-X6-mUy"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당사 앱은 건강 및 신체활동을 기록하는 서비스를 제공합니다. 신체활동 데이터를 수집하기 위해 신체활동 권한이 필요합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1U6-OI-MmR">
+                                                <rect key="frame" x="0.0" y="361" width="390" height="33.666666666666686"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카메라" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amD-RD-NPt">
+                                                <rect key="frame" x="0.0" y="406.66666666666663" width="390" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="u3N-K9-8eR"/>
                                                 </constraints>
@@ -2228,59 +2242,22 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="차량을 제어할 때 블루투스를 이용할 수 있습니다. (문열기, 문잠금 등)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ape-TP-RSY">
-                                                <rect key="frame" x="0.0" y="382.33333333333337" width="394.33333333333331" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당사 앱은 사진 및 비디오 촬영 기능을 제공합니다. 사진 및 비디오를 촬영하고 저장하기 위해 카메라에 접근하는 권한이 필요합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ape-TP-RSY">
+                                                <rect key="frame" x="0.0" y="438.66666666666663" width="390" height="33.666666666666686"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.45523262019999999" green="0.47403371329999999" blue="0.4980427623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Icb-ob-tkN" secondAttribute="trailing" id="1FW-4N-N2m"/>
-                                            <constraint firstItem="amD-RD-NPt" firstAttribute="top" secondItem="peP-mY-MYr" secondAttribute="bottom" constant="16" id="3Uv-eP-KYz"/>
-                                            <constraint firstItem="Ape-TP-RSY" firstAttribute="top" secondItem="amD-RD-NPt" secondAttribute="bottom" constant="4" id="46r-Ms-wIK"/>
-                                            <constraint firstItem="3mS-oU-NHt" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="4Z5-0D-Tma"/>
-                                            <constraint firstItem="te0-i7-h5e" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="5nH-9u-gfC"/>
-                                            <constraint firstItem="1Fd-3i-csh" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="9HU-8U-DDv"/>
-                                            <constraint firstItem="V2w-XS-NOC" firstAttribute="top" secondItem="NhB-2d-3VU" secondAttribute="bottom" constant="16" id="CBt-LG-UvE"/>
-                                            <constraint firstAttribute="trailing" secondItem="peP-mY-MYr" secondAttribute="trailing" id="D7V-rj-bf4"/>
-                                            <constraint firstItem="ljD-z0-FPu" firstAttribute="top" secondItem="3mS-oU-NHt" secondAttribute="bottom" constant="4" id="DH1-dE-ayn"/>
-                                            <constraint firstItem="3mS-oU-NHt" firstAttribute="top" secondItem="te0-i7-h5e" secondAttribute="bottom" constant="16" id="HUd-xq-mbp"/>
-                                            <constraint firstItem="amD-RD-NPt" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="K0k-9Q-ZZm"/>
-                                            <constraint firstItem="V2w-XS-NOC" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="Nqb-up-mdt"/>
-                                            <constraint firstItem="Icb-ob-tkN" firstAttribute="top" secondItem="1Fd-3i-csh" secondAttribute="bottom" constant="20" id="OfL-zw-hw3"/>
-                                            <constraint firstItem="NhB-2d-3VU" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="Ppx-Ct-Uoh"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ape-TP-RSY" secondAttribute="bottom" constant="20" id="STH-vN-SJw"/>
-                                            <constraint firstAttribute="trailing" secondItem="1U6-OI-MmR" secondAttribute="trailing" id="TFY-zM-az9"/>
-                                            <constraint firstItem="cyD-yu-aFu" firstAttribute="top" secondItem="1U6-OI-MmR" secondAttribute="bottom" constant="16" id="Vzt-DP-E1e"/>
-                                            <constraint firstItem="peP-mY-MYr" firstAttribute="top" secondItem="cyD-yu-aFu" secondAttribute="bottom" constant="4" id="ZP1-uL-fdf"/>
-                                            <constraint firstAttribute="height" priority="250" constant="519" id="ZuB-OC-sXS"/>
-                                            <constraint firstItem="NhB-2d-3VU" firstAttribute="top" secondItem="Icb-ob-tkN" secondAttribute="bottom" constant="20" id="coS-DJ-TfD"/>
-                                            <constraint firstItem="1U6-OI-MmR" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="dYd-Fw-Cc1"/>
-                                            <constraint firstItem="ljD-z0-FPu" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="eAD-7J-rL9"/>
-                                            <constraint firstItem="cyD-yu-aFu" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="ejA-1k-bDc"/>
-                                            <constraint firstAttribute="trailing" secondItem="amD-RD-NPt" secondAttribute="trailing" constant="301.33333333333326" id="gxM-vk-fFR"/>
-                                            <constraint firstAttribute="trailing" secondItem="ljD-z0-FPu" secondAttribute="trailing" id="hbf-E6-qL8"/>
-                                            <constraint firstItem="1U6-OI-MmR" firstAttribute="top" secondItem="V2w-XS-NOC" secondAttribute="bottom" constant="4" id="htt-hL-b58"/>
-                                            <constraint firstItem="te0-i7-h5e" firstAttribute="top" secondItem="rav-jE-Yc2" secondAttribute="top" id="lZh-9j-C31"/>
-                                            <constraint firstItem="Icb-ob-tkN" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="maQ-Ta-thu"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ape-TP-RSY" secondAttribute="trailing" id="o1N-w3-tgZ"/>
-                                            <constraint firstItem="Ape-TP-RSY" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="oPt-8z-KOs"/>
-                                            <constraint firstItem="1Fd-3i-csh" firstAttribute="top" secondItem="mGY-4F-Ld9" secondAttribute="bottom" constant="4" id="pPG-Wd-qiL"/>
-                                            <constraint firstItem="mGY-4F-Ld9" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="sbl-CQ-o3p"/>
-                                            <constraint firstAttribute="trailing" secondItem="1Fd-3i-csh" secondAttribute="trailing" id="tMY-rj-633"/>
-                                            <constraint firstItem="mGY-4F-Ld9" firstAttribute="top" secondItem="ljD-z0-FPu" secondAttribute="bottom" constant="16" id="xFK-fL-f4b"/>
-                                            <constraint firstItem="peP-mY-MYr" firstAttribute="leading" secondItem="rav-jE-Yc2" secondAttribute="leading" id="yKN-hC-6x8"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="rav-jE-Yc2" firstAttribute="width" secondItem="BTQ-58-xAc" secondAttribute="width" multiplier="1.01133" id="84F-3Q-Rjd"/>
-                                    <constraint firstItem="rav-jE-Yc2" firstAttribute="bottom" secondItem="aHS-Z5-TT4" secondAttribute="bottom" id="Ag4-3w-CEI"/>
-                                    <constraint firstItem="rav-jE-Yc2" firstAttribute="trailing" secondItem="aHS-Z5-TT4" secondAttribute="trailing" id="LwJ-iP-6sb"/>
-                                    <constraint firstItem="rav-jE-Yc2" firstAttribute="top" secondItem="aHS-Z5-TT4" secondAttribute="top" id="PHH-gP-ita"/>
-                                    <constraint firstItem="rav-jE-Yc2" firstAttribute="leading" secondItem="aHS-Z5-TT4" secondAttribute="leading" id="raw-i7-ndC"/>
+                                    <constraint firstItem="IAb-y0-o7c" firstAttribute="top" secondItem="aHS-Z5-TT4" secondAttribute="top" id="Al0-g3-NZM"/>
+                                    <constraint firstItem="IAb-y0-o7c" firstAttribute="bottom" secondItem="aHS-Z5-TT4" secondAttribute="bottom" constant="-10" id="Ie2-vc-Dph"/>
+                                    <constraint firstItem="BTQ-58-xAc" firstAttribute="leading" secondItem="IAb-y0-o7c" secondAttribute="leading" id="R0d-5r-oFf"/>
+                                    <constraint firstItem="IAb-y0-o7c" firstAttribute="trailing" secondItem="BTQ-58-xAc" secondAttribute="trailing" id="fth-cL-7hx"/>
+                                    <constraint firstItem="IAb-y0-o7c" firstAttribute="width" secondItem="BTQ-58-xAc" secondAttribute="width" id="jdf-Zg-rYF"/>
+                                    <constraint firstAttribute="width" constant="390" id="mZ9-Af-Egr"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="aHS-Z5-TT4"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="BTQ-58-xAc"/>
@@ -3031,8 +3008,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="pi9-mi-dr2"/>
-        <segue reference="DfS-D8-BTo"/>
+        <segue reference="43t-yt-BLb"/>
+        <segue reference="ISm-sO-KAv"/>
         <segue reference="8xf-V6-Ark"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -3061,13 +3038,13 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tableCellBlueTextColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
