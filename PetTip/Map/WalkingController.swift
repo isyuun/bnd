@@ -11,23 +11,6 @@ import CoreLocation
 import NMapsMap
 
 
-/*
- 기능 목록
- - 현재위치 받기
- - 타이머로 1초단위로 루프
- - 퍼미션 체크
- 
- 변수 모록
- - Track 목록 변수
- - 거리 변수
- - 시간 변수
- - 산책버튼 ON/OFF 플레그 변수
- - delegate
- 
-
- 
- */
-
 class WalkingController: LocationController {
 
     var selectedPets = [Pet]()

@@ -51,7 +51,7 @@ class NMapViewController3: NMapViewController2 {
             mapView.positionMode = .normal
             break
         }
-
+        mapPositionMode = mapView.positionMode
         updateBtnLocation()
     }
 
@@ -86,6 +86,7 @@ class NMapViewController3: NMapViewController2 {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         super.startWalkingProcess()
         mapView.positionMode = .direction
+        mapPositionMode = mapView.positionMode
         updateBtnLocation()
     }
 
@@ -93,6 +94,7 @@ class NMapViewController3: NMapViewController2 {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         super.stopWalkingProcess()
         mapView.positionMode = .normal
+        mapPositionMode = mapView.positionMode
         updateBtnLocation()
     }
 }

@@ -20,12 +20,17 @@ class NMapViewController5: NMapViewController4 {
         
         // Foreground 상태로 변경될때 호출
         NotificationCenter.default.addObserver(self, selector: #selector(enterForegroundNotification), name: UIScene.willEnterForegroundNotification, object: nil)
-
+        
+        self.mapView.positionMode = self.mapPositionMode
+        loadMapCameraData()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+            if appDelegate.walkingController?.bWalkingState == false {
+                appDelegate.walkingController?.stopContinueLocation();
+            }
             appDelegate.walkingController?.delegate = nil
         }
         NotificationCenter.default.removeObserver(self)
@@ -55,7 +60,6 @@ class NMapViewController5: NMapViewController4 {
     
     // MARK: - Back TitleBar
     @IBOutlet weak var titleBarView : UIView!
-    
     var lb_title : UILabel? = nil
     
     func showBackTitleBarView() {
@@ -87,7 +91,7 @@ class NMapViewController5: NMapViewController4 {
 
     func checkWalkingState() {
         if walkingController?.bWalkingState == true {
-            btnWalk.tintColor = UIColor.black
+            btnWalk.tintColor = UIColor.init(hexCode: "F54F68")
             btnWalk.setAttrTitle("산책종료", 14)
 
             self.mapTopView.hideMapTipView()

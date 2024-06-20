@@ -33,6 +33,14 @@
                                             <constraint firstAttribute="width" constant="40" id="gZj-Id-yhs"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPo-mr-Z8y" customClass="NMFCompassView">
+                                        <rect key="frame" x="15" y="282" width="40" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4ED-57-zMb"/>
+                                            <constraint firstAttribute="width" constant="40" id="voK-v4-fwU"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAx-zg-Y7t" customClass="MapTopView" customModule="PetTip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="60" width="393" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -164,6 +172,7 @@
                                     <constraint firstAttribute="trailing" secondItem="aTi-CG-Yv8" secondAttribute="trailing" constant="15" id="K91-I9-wsc"/>
                                     <constraint firstAttribute="trailing" secondItem="SXD-WQ-XDV" secondAttribute="trailing" constant="15" id="NCq-SQ-5rI"/>
                                     <constraint firstItem="SXD-WQ-XDV" firstAttribute="top" secondItem="kqF-tO-RNR" secondAttribute="bottom" constant="15" id="QLA-Sw-hnl"/>
+                                    <constraint firstItem="xPo-mr-Z8y" firstAttribute="centerX" secondItem="Biq-Jz-3TP" secondAttribute="centerX" id="RXy-Mo-0TC"/>
                                     <constraint firstAttribute="trailing" secondItem="YkQ-GE-je8" secondAttribute="trailing" id="S50-JF-9gu"/>
                                     <constraint firstItem="zu8-2y-n0h" firstAttribute="top" secondItem="ZIb-A5-a52" secondAttribute="bottom" constant="15" id="S8Y-T8-vQ1"/>
                                     <constraint firstItem="Biq-Jz-3TP" firstAttribute="leading" secondItem="8Zv-9l-PYc" secondAttribute="leading" constant="15" id="S9g-fW-EJe"/>
@@ -177,6 +186,7 @@
                                     <constraint firstItem="SXD-WQ-XDV" firstAttribute="leading" secondItem="8Zv-9l-PYc" secondAttribute="leading" constant="15" id="hlR-Yr-USb"/>
                                     <constraint firstAttribute="trailing" secondItem="oAx-zg-Y7t" secondAttribute="trailing" id="iRX-8Q-Xgu"/>
                                     <constraint firstItem="ANQ-uj-WO0" firstAttribute="leading" secondItem="8Zv-9l-PYc" secondAttribute="leading" constant="17" id="jax-Nq-D4c"/>
+                                    <constraint firstItem="xPo-mr-Z8y" firstAttribute="top" secondItem="Biq-Jz-3TP" secondAttribute="bottom" constant="20" id="oHE-Kb-NaS"/>
                                     <constraint firstItem="SXD-WQ-XDV" firstAttribute="top" secondItem="JxX-a8-RxK" secondAttribute="bottom" constant="15" id="qYa-ea-5m0"/>
                                     <constraint firstItem="YkQ-GE-je8" firstAttribute="top" secondItem="8Zv-9l-PYc" secondAttribute="top" id="rdJ-0l-eob"/>
                                     <constraint firstItem="Biq-Jz-3TP" firstAttribute="top" secondItem="oAx-zg-Y7t" secondAttribute="bottom" constant="15" id="szo-KG-Qvn"/>
@@ -210,6 +220,7 @@
                         <outlet property="btnPee" destination="aTi-CG-Yv8" id="vah-iN-idR"/>
                         <outlet property="btnPoo" destination="ZIb-A5-a52" id="wBg-1R-rxs"/>
                         <outlet property="btnWalk" destination="SXD-WQ-XDV" id="eCc-K7-Xf7"/>
+                        <outlet property="compassView" destination="xPo-mr-Z8y" id="WQM-iQ-bxt"/>
                         <outlet property="locationButton" destination="JxX-a8-RxK" id="vaT-Q5-elq"/>
                         <outlet property="mapTopView" destination="oAx-zg-Y7t" id="HBt-9i-7Pd"/>
                         <outlet property="naverMapView" destination="YkQ-GE-je8" id="nla-xl-J6F"/>
@@ -872,7 +883,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

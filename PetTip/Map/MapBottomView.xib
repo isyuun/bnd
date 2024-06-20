@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -123,7 +123,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled">
                         <backgroundConfiguration key="background">
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.96078431372549022" green="0.30980392156862746" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         </backgroundConfiguration>
                         <attributedString key="attributedTitle">
                             <fragment content="네, 종료할께요">
@@ -146,7 +146,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled">
                         <backgroundConfiguration key="background">
-                            <color key="backgroundColor" red="0.02785692795934212" green="0.38708159072732296" blue="0.56802121557370588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" red="0.27843137254901962" green="0.51372549019607838" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </backgroundConfiguration>
                         <attributedString key="attributedTitle">
                             <fragment content="조금 더 할게요">

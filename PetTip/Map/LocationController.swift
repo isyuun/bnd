@@ -8,7 +8,6 @@
 import Foundation
 import CoreLocation
 
-
 class LocationController: NSObject {
 
     private let locationManager = CLLocationManager()

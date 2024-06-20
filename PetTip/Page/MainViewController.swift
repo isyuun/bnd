@@ -274,7 +274,7 @@ class MainViewController: LocationViewController2 {
             return
         }
         if appDelegate.walkingController?.bWalkingState == true && appDelegate.walkingController?.locationReqType == 2 {
-            btnWalkGo.backgroundColor = UIColor.black
+            btnWalkGo.backgroundColor = UIColor(hex: "#fff54F68")
         } else {
             btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
         }

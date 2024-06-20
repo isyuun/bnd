@@ -20,6 +20,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     }
 
     @IBOutlet weak var zoomControlView: NMFZoomControlView!
+    @IBOutlet weak var compassView: NMFCompassView!    
     @IBOutlet weak var locationButton: NMFLocationButton!
 
     @IBOutlet weak var mapTopView: MapTopView!
@@ -31,6 +32,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     var mapBottomView: MapBottomView! = nil
 
     var mapSnapImg: UIImage? = nil
+    var mapZoomLevel: Double = 17.0
+    var mapPositionMode: NMFMyPositionMode = .normal
 
     @IBOutlet weak var btnWalk: UIButton!
     @IBAction func onBtnWalk(_ sender: Any) {
@@ -40,30 +43,49 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
         }
         
         if (walkingController.bWalkingState == true) {
-            if (endMarker == nil) {
-                guard let location = walkingController.arrTrack.last?.location else {
-                    return
-                }
-
-                endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), text: "도착", forceShow: false)
-                endMarker.mapView = self.naverMapView.mapView
-
-                let track = Track()
-                track.location = CLLocation(coordinate: location.coordinate,
-                                            altitude: location.altitude,
-                                            horizontalAccuracy: location.horizontalAccuracy,
-                                            verticalAccuracy: location.verticalAccuracy,
-                                            course: location.course,
-                                            courseAccuracy: location.courseAccuracy,
-                                            speed: location.speed,
-                                            speedAccuracy: location.speedAccuracy,
-                                            timestamp: Date())
-                track.event = .non
-//                arrTrack.append(track)
-                walkingController.addTrack(track: track);
-                
+//            if (endMarker == nil) {
+//                guard let location = walkingController.arrTrack.last?.location else {
+//                    return
+//                }
+//
+//                endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), text: "도착", forceShow: false)
+//                endMarker.mapView = self.naverMapView.mapView
+//
+//                let track = Track()
+//                track.location = CLLocation(coordinate: location.coordinate,
+//                                            altitude: location.altitude,
+//                                            horizontalAccuracy: location.horizontalAccuracy,
+//                                            verticalAccuracy: location.verticalAccuracy,
+//                                            course: location.course,
+//                                            courseAccuracy: location.courseAccuracy,
+//                                            speed: location.speed,
+//                                            speedAccuracy: location.speedAccuracy,
+//                                            timestamp: Date())
+//                track.event = .non
+////                arrTrack.append(track)
+//                walkingController.addTrack(track: track);
+//                
+//            }
+            
+            guard let location = walkingController.arrTrack.last?.location else {
+                return
             }
+            
+            let track = Track()
+            track.location = CLLocation(coordinate: location.coordinate,
+                                        altitude: location.altitude,
+                                        horizontalAccuracy: location.horizontalAccuracy,
+                                        verticalAccuracy: location.verticalAccuracy,
+                                        course: location.course,
+                                        courseAccuracy: location.courseAccuracy,
+                                        speed: location.speed,
+                                        speedAccuracy: location.speedAccuracy,
+                                        timestamp: Date())
+            track.event = .non
+            walkingController.addTrack(track: track);
 
+            saveMapCameraData()
+            
             showTrackSummaryMap()
 
             naverMapView.takeSnapshot(withShowControls: false, complete: { [weak self] (image) in
@@ -131,7 +153,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
     internal func startWalkingProcess() {
 
-        btnWalk.tintColor = UIColor.black
+        btnWalk.tintColor = UIColor.init(hexCode: "F54F68")
         btnWalk.setAttrTitle("산책종료", 14)
 
         if pathOverlay == nil {
@@ -232,11 +254,10 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
         
         DispatchQueue.main.async {
             if let location = arrTrack.last?.location {
-                let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), zoomTo: 2)
-                cameraUpdate.animation = .easeIn
-                cameraUpdate.animationDuration = 1
+                let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), zoomTo: self.mapZoomLevel)
+                cameraUpdate.animation = .none
+//                cameraUpdate.animationDuration = 1
                 self.mapView.moveCamera(cameraUpdate)
-                self.mapView.positionMode = .direction
             }
 
         }
@@ -368,8 +389,10 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
         mapView.mapType = .basic
         mapView.isNightModeEnabled = traitCollection.userInterfaceStyle == .dark ? true : false // default:false
-        mapView.positionMode = .direction
-        mapView.zoomLevel = 17
+        mapPositionMode = .normal
+        mapView.positionMode = mapPositionMode
+        mapZoomLevel = 17
+        mapView.zoomLevel = mapZoomLevel
         mapView.minZoomLevel = 5.0
         // mapView.maxZoomLevel = 18.0
         //
@@ -396,6 +419,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
         naverMapView.showZoomControls = false
         zoomControlView.mapView = naverMapView.mapView
+        compassView.mapView = naverMapView.mapView
 
         naverMapView.showLocationButton = false
         locationButton.isHidden = true  // locationButton.mapView = naverMapView.mapView
@@ -452,11 +476,11 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
         btnMrk.isHidden = true
         
         self.mapTopView.showMapTipView()
-
+        
         // testCode...
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
-            //self.mapTopView.showMapNavView()
-        })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4), execute: {
+//            //self.mapTopView.showMapNavView()
+//        })
         // testCode...
     }
 
@@ -505,11 +529,12 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
         }
         
         if (walkingController.locationReqType == 1) {
-            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), zoomTo: 2)
-            cameraUpdate.animation = .easeIn
-            cameraUpdate.animationDuration = 1
+            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), zoomTo: mapZoomLevel)
+            cameraUpdate.animation = .none
+//            cameraUpdate.animationDuration = 1
             mapView.moveCamera(cameraUpdate)
-            mapView.positionMode = .direction
+            loadMapCameraData()
+            
 
         } else if (walkingController.locationReqType == 2) {
             if (startMarker == nil) {
@@ -780,7 +805,24 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
         bottomSheetVC = nil
 
         mapBottomView = nil
+        
+        // ZoomLevel을 이전으로 되돌린다
+        loadMapCameraData()
     }
+    
+    func loadMapCameraData() {
+        DispatchQueue.main.async {
+            self.mapView.zoomLevel = self.mapZoomLevel
+            self.mapView.positionMode = self.mapPositionMode
+        }
+    }
+
+    func saveMapCameraData() {
+        mapZoomLevel = mapView.zoomLevel
+        mapPositionMode = mapView.positionMode
+    }
+
+
 
     // MARK: - CAMERA
     @IBOutlet weak var btnCamera: UIButton!

@@ -379,6 +379,7 @@
 		7BE9A6B12BED494F006E10E7 /* Global4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9A6B02BED494F006E10E7 /* Global4.swift */; };
 		7BF6511B2BD79F0000A699B8 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */; };
 		7BF9AC842BFC73F900E67CE3 /* MainViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */; };
+		DD1A4BDB2C23B0DD002A9F9F /* WalkingController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1A4BDA2C23B0DD002A9F9F /* WalkingController2.swift */; };
 		DD302C072C180C6C003CF5BD /* NMapViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C062C180C6C003CF5BD /* NMapViewController5.swift */; };
 		DD302C092C1820F5003CF5BD /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C082C1820F5003CF5BD /* LocationController.swift */; };
 		DD302C0B2C1821AC003CF5BD /* AppDelegate4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */; };
@@ -764,6 +765,7 @@
 		7BF6511A2BD79F0000A699B8 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
 		7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController3.swift; sourceTree = "<group>"; };
 		DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD1A4BDA2C23B0DD002A9F9F /* WalkingController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController2.swift; sourceTree = "<group>"; };
 		DD302C062C180C6C003CF5BD /* NMapViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController5.swift; sourceTree = "<group>"; };
 		DD302C082C1820F5003CF5BD /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate4.swift; sourceTree = "<group>"; };
@@ -1011,6 +1013,7 @@
 				7B75E4BB2C00B0E800589DB8 /* LocationViewController2.swift */,
 				DD302C082C1820F5003CF5BD /* LocationController.swift */,
 				DDDEB06D2C1974360088DE57 /* WalkingController.swift */,
+				DD1A4BDA2C23B0DD002A9F9F /* WalkingController2.swift */,
 				0251FD5F2B16EEE300F35EF8 /* MapTopView.swift */,
 				0251FD652B1707A000F35EF8 /* MapTipView.xib */,
 				0251FD632B17002100F35EF8 /* MapNavView.xib */,
@@ -1694,6 +1697,7 @@
 				02E3FC722B25741E00A1CE62 /* MyAuthenticator.swift in Sources */,
 				020B796D2B2BEC5D00C0AB2D /* LifeViewResponse.swift in Sources */,
 				020B796B2B2BEC0F00C0AB2D /* LifeViewRequest.swift in Sources */,
+				DD1A4BDB2C23B0DD002A9F9F /* WalkingController2.swift in Sources */,
 				02A05AD22B3C3D4F00E8ABFA /* CmntDeleteRequest.swift in Sources */,
 				7B2DD6902BD22B0A00E26261 /* CommonViewController2.swift in Sources */,
 				0286252B2B4BBFB60055E62F /* MyPetCreateRequest.swift in Sources */,

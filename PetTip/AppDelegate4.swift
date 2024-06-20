@@ -9,11 +9,11 @@ import UIKit
 
 @main
 class AppDelegate4: AppDelegate3 {
-    var walkingController: WalkingController? = nil;
+    var walkingController: WalkingController2? = nil;
     
     override func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        walkingController = WalkingController()
+        walkingController = WalkingController2()
         return super.application(application, didFinishLaunchingWithOptions: launchOptions);
     }
 
