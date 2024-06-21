@@ -13,11 +13,12 @@ class NMapViewController5: NMapViewController4 {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
+        if let appDelegate = AppDelegate4.instance as? AppDelegate4 {
             walkingController = appDelegate.walkingController
             walkingController?.delegate = self
         }
-        
+
         // Foreground 상태로 변경될때 호출
         NotificationCenter.default.addObserver(self, selector: #selector(enterForegroundNotification), name: UIScene.willEnterForegroundNotification, object: nil)
         
@@ -27,7 +28,8 @@ class NMapViewController5: NMapViewController4 {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
+        if let appDelegate = AppDelegate4.instance as? AppDelegate4 {
             if appDelegate.walkingController?.bWalkingState == false {
                 appDelegate.walkingController?.stopContinueLocation();
             }
@@ -79,7 +81,8 @@ class NMapViewController5: NMapViewController4 {
     // MARK: - 데이터 로드
     func initWalkingInfo() {
         // walkingController Object 추가
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate4 {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
+        if let appDelegate = AppDelegate4.instance as? AppDelegate4 {
             walkingController = appDelegate.walkingController
             walkingController?.delegate = self
             
