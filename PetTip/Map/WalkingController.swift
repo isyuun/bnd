@@ -51,7 +51,7 @@ class WalkingController: LocationController {
     }
     
     func updateWalkingState(_ bWalkingState: WalkingState) {
-        if self.bWalkingState == .PAUSE {
+        if self.bWalkingState == .PAUSE && bWalkingState == .START  {
             movedSec = tempMovedSec
             movedDist = tempMovedDist
             arrTrack = tempArrTrack
@@ -61,14 +61,11 @@ class WalkingController: LocationController {
     
 
     @objc func walkingTimerCallback() {
-        switch(bWalkingState) {
-            case .STOP:
-                stopWalkingProcess()
-            case .START:
-                refreshMoveInfoData()
-                delegate?.walkingTimerCallback()
-            case .PAUSE:
-                delegate?.walkingTimerCallback()
+        if bWalkingState == .STOP {
+            stopWalkingProcess()
+        } else {
+            refreshMoveInfoData()
+            delegate?.walkingTimerCallback()
         }
     }
 
@@ -165,7 +162,7 @@ class WalkingController: LocationController {
     
     override func updateCurrLocation(_ locations: [CLLocation]) {
         delegate?.didUpdateLocations(locations);
-        if bWalkingState == .START {
+        if bWalkingState != .STOP {
             addCurrLocation(locations.last);
         }
     }
