@@ -55,8 +55,11 @@ class NMapViewController5: NMapViewController4 {
         
         showBackTitleBarView()
         initWalkingInfo()
+
+        self.mapView.positionMode = self.mapPositionMode
+        loadMapCameraData()
     }
-    
+
     
     // MARK: - Back TitleBar
     @IBOutlet weak var titleBarView : UIView!
@@ -69,6 +72,7 @@ class NMapViewController5: NMapViewController4 {
             view.delegate = self
             lb_title = view.lb_title
             titleBarView.addSubview(view)
+            self.title = lb_title?.text
         }
     }
     

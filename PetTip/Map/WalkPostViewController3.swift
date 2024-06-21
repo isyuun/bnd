@@ -31,6 +31,7 @@ class WalkPostViewController3: WalkPostViewController2 {
             view.delegate = self
             lb_title = view.lb_title
             titleBarView.addSubview(view)
+            self.title = lb_title?.text
         }
     }
     
