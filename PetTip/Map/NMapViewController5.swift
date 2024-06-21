@@ -10,7 +10,6 @@ import NMapsMap
 import AVKit
 
 class NMapViewController5: NMapViewController4 {
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
@@ -20,18 +19,18 @@ class NMapViewController5: NMapViewController4 {
         }
 
         // Foreground 상태로 변경될때 호출
-        NotificationCenter.default.addObserver(self, selector: #selector(enterForegroundNotification), name: UIScene.willEnterForegroundNotification, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.enterForegroundNotification), name: UIScene.willEnterForegroundNotification, object: nil)
+
         self.mapView.positionMode = self.mapPositionMode
         loadMapCameraData()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
         if let appDelegate = AppDelegate4.instance as? AppDelegate4 {
             if appDelegate.walkingController?.bWalkingState == false {
-                appDelegate.walkingController?.stopContinueLocation();
+                appDelegate.walkingController?.stopContinueLocation()
             }
             appDelegate.walkingController?.delegate = nil
         }
@@ -40,53 +39,54 @@ class NMapViewController5: NMapViewController4 {
 
     @objc func enterForegroundNotification() {
         print("enterForegroundNotification")
-        
+
         if walkingController?.bWalkingState == true {
             // 데이터 로드
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.loadWalkingProcess()
-            })
+            }
         }
     }
-    
+
     override func viewDidLoad() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         super.viewDidLoad()
 
         self.tabBarController?.tabBar.isHidden = true
-        
-        showBackTitleBarView()
-        initWalkingInfo()
+
+        self.showBackTitleBarView()
+        self.initWalkingInfo()
 
         self.mapView.positionMode = self.mapPositionMode
         loadMapCameraData()
     }
 
-    
     // MARK: - Back TitleBar
-    @IBOutlet weak var titleBarView : UIView!
-    var lb_title : UILabel? = nil
-    
+
+    @IBOutlet weak var titleBarView: UIView!
+    var lb_title: UILabel? = nil
+
     func showBackTitleBarView() {
         if let view = UINib(nibName: "BackTitleBarView", bundle: nil).instantiate(withOwner: self).first as? BackTitleBarView {
-            view.frame = titleBarView.bounds
+            view.frame = self.titleBarView.bounds
             view.lb_title.text = "산책하기"
             view.delegate = self
-            lb_title = view.lb_title
-            titleBarView.addSubview(view)
-            self.title = lb_title?.text
+            self.lb_title = view.lb_title
+            self.titleBarView.addSubview(view)
+            self.title = self.lb_title?.text
         }
     }
-    
+
     // MARK: - 데이터 로드
+
     func initWalkingInfo() {
         // walkingController Object 추가
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
         if let appDelegate = AppDelegate4.instance as? AppDelegate4 {
             walkingController = appDelegate.walkingController
             walkingController?.delegate = self
-            
-            checkWalkingState()
+
+            self.checkWalkingState()
             if walkingController?.bWalkingState == true {
                 // 데이터 로드
                 loadWalkingProcess()
@@ -98,7 +98,7 @@ class NMapViewController5: NMapViewController4 {
 
     func checkWalkingState() {
         if walkingController?.bWalkingState == true {
-            btnWalk.tintColor = UIColor.init(hexCode: "F54F68")
+            btnWalk.tintColor = UIColor(hexCode: "F54F68")
             btnWalk.setAttrTitle("산책종료", 14)
 
             self.mapTopView.hideMapTipView()
@@ -110,7 +110,7 @@ class NMapViewController5: NMapViewController4 {
             btnPoo.isHidden = false
             btnMrk.isHidden = false
         } else {
-            btnWalk.tintColor = UIColor.init(hexCode: "4783F5")
+            btnWalk.tintColor = UIColor(hexCode: "4783F5")
             btnWalk.setAttrTitle("산책하기", 14)
 
             self.mapTopView.showMapTipView()
@@ -121,34 +121,29 @@ class NMapViewController5: NMapViewController4 {
             btnMrk.isHidden = true
         }
     }
-    
-    
-    internal override func startWalkingProcess() {
+
+    override func startWalkingProcess() {
         super.startWalkingProcess()
-        
+
         guard let walkingController = walkingController else {
-            return;
+            return
         }
         walkingController.startWalkingProcess()
     }
-    
+
     override func showNoPet() {
         super.showNoPet()
         self.onBack()
     }
-
 }
-
 
 extension NMapViewController: LocationControllerDelegate {
     func didUpdateLocations(_ locations: [CLLocation]) {
-        updateCurrLocation(locations);
+        updateCurrLocation(locations)
     }
 
-    func successLocationServiceAuthorization() {
-        
-    }
-    
+    func successLocationServiceAuthorization() {}
+
     func failedLocationServiceAuthorization() {
         let requestLocationServiceAlert = UIAlertController(title: "위치 정보 이용", message: "위치 서비스를 사용할 수 없습니다.\n디바이스의 '설정 > 개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
         let goSetting = UIAlertAction(title: "설정으로 이동", style: .destructive) { _ in
@@ -157,7 +152,6 @@ extension NMapViewController: LocationControllerDelegate {
             }
         }
         let cancel = UIAlertAction(title: "취소", style: .default) { _ in
-
         }
         // let cancel = UIAlertAction(title: "취소", style: .default) { [weak self] _ in
         //     async { await self?.reloadData() }
@@ -167,7 +161,7 @@ extension NMapViewController: LocationControllerDelegate {
 
         present(requestLocationServiceAlert, animated: true)
     }
-    
+
     func errorLocationService(message: String?) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][error message : \(message ?? "Location ERROR")]")
     }
@@ -175,8 +169,6 @@ extension NMapViewController: LocationControllerDelegate {
     func walkingTimerCallback() {
         statusViewTimerCallback()
     }
-
-    
 }
 
 extension NMapViewController5: BackTitleBarViewProtocol {

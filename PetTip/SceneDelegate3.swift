@@ -8,14 +8,14 @@
 import UIKit
 
 class SceneDelegate3: SceneDelegate2 {
-
     func activity(userActivity: NSUserActivity?) {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         // Get URL components from the incoming user activity.
         guard let userActivity = userActivity,
-            userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-            let incomingURL = userActivity.webpageURL,
-            let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true) else {
+              userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+              let incomingURL = userActivity.webpageURL,
+              let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true)
+        else {
             return
         }
 
@@ -23,13 +23,15 @@ class SceneDelegate3: SceneDelegate2 {
         guard let path = components.path else { return }
         print("path = \(path)")
 
-        guard let app = UIApplication.shared.delegate as? AppDelegate3 else { return }
-        app.window = self.window
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
+        guard let app = AppDelegate4.instance as? AppDelegate4 else { return }
+        app.window = window
         app.path(path: path)
     }
 
     func invitation() {
-        guard let app = UIApplication.shared.delegate as? AppDelegate3 else { return }
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
+        guard let app = AppDelegate4.instance as? AppDelegate4 else { return }
         app.invitation()
     }
 

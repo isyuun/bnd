@@ -268,9 +268,10 @@ class MainViewController: LocationViewController2 {
         lbCurrPetKind.text = ""
         lbCurrPetNm.text = ""
     }
-    
+
     func checkWalkBtn() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate4 else {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
+        guard let appDelegate = AppDelegate4.instance as? AppDelegate4 else {
             return
         }
         if appDelegate.walkingController?.bWalkingState == true && appDelegate.walkingController?.locationReqType == 2 {
@@ -278,7 +279,6 @@ class MainViewController: LocationViewController2 {
         } else {
             btnWalkGo.backgroundColor = UIColor(hex: "#ff4783f5")
         }
-
     }
 
     @IBAction func onWalkGo(_ sender: Any) {
