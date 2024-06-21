@@ -13,7 +13,7 @@ private let GPS_RELOAD_MINUTES = 10
 private let GPS_UPDATE_MIllIS = 1
 private let GPS_UPDATE_MIN_METERS = 5.0
 //private let GPS_UPDATE_MAX_METERS = 15.0
-private let GPS_UPDATE_MAX_METERS = 25.0
+private let GPS_UPDATE_MAX_METERS = 30.0
 private let GPS_LATITUDE_ZERO = 37.546855 //37.5
 private let GPS_LONGITUDE_ZERO = 127.065330 //127.0
 private let GPS_CAMERA_ZOOM_ZERO = 17.0
@@ -37,7 +37,7 @@ class WalkingController2: WalkingController {
         let start = (recentLoc == nil)
         guard let acur = locations.last?.horizontalAccuracy else { return }
         NSLog("[LOG][I][ST][(\(#fileID):\(#line))::\(#function)][bWalkingState:\(bWalkingState)][acur:\(String(describing: acur))][recentLoc:\(String(describing: recentLoc)))][locations:\(locations)]")
-        if !bWalkingState {
+        if bWalkingState == .STOP {
             NSLog("[LOG][I][ED][(\(#fileID):\(#line))::\(#function)][bWalkingState:\(bWalkingState)][acur:\(String(describing: acur))][recentLoc:\(String(describing: recentLoc)))][locations:\(locations)]")
             super.updateCurrLocation(locations)
             return

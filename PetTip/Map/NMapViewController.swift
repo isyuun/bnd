@@ -28,7 +28,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     var walkingController: WalkingController2?
 
     
-    var bottomSheetVC: BottomSheetViewController? = nil
+    var bottomSheetVC: BottomSheetViewController2? = nil
     var mapBottomView: MapBottomView! = nil
 
     var mapSnapImg: UIImage? = nil
@@ -42,57 +42,41 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             return
         }
         
-        if (walkingController.bWalkingState == true) {
-//            if (endMarker == nil) {
-//                guard let location = walkingController.arrTrack.last?.location else {
-//                    return
-//                }
-//
-//                endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), text: "도착", forceShow: false)
-//                endMarker.mapView = self.naverMapView.mapView
-//
-//                let track = Track()
-//                track.location = CLLocation(coordinate: location.coordinate,
-//                                            altitude: location.altitude,
-//                                            horizontalAccuracy: location.horizontalAccuracy,
-//                                            verticalAccuracy: location.verticalAccuracy,
-//                                            course: location.course,
-//                                            courseAccuracy: location.courseAccuracy,
-//                                            speed: location.speed,
-//                                            speedAccuracy: location.speedAccuracy,
-//                                            timestamp: Date())
-//                track.event = .non
-////                arrTrack.append(track)
-//                walkingController.addTrack(track: track);
-//                
-//            }
-            
-            guard let location = walkingController.arrTrack.last?.location else {
-                return
+        if (walkingController.bWalkingState == .START) {
+            if (endMarker == nil) {
+                guard let location = walkingController.arrTrack.last?.location else {
+                    return
+                }
+
+                endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), text: "도착", forceShow: false)
+                endMarker.mapView = self.naverMapView.mapView
+
+                let track = Track()
+                track.location = CLLocation(coordinate: location.coordinate,
+                                            altitude: location.altitude,
+                                            horizontalAccuracy: location.horizontalAccuracy,
+                                            verticalAccuracy: location.verticalAccuracy,
+                                            course: location.course,
+                                            courseAccuracy: location.courseAccuracy,
+                                            speed: location.speed,
+                                            speedAccuracy: location.speedAccuracy,
+                                            timestamp: Date())
+                track.event = .non
+                walkingController.addTrack(track: track);
+                
             }
             
-            let track = Track()
-            track.location = CLLocation(coordinate: location.coordinate,
-                                        altitude: location.altitude,
-                                        horizontalAccuracy: location.horizontalAccuracy,
-                                        verticalAccuracy: location.verticalAccuracy,
-                                        course: location.course,
-                                        courseAccuracy: location.courseAccuracy,
-                                        speed: location.speed,
-                                        speedAccuracy: location.speedAccuracy,
-                                        timestamp: Date())
-            track.event = .non
-            walkingController.addTrack(track: track);
-
             saveMapCameraData()
             
-            showTrackSummaryMap()
+            walkingController.updateWalkingState(.PAUSE);
+            
+//            showTrackSummaryMap()
 
             naverMapView.takeSnapshot(withShowControls: false, complete: { [weak self] (image) in
                 self?.mapSnapImg = image
             })
 
-            self.bottomSheetVC = BottomSheetViewController()
+            self.bottomSheetVC = BottomSheetViewController2()
             if let bottomSheetVC = self.bottomSheetVC {
                 bottomSheetVC.modalPresentationStyle = .overFullScreen
                 bottomSheetVC.dismissIndicatorView.isHidden = true
@@ -102,6 +86,11 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                     v.setDelegate(self)
                     mapBottomView = v
                 }
+                bottomSheetVC.closeHandler = {
+                    self.bottomSheetVC = nil
+                    self.mapBottomViewOnContinue()
+                }
+
                 self.present(bottomSheetVC, animated: false, completion: nil)
             }
 
@@ -165,8 +154,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             pathOverlay.mapView = mapView
         }
 
-        if walkingController?.bWalkingState == false {
-            walkingController?.bWalkingState = true
+        if walkingController?.bWalkingState == .STOP {
+            walkingController?.updateWalkingState(.START)
             walkingController?.startContinueLocation()
             walkingController?.resetWalkingData()
             startLoading(msg: "위치정보 확인중")
@@ -179,7 +168,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             return
         }
         
-        guard walkingController.bWalkingState == true else {
+        guard walkingController.bWalkingState != .STOP else {
             return;
         }
 
@@ -211,11 +200,6 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                 startMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), text: "출발", forceShow: true)
                 startMarker.mapView = self.naverMapView.mapView
             }
-
-//            if i == arrTrack.count - 1 {
-//                let endMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: arrTrack[i].location!.coordinate.latitude, lng: arrTrack[i].location!.coordinate.longitude), text: "도착", forceShow: true)
-//                endMarker.mapView = self.naverMapView.mapView
-//            }
 
             if arrTrack[i].event != nil && (arrTrack[i].event == .pee || arrTrack[i].event == .poo || arrTrack[i].event == .mrk || arrTrack[i].event == .img) {
                 var event: NMapViewController.EventMark = .MRK
@@ -258,33 +242,18 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                 cameraUpdate.animation = .none
 //                cameraUpdate.animationDuration = 1
                 self.mapView.moveCamera(cameraUpdate)
+                self.loadMapCameraData()
             }
-
         }
-
     }
 
     internal func stopWalkingProcess() {
-        walkingController?.bWalkingState = false
+        walkingController?.updateWalkingState(.STOP)
 
         btnWalk.tintColor = UIColor.init(hexCode: "4783F5")
         btnWalk.setAttrTitle("산책하기", 14)
 
         walkingController?.stopContinueLocation()
-
-//        if (startMarker != nil) { startMarker.mapView = nil }
-//        startMarker = nil
-//        if (endMarker != nil) { endMarker.mapView = nil; }
-//        endMarker = nil
-//
-//        pathOverlay.mapView = nil
-//        pathOverlay = nil
-//
-//        if let arrMarker = arrEventMarker {
-//            for marker in arrMarker {
-//                marker.mapView = nil
-//            }
-//        }
 
         clearMapOverlay()
         
@@ -516,10 +485,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     var endMarker: NMFMarker!
 
     var pathOverlay: NMFPath!
-//    var arrTrack: Array<Track>!
-//    var movePathDist: Double = 0
 
-//    override func updateCurrLocation(_ locations: [CLLocation]) {
     func updateCurrLocation(_ locations: [CLLocation]) {
 //        super.updateCurrLocation(locations)
 
@@ -554,11 +520,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                     return
                 }
                 if (location.distance(from: track.location!) >= 10) {
-//                    arrTrack.append(track)
                     walkingController.addTrack(track: track);
-
-//                    movePathDist += arrTrack[arrTrack.count - 1].location!.distance(from: arrTrack[arrTrack.count - 2].location!)
-                    walkingController.movePathDist += walkingController.moveDistance();
+                    walkingController.updateMovePathDist(walkingController.movePathDist + walkingController.moveDistance());
 
                     let arrTrack = walkingController.arrTrack
                     if (arrTrack.count == 2) {
@@ -582,10 +545,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                 }
 
             } else {
-//                arrTrack.append(track)
-//                movePathDist = 0
                 walkingController.addTrack(track: track);
-                walkingController.movePathDist = 0
+                walkingController.updateMovePathDist(0)
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: {
                     self.stopLoading()
@@ -622,8 +583,6 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     }
 
     // MARK: - Move Timer (Distance, TimeSec)
-//    var movedSec: Double = 0
-//    var movedDist: Double = 0
 
     override func endAppearanceTransition() {
         if isBeingDismissed {
@@ -790,8 +749,10 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     func mapBottomViewOnExit() {
         stopWalkingProcess()
 
-        bottomSheetVC?.hideBottomSheetAndGoBack()
-        bottomSheetVC = nil
+        if bottomSheetVC != nil {
+            bottomSheetVC?.hideBottomSheetAndGoBack()
+            bottomSheetVC = nil
+        }
 
         mapBottomView = nil
 
@@ -801,13 +762,23 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     }
 
     func mapBottomViewOnContinue() {
-        bottomSheetVC?.hideBottomSheetAndGoBack()
-        bottomSheetVC = nil
+
+        if bottomSheetVC != nil {
+            bottomSheetVC?.hideBottomSheetAndGoBack()
+            bottomSheetVC = nil
+        }
 
         mapBottomView = nil
         
+        if (endMarker != nil) { endMarker.mapView = nil; }
+        endMarker = nil
+
+        walkingController?.updateWalkingState(.START);
         // ZoomLevel을 이전으로 되돌린다
         loadMapCameraData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.loadWalkingProcess()
+        }
     }
     
     func loadMapCameraData() {
@@ -901,6 +872,9 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             vc.movedSec = walkingController.movedSec
             vc.movedDist = walkingController.movedDist
             vc.selectedPets = selectedPets
+            
+            walkingController.updateWalkingState(.STOP)
+            walkingController.resetWalkingData()
         }
     }
 }

@@ -21,15 +21,18 @@ class NMapViewController5: NMapViewController4 {
         // Foreground 상태로 변경될때 호출
         NotificationCenter.default.addObserver(self, selector: #selector(self.enterForegroundNotification), name: UIScene.willEnterForegroundNotification, object: nil)
 
-        self.mapView.positionMode = self.mapPositionMode
-        loadMapCameraData()
+//        if walkingController?.bWalkingState != .STOP {
+//            walkingController?.updateWalkingState(.START)
+//            self.mapView.positionMode = self.mapPositionMode
+//            loadMapCameraData()
+//        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
         if let appDelegate = AppDelegate4.instance as? AppDelegate4 {
-            if appDelegate.walkingController?.bWalkingState == false {
+            if appDelegate.walkingController?.bWalkingState == .STOP {
                 appDelegate.walkingController?.stopContinueLocation()
             }
             appDelegate.walkingController?.delegate = nil
@@ -38,9 +41,7 @@ class NMapViewController5: NMapViewController4 {
     }
 
     @objc func enterForegroundNotification() {
-        print("enterForegroundNotification")
-
-        if walkingController?.bWalkingState == true {
+        if walkingController?.bWalkingState != .STOP {
             // 데이터 로드
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.loadWalkingProcess()
@@ -78,7 +79,6 @@ class NMapViewController5: NMapViewController4 {
     }
 
     // MARK: - 데이터 로드
-
     func initWalkingInfo() {
         // walkingController Object 추가
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
@@ -87,7 +87,7 @@ class NMapViewController5: NMapViewController4 {
             walkingController?.delegate = self
 
             self.checkWalkingState()
-            if walkingController?.bWalkingState == true {
+            if walkingController?.bWalkingState != .STOP {
                 // 데이터 로드
                 loadWalkingProcess()
             } else {
@@ -97,7 +97,7 @@ class NMapViewController5: NMapViewController4 {
     }
 
     func checkWalkingState() {
-        if walkingController?.bWalkingState == true {
+        if walkingController?.bWalkingState != .STOP {
             btnWalk.tintColor = UIColor(hexCode: "F54F68")
             btnWalk.setAttrTitle("산책종료", 14)
 

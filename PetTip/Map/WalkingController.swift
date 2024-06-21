@@ -14,7 +14,7 @@ import NMapsMap
 class WalkingController: LocationController {
 
     var selectedPets = [Pet]()
-    var bWalkingState = false
+    var bWalkingState = WalkingState.STOP
     var walkingTimer: Timer?
 
 //    // MARK: - Move Timer (Distance, TimeSec)
@@ -23,6 +23,19 @@ class WalkingController: LocationController {
     var movePathDist: Double = 0
     var arrTrack: Array<Track> = Array<Track>();
     var arrImageFromCamera = [UIImage]()
+    
+    var tempMovedSec: Double = 0
+    var tempMovedDist: Double = 0
+    var tempArrTrack: Array<Track> = Array<Track>();
+    var tempMovePathDist: Double = 0
+
+
+
+    enum WalkingState: Int {
+        case STOP
+        case START
+        case PAUSE
+    }
 
     
     enum EventMark: Int {
@@ -37,35 +50,55 @@ class WalkingController: LocationController {
         super.init()
     }
     
+    func updateWalkingState(_ bWalkingState: WalkingState) {
+        if self.bWalkingState == .PAUSE {
+            movedSec = tempMovedSec
+            movedDist = tempMovedDist
+            arrTrack = tempArrTrack
+        }
+        self.bWalkingState = bWalkingState;
+    }
+    
 
     @objc func walkingTimerCallback() {
-        guard bWalkingState == true else {
-            stopWalkingProcess()
-            return
+        switch(bWalkingState) {
+            case .STOP:
+                stopWalkingProcess()
+            case .START:
+                refreshMoveInfoData()
+                delegate?.walkingTimerCallback()
+            case .PAUSE:
+                delegate?.walkingTimerCallback()
         }
-        refreshMoveInfoData()
-        delegate?.walkingTimerCallback()
     }
 
     func resetWalkingData() {
         movedSec = 0
         movedDist = 0
         movePathDist = 0
+        
+        tempMovedSec = 0
+        tempMovedDist = 0
+        tempMovePathDist = 0
+        
         arrTrack.removeAll()
+        tempArrTrack.removeAll()
         arrImageFromCamera.removeAll()
     }
 
     
     func startWalkingProcess() {
-        bWalkingState = true
+        bWalkingState = .START
         arrTrack.removeAll()
+        tempArrTrack.removeAll()
         arrImageFromCamera.removeAll()
         startContinueLocation()
     }
 
     func stopWalkingProcess() {
-        bWalkingState = false
+        bWalkingState = .STOP
         arrTrack.removeAll()
+        tempArrTrack.removeAll()
         arrImageFromCamera.removeAll()
         stopContinueLocation()
     }
@@ -84,11 +117,15 @@ class WalkingController: LocationController {
     
     func removeTrack(track: Track) {
         arrTrack.removeAll { $0 === track }
+        tempArrTrack.removeAll { $0 === track }
     }
 
     
     func addTrack(track: Track) {
-        arrTrack.append(track)
+        tempArrTrack.append(track)
+        if bWalkingState == .START {
+            arrTrack = tempArrTrack
+        }
     }
 
     func addCurrLocation(_ recentLoc: CLLocation?) {
@@ -97,30 +134,38 @@ class WalkingController: LocationController {
         track.location = recentLoc
         track.event = .non
 
-        if (arrTrack.count > 0) {
-            if (arrTrack.last!.location!.distance(from: track.location!) >= 10) {
-                arrTrack.append(track)
+        if (tempArrTrack.count > 0) {
+            if (tempArrTrack.last!.location!.distance(from: track.location!) >= 10) {
+                addTrack(track: track)
                 movePathDist += moveDistance()
             }
         } else {
-            arrTrack.append(track)
+            addTrack(track: track)
             movePathDist = 0
         }
     }
 
+    func updateMovePathDist(_ dist: Double) {
+        movePathDist = dist
+    }
+    
     func moveDistance() -> CLLocationDistance {
-        return arrTrack[arrTrack.count - 1].location!.distance(from: arrTrack[arrTrack.count - 2].location!)
+        return tempArrTrack[tempArrTrack.count - 1].location!.distance(from: tempArrTrack[tempArrTrack.count - 2].location!)
     }
     
     
     func refreshMoveInfoData() {
-        movedSec += 1
-        movedDist = movePathDist
+        tempMovedSec += 1
+        tempMovedDist = movePathDist;
+        if bWalkingState == .START {
+            movedSec = tempMovedSec
+            movedDist = tempMovedDist
+        }
     }
     
     override func updateCurrLocation(_ locations: [CLLocation]) {
         delegate?.didUpdateLocations(locations);
-        if bWalkingState == true {
+        if bWalkingState == .START {
             addCurrLocation(locations.last);
         }
     }

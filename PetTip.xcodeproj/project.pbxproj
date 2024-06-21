@@ -383,6 +383,7 @@
 		DD302C072C180C6C003CF5BD /* NMapViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C062C180C6C003CF5BD /* NMapViewController5.swift */; };
 		DD302C092C1820F5003CF5BD /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C082C1820F5003CF5BD /* LocationController.swift */; };
 		DD302C0B2C1821AC003CF5BD /* AppDelegate4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */; };
+		DDBAF7272C2563DC00A3A230 /* BottomSheetViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBAF7262C2563DC00A3A230 /* BottomSheetViewController2.swift */; };
 		DDBF40662C200D9E005174CF /* WalkPostViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF40652C200D9E005174CF /* WalkPostViewController3.swift */; };
 		DDDEB06E2C1974360088DE57 /* WalkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDEB06D2C1974360088DE57 /* WalkingController.swift */; };
 /* End PBXBuildFile section */
@@ -769,6 +770,7 @@
 		DD302C062C180C6C003CF5BD /* NMapViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController5.swift; sourceTree = "<group>"; };
 		DD302C082C1820F5003CF5BD /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate4.swift; sourceTree = "<group>"; };
+		DDBAF7262C2563DC00A3A230 /* BottomSheetViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController2.swift; sourceTree = "<group>"; };
 		DDBF40652C200D9E005174CF /* WalkPostViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController3.swift; sourceTree = "<group>"; };
 		DDDEB06D2C1974360088DE57 /* WalkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController.swift; sourceTree = "<group>"; };
 		F8ED9599A85857899956A08B /* Pods-PetTip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetTip.release.xcconfig"; path = "Target Support Files/Pods-PetTip/Pods-PetTip.release.xcconfig"; sourceTree = "<group>"; };
@@ -1046,6 +1048,7 @@
 				7BE5C7642BEB4EE100735E85 /* UICollectionViewDataSource.swift */,
 				0251FD6F2B18BAFD00F35EF8 /* LoadingIndicatorViewController.swift */,
 				022B41802B19AABD0057323E /* BottomSheetViewController.swift */,
+				DDBAF7262C2563DC00A3A230 /* BottomSheetViewController2.swift */,
 				022B41902B1B649D0057323E /* CALayer.swift */,
 				022B41922B1B67390057323E /* CustomTabBar.swift */,
 				02A05B1B2B3FAC4200E8ABFA /* Date.swift */,
@@ -1766,6 +1769,7 @@
 				02A05AE22B3DD89B00E8ABFA /* ReportView.swift in Sources */,
 				020B797F2B2D70F100C0AB2D /* MonthRecordResponse.swift in Sources */,
 				02A05B002B3EC3C500E8ABFA /* RlsUpdate.swift in Sources */,
+				DDBAF7272C2563DC00A3A230 /* BottomSheetViewController2.swift in Sources */,
 				02A05AEC2B3E4F8300E8ABFA /* CodeListRequest.swift in Sources */,
 				02EB98042B0CFF03007428AD /* ViewController.swift in Sources */,
 				02A05AFE2B3EC22500E8ABFA /* RlsUpdateResponse.swift in Sources */,
