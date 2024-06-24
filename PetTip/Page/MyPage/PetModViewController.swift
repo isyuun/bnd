@@ -597,6 +597,11 @@ class PetModViewController: CommonPostViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBackTitleBarView()
+    }
+
     // MARK: - DELETE PET
     @IBAction func onDeletePet(_ sender: Any) {
         self.showComfirmPopup(title: "반려동물 삭제", msg: "정말 삭제하시겠어요?", didTapOK: {

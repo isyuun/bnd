@@ -8,28 +8,25 @@
 import UIKit
 
 extension UIView {
-    func child(viewType: UIView.Type) -> UIView? {
-        // 뷰 컨트롤러의 뷰 계층을 탐색하여 특정 클래스의 뷰가 있는지 확인
-        for s in subviews {
-            if s.subviews.count > 0, let v = s.child(viewType: viewType) {
-                return v
+    func find(ofType type: UIView.Type) -> UIView? {
+        for subview in subviews {
+            if subview.isKind(of: type) {
+                return subview
             }
-            if s.isKind(of: viewType) {
-                return s
+            if let recursiveMatch = subview.find(ofType: type) {
+                return recursiveMatch
             }
         }
         return nil
     }
 
-    func parent(viewType: UIView.Type) -> UIView? {
-        // 뷰 컨트롤러의 뷰 계층을 탐색하여 특정 클래스의 뷰가 있는지 확인
-        for s in subviews {
-            if s.subviews.count > 0, let v = s.child(viewType: viewType) {
-                return s
+    func parent(ofType type: UIView.Type) -> UIView? {
+        var parentView = self.superview
+        while parentView != nil {
+            if parentView!.isKind(of: type) {
+                return parentView
             }
-            if s.isKind(of: viewType) {
-                return self
-            }
+            parentView = parentView?.superview
         }
         return nil
     }

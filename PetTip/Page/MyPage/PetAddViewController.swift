@@ -587,6 +587,11 @@ class PetAddViewController: CommonPostViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBackTitleBarView()
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "seguePetAddToPetKind") {
             let dest = segue.destination

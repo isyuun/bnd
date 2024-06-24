@@ -17,7 +17,12 @@ class WalkPostViewController3: WalkPostViewController2 {
         
         showBackTitleBarView()
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBackTitleBarView()
+    }
+
     
     // MARK: - Back TitleBar
     @IBOutlet weak var titleBarView : UIView!
