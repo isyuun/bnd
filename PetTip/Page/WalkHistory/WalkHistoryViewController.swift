@@ -382,7 +382,13 @@ extension WalkHistoryViewController: UITableViewDelegate, UITableViewDataSource 
         cell.lb_date.text = walkList?[indexPath.row].walkDptreDt
         cell.lb_walker.text = walkList?[indexPath.row].runNcknm
         cell.lb_time.text = walkList?[indexPath.row].runTime
-        cell.lb_dist.text = String(format: "%.1fkm", Float(walkList![indexPath.row].runDstnc) / Float(1000.0))
+        cell.lb_dist.text = {
+            if walkList![indexPath.row].runDstnc > 1000 {
+                return String(format: "%.1fkm", Float(walkList![indexPath.row].runDstnc) / Float(1000.0))
+            } else {
+                return String(format: "%dm", walkList![indexPath.row].runDstnc)
+            }
+        }()
         cell.actionBlock = {
             self.performSegue(withIdentifier: "segueWalkHistoryWeekToDetail", sender: self.walkList![indexPath.row].schUnqNo)
         }

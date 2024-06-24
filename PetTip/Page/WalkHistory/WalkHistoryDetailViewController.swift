@@ -99,8 +99,13 @@ class WalkHistoryDetailViewController: CommonDetailViewController {
 
                     self.lb_walker.text = lifeView.lifeViewData.runNcknm
                     self.lb_time.text = lifeView.lifeViewData.runTime
-                    self.lb_dist.text = String(format: "%.1fkm", Float(lifeView.lifeViewData.runDstnc) / Float(1000.0))
-
+                    self.lb_dist.text = {
+                        if lifeView.lifeViewData.runDstnc > 1000 {
+                            return String(format: "%.1fkm", Float(lifeView.lifeViewData.runDstnc) / Float(1000.0))
+                        } else {
+                            return String(format: "%dm", lifeView.lifeViewData.runDstnc)
+                        }
+                    }()
 
                     if let petList = lifeView.lifeViewData.dailyLifePetList {
                         if petList.count > 0 {
