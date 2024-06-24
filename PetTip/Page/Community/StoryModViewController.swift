@@ -745,6 +745,11 @@ class StoryModViewController: CommonPostViewController {
             self.title = view.lb_title.text
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBackTitleBarView()
+    }
 }
 
 extension StoryModViewController: BackTitleBarViewProtocol {

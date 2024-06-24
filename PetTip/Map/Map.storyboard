@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -851,10 +851,10 @@
     </scenes>
     <designables>
         <designable name="bbS-Cv-wUv">
-            <size key="intrinsicContentSize" width="201.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="231.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="ooh-vV-Hlb">
-            <size key="intrinsicContentSize" width="4" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="68" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

@@ -29,12 +29,15 @@ class PetProfileViewController: CommonViewController {
         weight_list()
     }
 
+
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
 
         if isRequireRefresh {
             detail()
         }
+        hideBackTitleBarView()
     }
 
     @IBOutlet weak var vw_profileBg: UIView!

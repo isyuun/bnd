@@ -288,6 +288,11 @@ class UserInfoViewController: CommonPostViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBackTitleBarView()
+    }
+
     // MARK: - KEYBOARD
     var keyboardShowOriginHeight = 0
     var keyboardShowChangedHeight = 0

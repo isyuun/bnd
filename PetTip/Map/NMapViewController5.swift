@@ -26,6 +26,7 @@ class NMapViewController5: NMapViewController4 {
 //            self.mapView.positionMode = self.mapPositionMode
 //            loadMapCameraData()
 //        }
+        hideBackTitleBarView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

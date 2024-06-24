@@ -295,6 +295,11 @@ class AddressSelectViewController: CommonViewController {
             self.title = view.lb_title.text
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBackTitleBarView()
+    }
 }
 
 

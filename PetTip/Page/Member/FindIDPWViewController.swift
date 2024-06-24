@@ -51,6 +51,11 @@ class FindIDPWViewController : UIViewController {
             self.title = view.lb_title.text
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideBackTitleBarView()
+    }
 }
 
 

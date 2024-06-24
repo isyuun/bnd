@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,17 +13,11 @@
         <!--Customer Center View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="CustomerCenterViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomerCenterViewController" id="Y6W-OH-hqX" customClass="CustomerCenterViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ono-fc-MI9">
-                                <rect key="frame" x="0.0" y="110" width="375" height="668"/>
-                                <connections>
-                                    <segue destination="d6s-U2-ick" kind="embed" id="Aog-Sg-a26"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tah-kG-Bym">
                                 <rect key="frame" x="0.0" y="50" width="375" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,6 +25,12 @@
                                     <constraint firstAttribute="height" constant="60" id="uvq-GA-cKY"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ono-fc-MI9">
+                                <rect key="frame" x="0.0" y="110" width="375" height="668"/>
+                                <connections>
+                                    <segue destination="d6s-U2-ick" kind="embed" id="Aog-Sg-a26"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,7 +103,7 @@
             <objects>
                 <viewController id="pXY-Fh-n5k" customClass="NoticeDetailViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iSQ-lY-mU2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yx-Bv-Li2">
@@ -347,7 +348,7 @@
             <objects>
                 <viewController id="fz5-3c-zbg" customClass="QnADetailViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZtO-bW-Ywc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xif-VT-6Hh">
@@ -760,7 +761,7 @@
             <objects>
                 <viewController id="f3z-jv-jtt" customClass="QnAModifyViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ne3-RN-H6h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcS-LI-8KA">
@@ -1177,7 +1178,7 @@
             <objects>
                 <viewController id="cv4-Er-sKC" customClass="QnAAddViewController" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X6s-1G-Imm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIm-dV-Ifi">
@@ -1593,6 +1594,14 @@
             <point key="canvasLocation" x="3154.9618320610684" y="2228.8732394366198"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="ujV-WE-C3R">
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+        </designable>
+        <designable name="xvl-5v-5uX">
+            <size key="intrinsicContentSize" width="143" height="18.666666666666668"/>
+        </designable>
+    </designables>
     <resources>
         <image name="arrow_selectbox" width="12.597999572753906" height="8"/>
         <image name="checkbox_white" width="12" height="12"/>
