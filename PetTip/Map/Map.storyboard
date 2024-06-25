@@ -225,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="-2118" y="1681"/>
         </scene>
-        <!--Walk Post View Controller3-->
+        <!--Walk Post View Controller4-->
         <scene sceneID="UNg-E7-wbm">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" id="5C5-tM-ufF" customClass="WalkPostViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostViewController" id="5C5-tM-ufF" customClass="WalkPostViewController4" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bkc-iE-aZ7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
