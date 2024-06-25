@@ -356,6 +356,7 @@
 		7B84A8202BDE725D00E3BD9F /* PetAddViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */; };
 		7B84A8222BDE727900E3BD9F /* PetModViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */; };
 		7B88455C2C292B65009DF415 /* UIView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88455B2C292B65009DF415 /* UIView3.swift */; };
+		7B88456B2C2A32DD009DF415 /* WalkPostViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88456A2C2A32DD009DF415 /* WalkPostViewController4.swift */; };
 		7B8AB5ED2BF223B800CA051B /* CommonPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */; };
 		7B8CF2B52BFAEA9400B73A5C /* AppDelegate3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CF2B42BFAEA9400B73A5C /* AppDelegate3.swift */; };
 		7B8CF2B72BFB177C00B73A5C /* String2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CF2B62BFB177C00B73A5C /* String2.swift */; };
@@ -743,6 +744,7 @@
 		7B84A81F2BDE725D00E3BD9F /* PetAddViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetAddViewController2.swift; sourceTree = "<group>"; };
 		7B84A8212BDE727900E3BD9F /* PetModViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetModViewController2.swift; sourceTree = "<group>"; };
 		7B88455B2C292B65009DF415 /* UIView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView3.swift; sourceTree = "<group>"; };
+		7B88456A2C2A32DD009DF415 /* WalkPostViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController4.swift; sourceTree = "<group>"; };
 		7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPostViewController.swift; sourceTree = "<group>"; };
 		7B8CF2B42BFAEA9400B73A5C /* AppDelegate3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate3.swift; sourceTree = "<group>"; };
 		7B8CF2B62BFB177C00B73A5C /* String2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String2.swift; sourceTree = "<group>"; };
@@ -1031,6 +1033,7 @@
 				022B41862B1ABC1C0057323E /* WalkPostViewController.swift */,
 				7B714A7C2BE8690F00E89AE8 /* WalkPostViewController2.swift */,
 				DDBF40652C200D9E005174CF /* WalkPostViewController3.swift */,
+				7B88456A2C2A32DD009DF415 /* WalkPostViewController4.swift */,
 				02DB383D2B731F31007D19A1 /* Map.storyboard */,
 			);
 			path = Map;
@@ -1912,6 +1915,7 @@
 				020B79532B28A88500C0AB2D /* WeatherResponse.swift in Sources */,
 				022B41892B1ABC7D0057323E /* CommonViewController.swift in Sources */,
 				020B79552B28A89400C0AB2D /* WeatherAPI.swift in Sources */,
+				7B88456B2C2A32DD009DF415 /* WalkPostViewController4.swift in Sources */,
 				020B79752B2C8C0900C0AB2D /* WalkHistoryPetItemView.swift in Sources */,
 				02A05B202B3FE7CF00E8ABFA /* EventDtlListRequest.swift in Sources */,
 				02A7AAAA2B4FD203002F0C03 /* QnADtlListResponse.swift in Sources */,
