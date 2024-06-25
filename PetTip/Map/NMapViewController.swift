@@ -875,6 +875,8 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             
             walkingController.updateWalkingState(.STOP)
             walkingController.resetWalkingData()
+            walkingController.clearTrackFromUserDefaults() //경로 파일 제거
+
         }
     }
 }

@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -179,10 +179,10 @@
     </objects>
     <designables>
         <designable name="kGC-jh-dgm">
-            <size key="intrinsicContentSize" width="157" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="137" height="18.666666666666668"/>
         </designable>
         <designable name="o17-3j-V7t">
-            <size key="intrinsicContentSize" width="145" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="125" height="18.666666666666668"/>
         </designable>
     </designables>
     <resources>

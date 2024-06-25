@@ -10,6 +10,7 @@ import NMapsMap
 import AVKit
 
 class NMapViewController5: NMapViewController4 {
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")

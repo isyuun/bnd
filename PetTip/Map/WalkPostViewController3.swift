@@ -44,18 +44,19 @@ class WalkPostViewController3: WalkPostViewController2 {
 
 extension WalkPostViewController3: BackTitleBarViewProtocol {
     func onBack() {
-        
-        let alertController = UIAlertController(title: "글 작성을 그만하시겠습니까?", message: "작성중인 글은 삭제됩니다.", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "더 작성할래요", style: .destructive) { _ in
+                
+        let commonConfirmView = UINib(nibName: "CommonConfirmView", bundle: nil).instantiate(withOwner: self).first as! CommonConfirmView
+        commonConfirmView.initialize(title: "글 작성을 그만하시겠습니까?", msg: "작성중인 글은 삭제됩니다.", cancelBtnTxt: "더 작성할래요", okBtnTitleTxt: "나가기")
+        commonConfirmView.didTapCancel = {
+            self.didTapPopupCancel()
         }
-        let exit = UIAlertAction(title: "나가기", style: .default) { _ in
+        commonConfirmView.didTapOK = {
             self.navigationController?.popToRootViewController(animated: true)
             self.tabBarController?.tabBar.isHidden = false
+            self.didTapPopupOK()
         }
-        alertController.addAction(exit)
-        alertController.addAction(cancel)
 
-        present(alertController, animated: true)
+        popupShow(contentView: commonConfirmView, wSideMargin: 40)
 
     }
 }
