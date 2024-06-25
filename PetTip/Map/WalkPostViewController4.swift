@@ -11,11 +11,11 @@ class WalkPostViewController4: WalkPostViewController3 {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(WalkPostViewController4.back(sender:)))
+        let newBackButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .done, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem = newBackButton
     }
 
-    @objc func back(sender: UIBarButtonItem) {
+    @objc func back() {
         onBack()
     }
 }
