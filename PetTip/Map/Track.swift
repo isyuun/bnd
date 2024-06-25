@@ -14,7 +14,7 @@ class Track {
     var pet: Pet?
 }
 
-enum Event : Int {
+enum Event : Int, Codable {
     case non = 0
     case pee = 1
     case poo = 2

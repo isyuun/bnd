@@ -385,6 +385,7 @@
 		DD302C092C1820F5003CF5BD /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C082C1820F5003CF5BD /* LocationController.swift */; };
 		DD302C0B2C1821AC003CF5BD /* AppDelegate4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */; };
 		DD3B56182C2921FD00CC8AE6 /* WalkingController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3B56172C2921FD00CC8AE6 /* WalkingController3.swift */; };
+		DD3B561A2C292C7900CC8AE6 /* WalkTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3B56192C292C7900CC8AE6 /* WalkTrack.swift */; };
 		DDBAF7272C2563DC00A3A230 /* BottomSheetViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBAF7262C2563DC00A3A230 /* BottomSheetViewController2.swift */; };
 		DDBF40662C200D9E005174CF /* WalkPostViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBF40652C200D9E005174CF /* WalkPostViewController3.swift */; };
 		DDDEB06E2C1974360088DE57 /* WalkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDEB06D2C1974360088DE57 /* WalkingController.swift */; };
@@ -774,6 +775,7 @@
 		DD302C082C1820F5003CF5BD /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate4.swift; sourceTree = "<group>"; };
 		DD3B56172C2921FD00CC8AE6 /* WalkingController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController3.swift; sourceTree = "<group>"; };
+		DD3B56192C292C7900CC8AE6 /* WalkTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTrack.swift; sourceTree = "<group>"; };
 		DDBAF7262C2563DC00A3A230 /* BottomSheetViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController2.swift; sourceTree = "<group>"; };
 		DDBF40652C200D9E005174CF /* WalkPostViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController3.swift; sourceTree = "<group>"; };
 		DDDEB06D2C1974360088DE57 /* WalkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController.swift; sourceTree = "<group>"; };
@@ -1026,6 +1028,7 @@
 				0251FD632B17002100F35EF8 /* MapNavView.xib */,
 				0251FD672B17126300F35EF8 /* MapNavView.swift */,
 				0251FD6B2B185C6400F35EF8 /* Track.swift */,
+				DD3B56192C292C7900CC8AE6 /* WalkTrack.swift */,
 				022B41822B1A29770057323E /* MapBottomView.swift */,
 				022B41842B1A29A80057323E /* MapBottomView.xib */,
 				022B41862B1ABC1C0057323E /* WalkPostViewController.swift */,
@@ -1835,6 +1838,7 @@
 				0293C6262B0E37340004F19D /* UTCRepository.swift in Sources */,
 				02A7AAA62B4FCC75002F0C03 /* QnADetailViewController.swift in Sources */,
 				0251FD512B0F328100F35EF8 /* NMapViewController.swift in Sources */,
+				DD3B561A2C292C7900CC8AE6 /* WalkTrack.swift in Sources */,
 				02E3FC702B2573CB00A1CE62 /* MyAuthenticationCredential.swift in Sources */,
 				028625312B4D9B020055E62F /* CustomerCenterContainerViewController.swift in Sources */,
 				7BC02B122BFB45D900C85C20 /* SceneDelegate3.swift in Sources */,

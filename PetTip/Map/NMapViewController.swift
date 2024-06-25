@@ -25,7 +25,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
     @IBOutlet weak var mapTopView: MapTopView!
 
-    var walkingController: WalkingController2?
+    var walkingController: WalkingController3?
 
     
     var bottomSheetVC: BottomSheetViewController2? = nil
