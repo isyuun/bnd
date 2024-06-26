@@ -11,6 +11,8 @@ import AVKit
 
 class NMapViewController5: NMapViewController4 {
     
+    var loadTrackUserFlag = false;
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][\(String(describing: AppDelegate4.instance as? AppDelegate4))]")
@@ -22,12 +24,8 @@ class NMapViewController5: NMapViewController4 {
         // Foreground 상태로 변경될때 호출
         NotificationCenter.default.addObserver(self, selector: #selector(self.enterForegroundNotification), name: UIScene.willEnterForegroundNotification, object: nil)
 
-//        if walkingController?.bWalkingState != .STOP {
-//            walkingController?.updateWalkingState(.START)
-//            self.mapView.positionMode = self.mapPositionMode
-//            loadMapCameraData()
-//        }
         hideBackTitleBarView()
+        mapView.positionMode = mapPositionMode
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,6 +61,8 @@ class NMapViewController5: NMapViewController4 {
         self.mapView.positionMode = self.mapPositionMode
         loadMapCameraData()
     }
+    
+
 
     // MARK: - Back TitleBar
 
@@ -87,6 +87,8 @@ class NMapViewController5: NMapViewController4 {
         if let appDelegate = AppDelegate4.instance as? AppDelegate4 {
             walkingController = appDelegate.walkingController
             walkingController?.delegate = self
+            
+            loadTrackUserFlag = walkingController?.checkWalkTrack() ?? false;
 
             self.checkWalkingState()
             if walkingController?.bWalkingState != .STOP {
@@ -137,6 +139,52 @@ class NMapViewController5: NMapViewController4 {
         super.showNoPet()
         self.onBack()
     }
+    
+    override func loadMapCameraData() {
+        super.loadMapCameraData()
+        DispatchQueue.main.async {
+            self.mapView.zoomLevel = self.mapZoomLevel
+            self.mapView.positionMode = self.mapPositionMode
+            self.updateBtnLocation()
+        }
+    }
+
+    override func saveMapCameraData() {
+        super.saveMapCameraData()
+        mapZoomLevel = mapView.zoomLevel
+        mapPositionMode = mapView.positionMode
+    }
+    
+    override func updateCurrLocation(_ locations: [CLLocation]) {
+        NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][locations:\(locations)]")
+        super.updateCurrLocation(locations)
+        
+        guard loadTrackUserFlag == true else {
+            return
+        }
+        
+        guard let walkingController = walkingController else {
+            return
+        }
+        guard walkingController.checkWalkTrack() == true else {
+            return
+        }
+
+        if (walkingController.locationReqType == 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.startWalkingProcess()
+            })
+        } else if (walkingController.locationReqType == 2) {
+            // 이어하기 데이터 로드
+            walkingController.loadWalkTrackProcess()
+            loadWalkingProcess()
+            loadTrackUserFlag = false
+            walkingController.clearTrackFromUserDefaults()
+        }
+        
+    }
+
+
 }
 
 extension NMapViewController: LocationControllerDelegate {
@@ -171,6 +219,7 @@ extension NMapViewController: LocationControllerDelegate {
     func walkingTimerCallback() {
         statusViewTimerCallback()
     }
+    
 }
 
 extension NMapViewController5: BackTitleBarViewProtocol {

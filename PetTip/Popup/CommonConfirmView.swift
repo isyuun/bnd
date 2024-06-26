@@ -26,19 +26,20 @@ class CommonConfirmView: CommonPopupView {
     }
     
     func initialize(title: String, msg: String, cancelBtnTxt: String?, okBtnTitleTxt: String) {
-        btn_cancel.layer.borderWidth = 1
-        btn_cancel.layer.borderColor = UIColor.darkGray.cgColor
-        btn_cancel.layer.cornerRadius = 5
+//        btn_cancel.layer.borderWidth = 1
+//        btn_cancel.layer.borderColor = UIColor.darkGray.cgColor
+//        btn_cancel.layer.cornerRadius = 5
         
         lb_title.text = title
         lb_msg.text = msg
         
         if let cancelBtnTxt = cancelBtnTxt {
-            btn_cancel.setAttrTitle(cancelBtnTxt, 12, UIColor.black)
+            btn_cancel.setTitle(cancelBtnTxt, for: .normal)
+            btn_cancel.isHidden = false
         } else {
             btn_cancel.isHidden = true
         }
-        btn_ok.setAttrTitle(okBtnTitleTxt, 12)
+        btn_ok.setTitle(okBtnTitleTxt, for: .normal)
     }
     
     @IBAction func onCancel(_ sender: Any) {

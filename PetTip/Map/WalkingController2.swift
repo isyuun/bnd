@@ -20,6 +20,7 @@ private let GPS_CAMERA_ZOOM_ZERO = 17.0
 
 class WalkingController2: WalkingController {
     var recentLoc: CLLocation?
+    var tryCount = 0;
 
     override func startWalkingProcess() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][bWalkingState:\(bWalkingState)][recentLoc:\(String(describing: recentLoc)))]")
@@ -51,14 +52,16 @@ class WalkingController2: WalkingController {
         guard let loc2 = locations.last else { return }
         let dist = loc1.distance(from: loc2)
         let chck = (dist > GPS_UPDATE_MIN_METERS && dist < GPS_UPDATE_MAX_METERS) && (acur < GPS_UPDATE_MAX_METERS)
-        if (start || chck) {
+        if (start || chck || tryCount > 3) {
             NSLog("[LOG][I][OK][(\(#fileID):\(#line))::\(#function)][bWalkingState:\(bWalkingState)][\(start || chck)][start:\(start)][chck:\(chck)][dist:\(dist)][loc1:\(loc1)][loc2:\(loc2))]")
             super.updateCurrLocation(locations)
         } else {
+            tryCount += 1
             NSLog("[LOG][I][NG][(\(#fileID):\(#line))::\(#function)][bWalkingState:\(bWalkingState)][\(start || chck)][start:\(start)][chck:\(chck)][dist:\(dist)][loc1:\(loc1)][loc2:\(loc2))]")
             return
         }
         recentLoc = locations.last
+        tryCount = 0
     }
 
 }

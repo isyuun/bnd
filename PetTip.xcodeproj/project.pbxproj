@@ -383,6 +383,7 @@
 		7BF9AC842BFC73F900E67CE3 /* MainViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */; };
 		DD1A4BDB2C23B0DD002A9F9F /* WalkingController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1A4BDA2C23B0DD002A9F9F /* WalkingController2.swift */; };
 		DD1F39832C2A51C500695933 /* MainViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1F39822C2A51C500695933 /* MainViewController5.swift */; };
+		DD1F39852C2AB0DC00695933 /* LoginViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1F39842C2AB0DC00695933 /* LoginViewController4.swift */; };
 		DD302C072C180C6C003CF5BD /* NMapViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C062C180C6C003CF5BD /* NMapViewController5.swift */; };
 		DD302C092C1820F5003CF5BD /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C082C1820F5003CF5BD /* LocationController.swift */; };
 		DD302C0B2C1821AC003CF5BD /* AppDelegate4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */; };
@@ -775,6 +776,7 @@
 		DBD54B3EBF2DEAC76CA8D9D3 /* Pods_PetTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1A4BDA2C23B0DD002A9F9F /* WalkingController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingController2.swift; sourceTree = "<group>"; };
 		DD1F39822C2A51C500695933 /* MainViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController5.swift; sourceTree = "<group>"; };
+		DD1F39842C2AB0DC00695933 /* LoginViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController4.swift; sourceTree = "<group>"; };
 		DD302C062C180C6C003CF5BD /* NMapViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMapViewController5.swift; sourceTree = "<group>"; };
 		DD302C082C1820F5003CF5BD /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		DD302C0A2C1821AC003CF5BD /* AppDelegate4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate4.swift; sourceTree = "<group>"; };
@@ -847,6 +849,7 @@
 				022B41942B1B910F0057323E /* LoginViewController.swift */,
 				7B2DD6912BD22BC500E26261 /* LoginViewController2.swift */,
 				7B75E4B92C003E6D00589DB8 /* LoginViewController3.swift */,
+				DD1F39842C2AB0DC00695933 /* LoginViewController4.swift */,
 				022B418E2B1B22660057323E /* MainViewController.swift */,
 				7BD347E62BDF678700EFAF59 /* MainViewController2.swift */,
 				7BF9AC832BFC73F900E67CE3 /* MainViewController3.swift */,
@@ -1762,6 +1765,7 @@
 				027F765A2B4E8D4F00429AC5 /* NoticeDtlListRequest.swift in Sources */,
 				028625132B4905540055E62F /* PetAddViewController.swift in Sources */,
 				0286251D2B4996E50055E62F /* PetTypeSelectViewController.swift in Sources */,
+				DD1F39852C2AB0DC00695933 /* LoginViewController4.swift in Sources */,
 				02DB381A2B65E016007D19A1 /* MyPetRelCloseResponse.swift in Sources */,
 				02E00AF12B58E2E20092C909 /* LogoutRequest.swift in Sources */,
 				7B0DDAF52BF2504E0042129A /* _CompPetListView.swift in Sources */,

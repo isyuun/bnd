@@ -72,6 +72,9 @@ class LoginViewController: CommonViewController2 {
             inputBoxID.text = email
         }
 
+        // 산책기록 제거
+        UserDefaults.standard.removeObject(forKey: "WalkTrackList")
+        UserDefaults.standard.synchronize()
     }
 
     @IBOutlet weak var btnLogin: UIButton!

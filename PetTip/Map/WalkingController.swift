@@ -67,6 +67,7 @@ class WalkingController: LocationController {
             refreshMoveInfoData()
             delegate?.walkingTimerCallback()
         }
+        
     }
 
     func resetWalkingData() {

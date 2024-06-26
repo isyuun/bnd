@@ -9,19 +9,21 @@ import Foundation
 import CoreLocation
 
 class WalkingController3: WalkingController2 {
-    override func addTrack(track: Track) {
-        super.addTrack(track: track)
+    
+    override init() {
+        super.init()
+    }
+
+    override func refreshMoveInfoData() {
+        super.refreshMoveInfoData()
         
-        let item = TrackItem(location: track.location, event: track.event, pet: track.pet)
-        let walkTrack = WalkTrack(movedSec: tempMovedSec, movedDist: movedDist, movePathDist: movePathDist)
-        if let loadedTrack = loadTrackFromUserDefaults() {
-            print("Loaded Track: \(loadedTrack.lastDate) \(loadedTrack.trackList.count)")
-            loadedTrack.trackList.append(item)
-            walkTrack.trackList = loadedTrack.trackList
-        } else {
-            walkTrack.trackList = [item]
-        }
-        
+        let walkTrack = WalkTrack()
+        walkTrack.movedSec = tempMovedSec
+        walkTrack.movedDist = tempMovedDist
+        walkTrack.movePathDist = tempMovePathDist
+        walkTrack.trackList = tempArrTrack
+        walkTrack.selectedPets = selectedPets
+        walkTrack.arrImageFromCamera = arrImageFromCamera
         saveTrackToUserDefaults(walkTrack)
     }
     
@@ -44,8 +46,31 @@ class WalkingController3: WalkingController2 {
     }
     
     public func clearTrackFromUserDefaults() {
-//        UserDefaults.standard.removeObject(forKey: "WalkTrackList")
-//        UserDefaults.standard.synchronize()
+        UserDefaults.standard.removeObject(forKey: "WalkTrackList")
+        UserDefaults.standard.synchronize()
+    }
+
+    public func loadWalkTrackProcess() {
+        // 이전에 끊긴 데이터가 있는가?
+        guard let loadedTrack = loadTrackFromUserDefaults() else {
+            return
+        }
+        
+        // 데이터 적용
+        tempMovedSec = loadedTrack.movedSec
+        movedSec = tempMovedSec
+
+        tempMovedDist = loadedTrack.movedDist
+        movedSec = tempMovedDist
+
+        tempMovePathDist = loadedTrack.movePathDist
+        movedSec = tempMovePathDist
+        
+        selectedPets = loadedTrack.selectedPets
+        arrImageFromCamera = loadedTrack.arrImageFromCamera
+
+        tempArrTrack += loadedTrack.trackList
+        arrTrack = tempArrTrack
     }
 
     

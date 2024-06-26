@@ -85,7 +85,6 @@ class NMapViewController3: NMapViewController2 {
     override func startWalkingProcess() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         super.startWalkingProcess()
-        mapView.positionMode = .direction
         mapPositionMode = mapView.positionMode
         updateBtnLocation()
     }
@@ -93,7 +92,6 @@ class NMapViewController3: NMapViewController2 {
     override func stopWalkingProcess() {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)]")
         super.stopWalkingProcess()
-        mapView.positionMode = .normal
         mapPositionMode = mapView.positionMode
         updateBtnLocation()
     }

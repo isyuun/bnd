@@ -33,7 +33,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
     var mapSnapImg: UIImage? = nil
     var mapZoomLevel: Double = 17.0
-    var mapPositionMode: NMFMyPositionMode = .normal
+    var mapPositionMode: NMFMyPositionMode = .direction
 
     @IBOutlet weak var btnWalk: UIButton!
     @IBAction func onBtnWalk(_ sender: Any) {
@@ -358,7 +358,6 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
         mapView.mapType = .basic
         mapView.isNightModeEnabled = traitCollection.userInterfaceStyle == .dark ? true : false // default:false
-        mapPositionMode = .normal
         mapView.positionMode = mapPositionMode
         mapZoomLevel = 17
         mapView.zoomLevel = mapZoomLevel
@@ -782,15 +781,9 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     }
     
     func loadMapCameraData() {
-        DispatchQueue.main.async {
-            self.mapView.zoomLevel = self.mapZoomLevel
-            self.mapView.positionMode = self.mapPositionMode
-        }
     }
 
     func saveMapCameraData() {
-        mapZoomLevel = mapView.zoomLevel
-        mapPositionMode = mapView.positionMode
     }
 
 

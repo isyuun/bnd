@@ -31,7 +31,6 @@ class MainViewController5: MainViewController4 {
         guard walkingController.checkWalkTrack() == true else {
             return
         }
-        
         showAlertWalkTrack()
     }
     

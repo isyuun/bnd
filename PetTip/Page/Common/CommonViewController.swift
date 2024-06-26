@@ -85,6 +85,11 @@ class CommonViewController: LoadingIndicatorViewController {
 
         let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "LoginViewController") as UIViewController
         self.navigationController?.pushViewController(loginVC, animated: true)
+        
+        
+        // 산책기록 제거
+        UserDefaults.standard.removeObject(forKey: "WalkTrackList")
+        UserDefaults.standard.synchronize()
     }
 
     // MARK: - POPUP VIEW

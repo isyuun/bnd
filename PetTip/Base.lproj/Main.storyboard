@@ -2475,10 +2475,10 @@
             </objects>
             <point key="canvasLocation" x="224" y="-128"/>
         </scene>
-        <!--Login View Controller3-->
+        <!--Login View Controller4-->
         <scene sceneID="4bP-7j-VYs">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="o4R-pM-VvT" customClass="LoginViewController3" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="o4R-pM-VvT" customClass="LoginViewController4" customModule="PetTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qwl-GS-OIl">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -3008,8 +3008,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="43t-yt-BLb"/>
-        <segue reference="ISm-sO-KAv"/>
+        <segue reference="ksD-bF-nzH"/>
+        <segue reference="DfS-D8-BTo"/>
         <segue reference="8xf-V6-Ark"/>
     </inferredMetricsTieBreakers>
     <resources>
