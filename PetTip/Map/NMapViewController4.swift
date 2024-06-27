@@ -60,9 +60,12 @@ class NMapViewController4: NMapViewController3, NMFMapViewTouchDelegate {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][mark:\(mark)][pet:\(pet)]")
         // super.addEventMark(mark: mark, pet: pet)
 
-        guard let location = walkingController?.arrTrack.last?.location else {
-            return;
+        guard let walkingController = walkingController else {
+            return
         }
+
+        let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
+
         
         let marker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), event: mark)
         marker.mapView = self.mapView
@@ -79,7 +82,7 @@ class NMapViewController4: NMapViewController3, NMFMapViewTouchDelegate {
                                     timestamp: Date())
         track.event = mark == .PEE ? .pee : mark == .POO ? .poo : mark == .MRK ? .mrk : .img
         track.pet = pet
-        walkingController?.addTrack(track: track)
+        walkingController.addTrack(track: track)
 
         if (arrEventMarker == nil) {
             arrEventMarker = Array<NMFMarker>()

@@ -49,7 +49,7 @@ class MainViewController5: MainViewController4 {
         }
         commonConfirmView.didTapOK = {
             self.checkWalkBtn()
-            self.performSegue(withIdentifier: "segueMainToMap", sender: self)
+            self.performSegue(withIdentifier: "segueMainToMap", sender: true)
             self.didTapPopupOK()
         }
 

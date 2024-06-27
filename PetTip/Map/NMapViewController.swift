@@ -324,10 +324,11 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
     internal func addEventMark(mark: NMapViewController.EventMark, pet: Pet) {
         
-        guard let walkingController = walkingController, let location = walkingController.arrTrack.last?.location else {
+        guard let walkingController = walkingController else {
             return
         }
         
+        let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
         let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), event: mark)
         eventMarker.mapView = self.mapView
 

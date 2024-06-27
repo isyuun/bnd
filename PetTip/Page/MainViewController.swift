@@ -62,8 +62,11 @@ class MainViewController: LocationViewController2 {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueMainToMap" {
             let dest = segue.destination
-            guard let vc = dest as? NMapViewController else { return }
+            guard let vc = dest as? NMapViewController5 else { return }
             vc.dailyLifePetList = dailyLifePetList
+            if let data = sender as? Bool {
+                vc.loadTrackUserFlag = data
+            }
         }
     }
 

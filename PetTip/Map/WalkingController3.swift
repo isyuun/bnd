@@ -69,8 +69,10 @@ class WalkingController3: WalkingController2 {
         selectedPets = loadedTrack.selectedPets
         arrImageFromCamera = loadedTrack.arrImageFromCamera
 
-        tempArrTrack += loadedTrack.trackList
+        tempArrTrack = loadedTrack.trackList
         arrTrack = tempArrTrack
+        
+//        clearTrackFromUserDefaults()
     }
 
     

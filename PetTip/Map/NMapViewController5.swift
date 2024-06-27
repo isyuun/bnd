@@ -11,7 +11,7 @@ import AVKit
 
 class NMapViewController5: NMapViewController4 {
     
-    var loadTrackUserFlag = false;
+    var loadTrackUserFlag: Bool = false;
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,8 +88,6 @@ class NMapViewController5: NMapViewController4 {
             walkingController = appDelegate.walkingController
             walkingController?.delegate = self
             
-            loadTrackUserFlag = walkingController?.checkWalkTrack() ?? false;
-
             self.checkWalkingState()
             if walkingController?.bWalkingState != .STOP {
                 // 데이터 로드
@@ -179,15 +177,57 @@ class NMapViewController5: NMapViewController4 {
             walkingController.loadWalkTrackProcess()
             loadWalkingProcess()
             loadTrackUserFlag = false
-            walkingController.clearTrackFromUserDefaults()
         }
         
     }
+    
+    
+    override func addEventMark(mark: NMapViewController.EventMark, pet: Pet) {
+        // 이벤트 발생시 pathOverlay 그리기
+        addPathOverlay()
+        super.addEventMark(mark: mark, pet: pet)
+    }
 
+    
+    
+    func addPathOverlay() {
+        guard let walkingController = walkingController else {
+            return
+        }
+        
+        let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
+        
+        let track = Track()
+        track.location = CLLocation(coordinate: location.coordinate,
+                                    altitude: location.altitude,
+                                    horizontalAccuracy: location.horizontalAccuracy,
+                                    verticalAccuracy: location.verticalAccuracy,
+                                    course: location.course,
+                                    courseAccuracy: location.courseAccuracy,
+                                    speed: location.speed,
+                                    speedAccuracy: location.speedAccuracy,
+                                    timestamp: Date())
+        track.event = .non
+        walkingController.addTrack(track: track)
+
+        if pathOverlay != nil {
+            if pathOverlay.path.points.count > 0 {
+                let path = pathOverlay.path
+                path.addPoint(NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude))
+                pathOverlay.path = path
+                pathOverlay.mapView = mapView
+            } else {
+                pathOverlay.path = NMGLineString(points: [
+                    NMGLatLng(lat: walkingController.arrTrack.last!.location!.coordinate.latitude, lng: walkingController.arrTrack.last!.location!.coordinate.longitude),
+                    NMGLatLng(lat: mapView.latitude, lng: mapView.longitude)])
+                pathOverlay.mapView = naverMapView.mapView
+            }
+        }
+    }
 
 }
 
-extension NMapViewController: LocationControllerDelegate {
+extension NMapViewController5: LocationControllerDelegate {
     func didUpdateLocations(_ locations: [CLLocation]) {
         updateCurrLocation(locations)
     }
@@ -217,6 +257,17 @@ extension NMapViewController: LocationControllerDelegate {
     }
 
     func walkingTimerCallback() {
+        guard let walkingController = walkingController else {
+            return
+        }
+        
+        if let oldLocation = walkingController.arrTrack.last?.location, walkingController.bWalkingState == .START {
+            let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
+            if oldLocation.distance(from: location) > 20 {
+                // mapView 마커와 마지막 위치가 20미터 이상 차이가 날경우 폴리곤 그리기
+                addPathOverlay()
+            }
+        }
         statusViewTimerCallback()
     }
     
