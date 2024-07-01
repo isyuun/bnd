@@ -359,7 +359,6 @@
 		7B88456B2C2A32DD009DF415 /* WalkPostViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B88456A2C2A32DD009DF415 /* WalkPostViewController4.swift */; };
 		7B8AB5ED2BF223B800CA051B /* CommonPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */; };
 		7B8CF2B52BFAEA9400B73A5C /* AppDelegate3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CF2B42BFAEA9400B73A5C /* AppDelegate3.swift */; };
-		7B8CF2B72BFB177C00B73A5C /* String2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8CF2B62BFB177C00B73A5C /* String2.swift */; };
 		7BA9B4A52BDA2FD900606A16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */; };
 		7BA9B4A72BDA39F400606A16 /* SceneDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */; };
 		7BAA2C5A2BF072D10013FBDE /* DailyLifeGubunItemView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */; };
@@ -750,7 +749,6 @@
 		7B88456A2C2A32DD009DF415 /* WalkPostViewController4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkPostViewController4.swift; sourceTree = "<group>"; };
 		7B8AB5EC2BF223B800CA051B /* CommonPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonPostViewController.swift; sourceTree = "<group>"; };
 		7B8CF2B42BFAEA9400B73A5C /* AppDelegate3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate3.swift; sourceTree = "<group>"; };
-		7B8CF2B62BFB177C00B73A5C /* String2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String2.swift; sourceTree = "<group>"; };
 		7BA9B4A42BDA2FD900606A16 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA9B4A62BDA39F400606A16 /* SceneDelegate2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate2.swift; sourceTree = "<group>"; };
 		7BAA2C582BF072D10013FBDE /* DailyLifeGubunItemView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLifeGubunItemView2.swift; sourceTree = "<group>"; };
@@ -1072,7 +1070,6 @@
 				02A05B1B2B3FAC4200E8ABFA /* Date.swift */,
 				02A05B412B42907700E8ABFA /* Util.swift */,
 				02A05B492B433A4900E8ABFA /* String.swift */,
-				7B8CF2B62BFB177C00B73A5C /* String2.swift */,
 				0286250C2B485FE20055E62F /* NoPasteUITextField.swift */,
 				02DB37F92B641605007D19A1 /* BalloonMarker.swift */,
 			);
@@ -1771,7 +1768,6 @@
 				7B0DDAF52BF2504E0042129A /* _CompPetListView.swift in Sources */,
 				02A05B1C2B3FAC4200E8ABFA /* Date.swift in Sources */,
 				02E3FC642B25480D00A1CE62 /* MemberTarget.swift in Sources */,
-				7B8CF2B72BFB177C00B73A5C /* String2.swift in Sources */,
 				02A05B4C2B44696700E8ABFA /* ResetNcknmRequest.swift in Sources */,
 				0286250B2B47E8FC0055E62F /* InviteSetKeyViewController.swift in Sources */,
 				02E3FC8D2B259B7500A1CE62 /* PetList.swift in Sources */,
