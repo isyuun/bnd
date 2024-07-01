@@ -135,16 +135,17 @@ class WalkingController: LocationController {
         if (tempArrTrack.count > 0) {
             if (tempArrTrack.last!.location!.distance(from: track.location!) >= 10) {
                 addTrack(track: track)
-                movePathDist += moveDistance()
+                tempMovePathDist += moveDistance()
             }
         } else {
             addTrack(track: track)
             movePathDist = 0
+            tempMovePathDist = 0
         }
     }
 
     func updateMovePathDist(_ dist: Double) {
-        movePathDist = dist
+        tempMovePathDist = dist
     }
     
     func moveDistance() -> CLLocationDistance {
@@ -154,10 +155,12 @@ class WalkingController: LocationController {
     
     func refreshMoveInfoData() {
         tempMovedSec += 1
-        tempMovedDist = movePathDist;
+        tempMovedDist = tempMovePathDist;
+
         if bWalkingState == .START {
             movedSec = tempMovedSec
             movedDist = tempMovedDist
+            movePathDist = tempMovePathDist;
         }
     }
     

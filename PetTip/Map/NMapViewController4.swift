@@ -60,13 +60,10 @@ class NMapViewController4: NMapViewController3, NMFMapViewTouchDelegate {
         NSLog("[LOG][I][(\(#fileID):\(#line))::\(#function)][mark:\(mark)][pet:\(pet)]")
         // super.addEventMark(mark: mark, pet: pet)
 
-        guard let walkingController = walkingController else {
+        guard let walkingController = walkingController, let location = walkingController.arrTrack.last?.location else {
             return
         }
 
-        let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
-
-        
         let marker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), event: mark)
         marker.mapView = self.mapView
 

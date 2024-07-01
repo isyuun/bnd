@@ -160,14 +160,10 @@ class NMapViewController5: NMapViewController4 {
         guard loadTrackUserFlag == true else {
             return
         }
-        
         guard let walkingController = walkingController else {
             return
         }
-        guard walkingController.checkWalkTrack() == true else {
-            return
-        }
-
+        
         if (walkingController.locationReqType == 1) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                 self.startWalkingProcess()
@@ -191,11 +187,24 @@ class NMapViewController5: NMapViewController4 {
     
     
     func addPathOverlay() {
-        guard let walkingController = walkingController else {
+        guard let walkingController = walkingController, pathOverlay.path.points.count > 0 else {
             return
         }
         
-        let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
+        guard let location: CLLocation = {
+            guard let lastlocation = walkingController.tempArrTrack.last?.location else {
+                return nil
+            }
+            let mapLocation = CLLocation(latitude: mapView.locationOverlay.location.lat, longitude: mapView.locationOverlay.location.lng)
+            if lastlocation.distance(from: mapLocation) > 20 {
+                // 20미터 이상 떨어져 있으면 포인트 이동
+                return mapLocation
+            }
+            return lastlocation
+        }() else {
+            return
+        }
+        
         
         let track = Track()
         track.location = CLLocation(coordinate: location.coordinate,
@@ -216,11 +225,6 @@ class NMapViewController5: NMapViewController4 {
                 path.addPoint(NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude))
                 pathOverlay.path = path
                 pathOverlay.mapView = mapView
-            } else {
-                pathOverlay.path = NMGLineString(points: [
-                    NMGLatLng(lat: walkingController.arrTrack.last!.location!.coordinate.latitude, lng: walkingController.arrTrack.last!.location!.coordinate.longitude),
-                    NMGLatLng(lat: mapView.latitude, lng: mapView.longitude)])
-                pathOverlay.mapView = naverMapView.mapView
             }
         }
     }
@@ -262,10 +266,13 @@ extension NMapViewController5: LocationControllerDelegate {
         }
         
         if let oldLocation = walkingController.arrTrack.last?.location, walkingController.bWalkingState == .START {
-            let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
-            if oldLocation.distance(from: location) > 20 {
-                // mapView 마커와 마지막 위치가 20미터 이상 차이가 날경우 폴리곤 그리기
-                addPathOverlay()
+            if mapView.locationOverlay.location.lat != 0 && mapView.locationOverlay.location.lng != 0 {
+                let location = CLLocation(latitude: mapView.locationOverlay.location.lat, longitude: mapView.locationOverlay.location.lng)
+                let distance = oldLocation.distance(from: location)
+                if distance > 20 && distance < 10000 {
+                    // mapView 마커와 마지막 위치가 20미터 이상 10km 미만 차이가 날경우 폴리곤 그리기
+                    addPathOverlay()
+                }
             }
         }
         statusViewTimerCallback()

@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 class WalkingController3: WalkingController2 {
-    
+
     override init() {
         super.init()
     }
@@ -61,10 +61,10 @@ class WalkingController3: WalkingController2 {
         movedSec = tempMovedSec
 
         tempMovedDist = loadedTrack.movedDist
-        movedSec = tempMovedDist
+        movedDist = tempMovedDist
 
         tempMovePathDist = loadedTrack.movePathDist
-        movedSec = tempMovePathDist
+        movePathDist = tempMovePathDist
         
         selectedPets = loadedTrack.selectedPets
         arrImageFromCamera = loadedTrack.arrImageFromCamera
@@ -94,6 +94,8 @@ class WalkingController3: WalkingController2 {
         return true
     }
 
-
+    override func updateCurrLocation(_ locations: [CLLocation]) {
+        super.updateCurrLocation(locations)
+    }
 }
 

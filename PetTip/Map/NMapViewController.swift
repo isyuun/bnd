@@ -324,11 +324,10 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
     internal func addEventMark(mark: NMapViewController.EventMark, pet: Pet) {
         
-        guard let walkingController = walkingController else {
+        guard let walkingController = walkingController, let location = walkingController.arrTrack.last?.location else {
             return
         }
         
-        let location = CLLocation(latitude: mapView.latitude, longitude: mapView.longitude)
         let eventMarker = NMapViewController.getEventMarker(loc: NMGLatLng(lat: location.coordinate.latitude, lng: location.coordinate.longitude), event: mark)
         eventMarker.mapView = self.mapView
 
@@ -504,6 +503,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
 
         } else if (walkingController.locationReqType == 2) {
             if (startMarker == nil) {
+                // 현재 위치와 마커포인트가 10미터 이하면 시작점으로 지정
                 startMarker = NMapViewController.getTextMarker(loc: NMGLatLng(lat: recentLoc.coordinate.latitude, lng: recentLoc.coordinate.longitude), text: "출발", forceShow: false)
                 startMarker.mapView = self.naverMapView.mapView
             } else {
@@ -515,7 +515,7 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
             track.event = .non
             
             
-            if (walkingController.arrTrack.count > 0) {
+            if (walkingController.arrTrack.count > 0 && isLoading == false) {
                 guard let location = walkingController.arrTrack.last?.location else {
                     return
                 }
@@ -534,19 +534,25 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
                         guard let coordinate = walkingController.arrTrack.last?.location?.coordinate else {
                             return
                         }
-
-                        if pathOverlay != nil {
+                        
+                        if pathOverlay.path.count > 0 {
                             let path = pathOverlay.path
                             path.addPoint(NMGLatLng(lat: coordinate.latitude, lng: coordinate.longitude))
                             pathOverlay.path = path
                             pathOverlay.mapView = mapView
+                        } else {
+                            pathOverlay.path = NMGLineString(points: [
+                                NMGLatLng(lat: arrTrack[arrTrack.count-2].location!.coordinate.latitude, lng: arrTrack[arrTrack.count-2].location!.coordinate.longitude),
+                                NMGLatLng(lat: arrTrack.last!.location!.coordinate.latitude, lng: arrTrack.last!.location!.coordinate.longitude)])
+                            pathOverlay.mapView = mapView
                         }
+                        
                     }
                 }
 
             } else {
                 walkingController.addTrack(track: track);
-                walkingController.updateMovePathDist(0)
+//                walkingController.updateMovePathDist(0)
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500), execute: {
                     self.stopLoading()
@@ -594,8 +600,6 @@ class NMapViewController: CommonViewController2, MapBottomViewProtocol {
     func refreshMoveInfoStart() {
         refreshMoveInfoStop(isSafeStop: true)
 
-        walkingController?.movedSec = 0
-        walkingController?.movedDist = 0
         walkingController?.refreshMoveInfoStart();
 
         self.mapTopView.hideMapTipView()
