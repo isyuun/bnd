@@ -48,9 +48,9 @@ class MainViewController5: MainViewController4 {
             self.didTapPopupCancel()
         }
         commonConfirmView.didTapOK = {
+            self.didTapPopupOK()
             self.checkWalkBtn()
             self.performSegue(withIdentifier: "segueMainToMap", sender: true)
-            self.didTapPopupOK()
         }
 
         popupShow(contentView: commonConfirmView, wSideMargin: 40)

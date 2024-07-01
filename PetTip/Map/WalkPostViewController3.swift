@@ -51,9 +51,9 @@ extension WalkPostViewController3: BackTitleBarViewProtocol {
             self.didTapPopupCancel()
         }
         commonConfirmView.didTapOK = {
+            self.didTapPopupOK()
             self.navigationController?.popToRootViewController(animated: true)
             self.tabBarController?.tabBar.isHidden = false
-            self.didTapPopupOK()
         }
 
         popupShow(contentView: commonConfirmView, wSideMargin: 40)
